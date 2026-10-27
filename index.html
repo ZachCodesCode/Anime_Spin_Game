@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shonen Spin — Anime Roster Builder</title>
+<meta name="description" content="Spin a gacha reel, draft a dream team across One Piece, Naruto, Jujutsu Kaisen, My Hero, Demon Slayer, Black Clover & Tokyo Ghoul, fill your roles, and find your % chance to beat the Villain Gauntlet (Sukuna, Madara, Kaido & more). Regular & Hard (salary cap) modes." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* ===================== PIXEL / BRIGHT THEME ===================== */
+:root{
+  --ink:#241c2e;            /* near-black pixel outline */
+  --ink2:#3a2f4d;
+  --paper:#fffdf5;
+  --cream:#fff3c9;
+  --sky1:#7ad7ff;
+  --sky2:#b6f0ff;
+  --sun:#ffe066;
+  --pink:#ff5db1;
+  --lime:#8dff4f;
+  --orange:#ff9f1c;
+  --red:#ff4d4d;
+  --purple:#9b5de5;
+  --blue:#3aa0ff;
+  --teal:#2ec4b6;
+  --shadow:6px 6px 0 rgba(36,28,46,.28);
+  --shadowsm:4px 4px 0 rgba(36,28,46,.28);
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  font-family:'Nunito',system-ui,sans-serif;
+  font-size:17px;
+  font-weight:600;
+  line-height:1.5;
+  color:var(--ink);
+  background:
+    linear-gradient(180deg,#5cc8ff 0%, #8fe0ff 42%, #c9f4ff 100%);
+  background-attachment:fixed;
+  min-height:100vh;
+}
+/* pixel clouds */
+body::before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.9;
+  background-image:
+    radial-gradient(circle at 12% 18%, #fff 0 0),
+    radial-gradient(closest-side, #ffffff 92%, transparent) ,
+    radial-gradient(closest-side, #ffffff 92%, transparent);
+  background-repeat:no-repeat;
+  background-size:0 0, 150px 46px, 110px 36px;
+  background-position:0 0, 8% 14%, 78% 10%;
+  filter:none;
+}
+.pixel-font{font-family:'Press Start 2P',monospace;}
+h1,h2,h3,.pf{font-family:'Press Start 2P',monospace;line-height:1.5;}
+
+.wrap{position:relative;z-index:1;max-width:1040px;margin:0 auto;padding:16px 14px 60px;}
+
+/* ---- top bar ---- */
+.topbar{
+  background:var(--paper);border:4px solid var(--ink);box-shadow:var(--shadow);
+  padding:14px 16px;margin-bottom:14px;
+}
+.logo{font-family:'Press Start 2P',monospace;font-size:26px;margin:0 0 2px;
+  color:var(--ink);
+  text-shadow:3px 3px 0 var(--pink), 6px 6px 0 rgba(36,28,46,.18);}
+.logo .sm{color:var(--purple);}
+.tag{font-size:17px;font-weight:700;color:var(--ink2);margin:8px 0 14px;}
+
+.modebar{display:flex;gap:8px;flex-wrap:wrap;align-items:stretch;}
+.mode-tab{
+  font-family:'Press Start 2P',monospace;font-size:12px;line-height:1.4;cursor:pointer;
+  padding:12px 14px;border:4px solid var(--ink);background:#fff;color:var(--ink);
+  box-shadow:var(--shadowsm);transition:transform .05s;flex:1 1 220px;
+}
+.mode-tab .d{display:block;font-family:'Nunito',sans-serif;font-weight:700;font-size:14px;line-height:1.35;color:var(--ink2);margin-top:8px;}
+.mode-tab.on{background:var(--sun);}
+.mode-tab.on.hard{background:var(--red);color:#fff;}
+.mode-tab.on.hard .d{color:#fff2;color:rgba(255,255,255,.85);}
+.mode-tab:active{transform:translate(2px,2px);box-shadow:2px 2px 0 rgba(36,28,46,.28);}
+
+/* ---- HUD ---- */
+.hud{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;}
+.hud .cell{flex:1 1 120px;background:var(--cream);border:4px solid var(--ink);padding:8px 10px;box-shadow:var(--shadowsm);}
+.hud .k{font-family:'Nunito',sans-serif;font-weight:800;font-size:12px;letter-spacing:.5px;text-transform:uppercase;color:#5a5068;}
+.hud .v{font-family:'Nunito',sans-serif;font-weight:900;font-size:24px;margin-top:4px;}
+#capCell{display:none;}
+body.hard #capCell{display:block;}
+.capbar{height:14px;background:#fff;border:3px solid var(--ink);margin-top:7px;position:relative;overflow:hidden;}
+.capbar .fill{height:100%;background:linear-gradient(90deg,var(--lime),var(--orange));width:0;transition:width .25s;}
+.capbar.over .fill{background:var(--red);}
+
+/* ---- villain gauntlet strip ---- */
+.panel{background:var(--paper);border:4px solid var(--ink);box-shadow:var(--shadow);padding:14px;margin-bottom:14px;}
+.panel h2{font-size:14px;margin:0 0 10px;}
+/* collapsible villain gauntlet */
+details.gauntlet > summary{font-family:'Press Start 2P',monospace;font-size:14px;line-height:1.5;
+  cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;}
+details.gauntlet > summary::-webkit-details-marker{display:none;}
+details.gauntlet > summary::before{content:"▸";color:var(--ink2);font-family:'Nunito';font-weight:900;}
+details.gauntlet[open] > summary::before{content:"▾";}
+details.gauntlet[open] > summary{margin-bottom:11px;}
+/* compact villain strip */
+.vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:7px;}
+.vcard{background:var(--ink);color:#fff;border:3px solid var(--ink);padding:7px 8px;position:relative;}
+.vcard .vn{font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;line-height:1.15;}
+.vcard .ve{font-size:12px;font-weight:700;color:#ffd2ec;margin:3px 0;line-height:1.2;}
+.vcard .vp{font-family:'Nunito',sans-serif;font-weight:900;font-size:12px;letter-spacing:.5px;color:var(--sun);}
+.vcard .serie{position:absolute;top:0;right:0;width:8px;height:8px;}
+.vtotal{font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;color:var(--red);}
+
+/* ---- spin panel: single slot-machine window ---- */
+.slotwin{
+  position:relative;border:4px solid var(--ink);box-shadow:var(--shadow);
+  background:linear-gradient(180deg,#fff7df,#ffe9f4);
+  padding:20px 16px;margin:4px 0 14px;min-height:118px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;overflow:hidden;
+}
+.slotwin::before,.slotwin::after{content:"";position:absolute;top:0;bottom:0;width:14px;
+  background:repeating-linear-gradient(0deg,var(--ink) 0 8px,transparent 8px 16px);opacity:.18;}
+.slotwin::before{left:0;} .slotwin::after{right:0;}
+.slotwin .slot-dot{width:20px;height:20px;border:3px solid var(--ink);background:#ccc;}
+.slotwin .slot-name{font-family:'Nunito',sans-serif;font-weight:900;font-size:26px;line-height:1.1;text-align:center;color:var(--ink);}
+.slotwin .slot-tier{font-family:'Nunito',sans-serif;font-weight:900;font-size:12px;letter-spacing:1px;
+  padding:3px 9px;border:3px solid var(--ink);min-height:0;}
+.slotwin .slot-tier:empty{display:none;}
+.slotwin.spin-on{animation:shake .25s linear infinite;}
+.slotwin.landed{outline:5px solid var(--pink);animation:pop .4s ease;}
+@keyframes pop{0%{transform:scale(.94)}50%{transform:scale(1.04)}100%{transform:scale(1)}}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-2px)}75%{transform:translateX(2px)}}
+
+/* collapsible full pool list */
+.poollist{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px;margin:6px 0 10px;}
+.poollist .pl{border:3px solid var(--ink);background:#fff;padding:6px 8px;font-size:13px;font-weight:800;
+  display:flex;align-items:center;gap:6px;}
+.poollist .pl .d{width:11px;height:11px;border:2px solid var(--ink);flex:none;}
+.poollist .pl .plt{margin-left:auto;font-size:9px;font-weight:900;letter-spacing:.5px;padding:1px 4px;border:2px solid var(--ink);}
+
+.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+.btn{
+  font-family:'Press Start 2P';font-size:13px;cursor:pointer;border:4px solid var(--ink);
+  padding:14px 18px;background:var(--lime);color:var(--ink);box-shadow:var(--shadow);transition:transform .05s;
+}
+.btn:active{transform:translate(3px,3px);box-shadow:2px 2px 0 rgba(36,28,46,.28);}
+.btn[disabled]{opacity:.45;cursor:not-allowed;filter:grayscale(.6);}
+.btn.spin{background:var(--pink);color:#fff;}
+.btn.skip{background:#fff;font-size:11px;}
+.btn.go{background:var(--sun);}
+.btn.ghost{background:#fff;font-size:11px;}
+.landed{font-size:17px;font-weight:700;margin-top:14px;min-height:26px;color:var(--ink2);}
+.landed b{font-family:'Nunito',sans-serif;font-weight:900;font-size:17px;}
+
+/* how to play */
+details.howto{margin-top:12px;border:4px dashed var(--ink);background:var(--cream);padding:4px 12px;}
+details.howto summary{font-family:'Press Start 2P';font-size:11px;line-height:1.5;cursor:pointer;padding:10px 0;}
+details.howto ol{font-size:16px;font-weight:600;margin:4px 0 12px;padding-left:22px;line-height:1.55;}
+details.howto li{margin:7px 0;}
+
+/* ---- team board ---- */
+.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+@media(max-width:760px){.slots{grid-template-columns:repeat(2,1fr);}}
+.slot{
+  border:4px solid var(--ink);background:#fff;min-height:132px;padding:9px;position:relative;
+  box-shadow:var(--shadowsm);display:flex;flex-direction:column;
+}
+.slot .role{font-family:'Nunito',sans-serif;font-weight:900;font-size:12px;letter-spacing:.5px;color:#6a5f7a;display:flex;gap:6px;align-items:center;}
+.slot .role .ic{font-size:15px;}
+.slot.empty{background:repeating-linear-gradient(45deg,#fff 0 8px,#f3f3f3 8px 16px);}
+.slot.empty .ph{flex:1;display:flex;align-items:center;justify-content:center;color:#a99fb6;font-weight:700;font-size:15px;text-align:center;}
+.slot.filled{}
+.slot .cn{font-family:'Nunito',sans-serif;font-weight:900;font-size:17px;line-height:1.2;margin-top:9px;}
+.slot .ce{font-size:14px;font-weight:700;color:#5a5068;margin:4px 0;}
+.slot .foot{margin-top:auto;padding-top:8px;display:flex;justify-content:space-between;align-items:center;gap:6px;}
+.slot .pw{font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;}
+.chip{font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;color:#fff;padding:4px 7px;border:2px solid var(--ink);text-shadow:1px 1px 0 rgba(0,0,0,.35);}
+.slot .ace-crown{position:absolute;top:-12px;left:-6px;font-size:22px;transform:rotate(-12deg);}
+
+/* ---- draft modal ---- */
+.ov{position:fixed;inset:0;background:rgba(36,28,46,.72);z-index:40;display:none;align-items:flex-start;justify-content:center;padding:20px 12px;overflow:auto;}
+.ov.on{display:flex;}
+.sheet{background:var(--paper);border:4px solid var(--ink);box-shadow:var(--shadow);max-width:860px;width:100%;padding:16px;}
+.sheet h2{font-size:15px;line-height:1.5;margin:0 0 8px;}
+.sheet .sub{font-size:15px;font-weight:700;color:var(--ink2);margin:0 0 14px;}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;max-height:60vh;overflow:auto;padding:3px;}
+.pcard{border:4px solid var(--ink);background:#fff;padding:9px;cursor:pointer;box-shadow:var(--shadowsm);transition:transform .05s;position:relative;}
+.pcard:hover{transform:translateY(-3px);}
+.pcard:active{transform:translate(2px,2px);}
+.pcard .pn{font-family:'Nunito',sans-serif;font-weight:900;font-size:17px;line-height:1.2;}
+.pcard .pe{font-size:14px;font-weight:700;color:#5a5068;margin:5px 0;}
+.pcard .prow{display:flex;justify-content:space-between;align-items:center;margin-top:7px;}
+.pcard .pw{font-family:'Nunito',sans-serif;font-weight:900;font-size:15px;}
+.pcard .cost{font-family:'Nunito',sans-serif;font-weight:800;font-size:12px;color:#fff;background:var(--ink);padding:3px 7px;}
+.pcard .roles{font-size:13px;font-weight:700;color:#6a5f7a;margin-top:7px;line-height:1.35;}
+.pcard.dim{opacity:.4;cursor:not-allowed;filter:grayscale(.5);}
+.pcard.dim:hover{transform:none;}
+.pcard .tagwhy{position:absolute;top:6px;right:6px;font-family:'Nunito',sans-serif;font-weight:800;font-size:10px;letter-spacing:.3px;background:var(--red);color:#fff;padding:3px 6px;border:2px solid var(--ink);}
+.rolepick{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px;}
+.rolepick button{font-family:'Nunito',sans-serif;font-weight:800;font-size:12px;cursor:pointer;border:3px solid var(--ink);background:var(--sun);padding:8px 10px;}
+.sheet .closebar{display:flex;justify-content:flex-end;margin-top:12px;}
+
+/* ---- results ---- */
+#results{display:none;}
+.resultwrap{text-align:center;}
+.dial{width:230px;height:230px;margin:6px auto 4px;position:relative;}
+.dial svg{transform:rotate(-90deg);}
+.dial .num{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.dial .pct{font-family:'Press Start 2P';font-size:34px;color:var(--ink);}
+.dial .lbl{font-family:'Nunito',sans-serif;font-weight:900;letter-spacing:1px;font-size:13px;color:var(--ink2);margin-top:10px;}
+.verdict{font-family:'Press Start 2P';font-size:15px;margin:10px 0;line-height:1.7;}
+.break{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:9px;margin:16px 0;}
+.break .b{background:var(--cream);border:3px solid var(--ink);padding:10px;}
+.break .b .k{font-family:'Nunito',sans-serif;font-weight:800;letter-spacing:.5px;text-transform:uppercase;font-size:12px;color:#5a5068;}
+.break .b .v{font-family:'Nunito',sans-serif;font-weight:900;font-size:22px;margin-top:5px;}
+.matchup{font-size:15px;font-weight:700;text-align:left;}
+.matchup .m{display:flex;justify-content:space-between;gap:8px;border-bottom:2px dotted #ccc;padding:8px 2px;}
+.matchup .m .r{font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;}
+.resbtns{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:16px;}
+
+footer{margin-top:26px;text-align:center;font-size:14px;font-weight:700;color:#1f3a50;line-height:1.6;}
+footer a{color:#143f5e;}
+.hide{display:none!important;}
+
+/* little series color key */
+.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:14px;font-weight:700;margin-top:12px;}
+.legend span{display:inline-flex;align-items:center;gap:5px;}
+.legend i{width:13px;height:13px;border:2px solid var(--ink);display:inline-block;}
+</style>
+</head>
+<body class="regular">
+<div class="wrap">
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <h1 class="logo">SHONEN <span class="sm">SPIN</span></h1>
+    <div class="tag">Spin the reel · draft a dream team across 7 anime · beat the Villain Gauntlet.</div>
+    <div class="modebar">
+      <div class="mode-tab on" id="tabRegular" onclick="setMode('regular')">REGULAR
+        <span class="d">No limits. Build the strongest squad you can.</span></div>
+      <div class="mode-tab hard" id="tabHard" onclick="setMode('hard')">HARD · CAP
+        <span class="d">Power costs points. Beat the cap, find bargains.</span></div>
+    </div>
+    <div class="hud">
+      <div class="cell"><div class="k">SKIPS LEFT</div><div class="v" id="hudSkips">3</div></div>
+      <div class="cell"><div class="k">ROLES FILLED</div><div class="v" id="hudFilled">0 / 8</div></div>
+      <div class="cell"><div class="k">TEAM POWER</div><div class="v" id="hudPower">0</div></div>
+      <div class="cell" id="capCell"><div class="k">SALARY CAP</div><div class="v" id="hudCap">0 / 2700</div>
+        <div class="capbar" id="capBar"><div class="fill" id="capFill"></div></div></div>
+    </div>
+  </div>
+
+  <!-- GAME (spin + board) -->
+  <div id="game">
+
+    <!-- SPIN PANEL -->
+    <div class="panel">
+      <h2>🎰 SPIN TO DRAFT</h2>
+      <div class="slotwin" id="slotWindow">
+        <div class="slot-dot" id="slotDot"></div>
+        <div class="slot-name" id="slotName">Press SPIN to roll</div>
+        <div class="slot-tier" id="slotTier"></div>
+      </div>
+      <div class="controls">
+        <button class="btn spin" id="spinBtn" onclick="doSpin()">SPIN</button>
+        <button class="btn skip" id="skipBtn" onclick="doSkip()" disabled>SKIP (re-roll)</button>
+      </div>
+      <div class="landed" id="landed">Spin lands on a random crew — then draft one fighter into an open role.</div>
+      <details class="howto">
+        <summary>📖 HOW TO PLAY</summary>
+        <ol>
+          <li><b>Spin.</b> The reel lands on one of 30 crews/teams across 7 anime.</li>
+          <li><b>Draft one fighter</b> from that crew into an open role — you can only place a fighter in a role they're built for.</li>
+          <li>Each pick <b>auto-spins</b> to the next crew. Use a <b>Skip</b> (3 total) to re-roll a crew you don't want.</li>
+          <li><b>ELITE</b> crews (legends) are rare; <b>WEAK</b> crews are common — so a dream team is hard to build.</li>
+          <li>Fill all <b>8 roles</b>, then <b>CHALLENGE THE GAUNTLET</b> for your <b>% chance</b> to beat Sukuna, Madara, Kaido &amp; co.</li>
+          <li><b>Hard mode:</b> every fighter costs points by power. Stay under the cap — legends eat your whole budget.</li>
+        </ol>
+      </details>
+      <details class="howto">
+        <summary>🎴 ALL SPIN CREWS (<span id="poolCount">30</span>)</summary>
+        <div class="poollist" id="poolList"></div>
+      </details>
+    </div>
+
+    <!-- VILLAIN GAUNTLET (collapsed by default) -->
+    <div class="panel">
+      <details class="gauntlet">
+        <summary id="gauntletTitle">☠ THE VILLAIN GAUNTLET</summary>
+        <div class="vgrid" id="villainGrid"></div>
+      </details>
+    </div>
+
+    <!-- TEAM BOARD -->
+    <div class="panel">
+      <h2 id="boardTitle">🏆 YOUR TEAM</h2>
+      <div class="slots" id="slots"></div>
+      <div class="controls" style="margin-top:14px;">
+        <button class="btn go" id="challengeBtn" onclick="showResults()" disabled>CHALLENGE THE GAUNTLET</button>
+        <button class="btn ghost" onclick="resetGame()">RESET</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="panel">
+    <div class="resultwrap">
+      <h2 id="resTitle" style="font-size:16px;">⚔ GAUNTLET RESULT</h2>
+      <div class="dial" id="dial"></div>
+      <div class="verdict" id="verdict"></div>
+      <div class="break" id="breakdown"></div>
+      <h3 style="font-size:12px;margin:18px 0 8px;">VS EACH VILLAIN</h3>
+      <div class="matchup" id="matchup"></div>
+      <div class="resbtns">
+        <button class="btn go" onclick="backToBoard()">◀ BACK TO TEAM</button>
+        <button class="btn spin" onclick="resetGame()">PLAY AGAIN</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Fan project · not affiliated with any rights holder. Built for fun. 🎮<br>
+    Shonen Spin — spin, draft, and challenge the gauntlet.
+  </footer>
+</div>
+
+<!-- DRAFT MODAL -->
+<div class="ov" id="draftOv">
+  <div class="sheet">
+    <h2 id="draftTitle">DRAFT</h2>
+    <div class="sub" id="draftSub"></div>
+    <div class="cgrid" id="draftGrid"></div>
+    <div class="closebar">
+      <button class="btn skip" onclick="closeDraft(true)">✕ SKIP THIS SERIES</button>
+    </div>
+  </div>
+</div>
+
+<script src="characters_data.js"></script>
+<script>
+/* ============================ ENGINE ============================ */
+const HARD_BUDGET = 2700;
+const MAX_SKIPS = 3;
+const seriesById = Object.fromEntries(SERIES.map(s=>[s.id,s]));
+const poolById = Object.fromEntries(POOLS.map(p=>[p.id,p]));
+const TIER_TAG = { elite:{t:"ELITE",bg:"#ffd166"}, core:{t:"",bg:""}, weak:{t:"WEAK",bg:"#c9bfd6"} };
+const cost = c => Math.round(c.p * c.p / 16);
+
+let mode = "regular";
+let team = {};                 // slotId -> character
+let usedNames = new Set();
+let skipsLeft = MAX_SKIPS;
+let awaiting = null;           // current landed series id (must place/skip)
+let spinning = false;
+
+/* ---------- setup / render static ---------- */
+function buildVillains(){
+  const vt = VILLAINS.reduce((a,v)=>a+v.p,0);
+  document.getElementById('gauntletTitle').innerHTML =
+    `☠ THE VILLAIN GAUNTLET <span class="vtotal">· total threat ${vt}</span>`;
+  document.getElementById('villainGrid').innerHTML = VILLAINS.map(v=>{
+    const col = seriesById[v.s].color;
+    return `<div class="vcard">
+      <div class="serie" style="background:${col}"></div>
+      <div class="vn">${v.n}</div>
+      <div class="ve">${v.e}</div>
+      <div class="vp">PWR ${v.p}</div>
+    </div>`;
+  }).join('');
+}
+/* show a pool in the single slot-machine window */
+function renderSlot(p, state){
+  const col = seriesById[p.series].color;
+  const tg = TIER_TAG[p.tier];
+  document.getElementById('slotDot').style.background = col;
+  const nm = document.getElementById('slotName');
+  nm.textContent = p.name; nm.style.color = state==='win' ? col : 'var(--ink)';
+  const tier = document.getElementById('slotTier');
+  tier.textContent = tg.t || '';
+  tier.style.background = tg.bg || 'transparent';
+}
+function buildSlotWindow(){
+  document.getElementById('poolCount').textContent = POOLS.length;
+  // group pool list by anime for the collapsible
+  document.getElementById('poolList').innerHTML = SERIES.map(s=>{
+    return POOLS.filter(p=>p.series===s.id).map(p=>{
+      const tg = TIER_TAG[p.tier];
+      const tag = tg.t ? `<span class="plt" style="background:${tg.bg}">${tg.t}</span>` : '';
+      return `<div class="pl"><span class="d" style="background:${s.color}"></span>${p.name}${tag}</div>`;
+    }).join('');
+  }).join('');
+}
+function buildSlots(){
+  const html = SLOTS.map(sl=>{
+    const rd = ROLE_DEFS[sl.role];
+    return `<div class="slot empty" id="slot_${sl.id}">
+      <div class="role"><span class="ic">${rd.icon}</span>${rd.name.toUpperCase()}</div>
+      <div class="ph">spin &amp;<br>draft here</div>
+    </div>`;
+  }).join('');
+  document.getElementById('slots').innerHTML = html;
+}
+
+/* ---------- mode ---------- */
+function setMode(m){
+  mode = m;
+  document.body.classList.toggle('hard', m==='hard');
+  document.body.classList.toggle('regular', m==='regular');
+  document.getElementById('tabRegular').classList.toggle('on', m==='regular');
+  document.getElementById('tabHard').classList.toggle('on', m==='hard');
+  resetGame();
+}
+
+/* ---------- helpers ---------- */
+function openSlots(){ return SLOTS.filter(s=>!team[s.id]); }
+function spent(){ return Object.values(team).reduce((a,c)=>a+cost(c),0); }
+function remaining(){ return HARD_BUDGET - spent(); }
+function filledCount(){ return Object.keys(team).length; }
+
+/* minimum points needed to fill a set of open slots with the cheapest
+   available fighters (rarest role first). Used to stop hard-mode soft-locks. */
+function cheapestFill(slotList, used){
+  const avail = CHARACTERS.filter(c=>!used.has(c.n)).sort((a,b)=>cost(a)-cost(b));
+  const taken = new Set();
+  // fill the scarcest roles first so we don't starve a slot
+  const order = slotList.slice().sort((a,b)=>{
+    const ca = avail.filter(c=>c.r.includes(a.role)).length;
+    const cb = avail.filter(c=>c.r.includes(b.role)).length;
+    return ca-cb;
+  });
+  let total=0;
+  for(const sl of order){
+    const pick = avail.find(c=>!taken.has(c.n) && c.r.includes(sl.role));
+    if(!pick) return Infinity;
+    taken.add(pick.n); total += cost(pick);
+  }
+  return total;
+}
+
+/* roles a character can legally take right now */
+function eligibleSlotsFor(c){
+  return openSlots().filter(sl=>{
+    if(!c.r.includes(sl.role)) return false;
+    if(mode==='hard'){
+      if(cost(c) > remaining()) return false;
+      // reserve guard: after buying c, can we still afford to fill the rest?
+      const others = openSlots().filter(s=>s.id!==sl.id);
+      const used2 = new Set(usedNames); used2.add(c.n);
+      if(cost(c) + cheapestFill(others, used2) > remaining()) return false;
+    }
+    return true;
+  });
+}
+function placeable(c){ return !usedNames.has(c.n) && eligibleSlotsFor(c).length>0; }
+
+/* ---------- SPIN ---------- */
+function weightedPool(){
+  const tot = POOLS.reduce((a,p)=>a+p.weight,0);
+  let r = Math.random()*tot;
+  for(const p of POOLS){ if((r-=p.weight)<=0) return p; }
+  return POOLS[POOLS.length-1];
+}
+function doSpin(){
+  if(spinning || awaiting) return;
+  if(openSlots().length===0) return;
+  spinning = true;
+  setControls();
+  const win = document.getElementById('slotWindow');
+  win.classList.remove('landed'); win.classList.add('spin-on');
+  const target = weightedPool();
+  // flash random pools in the single window, decelerate, land on target
+  const loops = 22 + Math.floor(Math.random()*4);
+  let step = 0, delay = 48;
+  function tick(){
+    renderSlot(POOLS[Math.floor(Math.random()*POOLS.length)], 'flash');
+    step++;
+    if(step <= loops){
+      if(step > loops-9) delay += 44;          // drawn-out slow-down at the end
+      setTimeout(tick, delay);
+    }else{
+      win.classList.remove('spin-on'); win.classList.add('landed');
+      renderSlot(target, 'win');
+      landOn(target.id);
+    }
+  }
+  tick();
+}
+function landOn(pid){
+  spinning = false;
+  const p = poolById[pid];
+  const col = seriesById[p.series].color;
+  renderSlot(p, 'win');
+  const pool = CHARACTERS.filter(c=>c.pool===pid && placeable(c));
+  const landed = document.getElementById('landed');
+  const tierTxt = p.tier==='elite' ? ' ⭐ ELITE pull!' : (p.tier==='weak' ? ' — thin roster, choose wisely' : '');
+  if(pool.length===0){
+    // nobody from this pool fits an open role (or affordable) — free re-roll
+    landed.innerHTML = `Landed on <b style="color:${col}">${p.name}</b> — no fighter fits your open roles. Re-spinning…`;
+    setTimeout(()=>{ if(openSlots().length) doSpin(); }, 850);
+    return;
+  }
+  awaiting = pid;
+  landed.innerHTML = `Landed on <b style="color:${col}">${p.name}</b>${tierTxt} — draft a fighter!`;
+  setControls();
+  // hold on the landed crew name for a beat so the player can take it in,
+  // then open the draft (skipped if they hit SKIP during the pause).
+  setTimeout(()=>{ if(awaiting===pid) openDraft(pid); }, 1050);
+}
+
+/* ---------- SKIP ---------- */
+function doSkip(){
+  if(spinning) return;
+  if(skipsLeft<=0) return;
+  skipsLeft--;
+  awaiting = null;
+  closeDraft(false);
+  updateHud();
+  if(openSlots().length) doSpin();
+}
+
+/* ---------- DRAFT MODAL ---------- */
+function openDraft(pid){
+  const p = poolById[pid];
+  const col = seriesById[p.series].color;
+  const all = CHARACTERS.filter(c=>c.pool===pid && !usedNames.has(c.n));
+  const tg = TIER_TAG[p.tier];
+  document.getElementById('draftTitle').innerHTML =
+    `<span style="color:${col}">${p.name}</span> <span style="font-weight:700;color:#8a8096;font-size:13px">· ${seriesById[p.series].name}${tg.t?' · '+tg.t:''}</span> — PICK ONE`;
+  document.getElementById('draftSub').textContent =
+    mode==='hard'
+      ? `Budget left: ${remaining()} pts. Greyed-out fighters either don't fit an open role or cost too much.`
+      : `Greyed-out fighters don't fit any of your open roles.`;
+  const grid = document.getElementById('draftGrid');
+  grid.innerHTML = all.map((c,i)=>{
+    const slots = eligibleSlotsFor(c);
+    const can = slots.length>0;
+    const fitsOpenRole = c.r.some(r=>openSlots().some(o=>o.role===r));
+    let why='';
+    if(!can){
+      if(!fitsOpenRole) why='NO ROLE';
+      else if(mode==='hard' && cost(c)>remaining()) why='TOO PRICEY';
+      else if(mode==='hard') why='BUSTS CAP';
+      else why='NO ROLE';
+    }
+    const roleNames = c.r.map(r=>ROLE_DEFS[r].name).join(' · ');
+    return `<div class="pcard ${can?'':'dim'}" ${can?`onclick="pickChar('${encodeURIComponent(c.n)}')"`:''}>
+      ${why?`<div class="tagwhy">${why}</div>`:''}
+      <div class="pn">${c.n}</div>
+      <div class="pe">${c.e}</div>
+      <div class="prow"><span class="pw">PWR ${c.p}</span>
+        ${mode==='hard'?`<span class="cost">${cost(c)} pt</span>`:''}</div>
+      <div class="roles">${roleNames}</div>
+    </div>`;
+  }).join('');
+  document.getElementById('draftOv').classList.add('on');
+}
+function closeDraft(skippedViaX){
+  document.getElementById('draftOv').classList.remove('on');
+  if(skippedViaX && awaiting){
+    if(skipsLeft>0){ doSkip(); }
+    else {
+      document.getElementById('landed').innerHTML = 'No skips left — you must draft from this series.';
+      // reopen so the player can't dodge without a skip
+      if(awaiting) setTimeout(()=>openDraft(awaiting), 400);
+    }
+  }
+}
+let pendingChar = null;
+function pickChar(enc){
+  const name = decodeURIComponent(enc);
+  const c = CHARACTERS.find(x=>x.n===name);
+  if(!c || !placeable(c)) return;
+  const slots = eligibleSlotsFor(c);
+  if(slots.length===1){ assign(c, slots[0].id); return; }
+  // multiple roles -> let them choose on the card
+  pendingChar = c;
+  const cards = document.querySelectorAll('#draftGrid .pcard');
+  cards.forEach(card=>{
+    const pn = card.querySelector('.pn');
+    if(pn && pn.textContent===name){
+      if(card.querySelector('.rolepick')) return;
+      const div = document.createElement('div');
+      div.className='rolepick';
+      div.innerHTML = slots.map(sl=>
+        `<button onclick="event.stopPropagation();assign(window.__pc,'${sl.id}')">${ROLE_DEFS[sl.role].icon} ${ROLE_DEFS[sl.role].name}</button>`
+      ).join('');
+      card.appendChild(div);
+    }
+  });
+  window.__pc = c;
+}
+
+/* ---------- ASSIGN ---------- */
+function assign(c, slotId){
+  if(team[slotId] || usedNames.has(c.n)) return;
+  team[slotId] = c;
+  usedNames.add(c.n);
+  awaiting = null;
+  document.getElementById('draftOv').classList.remove('on');
+  renderSlots();
+  updateHud();
+  const full = openSlots().length===0;
+  if(full){
+    document.getElementById('landed').innerHTML = '✅ Team complete! Hit <b>CHALLENGE THE GAUNTLET</b>.';
+    setControls();
+  }else{
+    document.getElementById('landed').innerHTML =
+      `⚔ <b>${c.n}</b> recruited as ${ROLE_DEFS[SLOTS.find(s=>s.id===slotId).role].name} — spinning next…`;
+    setControls();
+    setTimeout(()=>{ if(openSlots().length && !awaiting) doSpin(); }, 700);
+  }
+}
+
+/* ---------- RENDER team ---------- */
+function renderSlots(){
+  SLOTS.forEach(sl=>{
+    const el = document.getElementById('slot_'+sl.id);
+    const c = team[sl.id];
+    const rd = ROLE_DEFS[sl.role];
+    if(!c){
+      el.className='slot empty';
+      el.innerHTML=`<div class="role"><span class="ic">${rd.icon}</span>${rd.name.toUpperCase()}</div>
+        <div class="ph">spin &amp;<br>draft here</div>`;
+      return;
+    }
+    const col = seriesById[c.s].color;
+    el.className='slot filled';
+    el.innerHTML=`${sl.id==='ace'?'<div class="ace-crown">👑</div>':''}
+      <div class="role"><span class="ic">${rd.icon}</span>${rd.name.toUpperCase()}</div>
+      <div class="cn">${c.n}</div>
+      <div class="ce">${c.e}</div>
+      <div class="foot">
+        <span class="pw">PWR ${c.p}</span>
+        <span class="chip" style="background:${col}">${seriesById[c.s].name}</span>
+      </div>`;
+  });
+}
+
+/* ---------- SCORING ---------- */
+function scoreTeam(){
+  const members = Object.entries(team); // [slotId, char]
+  let base = 0, bySeries = {};
+  members.forEach(([slot,c])=>{ base += c.p; bySeries[c.s]=(bySeries[c.s]||0)+1; });
+  let synergy = 0;
+  Object.values(bySeries).forEach(k=>{ if(k>1) synergy += 6*(k-1); });
+  let aceBonus=0, duo=0;
+  if(team.ace){ aceBonus = 15 + Math.round(team.ace.p*0.25); }
+  if(team.ace && team.right && team.ace.s===team.right.s){ duo = 40; }
+  const total = base + synergy + aceBonus + duo;
+  return { base, synergy, aceBonus, duo, total };
+}
+const CENTER = 650, SPREAD = 165;
+function winPct(total){
+  const p = 100/(1+Math.pow(10,(CENTER-total)/SPREAD));
+  return Math.max(1, Math.min(99, Math.round(p)));
+}
+function verdictFor(pct){
+  if(pct>=88) return ['🏆 FLAWLESS VICTORY','The Gauntlet never stood a chance.'];
+  if(pct>=72) return ['🔥 HEAVY FAVORITE','You should win this — bring it home.'];
+  if(pct>=56) return ['⚔ YOU\'D TAKE THE FIGHT','Dangerous squad. Edge is yours.'];
+  if(pct>=42) return ['🎲 TRUE COIN FLIP','Could go either way. Nervy stuff.'];
+  if(pct>=26) return ['💀 LONGSHOT','Underdogs. You\'ll need miracles.'];
+  return ['☠ WIPED OUT','The villains run through you. Respin.'];
+}
+
+/* ---------- RESULTS ---------- */
+function showResults(){
+  if(openSlots().length) return;
+  const s = scoreTeam();
+  const pct = winPct(s.total);
+  document.getElementById('game').classList.add('hide');
+  document.getElementById('results').style.display='block';
+  // dial
+  const C=2*Math.PI*96;
+  const off = C*(1-pct/100);
+  const col = pct>=72?'#2ecc71':pct>=42?'#ff9f1c':'#ff4d4d';
+  document.getElementById('dial').innerHTML =
+    `<svg width="230" height="230" viewBox="0 0 230 230">
+       <circle cx="115" cy="115" r="96" fill="none" stroke="#e7e2d6" stroke-width="22"/>
+       <circle cx="115" cy="115" r="96" fill="none" stroke="${col}" stroke-width="22"
+         stroke-dasharray="${C}" stroke-dashoffset="${C}" id="dialArc"/>
+     </svg>
+     <div class="num"><div class="pct" style="color:${col}">${pct}%</div>
+       <div class="lbl">WIN CHANCE</div></div>`;
+  requestAnimationFrame(()=>{ const a=document.getElementById('dialArc');
+    a.style.transition='stroke-dashoffset 1.1s ease'; a.style.strokeDashoffset=off; });
+  const [vh,vs] = verdictFor(pct);
+  document.getElementById('verdict').innerHTML = `${vh}<br><span style="font-family:'Nunito',sans-serif;font-weight:700;font-size:16px;color:var(--ink2)">${vs}</span>`;
+  document.getElementById('breakdown').innerHTML = `
+    <div class="b"><div class="k">TEAM POWER</div><div class="v">${s.base}</div></div>
+    <div class="b"><div class="k">SYNERGY</div><div class="v">+${s.synergy}</div></div>
+    <div class="b"><div class="k">ACE BONUS</div><div class="v">+${s.aceBonus}</div></div>
+    <div class="b"><div class="k">ACE+RIGHT DUO</div><div class="v">+${s.duo}</div></div>
+    <div class="b"><div class="k">TOTAL RATING</div><div class="v">${s.total}</div></div>
+    ${mode==='hard'?`<div class="b"><div class="k">CAP USED</div><div class="v">${spent()}/${HARD_BUDGET}</div></div>`:''}`;
+  // matchup: your best fighter vs each villain
+  const roster = Object.values(team).sort((a,b)=>b.p-a.p);
+  document.getElementById('matchup').innerHTML = VILLAINS.map((v,i)=>{
+    const champ = roster[Math.min(i,roster.length-1)];
+    const edge = champ.p>=v.p ? '✅' : (v.p-champ.p<=8?'⚠':'❌');
+    return `<div class="m"><span><b>${v.n}</b> <span style="color:#888">(${v.p})</span></span>
+      <span class="r">${edge} ${champ.n.split(' ')[0]} (${champ.p})</span></div>`;
+  }).join('');
+  document.getElementById('resTitle').textContent =
+    mode==='hard' ? '⚔ HARD GAUNTLET RESULT' : '⚔ GAUNTLET RESULT';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function backToBoard(){
+  document.getElementById('results').style.display='none';
+  document.getElementById('game').classList.remove('hide');
+}
+
+/* ---------- HUD / controls ---------- */
+function updateHud(){
+  document.getElementById('hudSkips').textContent = skipsLeft;
+  document.getElementById('hudFilled').textContent = filledCount()+' / '+SLOTS.length;
+  document.getElementById('hudPower').textContent = scoreTeam().total || Object.values(team).reduce((a,c)=>a+c.p,0);
+  if(mode==='hard'){
+    const sp = spent();
+    document.getElementById('hudCap').textContent = sp+' / '+HARD_BUDGET;
+    const bar = document.getElementById('capBar');
+    document.getElementById('capFill').style.width = Math.min(100,(sp/HARD_BUDGET)*100)+'%';
+    bar.classList.toggle('over', sp>HARD_BUDGET);
+  }
+  document.getElementById('challengeBtn').disabled = openSlots().length!==0;
+  setControls();
+}
+function setControls(){
+  document.getElementById('spinBtn').disabled = spinning || !!awaiting || openSlots().length===0;
+  document.getElementById('skipBtn').disabled = spinning || skipsLeft<=0 || !awaiting;
+  document.getElementById('spinBtn').textContent = (filledCount()===0 && !awaiting) ? 'SPIN' : 'SPIN';
+}
+
+/* ---------- RESET ---------- */
+function resetGame(){
+  team = {}; usedNames = new Set(); skipsLeft = MAX_SKIPS; awaiting=null; spinning=false;
+  document.getElementById('results').style.display='none';
+  document.getElementById('game').classList.remove('hide');
+  document.getElementById('landed').innerHTML = 'Spin lands on a random crew — then draft one fighter into an open role.';
+  const win = document.getElementById('slotWindow');
+  win.classList.remove('spin-on','landed');
+  document.getElementById('slotDot').style.background = '#ccc';
+  document.getElementById('slotName').textContent = 'Press SPIN to roll';
+  document.getElementById('slotName').style.color = 'var(--ink)';
+  document.getElementById('slotTier').textContent = '';
+  document.getElementById('slotTier').style.background = 'transparent';
+  renderSlots();
+  updateHud();
+}
+
+/* ---------- BOOT ---------- */
+buildVillains();
+buildSlotWindow();
+buildSlots();
+renderSlots();
+updateHud();
+</script>
+</body>
+</html>
