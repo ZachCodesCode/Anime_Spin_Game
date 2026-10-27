@@ -28,43 +28,70 @@ const SERIES = [
 /* ---- Spin pools. tier: elite | core | weak.  weight = spin odds
         (weak pools are common, elite pools rare). ---- */
 const POOLS = [
-  // ONE PIECE (6 crews)
-  { id:"op-straw",    name:"Straw Hat Pirates",   series:"onepiece",   tier:"core",  weight:0.85 },
-  { id:"op-legends",  name:"Pirate Legends",      series:"onepiece",   tier:"elite", weight:0.4 },
-  { id:"op-emperors", name:"Yonko Commanders",    series:"onepiece",   tier:"elite", weight:0.4 },
-  { id:"op-worstgen", name:"Worst Generation",    series:"onepiece",   tier:"core",  weight:0.85 },
-  { id:"op-gov",      name:"Admirals & Warlords", series:"onepiece",   tier:"elite", weight:0.4 },
-  { id:"op-grunts",   name:"East Blue & Rookies", series:"onepiece",   tier:"weak",  weight:1.45 },
-  // NARUTO (6)
-  { id:"nar-leaf",    name:"Leaf Village Jonin",  series:"naruto",     tier:"core",  weight:0.85 },
-  { id:"nar-legends", name:"Legendary Shinobi",   series:"naruto",     tier:"elite", weight:0.4 },
-  { id:"nar-akatsuki",name:"Akatsuki",            series:"naruto",     tier:"elite", weight:0.45 },
-  { id:"nar-kage",    name:"The Five Kage",       series:"naruto",     tier:"core",  weight:0.8 },
-  { id:"nar-sand",    name:"Sand & Mist",         series:"naruto",     tier:"core",  weight:0.85 },
-  { id:"nar-academy", name:"Academy & Genin",     series:"naruto",     tier:"weak",  weight:1.45 },
-  // JUJUTSU KAISEN (3)
-  { id:"jjk-sorc",    name:"Jujutsu Sorcerers",   series:"jjk",        tier:"core",  weight:0.9 },
-  { id:"jjk-special", name:"Special Grades",      series:"jjk",        tier:"elite", weight:0.45 },
-  { id:"jjk-students",name:"First-Years",         series:"jjk",        tier:"weak",  weight:1.4 },
-  // MY HERO ACADEMIA (4)
-  { id:"mha-pros",    name:"Pro Heroes",          series:"mha",        tier:"elite", weight:0.6 },
-  { id:"mha-1a",      name:"Class 1-A",           series:"mha",        tier:"core",  weight:1.0 },
-  { id:"mha-1b",      name:"Class 1-B",           series:"mha",        tier:"core",  weight:1.0 },
-  { id:"mha-side",    name:"Sidekicks & Students",series:"mha",        tier:"weak",  weight:1.35 },
-  // DEMON SLAYER (3)
-  { id:"ds-hashira",  name:"The Hashira",         series:"demonslayer",tier:"elite", weight:0.7 },
-  { id:"ds-corps",    name:"Slayer Corps",        series:"demonslayer",tier:"core",  weight:1.1 },
-  { id:"ds-fodder",   name:"Rookies & Kakushi",   series:"demonslayer",tier:"weak",  weight:1.4 },
-  // BLACK CLOVER (6 squads)
-  { id:"bc-captains", name:"Magic Knight Captains",series:"blackclover",tier:"elite",weight:0.45 },
-  { id:"bc-bulls",    name:"Black Bulls",         series:"blackclover",tier:"core",  weight:0.9 },
-  { id:"bc-goldendawn",name:"Golden Dawn",        series:"blackclover",tier:"core",  weight:0.85 },
-  { id:"bc-squads",   name:"Royal Magic Squads",  series:"blackclover",tier:"core",  weight:0.9 },
-  { id:"bc-devils",   name:"Dark Triad & Devils", series:"blackclover",tier:"elite", weight:0.45 },
-  { id:"bc-rookies",  name:"Junior Knights",      series:"blackclover",tier:"weak",  weight:1.35 },
-  // TOKYO GHOUL (2 — few spins: "Ghouls vs Doves")
-  { id:"tg-ghouls",   name:"Ghouls · Aogiri",     series:"tokyoghoul", tier:"core",  weight:0.65 },
-  { id:"tg-doves",    name:"Doves · CCG",         series:"tokyoghoul", tier:"core",  weight:0.65 }
+  // ONE PIECE (12 crews)
+  { id:"op-straw",     name:"Straw Hat Pirates",   series:"onepiece",   tier:"core",  weight:0.85 },
+  { id:"op-legends",   name:"Pirate Legends",      series:"onepiece",   tier:"elite", weight:0.38 },
+  { id:"op-emperors",  name:"Yonko Commanders",    series:"onepiece",   tier:"elite", weight:0.38 },
+  { id:"op-whitebeard",name:"Whitebeard Pirates",  series:"onepiece",   tier:"elite", weight:0.38 },
+  { id:"op-gov",       name:"Admirals & Warlords", series:"onepiece",   tier:"elite", weight:0.38 },
+  { id:"op-worstgen",  name:"Worst Generation",    series:"onepiece",   tier:"core",  weight:0.85 },
+  { id:"op-blackbeard",name:"Blackbeard Pirates",  series:"onepiece",   tier:"core",  weight:0.85 },
+  { id:"op-revolution",name:"Revolutionary Army",  series:"onepiece",   tier:"core",  weight:0.85 },
+  { id:"op-beasts",    name:"Beasts Pirates",      series:"onepiece",   tier:"core",  weight:0.85 },
+  { id:"op-bigmom",    name:"Big Mom Pirates",     series:"onepiece",   tier:"core",  weight:0.85 },
+  { id:"op-fishman",   name:"Fish-Man Pirates",    series:"onepiece",   tier:"weak",  weight:1.3 },
+  { id:"op-grunts",    name:"East Blue & Rookies", series:"onepiece",   tier:"weak",  weight:1.3 },
+  // NARUTO (12)
+  { id:"nar-leaf",     name:"Leaf Village Jonin",  series:"naruto",     tier:"core",  weight:0.85 },
+  { id:"nar-legends",  name:"Legendary Shinobi",   series:"naruto",     tier:"elite", weight:0.38 },
+  { id:"nar-akatsuki", name:"Akatsuki",            series:"naruto",     tier:"elite", weight:0.4 },
+  { id:"nar-uchiha",   name:"Uchiha Clan",         series:"naruto",     tier:"elite", weight:0.38 },
+  { id:"nar-tailed",   name:"Tailed Beasts",       series:"naruto",     tier:"elite", weight:0.38 },
+  { id:"nar-kage",     name:"The Five Kage",       series:"naruto",     tier:"core",  weight:0.8 },
+  { id:"nar-oto",      name:"Orochimaru's Faction",series:"naruto",     tier:"core",  weight:0.85 },
+  { id:"nar-root",     name:"Root & ANBU",         series:"naruto",     tier:"core",  weight:0.85 },
+  { id:"nar-swordsmen",name:"Seven Ninja Swordsmen",series:"naruto",    tier:"core",  weight:0.85 },
+  { id:"nar-sand",     name:"Sand & Mist",         series:"naruto",     tier:"core",  weight:0.85 },
+  { id:"nar-boruto",   name:"Next Generation",     series:"naruto",     tier:"weak",  weight:1.3 },
+  { id:"nar-academy",  name:"Academy & Genin",     series:"naruto",     tier:"weak",  weight:1.3 },
+  // JUJUTSU KAISEN (6)
+  { id:"jjk-sorc",     name:"Jujutsu Sorcerers",   series:"jjk",        tier:"core",  weight:0.9 },
+  { id:"jjk-special",  name:"Special Grades",      series:"jjk",        tier:"elite", weight:0.42 },
+  { id:"jjk-curses",   name:"Cursed Spirits",      series:"jjk",        tier:"elite", weight:0.42 },
+  { id:"jjk-culling",  name:"Culling Game Players",series:"jjk",        tier:"core",  weight:0.85 },
+  { id:"jjk-grade1",   name:"Grade 1 Sorcerers",   series:"jjk",        tier:"weak",  weight:1.3 },
+  { id:"jjk-students", name:"First-Years",         series:"jjk",        tier:"weak",  weight:1.3 },
+  // MY HERO ACADEMIA (8)
+  { id:"mha-pros",     name:"Pro Heroes",          series:"mha",        tier:"elite", weight:0.5 },
+  { id:"mha-topvets",  name:"Top Pros & Vets",     series:"mha",        tier:"elite", weight:0.5 },
+  { id:"mha-1a",       name:"Class 1-A",           series:"mha",        tier:"core",  weight:0.95 },
+  { id:"mha-1b",       name:"Class 1-B",           series:"mha",        tier:"core",  weight:0.95 },
+  { id:"mha-bigthree", name:"Big Three & Interns", series:"mha",        tier:"core",  weight:0.9 },
+  { id:"mha-exleague", name:"Ex-Villains (reformed)",series:"mha",      tier:"core",  weight:0.9 },
+  { id:"mha-hassaikai",name:"Hassaikai & Rogues",  series:"mha",        tier:"core",  weight:0.9 },
+  { id:"mha-side",     name:"Sidekicks & Students",series:"mha",        tier:"weak",  weight:1.3 },
+  // DEMON SLAYER (6)
+  { id:"ds-hashira",   name:"The Hashira",         series:"demonslayer",tier:"elite", weight:0.6 },
+  { id:"ds-uppermoons",name:"Upper Moon Demons",   series:"demonslayer",tier:"elite", weight:0.5 },
+  { id:"ds-corps",     name:"Slayer Corps",        series:"demonslayer",tier:"core",  weight:1.0 },
+  { id:"ds-lowermoons",name:"Lower Rank Demons",   series:"demonslayer",tier:"core",  weight:0.95 },
+  { id:"ds-estate",    name:"Butterfly Estate",    series:"demonslayer",tier:"weak",  weight:1.25 },
+  { id:"ds-fodder",    name:"Rookies & Kakushi",   series:"demonslayer",tier:"weak",  weight:1.25 },
+  // BLACK CLOVER (9 squads)
+  { id:"bc-captains",  name:"Magic Knight Captains",series:"blackclover",tier:"elite",weight:0.42 },
+  { id:"bc-devils",    name:"Dark Triad & Devils", series:"blackclover",tier:"elite", weight:0.42 },
+  { id:"bc-elves",     name:"Elf Reincarnations",  series:"blackclover",tier:"elite", weight:0.42 },
+  { id:"bc-bulls",     name:"Black Bulls",         series:"blackclover",tier:"core",  weight:0.88 },
+  { id:"bc-goldendawn",name:"Golden Dawn",         series:"blackclover",tier:"core",  weight:0.85 },
+  { id:"bc-squads",    name:"Royal Magic Squads",  series:"blackclover",tier:"core",  weight:0.88 },
+  { id:"bc-heart",     name:"Heart Kingdom",       series:"blackclover",tier:"core",  weight:0.85 },
+  { id:"bc-anti",      name:"Anti-Heroes & Rogues",series:"blackclover",tier:"core",  weight:0.85 },
+  { id:"bc-rookies",   name:"Junior Knights",      series:"blackclover",tier:"weak",  weight:1.3 },
+  // TOKYO GHOUL (4 — Ghouls vs Doves, expanded)
+  { id:"tg-ghouls",    name:"Ghouls · Anteiku",    series:"tokyoghoul", tier:"core",  weight:0.6 },
+  { id:"tg-doves",     name:"Doves · CCG",         series:"tokyoghoul", tier:"core",  weight:0.6 },
+  { id:"tg-quinx",     name:"Quinx Squad",         series:"tokyoghoul", tier:"core",  weight:0.6 },
+  { id:"tg-aogiri",    name:"Aogiri Tree",         series:"tokyoghoul", tier:"core",  weight:0.6 }
 ];
 
 /* ---- Team roles. 8 slots total. ---- */
@@ -328,7 +355,190 @@ const CHARACTERS = [
   { n:"Hitoshi Shinso",  e:"Brainwashing",          pool:"mha-1b", p:52, r:["tactician","support","wildcard"] },
   { n:"Ibara Shiozaki",  e:"Vines",                 pool:"mha-1b", p:50, r:["support","anchor"] },
   { n:"Neito Monoma",    e:"Copy",                  pool:"mha-1b", p:48, r:["tactician","wildcard"] },
-  { n:"Juzo Honenuki",   e:"Softening",             pool:"mha-1b", p:46, r:["tactician","anchor"] }
+  { n:"Juzo Honenuki",   e:"Softening",             pool:"mha-1b", p:46, r:["tactician","anchor"] },
+
+  /* ===================== EXPANSION: MORE CREWS / CLANS ===================== */
+
+  /* ===== ONE PIECE — more crews ===== */
+  // Whitebeard Pirates (elite)
+  { n:"Edward Newgate",  e:"Whitebeard",            pool:"op-whitebeard", p:94, r:["ace","anchor","striker"] },
+  { n:"Jozu",            e:"Diamond",               pool:"op-whitebeard", p:72, r:["anchor","striker"] },
+  { n:"Vista",           e:"Flower Sword",          pool:"op-whitebeard", p:70, r:["right","striker"] },
+  { n:"Thatch",          e:"4th Division Cmdr",     pool:"op-whitebeard", p:60, r:["support","striker"] },
+  { n:"Izo",             e:"16th Division Cmdr",    pool:"op-whitebeard", p:56, r:["striker","tactician"] },
+  // Blackbeard Pirates (core)
+  { n:"Marshall D. Teach",e:"Blackbeard",           pool:"op-blackbeard", p:88, r:["ace","striker","anchor"] },
+  { n:"Shiryu",          e:"of the Rain",           pool:"op-blackbeard", p:78, r:["right","striker"] },
+  { n:"Jesus Burgess",   e:"Champion",              pool:"op-blackbeard", p:66, r:["anchor","striker"] },
+  { n:"Catarina Devon",  e:"Crescent Moon Hunter",  pool:"op-blackbeard", p:60, r:["striker","wildcard"] },
+  { n:"Van Augur",       e:"The Supersonic",        pool:"op-blackbeard", p:58, r:["striker","tactician","wildcard"] },
+  { n:"Laffitte",        e:"Demon Sheriff",         pool:"op-blackbeard", p:52, r:["tactician","support"] },
+  // Revolutionary Army (core)
+  { n:"Monkey D. Dragon",e:"World's Most Wanted",   pool:"op-revolution", p:90, r:["ace","tactician","wildcard"] },
+  { n:"Sabo",            e:"Flame Emperor",         pool:"op-revolution", p:82, r:["right","striker","anchor"] },
+  { n:"Bartholomew Kuma",e:"Tyrant",                pool:"op-revolution", p:74, r:["anchor","striker","support"] },
+  { n:"Emporio Ivankov", e:"Okama King",            pool:"op-revolution", p:70, r:["support","striker"] },
+  { n:"Karasu",          e:"Revolutionary Cmdr",    pool:"op-revolution", p:58, r:["striker","tactician"] },
+  { n:"Betty",           e:"Revolutionary Cmdr",    pool:"op-revolution", p:52, r:["support","wildcard"] },
+  // Beasts Pirates (core)
+  { n:"Jack",            e:"The Drought",           pool:"op-beasts", p:72, r:["anchor","striker"] },
+  { n:"Who's Who",       e:"Tobiroppo",             pool:"op-beasts", p:66, r:["striker","tactician"] },
+  { n:"Black Maria",     e:"Tobiroppo",             pool:"op-beasts", p:64, r:["striker","support"] },
+  { n:"Sasaki",          e:"Tobiroppo",             pool:"op-beasts", p:60, r:["anchor","striker"] },
+  { n:"Ulti",            e:"Tobiroppo",             pool:"op-beasts", p:58, r:["striker","wildcard"] },
+  { n:"Page One",        e:"Tobiroppo",             pool:"op-beasts", p:54, r:["striker","anchor"] },
+  // Big Mom Pirates (core)
+  { n:"Charlotte Cracker",e:"Thousand Arms",        pool:"op-bigmom", p:68, r:["striker","anchor"] },
+  { n:"Charlotte Oven",  e:"Sweet Commander",       pool:"op-bigmom", p:64, r:["striker","anchor"] },
+  { n:"Charlotte Daifuku",e:"Sweet Commander",      pool:"op-bigmom", p:62, r:["striker","wildcard"] },
+  { n:"Charlotte Perospero",e:"Candy Minister",     pool:"op-bigmom", p:60, r:["tactician","support"] },
+  { n:"Charlotte Mont-d'Or",e:"Book Minister",      pool:"op-bigmom", p:50, r:["tactician","support"] },
+  // Fish-Man Pirates (weak)
+  { n:"Fisher Tiger",    e:"Sun Pirate",            pool:"op-fishman", p:66, r:["ace","striker","anchor"] },
+  { n:"Hody Jones",      e:"New Fish-Man",          pool:"op-fishman", p:56, r:["striker","anchor"] },
+  { n:"Arlong",          e:"Saw-Tooth",             pool:"op-fishman", p:54, r:["striker","wildcard"] },
+  { n:"Kuroobi",         e:"Fish-Man Karate",       pool:"op-fishman", p:42, r:["striker","support"] },
+  { n:"Macro",           e:"Macro Pirate",          pool:"op-fishman", p:34, r:["wildcard"] },
+
+  /* ===== NARUTO — more groups ===== */
+  // Uchiha Clan (elite)
+  { n:"Shisui Uchiha",   e:"Body Flicker",          pool:"nar-uchiha", p:78, r:["right","tactician","striker"] },
+  { n:"Izuna Uchiha",    e:"Madara's Brother",      pool:"nar-uchiha", p:72, r:["striker","tactician"] },
+  { n:"Fugaku Uchiha",   e:"Clan Head",             pool:"nar-uchiha", p:64, r:["tactician","striker"] },
+  { n:"Kagami Uchiha",   e:"Konoha Pillar",         pool:"nar-uchiha", p:60, r:["striker","support"] },
+  { n:"Sarada Uchiha",   e:"Next-Gen Sharingan",    pool:"nar-uchiha", p:56, r:["striker","wildcard"] },
+  // Tailed Beasts (elite)
+  { n:"Kurama",          e:"Nine-Tails",            pool:"nar-tailed", p:88, r:["ace","anchor","striker"] },
+  { n:"Gyuki",           e:"Eight-Tails",           pool:"nar-tailed", p:78, r:["anchor","striker"] },
+  { n:"Son Goku",        e:"Four-Tails",            pool:"nar-tailed", p:72, r:["striker","anchor"] },
+  { n:"Matatabi",        e:"Two-Tails",             pool:"nar-tailed", p:66, r:["striker","wildcard"] },
+  { n:"Shukaku",         e:"One-Tail",              pool:"nar-tailed", p:64, r:["anchor","support"] },
+  // Orochimaru's Faction (core)
+  { n:"Orochimaru",      e:"Legendary Sannin",      pool:"nar-oto", p:82, r:["ace","tactician","wildcard"] },
+  { n:"Kabuto Yakushi",  e:"Sage Mode",             pool:"nar-oto", p:74, r:["tactician","support","striker"] },
+  { n:"Jugo",            e:"Sage Transformation",   pool:"nar-oto", p:58, r:["striker","anchor"] },
+  { n:"Suigetsu Hozuki", e:"Hidden Mist",           pool:"nar-oto", p:56, r:["striker","wildcard"] },
+  { n:"Karin",           e:"Sensor",                pool:"nar-oto", p:48, r:["support","tactician"] },
+  // Root & ANBU (core)
+  { n:"Danzo Shimura",   e:"Root Leader",           pool:"nar-root", p:70, r:["tactician","striker","support"] },
+  { n:"Yamato",          e:"Wood Style ANBU",       pool:"nar-root", p:62, r:["anchor","support"] },
+  { n:"Sai",             e:"Ink Ninja",             pool:"nar-root", p:56, r:["striker","tactician","wildcard"] },
+  { n:"Torune Aburame",  e:"Poison Insects",        pool:"nar-root", p:48, r:["striker","anchor"] },
+  { n:"Fu Yamanaka",     e:"Mind Transfer ANBU",    pool:"nar-root", p:46, r:["support","wildcard"] },
+  // Seven Ninja Swordsmen (core)
+  { n:"Mangetsu Hozuki", e:"Second Coming of Demon",pool:"nar-swordsmen", p:66, r:["striker","right"] },
+  { n:"Chojuro",         e:"Sixth Mizukage",        pool:"nar-swordsmen", p:58, r:["striker","support"] },
+  { n:"Ameyuri Ringo",   e:"Kiba Lightning",        pool:"nar-swordsmen", p:52, r:["striker","wildcard"] },
+  { n:"Jinin Akebino",   e:"Kabutowari",            pool:"nar-swordsmen", p:50, r:["anchor","striker"] },
+  { n:"Kushimaru Kuriarare",e:"Nuibari",            pool:"nar-swordsmen", p:48, r:["striker","tactician"] },
+  // Next Generation (weak)
+  { n:"Kawaki",          e:"Karma Vessel",          pool:"nar-boruto", p:72, r:["striker","anchor","wildcard"] },
+  { n:"Boruto Uzumaki",  e:"Jougan",                pool:"nar-boruto", p:66, r:["striker","wildcard"] },
+  { n:"Mitsuki",         e:"Sage Transformation",   pool:"nar-boruto", p:60, r:["striker","support"] },
+  { n:"Shinki",          e:"Iron Sand",             pool:"nar-boruto", p:50, r:["anchor","wildcard"] },
+  { n:"Metal Lee",       e:"Strong Fist",           pool:"nar-boruto", p:44, r:["striker"] },
+
+  /* ===== JUJUTSU KAISEN — more factions ===== */
+  // Cursed Spirits (elite)
+  { n:"Mahito",          e:"Idle Transfiguration",  pool:"jjk-curses", p:76, r:["striker","wildcard"] },
+  { n:"Jogo",            e:"Disaster Flame",        pool:"jjk-curses", p:74, r:["striker","anchor"] },
+  { n:"Choso",           e:"Blood Manipulation",    pool:"jjk-curses", p:72, r:["striker","support","anchor"] },
+  { n:"Dagon",           e:"Disaster Tides",        pool:"jjk-curses", p:70, r:["anchor","tactician"] },
+  { n:"Hanami",          e:"Disaster Plants",       pool:"jjk-curses", p:68, r:["anchor","striker"] },
+  // Culling Game Players (core)
+  { n:"Yuki Tsukumo",    e:"Special Grade",         pool:"jjk-culling", p:84, r:["ace","striker","anchor"] },
+  { n:"Hajime Kashimo",  e:"Thunder God",           pool:"jjk-culling", p:82, r:["striker","right"] },
+  { n:"Ryu Ishigori",    e:"Granite Blast",         pool:"jjk-culling", p:72, r:["striker","anchor"] },
+  { n:"Uro Takako",      e:"Sky Manipulation",      pool:"jjk-culling", p:68, r:["striker","wildcard"] },
+  { n:"Reggie Star",     e:"Receipt Curse",         pool:"jjk-culling", p:58, r:["tactician","support"] },
+  // Grade 1 Sorcerers (weak)
+  { n:"Mei Mei",         e:"Crow Technique",        pool:"jjk-grade1", p:72, r:["tactician","striker"] },
+  { n:"Atsuya Kusakabe", e:"New Shadow Style",      pool:"jjk-grade1", p:68, r:["striker","anchor"] },
+  { n:"Takuma Ino",      e:"Grade 1 Sorcerer",      pool:"jjk-grade1", p:52, r:["striker","support"] },
+  { n:"Utahime Iori",    e:"Kyoto Teacher",         pool:"jjk-grade1", p:54, r:["support","tactician"] },
+  { n:"Akari Nitta",     e:"Support Grade",         pool:"jjk-grade1", p:32, r:["support"] },
+
+  /* ===== MY HERO ACADEMIA — more rosters ===== */
+  // Top Pros & Vets (elite)
+  { n:"Ryukyu",          e:"Dragon Hero",           pool:"mha-topvets", p:70, r:["anchor","striker"] },
+  { n:"Edgeshot",        e:"Ninja Hero",            pool:"mha-topvets", p:68, r:["striker","tactician"] },
+  { n:"Gran Torino",     e:"Retired Hero",          pool:"mha-topvets", p:64, r:["striker","tactician"] },
+  { n:"Fat Gum",         e:"Fatgum",                pool:"mha-topvets", p:62, r:["anchor","support"] },
+  { n:"Sir Nighteye",    e:"Foresight",             pool:"mha-topvets", p:58, r:["tactician","support"] },
+  { n:"Gang Orca",       e:"Killer Whale Hero",     pool:"mha-topvets", p:56, r:["striker","anchor"] },
+  // Big Three & Interns (core)
+  { n:"Tamaki Amajiki",  e:"Suneater",              pool:"mha-bigthree", p:72, r:["striker","anchor","wildcard"] },
+  { n:"Nejire Hado",     e:"Nejire Chan",           pool:"mha-bigthree", p:70, r:["striker","support"] },
+  { n:"Inasa Yoarashi",  e:"Gale Force",            pool:"mha-bigthree", p:64, r:["striker","anchor"] },
+  { n:"Seiji Shishikura",e:"Meatball",              pool:"mha-bigthree", p:46, r:["tactician","wildcard"] },
+  { n:"Camie Utsushimi", e:"Illusion",              pool:"mha-bigthree", p:42, r:["support","wildcard"] },
+  // Ex-Villains, reformed (core)
+  { n:"Dabi",            e:"Blueflame",             pool:"mha-exleague", p:76, r:["striker","wildcard"] },
+  { n:"Himiko Toga",     e:"Transform",             pool:"mha-exleague", p:60, r:["striker","wildcard","tactician"] },
+  { n:"Twice",           e:"Double",                pool:"mha-exleague", p:58, r:["support","wildcard"] },
+  { n:"Mr. Compress",    e:"Compress",              pool:"mha-exleague", p:50, r:["tactician","support"] },
+  { n:"Spinner",         e:"Gecko",                 pool:"mha-exleague", p:46, r:["striker","anchor"] },
+  // Hassaikai & Rogues (core)
+  { n:"Kai Chisaki",     e:"Overhaul",              pool:"mha-hassaikai", p:74, r:["ace","striker","tactician"] },
+  { n:"Rappa",           e:"Berserker",             pool:"mha-hassaikai", p:56, r:["striker","anchor"] },
+  { n:"Gentle Criminal", e:"Elasticity",            pool:"mha-hassaikai", p:50, r:["tactician","wildcard"] },
+  { n:"Mimic",           e:"Possession",            pool:"mha-hassaikai", p:48, r:["anchor","support"] },
+  { n:"La Brava",        e:"Love",                  pool:"mha-hassaikai", p:30, r:["support"] },
+
+  /* ===== DEMON SLAYER — demons ===== */
+  // Upper Moon Demons (elite)
+  { n:"Kokushibo",       e:"Upper Moon One",        pool:"ds-uppermoons", p:86, r:["ace","striker","anchor"] },
+  { n:"Akaza",           e:"Upper Moon Three",      pool:"ds-uppermoons", p:82, r:["striker","right"] },
+  { n:"Doma",            e:"Upper Moon Two",        pool:"ds-uppermoons", p:80, r:["striker","support","wildcard"] },
+  { n:"Gyutaro",         e:"Upper Moon Six",        pool:"ds-uppermoons", p:70, r:["striker","anchor"] },
+  { n:"Hantengu",        e:"Upper Moon Four",       pool:"ds-uppermoons", p:64, r:["tactician","wildcard"] },
+  { n:"Gyokko",          e:"Upper Moon Five",       pool:"ds-uppermoons", p:62, r:["tactician","support"] },
+  // Lower Rank Demons (core)
+  { n:"Kaigaku",         e:"Upper Moon Six (new)",  pool:"ds-lowermoons", p:58, r:["striker","wildcard"] },
+  { n:"Enmu",            e:"Lower Moon One",        pool:"ds-lowermoons", p:56, r:["tactician","support","wildcard"] },
+  { n:"Rui",             e:"Lower Moon Five",       pool:"ds-lowermoons", p:54, r:["striker","anchor"] },
+  { n:"Wakuraba",        e:"Lower Moon",            pool:"ds-lowermoons", p:44, r:["striker"] },
+  { n:"Mukago",          e:"Lower Moon",            pool:"ds-lowermoons", p:42, r:["support","wildcard"] },
+  // Butterfly Estate & Allies (weak)
+  { n:"Tamayo",          e:"Ally Demon Doctor",     pool:"ds-estate", p:64, r:["support","tactician"] },
+  { n:"Kanae Kocho",     e:"Flower Hashira",        pool:"ds-estate", p:60, r:["support","striker"] },
+  { n:"Yushiro",         e:"Blood Demon Art",       pool:"ds-estate", p:48, r:["striker","wildcard"] },
+  { n:"Kiriya Ubuyashiki",e:"Corps Leader",         pool:"ds-estate", p:36, r:["tactician","support"] },
+  { n:"Amane Ubuyashiki",e:"Estate Keeper",         pool:"ds-estate", p:28, r:["support"] },
+
+  /* ===== BLACK CLOVER — more squads ===== */
+  // Elf Reincarnations (elite)
+  { n:"Licht",           e:"Elf Leader",            pool:"bc-elves", p:80, r:["ace","striker","anchor"] },
+  { n:"Patry",           e:"Reincarnation Magic",   pool:"bc-elves", p:74, r:["tactician","striker","wildcard"] },
+  { n:"Ronne",           e:"Devil Vessel",          pool:"bc-elves", p:68, r:["tactician","wildcard"] },
+  { n:"Lira",            e:"Elf of the Light",      pool:"bc-elves", p:62, r:["striker","support"] },
+  { n:"Reve",            e:"Dream Elf",             pool:"bc-elves", p:58, r:["support","wildcard"] },
+  // Heart Kingdom (core)
+  { n:"Lolopechka",      e:"Undine's Vessel",       pool:"bc-heart", p:66, r:["support","tactician"] },
+  { n:"Gaja",            e:"Spirit Guardian",       pool:"bc-heart", p:62, r:["striker","anchor"] },
+  { n:"Floga",           e:"Spirit Guardian",       pool:"bc-heart", p:52, r:["striker","wildcard"] },
+  { n:"Undine",          e:"Water Spirit",          pool:"bc-heart", p:48, r:["support","wildcard"] },
+  { n:"Potrof",          e:"Spirit Guardian",       pool:"bc-heart", p:44, r:["support","tactician"] },
+  // Anti-Heroes & Rogues (core)
+  { n:"Zora Ideale",     e:"Trap Magic",            pool:"bc-anti", p:64, r:["tactician","striker","wildcard"] },
+  { n:"Theresa Rapual",  e:"Flame Magic Nun",       pool:"bc-anti", p:58, r:["support","anchor"] },
+  { n:"Xerx Lugner",     e:"Diamond Mage",          pool:"bc-anti", p:46, r:["striker","wildcard"] },
+  { n:"Puli Angel",      e:"Aqua Deer",             pool:"bc-anti", p:44, r:["support","tactician"] },
+  { n:"Sekke Bronzazza", e:"Bronze Magic",          pool:"bc-anti", p:32, r:["wildcard"] },
+
+  /* ===== TOKYO GHOUL — more sides ===== */
+  // Quinx Squad (core)
+  { n:"Haise Sasaki",    e:"Quinx Mentor",          pool:"tg-quinx", p:72, r:["ace","striker","wildcard"] },
+  { n:"Kuki Urie",       e:"Squad Leader",          pool:"tg-quinx", p:56, r:["striker","anchor"] },
+  { n:"Ginshi Shirazu",  e:"Quinx Investigator",    pool:"tg-quinx", p:54, r:["striker","wildcard"] },
+  { n:"Tooru Mutsuki",   e:"Quinx Investigator",    pool:"tg-quinx", p:50, r:["striker","support"] },
+  { n:"Saiko Yonebayashi",e:"Quinx Investigator",   pool:"tg-quinx", p:48, r:["support","tactician"] },
+  // Aogiri Tree (core)
+  { n:"Yakumo Oomori",   e:"Jason",                 pool:"tg-aogiri", p:66, r:["striker","anchor"] },
+  { n:"Hinami Fueguchi", e:"Yotsume",               pool:"tg-aogiri", p:52, r:["support","tactician","wildcard"] },
+  { n:"Roma Hoito",      e:"Clown",                 pool:"tg-aogiri", p:50, r:["tactician","wildcard"] },
+  { n:"Naki",            e:"Aogiri Ghoul",          pool:"tg-aogiri", p:48, r:["striker","anchor"] },
+  { n:"Miza Kusakari",   e:"Three Blades",          pool:"tg-aogiri", p:46, r:["striker","wildcard"] }
 ];
 
 /* ---- derive each character's series (s) from its pool, for synergy ---- */
