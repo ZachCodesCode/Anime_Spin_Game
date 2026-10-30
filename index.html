@@ -177,7 +177,7 @@ body.hard .tile.cap{ display:block; }
 .spin-count{ font-family:'M PLUS Rounded 1c',sans-serif; font-weight:800; font-size:13px; color:var(--ink-2); letter-spacing:.06em; text-transform:uppercase; }
 .spin-count b{ color:var(--pink-d); font-size:16px; }
 
-/* crew signpost */
+/* faction signpost */
 .arc-banner{ position:relative; border-radius:8px; padding:13px 18px; display:flex; align-items:center; justify-content:space-between; gap:12px;
   color:#fff; border:3px solid rgba(0,0,0,.25); box-shadow:0 5px 0 rgba(0,0,0,.22); background:var(--sc, var(--indigo)); min-height:68px;
   transition:background .12s; }
@@ -199,7 +199,7 @@ body.hard .tile.cap{ display:block; }
 .landed b{ color:var(--ink); }
 .arc-empty{ font-family:'M PLUS Rounded 1c',sans-serif; font-weight:700; color:var(--ink-2); text-align:center; padding:42px 16px; line-height:1.8; letter-spacing:.03em; }
 
-/* inline draft (the landed crew's fighters) */
+/* inline draft (the landed faction's fighters) */
 .draft-area{ display:none; margin-top:14px; }
 .draft-area.on{ display:block; }
 .draft-area.on ~ .arc-empty{ display:none; }
@@ -464,15 +464,15 @@ footer b{ font-family:'Fredoka'; font-weight:700; font-size:14px; color:var(--go
           </div>
           <button class="btn btn-spin" id="spinBtn" onclick="doSpin()">SPIN!</button>
           <div class="spin-count">Skips left: <b id="hudSkips">3</b></div>
-          <button class="btn btn-skip" id="skipBtn" onclick="doSkip()" disabled>Skip this crew</button>
+          <button class="btn btn-skip" id="skipBtn" onclick="doSkip()" disabled>Skip this faction</button>
           <details class="howto">
             <summary>How to Play</summary>
             <div class="howto-body">
               <ol>
-                <li><b>Spin</b> the wheel — it lands on one of 57 crews, teams &amp; clans across 7 anime.</li>
-                <li><b>Draft one fighter</b> from that crew into an open role. Fighters only fit roles they're built for.</li>
-                <li>Every pick <b>auto-spins</b> the next crew. Use a <b>skip</b> (3 total) to reroll a crew you don't want.</li>
-                <li><b>Elite</b> crews are rare, <b>weak</b> crews are common — dream teams take luck.</li>
+                <li><b>Spin</b> the wheel — it lands on one of 60 factions — crews, clans, squads &amp; more — across 7 anime.</li>
+                <li><b>Draft one fighter</b> from that faction into an open role. Fighters only fit roles they're built for.</li>
+                <li>Every pick <b>auto-spins</b> the next faction. Use a <b>skip</b> (3 total) to reroll a faction you don't want.</li>
+                <li><b>Elite</b> factions are rare, <b>weak</b> factions are common — dream teams take luck.</li>
                 <li>Fill all <b>8 roles</b>, then <b>challenge the gauntlet</b> to see your % chance.</li>
                 <li><b>Hard mode:</b> fighters cost points by power. Stay under the cap!</li>
               </ol>
@@ -486,26 +486,26 @@ footer b{ font-family:'Fredoka'; font-weight:700; font-size:14px; color:var(--go
             <div class="arc-meta">
               <span class="slot-dot" id="slotDot"></span>
               <span class="tier-stamp" id="slotTier"></span>
-              <span class="saga" id="slotSeries">57 crews · 7 anime</span>
+              <span class="saga" id="slotSeries">60 factions · 7 anime</span>
             </div>
             <div class="stamp" id="lockStamp" aria-hidden="true"></div>
           </div>
-          <p class="landed" id="landed" aria-live="polite">The wheel lands on a crew — then you pick one fighter to fill an open role.</p>
+          <p class="landed" id="landed" aria-live="polite">The wheel lands on a faction — then you pick one fighter to fill an open role.</p>
 
           <div class="draft-area" id="draftOv" aria-live="polite">
             <div class="draft-head">
               <h2 id="draftTitle">Pick a fighter</h2>
-              <button class="btn btn-skip" onclick="closeDraft(true)">Skip this crew</button>
+              <button class="btn btn-skip" onclick="closeDraft(true)">Skip this faction</button>
             </div>
             <p class="sub" id="draftSub"></p>
             <div class="char-grid" id="draftGrid"></div>
           </div>
-          <div class="arc-empty">Spin the wheel to land a crew.<br>Your options will appear here as Fighter Files.</div>
+          <div class="arc-empty">Spin the wheel to land a faction.<br>Your options will appear here as Fighter Files.</div>
         </div>
       </div>
 
       <details class="howto crews">
-        <summary>All Spin Crews (<span id="poolCount">57</span>)</summary>
+        <summary>All Factions (<span id="poolCount">57</span>)</summary>
         <div class="howto-body"><div class="poollist" id="poolList"></div></div>
       </details>
     </section>
@@ -628,7 +628,7 @@ function buildSlotWindow(){
   document.getElementById('poolCount').textContent = POOLS.length;
   document.getElementById('poolList').innerHTML = SERIES.map(s=>{
     const ps = POOLS.filter(p=>p.series===s.id);
-    const header = `<div class="grp"><i style="background:${s.color}"></i>${s.name}<span>${ps.length} crews</span></div>`;
+    const header = `<div class="grp"><i style="background:${s.color}"></i>${s.name}<span>${ps.length} factions</span></div>`;
     return header + ps.map(p=>{
       const tg = TIER_TAG[p.tier];
       const tag = tg.t ? `<span class="plt" style="background:${tg.bg}">${tg.t}</span>` : '';
@@ -656,7 +656,7 @@ function landFx(p, fits){
   else if(p.tier==='weak') showStamp('Locked in', 'weak');
   else showStamp('Locked in!', '');
 }
-/* show a crew on the signpost banner */
+/* show a faction on the signpost banner */
 function renderSlot(p, state){
   const col = seriesById[p.series].color;
   const tg = TIER_TAG[p.tier];
@@ -747,7 +747,7 @@ function doSpin(){
   const fits = CHARACTERS.some(c=>c.pool===target.id && placeable(c));
   const rm = reduceMotion();
   const dur = rm ? 350 : 3200;
-  // turn the wheel so the pointer stops inside the target crew's anime segment
+  // turn the wheel so the pointer stops inside the target faction's anime segment
   const seg = 360/SERIES.length;
   const si = SERIES.findIndex(s=>s.id===target.series);
   const a = si*seg + seg*(.25 + Math.random()*.5);
@@ -757,7 +757,7 @@ function doSpin(){
   wheel.style.transition = `transform ${dur}ms cubic-bezier(.12,.62,.1,1)`;
   wheel.style.transform = `rotate(${next}deg)`;
   wheelRot = next;
-  // flicker crew names on the signpost while the wheel turns, slowing down
+  // flicker faction names on the signpost while the wheel turns, slowing down
   if(!rm){
     const t0 = performance.now();
     (function flick(){
@@ -796,7 +796,7 @@ function landOn(pid){
   awaiting = pid;
   landed.innerHTML = `Landed on <b style="color:${darken(col)}">${p.name}</b>${tierTxt}. Draft a fighter!`;
   setControls();
-  // hold on the landed crew name for a beat so the player can take it in,
+  // hold on the landed faction name for a beat so the player can take it in,
   // then open the draft (skipped if they hit SKIP during the pause).
   setTimeout(()=>{ if(awaiting===pid) openDraft(pid); }, 1050);
 }
@@ -1104,7 +1104,7 @@ function resetGame(){
   document.getElementById('results').style.display='none';
   document.getElementById('game').classList.remove('hide');
   document.getElementById('draftOv').classList.remove('on');
-  document.getElementById('landed').innerHTML = 'The wheel lands on a crew — then you pick one fighter to fill an open role.';
+  document.getElementById('landed').innerHTML = 'The wheel lands on a faction — then you pick one fighter to fill an open role.';
   document.getElementById('wheelWrap').classList.remove('spin-on');
   const banner = document.getElementById('slotWindow');
   banner.classList.remove('landed');
@@ -1113,7 +1113,7 @@ function resetGame(){
   document.getElementById('slotDot').style.background = '';
   document.getElementById('slotName').textContent = 'Spin the wheel!';
   document.getElementById('slotName').style.color = '#fff';
-  document.getElementById('slotSeries').textContent = `${POOLS.length} crews · ${SERIES.length} anime`;
+  document.getElementById('slotSeries').textContent = `${POOLS.length} factions · ${SERIES.length} anime`;
   document.getElementById('slotTier').textContent = '';
   document.getElementById('slotTier').style.background = 'transparent';
   renderSlots();

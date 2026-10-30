@@ -61,6 +61,7 @@ const POOLS = [
   { id:"jjk-culling",  name:"Culling Game Players",series:"jjk",        tier:"core",  weight:0.85 },
   { id:"jjk-grade1",   name:"Grade 1 Sorcerers",   series:"jjk",        tier:"weak",  weight:1.3 },
   { id:"jjk-students", name:"First-Years",         series:"jjk",        tier:"weak",  weight:1.3 },
+  { id:"jjk-zenin",    name:"Zenin Clan",          series:"jjk",        tier:"core",  weight:0.85 },
   // MY HERO ACADEMIA (8)
   { id:"mha-pros",     name:"Pro Heroes",          series:"mha",        tier:"elite", weight:0.5 },
   { id:"mha-topvets",  name:"Top Pros & Vets",     series:"mha",        tier:"elite", weight:0.5 },
@@ -77,6 +78,7 @@ const POOLS = [
   { id:"ds-lowermoons",name:"Lower Rank Demons",   series:"demonslayer",tier:"core",  weight:0.95 },
   { id:"ds-estate",    name:"Butterfly Estate",    series:"demonslayer",tier:"weak",  weight:1.25 },
   { id:"ds-fodder",    name:"Rookies & Kakushi",   series:"demonslayer",tier:"weak",  weight:1.25 },
+  { id:"ds-masters",   name:"Breath Masters",      series:"demonslayer",tier:"elite", weight:0.38 },
   // BLACK CLOVER (9 squads)
   { id:"bc-captains",  name:"Magic Knight Captains",series:"blackclover",tier:"elite",weight:0.42 },
   { id:"bc-devils",    name:"Dark Triad & Devils", series:"blackclover",tier:"elite", weight:0.42 },
@@ -91,7 +93,8 @@ const POOLS = [
   { id:"tg-ghouls",    name:"Ghouls · Anteiku",    series:"tokyoghoul", tier:"core",  weight:0.6 },
   { id:"tg-doves",     name:"Doves · CCG",         series:"tokyoghoul", tier:"core",  weight:0.6 },
   { id:"tg-quinx",     name:"Quinx Squad",         series:"tokyoghoul", tier:"core",  weight:0.6 },
-  { id:"tg-aogiri",    name:"Aogiri Tree",         series:"tokyoghoul", tier:"core",  weight:0.6 }
+  { id:"tg-aogiri",    name:"Aogiri Tree",         series:"tokyoghoul", tier:"core",  weight:0.6 },
+  { id:"tg-clowns",    name:"The Clowns",          series:"tokyoghoul", tier:"core",  weight:0.55 }
 ];
 
 /* ---- Team roles. 8 slots total. ---- */
@@ -538,7 +541,27 @@ const CHARACTERS = [
   { n:"Hinami Fueguchi", e:"Yotsume",               pool:"tg-aogiri", p:52, r:["support","tactician","wildcard"] },
   { n:"Roma Hoito",      e:"Clown",                 pool:"tg-aogiri", p:50, r:["tactician","wildcard"] },
   { n:"Naki",            e:"Aogiri Ghoul",          pool:"tg-aogiri", p:48, r:["striker","anchor"] },
-  { n:"Miza Kusakari",   e:"Three Blades",          pool:"tg-aogiri", p:46, r:["striker","wildcard"] }
+  { n:"Miza Kusakari",   e:"Three Blades",          pool:"tg-aogiri", p:46, r:["striker","wildcard"] },
+
+  /* ===================== EXPANSION #3: 3 MORE FACTIONS ===================== */
+  // JJK — Zenin Clan (core)
+  { n:"Naoya Zenin",     e:"Projection Sorcery",    pool:"jjk-zenin", p:76, r:["striker","right","wildcard"] },
+  { n:"Naobito Zenin",   e:"Clan Head",             pool:"jjk-zenin", p:74, r:["striker","tactician"] },
+  { n:"Jinichi Zenin",   e:"Hei Captain",           pool:"jjk-zenin", p:62, r:["anchor","striker"] },
+  { n:"Ogi Zenin",       e:"Flame Blade",           pool:"jjk-zenin", p:60, r:["striker","wildcard"] },
+  { n:"Mai Zenin",       e:"Construction",          pool:"jjk-zenin", p:48, r:["support","tactician"] },
+  // Demon Slayer — Breath Masters (elite)
+  { n:"Yoriichi Tsugikuni",e:"Origin of Sun Breathing",pool:"ds-masters", p:93, r:["ace","striker","anchor"] },
+  { n:"Sakonji Urokodaki",e:"Former Water Hashira", pool:"ds-masters", p:66, r:["tactician","support"] },
+  { n:"Jigoro Kuwajima", e:"Former Thunder Hashira",pool:"ds-masters", p:64, r:["support","striker"] },
+  { n:"Shinjuro Rengoku",e:"Former Flame Hashira",  pool:"ds-masters", p:60, r:["striker","anchor"] },
+  { n:"Kagaya Ubuyashiki",e:"Corps Master",         pool:"ds-masters", p:34, r:["tactician","support"] },
+  // Tokyo Ghoul — The Clowns (core)
+  { n:"Uta",             e:"No Face",               pool:"tg-clowns", p:74, r:["tactician","striker","wildcard"] },
+  { n:"Donato Porpora",  e:"Priest Ghoul",          pool:"tg-clowns", p:66, r:["tactician","support"] },
+  { n:"Kaiko",           e:"Pierrot",               pool:"tg-clowns", p:62, r:["striker","anchor"] },
+  { n:"Nico",            e:"Double Agent",          pool:"tg-clowns", p:52, r:["striker","wildcard"] },
+  { n:"Itori",           e:"Helter Skelter",        pool:"tg-clowns", p:48, r:["support","tactician"] }
 ];
 
 /* ---- derive each character's series (s) from its pool, for synergy ---- */
