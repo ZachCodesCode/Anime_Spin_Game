@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JF28ZM4E99"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  // don't count local testing
+  if(/^(localhost|127\.|\[::1\])/.test(location.hostname)) window['ga-disable-G-JF28ZM4E99'] = true;
+  gtag('config', 'G-JF28ZM4E99');
+</script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Shonen Spin — Anime Roster Builder</title>
@@ -550,7 +560,7 @@ footer b{ font-family:'Fredoka'; font-weight:700; font-size:14px; color:var(--go
     </div>
     <div class="crew-grid" id="slots"></div>
     <div class="actions">
-      <button class="btn btn-teal" onclick="resetGame()">New Squad</button>
+      <button class="btn btn-teal" onclick="track('play_again',{source:'new_squad'}); resetGame()">New Squad</button>
     </div>
 
     <!-- ============ VILLAIN GAUNTLET ============ -->
@@ -582,7 +592,7 @@ footer b{ font-family:'Fredoka'; font-weight:700; font-size:14px; color:var(--go
     </figure>
     <div class="actions share-actions">
       <button class="btn btn-gold" onclick="shareResult()">Share Result</button>
-      <button class="btn btn-indigo" onclick="downloadResult()">Download Image</button>
+      <button class="btn btn-indigo" onclick="track('share',{method:'download',content_type:'result_card'}); downloadResult()">Download Image</button>
       <button class="btn btn-skip" onclick="copyResult()">Copy Text</button>
     </div>
     <details class="howto battle">
@@ -596,7 +606,7 @@ footer b{ font-family:'Fredoka'; font-weight:700; font-size:14px; color:var(--go
     </details>
     <div class="actions">
       <button class="btn btn-indigo" onclick="backToBoard()">Back to Squad</button>
-      <button class="btn btn-spin" style="width:auto" onclick="resetGame()">Play Again</button>
+      <button class="btn btn-spin" style="width:auto" onclick="track('play_again',{source:'results'}); resetGame()">Play Again</button>
     </div>
   </section>
 
@@ -778,6 +788,7 @@ function weightedPool(){
 function doSpin(){
   if(spinning || awaiting) return;
   if(openSlots().length===0) return;
+  if(tracked.start!==gameId){ tracked.start = gameId; track('game_start', { mode }); }
   spinning = true;
   setControls();
   const gid = gameId;
@@ -1048,6 +1059,10 @@ const SITE_URL = '';
 const SHARE_SQUARE = { onepiece:'🟥', naruto:'🟧', jjk:'🟪', mha:'🟩', demonslayer:'🟦', blackclover:'⬛', tokyoghoul:'⬜' };
 let lastResult = null, lastShareBlob = null;
 
+/* ---------- ANALYTICS (GA4 events) ---------- */
+const tracked = { start:-1, done:-1 };      // gameId of the run each event last fired for
+function track(name, params){ if(typeof gtag==='function') gtag('event', name, params || {}); }
+
 function rankFor(pow){ let rank = RANKS[0][1]; for(const [t,n] of RANKS) if(pow>=t) rank = n; return rank; }
 function siteLabel(){
   if(SITE_URL) return SITE_URL.replace(/^https?:\/\//,'').replace(/\/$/,'');
@@ -1252,6 +1267,7 @@ async function copyText(text){
 }
 async function copyResult(){
   if(!lastResult) return;
+  track('share', { method:'copy_text', content_type:'result_card' });
   toast(await copyText(resultText(lastResult)) ? 'Result copied — paste it anywhere!' : 'Copy failed — try the Share button instead.');
 }
 async function shareResult(){
@@ -1259,9 +1275,10 @@ async function shareResult(){
   const text = resultText(lastResult);
   const file = new File([lastShareBlob], 'shonen-spin-result.png', {type:'image/png'});
   if(navigator.canShare && navigator.canShare({files:[file]})){
-    try{ await navigator.share({files:[file], text, title:'Shonen Spin'}); return; }
+    try{ await navigator.share({files:[file], text, title:'Shonen Spin'}); track('share', { method:'share_sheet', content_type:'result_card' }); return; }
     catch(e){ if(e && e.name==='AbortError') return; }
   }
+  track('share', { method:'share_fallback', content_type:'result_card' });
   downloadResult();
   toast(await copyText(text) ? 'Image downloaded and result text copied!' : 'Image downloaded!');
 }
@@ -1293,6 +1310,11 @@ async function showResults(){
     members: SLOTS.map(sl=>({ role:sl.role, name:team[sl.id].n, s:team[sl.id].s })),
     foes: fights.map(f=>({ n:f.v.n, s:f.v.s, vs:f.champ.n, edge:f.edge })) };
   lastShareBlob = null;
+  if(tracked.done!==gameId){
+    tracked.done = gameId;
+    track('squad_complete', { mode, win_pct:pct, rating:s.total, verdict:vh,
+      bosses_beaten:lastResult.foes.filter(f=>f.edge==='win').length });
+  }
   document.getElementById('verdict').innerHTML = `<div class="vstamp ${tone}">${vh}</div><span>${vs}</span>`;
   document.getElementById('breakdown').innerHTML = `
     <div class="b"><div class="k">Team power</div><div class="v">${s.base}</div></div>
