@@ -1,0 +1,13 @@
+{
+  "name": "Shonen Spin",
+  "short_name": "Shonen Spin",
+  "description": "Spin, draft 8 anime fighters and beat the Villain Gauntlet.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff9f1",
+  "theme_color": "#7c63e6",
+  "icons": [
+    { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
