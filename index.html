@@ -408,6 +408,64 @@ footer b{ font-family:'Fredoka'; font-weight:700; font-size:14px; color:var(--go
   transition:transform .32s cubic-bezier(.2,.8,.2,1); }
 .toast.show{ transform:translateX(-50%) translateY(0); }
 
+/* ---------------- LEADERBOARDS ---------------- */
+.lb-link{ display:inline-flex; align-items:center; gap:7px; margin:12px auto 0; cursor:pointer; font-family:'Fredoka',sans-serif; font-weight:700; font-size:14px;
+  color:#4a3300; background:#fff4c9; border:2px solid var(--gold-d); border-radius:999px; padding:6px 16px 6px 12px; box-shadow:0 3px 0 #a87400; }
+.lb-link:hover{ background:#ffeaa0; }
+.lb-link:focus-visible,.lb-tab:focus-visible,.lb-entry:focus-visible,.lb-x:focus-visible{ outline:3px solid var(--night); outline-offset:3px; }
+.lb-submit{ margin:18px auto 0; max-width:520px; padding:16px 18px; border-radius:10px; text-align:center;
+  background:linear-gradient(180deg,#fff6d6,#ffe9a8); border:3px solid var(--gold-d); box-shadow:0 5px 0 #a87400; }
+.lb-submit[hidden]{ display:none; }
+.lb-head{ font-family:'Dela Gothic One',sans-serif; font-size:18px; color:var(--ink); }
+.lb-sub{ font-family:'Nunito'; font-weight:800; font-size:13px; color:var(--ink-2); margin:4px 0 12px; }
+.lb-row{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; align-items:center; }
+.lb-row[hidden]{ display:none; }
+.lb-input{ font-family:'Nunito',sans-serif; font-weight:800; font-size:16px; padding:11px 14px; border:3px solid var(--edge-d); border-radius:9px;
+  background:#fff; color:var(--ink); width:min(240px,100%); }
+.lb-input:focus{ outline:none; border-color:var(--pink); }
+.lb-msg{ margin-top:10px; font-family:'Nunito'; font-weight:800; font-size:13.5px; min-height:18px; color:var(--ink-2); }
+.lb-msg.good{ color:var(--teal-d); } .lb-msg.bad{ color:var(--pink-d); }
+.lb-msg button{ font:inherit; color:var(--indigo-d); text-decoration:underline; background:none; border:0; cursor:pointer; padding:0; }
+.lb-overlay{ position:fixed; inset:0; z-index:70; display:flex; align-items:center; justify-content:center; padding:16px;
+  background:rgba(32,22,96,.62); backdrop-filter:blur(3px); }
+.lb-overlay[hidden]{ display:none; }
+.lb-modal{ position:relative; width:min(560px,100%); max-height:88vh; display:flex; flex-direction:column; padding:22px 18px 16px; }
+.lb-modal h2{ font-family:'Dela Gothic One',sans-serif; font-weight:400; font-size:24px; color:var(--ink); text-align:center; }
+.lb-x{ position:absolute; top:10px; right:12px; z-index:2; width:36px; height:36px; border-radius:50%; cursor:pointer; font:700 22px/1 'Fredoka',sans-serif;
+  color:var(--ink); background:#ece6ff; border:2px solid var(--edge-d); }
+.lb-tabs{ display:flex; gap:8px; justify-content:center; margin:12px 0 4px; }
+.lb-tab{ font-size:14px; padding:8px 16px; }
+.lb-note{ text-align:center; font-family:'Nunito'; font-weight:800; font-size:12.5px; color:var(--ink-2); margin:6px 0 8px; }
+.lb-list{ overflow:auto; padding:2px 4px 4px; min-height:120px; }
+.lb-entry{ display:flex; align-items:center; gap:12px; width:100%; text-align:left; cursor:pointer; padding:10px; margin-bottom:6px;
+  background:#f6f2ff; border:2px solid #d9d0ff; border-radius:9px; font:inherit; color:inherit; }
+.lb-entry:hover{ background:#eee7ff; border-color:var(--edge); }
+.lb-entry.top1{ background:#fff4c9; border-color:var(--gold-d); } .lb-entry.top2,.lb-entry.top3{ background:#fff0f5; border-color:#f3a5c2; }
+.lb-rank{ flex:0 0 40px; text-align:center; font-family:'Dela Gothic One',sans-serif; font-size:16px; color:var(--ink-2); }
+.lb-rank svg{ width:24px; height:24px; fill:var(--gold-d); vertical-align:middle; }
+.lb-entry.top2 .lb-rank,.lb-entry.top3 .lb-rank{ color:var(--pink-d); }
+.lb-info{ flex:1 1 auto; min-width:0; }
+.lb-info > span,.lb-score > span{ display:block; }
+.lb-name{ font-family:'Fredoka',sans-serif; font-weight:700; font-size:17px; color:#1d1640; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.lb-ace{ font-family:'Nunito'; font-weight:700; font-size:12px; color:var(--ink-2); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.lb-score{ flex:0 0 auto; text-align:right; }
+.lb-score b{ display:block; font-family:'Fredoka',sans-serif; font-weight:700; font-size:22px; line-height:1; color:var(--teal-d); }
+.lb-score span{ font-family:'M PLUS Rounded 1c',sans-serif; font-weight:800; font-size:10.5px; letter-spacing:.06em; color:var(--ink-2); text-transform:uppercase; }
+.lb-empty{ text-align:center; font-family:'Nunito'; font-weight:800; color:var(--ink-2); padding:28px 10px; font-size:14px; line-height:1.5; }
+.lb-back{ font-size:14px; padding:7px 14px; }
+.lb-detail-head{ font-family:'Fredoka',sans-serif; font-weight:600; text-align:center; font-size:15px; color:var(--ink); margin:12px 0 10px; }
+.lb-detail-head b{ color:var(--teal-d); }
+.lb-squad{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+.lb-member{ position:relative; padding:8px 10px 8px 18px; background:#fffaf4; border:2px solid #d9d0ff; border-radius:8px; overflow:hidden; }
+.lb-member::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:8px; background:var(--sc); }
+.lb-member .r{ font-family:'M PLUS Rounded 1c',sans-serif; font-weight:800; font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--indigo-d); }
+.lb-member .n{ font-family:'Fredoka',sans-serif; font-weight:700; font-size:16px; color:#1d1640; line-height:1.15; }
+.lb-member .a{ font-family:'Nunito'; font-weight:800; font-size:11px; color:color-mix(in srgb, var(--sc) 70%, #000); }
+@media (max-width:600px){
+  .lb-modal{ max-height:92vh; padding:20px 12px 12px; }
+  .lb-squad{ grid-template-columns:1fr; }
+}
+
 /* ---------------- MOTION ---------------- */
 @keyframes pinIn{ 0%{ transform:scale(.6) rotate(-6deg); opacity:0; } 60%{ transform:scale(1.06); opacity:1; } 100%{ transform:none; } }
 @keyframes stampIn{ 0%{ transform:rotate(var(--rot)) scale(2.2); opacity:0; } 100%{ transform:rotate(var(--rot)) scale(1); opacity:1; } }
@@ -480,6 +538,7 @@ footer b{ font-family:'Fredoka'; font-weight:700; font-size:14px; color:var(--go
       <button class="mode-tab on" id="tabRegular" role="tab" aria-selected="true" onclick="setMode('regular')">Regular <small>No limits</small></button>
       <button class="mode-tab hard" id="tabHard" role="tab" aria-selected="false" onclick="setMode('hard')">Hard · Cap <small>Power costs points</small></button>
     </nav>
+    <button class="lb-link" id="lbHeaderBtn" type="button" onclick="openLeaderboard()">Leaderboards</button>
     <div class="status">
       <div class="tile"><span class="k">Roles filled</span><b id="hudFilled">0 / 8</b></div>
       <div class="tile power"><span class="k">Team power</span><b id="hudPower">0</b>
@@ -599,6 +658,15 @@ footer b{ font-family:'Fredoka'; font-weight:700; font-size:14px; color:var(--go
       <button class="btn btn-indigo" onclick="track('share',{method:'download',content_type:'result_card'}); downloadResult()">Download Image</button>
       <button class="btn btn-skip" onclick="copyResult()">Copy Text</button>
     </div>
+    <div class="lb-submit" id="lbSubmitCard" hidden>
+      <div class="lb-head">Leaderboard-worthy squad!</div>
+      <p class="lb-sub" id="lbSub"></p>
+      <form class="lb-row" id="lbForm" onsubmit="event.preventDefault(); submitScore()">
+        <input id="lbName" class="lb-input" type="text" maxlength="20" placeholder="Your name" autocomplete="nickname" aria-label="Your name for the leaderboard">
+        <button class="btn btn-gold" id="lbSubmitBtn" type="submit">Submit Score</button>
+      </form>
+      <p class="lb-msg" id="lbMsg" role="status" aria-live="polite"></p>
+    </div>
     <details class="howto battle">
       <summary>Battle Breakdown</summary>
       <div class="howto-body">
@@ -610,6 +678,7 @@ footer b{ font-family:'Fredoka'; font-weight:700; font-size:14px; color:var(--go
     </details>
     <div class="actions">
       <button class="btn btn-indigo" onclick="backToBoard()">Back to Squad</button>
+      <button class="btn btn-teal" onclick="openLeaderboard(lastResult && lastResult.mode)">Leaderboards</button>
       <button class="btn btn-spin" style="width:auto" onclick="track('play_again',{source:'results'}); resetGame()">Play Again</button>
     </div>
   </section>
@@ -621,6 +690,20 @@ footer b{ font-family:'Fredoka'; font-weight:700; font-size:14px; color:var(--go
 </div>
 <div class="confetti" id="confetti" aria-hidden="true"></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- ============ LEADERBOARDS ============ -->
+<div class="lb-overlay" id="lbOverlay" hidden>
+  <section class="paper lb-modal" id="lbModal" role="dialog" aria-modal="true" aria-labelledby="lbTitle" tabindex="-1">
+    <button class="lb-x" type="button" onclick="closeLeaderboard()" aria-label="Close leaderboards">×</button>
+    <h2 id="lbTitle">Leaderboards</h2>
+    <div class="lb-tabs" role="tablist" aria-label="Leaderboard mode">
+      <button class="mode-tab lb-tab on" id="lbTabRegular" role="tab" aria-selected="true" onclick="lbShowMode('regular')">Regular</button>
+      <button class="mode-tab lb-tab hard" id="lbTabHard" role="tab" aria-selected="false" onclick="lbShowMode('hard')">Hard · Cap</button>
+    </div>
+    <p class="lb-note" id="lbNote"></p>
+    <div class="lb-list" id="lbList"></div>
+  </section>
+</div>
 
 <script src="characters_data.js"></script>
 <script>
@@ -1289,6 +1372,128 @@ async function shareResult(){
   toast(await copyText(text) ? 'Image downloaded and result text copied!' : 'Image downloaded!');
 }
 
+/* ---------- LEADERBOARDS ---------- */
+// '' = same-origin /api on Vercel. To test a local copy against the live API, set e.g. 'https://shonen-spin.vercel.app'.
+const LB_API = '';
+const LB_MIN_PCT = { regular:60, hard:45 };   // keep in sync with MIN_PCT in api/_score.js
+const MODE_LABEL = { regular:'Regular', hard:'Hard · Cap' };
+let lbMode = 'regular', lbEntries = [], lbSubmittedRun = -1, lbOpener = null, lbLoadId = 0;
+const esc = s => String(s ?? '').replace(/[<>&"]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
+
+function configureSubmitCard(){
+  const r = lastResult, card = document.getElementById('lbSubmitCard');
+  const eligible = r && r.pct >= LB_MIN_PCT[r.mode];
+  card.hidden = !eligible;
+  if(!eligible || lbSubmittedRun===gameId) return;     // keep the "submitted" state if they re-challenge
+  const btn = document.getElementById('lbSubmitBtn'), msg = document.getElementById('lbMsg');
+  btn.disabled = false; btn.textContent = 'Submit Score';
+  msg.className = 'lb-msg'; msg.textContent = '';
+  document.getElementById('lbForm').hidden = false;
+  document.getElementById('lbSub').innerHTML =
+    `${r.pct}% beats the <b>${LB_MIN_PCT[r.mode]}%</b> bar for the ${MODE_LABEL[r.mode]} board. Add your name to the Top 100.`;
+  try{ document.getElementById('lbName').value = localStorage.getItem('shonenSpinName') || ''; }catch(e){}
+}
+async function submitScore(){
+  const r = lastResult;
+  if(!r || lbSubmittedRun===gameId || r.pct < LB_MIN_PCT[r.mode]) return;
+  const name = document.getElementById('lbName').value.trim();
+  const btn = document.getElementById('lbSubmitBtn'), msg = document.getElementById('lbMsg');
+  btn.disabled = true; btn.textContent = 'Submitting…'; msg.className = 'lb-msg'; msg.textContent = '';
+  try{ localStorage.setItem('shonenSpinName', name); }catch(e){}
+  const run = gameId;
+  try{
+    const res = await fetch(`${LB_API}/api/submit`, { method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ name, mode:r.mode, squad:Object.fromEntries(SLOTS.map((sl,i)=>[sl.id, r.members[i].name])) }) });
+    if(!res.ok) throw new Error('submit failed');
+    const data = await res.json();
+    if(!data.eligible) throw new Error('not eligible');
+    lbSubmittedRun = run;
+    btn.textContent = 'Submitted';
+    document.getElementById('lbForm').hidden = true;
+    msg.className = 'lb-msg good';
+    msg.innerHTML = (data.inBoard ? `You're <b>#${data.rank}</b> on the ${MODE_LABEL[r.mode]} leaderboard! `
+                                  : `Submitted, but just outside the Top 100. `)
+                  + `<button type="button" onclick="openLeaderboard('${r.mode}')">View leaderboard</button>`;
+    track('leaderboard_submit', { mode:r.mode, rank:data.rank, win_pct:r.pct });
+  }catch(e){
+    btn.disabled = false; btn.textContent = 'Submit Score';
+    msg.className = 'lb-msg bad'; msg.textContent = "Couldn't reach the leaderboard. It only works on the live site.";
+  }
+}
+
+function openLeaderboard(m){
+  lbOpener = document.activeElement;
+  document.getElementById('lbOverlay').hidden = false;
+  document.body.style.overflow = 'hidden';
+  document.getElementById('lbModal').focus();
+  lbShowMode(m || mode);
+}
+function closeLeaderboard(){
+  document.getElementById('lbOverlay').hidden = true;
+  document.body.style.overflow = '';
+  if(lbOpener && lbOpener.focus) lbOpener.focus();
+}
+async function lbShowMode(m){
+  lbMode = m==='hard' ? 'hard' : 'regular';
+  ['regular','hard'].forEach(k=>{
+    const t = document.getElementById(k==='hard' ? 'lbTabHard' : 'lbTabRegular');
+    t.classList.toggle('on', k===lbMode); t.setAttribute('aria-selected', String(k===lbMode));
+  });
+  const list = document.getElementById('lbList'), note = document.getElementById('lbNote');
+  note.textContent = `Top 100 squads in ${MODE_LABEL[lbMode]} mode. Reach ${LB_MIN_PCT[lbMode]}% to get on the board.`;
+  list.innerHTML = `<div class="lb-empty">Loading…</div>`;
+  track('leaderboard_view', { mode:lbMode });
+  const id = ++lbLoadId;                                   // ignore a slow response after switching tabs
+  try{
+    const res = await fetch(`${LB_API}/api/leaderboard?mode=${lbMode}&limit=100`, { cache:'no-store' });
+    if(!res.ok) throw new Error('load failed');
+    const data = await res.json();
+    if(id!==lbLoadId) return;
+    lbEntries = (data.entries || []).map(e=>{ let squad = []; try{ squad = JSON.parse(e.squad) || []; }catch(err){} return { ...e, squad }; });
+    renderLeaderboard();
+  }catch(e){
+    if(id!==lbLoadId) return;
+    list.innerHTML = `<div class="lb-empty">The leaderboard only works on the live site.</div>`;
+  }
+}
+function renderLeaderboard(){
+  const list = document.getElementById('lbList');
+  if(!lbEntries.length){
+    list.innerHTML = `<div class="lb-empty">No squads on the ${MODE_LABEL[lbMode]} board yet.<br>Be the first to hit ${LB_MIN_PCT[lbMode]}%!</div>`;
+    return;
+  }
+  list.innerHTML = lbEntries.map((e,i)=>{
+    const rank = i+1, ace = e.squad[0];
+    const aceTxt = ace ? `Ace: ${esc(ace.name)} · ${esc(seriesById[ace.s] ? seriesById[ace.s].name : '')}` : '';
+    return `<button type="button" class="lb-entry${rank<=3 ? ' top'+rank : ''}" data-i="${i}" aria-label="#${rank} ${esc(e.name)}, ${e.win_pct}% win chance. View squad">
+        <span class="lb-rank">${rank===1 ? CROWN : '#'+rank}</span>
+        <span class="lb-info"><span class="lb-name">${esc(e.name)}</span><span class="lb-ace">${aceTxt}</span></span>
+        <span class="lb-score"><b>${e.win_pct}%</b><span>Rating ${e.rating}</span></span>
+      </button>`;
+  }).join('');
+  list.querySelectorAll('.lb-entry').forEach(el=> el.onclick = ()=>showLbSquad(+el.dataset.i));
+}
+function showLbSquad(i){
+  const e = lbEntries[i]; if(!e) return;
+  const members = e.squad.map(m=>{
+    const ser = seriesById[m.s], rd = ROLE_DEFS[m.role];
+    return `<div class="lb-member" style="--sc:${ser ? ser.color : '#8a7be6'}">
+        <div class="r">${esc(rd ? rd.name : m.role)}${m.role==='ace' ? ' · Leader' : ''}</div>
+        <div class="n">${esc(m.name)}</div>
+        <div class="a">${esc(ser ? ser.name : '')}</div>
+      </div>`;
+  }).join('');
+  const list = document.getElementById('lbList');
+  list.innerHTML = `<button type="button" class="btn btn-indigo lb-back" id="lbBack">← Back to leaderboard</button>
+    <div class="lb-detail-head">#${i+1} ${esc(e.name)} · <b>${e.win_pct}%</b> · Rating ${e.rating} · ${esc(e.verdict || '')}</div>
+    <div class="lb-squad">${members || '<div class="lb-empty">Squad not recorded.</div>'}</div>`;
+  const back = document.getElementById('lbBack');
+  back.onclick = ()=>{ renderLeaderboard(); const el = list.querySelector(`[data-i="${i}"]`); if(el) el.focus(); };
+  back.focus();
+}
+document.getElementById('lbOverlay').addEventListener('click', e=>{ if(e.target.id==='lbOverlay') closeLeaderboard(); });
+document.addEventListener('keydown', e=>{ if(e.key==='Escape' && !document.getElementById('lbOverlay').hidden) closeLeaderboard(); });
+
 /* ---------- RESULTS ---------- */
 async function showResults(){
   if(openSlots().length) return;
@@ -1321,6 +1526,7 @@ async function showResults(){
     track('squad_complete', { mode, win_pct:pct, rating:s.total, verdict:vh,
       bosses_beaten:lastResult.foes.filter(f=>f.edge==='win').length });
   }
+  configureSubmitCard();
   document.getElementById('verdict').innerHTML = `<div class="vstamp ${tone}">${vh}</div><span>${vs}</span>`;
   document.getElementById('breakdown').innerHTML = `
     <div class="b"><div class="k">Team power</div><div class="v">${s.base}</div></div>

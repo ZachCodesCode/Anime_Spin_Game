@@ -1,0 +1,9 @@
+{
+  "name": "shonen-spin",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Shonen Spin — anime roster builder, with a Turso-backed leaderboard.",
+  "dependencies": {
+    "@libsql/client": "^0.14.0"
+  }
+}
