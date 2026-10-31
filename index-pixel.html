@@ -172,7 +172,7 @@ details.howto li{margin:7px 0;}
 .slot.filled{}
 .slot .cn{font-family:'Nunito',sans-serif;font-weight:900;font-size:17px;line-height:1.2;margin-top:9px;}
 .slot .ce{font-size:14px;font-weight:700;color:#5a5068;margin:4px 0;}
-.slot .foot{margin-top:auto;padding-top:8px;display:flex;justify-content:space-between;align-items:center;gap:6px;}
+.slot .foot{flex-wrap:wrap;margin-top:auto;padding-top:8px;display:flex;justify-content:space-between;align-items:center;gap:6px;}
 .slot .pw{font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;}
 .chip{font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;color:#fff;padding:4px 7px;border:2px solid var(--ink);text-shadow:1px 1px 0 rgba(0,0,0,.35);}
 .slot .ace-crown{position:absolute;top:-12px;left:-6px;font-size:22px;transform:rotate(-12deg);}
@@ -189,11 +189,13 @@ details.howto li{margin:7px 0;}
 .pcard:active{transform:translate(2px,2px);}
 .pcard .pn{font-family:'Nunito',sans-serif;font-weight:900;font-size:17px;line-height:1.2;}
 .pcard .pe{font-size:14px;font-weight:700;color:#5a5068;margin:5px 0;}
-.pcard .prow{display:flex;justify-content:space-between;align-items:center;margin-top:7px;}
+.pcard .prow{display:flex;flex-wrap:wrap;gap:6px;justify-content:space-between;align-items:center;margin-top:7px;}
 .pcard .pw{font-family:'Nunito',sans-serif;font-weight:900;font-size:15px;}
 .pcard .cost{font-family:'Nunito',sans-serif;font-weight:800;font-size:12px;color:#fff;background:var(--ink);padding:3px 7px;}
 .pcard .roles{font-size:13px;font-weight:700;color:#6a5f7a;margin-top:7px;line-height:1.35;}
-.pcard.dim{opacity:.4;cursor:not-allowed;filter:grayscale(.5);}
+.pcard.dim{background:#e5e2e8;cursor:not-allowed;filter:grayscale(.5);}
+.pcard.dim > :not(.prow){opacity:.55;}
+.pw{white-space:nowrap;line-height:1.4;}
 .pcard.dim:hover{transform:none;}
 .pcard .tagwhy{position:absolute;top:6px;right:6px;font-family:'Nunito',sans-serif;font-weight:800;font-size:10px;letter-spacing:.3px;background:var(--red);color:#fff;padding:3px 6px;border:2px solid var(--ink);}
 .rolepick{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px;}
@@ -547,7 +549,7 @@ function openDraft(pid){
       ${why?`<div class="tagwhy">${why}</div>`:''}
       <div class="pn">${c.n}</div>
       <div class="pe">${c.e}</div>
-      <div class="prow"><span class="pw">PWR ${c.p}</span>
+      <div class="prow"><span class="pw">Power Lv. ${c.p}</span>
         ${mode==='hard'?`<span class="cost">${cost(c)} pt</span>`:''}</div>
       <div class="roles">${roleNames}</div>
     </div>`;
@@ -630,7 +632,7 @@ function renderSlots(){
       <div class="cn">${c.n}</div>
       <div class="ce">${c.e}</div>
       <div class="foot">
-        <span class="pw">PWR ${c.p}</span>
+        <span class="pw">Power Lv. ${c.p}</span>
         <span class="chip" style="background:${col}">${seriesById[c.s].name}</span>
       </div>`;
   });

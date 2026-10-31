@@ -228,7 +228,9 @@ body.hard .tile.cap{ display:block; }
 .pcard:nth-child(odd){ transform:rotate(-1.4deg); }
 .pcard:nth-child(even){ transform:rotate(1.2deg); }
 .pcard:not(.dim):hover{ transform:rotate(0deg) translateY(-4px) scale(1.03); box-shadow:0 14px 22px rgba(30,20,90,.4); z-index:3; }
-.pcard.dim{ opacity:.42; filter:grayscale(.55); cursor:not-allowed; }
+/* Keep disabled cards muted without fading their power labels. */
+.pcard.dim{ background-color:#e5e0db; filter:grayscale(.55); cursor:not-allowed; }
+.pcard.dim > :not(.power-lv){ opacity:.55; }
 .wanted{ font-family:'Dela Gothic One',sans-serif; text-align:center; font-size:13px; color:var(--ink); letter-spacing:.06em;
   border-bottom:2px solid rgba(43,35,80,.5); padding-bottom:3px; }
 .doa{ font-family:'M PLUS Rounded 1c',sans-serif; font-weight:800; text-align:center; font-size:8.5px; letter-spacing:.16em; text-transform:uppercase;
@@ -252,6 +254,8 @@ body.hard .tile.cap{ display:block; }
   font-family:'Fredoka'; font-weight:700; font-size:12px; color:var(--indigo-d); box-shadow:0 3px 0 rgba(58,46,168,.4); transition:transform .1s, filter .1s; }
 .rolepick button:hover{ transform:translateY(-2px); filter:brightness(1.03); }
 .rolepick button:active{ transform:translateY(1px); box-shadow:0 1px 0 rgba(58,46,168,.4); }
+
+.power-lv{ display:block; text-align:center; line-height:1.4; white-space:nowrap; }
 
 /* how to play collapsible */
 .howto{ width:100%; max-width:300px; }
@@ -355,7 +359,7 @@ body.hard .tile.cap{ display:block; }
 .foe-name{ font-family:'Fredoka',sans-serif; font-weight:700; font-size:17px; line-height:1.05; color:#1d1640; margin-top:4px;
   min-height:36px; display:flex; align-items:center; }
 .foe-epi{ font-size:11px; font-style:italic; font-weight:700; color:var(--ink-2); line-height:1.2; margin-top:1px; min-height:27px; }
-.foe-lv{ font-family:'M PLUS Rounded 1c',sans-serif; font-weight:800; font-size:12px; color:var(--pink-d); margin-top:4px; }
+.foe-lv,.power-lv{ font-family:'M PLUS Rounded 1c',sans-serif; font-weight:800; font-size:12px; color:var(--pink-d); margin-top:4px; }
 @media (max-width:1000px) and (min-width:601px){
   .foe-row{ grid-template-columns:repeat(4,minmax(0,1fr)); }
 }
@@ -902,6 +906,7 @@ function openDraft(pid){
       <div class="series-bar"></div>
       <div class="pn">${c.n}</div>
       <div class="pe">${c.e}</div>
+      <div class="power-lv">Power Lv. ${c.p}</div>
       ${mode==='hard'?`<div class="bounty">Cost ${cost(c)} pts</div>`:''}
       ${tierStamp}
       <div class="role-tags">${c.r.map(r=>`<span class="role-tag">${ROLE_DEFS[r].name}</span>`).join('')}</div>
@@ -1003,6 +1008,7 @@ function renderSlots(){
       <div class="series-bar"></div>
       <div class="p-name">${c.n}</div>
       <div class="p-epi">${c.e}</div>
+      <div class="power-lv">Power Lv. ${c.p}</div>
       <div class="stamp-row"><span class="tier-stamp" style="background:${col}">${seriesById[c.s].name}</span></div>
       ${banner}`;
   });
