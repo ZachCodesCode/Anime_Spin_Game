@@ -888,11 +888,15 @@ function eligibleSlotsFor(c){
 function placeable(c){ return !usedNames.has(c.n) && eligibleSlotsFor(c).length>0; }
 
 /* ---------- SPIN ---------- */
+// Only factions with at least one fighter who fits an open role (and the cap) can come up.
+// Same odds as landing anywhere and re-spinning dead factions, without the wasted spins.
 function weightedPool(){
-  const tot = POOLS.reduce((a,p)=>a+p.weight,0);
+  const live = POOLS.filter(p=>CHARACTERS.some(c=>c.pool===p.id && placeable(c)));
+  const list = live.length ? live : POOLS;
+  const tot = list.reduce((a,p)=>a+p.weight,0);
   let r = Math.random()*tot;
-  for(const p of POOLS){ if((r-=p.weight)<=0) return p; }
-  return POOLS[POOLS.length-1];
+  for(const p of list){ if((r-=p.weight)<=0) return p; }
+  return list[list.length-1];
 }
 function doSpin(){
   if(spinning || awaiting) return;
