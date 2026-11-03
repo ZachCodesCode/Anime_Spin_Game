@@ -533,6 +533,7 @@ footer b{ font-family:'Fredoka'; font-weight:700; font-size:14px; color:var(--go
   .section-head h2{ font-size:22px; }
 }
 </style>
+<link rel="stylesheet" href="power-level/style.css">
 </head>
 <body class="regular">
 <div class="horizon" aria-hidden="true"></div>
@@ -559,6 +560,7 @@ footer b{ font-family:'Fredoka'; font-weight:700; font-size:14px; color:var(--go
     <nav class="mode-nav" role="tablist" aria-label="Game mode">
       <button class="mode-tab on" id="tabRegular" role="tab" aria-selected="true" onclick="setMode('regular')">Regular <small>No limits</small></button>
       <button class="mode-tab hard" id="tabHard" role="tab" aria-selected="false" onclick="setMode('hard')">Hard · Cap <small>Power costs points</small></button>
+      <button class="mode-tab" id="tabPowerLevel" role="tab" aria-selected="false" onclick="openPowerLevel()">Power Level <small>Rarest answer wins</small></button>
     </nav>
     <button class="lb-link" id="lbHeaderBtn" type="button" onclick="openLeaderboard()">Leaderboards</button>
     <div class="status">
@@ -569,6 +571,8 @@ footer b{ font-family:'Fredoka'; font-weight:700; font-size:14px; color:var(--go
         <span class="capbar" id="capBar"><i class="fill" id="capFill"></i></span></div>
     </div>
   </header>
+
+  <main id="powerLevel" class="paper hide" aria-labelledby="plTitle"></main>
 
   <main id="game">
 
@@ -835,6 +839,7 @@ function renderSlot(p, state){
 
 /* ---------- mode ---------- */
 function setMode(m){
+  if(window.leavePowerLevel) window.leavePowerLevel();
   mode = m;
   document.body.classList.toggle('hard', m==='hard');
   document.body.classList.toggle('regular', m==='regular');
@@ -1666,5 +1671,10 @@ buildSlotWindow();
 buildSlots();
 resetGame();
 </script>
+<script src="power-level/core.js"></script>
+<script src="power-level/questions.js"></script>
+<script src="power-level/run.js"></script>
+<script src="power-level/scene.js"></script>
+<script src="power-level/game.js"></script>
 </body>
 </html>
