@@ -19,3 +19,7 @@ Transparent foreground layer, landscape 3:1. Two wide delicate mist/cloud banks,
 ## Limitations
 
 The background is a single continuous painting with foreground cloud/snow layers, not a fully separated tile set. Waterfalls and vegetation are painted details; they do not each have bespoke animation frames. Six generated character poses are normalized but retain small hand-drawn proportion variations.
+
+## Sprite atlas repair
+
+The previous packed atlas accidentally composited all poses at the same x position, leaving cells 1–5 empty. The runtime's frame offsets were correct; the bitmap was not. `../tools/build-atlas.py` now explicitly offsets each pose by `frame * 128`, removes near-transparent source speckles, uses a shared scale, and bottom-aligns feet. `--check` compares the shipped bitmap against all six independently rebuilt cells. No replacement character art was needed.

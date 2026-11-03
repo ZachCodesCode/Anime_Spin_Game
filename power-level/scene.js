@@ -8,24 +8,28 @@ function create(stage){
 stage.querySelector('.pl-arena').remove();
 const view=document.createElement('div');view.className='pl-landscape';view.setAttribute('aria-hidden','true');
 view.innerHTML='<div class="pl-painted-world"><img class="pl-painted-mountain" src="power-level/assets/mountain-ascent.webp" alt="" decoding="async"><div class="pl-traveller"><span class="pl-boot-shadow"></span><div class="pl-adventurer"></div><i class="pl-climb-trail"></i></div></div><img class="pl-front-clouds" src="power-level/assets/clouds.webp" alt=""><div class="pl-snow"></div>';
-stage.prepend(view);view.classList.add('is-loading');const art=view.querySelector('.pl-painted-mountain');const loaded=()=>view.classList.remove('is-loading');if(art.complete)loaded();else art.addEventListener('load',loaded,{once:true});
+stage.prepend(view);view.classList.add('is-loading');const art=view.querySelector('.pl-painted-mountain');
 const zone=document.createElement('span');zone.className='pl-zone';stage.append(zone);
-const world=view.querySelector('.pl-painted-world'),traveller=view.querySelector('.pl-traveller'),sprite=view.querySelector('.pl-adventurer');let last=-1,lastProgress=0;
-function update(progress,motion){const p=point(progress),reduce=matchMedia('(prefers-reduced-motion: reduce)').matches,height=2400,viewH=stage.clientHeight||480,footY=viewH*.65;
+const world=view.querySelector('.pl-painted-world'),traveller=view.querySelector('.pl-traveller'),sprite=view.querySelector('.pl-adventurer');let last=-1,lastProgress=0,lastMotion=null;
+// Decode the single atlas before selecting any movement frame.
+const atlas=new Image();let atlasReady=false;atlas.src='power-level/assets/adventurer-atlas.png?v=2';
+Promise.all([art.decode(),atlas.decode()]).then(()=>{atlasReady=true;update(lastProgress,lastMotion);view.classList.remove('is-loading');}).catch(()=>{view.classList.remove('is-loading');});
+function update(progress,motion){lastMotion=motion;const p=point(progress),reduce=matchMedia('(prefers-reduced-motion: reduce)').matches,height=2400,viewH=stage.clientHeight||480,footY=viewH*.65;
 const offsetX=Math.max(stage.clientWidth-world.offsetWidth,Math.min(0,stage.clientWidth*.5-p.x/100*world.offsetWidth));
 world.style.transform=`translate(${offsetX}px, ${Math.max(viewH-height,Math.min(0,footY-p.y/100*height))}px)`;
 traveller.style.left=p.x+'%';traveller.style.top=p.y+'%';
-const moving=motion&&motion.t>0&&motion.t<1&&!reduce;
+const moving=atlasReady&&motion&&motion.t>0&&motion.t<1&&!reduce;
 const t=motion?.t||0,hop=moving?Math.abs(Math.sin(progress*160))*10*Math.sin(Math.PI*t):0;
 traveller.style.setProperty('--hop',hop+'px');
-sprite.style.transform=`scaleX(${moving?p.direction:1}) rotate(${moving?Math.sin(t*28)*3:0}deg)`;
+sprite.style.transform=`scaleX(${p.direction}) rotate(${moving?Math.sin(t*28)*3:0}deg)`;
 const frame=moving?(motion.boost>=7000?(t<.15?3:t>.85?5:4):1+Math.floor(t*18)%2):0;
+sprite.dataset.frame=String(frame);
 sprite.style.backgroundPosition=`${frame*20}% 100%`;
 traveller.classList.toggle('is-climbing',!!moving);view.style.setProperty('--altitude',progress);
 const z=Math.min(4,Math.floor(progress*5));zone.textContent=ZONES[z]+' / '+['I','II','III','IV','V'][z];
 if(last>=0&&z!==last&&progress>lastProgress){zone.classList.remove('pl-zone-arrival');void zone.offsetWidth;zone.classList.add('pl-zone-arrival');}last=z;lastProgress=progress;
 }
-new ResizeObserver(()=>update(lastProgress,null)).observe(stage);
+new ResizeObserver(()=>update(lastProgress,lastMotion)).observe(stage);
 return {update};
 }
 window.PowerLevelScene={create,point};

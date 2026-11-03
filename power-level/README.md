@@ -42,3 +42,7 @@ Runtime art in `assets/`: `mountain-ascent.webp` (~798KB), `clouds.webp` (~224KB
 Local-only `?artReview#power-level` adds scenery positions inside Menu, without changing saved progress or timers. Review is intentionally disabled during an active question. Screenshots of summit/cloudline previews use that control; actual results and answer-flow captures are also saved under `screenshots/`.
 
 Verification: 16 Node tests pass, including route continuity/finite positions; JavaScript syntax and diff whitespace checks pass. Browser inspection covered desktop foothills/cloudline/summit, saved results, 390px mobile framing, live typo confirmation and a maximum-boost climb, all artwork loading, and no horizontal overflow. Native mobile keyboard and OS reduced-motion visual emulation remain unverified.
+
+### Character rendering regression checks
+
+`tools/build-atlas.py --check` (Pillow required) validates the shipped six-frame atlas against its source. `tools/animation-review.html` is an isolated browser fixture with start/midpoint/end samples, boost sizes, altitude zones, a reduced-motion simulation, and a full route audit. It never writes game progress. Desktop and 390px mobile audits each checked 2,424 rendered samples without character-count or viewport-bound failures. Visually inspected start, midpoint, and landing; reduced-motion simulation selected the idle pose directly. Real game checks covered consecutive 1,001 / 10,000 / 7,000 boosts. The reduced-motion fixture tests the same JS branch without changing OS preferences.
