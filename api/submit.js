@@ -2,6 +2,7 @@
 const { db, ensureTable, cors } = require("./_db.js");
 const { SLOTS, MIN_PCT, scoreSquad } = require("./_score.js");
 
+const {guest}=require('./_guest');
 const MAX_ROWS = 100;   // hard cap on stored records per mode
 
 const clean = (s, max) =>
@@ -25,6 +26,7 @@ module.exports = async function handler(req, res) {
     const squad = SLOTS.map(sl => ({ role: sl.role, name: result.team[sl.id].n, s: result.team[sl.id].s }));
 
     await ensureTable();
+    guest(req,res,true);
     await db.execute({
       sql: `INSERT INTO shonen_leaderboard (name, mode, rating, win_pct, verdict, ace, squad, created_at)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,

@@ -82,3 +82,13 @@
 /* Long mobile pages keep the sunset continuous and status copy on paper. */
 body.power-level-active{background-attachment:scroll}
 #powerLevel #plFeedback:not(:empty){margin-top:14px;padding:10px 14px;background:var(--paper);border:2px solid var(--edge-d);border-radius:8px;color:var(--ink)}
+/* Daily rankings reuse the site's paper, button, and leaderboard components. */
+#powerLevel .pl-lb-launch{margin:0 0 20px;font-size:14px}
+#powerLevel .pl-lb-save{width:min(720px,100%);margin:24px auto 0;padding:20px;background:var(--paper);border:3px solid var(--edge-d);border-radius:12px;box-shadow:0 5px 0 var(--edge-d)}
+.pl-lb-save p{font-size:13px;margin:10px 0;line-height:1.6}.pl-lb-save select{margin:10px 0;padding:8px;font:inherit}.pl-lb-save .lb-row input{flex:1;min-width:160px}
+.pl-lb-dialog{margin:auto;width:min(650px,calc(100% - 24px));max-height:88svh;overflow:auto;padding:24px;color:var(--ink);font:700 15px 'Nunito',sans-serif;box-shadow:0 6px 0 var(--edge-d),0 16px 40px #20166066}
+.pl-lb-dialog::backdrop{background:rgba(32,22,96,.62)}.pl-lb-dialog::after{display:none}.pl-lb-dialog [hidden]{display:none!important}
+.pl-lb-dialog h2{font:700 24px 'Fredoka';margin:18px 0 12px}.pl-lb-dialog>.btn:first-child{font-size:14px;padding:7px 14px}.pl-lb-dialog .lb-input{width:100%;margin-bottom:12px;background:var(--paper)}
+.pl-lb-dialog .lb-entry{margin-top:8px;min-height:70px;background:var(--paper)}.pl-lb-dialog .lb-name,.pl-lb-dialog .lb-ace{white-space:normal;overflow-wrap:anywhere}.pl-lb-dialog .pl-lb-power{flex:0 0 100px;text-align:right;font:600 17px 'Fredoka';color:var(--pink-d)}
+.pl-lb-dialog .pl-lb-mine{border:3px solid var(--indigo);background:#fff4c9}.pl-lb-dialog ol{padding-left:24px}.pl-lb-dialog li{padding:16px 0;border-bottom:2px solid var(--paper-d);overflow-wrap:anywhere}.pl-lb-dialog li h3{font:600 18px/1.4 'Fredoka'}.pl-lb-dialog li p{line-height:1.6;margin-top:6px}.pl-lb-dialog :focus-visible{outline:3px solid var(--night);outline-offset:3px}.pl-lb-dialog .lb-msg{margin-bottom:12px}
+@media(max-width:500px){.pl-lb-dialog{padding:16px}.pl-lb-dialog .lb-entry{gap:7px;padding:8px}.pl-lb-dialog .lb-rank{flex-basis:30px;font-size:13px}.pl-lb-dialog .pl-lb-power{flex-basis:75px;font-size:15px}.pl-lb-dialog .lb-name{font-size:16px}}
