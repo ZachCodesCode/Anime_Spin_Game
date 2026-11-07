@@ -1,6 +1,5 @@
-// Frozen v4 bank: one broad prompt per anime, each with dozens of valid answers.
+// Question bank: one broad prompt per anime, each with dozens of valid answers.
 // Rarity is an editorial 0–100 rating of how obscure an answer is, not fighting strength.
-// Never edit a frozen file: copy it to a new version, and keep power-level/questions.js identical to the newest.
 const POWER_LEVEL_SERIES=[{"id":"bleach","name":"Bleach"},{"id":"naruto","name":"Naruto"},{"id":"onepiece","name":"One Piece"},{"id":"hxh","name":"Hunter × Hunter"},{"id":"tokyoghoul","name":"Tokyo Ghoul"},{"id":"mha","name":"My Hero Academia"},{"id":"blackclover","name":"Black Clover"},{"id":"demonslayer","name":"Demon Slayer"},{"id":"aot","name":"Attack on Titan"}];
 const POWER_LEVEL_QUESTIONS=(()=>{
 const a=(name,rarity,...aliases)=>aliases.length?{name,aliases,rarity}:{name,rarity};
@@ -97,6 +96,91 @@ q('aot-scouts','aot','Attack on Titan','Attack on Titan — Name any member of t
  a('Petra Ral',30,'Petra'),a('Oluo Bozado',40,'Oluo','Oruo Bozad'),a('Mike Zacharias',45,'Mike','Mike Zacharius'),a('Floch Forster',45,'Floch'),
  a('Eld Jinn',50,'Eld','Eld Gin'),a('Gunther Schultz',50,'Gunther','Gunter Schultz'),a('Moblit Berner',55,'Moblit'),a('Keith Shadis',55,'Shadis','Keith Sadies'),
  a('Nanaba',60),a('Gelgar',70),a('Marlo Freudenberg',70,'Marlo'),a('Nifa',70),a('Ilse Langnar',80,'Ilse'),a('Dita Ness',80,'Ness'),
- a('Luke Siss',85,'Siss'),a('Lynne',85),a('Henning',100)])
+ a('Luke Siss',85,'Siss'),a('Lynne',85),a('Henning',100)]),
+// Beyond characters: places, techniques, swords, powers and organisations.
+q('onepiece-places','onepiece','One Piece','One Piece — Name any island, town or place the Straw Hats visit.','Anime through Egghead · solo visits during the timeskip count',[
+ a('Wano Country',5,'Wano'),a('Alabasta',10,'Arabasta'),a('Water 7',10,'Water Seven'),a('Enies Lobby',10),a('Marineford',10),a('Dressrosa',10),
+ a('Skypiea',15),a('Thriller Bark',15),a('Sabaody Archipelago',15,'Sabaody'),a('Impel Down',15),a('Fish-Man Island',15,'Fishman Island'),
+ a('Baratie',20),a('Amazon Lily',20),a('Whole Cake Island',20,'Totto Land'),a('Arlong Park',25),a('Onigashima',25),a('Egghead',25,'Egghead Island'),
+ a('Foosha Village',30,'Fuschia Village','Windmill Village'),a('Loguetown',30),a('Drum Island',30,'Sakura Kingdom'),a('Punk Hazard',30),a('Zou',30),
+ a('Cocoyasi Village',35,'Cocoyashi Village'),a('Syrup Village',40),a('Reverse Mountain',40),a('Little Garden',40),a('Jaya',40),
+ a('Shells Town',45),a('Alubarna',45),a('Orange Town',50),a('Whisky Peak',50),a('Rainbase',50),a('Mock Town',55),a('Ryugu Kingdom',55,'Ryuguu Kingdom'),
+ a('Upper Yard',60),a('Kuraigana Island',60,'Kuraigana'),a('Flower Capital',60),a('Nanohana',65),a('Yuba',70),a('Angel Island',70),a('Long Ring Long Land',70),
+ a('Kuri',70),a('Ringo',70),a('Udon',70),a('Twin Capes',75),a('Green Bit',75),a('Kamabakka Kingdom',75),a('Hakumai',80),a('Momoiro Island',80),
+ a('Weatheria',85),a('Karakuri Island',85),a('Boin Archipelago',85),a('Rusukaina',85),a('Torino Kingdom',90),a('Namakura Island',90),a('Baldimore',90),
+ a('Seducing Woods',95),a('Tequila Wolf',100)]),
+q('naruto-jutsu','naruto','Naruto','Naruto — Name any jutsu.','Named techniques from Naruto & Shippuden',[
+ a('Rasengan',0),a('Chidori',2),a('Shadow Clone Jutsu',2,'Shadow Clone','Kage Bunshin','Kage Bunshin no Jutsu'),a('Rasenshuriken',8,'Wind Style: Rasenshuriken'),
+ a('Fireball Jutsu',8,'Great Fireball Technique','Fire Style: Fireball Jutsu','Katon Goukakyuu no Jutsu'),a('Sexy Jutsu',10,'Oiroke no Jutsu'),a('Amaterasu',10),a('Susanoo',10,"Susano'o"),
+ a('Summoning Jutsu',10,'Kuchiyose no Jutsu'),a('Tsukuyomi',15),a('Raikiri',15,'Lightning Blade'),a('Kamui',20),a('Edo Tensei',20,'Reanimation Jutsu','Impure World Reincarnation'),
+ a('Shadow Possession Jutsu',20,'Shadow Imitation','Kagemane no Jutsu'),a('Shinra Tensei',20,'Almighty Push'),a('Infinite Tsukuyomi',20),a('Flying Thunder God',20,'Hiraishin'),
+ a('Eight Gates',25,'Eight Inner Gates','Hachimon Tonko'),a('Substitution Jutsu',25,'Kawarimi no Jutsu','Body Replacement'),a('Transformation Jutsu',25,'Henge no Jutsu'),
+ a('Clone Jutsu',25,'Bunshin no Jutsu'),a('Thousand Years of Death',25,'One Thousand Years of Death'),
+ a('Eight Trigrams Sixty-Four Palms',30,'Sixty-Four Palms','8 Trigrams 64 Palms'),a('Rotation',30,'Eight Trigrams Palm Rotation','Kaiten'),a('Chibaku Tensei',30,'Planetary Devastation'),
+ a('Night Guy',30),a('Tailed Beast Bomb',30,'Bijuudama'),a('Mind Transfer Jutsu',35,'Shintenshin no Jutsu'),a('Sand Coffin',35,'Sand Burial'),a('Izanagi',35),
+ a('Fang Over Fang',35,'Gatsuga'),a('Leaf Hurricane',40,'Konoha Senpu'),a('Primary Lotus',40,'Omote Renge'),a('Kirin',40),a('Water Dragon Jutsu',40,'Water Dragon Bullet'),
+ a('Dynamic Entry',40),a('Reaper Death Seal',40,'Dead Demon Consuming Seal','Shiki Fujin'),a('Water Prison Jutsu',45),a('Hidden Mist Jutsu',45),a('Expansion Jutsu',45,'Baika no Jutsu'),
+ a('Kotoamatsukami',45),a('Hidden Lotus',50,'Ura Renge'),a('Izanami',50),a('Bansho Ten\'in',50,'Universal Pull'),a('Human Bullet Tank',50,'Nikudan Sensha'),
+ a('Evening Elephant',55,'Sekizo'),a('Uzumaki Naruto Barrage',55,'Naruto Uzumaki Two Thousand Combo'),a('Twin Rising Dragons',60,'Soshoryu'),a('Shadow Neck Bind',60),
+ a('Great Breakthrough',60,'Wind Style: Great Breakthrough'),a('Phoenix Sage Fire',60,'Fire Style: Phoenix Sage Fire'),a('Mystical Palm Technique',65,'Mystical Palm'),
+ a('Rashomon',70),a('Creation Rebirth',70),a('Strength of a Hundred Seal',70,'Hundred Healings'),a('Shadow Stitching',70),a('Chakra Scalpel',75),a('Five Elements Seal',75),
+ a('Living Corpse Reincarnation',75),a('Eight Branches Technique',85,'Yamata no Jutsu'),a('Deep Forest Emergence',85),a('Performance of a Hundred Puppets',85),
+ a('Hell Viewing Technique',100)]),
+q('bleach-zanpakuto','bleach','Bleach','Bleach — Name any Zanpakutō by its sword name, Shikai or Bankai.','Soul Reaper swords from any arc',[
+ a('Zangetsu',0),a('Senbonzakura',3),a('Sode no Shirayuki',5),a('Hyorinmaru',5,'Hyourinmaru'),a('Zabimaru',8),a('Kyoka Suigetsu',8,'Kyouka Suigetsu'),
+ a('Tensa Zangetsu',10),a('Ryujin Jakka',10,'Ryuujin Jakka'),a('Shinso',15,'Shinsou'),a('Haineko',15),a('Suzumebachi',15),a('Benihime',15),
+ a('Senbonzakura Kageyoshi',20),a('Tobiume',20),a('Katen Kyokotsu',20),a('Daiguren Hyorinmaru',25,'Daiguren Hyourinmaru'),a('Hihio Zabimaru',25,'Hihiou Zabimaru'),
+ a('Wabisuke',25),a('Kazeshini',25),a('Ashisogi Jizo',25,'Ashisogi Jizou'),a('Hozukimaru',25,'Houzukimaru'),a('Sogyo no Kotowari',30,'Sougyo no Kotowari'),a('Nozarashi',30),
+ a('Tenken',35),a('Suzumushi',35),a('Sakanade',35),a('Zanka no Tachi',40),a('Minazuki',40),a('Fuji Kujaku',40),a('Kamishini no Yari',45),
+ a('Konjiki Ashisogi Jizo',45,'Konjiki Ashisogi Jizou'),a('Ryumon Hozukimaru',45,'Ryuumon Houzukimaru'),a('Jakuho Raikoben',50,'Jakuhou Raikouben'),
+ a('Kokujo Tengen Myo\'o',50,'Kokujou Tengen Myou\'ou'),a('Nejibana',50),a('Gegetsuburi',55),a('Kubikiri Orochi',55),a('Engetsu',55),
+ a('Enma Korogi',60,'Enma Kourogi'),a('Ruri\'iro Kujaku',60),a('Gonryomaru',60,'Gonryoumaru'),a('Kinshara',60),a('Tachikaze',60),a('Muramasa',60),
+ a('Tengumaru',65),a('Kannonbiraki Benihime Aratame',70),a('Itegumo',70),a('Haguro Tonbo',75),a('Shinken Hakkyoken',100,'Shinken Hakkyouken')]),
+q('demonslayer-breathing','demonslayer','Demon Slayer','Demon Slayer — Name any Breathing Style or any Breathing form.','Forms by name, without the number',[
+ a('Water Breathing',0),a('Thunder Breathing',2),a('Beast Breathing',5),a('Flame Breathing',5),a('Insect Breathing',10),a('Sound Breathing',10),
+ a('Sun Breathing',10,'Hinokami Kagura','Dance of the Fire God'),a('Thunderclap and Flash',10),a('Love Breathing',15),a('Mist Breathing',15),a('Wind Breathing',15),
+ a('Serpent Breathing',20),a('Stone Breathing',20),a('Total Concentration Breathing',20,'Total Concentration'),a('Moon Breathing',25),a('Dead Calm',25),
+ a('Flower Breathing',30),a('Flaming Thunder God',30,'Honoikazuchi no Kami'),a('Rengoku',30),a('Water Surface Slash',35),a('Water Wheel',35),
+ a('Flowing Dance',40),a('Constant Flux',40),a('Striking Tide',45),a('Unknowing Fire',45),a('Whirlpool',55),a('Drop Ripple Thrust',55),
+ a('Clear Blue Sky',55),a('Waterfall Basin',60),a('Rising Scorching Sun',60),a('Dance of the Butterfly: Caprice',60,'Butterfly Caprice'),
+ a('Sun Halo Dragon Head Dance',100)]),
+q('hxh-nen','hxh','Hunter × Hunter','Hunter × Hunter — Name any Nen type, Nen technique or named Nen ability.','From the basics to signature abilities',[
+ a('Jajanken',5,'Rock Paper Scissors'),a('Bungee Gum',5),a('Enhancement',5,'Enhancer'),a('Transmutation',5,'Transmuter'),a('Emission',10,'Emitter'),
+ a('Conjuration',10,'Conjurer'),a('Manipulation',10,'Manipulator'),a('Specialization',15,'Specialist'),a('Godspeed',15,'Kanmuru'),a('Chain Jail',15),
+ a('Ten',20),a('Zetsu',20),a('Ren',20),a('Emperor Time',20),a('Hatsu',25),a('Gyo',25),a('Judgment Chain',25,'Judgement Chain'),a('Skill Hunter',25,'Bandit\'s Secret'),
+ a('En',30),a('Hundred-Type Guanyin Bodhisattva',30,'Bodhisattva','100-Type Guanyin Bodhisattva'),a('Holy Chain',35),a('Thunderbolt',35,'Narukami'),a('Zero Hand',35),
+ a('Ko',40),a('Ken',40),a('Dowsing Chain',40),a('Big Bang Impact',40),a('Crazy Slots',40),a('In',45),a('Shu',45),a('Ryu',45),a('Texture Surprise',45),
+ a('Rising Sun',45),a('Doctor Blythe',45),a('Dragon Head',45),a('Blinky',45),a('Steal Chain',50),a('Black Voice',50),a('Memory Bomb',50),
+ a('Magical Esthetician',50,'Cookie'),a('Pain Packer',55),a('Double Machine Gun',55),a('Dragon Dive',55),a('Hakoware',55,'A Hundred Percent Interest'),
+ a('Ripper Cyclotron',60),a('Terpsichora',60),a('Little Flower',60),a('Countdown',65),a('Beelzebub',65),a('Gallery Fake',70),a('Battle Cantabile',70),
+ a('Deep Purple',70),a('Hide and Seek',70),a('Fourteen Devils',75),a('Hotel Rafflesia',100)]),
+q('mha-quirks','mha','My Hero Academia','My Hero Academia — Name any Quirk.','Name the Quirk, not the person who has it',[
+ a('One For All',0),a('Explosion',2),a('All For One',3),a('Half-Cold Half-Hot',5,'Half Cold Half Hot'),a('Zero Gravity',8),a('Engine',10),a('Hardening',10),
+ a('Creation',15),a('Frog',15),a('Electrification',15),a('Dark Shadow',15),a('Erasure',15),a('Decay',15),a('Hellflame',15),
+ a('Earphone Jack',20),a('Fierce Wings',20),a('Pop Off',25),a('Acid',25),a('Warp Gate',25),a('Blueflame',25,'Blue Flame'),a('Overhaul',25),a('Brainwashing',25),
+ a('Transform',30),a('Permeation',30),a('Black Whip',30,'Blackwhip'),a('Tape',35),a('Navel Laser',35),a('Invisibility',35),a('Float',35),a('Steel',35),a('Rewind',35),
+ a('Tail',40),a('Copy',40),a('Heal',40),a('Dupli-Arms',45),a('Large Fist',45,'Big Fist'),a('Dragon',45),a('Wave Motion',45,'Nejire Wave'),a('Gigantification',45),
+ a('Anivoice',50),a('Sugar Rush',50),a('Danger Sense',50),a('Voice',50),a('Compress',50),a('Smokescreen',55),a('Fa Jin',55),a('Vines',55),a('Cementation',55),
+ a('Double',55),a('Bloodcurdle',55),a('Whirlwind',55),a('Gearshift',60),a('Super Regeneration',60),a('Somnambulist',65),a('Search',70),a('Manifest',75),
+ a('Fat Absorption',100)]),
+q('aot-places','aot','Attack on Titan','Attack on Titan — Name any of the Nine Titans, or any wall, district or place.','Paradis, Marley and beyond',[
+ a('Shiganshina',0,'Shiganshina District'),a('Attack Titan',2),a('Colossal Titan',2),a('Armored Titan',3),a('Wall Maria',3),a('Wall Rose',3),
+ a('Founding Titan',5),a('Female Titan',5),a('Wall Sina',5),a('Trost',5,'Trost District'),a('Beast Titan',8),a('Paradis Island',10,'Paradis'),
+ a('Jaw Titan',15),a('Marley',15),a('Cart Titan',20),a('War Hammer Titan',20,'Warhammer Titan'),a('Stohess',25,'Stohess District'),a('Liberio',25),
+ a('Mitras',35),a('Underground City',35),a('Forest of Giant Trees',35),a('Karanes',40,'Karanes District'),a('Utgard Castle',45),
+ a('Ehrmich',50,'Ehrmich District'),a('Orvud',50,'Orvud District'),a('Hizuru',50),a('Ragako',55,'Ragako Village'),a('Utopia District',60,'Utopia'),
+ a('Krolva',70,'Krolva District'),a('Fort Slava',70),a('Fort Salta',100)]),
+q('blackclover-magic','blackclover','Black Clover','Black Clover — Name any type of magic.','Attribute magic from any user',[
+ a('Anti-Magic',0,'Anti Magic'),a('Wind Magic',5),a('Water Magic',10),a('Dark Magic',10,'Darkness Magic'),a('Light Magic',15),a('Fire Magic',15,'Flame Magic'),
+ a('Spatial Magic',15),a('Lightning Magic',20),a('Ice Magic',25),a('Mirror Magic',25),a('Thread Magic',25),a('World Tree Magic',25,'Wood Magic'),
+ a('Transformation Magic',30),a('Curse Magic',30),a('Cotton Magic',30),a('Mercury Magic',30),a('Healing Magic',30),a('Food Magic',35),a('Thorn Magic',35),
+ a('Sealing Magic',35),a('Blood Magic',35),a('Shadow Magic',40),a('Plant Magic',40),a('Recombination Magic',45),a('Gravity Magic',45),a('Ash Magic',45),
+ a('Bone Magic',50),a('Crystal Magic',50),a('Soul Magic',50),a('Dream Magic',55),a('Painting Magic',100)]),
+q('tokyoghoul-world','tokyoghoul','Tokyo Ghoul','Tokyo Ghoul — Name any kagune type, ward, organisation or place.','Tokyo Ghoul, √A and :re',[
+ a('Anteiku',0),a('CCG',5,'Commission of Counter Ghoul'),a('Aogiri Tree',5,'Aogiri'),a('Rinkaku',5),a('Ukaku',5),a('Koukaku',10,'Kokaku'),a('Bikaku',10),
+ a('20th Ward',10,'Twentieth Ward'),a(':re',15,'Cafe :re','Café :re','re'),a('Cochlea',15),a('11th Ward',15,'Eleventh Ward'),a('Kakuja',15),
+ a('24th Ward',30,'Twenty-Fourth Ward'),a('1st Ward',35,'First Ward'),a('13th Ward',35,'Thirteenth Ward'),a('Chimera',40,'Chimera Kagune'),a('Clowns',40,'The Clowns'),
+ a('Kamii University',40),a('4th Ward',40,'Fourth Ward'),a('Gourmet Restaurant',45,'Ghoul Restaurant','The Restaurant'),a('V',50),a('Rushima',50,'Rushima Island'),
+ a('Helter Skelter',100)])
 ];})();
 if(typeof module!=="undefined")module.exports=POWER_LEVEL_QUESTIONS;

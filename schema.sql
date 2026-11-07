@@ -17,7 +17,3 @@ CREATE TABLE IF NOT EXISTS shonen_leaderboard (
 CREATE INDEX IF NOT EXISTS idx_shonen_lb_mode_rating
   ON shonen_leaderboard (mode, rating DESC, created_at ASC);
 
--- Daily Power Level rankings: separate from team-builder scores.
-CREATE TABLE IF NOT EXISTS power_level_challenges(date TEXT PRIMARY KEY,version TEXT NOT NULL,questions TEXT NOT NULL);
-CREATE TABLE IF NOT EXISTS power_level_daily(id INTEGER PRIMARY KEY AUTOINCREMENT,date TEXT NOT NULL,player_key TEXT NOT NULL,name TEXT NOT NULL,power INTEGER NOT NULL,answered INTEGER NOT NULL,version TEXT NOT NULL,details TEXT NOT NULL,created_at INTEGER NOT NULL,UNIQUE(date,player_key));
-CREATE INDEX IF NOT EXISTS power_level_daily_rank ON power_level_daily(date,power DESC,created_at,id);
