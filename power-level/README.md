@@ -46,3 +46,23 @@ Verification: 16 Node tests pass, including route continuity/finite positions; J
 ### Character rendering regression checks
 
 `tools/build-atlas.py --check` (Pillow required) validates the shipped six-frame atlas against its source. `tools/animation-review.html` is an isolated browser fixture with start/midpoint/end samples, boost sizes, altitude zones, a reduced-motion simulation, and a full route audit. It never writes game progress. Desktop and 390px mobile audits each checked 2,424 rendered samples without character-count or viewport-bound failures. Visually inspected start, midpoint, and landing; reduced-motion simulation selected the idle pose directly. Real game checks covered consecutive 1,001 / 10,000 / 7,000 boosts. The reduced-motion fixture tests the same JS branch without changing OS preferences.
+
+## Daily Challenge leaderboard
+
+`api/_power-level.js` serves `/api/power-level`, reusing the Turso client and the `shonen_guest` cookie; `power-level/leaderboard.js` is the UI. Rankings live in `power_level_daily`, separate from `shonen_leaderboard`. Both tables are created on first use, so there is no manual migration; the existing `TURSO_DATABASE_URL` and `TURSO_AUTH_TOKEN` are the only configuration.
+
+Each date snapshots its questions in `power_level_challenges`, and each run stores its question wording, submitted and accepted answers, rarity, tier and boost. `versions/scoring-v3-1.js` freezes the scoring. When scoring changes, add a new version file and `SCORING` entry instead of editing that one. The bank and rarities still ship to the browser for gameplay, so server validation proves a run is legal, not that it was played honestly.
+
+## Partial names
+
+`core.js` accepts any whole word of a name or alias (three letters or more) when it fits exactly one answer, so "Uzumaki" scores as Naruto Uzumaki. A word shared by several answers ("Zoldyck") returns `ambiguous` and lists nothing, because options would reveal rarer answers. The API uses the same `validate`, and saved runs keep what the player typed beside the accepted name.
+
+## Rarity reveal
+
+Each answer's tier drives a banner on the stage during its reveal (`#plRarity` in `game.js`), louder at each step, with a frame flash from Rare up. Tier colours are set once, on `[data-tier]` in `style.css`, and shared by the banner, the `.pl-tier-tag` pills in the history, results and leaderboard details. The score card's label is the whole run's tier, not the answer's. Reveal text stays readable with reduced motion, and screen readers get the tier from `#plFeedback`.
+
+## Question bank v4
+
+`versions/questions-v4.js` replaces the small fixed-set prompts with one broad prompt per anime: any Hidden Leaf shinobi, any Devil Fruit user, any Gotei 13 captain or lieutenant, and so on, with 18–99 accepted answers each. `questions.js` must stay identical to it (a check compares them). Answers not in the list are rejected, so when players report a valid miss, add it to a new version file, not to v4.
+
+`api/_power-level.js` serves v4 and keeps `questions-v3-1.js` for history: every saved date scores from its own snapshot. On the day this deploys, today's challenge moves to v4 only if nobody has saved a run yet; otherwise v4 starts the next Toronto day.

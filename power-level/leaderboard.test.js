@@ -35,3 +35,12 @@ test('daily API validates scores, identity, rank ties, spoilers, history, pagina
  }finally{db.close();}
 });
 test('spelling correction preserves submitted and canonical answers',async()=>{const {validate}=require('../api/_power-level');const p=payload();const q=questions(p.date);p.outcomes[0].submitted=q[0].answers[0].name.slice(0,-1);const r=validate(p,{version:VERSION,questions:JSON.stringify(q)});assert.equal(r.details[0].submitted,p.outcomes[0].submitted);assert.equal(r.details[0].accepted,p.outcomes[0].answer);});
+test('saving needs an existing guest cookie, and a repeat is reported as a duplicate',async()=>{
+ const db=createClient({url:':memory:'}),handler=createHandler(db);try{
+ const p=payload();assert.equal((await request(handler,{body:p})).code,401);
+ const cookie=(await request(handler)).headers['Set-Cookie'].split(';')[0];
+ assert.equal((await request(handler,{cookie,body:p})).data.duplicate,false);
+ assert.equal((await request(handler,{cookie,body:p})).data.duplicate,true);
+ }finally{db.close();}
+});
+test('frozen v3-1 scoring matches the live game',()=>{const S=require('./versions/scoring-v3-1');for(const r of [0,1,37,50,99,100]){assert.equal(S.boost(r),C.score(r));assert.equal(S.tier(S.boost(r)),C.tier(S.boost(r)));}});

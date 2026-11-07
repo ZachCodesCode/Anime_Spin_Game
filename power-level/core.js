@@ -4,13 +4,17 @@ const TIERS = [{min:1,name:'Common'},{min:2000,name:'Uncommon'},{min:4000,name:'
 const score = rarity => Math.round(1 + Math.max(0,Math.min(100,rarity))*9999/100);
 const tier = value => [...TIERS].reverse().find(t=>value>=t.min)?.name || 'Common';
 const normalize = value => String(value).normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
+const words = value => String(value).normalize('NFKD').replace(/[̀-ͯ]/g,'').toLowerCase().split(/[^a-z0-9]+/).filter(Boolean);
 const dateKey = (date=new Date()) => new Intl.DateTimeFormat('en-CA',{timeZone:'America/Toronto',year:'numeric',month:'2-digit',day:'2-digit'}).format(date);
 function daily(bank,date=dateKey()){let hash=2166136261;for(const c of date) hash=Math.imul(hash^c.charCodeAt(0),16777619);return bank[(hash>>>0)%bank.length];}
 function distance(a,b){let row=Array.from({length:b.length+1},(_,i)=>i);for(let i=1;i<=a.length;i++){const next=[i];for(let j=1;j<=b.length;j++)next[j]=Math.min(next[j-1]+1,row[j]+1,row[j-1]+(a[i-1]!==b[j-1]));row=next;}return row[b.length];}
 function validate(question,value,guesses=[]){
 const n=normalize(value),forms=a=>[a.name,...(a.aliases||[])];
-const answer=question.answers.find(a=>forms(a).some(v=>normalize(v)===n));
+const typed=words(value),partial=typed.length&&typed.every(w=>w.length>=3)?question.answers.filter(a=>forms(a).some(v=>{const parts=words(v);return typed.every(w=>parts.includes(w));})):[];
+const answer=question.answers.find(a=>forms(a).some(v=>normalize(v)===n))||(partial.length===1?partial[0]:null);
 if(answer)return {status:guesses.includes(answer.name)?'repeat':'valid',answer};
+// A shared family name fits several answers, and listing them would give away the rare ones.
+if(partial.length>1)return {status:'ambiguous',suggestions:[]};
 const ranked=n.length<4?[]:question.answers.map(answer=>{let best=Infinity;for(const form of forms(answer)){const f=normalize(form),length=Math.max(n.length,f.length),d=distance(n,f),limit=length<=5?1:length<=10?2:3;if(d<=limit&&d/length<=.23&&Math.abs(n.length-f.length)<=limit)best=Math.min(best,d/length);}return {answer,rank:best};}).filter(v=>Number.isFinite(v.rank)).sort((a,b)=>a.rank-b.rank);
 const suggestions=ranked.filter(v=>v.rank<=ranked[0].rank+.045).slice(0,3).map(v=>v.answer);
 return {status:'invalid',suggestions};

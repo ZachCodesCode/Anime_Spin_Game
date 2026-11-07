@@ -92,3 +92,24 @@ body.power-level-active{background-attachment:scroll}
 .pl-lb-dialog .lb-entry{margin-top:8px;min-height:70px;background:var(--paper)}.pl-lb-dialog .lb-name,.pl-lb-dialog .lb-ace{white-space:normal;overflow-wrap:anywhere}.pl-lb-dialog .pl-lb-power{flex:0 0 100px;text-align:right;font:600 17px 'Fredoka';color:var(--pink-d)}
 .pl-lb-dialog .pl-lb-mine{border:3px solid var(--indigo);background:#fff4c9}.pl-lb-dialog ol{padding-left:24px}.pl-lb-dialog li{padding:16px 0;border-bottom:2px solid var(--paper-d);overflow-wrap:anywhere}.pl-lb-dialog li h3{font:600 18px/1.4 'Fredoka'}.pl-lb-dialog li p{line-height:1.6;margin-top:6px}.pl-lb-dialog :focus-visible{outline:3px solid var(--night);outline-offset:3px}.pl-lb-dialog .lb-msg{margin-bottom:12px}
 @media(max-width:500px){.pl-lb-dialog{padding:16px}.pl-lb-dialog .lb-entry{gap:7px;padding:8px}.pl-lb-dialog .lb-rank{flex-basis:30px;font-size:13px}.pl-lb-dialog .pl-lb-power{flex-basis:75px;font-size:15px}.pl-lb-dialog .lb-name{font-size:16px}}
+#powerLevel[data-phase="active"] .pl-lb-save,#powerLevel[data-phase="reveal"] .pl-lb-save{display:none}
+/* Answer tiers: each step up is louder, so a rare find can't be missed. */
+[data-tier="Common"]{--tier-bg:var(--paper-d);--tier-edge:#a99bb8;--tier-ink:var(--ink)}
+[data-tier="Uncommon"]{--tier-bg:#d7f5f0;--tier-edge:var(--teal-d);--tier-ink:#075f57}
+[data-tier="Rare"]{--tier-bg:#e5e0ff;--tier-edge:var(--indigo);--tier-ink:var(--indigo-d)}
+[data-tier="Legendary"]{--tier-bg:linear-gradient(135deg,#ffe58a,var(--gold));--tier-edge:var(--gold-d);--tier-ink:#5c3a00}
+[data-tier="Limit Break"]{--tier-bg:linear-gradient(135deg,var(--pink),var(--indigo));--tier-edge:var(--pink-d);--tier-ink:#fff}
+.pl-tier-tag{display:inline-block;padding:0 9px;border:2px solid var(--tier-edge);border-radius:999px;background:var(--tier-bg);color:var(--tier-ink);font:700 12px/1.5 'Fredoka',sans-serif;white-space:nowrap}
+#plRarity{position:absolute;z-index:8;top:12px;left:50%;translate:-50% 0;width:min(50%,380px);padding:10px 14px;text-align:center;border:3px solid var(--tier-edge);border-radius:14px;background:var(--tier-bg);color:var(--tier-ink);box-shadow:0 5px 0 var(--tier-edge),0 12px 26px #1c125a55;pointer-events:none;animation:pl-rarity-pop .45s cubic-bezier(.2,1.6,.4,1) both}
+#plRarity strong{display:block;font:700 34px/1.1 'Fredoka',sans-serif}#plRarity b{display:block;margin-top:2px;font:700 18px/1.3 'Fredoka',sans-serif}#plRarity span{display:block;font:800 13px/1.4 'Nunito',sans-serif;overflow-wrap:anywhere}
+#plRarity[data-tier="Common"]{width:min(70%,240px);padding:8px 14px;box-shadow:0 3px 0 var(--tier-edge)}#plRarity[data-tier="Common"] strong{font-size:18px}#plRarity[data-tier="Common"] b{font-size:14px}
+#plRarity[data-tier="Uncommon"] strong{font-size:26px}
+#plRarity[data-tier="Legendary"] strong{font-size:clamp(28px,3.6vw,36px)}
+#plRarity[data-tier="Limit Break"] strong{font-size:clamp(28px,3.8vw,38px);text-transform:uppercase;letter-spacing:.02em}
+#plRarity:is([data-tier="Legendary"],[data-tier="Limit Break"]){animation:pl-rarity-pop .55s cubic-bezier(.2,1.8,.4,1) both,pl-rarity-glow .7s ease-in-out .55s infinite alternate}
+.pl-stage.pl-burst:is([data-tier="Rare"],[data-tier="Legendary"],[data-tier="Limit Break"])::after{content:'';position:absolute;inset:0;z-index:5;pointer-events:none;box-shadow:inset 0 0 0 5px var(--tier-edge),inset 0 0 80px var(--tier-edge);animation:pl-tier-flash 2.1s ease-out forwards}
+.pl-stage.pl-burst[data-tier="Limit Break"]::after{background:radial-gradient(circle at 50% 40%,#fff9,transparent 65%)}
+#plRarest{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:-8px 0 16px;font:600 15px/1.5 'Fredoka',sans-serif;color:var(--ink);overflow-wrap:anywhere}#plRarest:empty{display:none}
+@keyframes pl-rarity-pop{from{opacity:0;scale:.55}to{opacity:1;scale:1}}@keyframes pl-rarity-glow{to{box-shadow:0 5px 0 var(--tier-edge),0 0 34px 8px var(--tier-edge)}}@keyframes pl-tier-flash{0%{opacity:0}12%{opacity:1}70%{opacity:.8}100%{opacity:0}}
+@media(max-width:650px){#plRarity{top:auto;bottom:54px;width:min(86%,320px);padding:6px 12px}#plRarity strong{font-size:26px}#plRarity span{display:none}}
+@media(prefers-reduced-motion:reduce){.pl-stage.pl-burst::after{animation:none!important;opacity:.7}}
