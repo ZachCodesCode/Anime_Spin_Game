@@ -437,5 +437,82 @@ const CLEVER={
  'mha-moves':['Air Force'],'blackclover-places':['Underwater Temple'],'demonslayer-places':['Asakusa'],'aot-garrison':['Kitz Woermann'],
  'jjk-techniques':['Boogie Woogie'],'jjk-tools':['Max Elephant'],'jjk-places':['Okinawa']};
 for(const x of bank)for(const name of CLEVER[x.id.replace('timed-v4-','')]||[]){const hit=x.answers.find(a=>a.name===name);if(!hit)throw Error('Too Clever answer not in '+x.id+': '+name);hit.clever=true;}
+// Multi-anime questions (Ascent #2 onward): every one spans at least two anime, so not knowing one show never locks you out.
+const SERIES_NAME=Object.fromEntries(POWER_LEVEL_SERIES.map(s=>[s.id,s.name]));
+const key=f=>String(f).normalize('NFKD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
+// Two existing lists merged into one prompt; a name already taken by the first list is dropped from the second,
+// and the second list's Limit Break drops to Deep Cut so each prompt keeps exactly one.
+const pair=(id,a,b,text)=>{const A=bank.find(q=>q.id==='timed-v4-'+a),B=bank.find(q=>q.id==='timed-v4-'+b);if(!A||!B)throw Error('Unknown pair question: '+id);
+ const seen=new Set(),answers=[];
+ for(const x of [...A.answers,...B.answers.map(x=>x.rarity>=100?{...x,rarity:85}:x)]){if(seen.has(key(x.name)))continue;const aliases=(x.aliases||[]).filter(f=>!seen.has(key(f)));[x.name,...aliases].forEach(f=>seen.add(key(f)));answers.push(aliases.length?{...x,aliases}:{...x,aliases:undefined});}
+ return {id:'timed-v4-mix-'+id,anime:'mixed',category:SERIES_NAME[A.anime]+' × '+SERIES_NAME[B.anime],text,note:'Answer from either anime',from:[A.id,B.id],answers};};
+const PAIRS=[
+ pair('leaf-scouts','naruto-leaf','aot-scouts','Name any Hidden Leaf shinobi (Naruto) or any member of the Survey Corps (Attack on Titan).'),
+ pair('jutsu-quirks','naruto-jutsu','mha-quirks','Name any jutsu (Naruto) or any Quirk (My Hero Academia).'),
+ pair('swords-breathing','bleach-zanpakuto','demonslayer-breathing','Name any Zanpakutō (Bleach) or any Breathing Style or form (Demon Slayer).'),
+ pair('nen-magic','hxh-nen','blackclover-magic','Name any Nen type or ability (Hunter × Hunter) or any type of magic (Black Clover).'),
+ pair('techniques-moves','jjk-techniques','mha-moves','Name any cursed technique or Domain (Jujutsu Kaisen) or any named special move (My Hero Academia).'),
+ pair('places-op-hxh','onepiece-places','hxh-places','Name any place the Straw Hats visit (One Piece) or any location in Hunter × Hunter.'),
+ pair('places-aot-tg','aot-places','tokyoghoul-world','Name any Titan, wall or place (Attack on Titan) or any kagune, ward or organisation (Tokyo Ghoul).'),
+ pair('places-ds-jjk','demonslayer-places','jjk-places','Name any location in Demon Slayer or in Jujutsu Kaisen.'),
+ pair('clans-squads','naruto-clans','blackclover-squads','Name any clan (Naruto) or any Magic Knight squad (Black Clover).'),
+ pair('captains-hashira','bleach-gotei','demonslayer-ranks','Name any Gotei 13 captain or lieutenant (Bleach) or any Hashira or Twelve Kizuki (Demon Slayer).'),
+ pair('troupe-ghouls','hxh-troupe','tokyoghoul-ghouls','Name any Phantom Troupe member or Zoldyck (Hunter × Hunter) or any Anteiku or Aogiri ghoul (Tokyo Ghoul).'),
+ pair('classmates','mha-classes','aot-104th','Name any student in Class 1-A or 1-B (My Hero Academia) or any member of the 104th Training Corps (Attack on Titan).'),
+ pair('knights-sorcerers','blackclover-knights','jjk-sorcerers','Name any Magic Knight captain or Black Bull (Black Clover) or any jujutsu sorcerer (Jujutsu Kaisen).'),
+ pair('law','aot-garrison','tokyoghoul-ccg','Name any member of the Garrison or Military Police (Attack on Titan) or any CCG investigator (Tokyo Ghoul).'),
+ pair('captains-heroes','onepiece-pirates','mha-heroes','Name any pirate captain (One Piece) or any Pro Hero by hero name (My Hero Academia).'),
+ pair('arrancar-curses','bleach-arrancar','jjk-curses','Name any Espada or Arrancar (Bleach) or any curse or curse user (Jujutsu Kaisen).'),
+ pair('outsiders-hunters','naruto-outsiders','hxh-hunters','Name any shinobi not from the Hidden Leaf (Naruto) or any licensed Hunter (Hunter × Hunter).'),
+ pair('hunters-of-monsters','bleach-quincy','demonslayer-corps','Name any Quincy (Bleach) or any non-Hashira Demon Slayer Corps member or ally (Demon Slayer).'),
+ pair('half-monsters','bleach-visored','tokyoghoul-others','Name any Visored or Fullbringer (Bleach) or any ghoul outside Anteiku and Aogiri (Tokyo Ghoul).'),
+ pair('villains','mha-villains','blackclover-villains','Name any villain from My Hero Academia or from Black Clover.'),
+ pair('monsters','demonslayer-demons','hxh-ants','Name any non-Kizuki demon (Demon Slayer) or any Chimera Ant (Hunter × Hunter).'),
+ pair('beasts-tools','naruto-beasts','jjk-tools','Name any tailed beast or jinchūriki (Naruto) or any shikigami or cursed tool (Jujutsu Kaisen).'),
+ pair('militaries','onepiece-marines','aot-marley','Name any Marine (One Piece) or any Marleyan or Eldian living in Marley (Attack on Titan).'),
+ pair('fruit-codenames','onepiece-fruit','tokyoghoul-codenames','Name any Devil Fruit user (One Piece) or any ghoul by CCG codename (Tokyo Ghoul).'),
+ pair('weapons-kingdoms','onepiece-weapons','blackclover-places','Name any named sword or weapon (One Piece) or any kingdom, town or place (Black Clover).'),
+];
+const ALL_TEN='Any of the ten anime in Anime Ascent';
+const ATTRIBUTES=[
+ q('mix-red-hair','mixed','All anime','Name any character with red hair.',ALL_TEN+' · red, crimson or scarlet',[
+  a('Shanks',0,'Red-Haired Shanks','Red Hair Shanks'),a('Gaara',5),a('Eustass Kid',10,'Kid','Kidd','Eustass Kidd'),a('Renji Abarai',10,'Renji'),a('Kushina Uzumaki',15,'Kushina'),
+  a('Eijiro Kirishima',15,'Kirishima','Red Riot'),a('Endeavor',20,'Enji Todoroki'),a('Shoto Todoroki',20,'Todoroki','Shoto'),a('Sasori',20),a('Nagato',25,'Nagato Uzumaki'),a('Karin',25,'Karin Uzumaki'),
+  a('Hisoka',35,'Hisoka Morow'),a('Fuegoleon Vermillion',35,'Fuegoleon'),a('Mereoleona Vermillion',35,'Mereoleona'),a('Tanjiro Kamado',40,'Tanjiro'),a('Kyojuro Rengoku',45,'Rengoku'),
+  a('Leopold Vermillion',45,'Leopold'),a('Charlotte Katakuri',50,'Katakuri'),a('Uta',50),a('Tayuya',55),a('Mito Uzumaki',60,'Mito'),a('Itori',60),a('Floch Forster',65,'Floch'),
+  a('Jinta Hanakari',100,'Jinta')]),
+ q('mix-masks','mixed','All anime','Name any character who wears a mask.',ALL_TEN+' · masks worn in battle or as a disguise',[
+  a('Inosuke Hashibira',0,'Inosuke'),a('Kakashi Hatake',5,'Kakashi'),a('Ken Kaneki',5,'Kaneki','Eyepatch'),a('Obito Uchiha',10,'Obito','Tobi'),a('Sakonji Urokodaki',10,'Urokodaki'),a('Overhaul',10,'Kai Chisaki'),
+  a('Sabito',15),a('All For One',15,'AFO'),a('Usopp',15,'Sogeking'),a('Hotaru Haganezuka',20,'Haganezuka'),a('Ichigo Kurosaki',20,'Ichigo'),a('Zabuza Momochi',25,'Zabuza'),a('Haku',25),
+  a('Makomo',25),a('Touka Kirishima',25,'Touka'),a('Twice',25,'Jin Bubaigawara'),a('Kakuzu',30),a('Uta',30,'No Face'),a('Shuu Tsukiyama',30,'Tsukiyama'),a('Mr. Compress',30,'Compress'),
+  a('Ayato Kirishima',35,'Ayato'),a('Mayuri Kurotsuchi',35,'Mayuri'),a('King',35,'Alber'),a('Yamato',40,'Tenzo'),a('Kotetsu',45),a('Shinji Hirako',50,'Shinji'),
+  a('Chronostasis',65,'Hari Kurono'),a('Iron Mask Duval',100,'Duval')]),
+ q('mix-glasses','mixed','All anime','Name any character who wears glasses or sunglasses.',ALL_TEN+' · goggles count',[
+  a('Kabuto Yakushi',5,'Kabuto'),a('Tenya Iida',5,'Iida','Ingenium'),a('Uryu Ishida',5,'Uryu','Ishida'),a('Donquixote Doflamingo',5,'Doflamingo','Doffy'),a('Satoru Gojo',10,'Gojo'),a('Shino Aburame',10,'Shino'),
+  a('Sosuke Aizen',10,'Aizen'),a('Hange Zoe',10,'Hange','Hanji'),a('Kisho Arima',10,'Arima'),a('Leorio Paradinight',10,'Leorio'),a('Karin',15,'Karin Uzumaki'),a('Kento Nanami',15,'Nanami'),
+  a('Franky',15),a('Sir Nighteye',15,'Nighteye'),a('Zeke Yeager',15,'Zeke'),a('Present Mic',20),a('Borsalino',20,'Kizaru'),a('Shizuku Murasaki',20,'Shizuku'),a('Killer Bee',25,'Bee'),
+  a('Nanao Ise',25,'Nanao'),a('Rize Kamishiro',25,'Rize'),a('Eraser Head',25,'Aizawa','Shota Aizawa'),a('Masamichi Yaga',30,'Yaga'),a('Kuro',30,'Captain Kuro'),a('Sengoku',35),
+  a('Grisha Yeager',35,'Grisha'),a('Ryuken Ishida',40,'Ryuken'),a('Ebisu',40),a('Klaus Lunettes',45,'Klaus'),a('Trebol',50),a('Cheadle Yorkshire',50,'Cheadle'),
+  a('Kiyotaka Ijichi',50,'Ijichi'),a('Akihiro Kanou',100,'Kanou','Dr. Kanou')]),
+ q('mix-healers','mixed','All anime','Name any doctor, medic or healer.',ALL_TEN+' · medical ninja, healing Quirks and magic count',[
+  a('Tony Tony Chopper',0,'Chopper'),a('Tsunade',5),a('Sakura Haruno',5,'Sakura'),a('Trafalgar Law',5,'Law'),a('Retsu Unohana',10,'Unohana'),a('Shoko Ieiri',10,'Shoko'),a('Recovery Girl',10),
+  a('Orihime Inoue',15,'Orihime'),a('Leorio Paradinight',15,'Leorio'),a('Tamayo',15),a('Shizune',20),a('Kabuto Yakushi',20,'Kabuto'),a('Shinobu Kocho',20,'Shinobu'),a('Grisha Yeager',25,'Grisha'),
+  a('Kureha',30,'Dr. Kureha','Doctorine'),a('Isane Kotetsu',30,'Isane'),a('Hanataro Yamada',30,'Hanataro'),a('Mimosa Vermillion',30,'Mimosa'),a('Ryuken Ishida',35,'Ryuken'),a('Hiriluk',40,'Dr. Hiriluk'),
+  a('Rin Nohara',40,'Rin'),a('Aoi Kanzaki',40,'Aoi'),a('Akihiro Kanou',45,'Kanou','Dr. Kanou'),a('Doc Q',50),a('Hogback',50,'Dr. Hogback'),a('Kyudai Garaki',50,'Dr. Ujiko','Ujiko','Garaki'),
+  a('Owen',70),a('Crocus',100)]),
+ q('mix-companions','mixed','All anime','Name any animal companion, pet or summon.',ALL_TEN+' · name the animal, not its owner',[
+  a('Akamaru',0),a('Gamabunta',10),a('Pakkun',15),a('Laboon',15),a('Kasugai Crow',20,'Kasugai Crows','Crow'),a('Katsuyu',25),a('Manda',25),a('Karoo',25),a('Nero',25,'Anti-Bird'),
+  a('Chuntaro',30,'Chuntarou'),a('Bell',35,'Sylph'),a('Kaburamaru',40),a('Mike',45),a('Undine',45),a('Matsuemon',50),a('Salome',50),
+  a('Richie',50),a('Megalo',55),a('Lassoo',65),a('Funkfreed',70),a('Momoo',100)]),
+ q('mix-white-hair','mixed','All anime','Name any character with white or silver hair.',ALL_TEN+' · white, silver or grey',[
+  a('Satoru Gojo',0,'Gojo'),a('Kakashi Hatake',0,'Kakashi'),a('Killua Zoldyck',0,'Killua'),a('Jiraiya',5),a('Toshiro Hitsugaya',5,'Hitsugaya','Toshiro'),a('Ken Kaneki',5,'Kaneki'),
+  a('Gin Ichimaru',10,'Gin'),a('Kisho Arima',10,'Arima'),a('Sanemi Shinazugawa',10,'Sanemi'),a('Noelle Silva',10,'Noelle'),a('Tobirama Senju',15,'Tobirama'),a('Jushiro Ukitake',15,'Ukitake'),
+  a('Juuzou Suzuya',15,'Suzuya','Juzo Suzuya'),a('Tengen Uzui',15,'Tengen'),a('Toge Inumaki',20,'Inumaki','Toge'),a('Smoker',20),a('Mirko',20),a('Rui',25),a('Yamato',25),
+  a('Monkey D. Garp',25,'Garp'),a('Mei Mei',30),a('Kimimaro',30,'Kimimaro Kaguya'),a('Nozel Silva',30,'Nozel'),a('Silvers Rayleigh',30,'Rayleigh'),a('Silva Zoldyck',35,'Silva'),
+  a('Zeno Zoldyck',40,'Zeno'),a('Suigetsu Hozuki',40,'Suigetsu'),a('Seidou Takizawa',45,'Takizawa'),a('Gran Torino',45),a('Fuyumi Todoroki',55,'Fuyumi'),a('Natsuo Todoroki',100,'Natsuo')]),
+];
+// Ascent order: attribute questions spread through the pairs.
+const MIXED=[];PAIRS.forEach((p,i)=>{MIXED.push(p);if(i%4===3&&ATTRIBUTES.length)MIXED.push(ATTRIBUTES.shift());});MIXED.push(...ATTRIBUTES);
+bank.push(...MIXED);
 return bank;})();
 if(typeof module!=="undefined")module.exports=POWER_LEVEL_QUESTIONS;
