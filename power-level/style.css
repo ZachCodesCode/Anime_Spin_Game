@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&family=VT323&display=swap');
 /* Anime Ascent (internally "Power Level") — summit expedition. All rules stay scoped to this game. */
 #powerLevel,#powerLevel *,#powerLevel *::before,#powerLevel *::after{box-sizing:border-box}
 .power-level-active #game,.power-level-active #results,.power-level-active header,.power-level-active footer,.power-level-active>.horizon,.power-level-active>.petals,.power-level-active::before{display:none!important}
@@ -147,3 +148,160 @@ body[data-pl-tier="Limit Break"] #plFlash{background:radial-gradient(ellipse at 
 .pl-all-tier{margin-top:10px}.pl-all-tier ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 0;padding:0}
 .pl-all-tier li{padding:3px 10px;border:1px solid #d9d0ff;border-radius:999px;background:#f6f2ff;font:700 13px/1.4 'Nunito',sans-serif;color:var(--ink)}
 .pl-all-tier li small{color:var(--ink-2);font-weight:800}.pl-all-tier li.mine{background:var(--gold);border-color:var(--gold-d);color:#4a3300}
+
+/* ==== Krillion-style layout (as on krillion.io / thinkpuck.io). Game page only; styling + layout, game logic untouched. ==== */
+body.power-level-active{background:linear-gradient(180deg,#1a2550 0%,#0a1022 60%) fixed;color:#e9f1ff}
+body.power-level-active #powerLevel{--paper:#121a33;--paper-d:#0b1126;--edge:#33436e;--edge-d:#2a3860;--ink:#e9f1ff;--ink-2:#93a4cc;--night:#cfe0ff;
+ --kr-pink:#ff4f9a;--kr-cyan:#5fe6ff;--kr-panel:rgba(11,17,38,.86);--kr-line:#35467a;
+ width:100%;min-height:100svh;padding:0 16px 150px;overflow:visible;font-family:'VT323',monospace;color:var(--ink)}
+/* CRT scanlines over the whole page */
+body.power-level-active #powerLevel::after{content:'';display:block;position:fixed;inset:0;z-index:40;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.16) 0 1px,transparent 1px 3px)}
+body.power-level-active #powerLevel :focus-visible{outline:2px solid var(--kr-cyan);outline-offset:3px}
+
+/* the pixel scene fills the screen behind everything (800px column keeps the art's true proportions) */
+body.power-level-active #powerLevel #plStage{position:fixed;top:0;bottom:0;left:50%;translate:-50% 0;width:min(100vw,800px);height:100svh;margin:0;border:0;border-radius:0;box-shadow:none;z-index:0}
+body.power-level-active #powerLevel #plStage .pl-landscape::after{box-shadow:none;background:linear-gradient(180deg,rgba(8,12,28,.82) 0%,rgba(8,12,28,0) 34%,rgba(8,12,28,0) 52%,rgba(8,12,28,.9) 100%)}
+body.power-level-active #powerLevel #plStage .pl-landscape.is-loading::before{content:'ASCENDING…';background:#0a1022;color:var(--ink-2);font:400 13px 'Silkscreen',monospace;letter-spacing:.3em}
+body.power-level-active #powerLevel :is(.pl-heading,.pl-question){position:relative;z-index:2}body.power-level-active #plResults{position:relative;z-index:2}
+body.power-level-active #powerLevel:is([data-phase=ready],[data-phase=done]) #plStage .pl-landscape::after{background:linear-gradient(180deg,rgba(8,12,28,.9) 0%,rgba(8,12,28,.62) 45%,rgba(8,12,28,.9) 100%)}
+body.power-level-active #powerLevel .pl-heading>p,body.power-level-active #powerLevel[data-phase=ready] .pl-question h3{text-shadow:0 2px 6px #000}
+
+/* corner buttons: square pixel tiles */
+body.power-level-active #powerLevel :is(.pl-back,.pl-menu>summary){background:rgba(11,17,38,.85);border:2px solid var(--kr-line);border-radius:0;box-shadow:none;color:var(--night);font:400 10px/1 'Silkscreen',monospace;letter-spacing:.08em;padding:10px 12px;text-shadow:none}
+body.power-level-active #powerLevel :is(.pl-back,.pl-menu){position:fixed;top:14px;z-index:35}
+body.power-level-active #powerLevel .pl-back{left:14px}body.power-level-active #powerLevel .pl-menu{right:14px}
+body.power-level-active #powerLevel :is(.pl-back,.pl-menu>summary):hover{border-color:var(--kr-cyan);color:#fff;filter:none}
+body.power-level-active #powerLevel .pl-menu[open]{background:#0e1530;border:2px solid var(--kr-line);border-radius:0;box-shadow:0 20px 50px #000c;font-family:'VT323',monospace}
+body.power-level-active #powerLevel .pl-menu .howto-body p{font-size:18px;line-height:1.35}
+body.power-level-active #powerLevel:is([data-phase=active],[data-phase=reveal]) :is(.pl-back,.pl-menu){top:78px}
+
+/* title screen */
+body.power-level-active #powerLevel .pl-heading{display:flex;flex-direction:column;align-items:center;margin:70px auto 0;text-align:center}
+body.power-level-active #powerLevel .pl-heading h2{order:1;margin:0;font:400 clamp(40px,8.5vw,86px)/1 'Silkscreen',monospace;letter-spacing:.06em;text-transform:uppercase;color:#fff;-webkit-text-fill-color:#fff;background:none;transform:none;
+ text-shadow:-4px 0 rgba(255,79,154,.9),4px 0 rgba(95,230,255,.9)}
+body.power-level-active #powerLevel .pl-heading .ribbon{order:2;margin:20px 0 0;font:400 14px/1 'Silkscreen',monospace;letter-spacing:.55em;color:var(--kr-cyan)}
+body.power-level-active #powerLevel .pl-heading>p{order:3;display:block;margin:22px 0 0;font:400 22px/1.4 'VT323',monospace;letter-spacing:.06em;color:var(--night)}
+body.power-level-active #powerLevel:is([data-phase=active],[data-phase=reveal]) .pl-heading{display:none}
+
+/* prompt / title-screen card */
+body.power-level-active #powerLevel :is(.pl-question,#plResults){width:min(640px,100%);background:var(--kr-panel);border:2px solid var(--kr-line);border-radius:0;box-shadow:0 0 0 4px rgba(11,17,38,.55),0 24px 50px -20px #000;min-height:0}
+body.power-level-active #powerLevel .pl-question{margin:120px auto 0;padding:24px 26px 18px;text-align:center}
+body.power-level-active #powerLevel #plCategory{font:400 11px/1.6 'Silkscreen',monospace;letter-spacing:.2em;color:var(--kr-pink)}
+body.power-level-active #powerLevel .pl-question h3{margin:10px auto 0;max-width:none;font:400 clamp(28px,4.2vw,40px)/1.15 'VT323',monospace;letter-spacing:.02em;color:#fff}
+body.power-level-active #powerLevel[data-phase=active] .pl-question h3::after{content:'▲  rarer answers climb higher  ▲';display:block;margin-top:12px;font:400 17px 'VT323',monospace;letter-spacing:.12em;color:var(--ink-2)}
+/* ready: no panel, the call to action sits low over the dark foreground like Krillion's "BEGIN DESCENT" */
+body.power-level-active #powerLevel[data-phase=ready] :is(.pl-question,#plResults){background:none;border:0;box-shadow:none;margin-top:auto;margin-bottom:6vh}
+body.power-level-active #powerLevel[data-phase=ready] .pl-question h3{font-size:22px;color:var(--night)}
+body.power-level-active #powerLevel #plBegin{display:block;width:min(520px,100%);margin:22px auto 4px;padding:22px 20px;background:rgba(11,17,38,.78);border:2px solid var(--kr-cyan);border-radius:0;color:#e9f1ff;
+ font:400 clamp(15px,2.4vw,20px)/1 'Silkscreen',monospace;letter-spacing:.2em;text-transform:uppercase;text-shadow:none;box-shadow:0 0 0 2px rgba(95,230,255,.14),0 0 28px rgba(95,230,255,.22);animation:none}
+body.power-level-active #powerLevel #plBegin::before{content:'▲ '}body.power-level-active #powerLevel #plBegin::after{content:' ▲'}
+body.power-level-active #powerLevel #plBegin:not(:disabled):hover{background:rgba(95,230,255,.12);filter:none;transform:none}
+
+/* HUD: altitude box, progress squares, score box */
+body.power-level-active #powerLevel #plStage :is(.pl-reading,#plAltitude){top:14px;bottom:auto;padding:8px 16px 9px;min-width:0;background:rgba(11,17,38,.9);border:2px solid var(--kr-line);border-radius:0;box-shadow:none;text-align:center}
+body.power-level-active #powerLevel #plStage #plAltitude{left:76px;font:400 22px/1 'VT323',monospace;color:var(--kr-cyan)}
+body.power-level-active #powerLevel #plStage #plAltitude::before{content:'ALTITUDE';display:block;margin-bottom:5px;font:400 8px 'Silkscreen',monospace;letter-spacing:.24em;color:var(--ink-2)}
+body.power-level-active #powerLevel #plStage .pl-reading{left:auto;right:76px;gap:0}
+body.power-level-active #powerLevel #plStage .pl-reading::before{content:'SCORE';display:block;margin-bottom:5px;font:400 8px 'Silkscreen',monospace;letter-spacing:.24em;color:var(--ink-2)}
+body.power-level-active #powerLevel #plStage .pl-reading strong{font:400 26px/1 'VT323',monospace;color:var(--kr-pink)}
+body.power-level-active #powerLevel #plStage .pl-reading :is(#plAnswer,#plTier,#plLimit){display:none}
+body.power-level-active #powerLevel #plStage .pl-zone{top:auto;bottom:46%;left:16px;right:auto;background:none;border:0;box-shadow:none;padding:0;font:400 15px 'VT323',monospace;letter-spacing:.14em;color:rgba(233,241,255,.75);text-transform:uppercase}
+body.power-level-active #powerLevel #plStage .pl-zone::before{content:'── '}
+body.power-level-active #powerLevel #plStage .pl-meter{right:12px;top:90px;height:calc(100% - 200px);width:2px;border:0;border-radius:0;background:rgba(233,241,255,.3)}
+body.power-level-active #powerLevel #plStage .pl-meter::before{content:'';}
+body.power-level-active #powerLevel #plStage .pl-meter i{background:var(--kr-pink);border-radius:0}
+#plPips{position:absolute;top:18px;left:50%;translate:-50% 0;z-index:7;display:flex;flex-direction:column;align-items:center;gap:7px;pointer-events:none}
+#plPips div{display:flex;gap:5px}
+#plPips i{width:14px;height:14px;border:2px solid #4a5b8c;background:rgba(11,17,38,.85)}
+#plPips i.now{border-color:var(--kr-pink,#ff4f9a);background:var(--kr-pink,#ff4f9a)}
+#plPips i[data-tier="miss"]{background:#1d2747}
+#plPips i[data-tier="Fodder"]{background:#c9c3dd;border-color:#c9c3dd}#plPips i[data-tier="Too Clever"]{background:#ffae5c;border-color:#ffae5c}
+#plPips i[data-tier="Side Character"]{background:#5fe6c8;border-color:#5fe6c8}#plPips i[data-tier="Rare"]{background:#8f86ff;border-color:#8f86ff}
+#plPips i[data-tier="Deep Cut"]{background:#ffc72c;border-color:#ffc72c}#plPips i[data-tier="Limit Break"]{background:#ff4f9a;border-color:#ff4f9a}
+#plPips span{font:400 8px 'Silkscreen',monospace;letter-spacing:.24em;color:#c3cfee;text-shadow:0 1px 2px #000}
+body.power-level-active #powerLevel:is([data-phase=ready],[data-phase=done]) #plStage :is(.pl-reading,#plAltitude,#plPips,.pl-meter,.pl-zone){display:none}
+body.power-level-active #powerLevel :is(.pl-stats,#plHistory){display:none}
+
+/* answer bar fixed to the bottom: timer ring, input, button */
+body.power-level-active #powerLevel #plForm{position:fixed;left:0;right:0;bottom:0;z-index:30;width:auto;margin:0;padding:16px 16px calc(18px + env(safe-area-inset-bottom));background:linear-gradient(180deg,rgba(8,12,28,0),rgba(8,12,28,.94) 40%)}
+body.power-level-active #powerLevel #plForm>label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+body.power-level-active #powerLevel #plForm .pl-input-row{width:min(680px,100%);margin:0 auto;gap:10px;align-items:center;flex-wrap:nowrap}
+body.power-level-active #powerLevel #plTimer{order:-1}
+body.power-level-active #powerLevel .pl-timer-dial{width:52px;height:52px;background:conic-gradient(var(--kr-cyan) var(--time-left),rgba(95,230,255,.14) 0)}
+body.power-level-active #powerLevel .pl-timer-dial::before{background:#0b1126;inset:3px}
+body.power-level-active #powerLevel #plTimer[data-urgent=true] .pl-timer-dial{background:conic-gradient(var(--kr-pink) var(--time-left),rgba(255,79,154,.14) 0)}
+body.power-level-active #powerLevel #plTimerSeconds{font:400 24px 'VT323',monospace;color:var(--kr-cyan)}
+body.power-level-active #powerLevel #plTimer[data-urgent=true] #plTimerSeconds{color:var(--kr-pink)}
+body.power-level-active #powerLevel :is(input,textarea){height:54px;background:#0b1126;border:2px solid var(--kr-cyan);border-radius:0;box-shadow:none;color:#fff;font:400 24px 'VT323',monospace;letter-spacing:.04em;padding:0 16px}
+body.power-level-active #powerLevel :is(input,textarea):focus{outline:none;box-shadow:0 0 0 3px rgba(95,230,255,.18)}
+body.power-level-active #powerLevel input::placeholder{color:#55658f}
+body.power-level-active #powerLevel #plSubmit{height:54px;padding:0 24px;background:var(--kr-pink);border:2px solid #ff86bb;border-radius:0;color:#fff;font:400 15px/1 'Silkscreen',monospace;letter-spacing:.14em;text-transform:uppercase;text-shadow:none;box-shadow:0 0 22px rgba(255,79,154,.35)}
+body.power-level-active #powerLevel #plSubmit:not(:disabled):hover{filter:brightness(1.08);transform:none}
+body.power-level-active #powerLevel:is([data-phase=reveal],[data-phase=done]) #plForm{display:none}
+/* typo prompt / feedback float above the bar like Krillion's correction box */
+body.power-level-active #powerLevel #plFeedback{min-height:0;padding:0}
+body.power-level-active #powerLevel[data-phase=active] #plFeedback:not(:empty){position:fixed;left:50%;translate:-50% 0;bottom:96px;z-index:31;width:max-content;max-width:calc(100vw - 32px);margin:0;padding:10px 16px;background:#0b1126;border:2px solid var(--kr-line);border-radius:0;font:400 19px/1.3 'VT323',monospace;color:#e9f1ff;text-align:center}
+body.power-level-active #powerLevel #plSuggestions{background:#0b1126;border:2px solid var(--kr-line);border-radius:0;box-shadow:none;font-family:'VT323',monospace}
+body.power-level-active #powerLevel #plSuggestions p{font-size:19px}
+body.power-level-active #powerLevel .pl-actions{margin:14px 0 0}
+body.power-level-active #powerLevel .pl-actions #plFinish{background:none;border:0;box-shadow:none;padding:4px 8px;color:var(--ink-2);font:400 10px 'Silkscreen',monospace;letter-spacing:.2em;text-transform:uppercase;text-shadow:none}
+body.power-level-active #powerLevel .pl-actions #plFinish::after{content:' ›'}
+body.power-level-active #powerLevel .pl-actions #plFinish:hover{color:#fff;transform:none;filter:none}
+body.power-level-active #powerLevel .btn{border-radius:0}
+body.power-level-active #powerLevel :is(.btn-indigo,.btn-teal){background:rgba(11,17,38,.85);border:2px solid var(--kr-line);color:#e9f1ff;box-shadow:none;font:400 13px/1 'Silkscreen',monospace;letter-spacing:.12em;text-transform:uppercase;text-shadow:none}
+body.power-level-active #powerLevel :is(.btn-indigo,.btn-teal):not(:disabled):hover{border-color:var(--kr-cyan);filter:none}
+
+/* reveal: big centred tier word, then "climb on" */
+body.power-level-active #powerLevel[data-phase=reveal] .pl-question{position:fixed;left:0;right:0;bottom:12vh;margin:0 auto;width:min(560px,calc(100% - 32px));background:none;border:0;box-shadow:none;padding:0}
+body.power-level-active #powerLevel[data-phase=reveal] .pl-question :is(#plCategory,h3,.pl-actions,#plFeedback,#plSuggestions){display:none}
+body.power-level-active #powerLevel #plStage #plRarity{top:34%;width:min(90%,560px);padding:0;background:none;border:0;box-shadow:none;color:#fff;animation:pl-rarity-pop .45s cubic-bezier(.2,1.6,.4,1) both;--kr-tier:#c9c3dd}
+body.power-level-active #powerLevel #plRarity[data-tier="Too Clever"]{--kr-tier:#ffae5c}body.power-level-active #powerLevel #plRarity[data-tier="Side Character"]{--kr-tier:#5fe6c8}
+body.power-level-active #powerLevel #plRarity[data-tier="Rare"]{--kr-tier:#8f86ff}body.power-level-active #powerLevel #plRarity[data-tier="Deep Cut"]{--kr-tier:#ffc72c}body.power-level-active #powerLevel #plRarity[data-tier="Limit Break"]{--kr-tier:#ff4f9a}
+body.power-level-active #powerLevel #plStage #plRarity strong{font:400 clamp(30px,6vw,52px)/1.05 'Silkscreen',monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--kr-tier);text-shadow:-3px 0 rgba(255,79,154,.55),3px 0 rgba(95,230,255,.55),0 0 24px var(--kr-tier)}
+body.power-level-active #powerLevel #plStage #plRarity span{display:block;order:-1;margin:14px 0 0;font:400 26px 'VT323',monospace;letter-spacing:.06em;color:#fff;text-shadow:0 2px 4px #000}
+body.power-level-active #powerLevel #plStage #plRarity span::before{content:'“'}body.power-level-active #powerLevel #plStage #plRarity span::after{content:'”'}
+body.power-level-active #powerLevel #plStage #plRarity b{margin-top:10px;font:400 24px 'VT323',monospace;letter-spacing:.08em;color:var(--kr-pink);text-shadow:0 2px 4px #000}
+body.power-level-active[data-pl-tier] #powerLevel :is(.pl-question,#plStage,.pl-stats){box-shadow:none}
+body.power-level-active[data-pl-tier] #plTitle{text-shadow:-4px 0 rgba(255,79,154,.9),4px 0 rgba(95,230,255,.9)}
+
+/* results */
+body.power-level-active #powerLevel[data-phase=done] .pl-heading{margin-top:64px}
+body.power-level-active #powerLevel[data-phase=done] .pl-heading>p{display:none}
+body.power-level-active #powerLevel[data-phase=done] .pl-question{margin-top:28px;padding:26px}
+body.power-level-active #powerLevel[data-phase=done] #plQuestion{font:400 11px 'Silkscreen',monospace;letter-spacing:.24em;text-transform:uppercase;color:var(--kr-pink)}
+body.power-level-active #powerLevel #plPercent strong{font:400 clamp(56px,11vw,96px)/1 'Silkscreen',monospace;letter-spacing:.02em;color:#fff;text-shadow:-4px 0 rgba(255,79,154,.85),4px 0 rgba(95,230,255,.85)}
+body.power-level-active #powerLevel #plPercent .pl-percent-bar{height:12px;border:2px solid var(--kr-line);border-radius:0;background:#0b1126;margin:18px 0 12px}
+body.power-level-active #powerLevel #plPercent .pl-percent-bar i{background:repeating-linear-gradient(90deg,var(--kr-pink) 0 8px,#ff7db4 8px 10px)}
+body.power-level-active #powerLevel #plPercent p{font:400 21px/1.3 'VT323',monospace;color:var(--night)}
+body.power-level-active #powerLevel #plResults{margin-top:18px;padding:26px 26px 14px}
+body.power-level-active #powerLevel #plResults h3{font:400 18px 'Silkscreen',monospace;letter-spacing:.12em;text-transform:uppercase;color:#fff}
+body.power-level-active #powerLevel #plSummary{font:400 21px/1.35 'VT323',monospace;color:var(--kr-cyan)}
+body.power-level-active #powerLevel #plRarest{font:400 21px 'VT323',monospace;color:#e9f1ff}
+body.power-level-active #powerLevel #plResults h4{font:400 10px 'Silkscreen',monospace;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-2)}
+body.power-level-active #powerLevel #plTop{font:400 20px/1.3 'VT323',monospace}
+body.power-level-active #powerLevel #plTop>li{border-bottom:2px dashed var(--kr-line);padding:16px 0}
+body.power-level-active #powerLevel #plTop>li:last-child{border-bottom:0}
+body.power-level-active #powerLevel #plNextDay{width:100%;margin:12px 0 0;text-align:center;font:400 10px 'Silkscreen',monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2)}
+body.power-level-active #powerLevel #plResults:focus-visible{outline:none}
+body.power-level-active #powerLevel .pl-tier-tag{border-radius:0;border-width:2px;font:400 10px/1.6 'Silkscreen',monospace;letter-spacing:.06em}
+body.power-level-active #powerLevel .pl-all summary{font:400 10px 'Silkscreen',monospace;letter-spacing:.16em;color:var(--kr-cyan);text-transform:uppercase}
+body.power-level-active #powerLevel #plTop .pl-all-tier li{padding:3px 10px;border:2px solid var(--kr-line);border-radius:0;background:#0b1126;color:#e9f1ff;font:400 19px/1.2 'VT323',monospace}
+body.power-level-active #powerLevel #plTop .pl-all-tier li small{color:var(--ink-2)}
+body.power-level-active #powerLevel #plTop .pl-all-tier li.mine{background:var(--kr-pink);border-color:#ff86bb;color:#fff}
+body.power-level-active #powerLevel #plTop .pl-all-tier li.mine small{color:#ffe1ee}
+
+@media(max-width:650px){
+ body.power-level-active #powerLevel{padding:0 12px 140px}
+ body.power-level-active #powerLevel .pl-heading{margin-top:72px}
+ body.power-level-active #powerLevel .pl-heading .ribbon{font-size:10px;letter-spacing:.35em}
+ body.power-level-active #powerLevel .pl-heading>p{font-size:19px}
+ body.power-level-active #powerLevel .pl-question{margin-top:112px;padding:18px 16px 14px}
+ body.power-level-active #powerLevel #plStage #plAltitude{left:12px;font-size:18px;padding:6px 10px}
+ body.power-level-active #powerLevel #plStage .pl-reading{right:12px;padding:6px 10px}
+ body.power-level-active #powerLevel #plStage .pl-reading strong{font-size:22px}
+ body.power-level-active #powerLevel:is([data-phase=active],[data-phase=reveal]) :is(.pl-back,.pl-menu){top:72px}
+ body.power-level-active #powerLevel .pl-timer-dial{width:46px;height:46px}
+ body.power-level-active #powerLevel :is(input,textarea),body.power-level-active #powerLevel #plSubmit{height:48px;font-size:20px}
+ body.power-level-active #powerLevel #plSubmit{padding:0 14px;font-size:12px}
+ body.power-level-active #powerLevel #plStage #plRarity{top:30%}
+}
