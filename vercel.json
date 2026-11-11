@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/AnimeAscent", "destination": "/index.html" },
+    { "source": "/AnimeAscent/", "destination": "/index.html" }
+  ]
+}
