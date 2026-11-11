@@ -1,10 +1,12 @@
-// Question bank: one broad prompt per anime, each with dozens of valid answers.
-// Rarity is an editorial 0–100 rating of how obscure an answer is, not fighting strength.
-const POWER_LEVEL_SERIES=[{"id":"bleach","name":"Bleach"},{"id":"naruto","name":"Naruto"},{"id":"onepiece","name":"One Piece"},{"id":"hxh","name":"Hunter × Hunter"},{"id":"tokyoghoul","name":"Tokyo Ghoul"},{"id":"mha","name":"My Hero Academia"},{"id":"blackclover","name":"Black Clover"},{"id":"demonslayer","name":"Demon Slayer"},{"id":"aot","name":"Attack on Titan"}];
+// Question bank: five broad prompts per anime, each with up to dozens of valid answers.
+// Rarity is an editorial 0–100 rating of how obscure an answer is, not fighting strength:
+// under 20 Fodder · 20+ Side Character · 45+ Rare · 75+ Deep Cut · exactly 100 Limit Break (one per question).
+// The daily schedule (run.js) depends on this order: only ever add new questions after the existing ones.
+const POWER_LEVEL_SERIES=[{"id":"bleach","name":"Bleach"},{"id":"naruto","name":"Naruto"},{"id":"onepiece","name":"One Piece"},{"id":"hxh","name":"Hunter × Hunter"},{"id":"tokyoghoul","name":"Tokyo Ghoul"},{"id":"mha","name":"My Hero Academia"},{"id":"blackclover","name":"Black Clover"},{"id":"demonslayer","name":"Demon Slayer"},{"id":"aot","name":"Attack on Titan"},{"id":"jjk","name":"Jujutsu Kaisen"}];
 const POWER_LEVEL_QUESTIONS=(()=>{
 const a=(name,rarity,...aliases)=>aliases.length?{name,aliases,rarity}:{name,rarity};
 const q=(id,anime,category,text,note,answers)=>({id:'timed-v4-'+id,anime,category,text,note,answers});
-return [
+const bank=[
 q('naruto-leaf','naruto','Naruto','Naruto — Name any shinobi from the Hidden Leaf Village.','Naruto & Shippuden · any rank, living or dead',[
  a('Naruto Uzumaki',0,'Naruto'),a('Sasuke Uchiha',2,'Sasuke'),a('Kakashi Hatake',2,'Kakashi'),a('Sakura Haruno',3,'Sakura'),
  a('Itachi Uchiha',5,'Itachi'),a('Jiraiya',6),a('Tsunade',6),a('Shikamaru Nara',8,'Shikamaru'),a('Hinata Hyuga',8,'Hinata','Hinata Hyuuga'),
@@ -61,7 +63,7 @@ q('tokyoghoul-ghouls','tokyoghoul','Tokyo Ghoul','Tokyo Ghoul — Name any ghoul
  a('Ken Kaneki',0,'Kaneki','Ken','Eyepatch'),a('Touka Kirishima',3,'Touka','Toka Kirishima'),a('Yamori',10,'Jason'),a('Ayato Kirishima',12,'Ayato'),
  a('Nishiki Nishio',15,'Nishiki','Nishiki Nishiki'),a('Eto Yoshimura',15,'Eto','One-Eyed Owl','Sen Takatsuki'),a('Hinami Fueguchi',20,'Hinami'),
  a('Kuzen Yoshimura',25,'Yoshimura','Manager Yoshimura'),a('Renji Yomo',30,'Yomo'),a('Tatara',30),a('Naki',40),a('Seidou Takizawa',45,'Takizawa'),
- a('Enji Koma',50,'Koma'),a('Kaya Irimi',50,'Irimi'),a('Noro',50),a('Kurona Yasuhisa',55,'Kurona'),a('Nashiro Yasuhisa',60,'Nashiro'),a('Roma Hoito',70,'Roma')]),
+ a('Enji Koma',50,'Koma'),a('Kaya Irimi',50,'Irimi'),a('Noro',50),a('Kurona Yasuhisa',55,'Kurona'),a('Nashiro Yasuhisa',60,'Nashiro'),a('Roma Hoito',100,'Roma')]),
 q('mha-classes','mha','My Hero Academia','My Hero Academia — Name any student in U.A. High’s Class 1-A or Class 1-B.','Hero course first-years · real names or hero names',[
  a('Izuku Midoriya',0,'Deku','Izuku','Midoriya'),a('Katsuki Bakugo',0,'Bakugo','Bakugou','Kacchan','Katsuki Bakugou'),a('Shoto Todoroki',2,'Todoroki','Shoto','Shouto Todoroki'),
  a('Ochaco Uraraka',2,'Uraraka','Ochako Uraraka','Uravity'),a('Tenya Iida',5,'Iida','Ingenium'),a('Eijiro Kirishima',8,'Kirishima','Red Riot'),
@@ -81,7 +83,7 @@ q('blackclover-knights','blackclover','Black Clover','Black Clover — Name any 
  a('Nozel Silva',20,'Nozel'),a('Mereoleona Vermillion',20,'Mereoleona'),a('Gauche Adlai',20,'Gauche'),a('Charmy Pappitson',20,'Charmy'),
  a('Charlotte Roselei',25,'Charlotte'),a('Grey',30,'Gray'),a('Secre Swallowtail',30,'Secre','Nero'),a('Jack the Ripper',35,'Jack'),
  a('Gordon Agrippa',35,'Gordon'),a('Zora Ideale',35,'Zora'),a('Nacht Faust',40,'Nacht'),a('Rill Boismortier',40,'Rill'),
- a('Henry Legolant',50,'Henry'),a('Dorothy Unsworth',50,'Dorothy'),a('Gueldre Poizot',55,'Gueldre')]),
+ a('Henry Legolant',50,'Henry'),a('Dorothy Unsworth',50,'Dorothy'),a('Gueldre Poizot',100,'Gueldre')]),
 q('demonslayer-ranks','demonslayer','Demon Slayer','Demon Slayer — Name any Hashira or any of the Twelve Kizuki (Upper and Lower Moons).','Current or former · Muzan doesn’t count',[
  a('Akaza',5),a('Kyojuro Rengoku',5,'Rengoku','Kyojuro','Kyoujurou Rengoku'),a('Giyu Tomioka',8,'Giyu','Giyuu Tomioka','Tomioka Giyu'),a('Shinobu Kocho',10,'Shinobu','Kocho Shinobu'),
  a('Tengen Uzui',10,'Tengen','Uzui'),a('Rui',15),a('Mitsuri Kanroji',15,'Mitsuri'),a('Sanemi Shinazugawa',20,'Sanemi'),a('Muichiro Tokito',20,'Muichiro','Muichirou Tokitou'),
@@ -181,6 +183,220 @@ q('tokyoghoul-world','tokyoghoul','Tokyo Ghoul','Tokyo Ghoul — Name any kagune
  a('20th Ward',10,'Twentieth Ward'),a(':re',15,'Cafe :re','Café :re','re'),a('Cochlea',15),a('11th Ward',15,'Eleventh Ward'),a('Kakuja',15),
  a('24th Ward',30,'Twenty-Fourth Ward'),a('1st Ward',35,'First Ward'),a('13th Ward',35,'Thirteenth Ward'),a('Chimera',40,'Chimera Kagune'),a('Clowns',40,'The Clowns'),
  a('Kamii University',40),a('4th Ward',40,'Fourth Ward'),a('Gourmet Restaurant',45,'Ghoul Restaurant','The Restaurant'),a('V',50),a('Rushima',50,'Rushima Island'),
- a('Helter Skelter',100)])
-];})();
+ a('Helter Skelter',100)]),
+// Round 3+: more prompts per anime, and Jujutsu Kaisen. Keep adding a full round (one per anime) at a time.
+q('jjk-sorcerers','jjk','Jujutsu Kaisen','Jujutsu Kaisen — Name any jujutsu sorcerer.','Students, teachers and sorcerers from any school or era',[
+ a('Yuji Itadori',0,'Yuji','Itadori'),a('Satoru Gojo',0,'Gojo','Gojo Satoru'),a('Megumi Fushiguro',0,'Megumi','Fushiguro'),a('Nobara Kugisaki',3,'Nobara','Kugisaki'),a('Kento Nanami',3,'Nanami'),
+ a('Maki Zenin',5,'Maki','Maki Zen\'in'),a('Toge Inumaki',5,'Toge','Inumaki'),a('Panda',5),a('Yuta Okkotsu',5,'Yuta','Yuuta Okkotsu'),a('Aoi Todo',5,'Todo','Todou'),
+ a('Suguru Geto',10,'Geto','Getou'),a('Mai Zenin',15,'Mai','Mai Zen\'in'),a('Noritoshi Kamo',15,'Kamo'),a('Kasumi Miwa',15,'Miwa'),a('Momo Nishimiya',20,'Nishimiya'),
+ a('Mechamaru',20,'Kokichi Muta'),a('Mei Mei',20),a('Shoko Ieiri',20,'Shoko','Ieiri'),a('Kinji Hakari',20,'Hakari'),a('Utahime Iori',25,'Utahime'),
+ a('Masamichi Yaga',25,'Yaga'),a('Yuki Tsukumo',25,'Yuki'),a('Hiromi Higuruma',25,'Higuruma'),a('Hajime Kashimo',25,'Kashimo'),a('Naoya Zenin',25,'Naoya','Naoya Zen\'in'),
+ a('Yoshinobu Gakuganji',35,'Gakuganji'),a('Naobito Zenin',35,'Naobito'),a('Kirara Hoshi',40,'Kirara'),a('Atsuya Kusakabe',40,'Kusakabe'),a('Fumihiko Takaba',40,'Takaba'),
+ a('Ui Ui',45),a('Ryu Ishigori',45,'Ishigori','Ryuu Ishigori'),a('Hana Kurusu',50,'Kurusu','Angel'),a('Takuma Ino',50,'Ino'),a('Yu Haibara',50,'Haibara','Yuu Haibara'),
+ a('Takako Uro',55,'Uro'),a('Charles Bernard',55,'Charles'),a('Ogi Zenin',55,'Ogi'),a('Jinichi Zenin',55,'Jinichi'),a('Arata Nitta',60,'Nitta'),
+ a('Yorozu',60),a('Dhruv Lakdawalla',100,'Dhruv')]),
+q('naruto-outsiders','naruto','Naruto','Naruto — Name any shinobi who isn’t from the Hidden Leaf.','Other villages, Akatsuki, Sound and rogue ninja · Naruto & Shippuden',[
+ a('Gaara',0),a('Kisame Hoshigaki',5,'Kisame'),a('Deidara',5),a('Sasori',8),a('Nagato',8,'Pain','Pein','Nagato Uzumaki'),a('Zabuza Momochi',8,'Zabuza'),a('Temari',8),
+ a('Konan',10),a('Kakuzu',10),a('Hidan',10),a('Haku',10),a('Kankuro',10,'Kankurou'),a('Killer Bee',10,'Bee','Killer B'),a('Zetsu',15,'White Zetsu','Black Zetsu'),
+ a('Kimimaro Kaguya',20,'Kimimaro'),a('Suigetsu Hozuki',20,'Suigetsu','Suigetsu Hoozuki'),a('Karin',20,'Karin Uzumaki'),a('A',25,'Raikage','Fourth Raikage','Ay','Ei'),
+ a('Jugo',25,'Juugo'),a('Onoki',30,'Ohnoki','Tsuchikage','Third Tsuchikage'),a('Mei Terumi',30,'Mei','Mizukage','Fifth Mizukage'),a('Chiyo',30,'Granny Chiyo','Lady Chiyo'),
+ a('Darui',35),a('Chojuro',40,'Choujuurou'),a('Karui',40),a('Yahiko',40),a('Kurotsuchi',45),a('Omoi',45),a('Tayuya',45),a('Rasa',45,'Fourth Kazekage'),
+ a('Akatsuchi',50),a('Samui',50),a('Kidomaru',50,'Kidoumaru'),a('Ao',55),a('Yugito Nii',55,'Yugito'),a('Baki',55),a('Jirobo',55,'Jiroubou'),a('Sakon',55,'Ukon','Sakon and Ukon'),
+ a('Kitsuchi',60),a('Yagura',60,'Yagura Karatachi'),a('Hanzo',60,'Hanzou','Hanzo of the Salamander'),a('Dosu Kinuta',65,'Dosu'),a('Fu',65,'Fuu'),a('Utakata',65),
+ a('Han',70),a('Roshi',70),a('Kin Tsuchi',70,'Kin'),a('Zaku Abumi',70,'Zaku'),a('Kinkaku',70),a('Ginkaku',70),a('Third Raikage',70),
+ a('Ebizo',75),a('Mu',75,'Second Tsuchikage'),a('Gengetsu Hozuki',75,'Gengetsu','Second Mizukage'),a('Mangetsu Hozuki',80,'Mangetsu'),a('Ameyuri Ringo',80,'Ameyuri'),
+ a('Kushimaru Kuriarare',85,'Kushimaru'),a('Jinin Akebino',85,'Jinin'),a('Jinpachi Munashi',85,'Jinpachi'),a('Fuguki Suikazan',85,'Fuguki'),a('Pakura',85),a('Yura',100)]),
+q('onepiece-marines','onepiece','One Piece','One Piece — Name any Marine.','Any rank, past or present, including ex-Marines',[
+ a('Monkey D. Garp',3,'Garp'),a('Smoker',5),a('Sakazuki',5,'Akainu'),a('Borsalino',5,'Kizaru'),a('Kuzan',5,'Aokiji'),a('Koby',5,'Coby'),a('Sengoku',8),
+ a('Tashigi',10),a('Helmeppo',15),a('Issho',15,'Fujitora'),a('Aramaki',25,'Ryokugyu','Green Bull'),a('Hina',30,'Black Cage Hina'),a('Zephyr',30,'Z','Black Arm Zephyr'),
+ a('Morgan',30,'Axe-Hand Morgan','Captain Morgan'),a('Tsuru',40,'Vice Admiral Tsuru'),a('Vergo',40),a('Kong',45,'Fleet Admiral Kong'),a('Fullbody',45),a('X Drake',45,'Drake'),
+ a('Momonga',50),a('Jango',50),a('Sentomaru',50),a('Onigumo',55),a('Doberman',55),a('Nezumi',55),a('Strawberry',60),a('Ain',60),a('Bastille',65),a('Binz',65),
+ a('T-Bone',65),a('Jonathan',65),a('Yamakaji',70),a('Brannew',70),a('Gion',75,'Momousagi'),a('Prince Grus',75),a('Hibari',75),a('Tokikake',80,'Chaton'),a('Kujaku',80),
+ a('Bogart',100)]),
+q('bleach-arrancar','bleach','Bleach','Bleach — Name any Espada or Arrancar.','Including Fracción, Privaron Espada and former Espada',[
+ a('Ulquiorra Cifer',0,'Ulquiorra'),a('Grimmjow Jaegerjaquez',0,'Grimmjow'),a('Coyote Starrk',8,'Starrk','Stark'),a('Nelliel Tu Odelschwanck',8,'Nel','Nelliel'),
+ a('Nnoitra Gilga',10,'Nnoitra'),a('Yammy Llargo',10,'Yammy','Yammy Riyalgo'),a('Baraggan Louisenbairn',12,'Baraggan','Barragan'),a('Tier Harribel',12,'Harribel','Halibel','Tia Harribel'),
+ a('Szayelaporro Granz',15,'Szayelaporro','Szayel'),a('Zommari Rureaux',25,'Zommari'),a('Aaroniero Arruruerie',25,'Aaroniero'),a('Lilynette Gingerbuck',25,'Lilynette'),
+ a('Wonderweiss Margela',35,'Wonderweiss'),a('Luppi Antenor',35,'Luppi'),a('Dordoni Alessandro Del Socaccio',40,'Dordoni'),a('Pesche Guatiche',40,'Pesche'),
+ a('Loly Aivirrne',45,'Loly'),a('Dondochakka Birstanne',45,'Dondochakka'),a('Cirucci Sanderwicci',50,'Cirucci'),a('Gantenbainne Mosqueda',50,'Gantenbainne'),a('Menoly Mallia',50,'Menoly'),
+ a('Tesra Lindocruz',55,'Tesra'),a('Ilfort Grantz',55,'Ilfort'),a('Emilou Apacci',55,'Apacci'),a('Franceska Mila Rose',55,'Mila Rose'),a('Cyan Sung-Sun',55,'Sung-Sun','Sun-Sun'),
+ a('Shawlong Koufang',60,'Shawlong'),a('Charlotte Chuhlhourne',60,'Charlotte'),a('Grand Fisher',60),a('Di Roy Linker',65,'Di Roy'),a('Edrad Liones',65,'Edrad'),
+ a('Nakeem Grindina',70,'Nakeem'),a('Rudbornn Chelute',70,'Rudbornn'),a('Ggio Vega',70,'Ggio'),a('Avirama Redder',75,'Avirama'),a('Findor Carias',75,'Findor'),
+ a('Choe Neng Poww',75,'Poww'),a('Demoura Zodd',80,'Demoura'),a('Nirgge Parduoc',100,'Nirgge')]),
+q('hxh-ants','hxh','Hunter × Hunter','Hunter × Hunter — Name any Chimera Ant.','The Queen, the Royal Guard, the squadron leaders and the rest',[
+ a('Meruem',0,'The King','King Meruem'),a('Neferpitou',3,'Pitou'),a('Shaiapouf',8,'Pouf'),a('Menthuthuyoupi',8,'Youpi'),a('Chimera Ant Queen',10,'The Queen','Queen'),
+ a('Ikalgo',15),a('Colt',20),a('Meleoron',20),a('Welfin',25),a('Leol',30),a('Zazan',35),a('Cheetu',40),a('Rammot',40),a('Kite',45,'Kaito'),
+ a('Bloster',50),a('Hina',50),a('Koala',50),a('Flutter',55),a('Peggy',55),a('Hagya',55),a('Brovada',60),a('Reina',100)]),
+q('tokyoghoul-ccg','tokyoghoul','Tokyo Ghoul','Tokyo Ghoul — Name any CCG investigator.','Any rank · Tokyo Ghoul, √A and :re',[
+ a('Kotaro Amon',3,'Amon','Koutarou Amon'),a('Kureo Mado',3,'Mado'),a('Kisho Arima',5,'Arima','Kishou Arima'),a('Juuzou Suzuya',5,'Juzo Suzuya','Suzuya','Rei Suzuya'),
+ a('Haise Sasaki',5,'Haise','Sasaki'),a('Akira Mado',8,'Akira'),a('Kuki Urie',10,'Urie'),a('Ginshi Shirazu',12,'Shirazu'),a('Tooru Mutsuki',12,'Mutsuki','Toru Mutsuki'),
+ a('Saiko Yonebayashi',12,'Saiko'),a('Yukinori Shinohara',20,'Shinohara'),a('Seidou Takizawa',25,'Takizawa'),a('Take Hirako',30,'Hirako'),a('Nimura Furuta',30,'Furuta','Kichimura Washuu','Nimura'),
+ a('Kuramoto Ito',40,'Ito'),a('Iwao Kuroiwa',40,'Kuroiwa'),a('Itsuki Marude',40,'Marude'),a('Matsuri Washuu',40,'Matsuri'),a('Tsuneyoshi Washuu',40,'Tsuneyoshi'),
+ a('Kousuke Houji',45,'Houji','Kosuke Hoji','Hoji'),a('Takeomi Kuroiwa',45,'Takeomi'),a('Yoshitoki Washuu',50,'Yoshitoki'),a('Koori Ui',50,'Ui','Ui Koori'),
+ a('Hanbee Abara',50,'Hanbee'),a('Shiki Kijima',50,'Kijima'),a('Hairu Ihei',50,'Hairu'),a('Shinsanpei Aura',55,'Aura'),a('Keijin Nakarai',55,'Nakarai'),
+ a('Toma Higemaru',60,'Higemaru'),a('Chuu Hachikawa',100,'Hachikawa')]),
+q('mha-heroes','mha','My Hero Academia','My Hero Academia — Name any Pro Hero by hero name.','Hero names only · active, retired or deceased',[
+ a('All Might',0),a('Endeavor',2),a('Hawks',3),a('Eraser Head',5,'Eraserhead'),a('Best Jeanist',8),a('Mirko',8,'Rabbit Hero Mirko'),a('Present Mic',8),
+ a('Midnight',10),a('Mt. Lady',10,'Mount Lady'),a('Recovery Girl',10),a('Gran Torino',15),a('Sir Nighteye',15),a('Kamui Woods',15),a('Ingenium',15),
+ a('Fat Gum',20),a('Ryukyu',20),a('Edgeshot',20),a('Cementoss',20),a('Thirteen',20,'13'),a('Star and Stripe',20,'Star & Stripe'),a('Ectoplasm',25),a('Lady Nagant',25),
+ a('Crust',30),a('Snipe',30),a('Power Loader',30),a('Vlad King',30),a('Gang Orca',30),a('Hound Dog',35),a('Death Arms',40),a('Wash',40),a('Ms. Joke',40,'Miss Joke'),
+ a('Lunch-Rush',45,'Lunch Rush'),a('Backdraft',45),a('Manual',45),a('Rock Lock',45),a('Pixie-Bob',45,'Pixie Bob'),a('Mandalay',45),
+ a('Native',50),a('Ragdoll',50),a('Tiger',50),a('Gunhead',50),a('Burnin',50),a('Yoroi Musha',55),a('Uwabami',55),a('Selkie',55),
+ a('Slidin\' Go',60,'Slidin Go'),a('Fourth Kind',60),a('Majestic',65),a('Sirius',75),a('Water Hose',100)]),
+q('blackclover-squads','blackclover','Black Clover','Black Clover — Name any of the nine Magic Knight squads.','The Clover Kingdom’s squads, by squad name',[
+ a('Black Bulls',0),a('Golden Dawn',5),a('Silver Eagles',25),a('Crimson Lion Kings',25,'Crimson Lions'),a('Blue Rose Knights',40,'Blue Rose'),
+ a('Green Mantis',55,'Green Praying Mantis','Green Praying Mantises','Green Mantises'),a('Coral Peacocks',60,'Coral Peacock'),a('Purple Orcas',75,'Purple Orca'),a('Aqua Deer',100,'Aqua Deers')]),
+q('demonslayer-corps','demonslayer','Demon Slayer','Demon Slayer — Name any member or ally of the Demon Slayer Corps who isn’t a Hashira.','Slayers, trainees, Kakushi, swordsmiths, the Ubuyashiki family and more',[
+ a('Tanjiro Kamado',0,'Tanjiro','Tanjirou Kamado'),a('Nezuko Kamado',0,'Nezuko'),a('Zenitsu Agatsuma',0,'Zenitsu'),a('Inosuke Hashibira',0,'Inosuke'),a('Kanao Tsuyuri',5,'Kanao'),
+ a('Genya Shinazugawa',10,'Genya'),a('Sakonji Urokodaki',10,'Urokodaki'),a('Kagaya Ubuyashiki',15,'Kagaya','Oyakata-sama'),a('Tamayo',15),a('Yushiro',15,'Yushirou'),a('Sabito',15),
+ a('Murata',20),a('Aoi Kanzaki',20,'Aoi'),a('Makomo',20),a('Hotaru Haganezuka',20,'Haganezuka'),a('Jigoro Kuwajima',25,'Kuwajima'),a('Yoriichi Tsugikuni',25,'Yoriichi'),
+ a('Goto',35,'Gotou'),a('Kotetsu',40),a('Kiriya Ubuyashiki',40,'Kiriya'),a('Kaigaku',40),a('Kiyo Terauchi',45,'Kiyo'),a('Sumi Nakahara',45,'Sumi'),a('Naho Takada',45,'Naho'),
+ a('Amane Ubuyashiki',45,'Amane'),a('Chuntaro',50,'Chuntarou'),a('Kanata Ubuyashiki',60,'Kanata'),a('Matsuemon',65),a('Kuina Ubuyashiki',70,'Kuina'),
+ a('Nichika Ubuyashiki',70,'Nichika'),a('Hinaki Ubuyashiki',70,'Hinaki'),a('Tecchin Tecchikawahara',75,'Tecchin'),a('Ozaki',100)]),
+q('aot-104th','aot','Attack on Titan','Attack on Titan — Name any member of the 104th Training Corps.','Cadets who trained together, whatever branch they joined',[
+ a('Eren Yeager',0,'Eren','Eren Jaeger'),a('Mikasa Ackerman',0,'Mikasa'),a('Armin Arlert',0,'Armin'),a('Jean Kirstein',3,'Jean','Jean Kirschtein'),a('Connie Springer',5,'Connie'),
+ a('Sasha Blouse',5,'Sasha','Sasha Braus'),a('Reiner Braun',5,'Reiner'),a('Annie Leonhart',5,'Annie','Annie Leonhardt'),a('Bertholdt Hoover',8,'Bertholdt','Bertolt Hoover'),
+ a('Historia Reiss',8,'Historia','Krista Lenz','Christa Renz'),a('Ymir',10),a('Marco Bott',15,'Marco','Marco Bodt'),a('Hitch Dreyse',35,'Hitch'),
+ a('Thomas Wagner',40,'Thomas'),a('Mina Carolina',40,'Mina'),a('Marlo Freudenberg',40,'Marlo'),a('Franz Kefka',50,'Franz'),a('Hannah Diamant',50,'Hannah'),
+ a('Samuel Linke-Jackson',55,'Samuel'),a('Daz',55),a('Boris Feulner',60,'Boris'),a('Nac Tius',85,'Nac','Nack Tierce'),a('Mylius Zeramuski',100,'Mylius')]),
+q('naruto-beasts','naruto','Naruto','Naruto — Name any tailed beast or jinchūriki.','Tailed beasts by name or tail count · any jinchūriki, past or present',[
+ a('Kurama',0,'Nine-Tails','Nine Tails','Kyuubi','Nine-Tailed Fox'),a('Naruto Uzumaki',2,'Naruto'),a('Gaara',3),a('Shukaku',5,'One-Tail','One Tail','Ichibi'),
+ a('Gyuki',10,'Eight-Tails','Eight Tails','Hachibi','Gyuuki'),a('Killer Bee',10,'Bee','Killer B'),a('Ten-Tails',15,'Ten Tails','Juubi'),
+ a('Matatabi',30,'Two-Tails','Two Tails','Nibi'),a('Kushina Uzumaki',30,'Kushina'),a('Isobu',35,'Three-Tails','Three Tails','Sanbi'),a('Son Goku',35,'Four-Tails','Four Tails','Yonbi'),
+ a('Kokuo',40,'Five-Tails','Five Tails','Gobi'),a('Saiken',40,'Six-Tails','Six Tails','Rokubi'),a('Chomei',40,'Seven-Tails','Seven Tails','Nanabi','Choumei'),
+ a('Obito Uchiha',45,'Obito'),a('Madara Uchiha',45,'Madara'),a('Mito Uzumaki',55,'Mito'),a('Yugito Nii',55,'Yugito'),a('Yagura',60,'Yagura Karatachi'),a('Fu',60,'Fuu'),
+ a('Roshi',65),a('Han',65),a('Utakata',65),a('Minato Namikaze',70,'Minato'),a('Rin Nohara',70,'Rin'),a('Hagoromo Otsutsuki',75,'Hagoromo','Sage of Six Paths'),
+ a('Bunpuku',100)]),
+q('onepiece-pirates','onepiece','One Piece','One Piece — Name any pirate captain.','Captains of any crew, from East Blue to the Emperors',[
+ a('Monkey D. Luffy',0,'Luffy'),a('Shanks',2,'Red-Haired Shanks','Red Hair Shanks'),a('Gol D. Roger',3,'Roger','Gold Roger'),a('Edward Newgate',5,'Whitebeard'),
+ a('Marshall D. Teach',5,'Blackbeard','Teach'),a('Kaido',5,'Kaidou'),a('Trafalgar Law',5,'Law'),a('Buggy',5,'Buggy the Clown'),a('Charlotte Linlin',8,'Big Mom'),
+ a('Eustass Kid',10,'Kid','Kidd','Eustass Kidd'),a('Arlong',10),a('Donquixote Doflamingo',12,'Doflamingo'),a('Crocodile',15,'Sir Crocodile'),a('Boa Hancock',15,'Hancock'),
+ a('Kuro',20,'Captain Kuro'),a('Don Krieg',20,'Krieg'),a('Alvida',20),a('Gecko Moria',25,'Moria'),a('Jinbe',30,'Jinbei'),a('Foxy',30),
+ a('Bellamy',35),a('Basil Hawkins',35,'Hawkins'),a('Capone Bege',35,'Bege'),a('Jewelry Bonney',35,'Bonney'),a('Scratchmen Apoo',40,'Apoo'),a('X Drake',40,'Drake'),
+ a('Bartolomeo',40,'Barto'),a('Shiki',40,'Golden Lion'),a('Hody Jones',40,'Hody'),a('Cavendish',45),a('Fisher Tiger',45),a('Urouge',50),a('Caribou',50),
+ a('Rocks D. Xebec',55,'Xebec','Rocks'),a('Edward Weevil',60,'Weevil'),a('Bartholomew Kuma',60,'Kuma'),a('Squard',60),a('Vander Decken IX',60,'Vander Decken'),
+ a('Sai',65),a('Hajrudin',65),a('Ideo',70),a('Orlumbus',70),a('Demaro Black',85),a('Bluejam',100)]),
+q('bleach-quincy','bleach','Bleach','Bleach — Name any Quincy.','Uryū, his family and the Wandenreich, including the Sternritter',[
+ a('Uryu Ishida',0,'Uryu','Ishida','Uryuu Ishida'),a('Yhwach',5,'Juha Bach','Yhwatch'),a('Ryuken Ishida',15,'Ryuken','Ryuuken Ishida'),a('Jugram Haschwalth',15,'Haschwalth'),
+ a('Bazz-B',15,'Bazz B','Bazzard Black'),a('Bambietta Basterbine',20,'Bambietta'),a('Gremmy Thoumeaux',20,'Gremmy'),a('Soken Ishida',25,'Soken','Souken Ishida'),
+ a('As Nodt',25,'Äs Nödt'),a('Askin Nakk Le Vaar',25,'Askin'),a('Masaki Kurosaki',30,'Masaki'),a('Gerard Valkyrie',30,'Gerard'),a('Lille Barro',30,'Lille'),
+ a('Candice Catnipp',30,'Candice'),a('Liltotto Lamperd',30,'Liltotto'),a('Giselle Gewelle',30,'Giselle','Gigi'),a('Quilge Opie',30,'Quilge'),a('Pernida Parnkgjas',35,'Pernida'),
+ a('Mask De Masculine',35,'Mask'),a('Meninas McAllon',40,'Meninas'),a('Cang Du',40),a('BG9',45),a('Driscoll Berci',45,'Driscoll'),a('Robert Accutrone',45,'Robert'),
+ a('NaNaNa Najahkoop',50,'NaNaNa'),a('PePe Waccabrada',50,'PePe'),a('Royd Lloyd',55,'Royd'),a('Loyd Lloyd',55,'Loyd'),a('Berenice Gabrielli',55,'Berenice'),
+ a('Jerome Guizbatt',55,'Jerome'),a('Nianzol Weizol',60,'Nianzol'),a('Kanae Katagiri',60,'Katagiri'),a('Shaz Domino',65,'Shaz'),a('Ebern Asguiaro',100,'Ebern')]),
+q('hxh-hunters','hxh','Hunter × Hunter','Hunter × Hunter — Name any character who holds a Hunter licence.','Pro Hunters from any arc, including the Zodiacs',[
+ a('Gon Freecss',0,'Gon'),a('Killua Zoldyck',2,'Killua'),a('Kurapika',2),a('Leorio Paradinight',3,'Leorio'),a('Hisoka',3,'Hisoka Morow'),a('Isaac Netero',5,'Netero','Chairman Netero'),
+ a('Ging Freecss',8,'Ging'),a('Biscuit Krueger',10,'Bisky','Biscuit','Bisuke'),a('Kite',10,'Kaito'),a('Illumi Zoldyck',15,'Illumi'),a('Knuckle Bine',20,'Knuckle'),
+ a('Morel Mackernasey',20,'Morel'),a('Knov',20),a('Shoot McMahon',25,'Shoot'),a('Pariston Hill',25,'Pariston'),a('Hanzo',25),a('Satotz',30),a('Menchi',30),
+ a('Cheadle Yorkshire',35,'Cheadle'),a('Pokkle',35),a('Mizaistom Nana',40,'Mizaistom'),a('Buhara',40),a('Senritsu',40),a('Tsezguerra',40),a('Kanzai',45),
+ a('Lippo',45),a('Beans',45),a('Saiyu',50),a('Botobai Gigante',50,'Botobai'),a('Pyon',55),a('Gel',55),a('Cluck',55),a('Ginta',55),a('Goreinu',70),
+ a('Linne Horsedoeuvre',70,'Linne'),a('Ickshonpe Katocha',70,'Ickshonpe'),a('Teradein Neutral',75,'Teradein'),a('Loupe Highland',85,'Loupe'),
+ a('Bushidora Ambitious',85,'Bushidora'),a('Sanbica Norton',100,'Sanbica')]),
+q('tokyoghoul-others','tokyoghoul','Tokyo Ghoul','Tokyo Ghoul — Name any ghoul who never worked at Anteiku or fought for Aogiri Tree.','Clowns, Gourmets, the Restaurant and beyond · Tokyo Ghoul, √A and :re',[
+ a('Shuu Tsukiyama',0,'Tsukiyama','Shu Tsukiyama'),a('Rize Kamishiro',3,'Rize'),a('Uta',10),a('Itori',20),a('Donato Porpora',30,'Donato'),
+ a('Kanae von Rosewald',30,'Kanae','Karren von Rosewald'),a('Nico',35),a('Ryouko Fueguchi',45,'Ryouko','Ryoko Fueguchi'),a('Big Madam',50),a('Torso',50),
+ a('Asaki Fueguchi',55,'Asaki'),a('Nutcracker',55),a('Matsumae',100)]),
+q('mha-villains','mha','My Hero Academia','My Hero Academia — Name any villain.','League of Villains, Shie Hassaikai, Meta Liberation Army, movies and more',[
+ a('All For One',0,'AFO'),a('Tomura Shigaraki',0,'Shigaraki','Tomura','Tenko Shimura'),a('Dabi',3,'Toya Todoroki','Touya Todoroki'),a('Himiko Toga',3,'Toga'),
+ a('Stain',5,'Hero Killer Stain','Chizome Akaguro','Stendhal'),a('Twice',8,'Jin Bubaigawara'),a('Overhaul',8,'Kai Chisaki','Chisaki'),a('Kurogiri',15),a('Nomu',15),
+ a('Mr. Compress',15,'Atsuhiro Sako','Compress'),a('Spinner',20,'Shuichi Iguchi'),a('Muscular',20),a('Gentle Criminal',25,'Gentle','Danjuro Tobita'),a('Gigantomachia',25),
+ a('Sludge Villain',25,'Slime Villain'),a('La Brava',30),a('Magne',30,'Big Sis Magne'),a('Re-Destro',30,'Destro','Rikiya Yotsubashi'),a('Lady Nagant',30),
+ a('Moonfish',40),a('Mustard',40),a('Nine',45),a('Geten',45),a('Trumpet',50),a('Rappa',50,'Kendo Rappa'),a('Chronostasis',50,'Hari Kurono'),a('Curious',55),
+ a('Skeptic',55),a('Mimic',55,'Joi Irinaka'),a('Shin Nemoto',60,'Nemoto'),a('Chimera',65),a('Slice',70),a('Wolfram',75),a('Mummy',75),a('Flect Turn',100)]),
+q('blackclover-villains','blackclover','Black Clover','Black Clover — Name any villain or antagonist.','Eye of the Midnight Sun, the elves, the Spade Kingdom and the devils',[
+ a('Dante Zogratis',5,'Dante'),a('Lucifero',5),a('Vanica Zogratis',8,'Vanica'),a('Zenon Zogratis',8,'Zenon'),a('Licht',10),a('Lucius Zogratis',10,'Lucius'),
+ a('Patolli',15),a('Vetto',15),a('Fana',15,'Fana the Hatred'),a('Megicula',15),a('Zagred',20),a('Sally',25),a('Rhya',25,'Rhya the Disloyal','Raia'),a('Beelzebub',25),
+ a('Valtos',30),a('Damnatio Kira',35,'Damnatio'),a('Rades Spirito',40,'Rades'),a('Lotus Whomalt',45,'Lotus'),a('Ladros',50),a('Morris Libardirt',60,'Morris'),
+ a('Lilith',65),a('Nahamah',70),a('Walgner',100)]),
+q('demonslayer-demons','demonslayer','Demon Slayer','Demon Slayer — Name any demon who isn’t one of the Twelve Kizuki.','Muzan, Nezuko and every lesser demon',[
+ a('Muzan Kibutsuji',0,'Muzan'),a('Nezuko Kamado',3,'Nezuko'),a('Tamayo',10),a('Yushiro',15,'Yushirou'),a('Hand Demon',20,'Hand-Demon'),a('Susamaru',25,'Temari Demon'),
+ a('Swamp Demon',30),a('Yahaba',30,'Arrow Demon'),a('Mother Spider Demon',40,'Spider Demon Mother','Spider Mother'),a('Father Spider Demon',40,'Spider Demon Father','Spider Father'),
+ a('Brother Spider Demon',85,'Spider Demon Brother','Older Brother Spider Demon','Son Spider Demon'),a('Sister Spider Demon',100,'Spider Demon Sister','Older Sister Spider Demon')]),
+q('aot-marley','aot','Attack on Titan','Attack on Titan — Name any Marleyan, or any Eldian living in Marley.','Warriors, candidates, soldiers, officials and the Tybur family',[
+ a('Reiner Braun',3,'Reiner'),a('Zeke Yeager',3,'Zeke','Zeke Jaeger'),a('Pieck Finger',5,'Pieck'),a('Annie Leonhart',5,'Annie'),a('Porco Galliard',8,'Porco'),
+ a('Gabi Braun',8,'Gabi'),a('Falco Grice',8,'Falco'),a('Bertholdt Hoover',8,'Bertholdt','Bertolt Hoover'),a('Marcel Galliard',15,'Marcel'),a('Willy Tybur',15,'Willy'),
+ a('Grisha Yeager',15,'Grisha','Grisha Jaeger'),a('Colt Grice',20,'Colt'),a('Theo Magath',20,'Magath'),a('Yelena',25),a('Udo',30),a('Zofia',30),a('Dina Fritz',30,'Dina','Dina Yeager'),
+ a('Eren Kruger',30,'Kruger','The Owl'),a('Onyankopon',30),a('Niccolo',30),a('Lara Tybur',35,'Lara'),a('Tom Ksaver',40,'Ksaver'),a('Karina Braun',45,'Karina'),
+ a('Gross',50,'Sergeant Major Gross'),a('Faye Yeager',55,'Faye'),a('Calvi',60,'General Calvi'),a('Ramzi',100)]),
+q('jjk-curses','jjk','Jujutsu Kaisen','Jujutsu Kaisen — Name any curse, cursed spirit or curse user.','Cursed spirits, Death Paintings and curse users',[
+ a('Ryomen Sukuna',0,'Sukuna','Ryoumen Sukuna'),a('Mahito',3),a('Jogo',5,'Jougo'),a('Hanami',10),a('Kenjaku',10),a('Suguru Geto',10,'Geto','Getou'),a('Choso',10,'Chouso'),
+ a('Dagon',15),a('Uraume',15),a('Rika Orimoto',15,'Rika'),a('Eso',25),a('Kechizu',25),a('Finger Bearer',30),a('Miguel',40),a('Smallpox Deity',45,'Smallpox God'),
+ a('Haruta Shigemo',45,'Haruta'),a('Mimiko Hasaba',45,'Mimiko'),a('Nanako Hasaba',45,'Nanako'),a('Kurourushi',50),a('Reggie Star',50,'Reggie'),a('Larue',55),
+ a('Manami Suda',55,'Manami'),a('Kuchisake-onna',55,'Slit-Mouthed Woman'),a('Granny Ogami',60,'Ogami'),a('Remi',60),a('Rainbow Dragon',70),a('Juzo Kumiya',100,'Juzo')]),
+q('naruto-clans','naruto','Naruto','Naruto — Name any clan.','Shinobi clans from any village',[
+ a('Uchiha',0),a('Hyuga',2,'Hyuuga'),a('Senju',5),a('Uzumaki',5),a('Nara',10),a('Akimichi',12),a('Yamanaka',12),a('Aburame',15),a('Inuzuka',15),a('Sarutobi',20),
+ a('Otsutsuki',25,'Ootsutsuki'),a('Hatake',30),a('Kaguya',40),a('Hozuki',45,'Hoozuki'),a('Yuki',50),a('Shimura',60),a('Hoshigaki',75),a('Kurama',75),
+ a('Fuma',85,'Fuuma'),a('Tsuchigumo',85),a('Kamizuru',85),a('Chinoike',100)]),
+q('onepiece-weapons','onepiece','One Piece','One Piece — Name any named sword or signature weapon.','Swords, staffs, jitte and other named weapons',[
+ a('Wado Ichimonji',3,'Wado'),a('Shusui',10),a('Sandai Kitetsu',10,'Kitetsu'),a('Enma',10),a('Yoru',15,'Kokuto Yoru'),a('Clima-Tact',15,'Clima Tact','Sorcery Clima-Tact','Perfect Clima-Tact'),
+ a('Kabuto',25,'Black Kabuto'),a('Zeus',35),a('Ame no Habakiri',35),a('Yubashiri',40),a('Shodai Kitetsu',40),a('Nidai Kitetsu',45),a('Murakumogiri',45),a('Gryphon',45),
+ a('Kikoku',50),a('Soul Solid',50),a('Shigure',55),a('Durandal',65),a('Nekote',70,'Neko no Te','Cat Claws'),a('Nanashaku Jitte',100,'Jitte')]),
+q('bleach-visored','bleach','Bleach','Bleach — Name any Visored or Fullbringer.','Hirako’s group, Xcution and the Fullbring arc',[
+ a('Ichigo Kurosaki',5,'Ichigo'),a('Shinji Hirako',3,'Shinji'),a('Hiyori Sarugaki',5,'Hiyori'),a('Kugo Ginjo',10,'Ginjo','Kuugo Ginjou'),a('Kensei Muguruma',15,'Kensei'),
+ a('Mashiro Kuna',15,'Mashiro'),a('Lisa Yadomaru',15,'Lisa'),a('Shukuro Tsukishima',15,'Tsukishima'),a('Love Aikawa',20,'Love'),a('Rojuro Otoribashi',20,'Rose','Roujuurou Otoribashi'),
+ a('Riruka Dokugamine',45,'Riruka'),a('Hachigen Ushoda',50,'Hachi','Hachigen'),a('Yasutora Sado',30,'Chad','Sado'),a('Yukio Hans Vorarlberna',55,'Yukio'),
+ a('Jackie Tristan',60,'Jackie'),a('Giriko Kutsuzawa',85,'Giriko'),a('Moe Shishigawara',100,'Shishigawara','Moe')]),
+q('hxh-places','hxh','Hunter × Hunter','Hunter × Hunter — Name any location.','Islands, cities, towers and countries from any arc',[
+ a('Greed Island',3),a('Whale Island',5),a('Heavens Arena',5,'Heaven\'s Arena','Celestial Tower'),a('York New City',5,'Yorknew','Yorknew City'),a('Kukuroo Mountain',10,'Kukuru Mountain'),
+ a('Trick Tower',15),a('Dark Continent',15),a('Meteor City',20),a('Zaban City',25,'Zaban'),a('East Gorteau',25,'East Gorteau Republic'),a('NGL',30,'Neo-Green Life'),
+ a('Kakin',40,'Kakin Empire'),a('Black Whale',40,'Black Whale No. 1'),a('Visca Forest Preserve',45,'Visca Forest'),a('Masadora',45),a('Dolle Harbor',50),
+ a('Antokiba',55),a('Soufrabi',60),a('Padokea Republic',60,'Padokea'),a('Mitene Union',60),a('Peijin',65),a('Lukso Province',70,'Lukso'),a('Rokario Republic',75,'Rokario'),
+ a('Aiai',100)]),
+q('tokyoghoul-codenames','tokyoghoul','Tokyo Ghoul','Tokyo Ghoul — Name any ghoul by their CCG codename.','Like Eyepatch or Gourmet · Tokyo Ghoul, √A and :re',[
+ a('Eyepatch',0),a('Gourmet',5),a('Rabbit',10),a('Jason',10),a('Binge Eater',10),a('Owl',15),a('One-Eyed Owl',15),a('Centipede',15),a('Black Reaper',25),
+ a('Black Rabbit',25),a('Dragon',35),a('Devil Ape',35),a('No Face',40),a('Big Madam',50),a('Torso',55),a('Nutcracker',55),a('Non-Killing Owl',85),a('Black Dog',100)]),
+q('mha-moves','mha','My Hero Academia','My Hero Academia — Name any named special move.','Super moves and signature attacks, like Detroit Smash',[
+ a('Detroit Smash',0),a('Delaware Smash',5),a('United States of Smash',5),a('Full Cowl',8,'Full Cowling'),a('Howitzer Impact',10),a('Prominence Burn',10),
+ a('St. Louis Smash',15,'Saint Louis Smash'),a('Texas Smash',15),a('AP Shot',15),a('Recipro Burst',15),a('Red Riot Unbreakable',15,'Unbreakable'),a('Air Force',15),
+ a('Manchester Smash',20),a('Shoot Style',20),a('Flashfreeze Heatwave',25),a('Oklahoma Smash',25),a('Carolina Smash',25),a('Stun Grenade',30),a('Hell Spider',30,'Hellspider'),
+ a('New Hampshire Smash',30),a('Cluster',35),a('Missouri Smash',35),a('Heaven-Piercing Ice Wall',40,'Heaven Piercing Ice Wall'),a('Vanishing Fist',40),a('Recipro Extend',40),
+ a('Comet Home Run',40),a('Heartbeat Fuzz',45),a('Recipro Turbo',50),a('Phosphor',50),a('Phantom Menace',85),a('Chimera Kraken',100)]),
+q('blackclover-places','blackclover','Black Clover','Black Clover — Name any kingdom, town or place.','The four kingdoms and everywhere in between',[
+ a('Clover Kingdom',0),a('Hage Village',5,'Hage'),a('Spade Kingdom',5),a('Diamond Kingdom',10),a('Heart Kingdom',10),a('Royal Capital',15),a('Witches\' Forest',20,'Witches Forest'),
+ a('Noble Realm',20),a('Forsaken Realm',25,'Forsaken'),a('Common Realm',30),a('Underwater Temple',30),a('Tree of Qliphoth',40,'Qliphoth'),a('Black Bulls Hideout',40,'Black Bulls Base'),
+ a('Kiten',45),a('Shadow Palace',45),a('Raque',55),a('Grand Magic Zone',60),a('Hino Country',100,'Land of the Sun','Land of the Rising Sun')]),
+q('demonslayer-places','demonslayer','Demon Slayer','Demon Slayer — Name any location.','Towns, mountains, mansions and the places of every arc',[
+ a('Mugen Train',5,'Infinity Train'),a('Entertainment District',5,'Yoshiwara','Yoshiwara Entertainment District'),a('Swordsmith Village',5),a('Infinity Castle',5,'Infinity Fortress','Mugen Castle'),
+ a('Butterfly Mansion',10,'Butterfly Estate'),a('Mount Natagumo',15,'Natagumo'),a('Asakusa',25),a('Mount Sagiri',25,'Sagiri'),a('Mount Fujikasane',35,'Fujikasane'),
+ a('Tsuzumi Mansion',40,'Drum House','Tsuzumi House'),a('Ubuyashiki Mansion',40,'Ubuyashiki Estate'),a('Wisteria Family Crest House',50,'Wisteria House'),a('Mount Kumotori',60,'Kumotori'),
+ a('Kyogoku House',75),a('Tokito House',85),a('Ogimoto House',100)]),
+q('aot-garrison','aot','Attack on Titan','Attack on Titan — Name any member of the Garrison or the Military Police.','Includes the Interior Police and Kenny’s squad',[
+ a('Dot Pixis',5,'Pixis'),a('Hannes',5),a('Kenny Ackerman',8,'Kenny'),a('Nile Dok',10,'Nile','Nile Dawk'),a('Annie Leonhart',10,'Annie'),a('Hitch Dreyse',20,'Hitch'),
+ a('Marlo Freudenberg',25,'Marlo'),a('Rico Brzenska',25,'Rico'),a('Kitz Woermann',30,'Kitz','Kitz Weilman'),a('Ian Dietrich',35,'Ian'),a('Djel Sannes',40,'Sannes'),
+ a('Traute Caven',45,'Traute'),a('Mitabi Jarnach',45,'Mitabi'),a('Anka Rheinberger',50,'Anka'),a('Boris Feulner',50,'Boris'),a('Ralph',55),a('Gustav',100)]),
+q('jjk-techniques','jjk','Jujutsu Kaisen','Jujutsu Kaisen — Name any cursed technique, Domain Expansion or named technique.','Innate techniques, domains and named moves',[
+ a('Limitless',3),a('Infinity',3),a('Unlimited Void',3),a('Malevolent Shrine',3),a('Hollow Purple',5,'Purple'),a('Black Flash',5),a('Ten Shadows Technique',5,'Ten Shadows'),
+ a('Cleave',8),a('Dismantle',8),a('Red',10,'Reversal Red','Cursed Technique Reversal: Red'),a('Blue',10,'Lapse Blue','Cursed Technique Lapse: Blue'),a('Divergent Fist',15),
+ a('Idle Transfiguration',15),a('Cursed Speech',15),a('Boogie Woogie',15),a('Reverse Cursed Technique',15),a('Straw Doll Technique',20),a('Ratio Technique',20),
+ a('Blood Manipulation',20),a('Simple Domain',25),a('Piercing Blood',25),a('Cursed Spirit Manipulation',25),a('Self-Embodiment of Perfection',30),a('Chimera Shadow Garden',30),
+ a('Projection Sorcery',30),a('Idle Death Gamble',30),a('Fuga',30,'Furnace'),a('Coffin of the Iron Mountain',35),a('Construction',35),a('Copy',35),a('Disaster Flames',35),
+ a('Deadly Sentencing',35),a('Hairpin',35),a('Resonance',35),a('Supernova',40),a('Horizon of the Captivating Skandha',45),a('Disaster Plants',45),a('Overtime',45),
+ a('Maximum: Uzumaki',45,'Uzumaki'),a('Star Rage',45),a('Falling Blossom Emotion',50),a('Convergence',55),a('Comedian',55),a('Hollow Wicker Basket',55),
+ a('Mythical Beast Amber',60),a('Ceremonial Sea of Light',70),a('Time Cell Moon Palace',85),a('Bird Strike',100)]),
+q('jjk-tools','jjk','Jujutsu Kaisen','Jujutsu Kaisen — Name any shikigami, cursed tool or cursed object.','Ten Shadows shikigami, weapons, seals and relics',[
+ a('Mahoraga',3,'Divine General Mahoraga','Eight-Handled Sword Divergent Sila Divine General Mahoraga'),a('Sukuna\'s Fingers',5,'Sukuna Finger','Sukuna\'s Finger'),a('Divine Dogs',5,'Divine Dog'),
+ a('Nue',8),a('Inverted Spear of Heaven',10,'Heavenly Inverted Spear'),a('Prison Realm',10),a('Toad',15),a('Playful Cloud',15),a('Max Elephant',20),a('Great Serpent',20),
+ a('Split Soul Katana',20,'Split Soul'),a('Rabbit Escape',25),a('Death Paintings',30,'Cursed Womb: Death Paintings'),a('Round Deer',35),a('Dragon-Bone',35,'Dragon Bone'),
+ a('Piercing Ox',40),a('Black Rope',40),a('Tiger Funeral',45),a('Slaughter Demon',45),a('Agito',50),a('Kamutoke',85),a('Chain of a Thousand Miles',100,'Thousand-Mile Chain')]),
+q('jjk-places','jjk','Jujutsu Kaisen','Jujutsu Kaisen — Name any location.','Schools, districts, Culling Game colonies and where the big fights happen',[
+ a('Tokyo Jujutsu High',3,'Jujutsu High','Tokyo Jujutsu Technical High School','Tokyo Jujutsu Tech'),a('Shibuya',3,'Shibuya Station'),a('Kyoto Jujutsu High',8,'Kyoto Jujutsu Technical High School','Kyoto Jujutsu Tech'),
+ a('Shinjuku',20),a('Sendai Colony',25,'Sendai'),a('Okinawa',35),a('Sugisawa Third High School',40,'Sugisawa High'),a('Sakurajima Colony',40,'Sakurajima'),
+ a('Tokyo Colony No. 1',45,'Tokyo No. 1 Colony'),a('Tokyo Colony No. 2',50,'Tokyo No. 2 Colony'),a('Satozakura High School',50,'Satozakura'),
+ a('Eishu Juvenile Detention Center',50,'Eishu Detention Center'),a('Meiji Jingumae Station',55),a('Dogenzaka',60),a('Yasohachi Bridge',100)]),
+];
+// "Too Clever": the go-to obscure pick that everyone reaches for. Scores 15, below a side character.
+const CLEVER={
+ 'naruto-leaf':['Shisui Uchiha'],'onepiece-fruit':['Galdino'],'bleach-gotei':['Kaien Shiba'],'hxh-troupe':['Kortopi'],'tokyoghoul-ghouls':['Yamori'],
+ 'mha-classes':['Hanta Sero','Koji Koda'],'blackclover-knights':['Gordon Agrippa'],'demonslayer-ranks':['Kyogai'],'aot-scouts':['Moblit Berner'],
+ 'onepiece-places':['Long Ring Long Land'],'naruto-jutsu':['Sexy Jutsu'],'bleach-zanpakuto':['Wabisuke'],'demonslayer-breathing':['Dead Calm'],'hxh-nen':['Bungee Gum'],
+ 'mha-quirks':['Navel Laser'],'aot-places':['Utgard Castle'],'blackclover-magic':['Mirror Magic'],'tokyoghoul-world':['Kakuja'],
+ 'jjk-sorcerers':['Yu Haibara'],'naruto-outsiders':['Kimimaro Kaguya'],'onepiece-marines':['Zephyr'],'bleach-arrancar':['Lilynette Gingerbuck'],'hxh-ants':['Ikalgo'],
+ 'tokyoghoul-ccg':['Take Hirako'],'mha-heroes':['Lady Nagant'],'demonslayer-corps':['Murata'],'aot-104th':['Marco Bott'],
+ 'naruto-beasts':['Rin Nohara'],'onepiece-pirates':['Rocks D. Xebec'],'bleach-quincy':['Masaki Kurosaki'],'hxh-hunters':['Satotz'],'tokyoghoul-others':['Itori'],
+ 'mha-villains':['Gentle Criminal'],'blackclover-villains':['Licht'],'demonslayer-demons':['Susamaru'],'aot-marley':['Tom Ksaver'],'jjk-curses':['Rika Orimoto'],
+ 'naruto-clans':['Otsutsuki'],'onepiece-weapons':['Shusui'],'bleach-visored':['Yasutora Sado'],'hxh-places':['Meteor City'],'tokyoghoul-codenames':['Centipede'],
+ 'mha-moves':['Air Force'],'blackclover-places':['Underwater Temple'],'demonslayer-places':['Asakusa'],'aot-garrison':['Kitz Woermann'],
+ 'jjk-techniques':['Boogie Woogie'],'jjk-tools':['Max Elephant'],'jjk-places':['Okinawa']};
+for(const x of bank)for(const name of CLEVER[x.id.replace('timed-v4-','')]||[]){const hit=x.answers.find(a=>a.name===name);if(!hit)throw Error('Too Clever answer not in '+x.id+': '+name);hit.clever=true;}
+return bank;})();
 if(typeof module!=="undefined")module.exports=POWER_LEVEL_QUESTIONS;

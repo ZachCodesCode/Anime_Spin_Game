@@ -1,12 +1,18 @@
-# Power Level: timed five-question runs
+# Power Level: one daily five-question ascent
 
 Open `/#power-level`. Serve this static repository with `python3 -m http.server 8081`. The existing team builder is unchanged.
 
 ## Configuration
 
-`run.js` centralizes `CONFIG`: five questions, 30 seconds, baseline 100, 2200ms reveal. `boost(rarity)` delegates to the deterministic 0–100 editorial rarity mapping in `core.js`; `visualTier(total)` controls accumulated visual thresholds independently. A maximum individual answer never ends a run early. Final totals range from 100 to 50,100.
+`run.js` centralizes `CONFIG`: five questions, 30 seconds each, a 3-second countdown before each clock starts, and a 1.9 s reveal. After a reveal the player presses **Climb on ▲** to continue; the next question is shown during its countdown. A maximum individual answer never ends a run early.
 
-`questions.js` holds nine bounded anime-only prompts, one for each requested series. Each has stable ID, anime, question, scope/spoiler note, and canonical answers with aliases and provisional editorial rarity. Add accurately scoped prompts and aliases here. Do not change bank contents/order mid-day: daily selection is seeded by Toronto date, shuffles deterministically, selects distinct anime first, and returns exactly five unique question IDs.
+## Scoring
+
+Krillion-style fixed tiers (`core.js`): **Fodder 10 · Too Clever 15 · Side Character 30 · Rare 60 · Deep Cut 85 · Limit Break 100**. An answer's tier comes from its editorial rarity (under 20, 20+, 45+, 75+, exactly 100). Every question has exactly one rarity-100 Limit Break answer. **Too Clever** is the go-to "obscure" pick that everyone reaches for: it's listed per question in the `CLEVER` table at the bottom of `questions.js` and scores 15 whatever its rarity. Every point climbs 10 m, so a perfect run (500 points) reaches the 5,000 m summit.
+
+## Daily schedule
+
+One ascent per day, the same for everyone, numbered from `EPOCH` in `run.js` (2026-11-11 is Ascent #1). There is no practice mode or replay: a finished ascent shows a countdown to the next one (Toronto midnight). `schedule()` deals one question per anime per round, rotating the anime order each round, and each day takes the next five, so a day never repeats an anime and no question repeats until the whole bank has been used (50 questions = 10 days). **Only add questions after the existing ones, a full round (one per anime) at a time**, so past and current days keep their questions.
 
 Content checks used the original anime scopes, including: Naruto original Team 7; East Blue Straw Hats; season-one Hashira meeting; initial Quinx under Haise; initial Levi squad. Reference examples:
 - https://disney.go.com/xd/naruto/cds/characters/
@@ -17,7 +23,7 @@ Content checks used the original anime scopes, including: Naruto original Team 7
 
 ## State and persistence
 
-V3 keys: `shonen-spin:power-level:v3:daily:YYYY-MM-DD` and `...:practice`. V1/v2 saves remain untouched and are not interpreted as timed runs. Start is explicit; each next question starts only when its input is shown and the document is visible. Leaving an active question does not stop its absolute deadline. Reveals save their end time before animation. Restoration recomputes all boosts from canonical outcomes, retains active deadlines, and cannot award a second outcome to a locked question. Refreshing during a reveal resumes the saved phase without replaying its award. An expired question becomes a timeout; the following question waits for visibility. Storage events synchronize other tabs, although this local-only game does not provide server-authoritative anti-cheat.
+V4 key: `shonen-spin:power-level:v4:daily:YYYY-MM-DD`. Older saves (v1–v3) are ignored. Start is explicit; each next question starts only when its input is shown and the document is visible. Leaving an active question does not stop its absolute deadline. Reveals save their end time before animation. Restoration recomputes all boosts from canonical outcomes, retains active deadlines, and cannot award a second outcome to a locked question. Refreshing during a reveal resumes the saved phase without replaying its award. An expired question becomes a timeout; the following question waits for visibility. Storage events synchronize other tabs, although this local-only game does not provide server-authoritative anti-cheat.
 
 ## Validation
 
@@ -57,8 +63,17 @@ Each answer's tier drives the whole page during its reveal: a banner on the stag
 
 ## Result
 
-There is no leaderboard. A finished run shows the share of the summit reached: total power above the 100 baseline, divided by the best possible for that run's five questions. The same percentage appears in the copied result.
+There is no leaderboard. A finished run shows points, altitude and the share of the summit reached, plus each question's deepest-cut answer. The copied result is spoiler-free:
+
+```
+Shonen Spin · Power Level #1
+⛰️ 1,350 m · 135/500 pts
+⬜🟫⬛🟨⬜
+https://www.shonenspin.com/#power-level
+```
+
+Squares: ⬜ Fodder · 🟫 Too Clever · 🟩 Side Character · 🟦 Rare · 🟪 Deep Cut · 🟨 Limit Break · ⬛ skipped or timed out.
 
 ## Questions
 
-`questions.js` has two broad prompts per anime, one about characters and one about anything else in the show (places, jutsu, Zanpakutō, Breathing Styles, Nen, Quirks, magic and so on), with 18–99 accepted answers each. The daily pick takes five different anime, so most days mix both kinds. Answers not on a list are rejected, so add valid misses to the list. Changing the bank mid-day changes that day's questions for players who haven't started. `versions/questions-v3-1.js` keeps the previous bank for the spelling and climb tests.
+`questions.js` has five broad prompts for each of ten anime (Naruto, One Piece, Bleach, Hunter × Hunter, Tokyo Ghoul, My Hero Academia, Black Clover, Demon Slayer, Attack on Titan, Jujutsu Kaisen) with 9–99 accepted answers each. Answers not on a list are rejected, so add valid misses to the list. `versions/questions-v3-1.js` keeps an older bank for the spelling and climb tests.

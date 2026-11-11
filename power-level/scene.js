@@ -22,7 +22,7 @@ const moving=atlasReady&&motion&&motion.t>0&&motion.t<1&&!reduce;
 const t=motion?.t||0,hop=moving?Math.abs(Math.sin(progress*160))*10*Math.sin(Math.PI*t):0;
 traveller.style.setProperty('--hop',hop+'px');
 sprite.style.transform=`scaleX(${p.direction}) rotate(${moving?Math.sin(t*28)*3:0}deg)`;
-const frame=moving?(motion.boost>=7000?(t<.15?3:t>.85?5:4):1+Math.floor(t*18)%2):0;
+const frame=moving?(motion.boost>=85?(t<.15?3:t>.85?5:4):1+Math.floor(t*18)%2):0;
 sprite.dataset.frame=String(frame);
 sprite.style.backgroundPosition=`${frame*20}% 100%`;
 traveller.classList.toggle('is-climbing',!!moving);view.style.setProperty('--altitude',progress);

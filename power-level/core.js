@@ -1,8 +1,12 @@
 (function(root){
 'use strict';
-const TIERS = [{min:1,name:'Common'},{min:2000,name:'Uncommon'},{min:4000,name:'Rare'},{min:7000,name:'Legendary'},{min:10000,name:'Limit Break'}];
-const score = rarity => Math.round(1 + Math.max(0,Math.min(100,rarity))*9999/100);
-const tier = value => [...TIERS].reverse().find(t=>value>=t.min)?.name || 'Common';
+// Krillion-style answer tiers with fixed points. "Too Clever" is the go-to obscure pick that
+// everyone reaches for: it's flagged per question and scores below an ordinary side character.
+const TIERS = [{name:'Fodder',points:10},{name:'Too Clever',points:15},{name:'Side Character',points:30},{name:'Rare',points:60},{name:'Deep Cut',points:85},{name:'Limit Break',points:100}];
+const grade = answer => answer.clever ? TIERS[1] : TIERS[answer.rarity>=100?5:answer.rarity>=75?4:answer.rarity>=45?3:answer.rarity>=20?2:0];
+const points = answer => grade(answer).points;
+// Tier name for a points value; in-between values (run averages) round down, skipping Too Clever.
+const tier = value => (TIERS.find(t=>t.points===value) || [...TIERS].reverse().find(t=>t.name!=='Too Clever'&&value>=t.points) || TIERS[0]).name;
 const normalize = value => String(value).normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
 const words = value => String(value).normalize('NFKD').replace(/[̀-ͯ]/g,'').toLowerCase().split(/[^a-z0-9]+/).filter(Boolean);
 const dateKey = (date=new Date()) => new Intl.DateTimeFormat('en-CA',{timeZone:'America/Toronto',year:'numeric',month:'2-digit',day:'2-digit'}).format(date);
@@ -19,7 +23,7 @@ const ranked=n.length<4?[]:question.answers.map(answer=>{let best=Infinity;for(c
 const suggestions=ranked.filter(v=>v.rank<=ranked[0].rank+.045).slice(0,3).map(v=>v.answer);
 return {status:'invalid',suggestions};
 }
-function restore(raw,q,date){const empty={date,questionId:q.id,guesses:[],done:false};try{const s=JSON.parse(raw);if(s.date!==date||s.questionId!==q.id||!Array.isArray(s.guesses)||typeof s.done!=='boolean'||s.guesses.length>5)return empty;const guesses=[];for(const n of s.guesses){if(typeof n!=='string'||validate(q,n,guesses).status!=='valid')return empty;guesses.push(n);}return {...empty,guesses,done:s.done||guesses.length===5||guesses.some(n=>score(q.answers.find(a=>a.name===n).rarity)===Math.max(...q.answers.map(a=>score(a.rarity))))};}catch{return empty;}}
+function restore(raw,q,date){const empty={date,questionId:q.id,guesses:[],done:false};try{const s=JSON.parse(raw);if(s.date!==date||s.questionId!==q.id||!Array.isArray(s.guesses)||typeof s.done!=='boolean'||s.guesses.length>5)return empty;const guesses=[];for(const n of s.guesses){if(typeof n!=='string'||validate(q,n,guesses).status!=='valid')return empty;guesses.push(n);}return {...empty,guesses,done:s.done||guesses.length===5||guesses.some(n=>points(q.answers.find(a=>a.name===n))===Math.max(...q.answers.map(points)))};}catch{return empty;}}
 function practice(bank,anime,previous,random=Math.random){const pool=bank.filter(q=>anime==='all'||q.anime===anime);const choices=pool.filter(q=>q.id!==previous);return (choices.length?choices:pool)[Math.floor(random()*(choices.length||pool.length))];}
-const api={TIERS,score,tier,normalize,dateKey,daily,validate,restore,practice};if(typeof module!=='undefined')module.exports=api;else root.PowerLevelCore=api;
+const api={TIERS,grade,points,tier,normalize,dateKey,daily,validate,restore,practice};if(typeof module!=='undefined')module.exports=api;else root.PowerLevelCore=api;
 })(globalThis);
