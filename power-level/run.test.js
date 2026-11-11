@@ -1,6 +1,6 @@
 const {test}=require('node:test'),assert=require('node:assert/strict'),R=require('./run'),C=require('./core'),bank=require('./questions');
 const make=()=>R.create(R.select(bank,'2026-11-11'),'2026-11-11');
-const open=(s,now)=>{R.start(s,now);return now+R.CONFIG.countdownMs;};   // start, then the moment the clock opens
+const open=(s,now)=>{R.start(s,now);return now;};   // start; the clock opens immediately
 const best=q=>q.answers.reduce((a,b)=>C.points(b)>C.points(a)?b:a);
 test('daily schedule: numbered from the epoch, five different anime, no repeats across a full cycle',()=>{
  assert.equal(R.dayNumber(R.EPOCH),1);assert.equal(R.dayNumber('2026-11-12'),2);
@@ -12,9 +12,8 @@ test('daily schedule: numbered from the epoch, five different anime, no repeats 
 test('appending a round of questions keeps every earlier day the same',()=>{
  const extra=[...new Set(bank.map(q=>q.anime))].map(anime=>({...bank.find(q=>q.anime===anime),id:'extra-'+anime}));
  for(let d=0;d<bank.length/5;d++){const date=new Date(Date.parse(R.EPOCH)+d*864e5).toISOString().slice(0,10);assert.deepEqual(R.select([...bank,...extra],date),R.select(bank,date));}});
-test('countdown: no answers before the clock opens, then 30 seconds',()=>{const s=make(),opened=open(s,1000),q=bank.find(q=>q.id===s.ids[0]);
- assert.equal(s.deadline,opened+30000);assert.equal(R.resolve(s,bank,'answer',q.answers[0].name,opened-1).status,'locked');assert.equal(R.resolve(s,bank,'skip','',opened-1).status,'locked');
- assert.equal(R.resolve(s,bank,'answer',q.answers[0].name,opened).status,'resolved');});
+test('the clock starts with the question: 30 seconds, answerable at once',()=>{const s=make(),opened=open(s,1000),q=bank.find(q=>q.id===s.ids[0]);
+ assert.equal(s.deadline,opened+30000);assert.equal(R.resolve(s,bank,'answer',q.answers[0].name,opened).status,'resolved');});
 test('invalid answers keep deadline; skip and timeout award zero exactly once',()=>{const s=make(),t=open(s,1000);
  assert.equal(R.resolve(s,bank,'answer','wrong',t+1000).status,'invalid');assert.equal(s.deadline,t+30000);assert.equal(s.outcomes.length,0);
  R.resolve(s,bank,'skip','',t+2000);assert.equal(R.total(s),0);assert.equal(R.resolve(s,bank,'timeout','',t+3000).status,'locked');

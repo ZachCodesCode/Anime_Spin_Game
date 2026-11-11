@@ -1,4 +1,4 @@
-/* Power Level — summit expedition. All rules stay scoped to this game. */
+/* Anime Ascent (internally "Power Level") — summit expedition. All rules stay scoped to this game. */
 #powerLevel,#powerLevel *,#powerLevel *::before,#powerLevel *::after{box-sizing:border-box}
 .power-level-active #game,.power-level-active #results,.power-level-active header,.power-level-active footer,.power-level-active>.horizon,.power-level-active>.petals,.power-level-active::before{display:none!important}
 .power-level-active .wrap{max-width:none;padding:0}

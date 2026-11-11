@@ -1,10 +1,12 @@
-# Power Level: one daily five-question ascent
+# Anime Ascent: one daily five-question quiz
+
+Shown to players as **Anime Ascent**; the code, folder and saves still use the internal name Power Level (`power-level/`, `#power-level`, `pl*` ids).
 
 Open `/#power-level`. Serve this static repository with `python3 -m http.server 8081`. The existing team builder is unchanged.
 
 ## Configuration
 
-`run.js` centralizes `CONFIG`: five questions, 30 seconds each, a 3-second countdown before each clock starts, and a 1.9 s reveal. After a reveal the player presses **Climb on ▲** to continue; the next question is shown during its countdown. A maximum individual answer never ends a run early.
+`run.js` centralizes `CONFIG`: five questions, 30 seconds each, and a 1.9 s reveal. After a reveal the player presses **Climb on ▲** to continue, and the next question's clock starts as soon as it appears. A maximum individual answer never ends a run early.
 
 ## Scoring
 
@@ -66,7 +68,7 @@ Each answer's tier drives the whole page during its reveal: a banner on the stag
 There is no leaderboard. A finished run shows points, altitude and the share of the summit reached, plus each question's deepest-cut answer. The copied result is spoiler-free:
 
 ```
-Shonen Spin · Power Level #1
+Anime Ascent #1 · Shonen Spin
 ⛰️ 1,350 m · 135/500 pts
 ⬜🟫⬛🟨⬜
 https://www.shonenspin.com/#power-level

@@ -109,11 +109,12 @@ header h1, #powerLevel .pl-heading h2{
     -2px -2px 0 var(--night), 2px -2px 0 var(--night), -2px 2px 0 var(--night), 2px 2px 0 var(--night),
     4px 4px 0 var(--pink), 6px 6px 0 var(--pink-d), 9px 9px 14px rgba(0,0,0,.35);
 }
+header h1{ font-size:clamp(42px,7vw,78px); margin-top:12px; }
 header .doa-sub{ font-family:'M PLUS Rounded 1c',sans-serif; font-weight:800; color:var(--night); font-size:clamp(12px,2.2vw,15px);
-  letter-spacing:.18em; margin-top:14px; text-transform:uppercase; }
+  letter-spacing:.18em; margin-top:10px; text-transform:uppercase; }
 
 /* mode switcher (pill tabs) */
-.mode-nav{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin:18px 0 0; }
+.mode-nav{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin:14px 0 0; }
 .mode-tab{ font-family:'Fredoka',sans-serif; font-weight:700; font-size:15px; cursor:pointer; color:#f1edff;
   border:3px solid rgba(0,0,0,.28); border-radius:999px; padding:9px 18px; background:linear-gradient(180deg,#7468f0,var(--indigo-d));
   box-shadow:0 4px 0 rgba(0,0,0,.3); transition:transform .1s, filter .1s; text-shadow:1px 1px 0 rgba(0,0,0,.35);
@@ -123,13 +124,17 @@ header .doa-sub{ font-family:'M PLUS Rounded 1c',sans-serif; font-weight:800; co
 .mode-tab:active{ transform:translateY(2px); box-shadow:0 2px 0 rgba(0,0,0,.3); }
 .mode-tab.on{ background:linear-gradient(180deg,#ffd95a,var(--gold-d)); color:#4a3300; border-color:#a87400; text-shadow:1px 1px 0 rgba(255,255,255,.35); }
 .mode-tab.on.hard{ background:linear-gradient(180deg,#ff6b9b,var(--pink-d)); color:#fff; border-color:#8a1640; text-shadow:1px 1px 0 rgba(0,0,0,.35); }
+.mode-tab.ascent{ background:linear-gradient(180deg,#2cc4b4,var(--teal-d)); color:#fff; border-color:#06564f; }
+.mode-tab.on.ascent{ background:linear-gradient(180deg,#5fe0d2,var(--teal)); border-color:#06564f; text-shadow:1px 1px 0 rgba(0,0,0,.35); }
 
 /* status tiles */
-.status{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin:18px auto 0; max-width:760px; }
-.tile{ flex:1 1 150px; max-width:230px; background:var(--paper); border:3px solid var(--edge-d); border-radius:10px; padding:9px 14px 10px;
-  box-shadow:0 5px 0 var(--edge-d), 0 10px 18px rgba(30,20,90,.25); text-align:center; }
-.tile .k{ display:block; font-family:'M PLUS Rounded 1c',sans-serif; font-weight:800; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-2); }
-.tile b{ display:block; font-family:'Fredoka',sans-serif; font-weight:700; font-size:26px; line-height:1.1; color:var(--ink); }
+.status{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin:12px auto 0; max-width:760px; }
+.tile{ display:flex; align-items:center; gap:10px; background:var(--paper); border:3px solid var(--edge-d); border-radius:999px; padding:5px 16px;
+  box-shadow:0 4px 0 var(--edge-d), 0 8px 14px rgba(30,20,90,.2); }
+.tile .k{ font-family:'M PLUS Rounded 1c',sans-serif; font-weight:800; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-2); }
+.tile b{ font-family:'Fredoka',sans-serif; font-weight:700; font-size:20px; line-height:1.1; color:var(--ink); }
+.tile .rank{ margin-top:0; }
+.tile .pwbar,.tile .capbar{ width:64px; margin-top:0; }
 .tile.power b{ color:var(--pink-d); }
 .rank{ display:inline-block; margin-top:4px; font-family:'Dela Gothic One',sans-serif; font-size:9.5px; letter-spacing:.05em; color:#fff;
   padding:2px 8px; border-radius:3px; transform:rotate(-3deg); background:var(--ink-2); box-shadow:0 1px 2px rgba(0,0,0,.3); }
@@ -143,7 +148,7 @@ header .doa-sub{ font-family:'M PLUS Rounded 1c',sans-serif; font-weight:800; co
 .capbar i{ background:linear-gradient(90deg,var(--teal),var(--gold-d)); }
 .capbar.over i{ background:var(--pink-d); }
 .tile.cap{ display:none; }
-body.hard .tile.cap{ display:block; }
+body.hard .tile.cap{ display:flex; }
 
 /* ---------------- PAPER PANEL (manga screentone) ---------------- */
 .paper{
@@ -159,7 +164,7 @@ body.hard .tile.cap{ display:block; }
 .paper::after{ content:""; position:absolute; inset:5px; border:2px dashed rgba(90,72,200,.35); border-radius:5px; pointer-events:none; }
 
 /* ---------------- SPIN PANEL ---------------- */
-.spin-panel{ padding:22px; margin:22px 0 26px; }
+.spin-panel{ padding:22px; margin:16px 0 26px; }
 .spin-row{ display:flex; gap:24px; align-items:flex-start; flex-wrap:wrap; }
 .spin-left{ flex:1 1 260px; min-width:240px; display:flex; flex-direction:column; align-items:center; gap:13px; }
 .spin-right{ flex:2 1 460px; min-width:290px; }
@@ -339,52 +344,8 @@ body.hard .tile.cap{ display:block; }
 .actions{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin:24px 0 8px; }
 
 /* ---------------- VILLAIN GAUNTLET (lacquered dojo board) ---------------- */
-.board{ margin-top:6px; padding:26px 20px 24px; border-radius:10px; position:relative;
-  background:
-    repeating-linear-gradient(90deg, rgba(255,255,255,.035) 0 78px, rgba(0,0,0,.08) 78px 80px),
-    linear-gradient(180deg,#4a3dbd,#2a2170);
-  border:6px solid #1d1660; box-shadow:0 16px 34px rgba(20,10,60,.45), inset 0 0 0 3px rgba(255,199,44,.45), inset 0 0 60px rgba(0,0,0,.35); }
-.board::before,.board::after{ content:""; position:absolute; width:16px; height:16px; border-radius:50%; top:10px;
-  background:radial-gradient(circle at 35% 30%, #fff1b0, var(--gold-d)); box-shadow:0 2px 4px rgba(0,0,0,.5); }
-.board::before{ left:12px; } .board::after{ right:12px; }
-.vs{ display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:12px; color:#fff9f1; }
-.vs-side{ display:flex; flex-direction:column; }
-.vs-side.them{ align-items:flex-end; text-align:right; }
-.vs-k{ font-family:'M PLUS Rounded 1c',sans-serif; font-weight:800; font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:#d9d2ff; }
-.vs-side b{ font-family:'Fredoka',sans-serif; font-weight:700; font-size:38px; line-height:1.05; }
-.vs-side.you b{ color:var(--gold); text-shadow:2px 2px 0 rgba(0,0,0,.35); }
-.vs-side.them b{ color:#ff9cbf; text-shadow:2px 2px 0 rgba(0,0,0,.35); }
-.vs-mid{ font-family:'Dela Gothic One',sans-serif; font-size:34px; color:#fff; transform:rotate(-6deg); text-shadow:3px 3px 0 var(--pink-d), 5px 5px 0 rgba(0,0,0,.3); }
-.tug{ position:relative; height:16px; margin:12px 0 8px; border-radius:10px; overflow:hidden; background:linear-gradient(90deg,#ff9cbf,var(--pink-d));
-  border:3px solid #1d1660; }
-.tug i{ position:absolute; left:0; top:0; bottom:0; width:0; background:linear-gradient(90deg,var(--gold-d),var(--gold)); transition:width .7s cubic-bezier(.2,.8,.2,1); }
-.tug-mid{ position:absolute; left:50%; top:0; bottom:0; width:3px; background:#fff; transform:translateX(-50%); }
-.threat-note{ text-align:center; font-family:'Nunito'; font-weight:800; font-size:13.5px; color:#efeaff; }
-.threat-note b{ color:var(--gold); }
-.gauntlet-actions{ margin:20px 0 0; }
 
-/* opponents strip (top of the game) */
-.foes{ margin:18px 0 0; padding:12px 16px 16px; border-radius:10px; position:relative;
-  background:repeating-linear-gradient(90deg, rgba(255,255,255,.035) 0 78px, rgba(0,0,0,.08) 78px 80px), linear-gradient(180deg,#4a3dbd,#2a2170);
-  border:5px solid #1d1660; box-shadow:0 12px 26px rgba(20,10,60,.4), inset 0 0 0 3px rgba(255,199,44,.45); }
-.foes-head{ display:flex; align-items:baseline; justify-content:space-between; gap:6px 16px; flex-wrap:wrap; }
-.foes-head h2{ font-family:'Dela Gothic One',sans-serif; font-weight:400; font-size:22px; color:#fff9f1; text-shadow:2px 2px 0 var(--pink-d); }
-.foes-head p{ font-family:'Nunito'; font-weight:800; font-size:13px; color:#e6e0ff; }
-.foes-head p b{ font-family:'Fredoka'; font-weight:700; font-size:17px; color:#ff9cbf; margin-left:3px; }
-.foe-row{ list-style:none; margin:10px 0 0; padding:0; display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:10px; }
-.foe{ position:relative; display:flex; flex-direction:column; align-items:center; text-align:center; overflow:hidden;
-  padding:14px 6px 8px; border-radius:8px; background:#fffaf4; box-shadow:0 5px 0 #1d1660, 0 8px 14px rgba(0,0,0,.35); }
-.foe::before{ content:""; position:absolute; left:0; right:0; top:0; height:7px;
-  background:repeating-linear-gradient(135deg, var(--sc) 0 10px, color-mix(in srgb, var(--sc) 78%, #000) 10px 20px); }
-.foe-anime{ font-family:'M PLUS Rounded 1c',sans-serif; font-weight:800; font-size:9px; letter-spacing:.12em; text-transform:uppercase;
-  color:color-mix(in srgb, var(--sc) 70%, #000); }
-.foe-name{ font-family:'Fredoka',sans-serif; font-weight:700; font-size:17px; line-height:1.05; color:#1d1640; margin-top:4px;
-  min-height:36px; display:flex; align-items:center; }
-.foe-epi{ font-size:11px; font-style:italic; font-weight:700; color:var(--ink-2); line-height:1.2; margin-top:1px; min-height:27px; }
-.foe-lv,.power-lv{ font-family:'M PLUS Rounded 1c',sans-serif; font-weight:800; font-size:12px; color:var(--pink-d); margin-top:4px; }
-@media (max-width:1000px) and (min-width:601px){
-  .foe-row{ grid-template-columns:repeat(4,minmax(0,1fr)); }
-}
+.power-lv{ font-family:'M PLUS Rounded 1c',sans-serif; font-weight:800; font-size:12px; color:var(--pink-d); margin-top:4px; }
 
 /* ---------------- RESULTS ---------------- */
 #results{ display:none; }
@@ -522,14 +483,12 @@ footer b{ font-family:'Fredoka'; font-weight:700; font-size:14px; color:var(--go
   .arc-banner .arc-name{ font-size:18px; }
   .mode-tab{ font-size:13px; padding:8px 13px; }
   .mode-tab small{ display:none; }
+  .status{ gap:8px; }
+  .tile{ padding:4px 12px; gap:6px; }
+  .tile .k{ font-size:9.5px; letter-spacing:.08em; }
+  .tile b{ font-size:17px; }
+  .tile .pwbar{ display:none; }
   .char-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); max-height:none; }
-  .vs-side b{ font-size:28px; }
-  .vs-mid{ font-size:26px; }
-  .foes{ padding:14px 0 16px; }
-  .foes-head{ padding:0 14px; }
-  .foe-row{ grid-template-columns:none; grid-auto-flow:column; grid-auto-columns:128px; overflow-x:auto; scroll-snap-type:x mandatory;
-    padding:10px 14px 12px; scroll-padding:0 14px; }
-  .foe{ scroll-snap-align:start; }
   .section-head h2{ font-size:22px; }
 }
 </style>
@@ -560,7 +519,7 @@ footer b{ font-family:'Fredoka'; font-weight:700; font-size:14px; color:var(--go
     <nav class="mode-nav" role="tablist" aria-label="Game mode">
       <button class="mode-tab on" id="tabRegular" role="tab" aria-selected="true" onclick="setMode('regular')">Regular <small>No limits</small></button>
       <button class="mode-tab hard" id="tabHard" role="tab" aria-selected="false" onclick="setMode('hard')">Hard · Cap <small>Power costs points</small></button>
-      <button class="mode-tab" id="tabPowerLevel" role="tab" aria-selected="false" onclick="openPowerLevel()">Power Level <small>Rarest answer wins</small></button>
+      <button class="mode-tab ascent" id="tabPowerLevel" role="tab" aria-selected="false" onclick="openPowerLevel()">Anime Ascent <small>Daily anime quiz</small></button>
     </nav>
     <button class="lb-link" id="lbHeaderBtn" type="button" onclick="openLeaderboard()">Leaderboards</button>
     <div class="status">
@@ -575,15 +534,6 @@ footer b{ font-family:'Fredoka'; font-weight:700; font-size:14px; color:var(--go
   <main id="powerLevel" class="paper hide" aria-labelledby="plTitle"></main>
 
   <main id="game">
-
-    <!-- ============ OPPONENTS ============ -->
-    <section class="foes" aria-labelledby="foesTitle">
-      <div class="foes-head">
-        <h2 id="foesTitle">Your Opponents</h2>
-        <p>Draft a squad of 8 that can take down all 7 final bosses. Gauntlet threat <b id="foeThreat">0</b></p>
-      </div>
-      <ol class="foe-row" id="villainGrid"></ol>
-    </section>
 
     <!-- ============ SPIN PANEL ============ -->
     <section class="paper spin-panel" aria-label="Spin to draft">
@@ -605,7 +555,7 @@ footer b{ font-family:'Fredoka'; font-weight:700; font-size:14px; color:var(--go
                 <li><b>Draft one fighter</b> from that faction into an open role. Fighters only fit roles they're built for.</li>
                 <li>Every pick <b>auto-spins</b> the next faction. Use a <b>skip</b> (3 total) to reroll a faction you don't want.</li>
                 <li><b>Elite</b> factions are rare, <b>weak</b> factions are common — dream teams take luck.</li>
-                <li>Fill all <b>8 roles</b>, then <b>challenge the gauntlet</b> to see your % chance.</li>
+                <li>Fill all <b>8 roles</b> and your squad takes on the <b>Villain Gauntlet</b>: seven final bosses, one from each anime. You get your % chance to win.</li>
                 <li><b>Hard mode:</b> fighters cost points by power. Stay under the cap!</li>
               </ol>
             </div>
@@ -649,26 +599,9 @@ footer b{ font-family:'Fredoka'; font-weight:700; font-size:14px; color:var(--go
     </div>
     <div class="crew-grid" id="slots"></div>
     <div class="actions">
+      <button class="btn btn-gold hide" id="challengeBtn" onclick="showResults()">See Gauntlet Result</button>
       <button class="btn btn-teal" onclick="track('play_again',{source:'new_squad'}); resetGame()">New Squad</button>
     </div>
-
-    <!-- ============ VILLAIN GAUNTLET ============ -->
-    <div class="section-head">
-      <h2>Villain Gauntlet</h2>
-      <p class="hint">How your squad stacks up against the <b>7 bosses</b> at the top. Draft your 8th fighter and the battle starts.</p>
-    </div>
-    <section class="board" aria-label="Villain gauntlet">
-      <div class="vs">
-        <div class="vs-side you"><span class="vs-k">Your squad</span><b id="threatTeam">0</b></div>
-        <div class="vs-mid" aria-hidden="true">VS</div>
-        <div class="vs-side them"><span class="vs-k">Gauntlet threat</span><b id="threatGaunt">0</b></div>
-      </div>
-      <div class="tug" aria-hidden="true"><i id="threatFill"></i><span class="tug-mid"></span></div>
-      <p class="threat-note" id="threatNote">Fill all 8 roles, then challenge the gauntlet.</p>
-      <div class="actions gauntlet-actions">
-        <button class="btn btn-gold" id="challengeBtn" onclick="showResults()" disabled>Challenge the Gauntlet!</button>
-      </div>
-    </section>
   </main>
 
   <!-- ============ RESULTS ============ -->
@@ -751,7 +684,6 @@ let gameId = 0;                // bumps on reset so stale spin/auto-spin timers 
 let freshSlot = null;          // slot that was just drafted (plays the pin-in animation)
 
 /* ---------- presentation constants ---------- */
-const GAUNTLET_THREAT = VILLAINS.reduce((a,v)=>a+v.p,0);
 const RANKS = [[0,'Rookie'],[300,'Contender'],[500,'Elite'],[650,'Legend'],[760,'Mythic']];
 const SHORT = { onepiece:'OP', naruto:'NAR', jjk:'JJK', mha:'MHA', demonslayer:'DS', blackclover:'BC', tokyoghoul:'TG' };
 const LEAD_ROLES = ['ace','right'];
@@ -777,19 +709,6 @@ function buildWheel(){
     `<span class="wl" style="transform:translate(-50%,-50%) rotate(${(i+.5)*seg}deg) translateY(-52px)">${SHORT[s.id]||s.name.slice(0,2)}</span>`).join('');
   document.getElementById('wheelRim').innerHTML = Array.from({length:14},(_,i)=>
     `<i style="transform:rotate(${i*360/14}deg) translateY(-92px)"></i>`).join('');
-}
-function buildVillains(){
-  document.getElementById('threatGaunt').textContent = GAUNTLET_THREAT;
-  document.getElementById('villainGrid').innerHTML = VILLAINS.map((v,i)=>{
-    const col = seriesById[v.s].color;
-    return `<li class="foe" style="--sc:${col}">
-      <span class="foe-anime">${seriesById[v.s].name}</span>
-      <span class="foe-name">${v.n}</span>
-      <span class="foe-epi">${v.e}</span>
-      <span class="foe-lv">Power Lv. ${v.p}</span>
-    </li>`;
-  }).join('');
-  document.getElementById('foeThreat').textContent = GAUNTLET_THREAT;
 }
 function buildSlotWindow(){
   document.getElementById('poolCount').textContent = POOLS.length;
@@ -1614,18 +1533,6 @@ function updateHud(){
   const rank = rankFor(pow);
   const rEl = document.getElementById('pwRank');
   rEl.textContent = rank; rEl.dataset.rank = rank.toLowerCase();
-  // VS meter: tug-of-war between your squad and the gauntlet (50% = dead even)
-  animateNum(document.getElementById('threatTeam'), pow);
-  document.getElementById('threatFill').style.width = (pow/(pow+GAUNTLET_THREAT)*100)+'%';
-  const note = document.getElementById('threatNote');
-  if(filled<SLOTS.length){
-    const left = SLOTS.length-filled;
-    note.innerHTML = `<b>${left}</b> role${left>1?'s':''} still open — fill them, then challenge the gauntlet.`;
-  } else {
-    note.innerHTML = pow>=GAUNTLET_THREAT
-      ? `Your squad outguns the gauntlet on paper — <b>take the fight!</b>`
-      : `Underpowered on paper, but synergy wins fights — <b>challenge anyway!</b>`;
-  }
   if(mode==='hard'){
     const sp = spent();
     document.getElementById('hudCap').textContent = sp+' / '+HARD_BUDGET;
@@ -1633,7 +1540,8 @@ function updateHud(){
     document.getElementById('capFill').style.width = Math.min(100,(sp/HARD_BUDGET)*100)+'%';
     bar.classList.toggle('over', sp>HARD_BUDGET);
   }
-  document.getElementById('challengeBtn').disabled = openSlots().length!==0;
+  // only offered once the squad is full (e.g. after "Back to Squad" from the results)
+  document.getElementById('challengeBtn').classList.toggle('hide', openSlots().length!==0);
   setControls();
 }
 function setControls(){
@@ -1666,7 +1574,7 @@ function resetGame(){
 
 /* ---------- BOOT ---------- */
 buildWheel();
-buildVillains();
+
 buildSlotWindow();
 buildSlots();
 resetGame();
