@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;700&display=swap');
 /* Anime Ascent (internally "Power Level") — summit expedition. All rules stay scoped to this game. */
 #powerLevel,#powerLevel *,#powerLevel *::before,#powerLevel *::after{box-sizing:border-box}
 .power-level-active #game,.power-level-active #results,.power-level-active header,.power-level-active footer,.power-level-active>.horizon,.power-level-active>.petals,.power-level-active::before{display:none!important}
@@ -147,3 +148,101 @@ body[data-pl-tier="Limit Break"] #plFlash{background:radial-gradient(ellipse at 
 .pl-all-tier{margin-top:10px}.pl-all-tier ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 0;padding:0}
 .pl-all-tier li{padding:3px 10px;border:1px solid #d9d0ff;border-radius:999px;background:#f6f2ff;font:700 13px/1.4 'Nunito',sans-serif;color:var(--ink)}
 .pl-all-tier li small{color:var(--ink-2);font-weight:800}.pl-all-tier li.mine{background:var(--gold);border-color:var(--gold-d);color:#4a3300}
+
+/* ==== Redesign: dark, minimal, Krillion-inspired. Game page only (body.power-level-active), styling only. ==== */
+body.power-level-active{background:radial-gradient(1100px 520px at 50% -8%,#1e2754 0%,rgba(30,39,84,0) 62%),linear-gradient(180deg,#0d1226 0%,#080b17 100%) fixed;color:#e8ecf8}
+body.power-level-active #powerLevel{--paper:#121830;--paper-d:#0b1022;--edge:rgba(255,255,255,.12);--edge-d:rgba(255,255,255,.09);--ink:#e8ecf8;--ink-2:#8d96b8;--night:#c3cbe8;--pl-line:rgba(255,255,255,.09);--pl-glass:rgba(10,14,30,.72);
+ width:min(860px,100%);padding:26px 22px 64px;font-family:'Space Grotesk',system-ui,sans-serif;color:var(--ink)}
+body.power-level-active #powerLevel :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+/* header: quiet label, clean wordmark */
+body.power-level-active #powerLevel .pl-heading{margin:18px auto 26px}
+body.power-level-active #powerLevel .pl-heading .ribbon{font:500 11px/1 'JetBrains Mono',monospace;letter-spacing:.32em;color:var(--ink-2)}
+body.power-level-active #powerLevel .pl-heading h2{font:700 clamp(36px,6vw,54px)/1.02 'Space Grotesk',sans-serif;letter-spacing:-.03em;margin:12px 0 0;transform:none;text-shadow:none;color:#fff;background:linear-gradient(180deg,#fff 30%,#ffd56a);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+body.power-level-active #powerLevel .pl-heading>p{display:block;margin-top:10px;font:500 15px/1.5 'Space Grotesk',sans-serif;color:var(--ink-2)}
+body.power-level-active #powerLevel :is(.pl-back,.pl-menu>summary){background:transparent;border:1px solid var(--pl-line);border-radius:999px;box-shadow:none;color:var(--ink-2);font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:.06em;padding:9px 14px;text-shadow:none}
+body.power-level-active #powerLevel :is(.pl-back,.pl-menu>summary):hover{color:#fff;border-color:rgba(255,255,255,.24);filter:none}
+body.power-level-active #powerLevel .pl-menu[open]{background:#121830;border:1px solid var(--pl-line);border-radius:16px;box-shadow:0 30px 60px -20px #000c}
+/* panels: soft glass, one hairline, no offset shadows */
+body.power-level-active #powerLevel :is(.pl-question,.pl-stats,#plResults,#plSuggestions){background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02));border:1px solid var(--pl-line);border-radius:20px;box-shadow:0 30px 60px -34px #000}
+body.power-level-active #powerLevel .pl-question{padding:30px 30px 24px;min-height:0}
+body.power-level-active #powerLevel #plCategory{font:500 11px/1.6 'JetBrains Mono',monospace;letter-spacing:.24em;color:#5eead4}
+body.power-level-active #powerLevel .pl-question h3{font:600 clamp(21px,3.2vw,29px)/1.28 'Space Grotesk',sans-serif;letter-spacing:-.012em;color:#fff;max-width:32ch;margin:12px auto 0}
+body.power-level-active #powerLevel .pl-stage{margin-top:14px;border:1px solid var(--pl-line);border-radius:20px;box-shadow:0 30px 60px -34px #000}
+body.power-level-active #powerLevel .pl-stats{margin-top:12px;border-radius:16px;padding:12px 20px;font:500 12px 'JetBrains Mono',monospace;letter-spacing:.06em;color:var(--ink-2)}
+body.power-level-active #powerLevel .pl-stats #plBest{color:var(--gold)}
+body.power-level-active #powerLevel[data-phase=done] .pl-stage{border-radius:20px}
+/* stage overlays: dark glass chips */
+body.power-level-active #powerLevel :is(.pl-reading,.pl-zone,#plAltitude){background:var(--pl-glass);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:12px;box-shadow:0 10px 30px -12px #000a;color:var(--ink)}
+body.power-level-active #powerLevel :is(.pl-zone,#plAltitude){font:500 11px 'JetBrains Mono',monospace;letter-spacing:.05em}
+body.power-level-active #powerLevel .pl-reading strong{font:700 34px/1 'Space Grotesk',sans-serif;color:#fff;letter-spacing:-.02em}
+body.power-level-active #powerLevel .pl-reading span{font:500 10px 'JetBrains Mono',monospace;letter-spacing:.08em;color:var(--ink-2);text-transform:uppercase}
+body.power-level-active #powerLevel #plLimit{font:700 13px 'JetBrains Mono',monospace;color:var(--gold)}
+body.power-level-active #powerLevel .pl-meter{width:4px;border:0;background:rgba(255,255,255,.14)}
+body.power-level-active #powerLevel .pl-meter::before{color:rgba(255,255,255,.7)}
+body.power-level-active #powerLevel .pl-landscape.is-loading::before{background:#0d1226;color:var(--ink-2);font:500 13px 'JetBrains Mono',monospace;letter-spacing:.2em}
+/* input row */
+body.power-level-active #powerLevel #plForm>label{font:500 11px 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);margin-bottom:8px}
+body.power-level-active #powerLevel :is(input,textarea){background:rgba(0,0,0,.32);border:1px solid rgba(255,255,255,.12);border-radius:14px;box-shadow:none;color:#fff;font:500 18px 'Space Grotesk',sans-serif;padding:15px 18px;transition:border-color .2s,box-shadow .2s}
+body.power-level-active #powerLevel :is(input,textarea):focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 4px rgba(255,199,44,.14)}
+body.power-level-active #powerLevel input::placeholder{color:#5c6585}
+body.power-level-active #powerLevel input:disabled{background:rgba(255,255,255,.03);color:var(--ink-2)}
+body.power-level-active #powerLevel .pl-timer-dial{background:conic-gradient(var(--gold) var(--time-left),rgba(255,255,255,.1) 0)}
+body.power-level-active #powerLevel .pl-timer-dial::before{background:#10152b;inset:3px}
+body.power-level-active #powerLevel #plTimer[data-urgent=true] .pl-timer-dial{background:conic-gradient(#ff5c8a var(--time-left),rgba(255,255,255,.1) 0)}
+body.power-level-active #powerLevel #plTimerSeconds{font:600 19px 'Space Grotesk',sans-serif;color:#fff}
+/* buttons: flat, confident, one accent */
+body.power-level-active #powerLevel .btn{font:600 16px/1 'Space Grotesk',sans-serif;letter-spacing:.005em;border-radius:14px;text-shadow:none;transition:transform .12s,background-color .2s,border-color .2s,box-shadow .2s}
+body.power-level-active #powerLevel .btn:not(:disabled):hover{filter:none;transform:translateY(-1px)}
+body.power-level-active #powerLevel .btn:not(:disabled):active{transform:translateY(1px)}
+body.power-level-active #powerLevel .btn-gold{background:var(--gold);color:#1b1404;border:1px solid transparent;box-shadow:0 12px 30px -12px rgba(255,199,44,.6)}
+body.power-level-active #powerLevel .btn-gold:not(:disabled):hover{background:#ffd451}
+body.power-level-active #powerLevel :is(.btn-indigo,.btn-teal){background:rgba(255,255,255,.06);color:var(--ink);border:1px solid var(--pl-line);box-shadow:none}
+body.power-level-active #powerLevel :is(.btn-indigo,.btn-teal):not(:disabled):hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2)}
+body.power-level-active #powerLevel .btn:disabled{opacity:.35}
+body.power-level-active #powerLevel #plBegin{font-size:18px;padding:17px 34px;animation:none;box-shadow:0 14px 40px -12px rgba(255,199,44,.7)}
+body.power-level-active #powerLevel .pl-input-row .btn{padding:15px 22px}
+body.power-level-active #powerLevel .pl-actions #plFinish{font:500 12px 'JetBrains Mono',monospace;letter-spacing:.08em;padding:9px 16px;border-radius:999px;background:transparent}
+/* feedback, history */
+body.power-level-active #powerLevel #plFeedback{font:500 14px/1.5 'Space Grotesk',sans-serif;color:var(--ink-2)}
+body.power-level-active #powerLevel #plFeedback:not(:empty){background:rgba(255,255,255,.04);border:1px solid var(--pl-line);border-radius:12px;color:var(--ink)}
+body.power-level-active #powerLevel #plHistory{background:transparent;font:500 11px/1.8 'JetBrains Mono',monospace;color:var(--ink-2);gap:4px 18px;margin-top:16px}
+body.power-level-active #powerLevel .pl-tier-tag{font:600 11px/1.5 'Space Grotesk',sans-serif;border-width:1px}
+/* reveal banner */
+body.power-level-active #powerLevel #plRarity{border-width:1px;border-radius:18px;box-shadow:0 20px 50px -14px #000c,0 0 40px -8px var(--tier-glow)}
+body.power-level-active #powerLevel #plRarity strong{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em}
+body.power-level-active #powerLevel #plRarity b{font:700 14px 'JetBrains Mono',monospace;letter-spacing:.06em}
+body.power-level-active[data-pl-tier] #powerLevel :is(.pl-question,#plStage,.pl-stats){border-color:var(--tier-edge);box-shadow:0 0 0 1px var(--tier-edge),0 0 50px -10px var(--tier-glow)}
+body.power-level-active[data-pl-tier] #plTitle{text-shadow:none;filter:drop-shadow(0 0 18px var(--tier-glow))}
+/* results */
+body.power-level-active #powerLevel[data-phase=done] #plQuestion{font:500 13px 'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2)}
+body.power-level-active #powerLevel #plPercent strong{font:700 clamp(64px,11vw,96px)/1 'Space Grotesk',sans-serif;letter-spacing:-.04em;color:#fff}
+body.power-level-active #powerLevel #plPercent .pl-percent-bar{height:6px;border:0;background:rgba(255,255,255,.08);margin:16px 0 12px}
+body.power-level-active #powerLevel #plPercent .pl-percent-bar i{background:linear-gradient(90deg,#5eead4,var(--gold))}
+body.power-level-active #powerLevel #plPercent p{font:500 14px/1.5 'Space Grotesk',sans-serif;color:var(--ink-2)}
+body.power-level-active #powerLevel #plResults{padding:30px 30px 18px}
+body.power-level-active #powerLevel #plResults h3{font:700 22px 'Space Grotesk',sans-serif;letter-spacing:-.01em;color:#fff}
+body.power-level-active #powerLevel #plSummary{font:500 13px/1.6 'JetBrains Mono',monospace;letter-spacing:.04em;color:var(--ink-2)}
+body.power-level-active #powerLevel #plRarest{font:600 15px 'Space Grotesk',sans-serif;color:var(--ink)}
+body.power-level-active #powerLevel #plResults h4{font:500 11px 'JetBrains Mono',monospace;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-2);margin-top:6px}
+body.power-level-active #powerLevel #plTop{font:500 14px/1.6 'Space Grotesk',sans-serif}
+body.power-level-active #powerLevel #plTop>li{border-bottom:1px solid var(--pl-line);padding:18px 0}
+body.power-level-active #powerLevel #plTop>li:last-child{border-bottom:0}
+body.power-level-active #powerLevel #plTop .pl-all-tier li{padding:4px 11px;border:1px solid var(--pl-line)}
+body.power-level-active #powerLevel #plResults:focus-visible{outline:none}
+body.power-level-active #powerLevel #plNextDay{font:500 12px 'JetBrains Mono',monospace;letter-spacing:.06em;color:var(--ink-2);margin:12px 0 0;width:100%;text-align:center}
+body.power-level-active #powerLevel .pl-all summary{font:500 12px 'JetBrains Mono',monospace;letter-spacing:.08em;color:#5eead4}
+body.power-level-active #powerLevel .pl-all-tier li{background:rgba(255,255,255,.05);border-color:var(--pl-line);color:var(--ink);font:500 13px/1.4 'Space Grotesk',sans-serif}
+body.power-level-active #powerLevel .pl-all-tier li small{color:var(--ink-2);font-family:'JetBrains Mono',monospace}
+body.power-level-active #powerLevel .pl-all-tier li.mine{background:var(--gold);border-color:var(--gold);color:#1b1404}
+body.power-level-active #powerLevel .pl-all-tier li.mine small{color:#4a3500}
+@media(max-width:650px){
+ body.power-level-active #powerLevel{padding:16px 14px 48px}
+ body.power-level-active #powerLevel .pl-heading{margin:52px auto 20px}
+ body.power-level-active #powerLevel .pl-heading>p{font-size:14px}
+ body.power-level-active #powerLevel .pl-question{padding:22px 16px 18px;border-radius:18px}
+ body.power-level-active #powerLevel :is(input,textarea){font-size:16px;padding:13px 14px}
+ body.power-level-active #powerLevel .pl-input-row .btn{padding:13px 14px}
+ body.power-level-active #powerLevel .pl-stage{border-radius:18px}
+ body.power-level-active #powerLevel #plResults{padding:22px 18px 12px}
+}
+@media(prefers-reduced-motion:reduce){body.power-level-active #powerLevel .btn{transition:none}}
