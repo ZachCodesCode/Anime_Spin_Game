@@ -1,0 +1,149 @@
+/* Anime Ascent (internally "Power Level") — summit expedition. All rules stay scoped to this game. */
+#powerLevel,#powerLevel *,#powerLevel *::before,#powerLevel *::after{box-sizing:border-box}
+.power-level-active #game,.power-level-active #results,.power-level-active header,.power-level-active footer,.power-level-active>.horizon,.power-level-active>.petals,.power-level-active::before{display:none!important}
+.power-level-active .wrap{max-width:none;padding:0}
+#powerLevel{position:relative;isolation:isolate;display:flex;flex-direction:column;align-items:center;gap:0;width:min(1080px,100%);min-height:100svh;margin:0 auto;padding:20px 32px 40px;color:var(--ink);background:transparent;border:0;border-radius:0;box-shadow:none;font-family:'Nunito',sans-serif;outline:none;overflow:hidden}
+#powerLevel.paper::before{display:none}#powerLevel [hidden]{display:none!important}#powerLevel :focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+.pl-back,.pl-menu>summary{cursor:pointer;font-size:12px;padding:8px 12px;list-style:none;text-decoration:none}
+.pl-back{position:absolute;top:20px;left:28px;z-index:12}.pl-menu{position:absolute;right:28px;top:20px;z-index:15}.pl-menu[open]{width:min(360px,calc(100vw - 32px));padding:16px;border:1px solid var(--edge);background:var(--paper);border-radius:10px;max-height:80svh;overflow:auto;box-shadow:0 12px 40px #0006}.pl-menu .pl-options{display:flex;gap:8px;margin:14px 0;flex-wrap:wrap}.pl-menu .howto{margin:16px 0;background:transparent;border:1px solid var(--edge);color:var(--ink);box-shadow:none}.pl-menu .howto summary{color:var(--ink)}.pl-menu .howto-body{padding:14px}.howto-body p{font-size:13px;line-height:1.7;margin:0 0 12px}.pl-menu #plClock{font-size:12px;color:var(--ink-2)}
+.pl-heading{text-align:center;margin:0 auto 18px}.pl-heading .ribbon{display:block;background:none;box-shadow:none;color:var(--night);font:9px monospace;letter-spacing:.22em;padding:0;margin-bottom:4px}.pl-heading .ribbon::before,.pl-heading .ribbon::after{display:none}.pl-heading>p{display:none}
+.pl-question{position:relative;z-index:2;width:100%;padding:18px 24px;text-align:center;border:1px solid var(--edge-d);border-radius:10px 10px 0 0;background:var(--paper);min-height:104px;display:flex;flex-direction:column;justify-content:center}.pl-question h3{font:500 clamp(17px,2.2vw,22px)/1.35 'Fredoka',sans-serif;max-width:760px;margin:6px auto 0;color:var(--ink)}#plCategory{font:9px/1.6 monospace;letter-spacing:.12em;color:var(--ink-2);text-transform:uppercase}#plNote{display:none}
+.pl-stage{position:relative;width:100%;height:490px;flex:none;overflow:hidden;isolation:isolate;background:#86a8b4;--energy:var(--gold)}
+.pl-landscape{position:absolute;inset:0;overflow:hidden}.pl-painted-world{position:absolute;top:0;left:50%;height:2400px;width:max(100%,730px);will-change:transform}.pl-painted-mountain{position:absolute;width:100%;height:100%;object-fit:fill;image-rendering:pixelated}
+.pl-traveller{position:absolute;width:72px;height:90px;transform:translate(-50%,-100%);z-index:3;--hop:0px}.pl-adventurer{position:absolute;inset:0;background:url('assets/adventurer-atlas.png?v=2') 0 100%/600% 100% no-repeat;image-rendering:pixelated;translate:0 calc(-1*var(--hop));transform-origin:50% 100%;filter:drop-shadow(0 2px 1px #172631aa)}
+.pl-boot-shadow{position:absolute;bottom:-2px;left:25%;width:50%;height:5px;background:#182e34a0;border-radius:50%}.pl-climb-trail{position:absolute;bottom:12px;left:25%;height:20px;width:50%;background:linear-gradient(transparent,#f5d7a633);opacity:0;pointer-events:none}.is-climbing .pl-climb-trail{opacity:1}.pl-front-clouds{position:absolute;width:120%;max-width:none;left:-10%;bottom:-25px;pointer-events:none;opacity:calc(.24 + var(--altitude,0)*.24);animation:pl-cloud-drift 24s ease-in-out infinite alternate;image-rendering:pixelated;z-index:4}
+.pl-snow{position:absolute;inset:0;opacity:calc(max(0,var(--altitude,0) - .6)*1.5);background-image:radial-gradient(1px 1px at 12% 20%,#f4f8ef 90%,transparent),radial-gradient(1px 1px at 72% 70%,#f4f8ef 90%,transparent),radial-gradient(2px 2px at 40% 40%,#f4f8ef 90%,transparent);background-size:150px 180px;animation:pl-snow-fall 16s linear infinite;pointer-events:none;z-index:4}
+.pl-reading{position:absolute;z-index:6;top:18px;left:18px;padding:12px 16px;display:flex;flex-direction:column;gap:3px;border:1px solid var(--edge-d);border-radius:7px;background:var(--paper);min-width:126px;pointer-events:none}.pl-reading strong{font:600 32px/1.05 'Fredoka';font-variant-numeric:tabular-nums;color:var(--pink-d)}.pl-reading span{font:10px 'Nunito';color:var(--ink-2)}#plAnswer{max-width:160px;font-weight:800}#plTier{font-size:10px;color:var(--ink-2)}#plLimit{font:700 12px 'Fredoka';color:var(--pink-d);min-height:16px}.pl-burst #plLimit{animation:pl-boost-reveal .5s ease-out}
+.pl-meter{position:absolute;right:22px;top:70px;height:calc(100% - 140px);width:5px;background:var(--paper-d);border:1px solid var(--edge-d);border-radius:8px;z-index:6}.pl-meter::before{content:'▲';position:absolute;bottom:calc(100% + 7px);left:-4px;color:var(--night);font:13px monospace}.pl-meter i{position:absolute;bottom:0;left:0;width:100%;background:var(--pink);border-radius:8px}.pl-meter b{display:none}
+#plAltitude{position:absolute;bottom:18px;left:18px;z-index:7;font:11px monospace;color:var(--ink);background:var(--paper);padding:9px 12px;border-radius:6px;border:1px solid var(--edge-d)}.pl-zone{position:absolute;right:18px;top:18px;background:var(--paper);border:1px solid var(--edge-d);padding:8px 12px;border-radius:5px;color:var(--ink);font:10px monospace;z-index:7;letter-spacing:.04em}.pl-zone-arrival{animation:pl-zone-reveal .8s ease-out}
+.pl-stats{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;width:100%;margin:0;padding:12px 24px;background:var(--paper);border:1px solid var(--edge-d);border-top:0;border-radius:0 0 10px 10px;font-size:12px;color:var(--ink-2)}.pl-stats #plBest{text-align:right;color:var(--pink-d)}.pl-stats #plRemaining{font-weight:900}
+#plTimer{display:flex;align-items:center;gap:9px;--time-left:100%;color:var(--night)}.pl-timer-dial{width:48px;height:48px;position:relative;display:flex;align-items:center;justify-content:center;border-radius:50%;isolation:isolate;background:conic-gradient(var(--gold) var(--time-left),var(--paper-d) 0)}.pl-timer-dial::before{content:'';position:absolute;inset:3px;background:var(--paper);border-radius:50%;z-index:-1}#plTimerSeconds{font:600 21px 'Fredoka';font-variant-numeric:tabular-nums}.pl-timer-dial small{display:none}#plTimerLabel{font-size:9px;max-width:64px;line-height:1.3}#plTimer[data-urgent=true]{color:var(--pink-d)}
+#plForm{width:min(650px,100%);position:relative;margin-top:18px}#plForm>label{display:block;font-size:11px;color:var(--night);margin-bottom:6px}.pl-input-row{display:flex;gap:10px}#powerLevel input,#powerLevel textarea{font:700 16px 'Nunito';color:var(--ink);background:var(--paper);border:1px solid var(--edge-d);border-radius:7px;padding:13px 16px;min-width:0;width:100%;box-sizing:border-box}#powerLevel input::placeholder{color:var(--ink-2)}
+#plBegin{margin:18px 0 0}#plFeedback{min-height:30px;font-size:12px;text-align:center;padding:10px 0 0;margin:0;color:var(--night);max-width:650px}#plStorage{font-size:12px;color:var(--pink-d)}.pl-actions{display:flex;justify-content:center;margin:4px 0 10px}.pl-actions #plFinish{font-size:12px;padding:7px 14px}.pl-small-title{display:none}#plHistory{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 16px;font-size:10px;list-style:none;color:var(--night);margin:10px 0 0;padding:0;line-height:1.8}
+#plSuggestions{width:min(650px,100%);margin:12px 0;padding:18px;background:var(--paper);border:1px solid var(--edge-d);border-radius:8px}#plSuggestions:empty{display:none}#plSuggestions>div{margin-bottom:12px}#plSuggestions p{font-size:14px;margin-bottom:10px}#plSuggestions .btn{font-size:13px;padding:9px 16px}
+#plResults{width:min(720px,100%);position:relative;margin:24px auto 0;background:var(--paper);border:1px solid var(--edge-d);border-radius:12px;padding:28px;outline:none;box-shadow:0 16px 40px #07182040}#plResults h3{font:500 25px 'Fredoka';color:var(--night);margin:0}#plSummary{font:600 17px/1.6 'Fredoka';margin:10px 0 18px;color:var(--ink)}.pl-result-actions{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0 24px}.pl-result-actions .btn{flex:1}#plResults h4{font-size:13px;color:var(--ink-2);letter-spacing:.03em}#plTop{list-style:none;padding:0;display:grid;gap:0;margin-top:8px;font-size:12px;line-height:1.8;color:var(--ink)}#plTop li{padding:14px 0;border-bottom:1px solid var(--paper-d)}#plCopyStatus{font-size:12px;margin-top:10px}
+#powerLevel[data-phase=done] :is(.pl-stats,#plHistory,#plFeedback,#plCategory){display:none}#powerLevel[data-phase=done] .pl-question{min-height:70px}#powerLevel[data-phase=done] .pl-stage{height:440px;border-radius:0 0 10px 10px}#powerLevel[data-phase=done] .pl-heading{margin-bottom:16px}
+.pl-art-review{margin-top:12px;font-size:11px}.pl-art-review button{font:inherit;padding:7px;margin:3px;cursor:pointer}
+@keyframes pl-cloud-drift{to{translate:4% -10px}}@keyframes pl-snow-fall{to{background-position:50px 180px}}@keyframes pl-boost-reveal{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}@keyframes pl-zone-reveal{0%{opacity:0;translate:0 -6px}100%{opacity:1;translate:0 0}}
+@media(max-width:650px){#powerLevel{padding:16px 12px 24px}.pl-back{left:12px;top:14px;font-size:10px;padding:7px}.pl-menu{right:12px;top:14px}.pl-menu>summary{font-size:10px;padding:7px}.pl-heading{margin-top:36px;margin-bottom:14px}.pl-question{padding:14px;min-height:110px}.pl-question h3{font-size:17px}#plCategory{font-size:8px}.pl-stage{height:390px}#powerLevel[data-phase=done] .pl-stage{height:380px}.pl-reading{top:12px;left:12px;min-width:100px;padding:9px 11px}.pl-reading strong{font-size:27px}.pl-reading span{font-size:9px}.pl-zone{right:12px;top:12px;font-size:8px;max-width:120px}.pl-meter{right:16px;top:58px;height:calc(100% - 120px)}#plAltitude{left:12px;bottom:12px;font-size:9px}.pl-stats{padding:10px 12px;gap:8px;font-size:10px}#plTimer{gap:5px}#plTimerLabel{display:none}.pl-timer-dial{width:42px;height:42px}.pl-input-row{gap:8px}#powerLevel .pl-input-row .btn{padding:12px 16px;font-size:15px}#plForm{margin-top:14px}#powerLevel #plResults{padding:20px;margin-top:16px}.pl-result-actions{gap:10px}.pl-result-actions .btn{padding:12px 14px!important;font-size:14px!important}#plSummary{font-size:15px}}
+@media(prefers-reduced-motion:reduce){#powerLevel *,#powerLevel *::before{animation:none!important;transition:none!important}html:has(.power-level-active){scroll-behavior:auto}}
+.pl-landscape::after{content:'';position:absolute;inset:0;box-shadow:inset 0 0 30px #182e3522;pointer-events:none;z-index:5}
+.pl-landscape.is-loading::before{content:'Preparing the ascent…';position:absolute;inset:0;z-index:20;display:grid;place-items:center;background:var(--paper);color:var(--ink);font:14px 'Fredoka'}
+.pl-painted-world{left:0}
+#powerLevel.paper::after{display:none}.pl-menu .howto summary{background:none;box-shadow:none;border:0;color:var(--ink)}.pl-menu .howto-body{background:none}.pl-menu .howto-body p{color:var(--ink-2)}
+
+/* One atlas viewport; never crossfade or repeat neighboring character frames. */
+.pl-adventurer{background-repeat:no-repeat;transition:none;opacity:1;visibility:visible}
+.pl-climb-trail{display:none}
+
+/* Shared Shonen Spin theme. Artwork and sprite rendering above stay unfiltered. */
+#powerLevel .pl-heading{margin:10px auto 24px}
+#powerLevel .pl-heading h2{font-size:clamp(36px,5vw,54px);margin:4px 0 0;line-height:1.05}
+#powerLevel .pl-heading .ribbon{font:800 10px 'M PLUS Rounded 1c',sans-serif;letter-spacing:.14em;color:var(--night)}
+#powerLevel :is(.pl-question,.pl-stats,#plResults,#plSuggestions,.pl-menu[open]){border:3px solid var(--edge-d);background:var(--paper);box-shadow:0 5px 0 var(--edge-d),0 10px 18px rgba(30,20,90,.25)}
+#powerLevel .pl-question{border-bottom:0;box-shadow:none}
+#powerLevel .pl-question h3{font-weight:600}
+#powerLevel .pl-stage{border:3px solid var(--edge-d);box-shadow:0 5px 0 var(--edge-d),0 10px 18px rgba(30,20,90,.25)}
+#powerLevel .pl-stats{border-top:0;box-shadow:0 5px 0 var(--edge-d)}
+#powerLevel :is(.pl-reading,.pl-zone,#plAltitude){border:2px solid var(--edge-d);box-shadow:0 3px 0 var(--edge-d);border-radius:8px}
+#powerLevel .pl-reading{min-width:116px;padding:10px 12px}
+#powerLevel .pl-meter{width:8px;border:2px solid var(--edge-d)}
+#powerLevel .pl-meter i{background:linear-gradient(0deg,var(--pink),var(--gold))}
+#powerLevel .pl-timer-dial{background:conic-gradient(var(--indigo) var(--time-left),var(--paper-d) 0)}
+#powerLevel #plTimer[data-urgent=true] .pl-timer-dial{background:conic-gradient(var(--pink-d) var(--time-left),var(--paper-d) 0)}
+#powerLevel :is(input,textarea){border-width:3px;box-shadow:0 3px 0 var(--edge-d);border-radius:10px}
+#powerLevel input:disabled{background:var(--paper-d)}
+#powerLevel :focus-visible{outline:3px solid var(--night);outline-offset:4px}
+#powerLevel .btn{font-size:16px;white-space:nowrap}
+#powerLevel .btn:not(:disabled):hover{filter:brightness(1.06)}
+#powerLevel #plBegin{margin-top:24px}
+#powerLevel #plForm{margin-top:24px}
+#powerLevel #plFeedback{font-weight:900;padding-top:16px}
+#powerLevel .pl-actions{margin-top:10px}
+#powerLevel #plHistory{background:var(--paper);border-radius:8px;padding:6px 12px}
+#powerLevel #plHistory:empty{display:none}
+#powerLevel .pl-menu .mode-tab{font-size:13px;padding:8px 12px}
+#powerLevel #plSuggestions .btn{margin:4px 6px 6px 0;white-space:normal}
+#powerLevel .pl-menu .howto{border:2px solid var(--edge);border-radius:8px}
+#powerLevel .pl-menu .howto summary{color:var(--night)}
+@media(max-width:650px){
+ #powerLevel .pl-heading{margin:48px auto 20px}
+ #powerLevel .pl-heading h2{font-size:38px}
+ #powerLevel .pl-heading .ribbon{font-size:9px}
+ #powerLevel .pl-back,#powerLevel .pl-menu>summary{font-size:11px;padding:7px 10px}
+ #powerLevel .pl-reading{min-width:90px;padding:8px}
+ #powerLevel .pl-reading strong{font-size:26px}
+ #powerLevel #plCategory{font-size:9px}
+ #powerLevel .pl-input-row{flex-wrap:wrap}
+ #powerLevel .pl-input-row input{flex:1 1 185px}
+ #powerLevel .pl-input-row .btn{flex:1 0 100px}
+ #powerLevel .pl-menu[open]{right:12px;width:min(350px,calc(100vw - 24px))}
+}
+/* Long mobile pages keep the sunset continuous and status copy on paper. */
+body.power-level-active{background-attachment:scroll}
+#powerLevel #plFeedback:not(:empty){margin-top:14px;padding:10px 14px;background:var(--paper);border:2px solid var(--edge-d);border-radius:8px;color:var(--ink)}
+/* Daily rankings reuse the site's paper, button, and leaderboard components. */
+/* Answer tiers: each step up is louder, so a rare find can't be missed. */
+:is([data-tier="Fodder"],[data-pl-tier="Fodder"]){--tier-bg:var(--paper-d);--tier-edge:#a99bb8;--tier-ink:var(--ink)}
+:is([data-tier="Too Clever"],[data-pl-tier="Too Clever"]){--tier-bg:#f8e6d2;--tier-edge:#b4682a;--tier-ink:#6b3510}
+:is([data-tier="Side Character"],[data-pl-tier="Side Character"]){--tier-bg:#d7f5f0;--tier-edge:var(--teal-d);--tier-ink:#075f57}
+:is([data-tier="Rare"],[data-pl-tier="Rare"]){--tier-bg:#e5e0ff;--tier-edge:var(--indigo);--tier-ink:var(--indigo-d)}
+:is([data-tier="Deep Cut"],[data-pl-tier="Deep Cut"]){--tier-bg:linear-gradient(135deg,#ffe58a,var(--gold));--tier-edge:var(--gold-d);--tier-ink:#5c3a00}
+:is([data-tier="Limit Break"],[data-pl-tier="Limit Break"]){--tier-bg:linear-gradient(135deg,var(--pink),var(--indigo));--tier-edge:var(--pink-d);--tier-ink:#fff}
+.pl-tier-tag{display:inline-block;padding:0 9px;border:2px solid var(--tier-edge);border-radius:999px;background:var(--tier-bg);color:var(--tier-ink);font:700 12px/1.5 'Fredoka',sans-serif;white-space:nowrap}
+#plRarity{position:absolute;z-index:8;top:12px;left:50%;translate:-50% 0;width:min(50%,380px);padding:10px 14px;text-align:center;border:3px solid var(--tier-edge);border-radius:14px;background:var(--tier-bg);color:var(--tier-ink);box-shadow:0 5px 0 var(--tier-edge),0 12px 26px #1c125a55;pointer-events:none;animation:pl-rarity-pop .45s cubic-bezier(.2,1.6,.4,1) both}
+#plRarity strong{display:block;font:700 34px/1.1 'Fredoka',sans-serif}#plRarity b{display:block;margin-top:2px;font:700 18px/1.3 'Fredoka',sans-serif}#plRarity span{display:block;font:800 13px/1.4 'Nunito',sans-serif;overflow-wrap:anywhere}
+#plRarity:is([data-tier="Fodder"],[data-tier="Too Clever"]){width:min(70%,260px);padding:8px 14px;box-shadow:0 3px 0 var(--tier-edge)}#plRarity:is([data-tier="Fodder"],[data-tier="Too Clever"]) strong{font-size:18px}#plRarity:is([data-tier="Fodder"],[data-tier="Too Clever"]) b{font-size:14px}
+#plRarity[data-tier="Side Character"] strong{font-size:26px}
+#plRarity[data-tier="Deep Cut"] strong{font-size:clamp(28px,3.6vw,36px)}
+#plRarity[data-tier="Limit Break"] strong{font-size:clamp(28px,3.8vw,38px);text-transform:uppercase;letter-spacing:.02em}
+#plRarity:is([data-tier="Deep Cut"],[data-tier="Limit Break"]){animation:pl-rarity-pop .55s cubic-bezier(.2,1.8,.4,1) both,pl-rarity-glow .7s ease-in-out .55s infinite alternate}
+.pl-stage.pl-burst:is([data-tier="Rare"],[data-tier="Deep Cut"],[data-tier="Limit Break"])::after{content:'';position:absolute;inset:0;z-index:5;pointer-events:none;box-shadow:inset 0 0 0 5px var(--tier-edge),inset 0 0 80px var(--tier-edge);animation:pl-tier-flash 2.1s ease-out forwards}
+.pl-stage.pl-burst[data-tier="Limit Break"]::after{background:radial-gradient(circle at 50% 40%,#fff9,transparent 65%)}
+#plRarest{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:-8px 0 16px;font:600 15px/1.5 'Fredoka',sans-serif;color:var(--ink);overflow-wrap:anywhere}#plRarest:empty{display:none}
+@keyframes pl-rarity-pop{from{opacity:0;scale:.55}to{opacity:1;scale:1}}@keyframes pl-rarity-glow{to{box-shadow:0 5px 0 var(--tier-edge),0 0 34px 8px var(--tier-edge)}}@keyframes pl-tier-flash{0%{opacity:0}12%{opacity:1}70%{opacity:.8}100%{opacity:0}}
+@media(max-width:650px){#plRarity{top:auto;bottom:54px;width:min(86%,320px);padding:6px 12px}#plRarity strong{font-size:26px}#plRarity span{display:none}}
+@media(prefers-reduced-motion:reduce){.pl-stage.pl-burst::after{animation:none!important;opacity:.7}}
+/* Begin, question, answer box and timer all live in the top card. */
+#powerLevel .pl-question #plBegin{display:block;margin:18px auto 6px;font-size:22px;padding:16px 40px;animation:pl-begin-pulse 1.8s ease-in-out infinite}
+#powerLevel .pl-question #plForm{margin:16px auto 0;width:min(650px,100%);text-align:left}
+#powerLevel .pl-question #plFeedback{margin:0 auto}#powerLevel .pl-question #plSuggestions{margin:12px auto 0;text-align:left}#powerLevel .pl-question .pl-actions{margin:8px 0 0}
+.pl-input-row #plTimer{flex:none}.pl-input-row #plTimerLabel{display:none}.pl-input-row .pl-timer-dial{width:50px;height:50px}
+#powerLevel .pl-stage{height:clamp(340px,50svh,490px)}#powerLevel[data-phase=done] .pl-stage{height:clamp(320px,46svh,440px)}
+@keyframes pl-begin-pulse{50%{scale:1.05;filter:brightness(1.08)}}
+/* Final score as a share of the best possible climb. */
+#plPercent{display:none}#powerLevel[data-phase=done] #plPercent{display:block;width:min(520px,100%);margin:4px auto 0}
+#plPercent strong{display:block;font:700 clamp(52px,9vw,72px)/1 'Fredoka',sans-serif;color:var(--tier-edge)}#plPercent[data-tier="Fodder"] strong{color:var(--ink)}
+#plPercent .pl-percent-bar{display:block;height:16px;margin:10px 0 8px;border:3px solid var(--edge-d);border-radius:999px;background:var(--paper-d);overflow:hidden}
+#plPercent .pl-percent-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--pink),var(--gold));transition:width 1.2s ease-out}
+#plPercent p{font:700 15px/1.4 'Fredoka',sans-serif;color:var(--ink)}#powerLevel[data-phase=done] #plQuestion{font-size:15px;color:var(--ink-2)}
+/* The whole page answers each reveal, louder at every tier. */
+:is([data-tier="Fodder"],[data-pl-tier="Fodder"]){--tier-glow:#b9acd8;--tier-rest:.12}
+:is([data-tier="Too Clever"],[data-pl-tier="Too Clever"]){--tier-glow:#d98a4a;--tier-rest:.2}
+:is([data-tier="Side Character"],[data-pl-tier="Side Character"]){--tier-glow:#19c2ae;--tier-rest:.3}
+:is([data-tier="Rare"],[data-pl-tier="Rare"]){--tier-glow:#6c5cff;--tier-rest:.45}
+:is([data-tier="Deep Cut"],[data-pl-tier="Deep Cut"]){--tier-glow:#ffc72c;--tier-rest:.6}
+:is([data-tier="Limit Break"],[data-pl-tier="Limit Break"]){--tier-glow:#ff3d8a;--tier-rest:.75}
+#plFlash{position:fixed;inset:0;z-index:60;pointer-events:none;opacity:0;background:radial-gradient(ellipse at 50% 45%,transparent 30%,var(--tier-glow) 100%);transition:opacity .6s ease-out}
+body[data-pl-tier] #plFlash{opacity:var(--tier-rest)}
+#plFlash.go{animation:pl-page-flash 1.1s ease-out}
+#plFlash.go:is([data-tier="Deep Cut"],[data-tier="Limit Break"])::before{content:'';position:absolute;inset:0;background:#fff;animation:pl-white-flash .6s ease-out forwards}
+body[data-pl-tier] #powerLevel :is(.pl-question,#plStage,.pl-stats){border-color:var(--tier-edge);box-shadow:0 5px 0 var(--tier-edge),0 0 36px var(--tier-glow);transition:border-color .3s,box-shadow .3s}
+body[data-pl-tier] #plTitle{text-shadow:0 0 22px var(--tier-glow)}
+body[data-pl-tier="Deep Cut"] #powerLevel{animation:pl-shake .45s ease-out}
+body[data-pl-tier="Limit Break"] #powerLevel{animation:pl-shake-hard .8s ease-out}
+body[data-pl-tier="Limit Break"] #plFlash{background:radial-gradient(ellipse at 50% 45%,transparent 25%,var(--pink) 70%,var(--indigo) 100%);animation:pl-hue 1.2s linear infinite}
+@keyframes pl-page-flash{0%{opacity:0}12%{opacity:1}100%{opacity:var(--tier-rest)}}
+@keyframes pl-white-flash{0%{opacity:.85}100%{opacity:0}}
+@keyframes pl-hue{to{filter:hue-rotate(360deg)}}
+@keyframes pl-shake{20%{translate:-6px 2px}40%{translate:5px -3px}60%{translate:-3px 2px}80%{translate:2px -1px}}
+@keyframes pl-shake-hard{10%{translate:-12px 4px}20%{translate:10px -6px}30%{translate:-9px 5px}40%{translate:8px -4px}55%{translate:-5px 3px}70%{translate:4px -2px}85%{translate:-2px 1px}}
+@media(max-width:650px){#powerLevel .pl-question #plBegin{font-size:18px;padding:14px 26px}.pl-input-row .pl-timer-dial{width:44px;height:44px}}
+@media(prefers-reduced-motion:reduce){#powerLevel,#plFlash,#plFlash::before{animation:none!important}}
+#powerLevel[data-phase=ready] .pl-question #plForm{display:none}
+@media(max-width:650px){#powerLevel .pl-question .pl-input-row{flex-wrap:nowrap;align-items:center}#powerLevel .pl-question .pl-input-row .btn{flex:0 0 auto;padding:10px 12px;font-size:14px}#powerLevel .pl-question #plInput{min-width:0;flex:1}}
+/* Results: every accepted answer per question, grouped by tier, with today's pick rates */
+.pl-all{margin-top:10px}.pl-all summary{cursor:pointer;font:700 14px/1.4 'Fredoka',sans-serif;color:var(--indigo-d)}
+.pl-all-tier{margin-top:10px}.pl-all-tier ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 0;padding:0}
+.pl-all-tier li{padding:3px 10px;border:1px solid #d9d0ff;border-radius:999px;background:#f6f2ff;font:700 13px/1.4 'Nunito',sans-serif;color:var(--ink)}
+.pl-all-tier li small{color:var(--ink-2);font-weight:800}.pl-all-tier li.mine{background:var(--gold);border-color:var(--gold-d);color:#4a3300}

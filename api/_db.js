@@ -31,6 +31,25 @@ function ensureTable() {
   return ready;
 }
 
+// Anime Ascent: one row per player per day (score recomputed on the server, answers for pick rates).
+let ascentReady = null;
+function ensureAscent() {
+  if (!ascentReady) {
+    ascentReady = db.batch([
+      `CREATE TABLE IF NOT EXISTS ascent_scores (
+         day TEXT NOT NULL,
+         guest TEXT NOT NULL,
+         score INTEGER NOT NULL,
+         answers TEXT NOT NULL,
+         created_at INTEGER NOT NULL,
+         PRIMARY KEY (day, guest)
+       )`,
+      `CREATE INDEX IF NOT EXISTS idx_ascent_day_score ON ascent_scores (day, score)`,
+    ], "write").catch(e => { ascentReady = null; throw e; });
+  }
+  return ascentReady;
+}
+
 // Permissive CORS so the game works same-origin (production) or from a local preview.
 function cors(res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -38,4 +57,4 @@ function cors(res) {
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 }
 
-module.exports = { db, ensureTable, cors };
+module.exports = { db, ensureTable, ensureAscent, cors };
