@@ -63,6 +63,14 @@ Verification: 16 Node tests pass, including route continuity/finite positions; J
 
 Each answer's tier drives the whole page during its reveal: a banner on the stage (`#plRarity`), a page-wide tint and flash (`#plFlash`), tier-coloured card borders, and a shake from Legendary up. `game.js` sets `body[data-pl-tier]` for the length of the reveal; tier colours are defined once in `style.css` on `[data-tier]` / `[data-pl-tier]`. The score card's label is the whole run's tier. With reduced motion the colours stay and the movement stops.
 
+## Daily results vs other players
+
+When a run finishes, the game POSTs its five answers (names only) to `/api/ascent` once per day (`…:sent:<date>` in localStorage marks it). The server rescores the run from the question bank, so a sent score is ignored, and keeps one row per player per day in the Turso table `ascent_scores`. Players are identified by the anonymous `shonen_guest` cookie from `api/_guest.js`. The table is created on first use. The response, also available from `GET /api/ascent?date=`, has today's score spread and per-answer pick counts. The results screen shows the share of other players who scored lower (ties count half), with the summit % as a fallback offline or locally. Each question can list every accepted answer by tier with today's pick rates. The copied result adds "beat N% of climbers".
+
+## SEO landing page
+
+`/anime-ascent` (`anime-ascent/index.html`) is a crawlable page for the game, because search engines don't index `/#power-level`. It has its own title, description, Open Graph image (`/og-anime-ascent.jpg`), JSON-LD (WebApplication + FAQ) and visible copy aimed at searches like "daily anime quiz" and "krillion anime". Krillion is mentioned only as a comparison ("Krillion-style", an FAQ entry, and a not-affiliated note), never as our name. Its Play buttons open `/#power-level`. Shared results link to this page. `sitemap.xml` and `robots.txt` at the root list it.
+
 ## Result
 
 There is no leaderboard. A finished run shows points, altitude and the share of the summit reached, plus each question's deepest-cut answer. The copied result is spoiler-free:
@@ -71,7 +79,7 @@ There is no leaderboard. A finished run shows points, altitude and the share of 
 Anime Ascent #1 · Shonen Spin
 ⛰️ 1,350 m · 135/500 pts
 ⬜🟫⬛🟨⬜
-https://www.shonenspin.com/#power-level
+https://www.shonenspin.com/anime-ascent
 ```
 
 Squares: ⬜ Fodder · 🟫 Too Clever · 🟩 Side Character · 🟦 Rare · 🟪 Deep Cut · 🟨 Limit Break · ⬛ skipped or timed out.

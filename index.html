@@ -229,8 +229,6 @@ body.hard .tile.cap{ display:flex; }
 .stamp{ position:absolute; left:12px; top:-16px; z-index:5; font-family:'Dela Gothic One',sans-serif; font-size:14px; letter-spacing:.04em;
   color:#fff; background:var(--pink); border:3px solid #fff; border-radius:6px; padding:3px 10px; box-shadow:0 3px 0 rgba(0,0,0,.25);
   opacity:0; --rot:-6deg; transform:rotate(var(--rot)); pointer-events:none; }
-.stamp.elite{ background:var(--gold-d); }
-.stamp.weak{ background:var(--ink-2); }
 .stamp.nofit{ background:var(--night); }
 .landed{ font-family:'Nunito'; font-weight:800; font-size:13.5px; color:var(--ink-2); margin:12px 2px 0; min-height:20px; }
 .landed b{ color:var(--ink); }
@@ -306,7 +304,6 @@ body.hard .tile.cap{ display:flex; }
 .grp span{ font-family:'M PLUS Rounded 1c'; font-weight:800; font-size:10.5px; color:var(--ink-2); letter-spacing:.06em; }
 .pl{ display:flex; align-items:center; gap:7px; padding:7px 10px; border-radius:7px; background:#fff; border:2px solid rgba(88,72,200,.25);
   border-left:6px solid var(--plc); font-family:'Fredoka'; font-weight:600; font-size:13px; color:var(--ink); }
-.plt{ margin-left:auto; font-family:'Dela Gothic One',sans-serif; font-size:8px; letter-spacing:.04em; color:#fff; padding:2px 6px; border-radius:3px; transform:rotate(-3deg); }
 
 /* ---------------- SECTION HEADS (on the sky) ---------------- */
 .section-head{ display:flex; align-items:flex-end; justify-content:space-between; gap:14px; margin:8px 4px 12px; flex-wrap:wrap; }
@@ -339,7 +336,6 @@ body.hard .tile.cap{ display:flex; }
   font-family:'Dela Gothic One',sans-serif; font-size:9.5px; color:#4a3300; background:linear-gradient(180deg,#ffe27a,var(--gold-d));
   border:2px solid #a87400; border-radius:5px; padding:2px 8px; box-shadow:0 2px 0 rgba(0,0,0,.2); white-space:nowrap; }
 .leader-badge svg{ width:12px; height:12px; fill:currentColor; }
-.slot.tier-elite{ border-color:var(--gold-d); box-shadow:0 7px 16px rgba(30,20,90,.3), inset 0 0 0 2px rgba(255,199,44,.6); }
 .slot.fresh{ animation:pinIn .55s cubic-bezier(.2,1.5,.4,1); }
 .actions{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin:24px 0 8px; }
 
@@ -375,6 +371,7 @@ body.hard .tile.cap{ display:flex; }
 
 footer{ text-align:center; font-family:'M PLUS Rounded 1c',sans-serif; font-weight:700; color:#eae4ff; font-size:11px; letter-spacing:.06em; padding:26px 10px 0; text-shadow:0 1px 2px rgba(0,0,0,.45); }
 footer b{ font-family:'Fredoka'; font-weight:700; font-size:14px; color:var(--gold); letter-spacing:.02em; }
+footer a{ color:var(--gold); font-weight:800; }
 
 /* share card on the results screen */
 .share-card{ margin:16px auto 0; max-width:440px; }
@@ -554,7 +551,7 @@ footer b{ font-family:'Fredoka'; font-weight:700; font-size:14px; color:var(--go
                 <li><b>Spin</b> the wheel — it lands on one of 60 factions — crews, clans, squads &amp; more — across 7 anime.</li>
                 <li><b>Draft one fighter</b> from that faction into an open role. Fighters only fit roles they're built for.</li>
                 <li>Every pick <b>auto-spins</b> the next faction. Use a <b>skip</b> (3 total) to reroll a faction you don't want.</li>
-                <li><b>Elite</b> factions are rare, <b>weak</b> factions are common — dream teams take luck.</li>
+                <li>Stacked factions come up less often than thin ones — dream teams take luck.</li>
                 <li>Fill all <b>8 roles</b> and your squad takes on the <b>Villain Gauntlet</b>: seven final bosses, one from each anime. You get your % chance to win.</li>
                 <li><b>Hard mode:</b> fighters cost points by power. Stay under the cap!</li>
               </ol>
@@ -567,7 +564,6 @@ footer b{ font-family:'Fredoka'; font-weight:700; font-size:14px; color:var(--go
             <div class="arc-name" id="slotName">Spin the wheel!</div>
             <div class="arc-meta">
               <span class="slot-dot" id="slotDot"></span>
-              <span class="tier-stamp" id="slotTier"></span>
               <span class="saga" id="slotSeries">60 factions · 7 anime</span>
             </div>
             <div class="stamp" id="lockStamp" aria-hidden="true"></div>
@@ -643,7 +639,7 @@ footer b{ font-family:'Fredoka'; font-weight:700; font-size:14px; color:var(--go
   </section>
 
   <footer>
-    <b>Shonen Spin</b><br>
+    <b>Shonen Spin</b> · <a href="/anime-ascent">Anime Ascent, the daily anime quiz</a><br>
     Fan project · not affiliated with any rights holder · built for fun
   </footer>
 </div>
@@ -671,7 +667,6 @@ const HARD_BUDGET = 2700;
 const MAX_SKIPS = 3;
 const seriesById = Object.fromEntries(SERIES.map(s=>[s.id,s]));
 const poolById = Object.fromEntries(POOLS.map(p=>[p.id,p]));
-const TIER_TAG = { elite:{t:"ELITE",bg:"#e09f00"}, core:{t:"",bg:""}, weak:{t:"WEAK",bg:"#7d74b0"} };
 const cost = c => Math.round(c.p * c.p / 16);
 
 let mode = "regular";
@@ -715,11 +710,7 @@ function buildSlotWindow(){
   document.getElementById('poolList').innerHTML = SERIES.map(s=>{
     const ps = POOLS.filter(p=>p.series===s.id);
     const header = `<div class="grp"><i style="background:${s.color}"></i>${s.name}<span>${ps.length} factions</span></div>`;
-    return header + ps.map(p=>{
-      const tg = TIER_TAG[p.tier];
-      const tag = tg.t ? `<span class="plt" style="background:${tg.bg}">${tg.t}</span>` : '';
-      return `<div class="pl" style="--plc:${s.color}">${p.name}${tag}</div>`;
-    }).join('');
+    return header + ps.map(p=>`<div class="pl" style="--plc:${s.color}">${p.name}</div>`).join('');
   }).join('');
 }
 function buildSlots(){
@@ -738,22 +729,16 @@ function showStamp(text, cls){
 function hideStamp(){ document.getElementById('lockStamp').className = 'stamp'; }
 function landFx(p, fits){
   if(!fits) showStamp('No fit!', 'nofit');
-  else if(p.tier==='elite') showStamp('Elite pull!', 'elite');
-  else if(p.tier==='weak') showStamp('Locked in', 'weak');
   else showStamp('Locked in!', '');
 }
 /* show a faction on the signpost banner */
 function renderSlot(p, state){
   const col = seriesById[p.series].color;
-  const tg = TIER_TAG[p.tier];
   document.getElementById('slotWindow').style.setProperty('--sc', col);
   document.getElementById('slotDot').style.background = col;
   const nm = document.getElementById('slotName');
   nm.textContent = p.name; nm.style.color = '#fff';
   document.getElementById('slotSeries').textContent = seriesById[p.series].name;
-  const tier = document.getElementById('slotTier');
-  tier.textContent = tg.t || '';
-  tier.style.background = tg.bg || 'transparent';
 }
 
 /* ---------- mode ---------- */
@@ -876,7 +861,6 @@ function landOn(pid){
   renderSlot(p, 'win');
   const pool = CHARACTERS.filter(c=>c.pool===pid && placeable(c));
   const landed = document.getElementById('landed');
-  const tierTxt = p.tier==='elite' ? ' — <b style="color:var(--gold-d)">elite pull!</b>' : (p.tier==='weak' ? ' — thin roster, choose wisely' : '');
   if(pool.length===0){
     // nobody from this pool fits an open role (or affordable) — free re-roll
     landed.innerHTML = `Landed on <b style="color:${darken(col)}">${p.name}</b> — no fighter fits your open roles. Re-spinning…`;
@@ -886,7 +870,7 @@ function landOn(pid){
     return;
   }
   awaiting = pid;
-  landed.innerHTML = `Landed on <b style="color:${darken(col)}">${p.name}</b>${tierTxt}. Draft a fighter!`;
+  landed.innerHTML = `Landed on <b style="color:${darken(col)}">${p.name}</b>. Draft a fighter!`;
   setControls();
   // hold on the landed faction name for a beat so the player can take it in,
   // then open the draft (skipped if they hit SKIP during the pause).
@@ -910,7 +894,6 @@ function openDraft(pid){
   const p = poolById[pid];
   const col = seriesById[p.series].color;
   const all = shuffled(CHARACTERS.filter(c=>c.pool===pid && !usedNames.has(c.n)));
-  const tg = TIER_TAG[p.tier];
   document.getElementById('draftTitle').innerHTML =
     `Pick a fighter from <span style="color:${darken(col)}">${p.name}</span>`;
   document.getElementById('draftSub').textContent =
@@ -931,8 +914,7 @@ function openDraft(pid){
     }
     // encodeURIComponent leaves ' alone, which would break the inline handler (e.g. "Who's Who")
     const enc = encodeURIComponent(c.n).replace(/'/g,'%27');
-    const tierStamp = tg.t ? `<div class="stamp-row"><span class="tier-stamp" style="background:${tg.bg}">${tg.t}</span></div>` : '';
-    return `<div class="poster pcard tier-${p.tier} ${can?'':'dim'}" style="--sc:${col}" ${can?`onclick="pickChar('${enc}')" role="button" tabindex="0"`:''}>
+    return `<div class="poster pcard ${can?'':'dim'}" style="--sc:${col}" ${can?`onclick="pickChar('${enc}')" role="button" tabindex="0"`:''}>
       ${why?`<div class="tagwhy">${why}</div>`:''}
       <div class="wanted">Fighter File</div>
       <div class="doa">${seriesById[c.s].name}</div>
@@ -941,7 +923,6 @@ function openDraft(pid){
       <div class="pe">${c.e}</div>
       <div class="power-lv">Power Lv. ${c.p}</div>
       ${mode==='hard'?`<div class="bounty">Cost ${cost(c)} pts</div>`:''}
-      ${tierStamp}
       <div class="role-tags">${c.r.map(r=>`<span class="role-tag">${ROLE_DEFS[r].name}</span>`).join('')}</div>
     </div>`;
   }).join('');
@@ -1034,7 +1015,7 @@ function renderSlots(){
       return;
     }
     const col = seriesById[c.s].color;
-    el.className='slot filled tier-'+(poolById[c.pool]?poolById[c.pool].tier:'core')+(sl.id===freshSlot?' fresh':'');
+    el.className='slot filled'+(sl.id===freshSlot?' fresh':'');
     el.style.setProperty('--sc', col);
     el.innerHTML=`${sl.id==='ace'?`<span class="leader-badge">${CROWN}Leader</span>`:''}
       <div class="wanted">Fighter File</div>
@@ -1566,8 +1547,6 @@ function resetGame(){
   document.getElementById('slotName').textContent = 'Spin the wheel!';
   document.getElementById('slotName').style.color = '#fff';
   document.getElementById('slotSeries').textContent = `${POOLS.length} factions · ${SERIES.length} anime`;
-  document.getElementById('slotTier').textContent = '';
-  document.getElementById('slotTier').style.background = 'transparent';
   renderSlots();
   updateHud();
 }

@@ -142,3 +142,8 @@ body[data-pl-tier="Limit Break"] #plFlash{background:radial-gradient(ellipse at 
 @media(prefers-reduced-motion:reduce){#powerLevel,#plFlash,#plFlash::before{animation:none!important}}
 #powerLevel[data-phase=ready] .pl-question #plForm{display:none}
 @media(max-width:650px){#powerLevel .pl-question .pl-input-row{flex-wrap:nowrap;align-items:center}#powerLevel .pl-question .pl-input-row .btn{flex:0 0 auto;padding:10px 12px;font-size:14px}#powerLevel .pl-question #plInput{min-width:0;flex:1}}
+/* Results: every accepted answer per question, grouped by tier, with today's pick rates */
+.pl-all{margin-top:10px}.pl-all summary{cursor:pointer;font:700 14px/1.4 'Fredoka',sans-serif;color:var(--indigo-d)}
+.pl-all-tier{margin-top:10px}.pl-all-tier ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 0;padding:0}
+.pl-all-tier li{padding:3px 10px;border:1px solid #d9d0ff;border-radius:999px;background:#f6f2ff;font:700 13px/1.4 'Nunito',sans-serif;color:var(--ink)}
+.pl-all-tier li small{color:var(--ink-2);font-weight:800}.pl-all-tier li.mine{background:var(--gold);border-color:var(--gold-d);color:#4a3300}
