@@ -5,6 +5,8 @@ const C=typeof module!=='undefined'?require('./core'):root.PowerLevelCore;
 const CONFIG={count:5,seconds:30,revealMs:1900};
 // Ascent #1 (Toronto date). Each day takes the next five questions from the fixed schedule.
 const EPOCH='2026-11-11';
+// From this ascent on, the last question each day spans two or more anime (Ascent #1 stays as it was played).
+const MIX_FROM=2;
 const boost=answer=>C.points(answer);
 const total=state=>state.outcomes.reduce((sum,o)=>sum+o.boost,0);
 // Run tier follows the share of the summit reached (same bands as the results card).
@@ -13,9 +15,9 @@ const dayNumber=date=>Math.round((Date.parse(date+'T00:00:00Z')-Date.parse(EPOCH
 // One question per anime per round, rounds in bank order. Each round rotates the anime order
 // (anime as first listed in the bank) so the daily mix varies; a day never repeats an anime.
 // Add questions a full round (one per anime) at a time, after the existing ones, so past and current days keep their questions.
-function schedule(bank){const anime=[...new Set(bank.map(q=>q.anime))],lists=anime.map(a=>bank.filter(q=>q.anime===a)),out=[];for(let r=0;r<Math.max(...lists.map(l=>l.length));r++)for(let i=0;i<lists.length;i++){const l=lists[(i+r*3)%lists.length];if(l[r])out.push(l[r]);}return out;}
+function schedule(bank){bank=bank.filter(q=>q.anime!=='mixed');const anime=[...new Set(bank.map(q=>q.anime))],lists=anime.map(a=>bank.filter(q=>q.anime===a)),out=[];for(let r=0;r<Math.max(...lists.map(l=>l.length));r++)for(let i=0;i<lists.length;i++){const l=lists[(i+r*3)%lists.length];if(l[r])out.push(l[r]);}return out;}
 // Dates follow the schedule; any other seed (tests, tools) picks a deterministic pseudo-day.
-function select(bank,seed){const list=schedule(bank);let d;if(/^\d{4}-\d{2}-\d{2}$/.test(seed))d=dayNumber(seed)-1;else{let h=2166136261;for(const c of String(seed))h=Math.imul(h^c.charCodeAt(0),16777619);d=(h>>>0)%100000;}const ids=[];for(let k=0;k<CONFIG.count;k++)ids.push(list[(((d*CONFIG.count+k)%list.length)+list.length)%list.length].id);if(new Set(ids).size<CONFIG.count)throw Error('Need five unique prompts');return ids;}
+function select(bank,seed){const list=schedule(bank);let d;if(/^\d{4}-\d{2}-\d{2}$/.test(seed))d=dayNumber(seed)-1;else{let h=2166136261;for(const c of String(seed))h=Math.imul(h^c.charCodeAt(0),16777619);d=(h>>>0)%100000;}const at=i=>list[((i%list.length)+list.length)%list.length],mixed=bank.filter(q=>q.anime==='mixed'),m=d-(MIX_FROM-1),ids=[];if(m<0||!mixed.length){for(let k=0;k<CONFIG.count;k++)ids.push(at(d*CONFIG.count+k).id);}else{const base=k=>{const out=[],seen=new Set();for(let i=(MIX_FROM-1)*CONFIG.count+k*(CONFIG.count-1);out.length<CONFIG.count-1;i++){const x=at(i);if(!seen.has(x.anime)){seen.add(x.anime);out.push(x.id);}}return out;};const last=new Map();let pick;for(let k=0;k<=m;k++){const day=base(k);pick=mixed.filter(x=>!(x.from||[]).some(f=>day.includes(f))).reduce((a,x)=>(last.get(x.id)??-1)<(last.get(a.id)??-1)?x:a);last.set(pick.id,k);if(k===m)ids.push(...day);}ids.push(pick.id);}if(new Set(ids).size<CONFIG.count)throw Error('Need five unique prompts');return ids;}
 const create=(ids,date)=>({version:4,date,ids,outcomes:[],phase:'ready',opensAt:null,deadline:null,revealUntil:null});
 function start(s,now){if(s.phase==='ready'){s.phase='active';s.opensAt=now;s.deadline=now+CONFIG.seconds*1000;}return s;}
 function resolve(s,bank,kind,value,now){if(s.phase!=='active'||now<s.opensAt)return {status:'locked'};const q=bank.find(q=>q.id===s.ids[s.outcomes.length]);if(now>=s.deadline)kind='timeout';let answer=null;if(kind==='answer'){const result=C.validate(q,value);if(result.status!=='valid')return result;answer=result.answer;}if(!['answer','skip','timeout'].includes(kind))return {status:'invalid'};const outcome={id:q.id,kind,answer:answer?.name||null,tier:answer?C.grade(answer).name:null,boost:answer?boost(answer):0};s.outcomes.push(outcome);s.phase='reveal';s.opensAt=null;s.deadline=null;s.revealUntil=now+CONFIG.revealMs;return {status:'resolved',outcome};}
