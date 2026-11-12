@@ -1,6 +1,14 @@
 {
   "rewrites": [
-    { "source": "/AnimeAscent", "destination": "/index.html" },
-    { "source": "/AnimeAscent/", "destination": "/index.html" }
-  ]
+    {
+      "source": "/AnimeAscent",
+      "destination": "/AnimeAscent.html"
+    },
+    {
+      "source": "/AnimeAscent/",
+      "destination": "/AnimeAscent.html"
+    }
+  ],
+  "buildCommand": "npm run build",
+  "outputDirectory": "."
 }
