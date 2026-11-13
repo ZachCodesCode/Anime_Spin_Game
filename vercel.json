@@ -1,5 +1,25 @@
 {
+  "redirects": [
+    {
+      "source": "/AnimeAscent",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/AnimeAscent/",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
   "rewrites": [
+    {
+"source": "/spin",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/spin/",
+      "destination": "/index.html"
+    },
     {
       "source": "/AnimeAscent",
       "destination": "/AnimeAscent.html"
