@@ -17,3 +17,6 @@ npm-debug.log*
 
 # Vercel
 .vercel/
+
+# Generated page with route-specific social metadata
+/AnimeAscent.html

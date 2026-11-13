@@ -2,12 +2,14 @@
   "name": "shonen-spin",
   "version": "1.0.0",
   "private": true,
-  "description": "Shonen Spin — anime roster builder, with a Turso-backed leaderboard.",
+  "description": "Shonen Spin \u2014 anime roster builder, with a Turso-backed leaderboard.",
   "dependencies": {
     "@libsql/client": "^0.14.0"
   },
   "scripts": {
     "dev": "node scripts/dev.js",
-    "test": "node --test power-level/*.test.js"
+    "test": "node --test power-level/*.test.js",
+    "build": "node scripts/build-social-preview.js",
+    "predev": "npm run build"
   }
 }
