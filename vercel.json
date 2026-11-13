@@ -13,12 +13,22 @@
   ],
   "rewrites": [
     {
-      "source": "/spin",
+"source": "/spin",
       "destination": "/index.html"
     },
     {
       "source": "/spin/",
       "destination": "/index.html"
+    },
+    {
+      "source": "/AnimeAscent",
+      "destination": "/AnimeAscent.html"
+    },
+    {
+      "source": "/AnimeAscent/",
+      "destination": "/AnimeAscent.html"
     }
-  ]
+  ],
+  "buildCommand": "npm run build",
+  "outputDirectory": "."
 }
