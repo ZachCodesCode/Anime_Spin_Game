@@ -2,22 +2,24 @@ const {test}=require('node:test'),assert=require('node:assert/strict'),R=require
 const make=()=>R.create(R.select(bank,'2026-11-11'),'2026-11-11');
 const open=(s,now)=>{R.start(s,now);return now;};   // start; the clock opens immediately
 const best=q=>q.answers.reduce((a,b)=>C.points(b)>C.points(a)?b:a);
-test('daily schedule: Ascent #1 frozen, then four anime plus one multi-anime question a day',()=>{
- assert.equal(R.dayNumber(R.EPOCH),1);assert.equal(R.dayNumber('2026-11-12'),2);
- const byId=Object.fromEntries(bank.map(q=>[q.id,q])),day=d=>new Date(Date.parse(R.EPOCH)+d*864e5).toISOString().slice(0,10);
- assert.deepEqual(R.select(bank,R.EPOCH),['naruto-leaf','onepiece-fruit','bleach-gotei','hxh-troupe','tokyoghoul-ghouls'].map(x=>'timed-v4-'+x));
- const base=new Set(),mixed=new Set(),mixCount=bank.filter(q=>q.anime==='mixed').length;let prev;
- for(let d=0;d<120;d++){const ids=R.select(bank,day(d)),qs=ids.map(id=>byId[id]);
-  assert.equal(new Set(ids).size,5);assert.deepEqual(ids,R.select(bank,day(d)));
-  const regular=d===0?qs:qs.slice(0,4);assert.equal(new Set(regular.map(q=>q.anime)).size,regular.length);assert.ok(regular.every(q=>q.anime!=='mixed'));
-  if(d<12)for(const q of regular){assert.ok(!base.has(q.id),'repeated in first cycle: '+q.id);base.add(q.id);}
-  if(d>0){const m=qs[4];assert.equal(m.anime,'mixed');assert.ok(!(m.from||[]).some(f=>ids.includes(f)),'mixed reuses a same-day list: '+m.id);assert.notEqual(m.id,prev);prev=m.id;if(d<=mixCount)mixed.add(m.id);}}
- assert.equal(mixed.size,mixCount);assert.equal(new Set(bank.filter(q=>q.anime!=='mixed').map(q=>q.anime)).size,10);});
-test('appending questions keeps earlier days the same',()=>{
+test('daily schedule: Ascents #1-2 frozen, then seven any-anime questions a day',()=>{
+ assert.equal(R.dayNumber(R.EPOCH),1);assert.equal(R.dayNumber('2026-11-12'),2);assert.deepEqual([R.countFor('2026-11-12'),R.countFor('2026-11-13')],[5,7]);
+ const byId=Object.fromEntries(bank.map(q=>[q.id,q])),day=d=>new Date(Date.parse(R.EPOCH)+d*864e5).toISOString().slice(0,10),t=x=>'timed-v4-'+x;
+ assert.deepEqual(R.select(bank,day(0)),['naruto-leaf','onepiece-fruit','bleach-gotei','hxh-troupe','tokyoghoul-ghouls'].map(t));
+ assert.deepEqual(R.select(bank,day(1)),['mha-classes','blackclover-knights','demonslayer-ranks','aot-scouts','mix-jutsu-quirks'].map(t));
+ const general=bank.filter(q=>q.wide),seen=new Set();let prev=[];
+ for(let d=2;d<200;d++){const ids=R.select(bank,day(d)),qs=ids.map(id=>byId[id]);
+  assert.equal(ids.length,7);assert.equal(new Set(ids).size,7);assert.deepEqual(ids,R.select(bank,day(d)));
+  assert.ok(qs.every(q=>q.wide),'only any-anime questions');assert.equal(qs.filter(q=>q.wide==='title').length,2);
+  for(const q of qs)assert.ok(!(q.from||[]).some(f=>ids.includes(f)),'reuses a same-day list: '+q.id);
+  for(const id of ids)assert.ok(!prev.includes(id),'repeated from yesterday: '+id);prev=ids;
+  if(d<7)ids.forEach(id=>seen.add(id));}
+ assert.equal(seen.size,general.length,'every any-anime question shows up within five days');});
+test('appending a dated question keeps earlier days the same',()=>{
  const day=d=>new Date(Date.parse(R.EPOCH)+d*864e5).toISOString().slice(0,10);
- const extra=[...new Set(bank.filter(q=>q.anime!=='mixed').map(q=>q.anime))].map(anime=>({...bank.find(q=>q.anime===anime),id:'extra-'+anime}));
- for(let d=0;d<12;d++)assert.deepEqual(R.select([...bank,...extra],day(d)),R.select(bank,day(d)));
- const moreMixed=[...bank,{...bank.find(q=>q.anime==='mixed'),id:'extra-mixed',from:[]}];assert.deepEqual(R.select(moreMixed,R.EPOCH),R.select(bank,R.EPOCH));});
+ const more=[...bank,{...bank.find(q=>q.id==='timed-v4-wide-cats'),id:'timed-v4-wide-extra',order:undefined,since:day(40)}];
+ for(let d=0;d<40;d++)assert.deepEqual(R.select(more,day(d)),R.select(bank,day(d)));
+ assert.ok(Array.from({length:30},(_,i)=>R.select(more,day(40+i))).flat().includes('timed-v4-wide-extra'));});
 test('the clock starts with the question: 30 seconds, answerable at once',()=>{const s=make(),opened=open(s,1000),q=bank.find(q=>q.id===s.ids[0]);
  assert.equal(s.deadline,opened+30000);assert.equal(R.resolve(s,bank,'answer',q.answers[0].name,opened).status,'resolved');});
 test('invalid answers keep deadline; skip and timeout award zero exactly once',()=>{const s=make(),t=open(s,1000);

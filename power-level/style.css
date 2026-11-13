@@ -169,7 +169,9 @@ body.power-level-active #powerLevel .pl-heading>p,body.power-level-active #power
 /* corner buttons: square pixel tiles */
 body.power-level-active #powerLevel :is(.pl-back,.pl-menu>summary){background:rgba(11,17,38,.85);border:2px solid var(--kr-line);border-radius:0;box-shadow:none;color:var(--night);font:400 10px/1 'Silkscreen',monospace;letter-spacing:.08em;padding:10px 12px;text-shadow:none}
 body.power-level-active #powerLevel :is(.pl-back,.pl-menu){position:fixed;top:14px;z-index:35}
-body.power-level-active #powerLevel .pl-back{left:14px}body.power-level-active #powerLevel .pl-menu{right:14px}
+body.power-level-active #powerLevel .pl-back{left:14px}
+body.power-level-active #powerLevel .pl-back.pl-spin{border-color:#ffc72c;color:#ffc72c;font-size:11px;padding:11px 14px}
+body.power-level-active #powerLevel .pl-back.pl-spin:hover{background:#ffc72c;color:#0b1126}body.power-level-active #powerLevel .pl-menu{right:14px}
 body.power-level-active #powerLevel :is(.pl-back,.pl-menu>summary):hover{border-color:var(--kr-cyan);color:#fff;filter:none}
 body.power-level-active #powerLevel .pl-menu[open]{background:#0e1530;border:2px solid var(--kr-line);border-radius:0;box-shadow:0 20px 50px #000c;font-family:'VT323',monospace}
 body.power-level-active #powerLevel .pl-menu .howto-body p{font-size:18px;line-height:1.35}

@@ -514,5 +514,208 @@ const ATTRIBUTES=[
 // Ascent order: attribute questions spread through the pairs.
 const MIXED=[];PAIRS.forEach((p,i)=>{MIXED.push(p);if(i%4===3&&ATTRIBUTES.length)MIXED.push(ATTRIBUTES.shift());});MIXED.push(...ATTRIBUTES);
 bank.push(...MIXED);
+MIXED.forEach(x=>x.legacy=true);
+// All-anime questions added for the seven-a-day ascents (Ascent #3 onward).
+bank.push(
+ q('mix-blonde','mixed','All anime','Name any character with blonde hair.',ALL_TEN+' · blonde, golden or yellow',[
+  a('Naruto Uzumaki',0,'Naruto'),a('Zenitsu Agatsuma',5,'Zenitsu'),a('Armin Arlert',5,'Armin'),a('Katsuki Bakugo',5,'Bakugo','Kacchan'),a('All Might',5,'Toshinori Yagi'),a('Sanji',5,'Vinsmoke Sanji'),
+  a('Minato Namikaze',10,'Minato'),a('Tsunade',10),a('Kurapika',10),a('Annie Leonhart',10,'Annie'),a('Erwin Smith',10,'Erwin'),a('Ino Yamanaka',15,'Ino'),a('Hawks',15,'Keigo Takami'),
+  a('Himiko Toga',15,'Toga'),a('Reiner Braun',15,'Reiner'),a('Historia Reiss',15,'Historia','Krista Lenz'),a('Kento Nanami',15,'Nanami'),a('Deidara',20),a('Denki Kaminari',20,'Kaminari'),
+  a('Biscuit Krueger',20,'Bisky','Biscuit'),a('Temari',25),a('Sabo',25),a('Marco',25,'Marco the Phoenix'),a('Mirio Togata',25,'Mirio','Lemillion'),a('Zeke Yeager',25,'Zeke'),
+  a('Kyojuro Rengoku',25,'Rengoku'),a('Kisuke Urahara',30,'Urahara'),a('Yuga Aoyama',35,'Aoyama'),a('Shinji Hirako',35,'Shinji'),a('Hideyoshi Nagachika',35,'Hide','Hideyoshi'),
+  a('Yuki Tsukumo',40,'Yuki'),a('Shalnark',40),a('Neito Monoma',45,'Monoma'),a('Hiyori Sarugaki',45,'Hiyori'),a('Cavendish',50),a('Izuru Kira',50,'Kira'),a('Pariston Hill',55,'Pariston'),
+  a('Ginshi Shirazu',60,'Shirazu'),a('Rojuro Otoribashi',100,'Rose','Rose Otoribashi')]),
+ q('mix-fire','mixed','All anime','Name any character who fights with fire.',ALL_TEN+' · fire, flames or lava; Flame and Sun Breathing count',[
+  a('Portgas D. Ace',0,'Ace','Fire Fist Ace'),a('Endeavor',5,'Enji Todoroki'),a('Kyojuro Rengoku',10,'Rengoku'),a('Shoto Todoroki',10,'Todoroki','Shoto'),a('Dabi',10,'Toya Todoroki'),
+  a('Sasuke Uchiha',10,'Sasuke'),a('Itachi Uchiha',15,'Itachi'),a('Sanji',15,'Vinsmoke Sanji'),a('Akainu',15,'Sakazuki'),a('Sabo',20),a('Marco',20,'Marco the Phoenix'),
+  a('Fuegoleon Vermillion',20,'Fuegoleon'),a('Magna Swing',20,'Magna'),a('Jogo',20),a('Madara Uchiha',25,'Madara'),a('Shigekuni Yamamoto-Genryusai',25,'Yamamoto','Head Captain Yamamoto'),
+  a('Leopold Vermillion',25,'Leopold'),a('Tanjiro Kamado',25,'Tanjiro'),a('Mereoleona Vermillion',30,'Mereoleona'),a('Ryomen Sukuna',30,'Sukuna'),a('Nezuko Kamado',30,'Nezuko'),
+  a('Hiruzen Sarutobi',40,'Hiruzen','Third Hokage'),a('Jiraiya',45),a('Kakuzu',50),a('Mei Terumi',50,'Mei','Fifth Mizukage'),a('Fana',55,'Fana the Hatred'),a('Burnin',100,'Moe Kamiji')]),
+ q('mix-lightning','mixed','All anime','Name any character who fights with lightning or electricity.',ALL_TEN+' · Thunder Breathing counts',[
+  a('Killua Zoldyck',0,'Killua'),a('Zenitsu Agatsuma',0,'Zenitsu'),a('Kakashi Hatake',5,'Kakashi'),a('Sasuke Uchiha',5,'Sasuke'),a('Enel',10,'Eneru','God Enel'),a('Denki Kaminari',10,'Kaminari','Chargebolt'),
+  a('Nami',20),a('Luck Voltia',20,'Luck'),a('Fourth Raikage',30,'Raikage','Ay'),a('Hajime Kashimo',30,'Kashimo'),a('Kaigaku',35),a('Killer Bee',40,'Bee'),a('Darui',45),
+  a('Jigoro Kuwajima',50,'Kuwajima'),a('Candice Catnipp',100,'Candice')]),
+ q('mix-mentors','mixed','All anime','Name any teacher, sensei or mentor.',ALL_TEN+' · anyone who trains or teaches the heroes',[
+  a('Kakashi Hatake',0,'Kakashi','Kakashi Sensei'),a('All Might',0,'Toshinori Yagi'),a('Satoru Gojo',0,'Gojo'),a('Jiraiya',5),a('Shota Aizawa',5,'Aizawa','Eraser Head'),a('Iruka Umino',10,'Iruka'),
+  a('Sakonji Urokodaki',10,'Urokodaki'),a('Silvers Rayleigh',10,'Rayleigh'),a('Might Guy',15,'Guy','Gai','Might Gai'),a('Kisuke Urahara',15,'Urahara'),a('Yami Sukehiro',15,'Yami'),
+  a('Asuma Sarutobi',20,'Asuma'),a('Gran Torino',20),a('Biscuit Krueger',20,'Bisky','Biscuit'),a('Kurenai Yuhi',25,'Kurenai'),a('Kento Nanami',25,'Nanami'),a('Zeff',25,'Red-Leg Zeff'),
+  a('Dracule Mihawk',25,'Mihawk'),a('Orochimaru',30),a('Jigoro Kuwajima',30,'Kuwajima'),a('Monkey D. Garp',30,'Garp'),a('Yoruichi Shihoin',30,'Yoruichi'),a('Wing',30),
+  a('Mereoleona Vermillion',35,'Mereoleona'),a('Masamichi Yaga',40,'Yaga'),a('Isaac Netero',40,'Netero'),a('Yoshimura',40,'Kuzen Yoshimura'),a('Hiruzen Sarutobi',40,'Hiruzen','Third Hokage'),
+  a('Midnight',40,'Nemuri Kayama'),a('Ebisu',45),a('Tengen Uzui',45,'Tengen'),a('Kisho Arima',45,'Arima'),a('Keith Shadis',50,'Shadis'),a('Nacht Faust',50,'Nacht'),
+  a('Cementoss',55),a('Vlad King',55),a('Ectoplasm',60),a('Gyomei Himejima',60,'Gyomei'),a('Fukasaku',60),a('Akira Mado',100,'Akira')]),
+ q('mix-pink-hair','mixed','All anime','Name any character with pink hair.',ALL_TEN+' · pink, rose or salmon',[
+  a('Sakura Haruno',0,'Sakura'),a('Mitsuri Kanroji',5,'Mitsuri'),a('Yuji Itadori',10,'Yuji','Itadori'),a('Mina Ashido',15,'Mina','Pinky'),a('Koby',20,'Coby'),a('Akaza',20),
+  a('Perona',25),a('Yachiru Kusajishi',25,'Yachiru'),a('Ryomen Sukuna',25,'Sukuna'),a('Jewelry Bonney',30,'Bonney'),a('Vanessa Enoteca',30,'Vanessa'),a('Machi',35,'Machi Komacine'),
+  a('Mei Hatsume',35,'Hatsume','Mei'),a('Rebecca',40),a('Szayelaporro Granz',45,'Szayelaporro','Szayel'),a('Sabito',45),a('Neon Nostrade',100,'Neon')]),
+ q('mix-green-hair','mixed','All anime','Name any character with green hair.',ALL_TEN+' · any shade of green',[
+  a('Roronoa Zoro',0,'Zoro','Zolo'),a('Izuku Midoriya',0,'Deku','Midoriya','Izuku'),a('Tsuyu Asui',15,'Tsuyu','Froppy'),a('Maki Zenin',20,'Maki'),a('Bartolomeo',35),a('Gon Freecss',35,'Gon'),
+  a('Mai Zenin',40,'Mai'),a('Zetsu',40,'White Zetsu','Black Zetsu'),a('Monet',40),a('Nelliel Tu Odelschwanck',45,'Nelliel','Nel'),a('Ibara Shiozaki',50,'Ibara'),a('Eto Yoshimura',50,'Eto'),
+  a('Fu',70,'Fuu'),a('Mashiro Kuna',100,'Mashiro')]),
+ q('mix-royalty','mixed','All anime','Name any king, queen, prince, princess or royal.',ALL_TEN+' · royal families count',[
+  a('Nefertari Vivi',0,'Vivi'),a('Historia Reiss',5,'Historia','Krista Lenz'),a('Shirahoshi',10),a('Meruem',10,'The King'),a('Noelle Silva',10,'Noelle'),a('Sanji',15,'Vinsmoke Sanji'),
+  a('Donquixote Doflamingo',20,'Doflamingo','Doffy'),a('Boa Hancock',25,'Hancock'),a('Nefertari Cobra',25,'Cobra'),a('Nozel Silva',25,'Nozel'),a('Fuegoleon Vermillion',25,'Fuegoleon'),
+  a('Ymir Fritz',25),a('Neptune',30,'King Neptune'),a('Rebecca',30),a('Vinsmoke Judge',30,'Judge'),a('Wapol',30),a('Mimosa Vermillion',30,'Mimosa'),a('Leopold Vermillion',30,'Leopold'),
+  a('Chimera Ant Queen',30,'Queen'),a('Kaguya Otsutsuki',30,'Kaguya'),a('Yhwach',30),a('Vinsmoke Reiju',35,'Reiju'),a('Kozuki Oden',35,'Oden'),a('Mereoleona Vermillion',35,'Mereoleona'),
+  a('Rod Reiss',35),a('Soul King',35),a('Kozuki Momonosuke',40,'Momonosuke','Momo'),a('Frieda Reiss',40,'Frieda'),a('Fukaboshi',45),a('Tserriednich Hui Guo Rou',45,'Tserriednich'),
+  a('Uri Reiss',50,'Uri'),a('Karl Fritz',50),a('Augustus Kira Clover XIII',50,'Augustus','King Augustus'),a('Kirsch Vermillion',55,'Kirsch'),a('Benjamin Hui Guo Rou',55,'Benjamin'),
+  a('Riku Dold III',100,'Riku Dold','King Riku')]),
+ q('mix-twins','mixed','All anime','Name any twin, triplet or quadruplet.',ALL_TEN+' · born together counts, plain siblings do not',[
+  a('Maki Zenin',0,'Maki'),a('Mai Zenin',5,'Mai'),a('Muichiro Tokito',10,'Muichiro'),a('Sanji',15,'Vinsmoke Sanji'),a('Yuichiro Tokito',30,'Yuichiro'),a('Sakon',40),
+  a('Vinsmoke Ichiji',40,'Ichiji'),a('Vinsmoke Niji',40,'Niji'),a('Ukon',45),a('Vinsmoke Yonji',45,'Yonji'),a('Kurona Yasuhisa',50,'Kurona'),a('Nashiro Yasuhisa',100,'Nashiro')]),
+);
+// ===== Any-anime questions (Ascent #3 onward) =====
+// Character questions are open to every anime, not just the ten above; title questions ask for whole shows or films.
+const ANY='Any anime';
+const WIDEN={
+ 'mix-red-hair':[a('Erza Scarlet',15,'Erza'),a('Misty',20),a('Asuka Langley Soryu',20,'Asuka'),a('Kenshin Himura',25,'Kenshin'),a('Makima',25),a('Kurama',25),a('Rias Gremory',30,'Rias'),
+  a('Kurisu Makise',30,'Kurisu'),a('Jessie',35),a('Yoko Littner',40,'Yoko'),a('Hanamichi Sakuragi',40,'Sakuragi','Hanamichi'),a('Shirou Emiya',45,'Shirou'),a('Ranma Saotome',45,'Ranma'),
+  a('Kallen Kozuki',45,'Kallen','Kallen Stadtfeld'),a('Kyoko Sakura',45,'Kyoko'),a('Grell Sutcliff',50,'Grell'),a('Lina Inverse',55,'Lina'),a('Chuuya Nakahara',55,'Chuuya','Chuya'),
+  a('Shana',60),a('Shirayuki',70)],
+ 'mix-masks':[a('Lelouch Lamperouge',20,'Lelouch','Zero','Lelouch vi Britannia'),a('Tuxedo Mask',25,'Mamoru Chiba'),a('Char Aznable',35,'Char'),a('Tiger Mask',40,'Naoto Date'),a('Griffith',50,'Femto')],
+ 'mix-glasses':[a('Conan Edogawa',5,'Conan','Shinichi Kudo'),a('Master Roshi',10,'Roshi','Kame-Sennin'),a('Kamina',15),a('Gendo Ikari',20,'Gendo'),a('Nobita Nobi',20,'Nobita'),
+  a('Shinpachi Shimura',25,'Shinpachi'),a('Arale Norimaki',40,'Arale'),a('Kyoya Ootori',40,'Kyoya','Kyoya Otori'),a('Edward Wong',45,'Radical Edward'),a('Byakuya Togami',50,'Togami'),
+  a('Doppo Kunikida',55,'Kunikida'),a('Kensuke Aida',60,'Kensuke')],
+ 'mix-healers':[a('Nurse Joy',15,'Joy'),a('Aqua',25),a('Black Jack',30),a('Kenzo Tenma',40,'Tenma','Dr. Tenma'),a('Wendy Marvell',40,'Wendy'),a('Platelet',50),a('Asia Argento',60,'Asia'),a('Faust VIII',70,'Faust')],
+ 'mix-companions':[a('Pikachu',0),a('Happy',10),a('Pochita',10),a('Bond Forger',10,'Bond'),a('Luna',15),a('Meowth',15),a('Jiji',25),a('Kyubey',30,'QB'),a('Kirara',35),a('Ein',35),a('Puar',35),
+  a('Artemis',40),a('Kero',40,'Keroberos','Kerberos','Cerberus'),a('Nyanko Sensei',50,'Nyanko-sensei','Madara'),a('Haro',55),a('Mokona',55)],
+ 'mix-white-hair':[a('Inuyasha',5),a('Frieren',5),a('Gintoki Sakata',10,'Gintoki','Gin-san'),a('Sesshomaru',10),a('Emilia',15),a('Griffith',20),a('Tomura Shigaraki',25,'Shigaraki'),
+  a('Accelerator',30),a('Isaac Netero',30,'Netero'),a('Kaworu Nagisa',35,'Kaworu'),a('Mirajane Strauss',35,'Mirajane'),a('Allen Walker',40,'Allen'),a('Shiro',40),a('Elaina',55)],
+ 'mix-blonde':[a('Edward Elric',5,'Edward','Ed','Fullmetal'),a('Usagi Tsukino',10,'Usagi','Sailor Moon','Serena'),a('Denji',10),a('Lucy Heartfilia',15,'Lucy'),a('Android 18',15,'Eighteen','Lazuli'),
+  a('Dio Brando',15,'Dio','DIO'),a('Saber',20,'Artoria','Artoria Pendragon'),a('Violet Evergarden',20,'Violet'),a('Meliodas',20),a('Power',20),a('Giorno Giovanna',25,'Giorno'),
+  a('Manjiro Sano',25,'Mikey'),a('Winry Rockbell',30,'Winry'),a('Laxus Dreyar',35,'Laxus'),a('Vash the Stampede',35,'Vash'),a('Takemichi Hanagaki',35,'Takemichi'),
+  a('Tamaki Suoh',40,'Tamaki'),a('Kei Tsukishima',40,'Tsukishima'),a('Kaori Miyazono',45,'Kaori'),a('Darkness',45,'Lalatina'),a('Kenma Kozume',50,'Kenma'),a('Chitoge Kirisaki',50,'Chitoge')],
+ 'mix-fire':[a('Natsu Dragneel',5,'Natsu'),a('Roy Mustang',10,'Mustang','Flame Alchemist'),a('Hiei',20),a('Shinra Kusakabe',25,'Shinra'),a('Rin Okumura',30,'Rin'),a('Calcifer',35),
+  a('Benimaru Shinmon',50,'Benimaru'),a('Shana',50),a('Agni',70)],
+ 'mix-lightning':[a('Pikachu',10),a('Mikoto Misaka',20,'Misaka','Railgun'),a('Laxus Dreyar',25,'Laxus'),a('Lum',45,'Lum Invader'),a('Tatsumi Oga',60,'Oga')],
+ 'mix-mentors':[a('Master Roshi',5,'Roshi','Kame-Sennin'),a('Koro-sensei',5,'Koro Sensei'),a('Piccolo',15),a('Reigen Arataka',15,'Reigen'),a('Whis',20),a('Saitama',20),a('Frieren',20),
+  a('Eikichi Onizuka',20,'Onizuka','GTO'),a('King Kai',25),a('Professor Oak',30,'Oak'),a('Izumi Curtis',30,'Izumi'),a('Genkai',35),a('Bang',35,'Silver Fang'),
+  a('Keishin Ukai',40,'Ukai','Coach Ukai'),a('Jinpachi Ego',45,'Ego'),a('Flamme',55),a('Danpei Tange',70,'Danpei')],
+ 'mix-pink-hair':[a('Anya Forger',5,'Anya'),a('Zero Two',5,'002'),a('Natsu Dragneel',10,'Natsu'),a('Madoka Kaname',15,'Madoka'),a('Ram',20),a('Hitori Gotoh',20,'Bocchi','Hitori Goto'),
+  a('Yuno Gasai',25,'Yuno'),a('Chika Fujiwara',30,'Chika'),a('Chibiusa',35,'Sailor Chibi Moon','Rini'),a('Lucy',45,'Nyu'),a('Euphemia li Britannia',50,'Euphie','Euphemia'),
+  a('Lacus Clyne',55,'Lacus'),a('Ichigo Momomiya',60,'Ichigo')],
+ 'mix-green-hair':[a('C.C.',15,'CC','C2'),a('Tatsumaki',20),a('Shintaro Midorima',35,'Midorima'),a('Fubuki',40),a('Cilan',50),a('Drew',60),a('Enkidu',60)],
+ 'mix-royalty':[a('Vegeta',5,'Prince Vegeta'),a('Lelouch vi Britannia',10,'Lelouch','Lelouch Lamperouge'),a('Princess Serenity',30,'Serenity'),a('Elizabeth Liones',30,'Elizabeth'),
+  a('Bojji',35,'Prince Bojji'),a('Malty S Melromarc',40,'Malty','Myne'),a('Nunnally vi Britannia',45,'Nunnally'),a('King Piccolo',45),a('Sheeta',50,'Lusheeta'),a('Melty Q Melromarc',50,'Melty'),
+  a('Euphemia li Britannia',50,'Euphie','Euphemia'),a('Schneizel el Britannia',50,'Schneizel'),a('Charles zi Britannia',55,'Charles'),a('Arslan',55)],
+ 'mix-twins':[a('Rem',5),a('Ram',10),a('Hikaru Hitachiin',20,'Hikaru'),a('Kaoru Hitachiin',25,'Kaoru'),a('Miku Nakano',20,'Miku'),a('Itsuki Nakano',30,'Itsuki'),a('Ichika Nakano',30,'Ichika'),
+  a('Nino Nakano',30,'Nino'),a('Yotsuba Nakano',30,'Yotsuba'),a('Atsumu Miya',30,'Atsumu'),a('Osamu Miya',40,'Osamu')],
+};
+for(const x of bank){const extra=WIDEN[x.id.replace('timed-v4-','')];if(!extra)continue;
+ const seen=new Set(x.answers.flatMap(y=>[y.name,...(y.aliases||[])]).map(key));
+ for(const e of extra){const forms=[e.name,...(e.aliases||[])];if(forms.some(f=>seen.has(key(f))))throw Error('Duplicate answer in '+x.id+': '+e.name);forms.forEach(f=>seen.add(key(f)));x.answers.push(e);}
+ x.category=ANY;x.note=x.note.replace(ALL_TEN,ANY);x.wide='char';}
+bank.find(x=>x.id==='timed-v4-mix-twins').text='Name any twin, triplet, quadruplet or quintuplet.';
+bank.find(x=>x.id==='timed-v4-mix-blonde').note=ANY+' · natural hair colour, so Super Saiyans don’t count';
+const W=(id,kind,category,text,note,answers)=>Object.assign(q('wide-'+id,'mixed',category,text,note,answers),{wide:kind});
+bank.push(
+ W('ghibli','title','Anime films','Name any Studio Ghibli film.','Feature films',[
+  a('Spirited Away',0),a('My Neighbor Totoro',0,'Totoro'),a('Princess Mononoke',5,'Mononoke'),a("Howl's Moving Castle",5,'Howls Moving Castle'),a("Kiki's Delivery Service",10,'Kikis Delivery Service'),
+  a('Castle in the Sky',15,'Laputa','Laputa: Castle in the Sky'),a('Ponyo',15,'Ponyo on the Cliff by the Sea'),a('Grave of the Fireflies',15),a('Nausicaä of the Valley of the Wind',20,'Nausicaa'),
+  a('The Boy and the Heron',25,'How Do You Live?'),a('The Wind Rises',30),a('Porco Rosso',30),a('Arrietty',35,'The Secret World of Arrietty'),a('Whisper of the Heart',40),
+  a('The Tale of the Princess Kaguya',45,'Princess Kaguya'),a('When Marnie Was There',45,'Marnie'),a('The Cat Returns',45),a('From Up on Poppy Hill',55,'Poppy Hill'),a('Pom Poko',55),
+  a('Tales from Earthsea',55,'Earthsea'),a('Only Yesterday',65),a('My Neighbors the Yamadas',75,'The Yamadas'),a('Earwig and the Witch',75,'Earwig'),a('Ocean Waves',100,'I Can Hear the Sea')]),
+ W('sports','title',ANY,'Name any sports anime.','Any sport; racing and combat sports count',[
+  a('Haikyu!!',0,'Haikyuu','Haikyu'),a("Kuroko's Basketball",5,'Kuroko no Basket'),a('Blue Lock',5),a('Slam Dunk',10),a('Hajime no Ippo',15,'Fighting Spirit','Ippo'),a('Yuri!!! on Ice',15,'Yuri on Ice'),
+  a('Free!',20,'Free Iwatobi Swim Club'),a('Captain Tsubasa',20),a('Initial D',25),a('The Prince of Tennis',25,'Prince of Tennis'),a('Eyeshield 21',25),a('Ace of Diamond',30,'Diamond no Ace'),
+  a('Inazuma Eleven',30),a('Megalobox',35),a('Ping Pong the Animation',35,'Ping Pong'),a('Run with the Wind',40),a('Yowamushi Pedal',40),a('Ashita no Joe',40,'Tomorrows Joe'),
+  a('Aoashi',40,'Ao Ashi'),a('Sk8 the Infinity',40,'SK8'),a('Major',45,'Major 2nd'),a('Chihayafuru',50),a('Welcome to the Ballroom',50,'Ballroom e Youkoso'),a('Tsurune',55),
+  a('Days',60),a('Big Windup!',60,'Ookiku Furikabutte'),a('Baby Steps',60),a('Hanebado!',65,'Hanebado'),a('Touch',65),a('Cross Game',70),a('Ahiru no Sora',70),a('Ginga e Kickoff!!',100,'Ginga e Kickoff')]),
+ W('isekai','title',ANY,'Name any isekai anime.','Transported or reborn into another world',[
+  a('Re:Zero',0,'Re Zero','Re:Zero − Starting Life in Another World'),a('Sword Art Online',0,'SAO'),a('That Time I Got Reincarnated as a Slime',5,'Tensura','Slime'),a('KonoSuba',5,'Konosuba'),
+  a('The Rising of the Shield Hero',10,'Shield Hero'),a('Overlord',10),a('Mushoku Tensei',15,'Jobless Reincarnation'),a('No Game No Life',15),a('Inuyasha',25),a('The Eminence in Shadow',25,'Eminence in Shadow'),
+  a('The Devil Is a Part-Timer!',30,'Devil is a Part Timer'),a('Log Horizon',30),a('Digimon Adventure',35,'Digimon'),a('The Saga of Tanya the Evil',35,'Tanya the Evil','Youjo Senki'),
+  a('So I’m a Spider, So What?',40,'Kumo desu ga','So Im a Spider So What'),a('Uncle from Another World',40,'Isekai Ojisan'),a('Ascendance of a Bookworm',45,'Bookworm'),a('Gate',45),
+  a('Arifureta',45),a('In Another World with My Smartphone',45),a('Grimgar of Fantasy and Ash',50,'Grimgar'),a('Fushigi Yûgi',50,'Fushigi Yugi'),a('Wise Man’s Grandchild',50,'Wise Mans Grandchild'),
+  a('Campfire Cooking in Another World',50),a('Reincarnated as a Sword',50),a('Tsukimichi: Moonlit Fantasy',50,'Tsukimichi'),a('Restaurant to Another World',55,'Isekai Shokudo'),
+  a('Drifters',55),a('Cautious Hero',55),a('Magic Knight Rayearth',55),a('The Vision of Escaflowne',60,'Escaflowne'),a('How a Realist Hero Rebuilt the Kingdom',60,'Realist Hero'),
+  a('El-Hazard',100,'El Hazard')]),
+ W('mecha','title',ANY,'Name any mecha anime.','Giant robots, mobile suits and power armour',[
+  a('Neon Genesis Evangelion',0,'Evangelion','Eva'),a('Mobile Suit Gundam',0,'Gundam'),a('Code Geass',5),a('Gurren Lagann',5,'Tengen Toppa Gurren Lagann'),a('Darling in the Franxx',10,'Franxx'),
+  a('Gundam Wing',20,'Mobile Suit Gundam Wing'),a('Macross',20,'Super Dimension Fortress Macross'),a('Voltron',25,'Beast King GoLion'),a('Gundam SEED',25,'Mobile Suit Gundam SEED'),
+  a('Iron-Blooded Orphans',25,'Gundam Iron-Blooded Orphans'),a('The Witch from Mercury',25,'Gundam the Witch from Mercury'),a('Robotech',30),a('Mazinger Z',30),a('Full Metal Panic!',30,'Full Metal Panic'),
+  a('Eureka Seven',30),a('Zoids',35),a('86',40,'86 Eighty-Six','Eighty-Six'),a('Aldnoah.Zero',40,'Aldnoah Zero'),a('FLCL',40,'Fooly Cooly'),a('Medabots',40),a('Getter Robo',45),
+  a('The Big O',45,'Big O'),a('Patlabor',45),a('Knights of Sidonia',45),a('The Vision of Escaflowne',50,'Escaflowne'),a('RahXephon',55),a('Gargantia on the Verdurous Planet',55,'Gargantia'),
+  a('Gunbuster',60,'Top wo Nerae'),a('Diebuster',75),a('Overman King Gainer',80,'King Gainer'),a('Space Runaway Ideon',100,'Ideon')]),
+ W('magical-girl','title',ANY,'Name any magical girl anime.','Transforming heroines, witches count',[
+  a('Sailor Moon',0),a('Cardcaptor Sakura',5),a('Puella Magi Madoka Magica',5,'Madoka Magica'),a('Pretty Cure',15,'Precure'),a('Tokyo Mew Mew',20),a('Magical Girl Lyrical Nanoha',30,'Nanoha'),
+  a('Little Witch Academia',35),a('Magic Knight Rayearth',35),a('Shugo Chara!',40,'Shugo Chara'),a('Ojamajo Doremi',40,'Magical DoReMi'),a('Cutie Honey',40,'Cutey Honey'),
+  a('Gushing over Magical Girls',40),a('Princess Tutu',45),a('Fate/kaleid liner Prisma Illya',45,'Prisma Illya'),a('Symphogear',50),a('Magical Girl Raising Project',50),
+  a('Yuki Yuna Is a Hero',55),a('Mermaid Melody',55),a('Creamy Mami',60),a('Magical Girl Site',60),a('Wedding Peach',60),a('Phantom Thief Jeanne',65,'Kamikaze Kaitou Jeanne'),
+  a('Minky Momo',70),a('Corrector Yui',75),a('Sally the Witch',100,'Mahoutsukai Sally')]),
+ W('starters','char','Pokémon','Name any starter Pokémon.','Any generation; Pikachu and Eevee count',[
+  a('Bulbasaur',0),a('Charmander',0),a('Squirtle',0),a('Pikachu',10),a('Mudkip',10),a('Piplup',10),a('Chikorita',15),a('Cyndaquil',15),a('Totodile',15),a('Torchic',15),a('Rowlet',15),
+  a('Treecko',20),a('Turtwig',20),a('Chimchar',20),a('Froakie',20),a('Litten',20),a('Snivy',25),a('Tepig',25),a('Oshawott',25),a('Popplio',25),a('Grookey',25),a('Scorbunny',25),
+  a('Sobble',25),a('Fennekin',30),a('Sprigatito',30),a('Fuecoco',30),a('Chespin',35),a('Quaxly',45),a('Eevee',100)]),
+ W('shinkai-hosoda','title','Anime films','Name any film by Makoto Shinkai or Mamoru Hosoda.','Either director',[
+  a('Your Name',0,'Kimi no Na wa'),a('Weathering with You',5,'Tenki no Ko'),a('Suzume',10,'Suzume no Tojimari'),a('Wolf Children',15),a('Summer Wars',15),a('Belle',15),
+  a('5 Centimeters per Second',20,'Five Centimeters per Second'),a('The Girl Who Leapt Through Time',20),a('The Garden of Words',30),a('Mirai',30,'Mirai of the Future'),a('The Boy and the Beast',30),
+  a('Children Who Chase Lost Voices',50),a('Digimon Adventure: Our War Game!',60,'Our War Game'),a('Scarlet',60),a('The Place Promised in Our Early Days',65),a('Voices of a Distant Star',70),
+  a('One Piece: Baron Omatsuri and the Secret Island',75,'Baron Omatsuri'),a('She and Her Cat',100)]),
+ W('time-travel','title',ANY,'Name any anime with time travel or a time loop.','Rewinds, loops and visits to other eras count',[
+  a('Steins;Gate',0,'Steins Gate'),a('Tokyo Revengers',5),a('Re:Zero',10,'Re Zero'),a('Erased',10,'Boku dake ga Inai Machi'),a('The Girl Who Leapt Through Time',15),a('Your Name',20,'Kimi no Na wa'),
+  a('Doraemon',20),a('Puella Magi Madoka Magica',25,'Madoka Magica'),a('Summer Time Rendering',25),a('Higurashi: When They Cry',30,'Higurashi'),a('Orange',35),a('Inuyasha',35),
+  a('Dragon Ball Z',40,'DBZ'),a('The Melancholy of Haruhi Suzumiya',45,'Haruhi Suzumiya','Haruhi'),a('Mirai',50,'Mirai of the Future'),a('The Tatami Galaxy',55),a('The Tatami Time Machine Blues',60),
+  a('Time Bokan',100)]),
+ W('detectives','char',ANY,'Name any anime detective.','Professional or amateur sleuths',[
+  a('Conan Edogawa',0,'Conan','Shinichi Kudo','Jimmy Kudo'),a('L',0,'L Lawliet'),a('Kogoro Mouri',20,'Kogoro','Richard Moore'),a('Osamu Dazai',25,'Dazai'),a('Ranpo Edogawa',30,'Ranpo'),
+  a('Heiji Hattori',30,'Heiji'),a('Near',30),a('Detective Pikachu',30),a('Atsushi Nakajima',35,'Atsushi'),a('Mello',35),a('Sherlock Holmes',40,'Sherlock'),a('Hajime Kindaichi',40,'Kindaichi'),
+  a('Rei Furuya',40,'Toru Amuro','Amuro'),a('Kyoko Kirigiri',45,'Kirigiri'),a('Houtarou Oreki',50,'Oreki','Hotaro Oreki'),a('Doppo Kunikida',50,'Kunikida'),a('Neuro Nogami',60,'Neuro'),
+  a('Victorique de Blois',100,'Victorique')]),
+ W('vampires','char',ANY,'Name any vampire.','Half-vampires count',[
+  a('Alucard',5),a('Dio Brando',10,'Dio','DIO'),a('Seras Victoria',20,'Seras'),a('Shinobu Oshino',25,'Kiss-shot Acerola-Orion Heart-Under-Blade','Kissshot'),a('Moka Akashiya',30,'Moka'),
+  a('Kaname Kuran',30,'Kaname'),a('Zero Kiryu',30,'Zero'),a('Krul Tepes',35,'Krul'),a('Mikaela Hyakuya',35,'Mika','Mikaela'),a('Nazuna Nanakusa',35,'Nazuna'),a('Yuki Cross',40,'Yuki Kuran'),
+  a('Ferid Bathory',45,'Ferid'),a('D',45,'Vampire Hunter D'),a('Noé Archiviste',50,'Noe Archiviste','Noe'),a('Draluc',55),a('Karin Maaka',60,'Karin'),a('Saya Otonashi',60,'Saya'),
+  a('Mina Tepes',100,'Mina')]),
+ W('robots','char',ANY,'Name any robot, android or cyborg.','Bio-androids and cyborgs count',[
+  a('Doraemon',0),a('Genos',5),a('Android 18',5,'Eighteen','Lazuli'),a('Franky',5),a('Astro Boy',10,'Atom','Tetsuwan Atom'),a('Android 17',10,'Lapis'),a('Android 16',15),
+  a('Motoko Kusanagi',20,'Major','Major Kusanagi'),a('Cell',25,'Perfect Cell'),a('2B',25,'YoRHa No. 2 Type B'),a('Alita',30,'Gally','Battle Angel Alita'),a('Arale Norimaki',30,'Arale'),
+  a('9S',35,'YoRHa No. 9 Type S'),a('Android 19',40),a('Bartholomew Kuma',40,'Kuma'),a('Batou',40),a('Chi',40,'Chii'),a('Dr. Gero',45,'Android 20'),a('Tachikoma',50),a('Vivy',50,'Diva'),
+  a('Joe Shimamura',55,'Cyborg 009','009'),a('Metabee',55),a('MegaMan.EXE',60,'MegaMan','Mega Man'),a('Mechazawa',60),a('Kikaider',80),a('Cyborg Kuro-chan',100,'Kuro-chan')]),
+ W('ninjas','char',ANY,'Name any ninja who isn’t from Naruto.','Shinobi and kunoichi from every other anime',[
+  a('Tengen Uzui',15,'Tengen'),a('Gabimaru',20),a('Yoruichi Shihoin',30,'Yoruichi'),a('Hanzo',30),a('Soi Fon',35,'Soifon','Sui-Feng'),a('Raizo',35),a('Edgeshot',40,'Shinya Kamihara'),
+  a('Yuzuriha',40),a('Ayame Sarutobi',45,'Sacchan'),a('Ninja Hattori-kun',45,'Hattori-kun','Kanzo Hattori'),a('Makio',50),a('Suma',50),a('Hinatsuru',50),a('Shinobu (One Piece)',50,'Shinobu'),
+  a('Jubei Kibagami',55,'Jubei'),a('Ninja Slayer',60),a('Gennosuke Kouga',70,'Gennosuke'),a('Kagero',70),a('Oboro',75),a('Zenzo Hattori',100,'Zenzo')]),
+ W('eyepatch','char',ANY,'Name any character who wears an eyepatch.','Medical patches and eye bandages count',[
+  a('Hange Zoe',10,'Hange','Hanji'),a('Kenpachi Zaraki',15,'Kenpachi','Zaraki'),a('Ken Kaneki',15,'Kaneki'),a('King Bradley',20,'Bradley','Wrath'),a('Roy Mustang',25,'Mustang'),
+  a('Rikka Takanashi',30,'Rikka'),a('Danzo Shimura',30,'Danzo'),a('Asuka Langley Soryu',35,'Asuka'),a('Captain Harlock',35,'Harlock'),a('Nnoitra Gilga',45,'Nnoitra'),
+  a('Masamune Date',60,'Date Masamune'),a('Mei Misaki',100,'Mei')]),
+ W('cats','char',ANY,'Name any cat character.','Talking cats, cat spirits and cat forms count',[
+  a('Meowth',5),a('Happy',5),a('Doraemon',10),a('Luna',10),a('Jiji',20),a('Yoruichi Shihoin',25,'Yoruichi'),a('Kirara',30),a('Catbus',30),a('Neferpitou',30,'Pitou'),a('Puck',35),
+  a('Artemis',35),a('Carla',40,'Charle'),a('Persian',40),a('Kyo Sohma',40,'Kyo'),a('Nyanko Sensei',40,'Nyanko-sensei','Madara'),a('Chi',45),a('Blair',45),a('Kuro',50),a('Pantherlily',50,'Lily'),
+  a('Baron',50,'Baron Humbert von Gikkingen'),a('Felix Argyle',50,'Ferris'),a('Diana',55),a('Muta',100)]),
+ W('dragons','char',ANY,'Name any dragon.','Dragon forms count',[
+  a('Shenron',5,'Shenlong','Shen Long'),a('Blue-Eyes White Dragon',10,'Blue Eyes White Dragon'),a('Tohru',10),a('Igneel',15),a('Haku',20,'Kohaku'),a('Kanna Kamui',20,'Kanna'),a('Kaido',20),
+  a('Porunga',25),a('Veldora Tempest',25,'Veldora'),a('Acnologia',30),a('Red-Eyes Black Dragon',30,'Red Eyes Black Dragon'),a('Slifer the Sky Dragon',35,'Slifer'),a('Lucoa',40,'Quetzalcoatl'),
+  a('Kozuki Momonosuke',40,'Momonosuke'),a('Elma',45),a('Fafnir',45),a('Hyorinmaru',45),a('Bahamut',55),a('Super Shenron',60),a('Ilulu',100)]),
+ W('studios','title',ANY,'Name any anime studio.','Animation studios only',[
+  a('Studio Ghibli',0,'Ghibli'),a('MAPPA',0),a('Ufotable',5),a('Kyoto Animation',5,'KyoAni'),a('Toei Animation',5,'Toei'),a('Wit Studio',10,'Wit'),a('Bones',10),a('Madhouse',10),
+  a('Sunrise',15),a('Studio Pierrot',15,'Pierrot'),a('Production I.G',15,'Production IG'),a('A-1 Pictures',15,'A1 Pictures'),a('CloverWorks',20),a('Studio Trigger',20,'Trigger'),
+  a('Shaft',25),a('David Production',25),a('J.C.Staff',30,'JC Staff'),a('TMS Entertainment',30,'TMS'),a('Gainax',30),a('Science SARU',30),a('P.A. Works',35,'PA Works'),
+  a('White Fox',35),a('Studio Deen',35,'Deen'),a('CoMix Wave Films',40,'CoMix Wave'),a('OLM',40),a('Kinema Citrus',45),a('Doga Kobo',45),a('Lerche',50),a('Silver Link',50),
+  a('Studio 4°C',50,'Studio 4C'),a('Tatsunoko Production',50,'Tatsunoko'),a('Gonzo',50),a('Studio Bind',50),a('Brain’s Base',55,'Brains Base'),a('8bit',55),a('Polygon Pictures',55),
+  a('Orange',55),a('Bandai Namco Pictures',55),a('Xebec',60),a('Feel',60),a('Nippon Animation',60),a('Tezuka Productions',60),a('Shin-Ei Animation',60),a('Satelight',65),
+  a('Studio Ponoc',65),a('Manglobe',70),a('Studio Chizu',70),a('Diomedea',70),a('Seven Arcs',75),a('Studio Colorido',75),a('Studio Kai',80),a('Mushi Production',85),
+  a('Telecom Animation Film',85),a('Lay-duce',85),a('Pine Jam',90),a('Ajia-do',90),a('Studio Comet',100)]),
+ W('food','title',ANY,'Name any anime about food or cooking.','Cooking, restaurants and eating',[
+  a('Food Wars!',0,'Shokugeki no Soma','Food Wars'),a('Delicious in Dungeon',5,'Dungeon Meshi'),a('Toriko',15),a('Restaurant to Another World',30,'Isekai Shokudo'),
+  a('Campfire Cooking in Another World',30),a('Sweetness and Lightning',40),a('Yakitate!! Japan',45,'Yakitate Japan'),a('Silver Spoon',45,'Gin no Saji'),a('Cooking Master Boy',50,'Chuuka Ichiban'),
+  a("Today's Menu for the Emiya Family",50,'Emiya-san Chi no Kyou no Gohan'),a('The Way of the Househusband',50),a('Isekai Izakaya Nobu',60,'Isekai Izakaya'),a('Antique Bakery',70),
+  a('Bartender',70),a('Kakuriyo: Bed & Breakfast for Spirits',70,'Kakuriyo'),a('Wakako-zake',75),a('Ristorante Paradiso',75),a('Gourmet Girl Graffiti',80),a('Mister Ajikko',85),a('Oishinbo',100)]),
+ W('long-running','title',ANY,'Name any anime series with 200 or more episodes.','One series, not a whole franchise',[
+  a('One Piece',0),a('Naruto Shippuden',5),a('Pokémon',5,'Pokemon'),a('Naruto',5),a('Detective Conan',10,'Case Closed'),a('Dragon Ball Z',10,'DBZ'),a('Bleach',10),a('Boruto',15,'Boruto: Naruto Next Generations'),
+  a('Fairy Tail',20),a('Doraemon',20),a('Crayon Shin-chan',20,'Shin-chan'),a('Gintama',25),a('Yu-Gi-Oh! Duel Monsters',30,'Yu-Gi-Oh','Yugioh'),a('Sazae-san',30),a('Sailor Moon',35),
+  a('Hamtaro',45),a('Dr. Slump',45),a('Anpanman',50),a('Kochikame',50),a('Chibi Maruko-chan',55),a('Sgt. Frog',55,'Keroro Gunso'),a('Kiteretsu Daihyakka',75),a('Nintama Rantaro',100)]),
+ W('shinigami','char',ANY,'Name any Shinigami, reaper or death god.','Soul Reapers, Death Note gods and grim reapers',[
+  a('Ryuk',5),a('Ichigo Kurosaki',5,'Ichigo'),a('Rukia Kuchiki',5,'Rukia'),a('Byakuya Kuchiki',10,'Byakuya'),a('Kenpachi Zaraki',10,'Kenpachi'),a('Toshiro Hitsugaya',10,'Hitsugaya','Toshiro'),
+  a('Renji Abarai',10,'Renji'),a('Sosuke Aizen',15,'Aizen'),a('Gin Ichimaru',15,'Gin'),a('Shunsui Kyoraku',15,'Kyoraku'),a('Rem',25),a('Death the Kid',30,'Kid'),a('Lord Death',35,'Shinigami-sama'),
+  a('Grell Sutcliff',40,'Grell'),a('Undertaker',40),a('Sidoh',50),a('William T. Spears',55,'William'),a('Gelus',100)]),
+ W('hats','char',ANY,'Name any character known for wearing a hat.','Caps, straw hats, witch hats, fedoras',[
+  a('Monkey D. Luffy',0,'Luffy'),a('Ash Ketchum',5,'Ash','Satoshi'),a('Megumin',10),a('Tony Tony Chopper',10,'Chopper'),a('Portgas D. Ace',15,'Ace'),a('Jotaro Kujo',15,'Jotaro'),a('Sabo',15),
+  a('Trafalgar Law',20,'Law'),a('Kisuke Urahara',20,'Urahara'),a('Brook',20),a('Daisuke Jigen',25,'Jigen'),a('Alucard',25),a('Dracule Mihawk',30,'Mihawk'),a('Kaito Kid',30,'Kid','Kaito Kuroba'),
+  a('Akainu',30,'Sakazuki'),a('Gol D. Roger',35,'Roger'),a('Chuuya Nakahara',35,'Chuuya','Chuya'),a('Big Mom',40,'Charlotte Linlin'),a('Akko Kagari',50,'Akko'),a('Elaina',50),
+  a('Donquixote Rosinante',50,'Rosinante','Corazon'),a('Koichi Zenigata',100,'Zenigata','Inspector Zenigata')]),
+);
+// First-cycle order, so each day mixes topics (hair colours spread out); append new ids at the end.
+['mix-red-hair','wide-detectives','mix-masks','wide-cats','wide-starters','mix-glasses','wide-vampires','mix-blonde','wide-robots','mix-healers','wide-ninjas','mix-fire','wide-dragons','mix-white-hair','wide-eyepatch','mix-mentors','wide-shinigami','mix-pink-hair','mix-companions','mix-lightning','wide-hats','mix-green-hair','mix-royalty','mix-twins','wide-ghibli','wide-sports','wide-isekai','wide-magical-girl','wide-time-travel','wide-mecha','wide-studios','wide-shinkai-hosoda','wide-food','wide-long-running'].forEach((id,i)=>{const x=bank.find(x=>x.id==='timed-v4-'+id);if(!x||!x.wide)throw Error('Unknown ordered question: '+id);x.order=i;});
 return bank;})();
 if(typeof module!=="undefined")module.exports=POWER_LEVEL_QUESTIONS;
