@@ -570,7 +570,9 @@ const WIDEN={
  'mix-red-hair':[a('Erza Scarlet',15,'Erza'),a('Misty',20),a('Asuka Langley Soryu',20,'Asuka'),a('Kenshin Himura',25,'Kenshin'),a('Makima',25),a('Kurama',25),a('Rias Gremory',30,'Rias'),
   a('Kurisu Makise',30,'Kurisu'),a('Jessie',35),a('Yoko Littner',40,'Yoko'),a('Hanamichi Sakuragi',40,'Sakuragi','Hanamichi'),a('Shirou Emiya',45,'Shirou'),a('Ranma Saotome',45,'Ranma'),
   a('Kallen Kozuki',45,'Kallen','Kallen Stadtfeld'),a('Kyoko Sakura',45,'Kyoko'),a('Grell Sutcliff',50,'Grell'),a('Lina Inverse',55,'Lina'),a('Chuuya Nakahara',55,'Chuuya','Chuya'),
-  a('Shana',60),a('Shirayuki',70)],
+  a('Shana',60),a('Shirayuki',70),
+  a('Soma Yukihira',20,'Soma','Yukihira'),a('Taiga Kagami',35,'Kagami'),a('Seijuro Akashi',35,'Akashi'),a('Kana Arima',40,'Arima Kana'),a('Benimaru',40),
+  a('Lavi',50),a('Kotori Itsuka',55,'Kotori')],
  'mix-masks':[a('Lelouch Lamperouge',20,'Lelouch','Zero','Lelouch vi Britannia'),a('Tuxedo Mask',25,'Mamoru Chiba'),a('Char Aznable',35,'Char'),a('Tiger Mask',40,'Naoto Date'),a('Griffith',50,'Femto')],
  'mix-glasses':[a('Conan Edogawa',5,'Conan','Shinichi Kudo'),a('Master Roshi',10,'Roshi','Kame-Sennin'),a('Kamina',15),a('Gendo Ikari',20,'Gendo'),a('Nobita Nobi',20,'Nobita'),
   a('Shinpachi Shimura',25,'Shinpachi'),a('Arale Norimaki',40,'Arale'),a('Kyoya Ootori',40,'Kyoya','Kyoya Otori'),a('Edward Wong',45,'Radical Edward'),a('Byakuya Togami',50,'Togami'),
@@ -715,6 +717,39 @@ bank.push(
   a('Akainu',30,'Sakazuki'),a('Gol D. Roger',35,'Roger'),a('Chuuya Nakahara',35,'Chuuya','Chuya'),a('Big Mom',40,'Charlotte Linlin'),a('Akko Kagari',50,'Akko'),a('Elaina',50),
   a('Donquixote Rosinante',50,'Rosinante','Corazon'),a('Koichi Zenigata',100,'Zenigata','Inspector Zenigata')]),
 );
+// Answers added after players reported gaps (Nov 13 2026). Appending answers never changes which questions a day gets.
+const MORE={
+ 'mix-red-hair':[a('Kagura',30),a('Eris Boreas Greyrat',45,'Eris'),a('Vinsmoke Ichiji',50,'Ichiji'),a('Senjuro Rengoku',55,'Senjuro'),a('Kamui',55),a('Ryuga',60)],
+ 'wide-detectives':[a('Inspector Megure',35,'Megure','Juzo Megure'),a('Koichi Zenigata',35,'Zenigata','Inspector Zenigata'),a('Akane Tsunemori',35,'Akane'),a('Light Yagami',40,'Light','Kira'),
+  a('Ai Haibara',40,'Haibara'),a('Shinya Kogami',40,'Kogami'),a('Shuichi Akai',45,'Akai'),a('Soichiro Yagami',45,'Soichiro'),a('Touta Matsuda',45,'Matsuda'),a('John Watson',45,'Watson'),
+  a('Inspector Lunge',50,'Lunge'),a('Daisuke Kambe',50,'Kambe'),a('Genta Kojima',50,'Genta'),a('Mitsuhiko Tsuburaya',50,'Mitsuhiko'),a('Ayumi Yoshida',50,'Ayumi'),
+  a('Wataru Takagi',55,'Takagi'),a('Eru Chitanda',55,'Chitanda'),a('Togusa',55),a('Saguru Hakuba',60,'Hakuba'),a('Masumi Sera',60,'Sera'),a('Haru Kato',60),
+  a('Lord El-Melloi II',65,'Waver Velvet','El-Melloi'),a('Kazuya Kujo',70,'Kujo')],
+ 'wide-ghibli':[a('The Red Turtle',70),a('Ronja, the Robber’s Daughter',85,'Ronja the Robbers Daughter','Ronja'),a('On Your Mark',90)],
+ 'mix-masks':[a('Tanjiro Kamado',30,'Tanjiro'),a('Yamori',35,'Jason'),a('Grimmjow Jaegerjaquez',35,'Grimmjow'),a('Itachi Uchiha',40,'Itachi'),a('Rob Lucci',40,'Lucci'),
+  a('Ulquiorra Cifer',40,'Ulquiorra'),a('Nishiki Nishio',40,'Nishiki'),a('Dio Brando',40,'Dio','DIO'),a('Mt. Lady',40,'Mount Lady'),a('Kaku',45),a('Hinami Fueguchi',45,'Hinami'),
+  a('Eto Yoshimura',45,'Eto','One-Eyed Owl'),a('Hiyori Sarugaki',45,'Hiyori'),a('Himiko Toga',45,'Toga'),a('Kamui Woods',45),a('Yoshimura',50,'Kuzen Yoshimura'),a('Tatara',50),
+  a('Feitan',50),a('Mustard',50),a('Kalifa',55),a('Blueno',55),a('Kensei Muguruma',55,'Kensei'),a('Speed-o’-Sound Sonic',55,'Sonic','Speed o Sound Sonic')],
+ 'wide-cats':[a('Nekomamushi',30,'Cat Viper'),a('Matatabi',40,'Two-Tails','Nibi'),a('Litten',40),a('Grimmjow Jaegerjaquez',45,'Grimmjow','Panthera'),a('Rob Lucci',45,'Lucci'),
+  a('Chachamaru',50),a('Frosch',50),a('Lector',50),a('Pixie-Bob',50),a('Mandalay',55),a('Koneko Toujou',55,'Koneko'),a('Natsume Soseki',60),a('Ragdoll',60),a('Tama',70),a('Kuroka',70),
+  a('Denka and Hina',70,'Denka','Hina')],
+ 'wide-sports':[a('Baki',25,'Baki the Grappler'),a('Uma Musume: Pretty Derby',30,'Uma Musume'),a('Kengan Ashura',35),a('Speed Racer',35,'Mach GoGoGo'),a('Air Gear',40),
+  a('Medalist',45),a('Hinomaru Sumo',50),a('Redline',50),a('MF Ghost',50),a('Tiger Mask',50),a('Girls und Panzer',55),a('Burning Kabaddi',60,'Shakunetsu Kabaddi'),
+  a('Keijo!!!!!!!!',60,'Keijo'),a('All Out!!',65,'All Out'),a('Harukana Receive',65),a('2.43: Seiin High School Boys Volleyball Team',65,'2.43'),a('Stars Align',65),
+  a('Love All Play',70),a('Ryman’s Club',70,'Rymans Club'),a('Wangan Midnight',70),a('H2',75),a('Overtake!',75,'Overtake'),a('Capeta',75),a('Number24',80),a('Iwakakeru: Sport Climbing Girls',80,'Iwakakeru')],
+ 'wide-starters':[a('Espeon',70),a('Umbreon',70)],
+};
+const MORE_ALIASES={
+ 'wide-ghibli':{'Spirited Away':['Sen to Chihiro'],'My Neighbor Totoro':['Tonari no Totoro'],'Princess Mononoke':['Mononoke Hime'],'Earwig and the Witch':['Aya and the Witch'],'Whisper of the Heart':['Mimi wo Sumaseba'],'Grave of the Fireflies':['Hotaru no Haka'],'Castle in the Sky':['Tenkuu no Shiro Laputa']},
+ 'wide-cats':{'Catbus':['Nekobus','Cat Bus']},
+ 'wide-sports':{'Haikyu!!':['Haikyuu!!'],"Kuroko's Basketball":['Kuroko'],'Hajime no Ippo':['Hajime no Ippo: The Fighting!']},
+};
+for(const [id,extra] of Object.entries(MORE)){const x=bank.find(q=>q.id==='timed-v4-'+id);if(!x)throw Error('Unknown question: '+id);
+ const seen=new Set(x.answers.flatMap(y=>[y.name,...(y.aliases||[])]).map(key));
+ for(const e of extra){const forms=[e.name,...(e.aliases||[])];if(forms.some(f=>seen.has(key(f))))throw Error('Duplicate answer in '+id+': '+e.name);forms.forEach(f=>seen.add(key(f)));x.answers.push(e);}}
+for(const [id,map] of Object.entries(MORE_ALIASES)){const x=bank.find(q=>q.id==='timed-v4-'+id);const seen=new Set(x.answers.flatMap(y=>[y.name,...(y.aliases||[])]).map(key));
+ for(const [name,aliases] of Object.entries(map)){const hit=x.answers.find(y=>y.name===name);if(!hit)throw Error('Unknown answer for alias: '+name);
+  for(const al of aliases){if(seen.has(key(al)))continue;seen.add(key(al));hit.aliases=[...(hit.aliases||[]),al];}}}
 // First-cycle order, so each day mixes topics (hair colours spread out); append new ids at the end.
 ['mix-red-hair','wide-detectives','mix-masks','wide-cats','wide-starters','mix-glasses','wide-vampires','mix-blonde','wide-robots','mix-healers','wide-ninjas','mix-fire','wide-dragons','mix-white-hair','wide-eyepatch','mix-mentors','wide-shinigami','mix-pink-hair','mix-companions','mix-lightning','wide-hats','mix-green-hair','mix-royalty','mix-twins','wide-ghibli','wide-sports','wide-isekai','wide-magical-girl','wide-time-travel','wide-mecha','wide-studios','wide-shinkai-hosoda','wide-food','wide-long-running'].forEach((id,i)=>{const x=bank.find(x=>x.id==='timed-v4-'+id);if(!x||!x.wide)throw Error('Unknown ordered question: '+id);x.order=i;});
 return bank;})();
