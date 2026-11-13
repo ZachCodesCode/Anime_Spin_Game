@@ -171,7 +171,8 @@ body.power-level-active #powerLevel :is(.pl-back,.pl-menu>summary){background:rg
 body.power-level-active #powerLevel :is(.pl-back,.pl-menu){position:fixed;top:14px;z-index:35}
 body.power-level-active #powerLevel .pl-back{left:14px}
 body.power-level-active #powerLevel .pl-back.pl-spin{border-color:#ffc72c;color:#ffc72c;font-size:11px;padding:11px 14px}
-body.power-level-active #powerLevel .pl-back.pl-spin:hover{background:#ffc72c;color:#0b1126}body.power-level-active #powerLevel .pl-menu{right:14px}
+body.power-level-active #powerLevel .pl-back.pl-spin:hover{background:#ffc72c;color:#0b1126}
+body.power-level-active #powerLevel:not([data-home=true]) .pl-back.pl-spin{display:none}body.power-level-active #powerLevel .pl-menu{right:14px}
 body.power-level-active #powerLevel :is(.pl-back,.pl-menu>summary):hover{border-color:var(--kr-cyan);color:#fff;filter:none}
 body.power-level-active #powerLevel .pl-menu[open]{background:#0e1530;border:2px solid var(--kr-line);border-radius:0;box-shadow:0 20px 50px #000c;font-family:'VT323',monospace}
 body.power-level-active #powerLevel .pl-menu .howto-body p{font-size:18px;line-height:1.35}
@@ -306,4 +307,7 @@ body.power-level-active #powerLevel #plTop .pl-all-tier li.mine small{color:#ffe
  body.power-level-active #powerLevel :is(input,textarea),body.power-level-active #powerLevel #plSubmit{height:48px;font-size:20px}
  body.power-level-active #powerLevel #plSubmit{padding:0 14px;font-size:12px}
  body.power-level-active #powerLevel #plStage #plRarity{top:30%}
+ body.power-level-active #powerLevel #plBegin{box-sizing:border-box;width:100%;max-width:340px;padding:16px 10px;font-size:14px;letter-spacing:.08em;white-space:nowrap}
+ body.power-level-active #powerLevel .pl-back.pl-spin{font-size:10px;padding:10px 11px}
+ body.power-level-active #powerLevel #plStage #plPips{top:80px;left:12px;translate:none;flex-direction:row;align-items:center;gap:9px}
 }
