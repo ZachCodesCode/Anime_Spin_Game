@@ -36,3 +36,31 @@ test('refresh preserves countdown, deadline and reveal; recomputes points',()=>{
  const again=R.restore(JSON.stringify(restored),bank,s.date,s.ids);assert.equal(again.outcomes[0].boost,C.points(a));assert.equal(again.outcomes[0].tier,C.grade(a).name);
  assert.equal(again.revealUntil,t+1000+R.CONFIG.revealMs);assert.equal(R.resolve(again,bank,'answer',a.name,t+2000).status,'locked');R.advance(again);assert.equal(again.deadline,null);});
 test('old, malformed, wrong-day and invalid saves rejected',()=>{for(const raw of ['null','{','{"version":3}',JSON.stringify({...make(),version:3}),JSON.stringify({...make(),date:'old'}),JSON.stringify({...make(),phase:'active',deadline:null}),JSON.stringify({...make(),phase:'active',opensAt:0,deadline:5})])assert.equal(R.restore(raw,bank,'2026-11-11'),null);});
+
+test('seven-question cat fixture keeps questions 5–7 aligned through reveals and refreshes',()=>{
+ const date='2026-11-13';let s=R.create(R.select(bank,date),date);
+ assert.equal(s.ids.length,7);
+ assert.match(bank.find(q=>q.id===s.ids[4]).text,/cat/i);
+ for(let i=0;i<s.ids.length;i++){
+  const now=100000*i;R.start(s,now);
+  assert.equal(R.questionIndex(s),i);
+  const q=bank.find(q=>q.id===s.ids[R.questionIndex(s)]);
+  const deadline=s.deadline;
+  s=R.restore(JSON.stringify(s),bank,date,s.ids);
+  assert.ok(s,`question ${i+1} must restore`);
+  assert.equal(s.deadline,deadline);
+  const answer=i===4?'Luna':q.answers[0].name;
+  const result=R.resolve(s,bank,'answer',answer,now+1000);
+  assert.equal(result.status,'resolved');assert.equal(result.outcome.id,q.id);
+  if(i===4)assert.equal(result.outcome.boost,10);
+  assert.equal(R.questionIndex(s),i);
+  s=R.restore(JSON.stringify(s),bank,date,s.ids);
+  assert.ok(s);assert.equal(R.questionIndex(s),i);
+  R.advance(s);
+  assert.equal(s.phase,i===6?'done':'ready');
+  assert.ok(R.restore(JSON.stringify(s),bank,date,s.ids));
+ }
+ assert.equal(s.outcomes.length,7);assert.equal(R.questionIndex(s),6);
+ assert.equal(R.restore(JSON.stringify({...s,phase:'active',opensAt:0,deadline:30000}),bank,date,s.ids),null);
+ assert.equal(R.restore(JSON.stringify({...s,outcomes:s.outcomes.slice(0,5)}),bank,date,s.ids),null);
+});

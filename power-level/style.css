@@ -257,7 +257,7 @@ body.power-level-active #powerLevel :is(.btn-indigo,.btn-teal):not(:disabled):ho
 
 /* reveal: big centred tier word, then "climb on" */
 body.power-level-active #powerLevel[data-phase=reveal] .pl-question{position:fixed;left:0;right:0;bottom:12vh;margin:0 auto;width:min(560px,calc(100% - 32px));background:none;border:0;box-shadow:none;padding:0}
-body.power-level-active #powerLevel[data-phase=reveal] .pl-question :is(#plCategory,h3,.pl-actions,#plFeedback,#plSuggestions){display:none}
+body.power-level-active #powerLevel[data-phase=reveal] .pl-question :is(.pl-actions,#plFeedback,#plSuggestions){display:none}
 body.power-level-active #powerLevel #plStage #plRarity{top:34%;width:min(90%,560px);padding:0;background:none;border:0;box-shadow:none;color:#fff;animation:pl-rarity-pop .45s cubic-bezier(.2,1.6,.4,1) both;--kr-tier:#c9c3dd}
 body.power-level-active #powerLevel #plRarity[data-tier="Too Clever"]{--kr-tier:#ffae5c}body.power-level-active #powerLevel #plRarity[data-tier="Side Character"]{--kr-tier:#5fe6c8}
 body.power-level-active #powerLevel #plRarity[data-tier="Rare"]{--kr-tier:#8f86ff}body.power-level-active #powerLevel #plRarity[data-tier="Deep Cut"]{--kr-tier:#ffc72c}body.power-level-active #powerLevel #plRarity[data-tier="Limit Break"]{--kr-tier:#ff4f9a}
