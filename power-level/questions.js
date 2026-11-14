@@ -719,7 +719,7 @@ bank.push(
 );
 // Answers added after players reported gaps (Nov 13 2026). Appending answers never changes which questions a day gets.
 const MORE={
- 'mix-red-hair':[a('Kagura',30),a('Eris Boreas Greyrat',45,'Eris'),a('Vinsmoke Ichiji',50,'Ichiji'),a('Senjuro Rengoku',55,'Senjuro'),a('Kamui',55),a('Ryuga',60)],
+ 'mix-red-hair':[a('Kagura',30),a('Eris Boreas Greyrat',45,'Eris'),a('Vinsmoke Ichiji',50,'Ichiji'),a('Senjuro Rengoku',55,'Senjuro'),a('Kamui',55),a('Ryuga',60),a('Saint Figarland Shamrock',85,'Shamrock','Figarland Shamrock')],
  'wide-detectives':[a('Inspector Megure',35,'Megure','Juzo Megure'),a('Koichi Zenigata',35,'Zenigata','Inspector Zenigata'),a('Akane Tsunemori',35,'Akane'),a('Light Yagami',40,'Light','Kira'),
   a('Ai Haibara',40,'Haibara'),a('Shinya Kogami',40,'Kogami'),a('Shuichi Akai',45,'Akai'),a('Soichiro Yagami',45,'Soichiro'),a('Touta Matsuda',45,'Matsuda'),a('John Watson',45,'Watson'),
   a('Inspector Lunge',50,'Lunge'),a('Daisuke Kambe',50,'Kambe'),a('Genta Kojima',50,'Genta'),a('Mitsuhiko Tsuburaya',50,'Mitsuhiko'),a('Ayumi Yoshida',50,'Ayumi'),
@@ -748,6 +748,59 @@ for(const [id,extra] of Object.entries(MORE)){const x=bank.find(q=>q.id==='timed
  const seen=new Set(x.answers.flatMap(y=>[y.name,...(y.aliases||[])]).map(key));
  for(const e of extra){const forms=[e.name,...(e.aliases||[])];if(forms.some(f=>seen.has(key(f))))throw Error('Duplicate answer in '+id+': '+e.name);forms.forEach(f=>seen.add(key(f)));x.answers.push(e);}}
 for(const [id,map] of Object.entries(MORE_ALIASES)){const x=bank.find(q=>q.id==='timed-v4-'+id);const seen=new Set(x.answers.flatMap(y=>[y.name,...(y.aliases||[])]).map(key));
+ for(const [name,aliases] of Object.entries(map)){const hit=x.answers.find(y=>y.name===name);if(!hit)throw Error('Unknown answer for alias: '+name);
+  for(const al of aliases){if(seen.has(key(al)))continue;seen.add(key(al));hit.aliases=[...(hit.aliases||[]),al];}}}
+// Gaps filled before Ascent #4 (Nov 14 2026).
+const MORE_NOV14={
+ 'mix-glasses':[a('Tashigi',15),a('Kei Tsukishima',20,'Tsukishima'),a('Usopp',20),a('Sarada Uchiha',25,'Sarada'),a('Shintaro Midorima',25,'Midorima'),a('Maes Hughes',25,'Hughes'),
+  a('Nico Robin',25,'Robin'),a('Alucard',25),a('Eustass Kid',30,'Kid','Kidd'),a('Kalifa',30),a('Jinpachi Ego',30,'Ego'),a('Mari Makinami',30,'Mari'),a('Vash the Stampede',30,'Vash'),
+  a('Obito Uchiha',35,'Obito'),a('Koby',35,'Coby'),a('Gohan',35,'Son Gohan'),a('Simon',35),a('Monet',40),a('Mei Hatsume',40,'Hatsume'),a('Clemont',40),a('Integra Hellsing',40,'Integra'),
+  a('Ayame Sarutobi',40,'Sacchan'),a('Konohamaru Sarutobi',45,'Konohamaru'),a('Junpei Hyuga',45,'Hyuga'),a('Milluki Zoldyck',45,'Milluki'),a('Teru Mikami',45,'Mikami'),a('Max',45),
+  a('Younger Toguro',45,'Toguro'),a('Lisa Yadomaru',50,'Lisa'),a('Ittetsu Takeda',50,'Takeda'),a('Anri Teieri',50,'Anri'),a('Sheska',50),a('Love Aikawa',55,'Love'),a('Shinra Kishitani',60,'Shinra'),
+  a('Shoichi Imayoshi',60,'Imayoshi')],
+ 'wide-vampires':[a('Koyomi Araragi',30,'Araragi','Koyomi'),a('Kojou Akatsuki',45,'Kojou'),a('Kokoa Shuzen',55,'Kokoa'),a('Hanabusa Aido',55,'Aido'),a('Vanilla Ice',55),
+  a('Jeanne',55),a('Diva',55),a('Seri Kikyo',55,'Seri'),a('Shiki Senri',60,'Senri'),a('Crowley Eusford',60,'Crowley'),a('Straizo',60),a('Abel Nightroad',60,'Abel'),
+  a('Dominique de Sade',60,'Dominique'),a('Lacus Welt',65,'Lacus'),a('Rido Kuran',65,'Rido'),a('Urd Geales',70,'Urd'),a('Sunako Kirishiki',70,'Sunako'),a('Anzai',70),a('Zorin Blitz',75,'Zorin'),
+  a('Fine',75)],
+ 'wide-isekai':[a('My Next Life as a Villainess',35,'Hamefura','Bakarina'),a('Spirited Away',40),a('Trapped in a Dating Sim',45),a('The Familiar of Zero',45,'Zero no Tsukaima'),
+  a('The Misfit of Demon King Academy',50,'Misfit of Demon King Academy'),a('Isekai Quartet',50),a('I’ve Been Killing Slimes for 300 Years',50,'Killing Slimes for 300 Years'),
+  a('Death March to the Parallel World Rhapsody',50,'Death March'),a('Re:Monster',55,'Re Monster'),a('The Faraway Paladin',55,'Faraway Paladin'),a('Farming Life in Another World',55),
+  a('Seirei Gensouki',55,'Spirit Chronicles'),a('Banished from the Hero’s Party',55,'Banished from the Heros Party'),a('The Wrong Way to Use Healing Magic',55),a('Knight’s & Magic',55,'Knights and Magic'),
+  a('Isekai Izakaya Nobu',55,'Isekai Izakaya'),a('Reborn as a Vending Machine',55,'Vending Machine'),a('The Twelve Kingdoms',55,'Juuni Kokuki'),a('.hack//Sign',55,'hack sign'),
+  a('Kuma Kuma Kuma Bear',60),a('The Saint’s Magic Power Is Omnipotent',60,'Saints Magic Power Is Omnipotent'),a('Combatants Will Be Dispatched!',60,'Combatants Will Be Dispatched'),
+  a('Isekai Cheat Magician',60),a('The 8th Son? Are You Kidding Me?',65,'8th Son'),a('Kyo Kara Maoh!',65,'Kyo Kara Maoh'),a('I’m Standing on a Million Lives',65,'Standing on a Million Lives'),
+  a('Now and Then, Here and There',70),a('Aura Battler Dunbine',75,'Dunbine')],
+ 'mix-blonde':[a('Loid Forger',10,'Loid','Twilight'),a('Boruto Uzumaki',10,'Boruto'),a('Misa Amane',15,'Misa'),a('Gilgamesh',15),a('Genos',20),a('Riza Hawkeye',25,'Riza','Hawkeye'),
+  a('Ruby Hoshino',25,'Ruby'),a('Aqua Hoshino',25,'Aqua'),a('Minako Aino',25,'Sailor Venus','Minako'),a('Alphonse Elric',30,'Alphonse','Al'),a('Yuri Plisetsky',30,'Yurio'),a('Ryota Kise',30,'Kise'),
+  a('Mt. Lady',30,'Mount Lady'),a('Rangiku Matsumoto',30,'Rangiku'),a('Mello',30),a('Shizuo Heiwajima',30,'Shizuo'),a('Bellamy',35),a('Kalifa',35),a('Yoshikage Kira',35,'Kira Yoshikage'),
+  a('Ken Ryuguji',35,'Draken'),a('Ai Hayasaka',35,'Hayasaka'),a('Nijika Ijichi',35,'Nijika'),a('Cynthia',35),a('Tia Harribel',40,'Harribel','Halibel'),a('Alex Louis Armstrong',40,'Armstrong'),
+  a('Tsukuyo',40),a('Chifuyu Matsuno',40,'Chifuyu'),a('Teru Hanazawa',40,'Teru'),a('Mavis Vermillion',40,'Mavis'),a('Alice Zuberg',40,'Alice'),a('Lillie',40),a('Ritsuko Akagi',40,'Ritsuko'),
+  a('Irina Jelavic',40,'Irina'),a('Van Hohenheim',45,'Hohenheim'),a('Momo Nishimiya',45,'Nishimiya'),a('Inojin Yamanaka',45,'Inojin'),a('Porco Galliard',45,'Porco'),a('Mordred',45),
+  a('Hitoka Yachi',45,'Yachi'),a('Michael Kaiser',45,'Kaiser'),a('Felt',45),a('Filo',45),a('Momiji Sohma',45,'Momiji'),a('Kaya',50),a('Yugito Nii',50,'Yugito'),a('Naoya Zenin',50,'Naoya'),
+  a('Camie Utsushimi',50,'Camie'),a('Star and Stripe',50),a('Schneizel el Britannia',50,'Schneizel'),a('Milly Ashford',50,'Milly'),a('Sting Eucliffe',50,'Sting'),a('Launch',50),
+  a('Samui',55),a('Klaus Lunettes',60,'Klaus'),a('Pony Tsunotori',60,'Pony')],
+ 'wide-robots':[a('Edward Elric',40,'Ed','Edward','Fullmetal'),a('Mechamaru',30,'Kokichi Muta'),a('Mecha Frieza',35),a('Dorami',40),a('A2',40,'YoRHa Type A No. 2'),a('Haro',40),
+  a('Android 21',45),a('Android 8',45,'Hatchan','Eighter'),a('Metal Knight',45,'Bofoi'),a('Pacifista',45),a('Android 13',50),a('Drive Knight',50),a('Porygon',50),a('Isla',55),
+  a('R. Dorothy Wayneright',55,'Dorothy'),a('Tetsujin 28',55,'Gigantor'),a('Uran',60,'Astro Girl'),a('Genesect',60),a('Chachamaru Karakuri',60,'Chachamaru'),a('Casshern',60,'Casshan'),
+  a('Sumomo',65),a('Magearna',70),a('Obotchaman',70),a('Eve',70),a('Mahoro',75),a('Kurumi',75)],
+ 'wide-magical-girl':[a("Kiki's Delivery Service",40,'Kikis Delivery Service'),a('The Journey of Elaina',45,'Wandering Witch','Wandering Witch: The Journey of Elaina'),a('Witch Hat Atelier',45),
+  a('Flying Witch',50),a("Mary and the Witch's Flower",55,'Mary and the Witchs Flower'),a('Magical Girl Spec-Ops Asuka',60),a('Flip Flappers',60),a('Wish Upon the Pleiades',70),
+  a('Saint Tail',70,'Kaitou Saint Tail'),a('Magical Destroyers',70),a('Akazukin Chacha',75),a('Twin Princesses of Wonder Planet',75,'Fushigiboshi no Futagohime'),a('Kamichama Karin',75),
+  a('Day Break Illusion',75),a('The Secret of Akko-chan',75,'Himitsu no Akko-chan'),a('Magic User’s Club',75,'Magic Users Club'),a('Pretty Sammy',80,'Magical Girl Pretty Sammy'),
+  a('Macademi Wasshoi!',80,'Macademi Wasshoi'),a('Nurse Angel Ririka SOS',85,'Ririka SOS'),a('Magical Emi',85),a('Fancy Lala',85),a('Majokko Megu-chan',85,'Megu-chan'),a('Marvelous Melmo',90)],
+ 'mix-healers':[a('Maomao',15),a('Marco',30,'Marco the Phoenix'),a('Chansey',30),a('Yuta Okkotsu',30,'Yuta'),a('Ino Yamanaka',35,'Ino'),a('Karin',35,'Karin Uzumaki'),a('Eri',35),
+  a('Heiter',35),a('Overhaul',40,'Kai Chisaki'),a('Felix Argyle',40,'Ferris'),a('Asuna',40,'Asuna Yuuki'),a('Nanika',40),a('Chiyo',45,'Lady Chiyo'),a('Emporio Ivankov',45,'Ivankov','Iva'),
+  a('Sein',45),a('Mansherry',50),a('Blissey',50),a('Luomen',50),a('Porlyusica',50),a('Pinoko',55),a('Keyaru',55,'Keyarga'),a('Yun',55),a('Usato Ken',60,'Usato'),a('Zenith Greyrat',60,'Zenith'),
+  a('Pestonya',70)],
+};
+const ALIASES_NOV14={
+ 'wide-magical-girl':{'Pretty Cure':['Glitter Force','Futari wa Pretty Cure','Smile Precure'],'Sailor Moon':['Sailor Moon Crystal','Bishoujo Senshi Sailor Moon'],'Cardcaptor Sakura':['Cardcaptors'],'Tokyo Mew Mew':['Mew Mew Power'],'Puella Magi Madoka Magica':['Mahou Shoujo Madoka Magica','Madoka']},
+ 'wide-isekai':{'Mushoku Tensei':['Jobless'],'KonoSuba':['Kono Subarashii Sekai ni Shukufuku wo'],'That Time I Got Reincarnated as a Slime':['Reincarnated as a Slime','Tensei Shitara Slime Datta Ken'],'The Rising of the Shield Hero':['Tate no Yuusha']},
+};
+for(const [id,extra] of Object.entries(MORE_NOV14)){const x=bank.find(q=>q.id==='timed-v4-'+id);if(!x)throw Error('Unknown question: '+id);
+ const seen=new Set(x.answers.flatMap(y=>[y.name,...(y.aliases||[])]).map(key));
+ for(const e of extra){const forms=[e.name,...(e.aliases||[])];if(forms.some(f=>seen.has(key(f))))throw Error('Duplicate answer in '+id+': '+e.name);forms.forEach(f=>seen.add(key(f)));x.answers.push(e);}}
+for(const [id,map] of Object.entries(ALIASES_NOV14)){const x=bank.find(q=>q.id==='timed-v4-'+id);const seen=new Set(x.answers.flatMap(y=>[y.name,...(y.aliases||[])]).map(key));
  for(const [name,aliases] of Object.entries(map)){const hit=x.answers.find(y=>y.name===name);if(!hit)throw Error('Unknown answer for alias: '+name);
   for(const al of aliases){if(seen.has(key(al)))continue;seen.add(key(al));hit.aliases=[...(hit.aliases||[]),al];}}}
 // First-cycle order, so each day mixes topics (hair colours spread out); append new ids at the end.
