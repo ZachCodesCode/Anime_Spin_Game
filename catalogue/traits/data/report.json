@@ -1,0 +1,11 @@
+{
+  "definitions": 3,
+  "associations": 2,
+  "states": {
+    "proposed": 0,
+    "needs_review": 2,
+    "verified": 0,
+    "rejected": 0
+  },
+  "pending": 2
+}

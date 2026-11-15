@@ -1,0 +1,60 @@
+[
+  {
+    "id": "pilot-kyoya-glasses",
+    "status": "needs_review",
+    "claim": {
+      "characterId": "mal-character-23",
+      "traitId": "appearance.eyewear",
+      "value": "glasses",
+      "context": {
+        "animeId": "mal-anime-853",
+        "scope": "Ouran TV adaptation; recurrence requires episode confirmation",
+        "persistence": "recurring",
+        "form": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.goodsmile.com/en/product/11959/Nendoroid%2BKyoya%2BOotori",
+          "sourceName": "Good Smile Company — Nendoroid Kyoya Ootori",
+          "explanation": "Official anime merchandise lists glasses as an accessory. Supports the depicted eyewear; does not independently establish frequency in episodes.",
+          "kind": "official",
+          "accessedAt": "2026-11-15T22:15:24.719Z"
+        }
+      ],
+      "provenance": {
+        "provider": "Codex source-assisted pilot",
+        "externalCharacterId": "mal:23",
+        "uncertainty": "Maintainer should check anime depiction and recurrence before approval."
+      }
+    }
+  },
+  {
+    "id": "pilot-richard-detective",
+    "status": "needs_review",
+    "claim": {
+      "characterId": "mal-character-36223",
+      "traitId": "occupation.detective",
+      "value": "professional",
+      "context": {
+        "animeId": "mal-anime-19",
+        "scope": "Monster TV adaptation; Schuwald investigation",
+        "persistence": "recurring",
+        "form": null
+      },
+      "evidence": [
+        {
+          "url": "https://en.wikipedia.org/wiki/List_of_Monster_episodes",
+          "sourceName": "Wikipedia — List of Monster episodes",
+          "explanation": "Episode synopsis describes Schuwald hiring Richard Braun as a private investigator.",
+          "kind": "secondary",
+          "accessedAt": "2026-11-15T22:15:24.719Z"
+        }
+      ],
+      "provenance": {
+        "provider": "Codex source-assisted pilot",
+        "externalCharacterId": "mal:36223",
+        "uncertainty": "Community-edited synopsis has a citation-quality warning; confirm against the anime or an authoritative synopsis."
+      }
+    }
+  }
+]

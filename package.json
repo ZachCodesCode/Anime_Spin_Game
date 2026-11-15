@@ -12,6 +12,7 @@
     "build": "node scripts/build-social-preview.js",
     "predev": "npm run build",
     "catalogue:import": "node catalogue/import.js",
-    "catalogue:validate": "node -e \"require('./catalogue/validate').validate(require('./catalogue/data/catalogue.json'))\""
+    "catalogue:validate": "node -e \"require('./catalogue/validate').validate(require('./catalogue/data/catalogue.json'))\"",
+    "traits": "node catalogue/traits/cli.js"
   }
 }

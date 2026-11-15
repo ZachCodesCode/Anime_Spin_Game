@@ -1,0 +1,44 @@
+[
+  {
+    "id": "appearance.eyewear",
+    "label": "Eyewear",
+    "category": "appearance",
+    "valueType": "string",
+    "allowedValues": [
+      "glasses",
+      "sunglasses",
+      "monocle",
+      "goggles"
+    ],
+    "guidance": "Record the actual eyewear and recurrence. Glasses candidates require ordinary spectacles; sunglasses, monocles and goggles remain distinct. Temporary use needs episode details. Verification alone does not establish eligibility for a future question."
+  },
+  {
+    "id": "occupation.detective",
+    "label": "Detective activity",
+    "category": "occupation",
+    "valueType": "string",
+    "allowedValues": [
+      "professional",
+      "amateur",
+      "former_professional"
+    ],
+    "guidance": "Distinguish employed/private investigators, recurring amateur investigation, and former employment. Solving one mystery or having Detective in a name is insufficient. Record the period and adaptation."
+  },
+  {
+    "id": "identity.species",
+    "label": "Species or form",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [
+      "human",
+      "cat",
+      "dog",
+      "demon",
+      "vampire",
+      "robot",
+      "catlike_humanoid",
+      "other"
+    ],
+    "guidance": "Cat means an actual feline identity or explicitly documented cat form. Ears, costumes, nicknames and catlike humanoids are not evidence of feline species. Transformation-only forms require explicit context. Unknown species is absence of a claim, never false."
+  }
+]
