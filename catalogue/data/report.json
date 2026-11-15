@@ -1,0 +1,125 @@
+{
+  "animeProcessed": 14,
+  "uniqueCharacters": 380,
+  "aliases": 103,
+  "relationships": 387,
+  "duplicateRecordsMerged": 7,
+  "apiFailures": 5,
+  "manualReviewRecords": 0,
+  "coverage": [
+    {
+      "anime": "Cowboy Bebop",
+      "characters": 30
+    },
+    {
+      "anime": "Naruto",
+      "characters": 30
+    },
+    {
+      "anime": "One Piece",
+      "characters": 30
+    },
+    {
+      "anime": "Monster",
+      "characters": 30
+    },
+    {
+      "anime": "Rurouni Kenshin: Meiji Kenkaku Romantan - Tsuioku-hen",
+      "characters": 20
+    },
+    {
+      "anime": "Mushishi",
+      "characters": 30
+    },
+    {
+      "anime": "Samurai Champloo",
+      "characters": 30
+    },
+    {
+      "anime": "Ouran Koukou Host Club",
+      "characters": 30
+    },
+    {
+      "anime": "Ookami Kodomo no Ame to Yuki",
+      "characters": 23
+    },
+    {
+      "anime": "Shoujo Kakumei Utena",
+      "characters": 30
+    },
+    {
+      "anime": "K-On!",
+      "characters": 14
+    },
+    {
+      "anime": "Hajime no Ippo",
+      "characters": 30
+    },
+    {
+      "anime": "Haikyuu!! Karasuno Koukou vs. Shiratorizawa Gakuen Koukou",
+      "characters": 30
+    },
+    {
+      "anime": "Cowboy Bebop: Tengoku no Tobira",
+      "characters": 30
+    }
+  ],
+  "examples": [
+    {
+      "anime": "Cowboy Bebop",
+      "character": "Black, Jet"
+    },
+    {
+      "anime": "Naruto",
+      "character": "Haruno, Sakura"
+    },
+    {
+      "anime": "One Piece",
+      "character": "Brook"
+    },
+    {
+      "anime": "Monster",
+      "character": "Liebert, Anna"
+    },
+    {
+      "anime": "Rurouni Kenshin: Meiji Kenkaku Romantan - Tsuioku-hen",
+      "character": "Himura, Kenshin"
+    },
+    {
+      "anime": "Mushishi",
+      "character": "Ginko"
+    },
+    {
+      "anime": "Samurai Champloo",
+      "character": "Jin"
+    },
+    {
+      "anime": "Ouran Koukou Host Club",
+      "character": "Fujioka, Haruhi"
+    },
+    {
+      "anime": "Ookami Kodomo no Ame to Yuki",
+      "character": "Ame"
+    },
+    {
+      "anime": "Shoujo Kakumei Utena",
+      "character": "Himemiya, Anthy"
+    },
+    {
+      "anime": "K-On!",
+      "character": "Akiyama, Mio"
+    },
+    {
+      "anime": "Hajime no Ippo",
+      "character": "Aoki, Masaru"
+    },
+    {
+      "anime": "Haikyuu!! Karasuno Koukou vs. Shiratorizawa Gakuen Koukou",
+      "character": "Hinata, Shouyou"
+    },
+    {
+      "anime": "Cowboy Bebop: Tengoku no Tobira",
+      "character": "Black, Jet"
+    }
+  ]
+}

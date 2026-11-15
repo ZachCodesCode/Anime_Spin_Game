@@ -1,0 +1,198 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "type": "integer",
+      "enum": [
+        1
+      ]
+    },
+    "anime": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "malId": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "name": {
+            "type": "string"
+          },
+          "aliases": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "japaneseName": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "provider": {
+            "type": "string",
+            "enum": [
+              "Tenrai"
+            ]
+          },
+          "sourceUrl": {
+            "type": "string",
+            "pattern": "^https://"
+          },
+          "importedAt": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "malId",
+          "name",
+          "aliases",
+          "japaneseName",
+          "provider",
+          "sourceUrl",
+          "importedAt"
+        ]
+      }
+    },
+    "characters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "malId": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "name": {
+            "type": "string"
+          },
+          "aliases": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "japaneseName": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "provider": {
+            "type": "string",
+            "enum": [
+              "Tenrai"
+            ]
+          },
+          "sourceUrl": {
+            "type": "string",
+            "pattern": "^https://"
+          },
+          "importedAt": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "malId",
+          "name",
+          "aliases",
+          "japaneseName",
+          "provider",
+          "sourceUrl",
+          "importedAt"
+        ]
+      }
+    },
+    "appearances": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "animeId": {
+            "type": "string"
+          },
+          "characterId": {
+            "type": "string"
+          },
+          "role": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              "Main",
+              "Supporting",
+              null
+            ]
+          },
+          "provider": {
+            "type": "string",
+            "enum": [
+              "Tenrai"
+            ]
+          },
+          "sourceUrl": {
+            "type": "string",
+            "pattern": "^https://"
+          },
+          "importedAt": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "animeId",
+          "characterId",
+          "role",
+          "provider",
+          "sourceUrl",
+          "importedAt"
+        ]
+      }
+    },
+    "completedAnime": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "uniqueItems": true
+    },
+    "review": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "apiFailures": {
+      "type": "integer",
+      "minimum": 0
+    }
+  },
+  "required": [
+    "version",
+    "anime",
+    "characters",
+    "appearances",
+    "completedAnime",
+    "review",
+    "apiFailures"
+  ]
+}
