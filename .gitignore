@@ -20,3 +20,6 @@ npm-debug.log*
 
 # Generated page with route-specific social metadata
 /AnimeAscent.html
+
+# Offline evidence/alias datasets awaiting publication-rights review
+/catalogue/private/
