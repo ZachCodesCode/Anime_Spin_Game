@@ -803,6 +803,50 @@ for(const [id,extra] of Object.entries(MORE_NOV14)){const x=bank.find(q=>q.id===
 for(const [id,map] of Object.entries(ALIASES_NOV14)){const x=bank.find(q=>q.id==='timed-v4-'+id);const seen=new Set(x.answers.flatMap(y=>[y.name,...(y.aliases||[])]).map(key));
  for(const [name,aliases] of Object.entries(map)){const hit=x.answers.find(y=>y.name===name);if(!hit)throw Error('Unknown answer for alias: '+name);
   for(const al of aliases){if(seen.has(key(al)))continue;seen.add(key(al));hit.aliases=[...(hit.aliases||[]),al];}}}
+// Gaps filled during Ascent #6 (Nov 16 2026), starting with Kite.
+const MORE_NOV16={
+ 'mix-mentors':[a('Kite',35),a('Goku',25,'Son Goku'),a('Minato Namikaze',30,'Minato'),a('Levi Ackerman',30,'Levi'),a('Sasuke Uchiha',30,'Sasuke'),a('Makarov Dreyar',30,'Makarov'),
+  a('Kurama',30),a('Kyojuro Rengoku',35,'Rengoku'),a('Korin',35),a('Beerus',35),a('Tadaomi Karasuma',35,'Karasuma'),a('Eisen',35),a('Igneel',35),a('Genji Kamogawa',35,'Kamogawa','Coach Kamogawa'),
+  a('Zangetsu',30),a('Yamato',40,'Tenzo'),a('Killer Bee',40,'Bee'),a('Present Mic',40),a('Sir Nighteye',40,'Nighteye'),a('Nezu',40,'Principal Nezu'),a('Endeavor',40,'Enji Todoroki'),
+  a('Shinobu Kocho',40,'Shinobu'),a('Kami',40),a('Mr. Popo',40),a('Heiter',40),a('Riko Aida',40,'Riko'),a('Aoi Todo',40,'Todo'),a('Kenny Ackerman',40,'Kenny'),a('Zephyr',40,'Z'),
+  a('Hiriluk',40,'Dr. Hiriluk'),a('Shoyo Yoshida',40,'Shoyo'),a('Gildarts Clive',40,'Gildarts'),a('Ur',40),a('Coach Anzai',40,'Anzai'),a('Irina Jelavic',45,'Irina'),a('Ittetsu Takeda',45,'Takeda'),
+  a('Fat Gum',45),a('Best Jeanist',45),a('Koshiro',45),a('Kureha',45,'Dr. Kureha'),a('Ging Freecss',45,'Ging'),a('Kaien Shiba',45,'Kaien'),a('Jushiro Ukitake',45,'Ukitake'),
+  a('Julius Novachrono',45,'Julius'),a('Utahime Iori',45,'Utahime'),a('Hiko Seijuro',45,'Hiko'),a('Konohamaru Sarutobi',45,'Konohamaru'),a('Zabuza Momochi',45,'Zabuza'),
+  a('Nana Shimura',50,'Nana'),a('Thirteen',50),a('Tanjuro Kamado',50,'Tanjuro'),a('Isshin Kurosaki',50,'Isshin'),a('Soken Ishida',50,'Soken'),a('Tobirama Senju',50,'Tobirama'),
+  a('Kureo Mado',50,'Mado'),a('Yukinori Shinohara',50,'Shinohara'),a('Genma Saotome',50,'Genma'),a('Baki',55),a('Morel Mackernasey',55,'Morel'),a('Power Loader',55),a('Snipe',55),
+  a('Yoshinobu Gakuganji',55,'Gakuganji'),a('Izunavi',60),a('Ikkei Ukai',60),a('Berthold Hawkeye',60),a('Father Orsi',60,'Orsi'),a('Serie',60),a('Happosai',60),a('Nanbu',60)],
+ 'wide-shinigami':[a('Shigekuni Yamamoto-Genryusai',15,'Yamamoto','Head Captain Yamamoto'),a('Mayuri Kurotsuchi',15,'Mayuri'),a('Kisuke Urahara',15,'Urahara'),a('Yoruichi Shihoin',15,'Yoruichi'),
+  a('Rangiku Matsumoto',15,'Rangiku'),a('Ikkaku Madarame',15,'Ikkaku'),a('Yachiru Kusajishi',15,'Yachiru'),a('Jushiro Ukitake',15,'Ukitake'),a('Retsu Unohana',20,'Unohana'),a('Soi Fon',20,'Soifon','Sui-Feng'),
+  a('Kaname Tosen',20,'Tosen'),a('Momo Hinamori',20,'Momo','Hinamori'),a('Yumichika Ayasegawa',20,'Yumichika'),a('Izuru Kira',20,'Kira'),a('Shuhei Hisagi',20,'Hisagi'),
+  a('Sajin Komamura',25,'Komamura'),a('Nanao Ise',25,'Nanao'),a('Hanataro Yamada',25,'Hanataro'),a('Shinji Hirako',25,'Shinji'),a('Isshin Kurosaki',25,'Isshin'),a('Kaien Shiba',30,'Kaien'),
+  a('Isane Kotetsu',30,'Isane'),a('Nemu Kurotsuchi',30,'Nemu'),a('Botan',30),a('Marechiyo Omaeda',35,'Omaeda'),a('Kensei Muguruma',35,'Kensei'),a('Tetsuzaemon Iba',40,'Iba'),
+  a('Chojiro Sasakibe',40,'Sasakibe'),a('Rojuro Otoribashi',40,'Rose'),a('Lisa Yadomaru',40,'Lisa'),a('Hiyori Sarugaki',40,'Hiyori'),a('Love Aikawa',40,'Love'),a('Koenma',40),
+  a('Kugo Ginjo',45,'Ginjo'),a('King Yemma',45,'Enma'),a('Mashiro Kuna',45,'Mashiro'),a('Ichibe Hyosube',50,'Ichibe'),a('Hachigen Ushoda',50,'Hachigen'),a('Shinigami King',50,'King of Death'),
+  a('Ronald Knox',60,'Ronald'),a('Armonia Justin Beyondormason',75,'Justin'),a('Gook',75),a('Zellogi',75),a('Deridovely',75),a('Othello',75),a('Midora',80),a('Calikarcha',80),a('Nu',80)],
+ 'wide-studios':[a('Studio Khara',45,'Khara'),a('Liden Films',50),a('Studio Gallop',60,'Gallop'),a('Graphinica',70),a('Bee Train',70),a('Passione',70),a('Project No.9',70,'Project No 9'),
+  a('Studio Signpost',70,'Signpost'),a('Hoods Entertainment',75),a('Zexcs',75),a('Geno Studio',75),a('TNK',75),a('C2C',75),a('Studio VOLN',75,'VOLN'),a('Group TAC',80),a('Asahi Production',80),
+  a('Encourage Films',80),a('Studio Nue',85)],
+ 'mix-pink-hair':[a('Big Mom',15,'Charlotte Linlin'),a('Saiki Kusuo',20,'Saiki','Kusuo Saiki'),a('Shirahoshi',20),a('Vinsmoke Reiju',25,'Reiju'),a('Milim Nava',40,'Milim'),
+  a('Ichika Nakano',40,'Ichika'),a('Nino Nakano',40,'Nino'),a('Lala Satalin Deviluke',45,'Lala'),a('Kumadori',50),a('Nonon Jakuzure',50,'Nonon'),a('Momo Belia Deviluke',55,'Momo Deviluke'),
+  a('Dorothy Unsworth',55,'Dorothy')],
+ 'mix-companions':[a('Doraemon',15),a('Agumon',15),a('Charizard',25),a('Divine Dogs',25,'Divine Dog'),a('Tonton',30),a('Gamakichi',30),a('Sadaharu',30),a('Psyduck',30),a('Puck',30),
+  a('Kurama',30,'Nine-Tails','Kyuubi'),a('Gabumon',35),a('Rika Orimoto',35,'Rika'),a('Shippo',35),a('Liebe',35),a('Carla',30,'Charle'),a('Togepi',40),a('Patamon',40),a('Nue',40),a('Hamtaro',40),
+  a('Elizabeth',40),a('Black Hayate',40,'Hayate'),a('Pantherlily',40,'Lily'),a('Plue',40),a('Ranga',40),a('Filo',40),a('Salamander',45),a('Surume',45),a('Chouchou',45),a('Puu',45),
+  a('Tentomon',50),a('Gomamon',50),a('Palmon',50),a('Biyomon',50),a('Max Elephant',50),a('Aoda',50),a('Enma',50,'Monkey King Enma'),a('Shiro',50),a('Pina',50),a('Patrasche',50),
+  a('Hamsuke',50),a('Frosch',50),a('Lector',50),a('Gnome',55),a('Myoga',55),a('Pierre',55),a('Arthur',55),a('Chomusuke',60),a('Medama-oyaji',70,'Eyeball Father')],
+ 'mix-lightning':[a('Zeus',30),a('Sailor Jupiter',35,'Makoto Kino'),a('Raichu',40),a('Zapdos',40),a('Jolteon',45),a('Boruto Uzumaki',45,'Boruto'),a('Third Raikage',50)],
+};
+const ALIASES_NOV16={
+ 'wide-shinkai-hosoda':{'Belle':['Ryu to Sobakasu no Hime'],'Mirai':['Mirai no Mirai'],'Wolf Children':['Ookami Kodomo no Ame to Yuki'],'The Boy and the Beast':['Bakemono no Ko'],
+  'The Girl Who Leapt Through Time':['Toki wo Kakeru Shoujo'],'Children Who Chase Lost Voices':['Hoshi wo Ou Kodomo'],'The Garden of Words':['Kotonoha no Niwa'],'5 Centimeters per Second':['Byousoku 5 Centimeter']},
+ 'wide-studios':{'Bones':['Studio Bones'],'Sunrise':['Bandai Namco Filmworks'],'TMS Entertainment':['Tokyo Movie Shinsha']},
+};
+for(const [id,extra] of Object.entries(MORE_NOV16)){const x=bank.find(q=>q.id==='timed-v4-'+id);if(!x)throw Error('Unknown question: '+id);
+ const seen=new Set(x.answers.flatMap(y=>[y.name,...(y.aliases||[])]).map(key));
+ for(const e of extra){const forms=[e.name,...(e.aliases||[])];if(forms.some(f=>seen.has(key(f))))throw Error('Duplicate answer in '+id+': '+e.name);forms.forEach(f=>seen.add(key(f)));x.answers.push(e);}}
+for(const [id,map] of Object.entries(ALIASES_NOV16)){const x=bank.find(q=>q.id==='timed-v4-'+id);const seen=new Set(x.answers.flatMap(y=>[y.name,...(y.aliases||[])]).map(key));
+ for(const [name,aliases] of Object.entries(map)){const hit=x.answers.find(y=>y.name===name);if(!hit)throw Error('Unknown answer for alias: '+name);
+  for(const al of aliases){if(seen.has(key(al)))continue;seen.add(key(al));hit.aliases=[...(hit.aliases||[]),al];}}}
 // First-cycle order, so each day mixes topics (hair colours spread out); append new ids at the end.
 ['mix-red-hair','wide-detectives','mix-masks','wide-cats','wide-starters','mix-glasses','wide-vampires','mix-blonde','wide-robots','mix-healers','wide-ninjas','mix-fire','wide-dragons','mix-white-hair','wide-eyepatch','mix-mentors','wide-shinigami','mix-pink-hair','mix-companions','mix-lightning','wide-hats','mix-green-hair','mix-royalty','mix-twins','wide-ghibli','wide-sports','wide-isekai','wide-magical-girl','wide-time-travel','wide-mecha','wide-studios','wide-shinkai-hosoda','wide-food','wide-long-running'].forEach((id,i)=>{const x=bank.find(x=>x.id==='timed-v4-'+id);if(!x||!x.wide)throw Error('Unknown ordered question: '+id);x.order=i;});
 return bank;})();
