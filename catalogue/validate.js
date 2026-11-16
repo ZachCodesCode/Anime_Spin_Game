@@ -31,12 +31,13 @@ function validate(data) {
       if (!Number.isFinite(Date.parse(x.importedAt))) throw Error('Invalid timestamp');
     }
   }
+  const animeIds = new Set(data.anime.map(a=>a.id)), characterIds = new Set(data.characters.map(c=>c.id));
   const relationships = new Set();
   for (const r of data.appearances) {
     const key = r.animeId + '/' + r.characterId;
     if (relationships.has(key)) throw Error('Duplicate appearance');
     relationships.add(key);
-    if (!data.anime.some(a => a.id === r.animeId) || !data.characters.some(c => c.id === r.characterId)) throw Error('Dangling appearance');
+    if (!animeIds.has(r.animeId) || !characterIds.has(r.characterId)) throw Error('Dangling appearance');
   }
   return data;
 }

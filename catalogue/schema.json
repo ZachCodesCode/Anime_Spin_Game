@@ -184,6 +184,13 @@
     "apiFailures": {
       "type": "integer",
       "minimum": 0
+    },
+    "importPasses": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
     }
   },
   "required": [

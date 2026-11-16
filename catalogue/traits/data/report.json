@@ -1,11 +1,11 @@
 {
-  "definitions": 3,
-  "associations": 2,
+  "definitions": 18,
+  "associations": 5,
   "states": {
     "proposed": 0,
-    "needs_review": 2,
+    "needs_review": 5,
     "verified": 0,
     "rejected": 0
   },
-  "pending": 2
+  "pending": 5
 }

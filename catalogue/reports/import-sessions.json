@@ -1,0 +1,23 @@
+{
+  "initialGate": {
+    "characters": 2161,
+    "initialCharacters": 380,
+    "elapsedSeconds": null,
+    "note": "First uncapped full-cast pass exceeded the 1,000 target after finishing One Piece. Timing was not instrumented."
+  },
+  "broadPass": {
+    "initialCharacters": 2161,
+    "finalCharacters": 5014,
+    "seconds": 137.885,
+    "requests": 138,
+    "addedCharacters": 2853
+  },
+  "diversityPass": {
+    "seconds": 73.771,
+    "requests": 56,
+    "initialCharacters": 5014,
+    "addedCharacters": 817
+  },
+  "apiFailuresAdded": 0,
+  "legacyFailureCount": 5
+}

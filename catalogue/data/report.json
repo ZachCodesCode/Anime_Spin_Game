@@ -1,27 +1,28 @@
 {
-  "animeProcessed": 14,
-  "uniqueCharacters": 380,
+  "animeProcessed": 100,
+  "uniqueCharacters": 5831,
   "aliases": 103,
-  "relationships": 387,
-  "duplicateRecordsMerged": 7,
+  "relationships": 5950,
+  "duplicateRecordsMerged": 119,
   "apiFailures": 5,
   "manualReviewRecords": 0,
+  "failedRecords": [],
   "coverage": [
     {
       "anime": "Cowboy Bebop",
-      "characters": 30
+      "characters": 126
     },
     {
       "anime": "Naruto",
-      "characters": 30
+      "characters": 270
     },
     {
       "anime": "One Piece",
-      "characters": 30
+      "characters": 1481
     },
     {
       "anime": "Monster",
-      "characters": 30
+      "characters": 100
     },
     {
       "anime": "Rurouni Kenshin: Meiji Kenkaku Romantan - Tsuioku-hen",
@@ -29,15 +30,15 @@
     },
     {
       "anime": "Mushishi",
-      "characters": 30
+      "characters": 54
     },
     {
       "anime": "Samurai Champloo",
-      "characters": 30
+      "characters": 92
     },
     {
       "anime": "Ouran Koukou Host Club",
-      "characters": 30
+      "characters": 51
     },
     {
       "anime": "Ookami Kodomo no Ame to Yuki",
@@ -45,7 +46,7 @@
     },
     {
       "anime": "Shoujo Kakumei Utena",
-      "characters": 30
+      "characters": 32
     },
     {
       "anime": "K-On!",
@@ -53,15 +54,359 @@
     },
     {
       "anime": "Hajime no Ippo",
-      "characters": 30
+      "characters": 98
     },
     {
       "anime": "Haikyuu!! Karasuno Koukou vs. Shiratorizawa Gakuen Koukou",
-      "characters": 30
+      "characters": 61
     },
     {
       "anime": "Cowboy Bebop: Tengoku no Tobira",
+      "characters": 42
+    },
+    {
+      "anime": "Meitantei Conan",
+      "characters": 100
+    },
+    {
+      "anime": "Yuu☆Yuu☆Hakusho",
+      "characters": 100
+    },
+    {
+      "anime": "Tonari no Totoro",
+      "characters": 22
+    },
+    {
+      "anime": "Ergo Proxy",
+      "characters": 32
+    },
+    {
+      "anime": "Nana",
+      "characters": 32
+    },
+    {
+      "anime": "Natsume Yuujinchou",
+      "characters": 44
+    },
+    {
+      "anime": "Uchuu Kaizoku Captain Herlock",
+      "characters": 50
+    },
+    {
+      "anime": "Gake no Ue no Ponyo",
+      "characters": 9
+    },
+    {
+      "anime": "Speed Grapher",
+      "characters": 46
+    },
+    {
+      "anime": "Beck",
+      "characters": 42
+    },
+    {
+      "anime": "Akira",
+      "characters": 27
+    },
+    {
+      "anime": ".hack//Sign",
+      "characters": 24
+    },
+    {
+      "anime": "Koukaku Kidoutai",
+      "characters": 17
+    },
+    {
+      "anime": "Shinseiki Evangelion",
+      "characters": 21
+    },
+    {
+      "anime": "Texhnolyze",
+      "characters": 52
+    },
+    {
+      "anime": "Trigun",
+      "characters": 97
+    },
+    {
+      "anime": "Rurouni Kenshin: Meiji Kenkaku Romantan",
+      "characters": 100
+    },
+    {
+      "anime": "Kenpuu Denki Berserk",
+      "characters": 33
+    },
+    {
+      "anime": "Azumanga Daiou The Animation",
+      "characters": 24
+    },
+    {
+      "anime": "Hunter x Hunter",
+      "characters": 100
+    },
+    {
+      "anime": "Mononoke Hime",
+      "characters": 17
+    },
+    {
+      "anime": "FLCL",
+      "characters": 16
+    },
+    {
+      "anime": "Cardcaptor Sakura",
+      "characters": 37
+    },
+    {
+      "anime": "Great Teacher Onizuka",
+      "characters": 100
+    },
+    {
+      "anime": "InuYasha",
+      "characters": 100
+    },
+    {
+      "anime": "Gungrave",
+      "characters": 46
+    },
+    {
+      "anime": "Bleach",
+      "characters": 100
+    },
+    {
+      "anime": "Serial Experiments Lain",
+      "characters": 28
+    },
+    {
+      "anime": "Shakugan no Shana",
+      "characters": 33
+    },
+    {
+      "anime": "Haibane Renmei",
+      "characters": 15
+    },
+    {
+      "anime": "Howl no Ugoku Shiro",
+      "characters": 11
+    },
+    {
+      "anime": "Koukaku Kidoutai: Stand Alone Complex",
+      "characters": 87
+    },
+    {
+      "anime": "Majo no Takkyuubin",
+      "characters": 31
+    },
+    {
+      "anime": "Jin-Rou",
+      "characters": 9
+    },
+    {
+      "anime": "Hotaru no Haka",
+      "characters": 7
+    },
+    {
+      "anime": "Nekojiru-sou",
+      "characters": 4
+    },
+    {
+      "anime": "Gintama",
+      "characters": 100
+    },
+    {
+      "anime": "Higurashi no Naku Koro ni",
+      "characters": 39
+    },
+    {
+      "anime": "NHK ni Youkoso!",
+      "characters": 17
+    },
+    {
+      "anime": "Death Note",
+      "characters": 76
+    },
+    {
+      "anime": "Code Geass: Hangyaku no Lelouch",
+      "characters": 58
+    },
+    {
+      "anime": "Nodame Cantabile",
+      "characters": 67
+    },
+    {
+      "anime": "Tengen Toppa Gurren Lagann",
+      "characters": 41
+    },
+    {
+      "anime": "Clannad",
+      "characters": 35
+    },
+    {
+      "anime": "Baccano!",
+      "characters": 65
+    },
+    {
+      "anime": "Ookami to Koushinryou",
+      "characters": 10
+    },
+    {
+      "anime": "Soul Eater",
+      "characters": 64
+    },
+    {
+      "anime": "Higurashi no Naku Koro ni Rei",
+      "characters": 24
+    },
+    {
+      "anime": "Toradora!",
+      "characters": 25
+    },
+    {
+      "anime": "Bakemonogatari",
+      "characters": 14
+    },
+    {
+      "anime": "Toaru Kagaku no Railgun",
+      "characters": 33
+    },
+    {
+      "anime": "Angel Beats!",
+      "characters": 28
+    },
+    {
+      "anime": "Durarara!!",
+      "characters": 49
+    },
+    {
+      "anime": "Yojouhan Shinwa Taikei",
+      "characters": 17
+    },
+    {
+      "anime": "Mahou Shoujo Madoka☆Magica",
+      "characters": 19
+    },
+    {
+      "anime": "Ao no Exorcist",
+      "characters": 50
+    },
+    {
+      "anime": "Nichijou",
+      "characters": 92
+    },
+    {
+      "anime": "Hunter x Hunter (2011)",
+      "characters": 100
+    },
+    {
+      "anime": "Tetsuwan Atom",
+      "characters": 50
+    },
+    {
+      "anime": "Jungle Taitei",
+      "characters": 8
+    },
+    {
+      "anime": "Akage no Anne",
+      "characters": 43
+    },
+    {
+      "anime": "Versailles no Bara",
+      "characters": 49
+    },
+    {
+      "anime": "Yokohama Kaidashi Kikou",
+      "characters": 5
+    },
+    {
+      "anime": "Ginga Tetsudou no Yoru",
+      "characters": 16
+    },
+    {
+      "anime": "Tenshi no Tamago",
+      "characters": 2
+    },
+    {
+      "anime": "Fuujin Monogatari",
+      "characters": 10
+    },
+    {
+      "anime": "Kaiba",
+      "characters": 17
+    },
+    {
+      "anime": "Dennou Coil",
+      "characters": 24
+    },
+    {
+      "anime": "Planetes",
+      "characters": 43
+    },
+    {
+      "anime": "Kino no Tabi: The Beautiful World",
+      "characters": 13
+    },
+    {
+      "anime": "Aria the Animation",
+      "characters": 22
+    },
+    {
+      "anime": "Kamichu!",
+      "characters": 13
+    },
+    {
+      "anime": "Kemonozume",
+      "characters": 11
+    },
+    {
+      "anime": "Ping Pong the Animation",
+      "characters": 29
+    },
+    {
+      "anime": "Space☆Dandy",
+      "characters": 38
+    },
+    {
+      "anime": "Given",
+      "characters": 17
+    },
+    {
+      "anime": "One Punch Man",
+      "characters": 50
+    },
+    {
+      "anime": "Re:Zero kara Hajimeru Isekai Seikatsu",
+      "characters": 50
+    },
+    {
+      "anime": "Sousou no Frieren",
+      "characters": 50
+    },
+    {
+      "anime": "Shingeki no Kyojin: The Final Season",
+      "characters": 50
+    },
+    {
+      "anime": "Shingeki no Kyojin",
+      "characters": 50
+    },
+    {
+      "anime": "Haikyuu!!",
+      "characters": 50
+    },
+    {
+      "anime": "Boku no Hero Academia",
+      "characters": 50
+    },
+    {
+      "anime": "Vinland Saga",
+      "characters": 40
+    },
+    {
+      "anime": "Yakusoku no Neverland",
       "characters": 30
+    },
+    {
+      "anime": "Kanojo, Okarishimasu",
+      "characters": 20
     }
   ],
   "examples": [
@@ -120,6 +465,356 @@
     {
       "anime": "Cowboy Bebop: Tengoku no Tobira",
       "character": "Black, Jet"
+    },
+    {
+      "anime": "Meitantei Conan",
+      "character": "Agasa, Hiroshi"
+    },
+    {
+      "anime": "Yuu☆Yuu☆Hakusho",
+      "character": "Botan"
+    },
+    {
+      "anime": "Tonari no Totoro",
+      "character": "Kusakabe, Mei"
+    },
+    {
+      "anime": "Ergo Proxy",
+      "character": "Ergo Proxy"
+    },
+    {
+      "anime": "Nana",
+      "character": "Komatsu, Nana"
+    },
+    {
+      "anime": "Natsume Yuujinchou",
+      "character": "Madara"
+    },
+    {
+      "anime": "Uchuu Kaizoku Captain Herlock",
+      "character": "Captain Herlock"
+    },
+    {
+      "anime": "Gake no Ue no Ponyo",
+      "character": "Ponyo"
+    },
+    {
+      "anime": "Speed Grapher",
+      "character": "Saiga, Tatsumi"
+    },
+    {
+      "anime": "Beck",
+      "character": "Chiba, Tsunemi"
+    },
+    {
+      "anime": "Akira",
+      "character": "Kaneda, Shoutarou"
+    },
+    {
+      "anime": ".hack//Sign",
+      "character": "Bear"
+    },
+    {
+      "anime": "Koukaku Kidoutai",
+      "character": "Batou"
+    },
+    {
+      "anime": "Shinseiki Evangelion",
+      "character": "Ayanami, Rei"
+    },
+    {
+      "anime": "Texhnolyze",
+      "character": "Ichise"
+    },
+    {
+      "anime": "Trigun",
+      "character": "Stryfe, Meryl"
+    },
+    {
+      "anime": "Rurouni Kenshin: Meiji Kenkaku Romantan",
+      "character": "Himura, Kenshin"
+    },
+    {
+      "anime": "Kenpuu Denki Berserk",
+      "character": "Casca"
+    },
+    {
+      "anime": "Azumanga Daiou The Animation",
+      "character": "Kagura"
+    },
+    {
+      "anime": "Hunter x Hunter",
+      "character": "Freecss, Gon"
+    },
+    {
+      "anime": "Mononoke Hime",
+      "character": "Ashitaka"
+    },
+    {
+      "anime": "FLCL",
+      "character": "Haruhara, Haruko"
+    },
+    {
+      "anime": "Cardcaptor Sakura",
+      "character": "Daidouji, Tomoyo"
+    },
+    {
+      "anime": "Great Teacher Onizuka",
+      "character": "Aizawa, Miyabi"
+    },
+    {
+      "anime": "InuYasha",
+      "character": "Higurashi, Kagome"
+    },
+    {
+      "anime": "Gungrave",
+      "character": "Heat, Brandon"
+    },
+    {
+      "anime": "Bleach",
+      "character": "Abarai, Renji"
+    },
+    {
+      "anime": "Serial Experiments Lain",
+      "character": "Iwakura, Lain"
+    },
+    {
+      "anime": "Shakugan no Shana",
+      "character": "Sakai, Yuuji"
+    },
+    {
+      "anime": "Haibane Renmei",
+      "character": "Rakka"
+    },
+    {
+      "anime": "Howl no Ugoku Shiro",
+      "character": "Hatter, Sophie"
+    },
+    {
+      "anime": "Koukaku Kidoutai: Stand Alone Complex",
+      "character": "Aramaki, Daisuke"
+    },
+    {
+      "anime": "Majo no Takkyuubin",
+      "character": "Kiki"
+    },
+    {
+      "anime": "Jin-Rou",
+      "character": "Amemiya, Kei"
+    },
+    {
+      "anime": "Hotaru no Haka",
+      "character": "Seita"
+    },
+    {
+      "anime": "Nekojiru-sou",
+      "character": "Nyako"
+    },
+    {
+      "anime": "Gintama",
+      "character": "Kagura"
+    },
+    {
+      "anime": "Higurashi no Naku Koro ni",
+      "character": "Furude, Rika"
+    },
+    {
+      "anime": "NHK ni Youkoso!",
+      "character": "Nakahara, Misaki"
+    },
+    {
+      "anime": "Death Note",
+      "character": "Lawliet, L"
+    },
+    {
+      "anime": "Code Geass: Hangyaku no Lelouch",
+      "character": "C.C."
+    },
+    {
+      "anime": "Nodame Cantabile",
+      "character": "Chiaki, Shinichi"
+    },
+    {
+      "anime": "Tengen Toppa Gurren Lagann",
+      "character": "Kamina"
+    },
+    {
+      "anime": "Clannad",
+      "character": "Fujibayashi, Kyou"
+    },
+    {
+      "anime": "Baccano!",
+      "character": "Avaro, Maiza"
+    },
+    {
+      "anime": "Ookami to Koushinryou",
+      "character": "Holo"
+    },
+    {
+      "anime": "Soul Eater",
+      "character": "Albarn, Maka"
+    },
+    {
+      "anime": "Higurashi no Naku Koro ni Rei",
+      "character": "Furude, Rika"
+    },
+    {
+      "anime": "Toradora!",
+      "character": "Aisaka, Taiga"
+    },
+    {
+      "anime": "Bakemonogatari",
+      "character": "Araragi, Koyomi"
+    },
+    {
+      "anime": "Toaru Kagaku no Railgun",
+      "character": "Misaka, Mikoto"
+    },
+    {
+      "anime": "Angel Beats!",
+      "character": "Nakamura, Yuri"
+    },
+    {
+      "anime": "Durarara!!",
+      "character": "Heiwajima, Shizuo"
+    },
+    {
+      "anime": "Yojouhan Shinwa Taikei",
+      "character": "Akashi"
+    },
+    {
+      "anime": "Mahou Shoujo Madoka☆Magica",
+      "character": "Akemi, Homura"
+    },
+    {
+      "anime": "Ao no Exorcist",
+      "character": "Okumura, Rin"
+    },
+    {
+      "anime": "Nichijou",
+      "character": "Aioi, Yuuko"
+    },
+    {
+      "anime": "Hunter x Hunter (2011)",
+      "character": "Freecss, Gon"
+    },
+    {
+      "anime": "Tetsuwan Atom",
+      "character": "Atom"
+    },
+    {
+      "anime": "Jungle Taitei",
+      "character": "Leo"
+    },
+    {
+      "anime": "Akage no Anne",
+      "character": "Barry, Diana"
+    },
+    {
+      "anime": "Versailles no Bara",
+      "character": "Antoinette, Marie"
+    },
+    {
+      "anime": "Yokohama Kaidashi Kikou",
+      "character": "Hatsuseno, Alpha"
+    },
+    {
+      "anime": "Ginga Tetsudou no Yoru",
+      "character": "Campanella"
+    },
+    {
+      "anime": "Tenshi no Tamago",
+      "character": "Boy"
+    },
+    {
+      "anime": "Fuujin Monogatari",
+      "character": "Kataoka, Miki"
+    },
+    {
+      "anime": "Kaiba",
+      "character": "Kaiba"
+    },
+    {
+      "anime": "Dennou Coil",
+      "character": "Amasawa, Yuuko"
+    },
+    {
+      "anime": "Planetes",
+      "character": "Hoshino, Hachirouta"
+    },
+    {
+      "anime": "Kino no Tabi: The Beautiful World",
+      "character": "Hermes"
+    },
+    {
+      "anime": "Aria the Animation",
+      "character": "Carroll, Alice"
+    },
+    {
+      "anime": "Kamichu!",
+      "character": "Hitotsubashi, Tama"
+    },
+    {
+      "anime": "Kemonozume",
+      "character": "Kamitsuki, Yuka"
+    },
+    {
+      "anime": "Ping Pong the Animation",
+      "character": "Hoshino, Yutaka"
+    },
+    {
+      "anime": "Space☆Dandy",
+      "character": "Dandy"
+    },
+    {
+      "anime": "Given",
+      "character": "Kaji, Akihiko"
+    },
+    {
+      "anime": "One Punch Man",
+      "character": "Genos"
+    },
+    {
+      "anime": "Re:Zero kara Hajimeru Isekai Seikatsu",
+      "character": "Emilia"
+    },
+    {
+      "anime": "Sousou no Frieren",
+      "character": "Fern"
+    },
+    {
+      "anime": "Shingeki no Kyojin: The Final Season",
+      "character": "Ackerman, Mikasa"
+    },
+    {
+      "anime": "Shingeki no Kyojin",
+      "character": "Ackerman, Mikasa"
+    },
+    {
+      "anime": "Haikyuu!!",
+      "character": "Hinata, Shouyou"
+    },
+    {
+      "anime": "Boku no Hero Academia",
+      "character": "All Might"
+    },
+    {
+      "anime": "Vinland Saga",
+      "character": "Askeladd"
+    },
+    {
+      "anime": "Yakusoku no Neverland",
+      "character": "Emma"
+    },
+    {
+      "anime": "Kanojo, Okarishimasu",
+      "character": "Ichinose, Chizuru"
     }
-  ]
+  ],
+  "lastSession": {
+    "seconds": 73.771,
+    "requests": 56,
+    "initialCharacters": 5014,
+    "addedCharacters": 817
+  }
 }

@@ -25,10 +25,11 @@ function identity(data, kind) {
     japaneseName: text(kind === 'anime' ? data.title_japanese : data.name_kanji) || null,
     sourceUrl, provider: 'Tenrai', importedAt: new Date().toISOString() };
 }
-function client({ fetcher = fetch, wait = sleep, failures = () => {} } = {}) {
+function client({ fetcher = fetch, wait = sleep, failures = () => {}, intervalMs = 650 } = {}) {
+  if (!Number.isFinite(intervalMs) || intervalMs < 500) throw Error('Minimum request interval is 500ms');
   return async endpoint => {
     for (let attempt = 0; attempt < 5; attempt++) {
-      await wait(650);
+      await wait(intervalMs);
       let response;
       try { response = await fetcher(BASE + endpoint, { signal: AbortSignal.timeout(30000) }); }
       catch (error) {
@@ -70,13 +71,24 @@ async function run(config, data, request, checkpoint = () => {}) {
   const limit = config.maxCharactersPerAnime ?? Number.MAX_SAFE_INTEGER;
   if (!Number.isSafeInteger(limit) || limit < 1) throw Error('Invalid character limit');
   validate(data);
+  if(config.checkpointEvery !== undefined && (!Number.isSafeInteger(config.checkpointEvery) || config.checkpointEvery < 1)) throw Error('Invalid checkpoint interval');
+  if (config.passId !== undefined && (typeof config.passId !== 'string' || !/^[a-zA-Z0-9-]+$/.test(config.passId))) throw Error('Invalid passId');
+  if (config.targetCharacters !== undefined && (!Number.isSafeInteger(config.targetCharacters) || config.targetCharacters < 1)) throw Error('Invalid target');
+  const characters = new Map(data.characters.map(c => [c.malId,c]));
+  const animeIndex = new Set(data.anime.map(a => a.id));
+  const appearances = new Set(data.appearances.map(a => a.animeId + '/' + a.characterId));
+  if(config.passId) data.importPasses ||= [];
   for (const id of new Set(config.animeIds)) {
-    if (data.completedAnime.includes(id)) continue;
+    if (config.targetCharacters && data.characters.length >= config.targetCharacters) break;
+    const pass = config.passId && config.passId + ':' + id;
+    if (pass ? data.importPasses.includes(pass) : data.completedAnime.includes(id)) continue;
+    try {
     const animeData = (await request(`/anime/${id}`)).data;
     if (animeData?.mal_id !== id) throw Error('Anime ID mismatch');
     const anime = identity(animeData, 'anime');
-    if (!data.anime.some(a => a.id === anime.id)) data.anime.push(anime);
+    if (!animeIndex.has(anime.id)) { data.anime.push(anime); animeIndex.add(anime.id); }
     const cast = (await collection(request, `/anime/${id}/characters`)).slice(0, limit);
+    if (!cast.length) { const issue=`anime ${id}: empty cast; retry required`; if(!data.review.includes(issue))data.review.push(issue); checkpoint(data); continue; }
     for (const entry of cast) {
       const characterId = entry.character?.mal_id;
       if (!Number.isSafeInteger(characterId) || characterId < 1) {
@@ -84,57 +96,97 @@ async function run(config, data, request, checkpoint = () => {}) {
         if (!data.review.includes(issue)) data.review.push(issue);
         checkpoint(data); continue;
       }
-      let character = data.characters.find(c => c.malId === characterId);
+      let character = characters.get(characterId);
       if (!character) {
-        const detail = (await request(`/characters/${characterId}`)).data;
+        const detail = config.characterDetails === false ? entry.character : (await request(`/characters/${characterId}`)).data;
         try {
           if (detail?.mal_id !== characterId) throw Error('Character ID mismatch');
           character = identity(detail, 'character');
           data.characters.push(character);
+          characters.set(characterId,character);
         } catch (error) {
           const issue = `character ${characterId}: ${error.message}`;
           if (!data.review.includes(issue)) data.review.push(issue);
           checkpoint(data); continue;
         }
       }
-      if (!data.appearances.some(a => a.animeId === anime.id && a.characterId === character.id)) {
+      const appearanceKey = anime.id + '/' + character.id;
+      if (!appearances.has(appearanceKey)) {
+        appearances.add(appearanceKey);
         data.appearances.push({ animeId: anime.id, characterId: character.id,
           role: ['Main', 'Supporting'].includes(entry.role) ? entry.role : null,
           provider: 'Tenrai', sourceUrl: `${BASE}/anime/${id}/characters`, importedAt: new Date().toISOString() });
       }
       checkpoint(data);
     }
-    data.completedAnime.push(id);
+    if (!data.completedAnime.includes(id)) data.completedAnime.push(id);
+    if(pass) data.importPasses.push(pass);
     checkpoint(data);
     console.log(`Completed ${anime.name}: ${data.characters.length} unique characters`);
+    } catch(error) {
+      const issue = `anime ${id}: import failed: ${error.message}`;
+      if(!data.review.includes(issue)) data.review.push(issue);
+      checkpoint(data);
+      if(!config.continueOnError) throw error;
+    }
   }
   return data;
 }
 function report(data) {
-  return { animeProcessed: data.completedAnime.length, uniqueCharacters: data.characters.length,
-    aliases: data.characters.reduce((n, c) => n + c.aliases.length, 0), relationships: data.appearances.length,
-    duplicateRecordsMerged: data.appearances.length - data.characters.length, apiFailures: data.apiFailures,
-    manualReviewRecords: data.review.length,
-    coverage: data.anime.map(a => ({ anime: a.name, characters: data.appearances.filter(r => r.animeId === a.id).length })),
-    examples: data.anime.map(a => ({ anime: a.name, character: data.characters.find(c => data.appearances.some(r => r.characterId === c.id && r.animeId === a.id))?.name })) };
+  const groups=new Map(data.anime.map(a=>[a.id,[]])),characters=new Map(data.characters.map(c=>[c.id,c]));
+  for(const a of data.appearances)groups.get(a.animeId).push(a.characterId);
+  return { animeProcessed:data.completedAnime.length, uniqueCharacters:data.characters.length,
+    aliases:data.characters.reduce((n,c)=>n+c.aliases.length,0),relationships:data.appearances.length,
+    duplicateRecordsMerged:data.appearances.length-data.characters.length,apiFailures:data.apiFailures,
+    manualReviewRecords:data.review.length, failedRecords:data.review,
+    coverage:data.anime.map(a=>({anime:a.name,characters:groups.get(a.id).length})),
+    examples:data.anime.map(a=>({anime:a.name,character:characters.get(groups.get(a.id)[0])?.name})) };
+}
+function acquireLock(lock,recover=false) {
+  if(recover && fs.existsSync(lock)) {
+    const owner=JSON.parse(fs.readFileSync(lock));
+    if(owner.host!==require('node:os').hostname() || !Number.isSafeInteger(owner.pid) || owner.pid<1)throw Error('Cannot establish lock ownership');
+    let alive=true;try{process.kill(owner.pid,0);}catch(error){if(error.code==='ESRCH')alive=false;else throw error;}
+    if(alive)throw Error('Import owner is still running');
+    fs.unlinkSync(lock);
+  }
+  const handle=fs.openSync(lock,'wx');
+  fs.writeFileSync(handle,JSON.stringify({pid:process.pid,host:require('node:os').hostname()}));
+  return handle;
 }
 async function main() {
   const config = JSON.parse(fs.readFileSync(process.argv[2] || path.join(__dirname, 'pilot.json')));
   const directory = path.resolve(process.argv[3] || path.join(__dirname, 'data'));
   fs.mkdirSync(directory, { recursive: true });
   const lock = path.join(directory, '.import.lock');
-  const handle = fs.openSync(lock, 'wx');
+  const handle = acquireLock(lock,process.argv.includes('--recover-lock'));
   const file = path.join(directory, 'catalogue.json');
   let data;
+  const started=Date.now(); let requests=0; let initialCharacters=0;
   try {
     data = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file)) : empty();
-    const request = client({ failures: () => { data.apiFailures++; } });
-    await run(config, data, request, data => save(file, data));
+    initialCharacters=data.characters.length;
+    const metadataFile=path.join(directory,'anime-metadata.json');
+    const metadata=fs.existsSync(metadataFile)?JSON.parse(fs.readFileSync(metadataFile)):{};
+    const remote = client({ intervalMs:config.intervalMs ?? 650, failures: () => { data.apiFailures++; } });
+    const request=async endpoint=>{
+      requests++;
+      const response=await remote(endpoint);
+      if(/^\/anime\/\d+$/.test(endpoint) && response.data) {
+        const a=response.data;
+        if(a.mal_id!==Number(endpoint.split('/').at(-1))) throw Error('Anime ID mismatch');
+        metadata[a.mal_id]=require('./metadata').extract(a);
+        fs.writeFileSync(metadataFile+'.tmp',JSON.stringify(metadata,null,2)+'\n');fs.renameSync(metadataFile+'.tmp',metadataFile);
+      }
+      return response;
+    };
+    let checkpoints=0;
+    await run(config, data, request, data => {if(++checkpoints % (config.checkpointEvery ?? 25) === 0) save(file,data);});
   } finally {
     try {
-      if (data) { save(file, data); fs.writeFileSync(path.join(directory, 'report.json'), JSON.stringify(report(data), null, 2) + '\n'); }
+      if (data) { save(file, data); fs.writeFileSync(path.join(directory, 'report.json'), JSON.stringify({...report(data),lastSession:{seconds:(Date.now()-started)/1000,requests,initialCharacters,addedCharacters:data.characters.length-initialCharacters}}, null, 2) + '\n'); }
     } finally { fs.closeSync(handle); fs.unlinkSync(lock); }
   }
 }
 if (require.main === module) main().catch(error => { console.error(error.message); process.exitCode = 1; });
-module.exports = { identity, aliases, client, collection, empty, run, report };
+module.exports = { identity, aliases, client, collection, empty, run, report, acquireLock };

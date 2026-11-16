@@ -1,6 +1,10 @@
 # Anime Ascent identity catalogue
 
-Phase 2 offline data only. The game and API do not load this directory.
+Phase 2–5A offline data only. The game and API do not load this directory.
+
+For the current expansion workflow, resume behavior, benchmarks and source review,
+see [Phase 5A](PHASE5A.md). The pilot notes below describe the original Phase 2 run;
+Phase 5A supersedes its per-character checkpoint and fresh-directory refresh advice.
 
 ## Run
 

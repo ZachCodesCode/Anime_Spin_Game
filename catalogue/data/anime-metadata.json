@@ -1,0 +1,3181 @@
+{
+  "1": {
+    "malId": 1,
+    "title": "Cowboy Bebop",
+    "genres": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 46,
+        "name": "Award Winning"
+      },
+      {
+        "id": 24,
+        "name": "Sci-Fi"
+      }
+    ],
+    "themes": [
+      {
+        "id": 50,
+        "name": "Adult Cast"
+      },
+      {
+        "id": 29,
+        "name": "Space"
+      }
+    ],
+    "year": 1998,
+    "popularity": 41,
+    "members": 2097958,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/1",
+    "retrievedAt": "2026-11-16T03:08:58.071Z"
+  },
+  "5": {
+    "malId": 5,
+    "title": "Cowboy Bebop: Tengoku no Tobira",
+    "genres": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 24,
+        "name": "Sci-Fi"
+      }
+    ],
+    "themes": [
+      {
+        "id": 50,
+        "name": "Adult Cast"
+      },
+      {
+        "id": 29,
+        "name": "Space"
+      }
+    ],
+    "year": 2001,
+    "popularity": 664,
+    "members": 418932,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/5",
+    "retrievedAt": "2026-11-16T03:10:05.893Z"
+  },
+  "6": {
+    "malId": 6,
+    "title": "Trigun",
+    "genres": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 2,
+        "name": "Adventure"
+      },
+      {
+        "id": 24,
+        "name": "Sci-Fi"
+      }
+    ],
+    "themes": [
+      {
+        "id": 50,
+        "name": "Adult Cast"
+      }
+    ],
+    "year": 1998,
+    "popularity": 267,
+    "members": 849506,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/6",
+    "retrievedAt": "2026-11-16T03:10:34.709Z"
+  },
+  "19": {
+    "malId": 19,
+    "title": "Monster",
+    "genres": [
+      {
+        "id": 8,
+        "name": "Drama"
+      },
+      {
+        "id": 7,
+        "name": "Mystery"
+      },
+      {
+        "id": 41,
+        "name": "Suspense"
+      }
+    ],
+    "themes": [
+      {
+        "id": 50,
+        "name": "Adult Cast"
+      },
+      {
+        "id": 40,
+        "name": "Psychological"
+      }
+    ],
+    "year": 2004,
+    "popularity": 114,
+    "members": 1375019,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/19",
+    "retrievedAt": "2026-11-16T03:09:48.128Z"
+  },
+  "20": {
+    "malId": 20,
+    "title": "Naruto",
+    "genres": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 2,
+        "name": "Adventure"
+      },
+      {
+        "id": 10,
+        "name": "Fantasy"
+      }
+    ],
+    "themes": [
+      {
+        "id": 17,
+        "name": "Martial Arts"
+      }
+    ],
+    "year": 2002,
+    "popularity": 9,
+    "members": 3179645,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/20",
+    "retrievedAt": "2026-11-16T03:08:59.889Z"
+  },
+  "21": {
+    "malId": 21,
+    "title": "One Piece",
+    "genres": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 2,
+        "name": "Adventure"
+      },
+      {
+        "id": 10,
+        "name": "Fantasy"
+      }
+    ],
+    "themes": [],
+    "year": 1999,
+    "popularity": 17,
+    "members": 2746468,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/21",
+    "retrievedAt": "2026-11-16T03:09:01.725Z"
+  },
+  "26": {
+    "malId": 26,
+    "title": "Texhnolyze",
+    "genres": [
+      {
+        "id": 5,
+        "name": "Avant Garde"
+      },
+      {
+        "id": 8,
+        "name": "Drama"
+      },
+      {
+        "id": 7,
+        "name": "Mystery"
+      },
+      {
+        "id": 24,
+        "name": "Sci-Fi"
+      },
+      {
+        "id": 41,
+        "name": "Suspense"
+      }
+    ],
+    "themes": [
+      {
+        "id": 50,
+        "name": "Adult Cast"
+      },
+      {
+        "id": 68,
+        "name": "Organized Crime"
+      },
+      {
+        "id": 40,
+        "name": "Psychological"
+      }
+    ],
+    "year": 2003,
+    "popularity": 960,
+    "members": 299700,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/26",
+    "retrievedAt": "2026-11-16T03:10:32.847Z"
+  },
+  "30": {
+    "malId": 30,
+    "title": "Shinseiki Evangelion",
+    "genres": [
+      {
+        "id": 5,
+        "name": "Avant Garde"
+      },
+      {
+        "id": 46,
+        "name": "Award Winning"
+      },
+      {
+        "id": 8,
+        "name": "Drama"
+      },
+      {
+        "id": 24,
+        "name": "Sci-Fi"
+      },
+      {
+        "id": 41,
+        "name": "Suspense"
+      }
+    ],
+    "themes": [
+      {
+        "id": 18,
+        "name": "Mecha"
+      },
+      {
+        "id": 40,
+        "name": "Psychological"
+      }
+    ],
+    "year": 1995,
+    "popularity": 42,
+    "members": 2078713,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/30",
+    "retrievedAt": "2026-11-16T03:10:31.071Z"
+  },
+  "33": {
+    "malId": 33,
+    "title": "Kenpuu Denki Berserk",
+    "genres": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 2,
+        "name": "Adventure"
+      },
+      {
+        "id": 8,
+        "name": "Drama"
+      },
+      {
+        "id": 10,
+        "name": "Fantasy"
+      },
+      {
+        "id": 14,
+        "name": "Horror"
+      }
+    ],
+    "themes": [
+      {
+        "id": 58,
+        "name": "Gore"
+      },
+      {
+        "id": 38,
+        "name": "Military"
+      },
+      {
+        "id": 40,
+        "name": "Psychological"
+      }
+    ],
+    "year": 1997,
+    "popularity": 300,
+    "members": 789576,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/33",
+    "retrievedAt": "2026-11-16T03:10:38.485Z"
+  },
+  "43": {
+    "malId": 43,
+    "title": "Koukaku Kidoutai",
+    "genres": [
+      {
+        "id": 46,
+        "name": "Award Winning"
+      },
+      {
+        "id": 7,
+        "name": "Mystery"
+      },
+      {
+        "id": 24,
+        "name": "Sci-Fi"
+      },
+      {
+        "id": 41,
+        "name": "Suspense"
+      }
+    ],
+    "themes": [
+      {
+        "id": 50,
+        "name": "Adult Cast"
+      },
+      {
+        "id": 39,
+        "name": "Detective"
+      },
+      {
+        "id": 18,
+        "name": "Mecha"
+      },
+      {
+        "id": 40,
+        "name": "Psychological"
+      }
+    ],
+    "year": 1995,
+    "popularity": 332,
+    "members": 724893,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/43",
+    "retrievedAt": "2026-11-16T03:10:29.268Z"
+  },
+  "44": {
+    "malId": 44,
+    "title": "Rurouni Kenshin: Meiji Kenkaku Romantan - Tsuioku-hen",
+    "genres": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 8,
+        "name": "Drama"
+      },
+      {
+        "id": 22,
+        "name": "Romance"
+      }
+    ],
+    "themes": [
+      {
+        "id": 50,
+        "name": "Adult Cast"
+      },
+      {
+        "id": 13,
+        "name": "Historical"
+      },
+      {
+        "id": 21,
+        "name": "Samurai"
+      }
+    ],
+    "year": 1999,
+    "popularity": 976,
+    "members": 295152,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/44",
+    "retrievedAt": "2026-11-16T03:09:49.995Z"
+  },
+  "45": {
+    "malId": 45,
+    "title": "Rurouni Kenshin: Meiji Kenkaku Romantan",
+    "genres": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 4,
+        "name": "Comedy"
+      },
+      {
+        "id": 22,
+        "name": "Romance"
+      }
+    ],
+    "themes": [
+      {
+        "id": 13,
+        "name": "Historical"
+      },
+      {
+        "id": 21,
+        "name": "Samurai"
+      }
+    ],
+    "year": 1996,
+    "popularity": 499,
+    "members": 530547,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/45",
+    "retrievedAt": "2026-11-16T03:10:36.593Z"
+  },
+  "47": {
+    "malId": 47,
+    "title": "Akira",
+    "genres": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 14,
+        "name": "Horror"
+      },
+      {
+        "id": 24,
+        "name": "Sci-Fi"
+      }
+    ],
+    "themes": [
+      {
+        "id": 58,
+        "name": "Gore"
+      },
+      {
+        "id": 31,
+        "name": "Super Power"
+      }
+    ],
+    "year": 1988,
+    "popularity": 206,
+    "members": 977177,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/47",
+    "retrievedAt": "2026-11-16T03:10:25.715Z"
+  },
+  "48": {
+    "malId": 48,
+    "title": ".hack//Sign",
+    "genres": [
+      {
+        "id": 2,
+        "name": "Adventure"
+      },
+      {
+        "id": 10,
+        "name": "Fantasy"
+      },
+      {
+        "id": 7,
+        "name": "Mystery"
+      }
+    ],
+    "themes": [
+      {
+        "id": 79,
+        "name": "Video Game"
+      }
+    ],
+    "year": 2002,
+    "popularity": 1451,
+    "members": 197422,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/48",
+    "retrievedAt": "2026-11-16T03:10:27.514Z"
+  },
+  "57": {
+    "malId": 57,
+    "title": "Beck",
+    "genres": [
+      {
+        "id": 8,
+        "name": "Drama"
+      }
+    ],
+    "themes": [
+      {
+        "id": 19,
+        "name": "Music"
+      }
+    ],
+    "year": 2004,
+    "popularity": 735,
+    "members": 384531,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/57",
+    "retrievedAt": "2026-11-16T03:10:23.893Z"
+  },
+  "66": {
+    "malId": 66,
+    "title": "Azumanga Daiou The Animation",
+    "genres": [
+      {
+        "id": 4,
+        "name": "Comedy"
+      }
+    ],
+    "themes": [
+      {
+        "id": 52,
+        "name": "CGDCT"
+      },
+      {
+        "id": 57,
+        "name": "Gag Humor"
+      },
+      {
+        "id": 23,
+        "name": "School"
+      }
+    ],
+    "year": 2002,
+    "popularity": 624,
+    "members": 441560,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/66",
+    "retrievedAt": "2026-11-16T03:10:40.248Z"
+  },
+  "136": {
+    "malId": 136,
+    "title": "Hunter x Hunter",
+    "genres": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 2,
+        "name": "Adventure"
+      },
+      {
+        "id": 10,
+        "name": "Fantasy"
+      }
+    ],
+    "themes": [],
+    "year": 1999,
+    "popularity": 379,
+    "members": 660631,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/136",
+    "retrievedAt": "2026-11-16T03:10:42.019Z"
+  },
+  "164": {
+    "malId": 164,
+    "title": "Mononoke Hime",
+    "genres": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 2,
+        "name": "Adventure"
+      },
+      {
+        "id": 46,
+        "name": "Award Winning"
+      },
+      {
+        "id": 10,
+        "name": "Fantasy"
+      }
+    ],
+    "themes": [],
+    "year": 1997,
+    "popularity": 110,
+    "members": 1406954,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/164",
+    "retrievedAt": "2026-11-16T03:10:43.944Z"
+  },
+  "198": {
+    "malId": 198,
+    "title": "Speed Grapher",
+    "genres": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 7,
+        "name": "Mystery"
+      },
+      {
+        "id": 41,
+        "name": "Suspense"
+      }
+    ],
+    "themes": [
+      {
+        "id": 50,
+        "name": "Adult Cast"
+      },
+      {
+        "id": 58,
+        "name": "Gore"
+      },
+      {
+        "id": 68,
+        "name": "Organized Crime"
+      },
+      {
+        "id": 40,
+        "name": "Psychological"
+      },
+      {
+        "id": 31,
+        "name": "Super Power"
+      }
+    ],
+    "year": 2005,
+    "popularity": 2041,
+    "members": 129620,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/198",
+    "retrievedAt": "2026-11-16T03:10:22.109Z"
+  },
+  "205": {
+    "malId": 205,
+    "title": "Samurai Champloo",
+    "genres": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 2,
+        "name": "Adventure"
+      },
+      {
+        "id": 4,
+        "name": "Comedy"
+      }
+    ],
+    "themes": [
+      {
+        "id": 13,
+        "name": "Historical"
+      },
+      {
+        "id": 21,
+        "name": "Samurai"
+      }
+    ],
+    "year": 2004,
+    "popularity": 113,
+    "members": 1375440,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/205",
+    "retrievedAt": "2026-11-16T03:09:53.509Z"
+  },
+  "227": {
+    "malId": 227,
+    "title": "FLCL",
+    "genres": [
+      {
+        "id": 5,
+        "name": "Avant Garde"
+      },
+      {
+        "id": 4,
+        "name": "Comedy"
+      },
+      {
+        "id": 24,
+        "name": "Sci-Fi"
+      },
+      {
+        "id": 41,
+        "name": "Suspense"
+      }
+    ],
+    "themes": [
+      {
+        "id": 18,
+        "name": "Mecha"
+      },
+      {
+        "id": 20,
+        "name": "Parody"
+      },
+      {
+        "id": 40,
+        "name": "Psychological"
+      }
+    ],
+    "year": 2000,
+    "popularity": 235,
+    "members": 913718,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/227",
+    "retrievedAt": "2026-11-16T03:10:45.760Z"
+  },
+  "232": {
+    "malId": 232,
+    "title": "Cardcaptor Sakura",
+    "genres": [
+      {
+        "id": 2,
+        "name": "Adventure"
+      },
+      {
+        "id": 4,
+        "name": "Comedy"
+      },
+      {
+        "id": 8,
+        "name": "Drama"
+      },
+      {
+        "id": 22,
+        "name": "Romance"
+      }
+    ],
+    "themes": [
+      {
+        "id": 66,
+        "name": "Mahou Shoujo"
+      },
+      {
+        "id": 23,
+        "name": "School"
+      }
+    ],
+    "year": 1998,
+    "popularity": 545,
+    "members": 494392,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/232",
+    "retrievedAt": "2026-11-16T03:10:47.545Z"
+  },
+  "235": {
+    "malId": 235,
+    "title": "Meitantei Conan",
+    "genres": [
+      {
+        "id": 2,
+        "name": "Adventure"
+      },
+      {
+        "id": 4,
+        "name": "Comedy"
+      },
+      {
+        "id": 7,
+        "name": "Mystery"
+      }
+    ],
+    "themes": [
+      {
+        "id": 39,
+        "name": "Detective"
+      }
+    ],
+    "year": 1996,
+    "popularity": 736,
+    "members": 383556,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/235",
+    "retrievedAt": "2026-11-16T03:10:07.638Z"
+  },
+  "245": {
+    "malId": 245,
+    "title": "Great Teacher Onizuka",
+    "genres": [
+      {
+        "id": 4,
+        "name": "Comedy"
+      }
+    ],
+    "themes": [
+      {
+        "id": 55,
+        "name": "Delinquents"
+      },
+      {
+        "id": 23,
+        "name": "School"
+      },
+      {
+        "id": 48,
+        "name": "Workplace"
+      }
+    ],
+    "year": 1999,
+    "popularity": 222,
+    "members": 940459,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/245",
+    "retrievedAt": "2026-11-16T03:10:49.307Z"
+  },
+  "249": {
+    "malId": 249,
+    "title": "InuYasha",
+    "genres": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 2,
+        "name": "Adventure"
+      },
+      {
+        "id": 10,
+        "name": "Fantasy"
+      },
+      {
+        "id": 22,
+        "name": "Romance"
+      }
+    ],
+    "themes": [
+      {
+        "id": 13,
+        "name": "Historical"
+      },
+      {
+        "id": 64,
+        "name": "Love Polygon"
+      },
+      {
+        "id": 6,
+        "name": "Mythology"
+      },
+      {
+        "id": 78,
+        "name": "Time Travel"
+      }
+    ],
+    "year": 2000,
+    "popularity": 254,
+    "members": 874595,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/249",
+    "retrievedAt": "2026-11-16T03:10:51.211Z"
+  },
+  "263": {
+    "malId": 263,
+    "title": "Hajime no Ippo",
+    "genres": [
+      {
+        "id": 30,
+        "name": "Sports"
+      }
+    ],
+    "themes": [
+      {
+        "id": 54,
+        "name": "Combat Sports"
+      }
+    ],
+    "year": 2000,
+    "popularity": 338,
+    "members": 715394,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/263",
+    "retrievedAt": "2026-11-16T03:10:02.257Z"
+  },
+  "267": {
+    "malId": 267,
+    "title": "Gungrave",
+    "genres": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 8,
+        "name": "Drama"
+      },
+      {
+        "id": 24,
+        "name": "Sci-Fi"
+      }
+    ],
+    "themes": [
+      {
+        "id": 50,
+        "name": "Adult Cast"
+      },
+      {
+        "id": 58,
+        "name": "Gore"
+      },
+      {
+        "id": 68,
+        "name": "Organized Crime"
+      },
+      {
+        "id": 31,
+        "name": "Super Power"
+      }
+    ],
+    "year": 2003,
+    "popularity": 1308,
+    "members": 222666,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/267",
+    "retrievedAt": "2026-11-16T03:10:53.139Z"
+  },
+  "269": {
+    "malId": 269,
+    "title": "Bleach",
+    "genres": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 2,
+        "name": "Adventure"
+      },
+      {
+        "id": 37,
+        "name": "Supernatural"
+      }
+    ],
+    "themes": [],
+    "year": 2004,
+    "popularity": 32,
+    "members": 2267669,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/269",
+    "retrievedAt": "2026-11-16T03:10:54.964Z"
+  },
+  "283": {
+    "malId": 283,
+    "title": "Akage no Anne",
+    "genres": [
+      {
+        "id": 8,
+        "name": "Drama"
+      }
+    ],
+    "themes": [
+      {
+        "id": 13,
+        "name": "Historical"
+      }
+    ],
+    "year": 1979,
+    "popularity": 3584,
+    "members": 53353,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/283",
+    "retrievedAt": "2026-11-16T03:13:17.110Z"
+  },
+  "329": {
+    "malId": 329,
+    "title": "Planetes",
+    "genres": [
+      {
+        "id": 46,
+        "name": "Award Winning"
+      },
+      {
+        "id": 8,
+        "name": "Drama"
+      },
+      {
+        "id": 22,
+        "name": "Romance"
+      },
+      {
+        "id": 24,
+        "name": "Sci-Fi"
+      }
+    ],
+    "themes": [
+      {
+        "id": 50,
+        "name": "Adult Cast"
+      },
+      {
+        "id": 29,
+        "name": "Space"
+      },
+      {
+        "id": 48,
+        "name": "Workplace"
+      }
+    ],
+    "year": 2003,
+    "popularity": 1006,
+    "members": 287215,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/329",
+    "retrievedAt": "2026-11-16T03:13:31.585Z"
+  },
+  "338": {
+    "malId": 338,
+    "title": "Versailles no Bara",
+    "genres": [
+      {
+        "id": 8,
+        "name": "Drama"
+      },
+      {
+        "id": 22,
+        "name": "Romance"
+      }
+    ],
+    "themes": [
+      {
+        "id": 81,
+        "name": "Crossdressing"
+      },
+      {
+        "id": 13,
+        "name": "Historical"
+      },
+      {
+        "id": 38,
+        "name": "Military"
+      }
+    ],
+    "year": 1979,
+    "popularity": 2194,
+    "members": 118369,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/338",
+    "retrievedAt": "2026-11-16T03:13:18.986Z"
+  },
+  "339": {
+    "malId": 339,
+    "title": "Serial Experiments Lain",
+    "genres": [
+      {
+        "id": 5,
+        "name": "Avant Garde"
+      },
+      {
+        "id": 46,
+        "name": "Award Winning"
+      },
+      {
+        "id": 8,
+        "name": "Drama"
+      },
+      {
+        "id": 7,
+        "name": "Mystery"
+      },
+      {
+        "id": 24,
+        "name": "Sci-Fi"
+      },
+      {
+        "id": 37,
+        "name": "Supernatural"
+      },
+      {
+        "id": 41,
+        "name": "Suspense"
+      }
+    ],
+    "themes": [
+      {
+        "id": 40,
+        "name": "Psychological"
+      }
+    ],
+    "year": 1998,
+    "popularity": 227,
+    "members": 931138,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/339",
+    "retrievedAt": "2026-11-16T03:10:56.890Z"
+  },
+  "355": {
+    "malId": 355,
+    "title": "Shakugan no Shana",
+    "genres": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 8,
+        "name": "Drama"
+      },
+      {
+        "id": 22,
+        "name": "Romance"
+      },
+      {
+        "id": 37,
+        "name": "Supernatural"
+      }
+    ],
+    "themes": [
+      {
+        "id": 23,
+        "name": "School"
+      }
+    ],
+    "year": 2005,
+    "popularity": 464,
+    "members": 564297,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/355",
+    "retrievedAt": "2026-11-16T03:10:58.651Z"
+  },
+  "387": {
+    "malId": 387,
+    "title": "Haibane Renmei",
+    "genres": [
+      {
+        "id": 8,
+        "name": "Drama"
+      },
+      {
+        "id": 10,
+        "name": "Fantasy"
+      },
+      {
+        "id": 7,
+        "name": "Mystery"
+      }
+    ],
+    "themes": [
+      {
+        "id": 40,
+        "name": "Psychological"
+      }
+    ],
+    "year": 2002,
+    "popularity": 824,
+    "members": 350372,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/387",
+    "retrievedAt": "2026-11-16T03:11:00.474Z"
+  },
+  "392": {
+    "malId": 392,
+    "title": "Yuu☆Yuu☆Hakusho",
+    "genres": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 37,
+        "name": "Supernatural"
+      }
+    ],
+    "themes": [
+      {
+        "id": 17,
+        "name": "Martial Arts"
+      },
+      {
+        "id": 6,
+        "name": "Mythology"
+      }
+    ],
+    "year": 1992,
+    "popularity": 309,
+    "members": 767008,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/392",
+    "retrievedAt": "2026-11-16T03:10:09.677Z"
+  },
+  "431": {
+    "malId": 431,
+    "title": "Howl no Ugoku Shiro",
+    "genres": [
+      {
+        "id": 2,
+        "name": "Adventure"
+      },
+      {
+        "id": 46,
+        "name": "Award Winning"
+      },
+      {
+        "id": 8,
+        "name": "Drama"
+      },
+      {
+        "id": 10,
+        "name": "Fantasy"
+      },
+      {
+        "id": 22,
+        "name": "Romance"
+      }
+    ],
+    "themes": [],
+    "year": 2004,
+    "popularity": 98,
+    "members": 1521039,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/431",
+    "retrievedAt": "2026-11-16T03:11:02.191Z"
+  },
+  "440": {
+    "malId": 440,
+    "title": "Shoujo Kakumei Utena",
+    "genres": [
+      {
+        "id": 46,
+        "name": "Award Winning"
+      },
+      {
+        "id": 8,
+        "name": "Drama"
+      }
+    ],
+    "themes": [
+      {
+        "id": 66,
+        "name": "Mahou Shoujo"
+      },
+      {
+        "id": 40,
+        "name": "Psychological"
+      },
+      {
+        "id": 23,
+        "name": "School"
+      }
+    ],
+    "year": 1997,
+    "popularity": 1147,
+    "members": 255822,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/440",
+    "retrievedAt": "2026-11-16T03:09:58.806Z"
+  },
+  "457": {
+    "malId": 457,
+    "title": "Mushishi",
+    "genres": [
+      {
+        "id": 2,
+        "name": "Adventure"
+      },
+      {
+        "id": 7,
+        "name": "Mystery"
+      },
+      {
+        "id": 36,
+        "name": "Slice of Life"
+      },
+      {
+        "id": 37,
+        "name": "Supernatural"
+      }
+    ],
+    "themes": [
+      {
+        "id": 50,
+        "name": "Adult Cast"
+      },
+      {
+        "id": 13,
+        "name": "Historical"
+      },
+      {
+        "id": 63,
+        "name": "Iyashikei"
+      }
+    ],
+    "year": 2005,
+    "popularity": 230,
+    "members": 922880,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/457",
+    "retrievedAt": "2026-11-16T03:09:51.709Z"
+  },
+  "467": {
+    "malId": 467,
+    "title": "Koukaku Kidoutai: Stand Alone Complex",
+    "genres": [
+      {
+        "id": 46,
+        "name": "Award Winning"
+      },
+      {
+        "id": 7,
+        "name": "Mystery"
+      },
+      {
+        "id": 24,
+        "name": "Sci-Fi"
+      }
+    ],
+    "themes": [
+      {
+        "id": 50,
+        "name": "Adult Cast"
+      },
+      {
+        "id": 39,
+        "name": "Detective"
+      },
+      {
+        "id": 18,
+        "name": "Mecha"
+      },
+      {
+        "id": 38,
+        "name": "Military"
+      }
+    ],
+    "year": 2002,
+    "popularity": 642,
+    "members": 432040,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/467",
+    "retrievedAt": "2026-11-16T03:11:03.961Z"
+  },
+  "477": {
+    "malId": 477,
+    "title": "Aria the Animation",
+    "genres": [
+      {
+        "id": 24,
+        "name": "Sci-Fi"
+      },
+      {
+        "id": 36,
+        "name": "Slice of Life"
+      }
+    ],
+    "themes": [
+      {
+        "id": 63,
+        "name": "Iyashikei"
+      }
+    ],
+    "year": 2005,
+    "popularity": 1568,
+    "members": 181786,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/477",
+    "retrievedAt": "2026-11-16T03:13:35.161Z"
+  },
+  "486": {
+    "malId": 486,
+    "title": "Kino no Tabi: The Beautiful World",
+    "genres": [
+      {
+        "id": 2,
+        "name": "Adventure"
+      },
+      {
+        "id": 8,
+        "name": "Drama"
+      },
+      {
+        "id": 10,
+        "name": "Fantasy"
+      }
+    ],
+    "themes": [],
+    "year": 2003,
+    "popularity": 777,
+    "members": 364487,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/486",
+    "retrievedAt": "2026-11-16T03:13:33.448Z"
+  },
+  "489": {
+    "malId": 489,
+    "title": "Kamichu!",
+    "genres": [
+      {
+        "id": 46,
+        "name": "Award Winning"
+      },
+      {
+        "id": 36,
+        "name": "Slice of Life"
+      },
+      {
+        "id": 37,
+        "name": "Supernatural"
+      }
+    ],
+    "themes": [
+      {
+        "id": 63,
+        "name": "Iyashikei"
+      },
+      {
+        "id": 6,
+        "name": "Mythology"
+      },
+      {
+        "id": 23,
+        "name": "School"
+      }
+    ],
+    "year": 2005,
+    "popularity": 3086,
+    "members": 69964,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/489",
+    "retrievedAt": "2026-11-16T03:13:36.962Z"
+  },
+  "512": {
+    "malId": 512,
+    "title": "Majo no Takkyuubin",
+    "genres": [
+      {
+        "id": 2,
+        "name": "Adventure"
+      },
+      {
+        "id": 46,
+        "name": "Award Winning"
+      },
+      {
+        "id": 4,
+        "name": "Comedy"
+      },
+      {
+        "id": 8,
+        "name": "Drama"
+      },
+      {
+        "id": 10,
+        "name": "Fantasy"
+      }
+    ],
+    "themes": [],
+    "year": 1989,
+    "popularity": 366,
+    "members": 679988,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/512",
+    "retrievedAt": "2026-11-16T03:11:05.812Z"
+  },
+  "523": {
+    "malId": 523,
+    "title": "Tonari no Totoro",
+    "genres": [
+      {
+        "id": 2,
+        "name": "Adventure"
+      },
+      {
+        "id": 46,
+        "name": "Award Winning"
+      },
+      {
+        "id": 37,
+        "name": "Supernatural"
+      }
+    ],
+    "themes": [],
+    "year": 1988,
+    "popularity": 146,
+    "members": 1185387,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/523",
+    "retrievedAt": "2026-11-16T03:10:11.599Z"
+  },
+  "570": {
+    "malId": 570,
+    "title": "Jin-Rou",
+    "genres": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 46,
+        "name": "Award Winning"
+      },
+      {
+        "id": 8,
+        "name": "Drama"
+      },
+      {
+        "id": 22,
+        "name": "Romance"
+      },
+      {
+        "id": 41,
+        "name": "Suspense"
+      }
+    ],
+    "themes": [
+      {
+        "id": 50,
+        "name": "Adult Cast"
+      },
+      {
+        "id": 38,
+        "name": "Military"
+      },
+      {
+        "id": 40,
+        "name": "Psychological"
+      }
+    ],
+    "year": 2000,
+    "popularity": 1370,
+    "members": 211203,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/570",
+    "retrievedAt": "2026-11-16T03:11:07.590Z"
+  },
+  "578": {
+    "malId": 578,
+    "title": "Hotaru no Haka",
+    "genres": [
+      {
+        "id": 8,
+        "name": "Drama"
+      }
+    ],
+    "themes": [
+      {
+        "id": 13,
+        "name": "Historical"
+      }
+    ],
+    "year": 1988,
+    "popularity": 301,
+    "members": 787326,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/578",
+    "retrievedAt": "2026-11-16T03:11:09.380Z"
+  },
+  "601": {
+    "malId": 601,
+    "title": "Nekojiru-sou",
+    "genres": [
+      {
+        "id": 5,
+        "name": "Avant Garde"
+      },
+      {
+        "id": 46,
+        "name": "Award Winning"
+      },
+      {
+        "id": 4,
+        "name": "Comedy"
+      }
+    ],
+    "themes": [
+      {
+        "id": 51,
+        "name": "Anthropomorphic"
+      },
+      {
+        "id": 40,
+        "name": "Psychological"
+      }
+    ],
+    "year": 2001,
+    "popularity": 2637,
+    "members": 90344,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/601",
+    "retrievedAt": "2026-11-16T03:11:11.144Z"
+  },
+  "790": {
+    "malId": 790,
+    "title": "Ergo Proxy",
+    "genres": [
+      {
+        "id": 7,
+        "name": "Mystery"
+      },
+      {
+        "id": 24,
+        "name": "Sci-Fi"
+      },
+      {
+        "id": 41,
+        "name": "Suspense"
+      }
+    ],
+    "themes": [
+      {
+        "id": 50,
+        "name": "Adult Cast"
+      },
+      {
+        "id": 40,
+        "name": "Psychological"
+      }
+    ],
+    "year": 2006,
+    "popularity": 328,
+    "members": 732631,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/790",
+    "retrievedAt": "2026-11-16T03:10:13.299Z"
+  },
+  "853": {
+    "malId": 853,
+    "title": "Ouran Koukou Host Club",
+    "genres": [
+      {
+        "id": 4,
+        "name": "Comedy"
+      },
+      {
+        "id": 22,
+        "name": "Romance"
+      }
+    ],
+    "themes": [
+      {
+        "id": 81,
+        "name": "Crossdressing"
+      },
+      {
+        "id": 73,
+        "name": "Reverse Harem"
+      },
+      {
+        "id": 23,
+        "name": "School"
+      }
+    ],
+    "year": 2006,
+    "popularity": 136,
+    "members": 1253444,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/853",
+    "retrievedAt": "2026-11-16T03:09:55.319Z"
+  },
+  "877": {
+    "malId": 877,
+    "title": "Nana",
+    "genres": [
+      {
+        "id": 8,
+        "name": "Drama"
+      },
+      {
+        "id": 22,
+        "name": "Romance"
+      }
+    ],
+    "themes": [
+      {
+        "id": 50,
+        "name": "Adult Cast"
+      },
+      {
+        "id": 64,
+        "name": "Love Polygon"
+      },
+      {
+        "id": 19,
+        "name": "Music"
+      }
+    ],
+    "year": 2006,
+    "popularity": 295,
+    "members": 807527,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/877",
+    "retrievedAt": "2026-11-16T03:10:15.078Z"
+  },
+  "885": {
+    "malId": 885,
+    "title": "Tenshi no Tamago",
+    "genres": [
+      {
+        "id": 5,
+        "name": "Avant Garde"
+      },
+      {
+        "id": 8,
+        "name": "Drama"
+      },
+      {
+        "id": 10,
+        "name": "Fantasy"
+      }
+    ],
+    "themes": [],
+    "year": 1985,
+    "popularity": 1479,
+    "members": 193393,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/885",
+    "retrievedAt": "2026-11-16T03:13:24.438Z"
+  },
+  "918": {
+    "malId": 918,
+    "title": "Gintama",
+    "genres": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 4,
+        "name": "Comedy"
+      },
+      {
+        "id": 24,
+        "name": "Sci-Fi"
+      }
+    ],
+    "themes": [
+      {
+        "id": 57,
+        "name": "Gag Humor"
+      },
+      {
+        "id": 13,
+        "name": "Historical"
+      },
+      {
+        "id": 20,
+        "name": "Parody"
+      },
+      {
+        "id": 21,
+        "name": "Samurai"
+      }
+    ],
+    "year": 2006,
+    "popularity": 148,
+    "members": 1175310,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/918",
+    "retrievedAt": "2026-11-16T03:11:12.861Z"
+  },
+  "934": {
+    "malId": 934,
+    "title": "Higurashi no Naku Koro ni",
+    "genres": [
+      {
+        "id": 14,
+        "name": "Horror"
+      },
+      {
+        "id": 7,
+        "name": "Mystery"
+      },
+      {
+        "id": 41,
+        "name": "Suspense"
+      }
+    ],
+    "themes": [
+      {
+        "id": 58,
+        "name": "Gore"
+      },
+      {
+        "id": 40,
+        "name": "Psychological"
+      }
+    ],
+    "year": 2006,
+    "popularity": 255,
+    "members": 870878,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/934",
+    "retrievedAt": "2026-11-16T03:11:14.832Z"
+  },
+  "975": {
+    "malId": 975,
+    "title": "Yokohama Kaidashi Kikou",
+    "genres": [
+      {
+        "id": 24,
+        "name": "Sci-Fi"
+      },
+      {
+        "id": 36,
+        "name": "Slice of Life"
+      }
+    ],
+    "themes": [
+      {
+        "id": 63,
+        "name": "Iyashikei"
+      }
+    ],
+    "year": 1998,
+    "popularity": 3742,
+    "members": 49627,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/975",
+    "retrievedAt": "2026-11-16T03:13:20.870Z"
+  },
+  "1000": {
+    "malId": 1000,
+    "title": "Uchuu Kaizoku Captain Herlock",
+    "genres": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 2,
+        "name": "Adventure"
+      },
+      {
+        "id": 8,
+        "name": "Drama"
+      },
+      {
+        "id": 24,
+        "name": "Sci-Fi"
+      }
+    ],
+    "themes": [
+      {
+        "id": 29,
+        "name": "Space"
+      }
+    ],
+    "year": 1978,
+    "popularity": 4003,
+    "members": 44451,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/1000",
+    "retrievedAt": "2026-11-16T03:10:18.622Z"
+  },
+  "1210": {
+    "malId": 1210,
+    "title": "NHK ni Youkoso!",
+    "genres": [
+      {
+        "id": 4,
+        "name": "Comedy"
+      },
+      {
+        "id": 8,
+        "name": "Drama"
+      },
+      {
+        "id": 22,
+        "name": "Romance"
+      }
+    ],
+    "themes": [
+      {
+        "id": 40,
+        "name": "Psychological"
+      }
+    ],
+    "year": 2006,
+    "popularity": 261,
+    "members": 860693,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/1210",
+    "retrievedAt": "2026-11-16T03:11:16.655Z"
+  },
+  "1441": {
+    "malId": 1441,
+    "title": "Ginga Tetsudou no Yoru",
+    "genres": [
+      {
+        "id": 46,
+        "name": "Award Winning"
+      },
+      {
+        "id": 8,
+        "name": "Drama"
+      },
+      {
+        "id": 10,
+        "name": "Fantasy"
+      },
+      {
+        "id": 7,
+        "name": "Mystery"
+      }
+    ],
+    "themes": [
+      {
+        "id": 51,
+        "name": "Anthropomorphic"
+      },
+      {
+        "id": 40,
+        "name": "Psychological"
+      }
+    ],
+    "year": 1985,
+    "popularity": 4713,
+    "members": 31425,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/1441",
+    "retrievedAt": "2026-11-16T03:13:22.629Z"
+  },
+  "1454": {
+    "malId": 1454,
+    "title": "Kemonozume",
+    "genres": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 5,
+        "name": "Avant Garde"
+      },
+      {
+        "id": 14,
+        "name": "Horror"
+      },
+      {
+        "id": 22,
+        "name": "Romance"
+      },
+      {
+        "id": 37,
+        "name": "Supernatural"
+      }
+    ],
+    "themes": [
+      {
+        "id": 50,
+        "name": "Adult Cast"
+      },
+      {
+        "id": 58,
+        "name": "Gore"
+      },
+      {
+        "id": 6,
+        "name": "Mythology"
+      }
+    ],
+    "year": 2006,
+    "popularity": 2756,
+    "members": 84468,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/1454",
+    "retrievedAt": "2026-11-16T03:13:38.748Z"
+  },
+  "1524": {
+    "malId": 1524,
+    "title": "Fuujin Monogatari",
+    "genres": [
+      {
+        "id": 36,
+        "name": "Slice of Life"
+      },
+      {
+        "id": 37,
+        "name": "Supernatural"
+      }
+    ],
+    "themes": [
+      {
+        "id": 63,
+        "name": "Iyashikei"
+      },
+      {
+        "id": 23,
+        "name": "School"
+      }
+    ],
+    "year": 2004,
+    "popularity": 5401,
+    "members": 22731,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/1524",
+    "retrievedAt": "2026-11-16T03:13:26.183Z"
+  },
+  "1535": {
+    "malId": 1535,
+    "title": "Death Note",
+    "genres": [
+      {
+        "id": 37,
+        "name": "Supernatural"
+      },
+      {
+        "id": 41,
+        "name": "Suspense"
+      }
+    ],
+    "themes": [
+      {
+        "id": 40,
+        "name": "Psychological"
+      }
+    ],
+    "year": 2006,
+    "popularity": 2,
+    "members": 4391461,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/1535",
+    "retrievedAt": "2026-11-16T03:11:18.433Z"
+  },
+  "1572": {
+    "malId": 1572,
+    "title": "Jungle Taitei",
+    "genres": [
+      {
+        "id": 2,
+        "name": "Adventure"
+      }
+    ],
+    "themes": [],
+    "year": 1965,
+    "popularity": 7713,
+    "members": 9276,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/1572",
+    "retrievedAt": "2026-11-16T03:13:15.366Z"
+  },
+  "1575": {
+    "malId": 1575,
+    "title": "Code Geass: Hangyaku no Lelouch",
+    "genres": [
+      {
+        "id": 46,
+        "name": "Award Winning"
+      },
+      {
+        "id": 8,
+        "name": "Drama"
+      },
+      {
+        "id": 24,
+        "name": "Sci-Fi"
+      }
+    ],
+    "themes": [
+      {
+        "id": 18,
+        "name": "Mecha"
+      },
+      {
+        "id": 38,
+        "name": "Military"
+      },
+      {
+        "id": 23,
+        "name": "School"
+      },
+      {
+        "id": 31,
+        "name": "Super Power"
+      }
+    ],
+    "year": 2006,
+    "popularity": 23,
+    "members": 2525782,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/1575",
+    "retrievedAt": "2026-11-16T03:11:20.313Z"
+  },
+  "1698": {
+    "malId": 1698,
+    "title": "Nodame Cantabile",
+    "genres": [
+      {
+        "id": 4,
+        "name": "Comedy"
+      },
+      {
+        "id": 22,
+        "name": "Romance"
+      }
+    ],
+    "themes": [
+      {
+        "id": 50,
+        "name": "Adult Cast"
+      },
+      {
+        "id": 19,
+        "name": "Music"
+      },
+      {
+        "id": 70,
+        "name": "Performing Arts"
+      }
+    ],
+    "year": 2007,
+    "popularity": 865,
+    "members": 335668,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/1698",
+    "retrievedAt": "2026-11-16T03:11:22.146Z"
+  },
+  "2001": {
+    "malId": 2001,
+    "title": "Tengen Toppa Gurren Lagann",
+    "genres": [
+      {
+        "id": 2,
+        "name": "Adventure"
+      },
+      {
+        "id": 46,
+        "name": "Award Winning"
+      },
+      {
+        "id": 24,
+        "name": "Sci-Fi"
+      }
+    ],
+    "themes": [
+      {
+        "id": 18,
+        "name": "Mecha"
+      }
+    ],
+    "year": 2007,
+    "popularity": 66,
+    "members": 1804796,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/2001",
+    "retrievedAt": "2026-11-16T03:11:24.392Z"
+  },
+  "2164": {
+    "malId": 2164,
+    "title": "Dennou Coil",
+    "genres": [
+      {
+        "id": 2,
+        "name": "Adventure"
+      },
+      {
+        "id": 46,
+        "name": "Award Winning"
+      },
+      {
+        "id": 8,
+        "name": "Drama"
+      },
+      {
+        "id": 7,
+        "name": "Mystery"
+      },
+      {
+        "id": 24,
+        "name": "Sci-Fi"
+      }
+    ],
+    "themes": [],
+    "year": 2007,
+    "popularity": 1710,
+    "members": 162265,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/2164",
+    "retrievedAt": "2026-11-16T03:13:29.786Z"
+  },
+  "2167": {
+    "malId": 2167,
+    "title": "Clannad",
+    "genres": [
+      {
+        "id": 8,
+        "name": "Drama"
+      },
+      {
+        "id": 22,
+        "name": "Romance"
+      }
+    ],
+    "themes": [
+      {
+        "id": 23,
+        "name": "School"
+      }
+    ],
+    "year": 2007,
+    "popularity": 96,
+    "members": 1535990,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/2167",
+    "retrievedAt": "2026-11-16T03:11:26.219Z"
+  },
+  "2251": {
+    "malId": 2251,
+    "title": "Baccano!",
+    "genres": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 7,
+        "name": "Mystery"
+      },
+      {
+        "id": 37,
+        "name": "Supernatural"
+      }
+    ],
+    "themes": [
+      {
+        "id": 50,
+        "name": "Adult Cast"
+      },
+      {
+        "id": 13,
+        "name": "Historical"
+      },
+      {
+        "id": 68,
+        "name": "Organized Crime"
+      }
+    ],
+    "year": 2007,
+    "popularity": 210,
+    "members": 969625,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/2251",
+    "retrievedAt": "2026-11-16T03:11:28.056Z"
+  },
+  "2747": {
+    "malId": 2747,
+    "title": "Tetsuwan Atom",
+    "genres": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 2,
+        "name": "Adventure"
+      },
+      {
+        "id": 8,
+        "name": "Drama"
+      },
+      {
+        "id": 24,
+        "name": "Sci-Fi"
+      }
+    ],
+    "themes": [],
+    "year": 1963,
+    "popularity": 6309,
+    "members": 15069,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/2747",
+    "retrievedAt": "2026-11-16T03:13:13.451Z"
+  },
+  "2890": {
+    "malId": 2890,
+    "title": "Gake no Ue no Ponyo",
+    "genres": [
+      {
+        "id": 2,
+        "name": "Adventure"
+      },
+      {
+        "id": 46,
+        "name": "Award Winning"
+      },
+      {
+        "id": 10,
+        "name": "Fantasy"
+      }
+    ],
+    "themes": [],
+    "year": 2008,
+    "popularity": 374,
+    "members": 670247,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/2890",
+    "retrievedAt": "2026-11-16T03:10:20.404Z"
+  },
+  "2966": {
+    "malId": 2966,
+    "title": "Ookami to Koushinryou",
+    "genres": [
+      {
+        "id": 2,
+        "name": "Adventure"
+      },
+      {
+        "id": 8,
+        "name": "Drama"
+      },
+      {
+        "id": 22,
+        "name": "Romance"
+      },
+      {
+        "id": 37,
+        "name": "Supernatural"
+      }
+    ],
+    "themes": [
+      {
+        "id": 50,
+        "name": "Adult Cast"
+      }
+    ],
+    "year": 2008,
+    "popularity": 250,
+    "members": 882345,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/2966",
+    "retrievedAt": "2026-11-16T03:11:29.978Z"
+  },
+  "3588": {
+    "malId": 3588,
+    "title": "Soul Eater",
+    "genres": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 4,
+        "name": "Comedy"
+      },
+      {
+        "id": 10,
+        "name": "Fantasy"
+      }
+    ],
+    "themes": [
+      {
+        "id": 23,
+        "name": "School"
+      }
+    ],
+    "year": 2008,
+    "popularity": 65,
+    "members": 1805354,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/3588",
+    "retrievedAt": "2026-11-16T03:11:31.713Z"
+  },
+  "3652": {
+    "malId": 3652,
+    "title": "Higurashi no Naku Koro ni Rei",
+    "genres": [
+      {
+        "id": 14,
+        "name": "Horror"
+      },
+      {
+        "id": 7,
+        "name": "Mystery"
+      },
+      {
+        "id": 41,
+        "name": "Suspense"
+      }
+    ],
+    "themes": [
+      {
+        "id": 58,
+        "name": "Gore"
+      },
+      {
+        "id": 40,
+        "name": "Psychological"
+      }
+    ],
+    "year": 2009,
+    "popularity": 1375,
+    "members": 209457,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/3652",
+    "retrievedAt": "2026-11-16T03:11:33.603Z"
+  },
+  "3701": {
+    "malId": 3701,
+    "title": "Kaiba",
+    "genres": [
+      {
+        "id": 2,
+        "name": "Adventure"
+      },
+      {
+        "id": 5,
+        "name": "Avant Garde"
+      },
+      {
+        "id": 46,
+        "name": "Award Winning"
+      },
+      {
+        "id": 7,
+        "name": "Mystery"
+      },
+      {
+        "id": 22,
+        "name": "Romance"
+      },
+      {
+        "id": 24,
+        "name": "Sci-Fi"
+      }
+    ],
+    "themes": [
+      {
+        "id": 40,
+        "name": "Psychological"
+      }
+    ],
+    "year": 2008,
+    "popularity": 1530,
+    "members": 185753,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/3701",
+    "retrievedAt": "2026-11-16T03:13:27.974Z"
+  },
+  "4081": {
+    "malId": 4081,
+    "title": "Natsume Yuujinchou",
+    "genres": [
+      {
+        "id": 36,
+        "name": "Slice of Life"
+      },
+      {
+        "id": 37,
+        "name": "Supernatural"
+      }
+    ],
+    "themes": [
+      {
+        "id": 63,
+        "name": "Iyashikei"
+      },
+      {
+        "id": 6,
+        "name": "Mythology"
+      }
+    ],
+    "year": 2008,
+    "popularity": 433,
+    "members": 597026,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/4081",
+    "retrievedAt": "2026-11-16T03:10:16.818Z"
+  },
+  "4224": {
+    "malId": 4224,
+    "title": "Toradora!",
+    "genres": [
+      {
+        "id": 8,
+        "name": "Drama"
+      },
+      {
+        "id": 22,
+        "name": "Romance"
+      }
+    ],
+    "themes": [
+      {
+        "id": 64,
+        "name": "Love Polygon"
+      },
+      {
+        "id": 23,
+        "name": "School"
+      }
+    ],
+    "year": 2008,
+    "popularity": 26,
+    "members": 2402956,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/4224",
+    "retrievedAt": "2026-11-16T03:11:35.382Z"
+  },
+  "5081": {
+    "malId": 5081,
+    "title": "Bakemonogatari",
+    "genres": [
+      {
+        "id": 7,
+        "name": "Mystery"
+      },
+      {
+        "id": 22,
+        "name": "Romance"
+      },
+      {
+        "id": 37,
+        "name": "Supernatural"
+      }
+    ],
+    "themes": [
+      {
+        "id": 32,
+        "name": "Vampire"
+      }
+    ],
+    "year": 2009,
+    "popularity": 99,
+    "members": 1513238,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/5081",
+    "retrievedAt": "2026-11-16T03:11:37.157Z"
+  },
+  "5680": {
+    "malId": 5680,
+    "title": "K-On!",
+    "genres": [
+      {
+        "id": 4,
+        "name": "Comedy"
+      }
+    ],
+    "themes": [
+      {
+        "id": 52,
+        "name": "CGDCT"
+      },
+      {
+        "id": 19,
+        "name": "Music"
+      },
+      {
+        "id": 23,
+        "name": "School"
+      }
+    ],
+    "year": 2009,
+    "popularity": 161,
+    "members": 1150301,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/5680",
+    "retrievedAt": "2026-11-16T03:10:00.559Z"
+  },
+  "6213": {
+    "malId": 6213,
+    "title": "Toaru Kagaku no Railgun",
+    "genres": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 10,
+        "name": "Fantasy"
+      },
+      {
+        "id": 24,
+        "name": "Sci-Fi"
+      }
+    ],
+    "themes": [
+      {
+        "id": 31,
+        "name": "Super Power"
+      },
+      {
+        "id": 82,
+        "name": "Urban Fantasy"
+      }
+    ],
+    "year": 2009,
+    "popularity": 383,
+    "members": 656771,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/6213",
+    "retrievedAt": "2026-11-16T03:11:38.846Z"
+  },
+  "6547": {
+    "malId": 6547,
+    "title": "Angel Beats!",
+    "genres": [
+      {
+        "id": 8,
+        "name": "Drama"
+      },
+      {
+        "id": 10,
+        "name": "Fantasy"
+      }
+    ],
+    "themes": [
+      {
+        "id": 23,
+        "name": "School"
+      }
+    ],
+    "year": 2010,
+    "popularity": 35,
+    "members": 2230330,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/6547",
+    "retrievedAt": "2026-11-16T03:11:40.817Z"
+  },
+  "6746": {
+    "malId": 6746,
+    "title": "Durarara!!",
+    "genres": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 7,
+        "name": "Mystery"
+      },
+      {
+        "id": 37,
+        "name": "Supernatural"
+      }
+    ],
+    "themes": [],
+    "year": 2010,
+    "popularity": 100,
+    "members": 1509478,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/6746",
+    "retrievedAt": "2026-11-16T03:11:42.606Z"
+  },
+  "7785": {
+    "malId": 7785,
+    "title": "Yojouhan Shinwa Taikei",
+    "genres": [
+      {
+        "id": 46,
+        "name": "Award Winning"
+      },
+      {
+        "id": 4,
+        "name": "Comedy"
+      },
+      {
+        "id": 7,
+        "name": "Mystery"
+      },
+      {
+        "id": 22,
+        "name": "Romance"
+      },
+      {
+        "id": 41,
+        "name": "Suspense"
+      }
+    ],
+    "themes": [
+      {
+        "id": 50,
+        "name": "Adult Cast"
+      },
+      {
+        "id": 40,
+        "name": "Psychological"
+      },
+      {
+        "id": 78,
+        "name": "Time Travel"
+      }
+    ],
+    "year": 2010,
+    "popularity": 531,
+    "members": 506433,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/7785",
+    "retrievedAt": "2026-11-16T03:11:44.453Z"
+  },
+  "9756": {
+    "malId": 9756,
+    "title": "Mahou Shoujo Madoka☆Magica",
+    "genres": [
+      {
+        "id": 46,
+        "name": "Award Winning"
+      },
+      {
+        "id": 8,
+        "name": "Drama"
+      },
+      {
+        "id": 41,
+        "name": "Suspense"
+      }
+    ],
+    "themes": [
+      {
+        "id": 66,
+        "name": "Mahou Shoujo"
+      },
+      {
+        "id": 40,
+        "name": "Psychological"
+      }
+    ],
+    "year": 2011,
+    "popularity": 106,
+    "members": 1443892,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/9756",
+    "retrievedAt": "2026-11-16T03:11:46.223Z"
+  },
+  "9919": {
+    "malId": 9919,
+    "title": "Ao no Exorcist",
+    "genres": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 37,
+        "name": "Supernatural"
+      }
+    ],
+    "themes": [
+      {
+        "id": 6,
+        "name": "Mythology"
+      },
+      {
+        "id": 23,
+        "name": "School"
+      }
+    ],
+    "year": 2011,
+    "popularity": 43,
+    "members": 2077366,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/9919",
+    "retrievedAt": "2026-11-16T03:11:47.916Z"
+  },
+  "10165": {
+    "malId": 10165,
+    "title": "Nichijou",
+    "genres": [
+      {
+        "id": 4,
+        "name": "Comedy"
+      }
+    ],
+    "themes": [
+      {
+        "id": 57,
+        "name": "Gag Humor"
+      },
+      {
+        "id": 23,
+        "name": "School"
+      }
+    ],
+    "year": 2011,
+    "popularity": 200,
+    "members": 1000767,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/10165",
+    "retrievedAt": "2026-11-16T03:11:49.804Z"
+  },
+  "11061": {
+    "malId": 11061,
+    "title": "Hunter x Hunter (2011)",
+    "genres": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 2,
+        "name": "Adventure"
+      },
+      {
+        "id": 10,
+        "name": "Fantasy"
+      }
+    ],
+    "themes": [],
+    "year": 2011,
+    "popularity": 8,
+    "members": 3263103,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/11061",
+    "retrievedAt": "2026-11-16T03:11:51.767Z"
+  },
+  "12355": {
+    "malId": 12355,
+    "title": "Ookami Kodomo no Ame to Yuki",
+    "genres": [
+      {
+        "id": 46,
+        "name": "Award Winning"
+      },
+      {
+        "id": 36,
+        "name": "Slice of Life"
+      },
+      {
+        "id": 37,
+        "name": "Supernatural"
+      }
+    ],
+    "themes": [
+      {
+        "id": 53,
+        "name": "Childcare"
+      }
+    ],
+    "year": 2012,
+    "popularity": 252,
+    "members": 879177,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/12355",
+    "retrievedAt": "2026-11-16T03:09:57.068Z"
+  },
+  "16498": {
+    "malId": 16498,
+    "title": "Shingeki no Kyojin",
+    "genres": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 46,
+        "name": "Award Winning"
+      },
+      {
+        "id": 8,
+        "name": "Drama"
+      },
+      {
+        "id": 41,
+        "name": "Suspense"
+      }
+    ],
+    "themes": [
+      {
+        "id": 58,
+        "name": "Gore"
+      },
+      {
+        "id": 38,
+        "name": "Military"
+      },
+      {
+        "id": 76,
+        "name": "Survival"
+      }
+    ],
+    "year": 2013,
+    "popularity": 1,
+    "members": 4454331,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/16498",
+    "retrievedAt": "2026-11-16T03:13:53.523Z"
+  },
+  "20057": {
+    "malId": 20057,
+    "title": "Space☆Dandy",
+    "genres": [
+      {
+        "id": 4,
+        "name": "Comedy"
+      },
+      {
+        "id": 24,
+        "name": "Sci-Fi"
+      }
+    ],
+    "themes": [
+      {
+        "id": 50,
+        "name": "Adult Cast"
+      },
+      {
+        "id": 29,
+        "name": "Space"
+      }
+    ],
+    "year": 2014,
+    "popularity": 709,
+    "members": 397723,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/20057",
+    "retrievedAt": "2026-11-16T03:13:42.246Z"
+  },
+  "20583": {
+    "malId": 20583,
+    "title": "Haikyuu!!",
+    "genres": [
+      {
+        "id": 30,
+        "name": "Sports"
+      }
+    ],
+    "themes": [
+      {
+        "id": 23,
+        "name": "School"
+      },
+      {
+        "id": 77,
+        "name": "Team Sports"
+      }
+    ],
+    "year": 2014,
+    "popularity": 36,
+    "members": 2214848,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/20583",
+    "retrievedAt": "2026-11-16T03:13:55.409Z"
+  },
+  "22135": {
+    "malId": 22135,
+    "title": "Ping Pong the Animation",
+    "genres": [
+      {
+        "id": 46,
+        "name": "Award Winning"
+      },
+      {
+        "id": 8,
+        "name": "Drama"
+      },
+      {
+        "id": 30,
+        "name": "Sports"
+      }
+    ],
+    "themes": [],
+    "year": 2014,
+    "popularity": 607,
+    "members": 450430,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/22135",
+    "retrievedAt": "2026-11-16T03:13:40.467Z"
+  },
+  "30276": {
+    "malId": 30276,
+    "title": "One Punch Man",
+    "genres": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 4,
+        "name": "Comedy"
+      }
+    ],
+    "themes": [
+      {
+        "id": 50,
+        "name": "Adult Cast"
+      },
+      {
+        "id": 20,
+        "name": "Parody"
+      },
+      {
+        "id": 31,
+        "name": "Super Power"
+      }
+    ],
+    "year": 2015,
+    "popularity": 4,
+    "members": 3575402,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/30276",
+    "retrievedAt": "2026-11-16T03:13:45.908Z"
+  },
+  "31240": {
+    "malId": 31240,
+    "title": "Re:Zero kara Hajimeru Isekai Seikatsu",
+    "genres": [
+      {
+        "id": 8,
+        "name": "Drama"
+      },
+      {
+        "id": 10,
+        "name": "Fantasy"
+      },
+      {
+        "id": 41,
+        "name": "Suspense"
+      }
+    ],
+    "themes": [
+      {
+        "id": 62,
+        "name": "Isekai"
+      },
+      {
+        "id": 40,
+        "name": "Psychological"
+      },
+      {
+        "id": 78,
+        "name": "Time Travel"
+      }
+    ],
+    "year": 2016,
+    "popularity": 22,
+    "members": 2528598,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/31240",
+    "retrievedAt": "2026-11-16T03:13:47.795Z"
+  },
+  "31964": {
+    "malId": 31964,
+    "title": "Boku no Hero Academia",
+    "genres": [
+      {
+        "id": 1,
+        "name": "Action"
+      }
+    ],
+    "themes": [
+      {
+        "id": 23,
+        "name": "School"
+      },
+      {
+        "id": 31,
+        "name": "Super Power"
+      }
+    ],
+    "year": 2016,
+    "popularity": 6,
+    "members": 3369150,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/31964",
+    "retrievedAt": "2026-11-16T03:13:57.278Z"
+  },
+  "32935": {
+    "malId": 32935,
+    "title": "Haikyuu!! Karasuno Koukou vs. Shiratorizawa Gakuen Koukou",
+    "genres": [
+      {
+        "id": 30,
+        "name": "Sports"
+      }
+    ],
+    "themes": [
+      {
+        "id": 23,
+        "name": "School"
+      },
+      {
+        "id": 77,
+        "name": "Team Sports"
+      }
+    ],
+    "year": 2016,
+    "popularity": 116,
+    "members": 1352951,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/32935",
+    "retrievedAt": "2026-11-16T03:10:04.093Z"
+  },
+  "37521": {
+    "malId": 37521,
+    "title": "Vinland Saga",
+    "genres": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 2,
+        "name": "Adventure"
+      },
+      {
+        "id": 8,
+        "name": "Drama"
+      }
+    ],
+    "themes": [
+      {
+        "id": 58,
+        "name": "Gore"
+      },
+      {
+        "id": 13,
+        "name": "Historical"
+      }
+    ],
+    "year": 2019,
+    "popularity": 59,
+    "members": 1887312,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/37521",
+    "retrievedAt": "2026-11-16T03:13:59.141Z"
+  },
+  "37779": {
+    "malId": 37779,
+    "title": "Yakusoku no Neverland",
+    "genres": [
+      {
+        "id": 7,
+        "name": "Mystery"
+      },
+      {
+        "id": 41,
+        "name": "Suspense"
+      }
+    ],
+    "themes": [
+      {
+        "id": 40,
+        "name": "Psychological"
+      },
+      {
+        "id": 76,
+        "name": "Survival"
+      }
+    ],
+    "year": 2019,
+    "popularity": 38,
+    "members": 2193134,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/37779",
+    "retrievedAt": "2026-11-16T03:14:01.006Z"
+  },
+  "39533": {
+    "malId": 39533,
+    "title": "Given",
+    "genres": [
+      {
+        "id": 28,
+        "name": "Boys Love"
+      },
+      {
+        "id": 8,
+        "name": "Drama"
+      }
+    ],
+    "themes": [
+      {
+        "id": 19,
+        "name": "Music"
+      },
+      {
+        "id": 23,
+        "name": "School"
+      }
+    ],
+    "year": 2019,
+    "popularity": 389,
+    "members": 651275,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/39533",
+    "retrievedAt": "2026-11-16T03:13:44.108Z"
+  },
+  "40028": {
+    "malId": 40028,
+    "title": "Shingeki no Kyojin: The Final Season",
+    "genres": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 8,
+        "name": "Drama"
+      },
+      {
+        "id": 41,
+        "name": "Suspense"
+      }
+    ],
+    "themes": [
+      {
+        "id": 58,
+        "name": "Gore"
+      },
+      {
+        "id": 38,
+        "name": "Military"
+      },
+      {
+        "id": 76,
+        "name": "Survival"
+      }
+    ],
+    "year": 2021,
+    "popularity": 28,
+    "members": 2352978,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/40028",
+    "retrievedAt": "2026-11-16T03:13:51.647Z"
+  },
+  "40839": {
+    "malId": 40839,
+    "title": "Kanojo, Okarishimasu",
+    "genres": [
+      {
+        "id": 4,
+        "name": "Comedy"
+      },
+      {
+        "id": 22,
+        "name": "Romance"
+      }
+    ],
+    "themes": [
+      {
+        "id": 50,
+        "name": "Adult Cast"
+      },
+      {
+        "id": 35,
+        "name": "Harem"
+      }
+    ],
+    "year": 2020,
+    "popularity": 170,
+    "members": 1109006,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/40839",
+    "retrievedAt": "2026-11-16T03:14:02.792Z"
+  },
+  "52991": {
+    "malId": 52991,
+    "title": "Sousou no Frieren",
+    "genres": [
+      {
+        "id": 2,
+        "name": "Adventure"
+      },
+      {
+        "id": 46,
+        "name": "Award Winning"
+      },
+      {
+        "id": 8,
+        "name": "Drama"
+      },
+      {
+        "id": 10,
+        "name": "Fantasy"
+      }
+    ],
+    "themes": [],
+    "year": 2023,
+    "popularity": 95,
+    "members": 1544946,
+    "sourceUrl": "https://api.tenrai.org/v1/anime/52991",
+    "retrievedAt": "2026-11-16T03:13:49.762Z"
+  }
+}

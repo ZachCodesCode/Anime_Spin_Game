@@ -1,0 +1,16 @@
+{
+  "characters": 2161,
+  "anime": 14,
+  "appearances": 2174,
+  "compactBytes": 906462,
+  "prettyBytes": 1195276,
+  "validationMs": 25.019289999999998,
+  "indexBuildMs": 0.36700299999999686,
+  "lookup100kMs": 4.81545899999999,
+  "lookupHits": 100000,
+  "deduplicateDoubleInputMs": 0.5439460000000054,
+  "deduplicated": 2161,
+  "rssBytes": 68587520,
+  "heapUsedBytes": 12502768,
+  "node": "v24.19.0"
+}

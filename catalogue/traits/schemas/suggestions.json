@@ -122,6 +122,12 @@
               "uncertainty": {
                 "type": "string",
                 "minLength": 1
+              },
+              "basis": {
+                "enum": [
+                  "source_fact",
+                  "ai_inferred_suggestion"
+                ]
               }
             },
             "required": [

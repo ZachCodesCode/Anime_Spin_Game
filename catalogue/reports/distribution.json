@@ -1,0 +1,1733 @@
+{
+  "note": "Distinct MAL characters per bucket; characters may occur in multiple buckets. Popularity bands are transparent planning proxies, not an objective mainstream/cult classification. Missing metadata stays unknown.",
+  "anime": [
+    {
+      "id": "mal-anime-1",
+      "name": "Cowboy Bebop",
+      "characters": 126,
+      "genres": [
+        "Action",
+        "Award Winning",
+        "Sci-Fi"
+      ],
+      "themes": [
+        "Adult Cast",
+        "Space"
+      ],
+      "year": 1998,
+      "popularityRank": 41,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-20",
+      "name": "Naruto",
+      "characters": 270,
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "themes": [
+        "Martial Arts"
+      ],
+      "year": 2002,
+      "popularityRank": 9,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-21",
+      "name": "One Piece",
+      "characters": 1481,
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "themes": [],
+      "year": 1999,
+      "popularityRank": 17,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-19",
+      "name": "Monster",
+      "characters": 100,
+      "genres": [
+        "Drama",
+        "Mystery",
+        "Suspense"
+      ],
+      "themes": [
+        "Adult Cast",
+        "Psychological"
+      ],
+      "year": 2004,
+      "popularityRank": 114,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-44",
+      "name": "Rurouni Kenshin: Meiji Kenkaku Romantan - Tsuioku-hen",
+      "characters": 20,
+      "genres": [
+        "Action",
+        "Drama",
+        "Romance"
+      ],
+      "themes": [
+        "Adult Cast",
+        "Historical",
+        "Samurai"
+      ],
+      "year": 1999,
+      "popularityRank": 976,
+      "popularityGroup": "rank_501_2000"
+    },
+    {
+      "id": "mal-anime-457",
+      "name": "Mushishi",
+      "characters": 54,
+      "genres": [
+        "Adventure",
+        "Mystery",
+        "Slice of Life",
+        "Supernatural"
+      ],
+      "themes": [
+        "Adult Cast",
+        "Historical",
+        "Iyashikei"
+      ],
+      "year": 2005,
+      "popularityRank": 230,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-205",
+      "name": "Samurai Champloo",
+      "characters": 92,
+      "genres": [
+        "Action",
+        "Adventure",
+        "Comedy"
+      ],
+      "themes": [
+        "Historical",
+        "Samurai"
+      ],
+      "year": 2004,
+      "popularityRank": 113,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-853",
+      "name": "Ouran Koukou Host Club",
+      "characters": 51,
+      "genres": [
+        "Comedy",
+        "Romance"
+      ],
+      "themes": [
+        "Crossdressing",
+        "Reverse Harem",
+        "School"
+      ],
+      "year": 2006,
+      "popularityRank": 136,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-12355",
+      "name": "Ookami Kodomo no Ame to Yuki",
+      "characters": 23,
+      "genres": [
+        "Award Winning",
+        "Slice of Life",
+        "Supernatural"
+      ],
+      "themes": [
+        "Childcare"
+      ],
+      "year": 2012,
+      "popularityRank": 252,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-440",
+      "name": "Shoujo Kakumei Utena",
+      "characters": 32,
+      "genres": [
+        "Award Winning",
+        "Drama"
+      ],
+      "themes": [
+        "Mahou Shoujo",
+        "Psychological",
+        "School"
+      ],
+      "year": 1997,
+      "popularityRank": 1147,
+      "popularityGroup": "rank_501_2000"
+    },
+    {
+      "id": "mal-anime-5680",
+      "name": "K-On!",
+      "characters": 14,
+      "genres": [
+        "Comedy"
+      ],
+      "themes": [
+        "CGDCT",
+        "Music",
+        "School"
+      ],
+      "year": 2009,
+      "popularityRank": 161,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-263",
+      "name": "Hajime no Ippo",
+      "characters": 98,
+      "genres": [
+        "Sports"
+      ],
+      "themes": [
+        "Combat Sports"
+      ],
+      "year": 2000,
+      "popularityRank": 338,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-32935",
+      "name": "Haikyuu!! Karasuno Koukou vs. Shiratorizawa Gakuen Koukou",
+      "characters": 61,
+      "genres": [
+        "Sports"
+      ],
+      "themes": [
+        "School",
+        "Team Sports"
+      ],
+      "year": 2016,
+      "popularityRank": 116,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-5",
+      "name": "Cowboy Bebop: Tengoku no Tobira",
+      "characters": 42,
+      "genres": [
+        "Action",
+        "Sci-Fi"
+      ],
+      "themes": [
+        "Adult Cast",
+        "Space"
+      ],
+      "year": 2001,
+      "popularityRank": 664,
+      "popularityGroup": "rank_501_2000"
+    },
+    {
+      "id": "mal-anime-235",
+      "name": "Meitantei Conan",
+      "characters": 100,
+      "genres": [
+        "Adventure",
+        "Comedy",
+        "Mystery"
+      ],
+      "themes": [
+        "Detective"
+      ],
+      "year": 1996,
+      "popularityRank": 736,
+      "popularityGroup": "rank_501_2000"
+    },
+    {
+      "id": "mal-anime-392",
+      "name": "Yuu☆Yuu☆Hakusho",
+      "characters": 100,
+      "genres": [
+        "Action",
+        "Supernatural"
+      ],
+      "themes": [
+        "Martial Arts",
+        "Mythology"
+      ],
+      "year": 1992,
+      "popularityRank": 309,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-523",
+      "name": "Tonari no Totoro",
+      "characters": 22,
+      "genres": [
+        "Adventure",
+        "Award Winning",
+        "Supernatural"
+      ],
+      "themes": [],
+      "year": 1988,
+      "popularityRank": 146,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-790",
+      "name": "Ergo Proxy",
+      "characters": 32,
+      "genres": [
+        "Mystery",
+        "Sci-Fi",
+        "Suspense"
+      ],
+      "themes": [
+        "Adult Cast",
+        "Psychological"
+      ],
+      "year": 2006,
+      "popularityRank": 328,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-877",
+      "name": "Nana",
+      "characters": 32,
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "themes": [
+        "Adult Cast",
+        "Love Polygon",
+        "Music"
+      ],
+      "year": 2006,
+      "popularityRank": 295,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-4081",
+      "name": "Natsume Yuujinchou",
+      "characters": 44,
+      "genres": [
+        "Slice of Life",
+        "Supernatural"
+      ],
+      "themes": [
+        "Iyashikei",
+        "Mythology"
+      ],
+      "year": 2008,
+      "popularityRank": 433,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-1000",
+      "name": "Uchuu Kaizoku Captain Herlock",
+      "characters": 50,
+      "genres": [
+        "Action",
+        "Adventure",
+        "Drama",
+        "Sci-Fi"
+      ],
+      "themes": [
+        "Space"
+      ],
+      "year": 1978,
+      "popularityRank": 4003,
+      "popularityGroup": "rank_above_2000"
+    },
+    {
+      "id": "mal-anime-2890",
+      "name": "Gake no Ue no Ponyo",
+      "characters": 9,
+      "genres": [
+        "Adventure",
+        "Award Winning",
+        "Fantasy"
+      ],
+      "themes": [],
+      "year": 2008,
+      "popularityRank": 374,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-198",
+      "name": "Speed Grapher",
+      "characters": 46,
+      "genres": [
+        "Action",
+        "Mystery",
+        "Suspense"
+      ],
+      "themes": [
+        "Adult Cast",
+        "Gore",
+        "Organized Crime",
+        "Psychological",
+        "Super Power"
+      ],
+      "year": 2005,
+      "popularityRank": 2041,
+      "popularityGroup": "rank_above_2000"
+    },
+    {
+      "id": "mal-anime-57",
+      "name": "Beck",
+      "characters": 42,
+      "genres": [
+        "Drama"
+      ],
+      "themes": [
+        "Music"
+      ],
+      "year": 2004,
+      "popularityRank": 735,
+      "popularityGroup": "rank_501_2000"
+    },
+    {
+      "id": "mal-anime-47",
+      "name": "Akira",
+      "characters": 27,
+      "genres": [
+        "Action",
+        "Horror",
+        "Sci-Fi"
+      ],
+      "themes": [
+        "Gore",
+        "Super Power"
+      ],
+      "year": 1988,
+      "popularityRank": 206,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-48",
+      "name": ".hack//Sign",
+      "characters": 24,
+      "genres": [
+        "Adventure",
+        "Fantasy",
+        "Mystery"
+      ],
+      "themes": [
+        "Video Game"
+      ],
+      "year": 2002,
+      "popularityRank": 1451,
+      "popularityGroup": "rank_501_2000"
+    },
+    {
+      "id": "mal-anime-43",
+      "name": "Koukaku Kidoutai",
+      "characters": 17,
+      "genres": [
+        "Award Winning",
+        "Mystery",
+        "Sci-Fi",
+        "Suspense"
+      ],
+      "themes": [
+        "Adult Cast",
+        "Detective",
+        "Mecha",
+        "Psychological"
+      ],
+      "year": 1995,
+      "popularityRank": 332,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-30",
+      "name": "Shinseiki Evangelion",
+      "characters": 21,
+      "genres": [
+        "Avant Garde",
+        "Award Winning",
+        "Drama",
+        "Sci-Fi",
+        "Suspense"
+      ],
+      "themes": [
+        "Mecha",
+        "Psychological"
+      ],
+      "year": 1995,
+      "popularityRank": 42,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-26",
+      "name": "Texhnolyze",
+      "characters": 52,
+      "genres": [
+        "Avant Garde",
+        "Drama",
+        "Mystery",
+        "Sci-Fi",
+        "Suspense"
+      ],
+      "themes": [
+        "Adult Cast",
+        "Organized Crime",
+        "Psychological"
+      ],
+      "year": 2003,
+      "popularityRank": 960,
+      "popularityGroup": "rank_501_2000"
+    },
+    {
+      "id": "mal-anime-6",
+      "name": "Trigun",
+      "characters": 97,
+      "genres": [
+        "Action",
+        "Adventure",
+        "Sci-Fi"
+      ],
+      "themes": [
+        "Adult Cast"
+      ],
+      "year": 1998,
+      "popularityRank": 267,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-45",
+      "name": "Rurouni Kenshin: Meiji Kenkaku Romantan",
+      "characters": 100,
+      "genres": [
+        "Action",
+        "Comedy",
+        "Romance"
+      ],
+      "themes": [
+        "Historical",
+        "Samurai"
+      ],
+      "year": 1996,
+      "popularityRank": 499,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-33",
+      "name": "Kenpuu Denki Berserk",
+      "characters": 33,
+      "genres": [
+        "Action",
+        "Adventure",
+        "Drama",
+        "Fantasy",
+        "Horror"
+      ],
+      "themes": [
+        "Gore",
+        "Military",
+        "Psychological"
+      ],
+      "year": 1997,
+      "popularityRank": 300,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-66",
+      "name": "Azumanga Daiou The Animation",
+      "characters": 24,
+      "genres": [
+        "Comedy"
+      ],
+      "themes": [
+        "CGDCT",
+        "Gag Humor",
+        "School"
+      ],
+      "year": 2002,
+      "popularityRank": 624,
+      "popularityGroup": "rank_501_2000"
+    },
+    {
+      "id": "mal-anime-136",
+      "name": "Hunter x Hunter",
+      "characters": 100,
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "themes": [],
+      "year": 1999,
+      "popularityRank": 379,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-164",
+      "name": "Mononoke Hime",
+      "characters": 17,
+      "genres": [
+        "Action",
+        "Adventure",
+        "Award Winning",
+        "Fantasy"
+      ],
+      "themes": [],
+      "year": 1997,
+      "popularityRank": 110,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-227",
+      "name": "FLCL",
+      "characters": 16,
+      "genres": [
+        "Avant Garde",
+        "Comedy",
+        "Sci-Fi",
+        "Suspense"
+      ],
+      "themes": [
+        "Mecha",
+        "Parody",
+        "Psychological"
+      ],
+      "year": 2000,
+      "popularityRank": 235,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-232",
+      "name": "Cardcaptor Sakura",
+      "characters": 37,
+      "genres": [
+        "Adventure",
+        "Comedy",
+        "Drama",
+        "Romance"
+      ],
+      "themes": [
+        "Mahou Shoujo",
+        "School"
+      ],
+      "year": 1998,
+      "popularityRank": 545,
+      "popularityGroup": "rank_501_2000"
+    },
+    {
+      "id": "mal-anime-245",
+      "name": "Great Teacher Onizuka",
+      "characters": 100,
+      "genres": [
+        "Comedy"
+      ],
+      "themes": [
+        "Delinquents",
+        "School",
+        "Workplace"
+      ],
+      "year": 1999,
+      "popularityRank": 222,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-249",
+      "name": "InuYasha",
+      "characters": 100,
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy",
+        "Romance"
+      ],
+      "themes": [
+        "Historical",
+        "Love Polygon",
+        "Mythology",
+        "Time Travel"
+      ],
+      "year": 2000,
+      "popularityRank": 254,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-267",
+      "name": "Gungrave",
+      "characters": 46,
+      "genres": [
+        "Action",
+        "Drama",
+        "Sci-Fi"
+      ],
+      "themes": [
+        "Adult Cast",
+        "Gore",
+        "Organized Crime",
+        "Super Power"
+      ],
+      "year": 2003,
+      "popularityRank": 1308,
+      "popularityGroup": "rank_501_2000"
+    },
+    {
+      "id": "mal-anime-269",
+      "name": "Bleach",
+      "characters": 100,
+      "genres": [
+        "Action",
+        "Adventure",
+        "Supernatural"
+      ],
+      "themes": [],
+      "year": 2004,
+      "popularityRank": 32,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-339",
+      "name": "Serial Experiments Lain",
+      "characters": 28,
+      "genres": [
+        "Avant Garde",
+        "Award Winning",
+        "Drama",
+        "Mystery",
+        "Sci-Fi",
+        "Supernatural",
+        "Suspense"
+      ],
+      "themes": [
+        "Psychological"
+      ],
+      "year": 1998,
+      "popularityRank": 227,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-355",
+      "name": "Shakugan no Shana",
+      "characters": 33,
+      "genres": [
+        "Action",
+        "Drama",
+        "Romance",
+        "Supernatural"
+      ],
+      "themes": [
+        "School"
+      ],
+      "year": 2005,
+      "popularityRank": 464,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-387",
+      "name": "Haibane Renmei",
+      "characters": 15,
+      "genres": [
+        "Drama",
+        "Fantasy",
+        "Mystery"
+      ],
+      "themes": [
+        "Psychological"
+      ],
+      "year": 2002,
+      "popularityRank": 824,
+      "popularityGroup": "rank_501_2000"
+    },
+    {
+      "id": "mal-anime-431",
+      "name": "Howl no Ugoku Shiro",
+      "characters": 11,
+      "genres": [
+        "Adventure",
+        "Award Winning",
+        "Drama",
+        "Fantasy",
+        "Romance"
+      ],
+      "themes": [],
+      "year": 2004,
+      "popularityRank": 98,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-467",
+      "name": "Koukaku Kidoutai: Stand Alone Complex",
+      "characters": 87,
+      "genres": [
+        "Award Winning",
+        "Mystery",
+        "Sci-Fi"
+      ],
+      "themes": [
+        "Adult Cast",
+        "Detective",
+        "Mecha",
+        "Military"
+      ],
+      "year": 2002,
+      "popularityRank": 642,
+      "popularityGroup": "rank_501_2000"
+    },
+    {
+      "id": "mal-anime-512",
+      "name": "Majo no Takkyuubin",
+      "characters": 31,
+      "genres": [
+        "Adventure",
+        "Award Winning",
+        "Comedy",
+        "Drama",
+        "Fantasy"
+      ],
+      "themes": [],
+      "year": 1989,
+      "popularityRank": 366,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-570",
+      "name": "Jin-Rou",
+      "characters": 9,
+      "genres": [
+        "Action",
+        "Award Winning",
+        "Drama",
+        "Romance",
+        "Suspense"
+      ],
+      "themes": [
+        "Adult Cast",
+        "Military",
+        "Psychological"
+      ],
+      "year": 2000,
+      "popularityRank": 1370,
+      "popularityGroup": "rank_501_2000"
+    },
+    {
+      "id": "mal-anime-578",
+      "name": "Hotaru no Haka",
+      "characters": 7,
+      "genres": [
+        "Drama"
+      ],
+      "themes": [
+        "Historical"
+      ],
+      "year": 1988,
+      "popularityRank": 301,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-601",
+      "name": "Nekojiru-sou",
+      "characters": 4,
+      "genres": [
+        "Avant Garde",
+        "Award Winning",
+        "Comedy"
+      ],
+      "themes": [
+        "Anthropomorphic",
+        "Psychological"
+      ],
+      "year": 2001,
+      "popularityRank": 2637,
+      "popularityGroup": "rank_above_2000"
+    },
+    {
+      "id": "mal-anime-918",
+      "name": "Gintama",
+      "characters": 100,
+      "genres": [
+        "Action",
+        "Comedy",
+        "Sci-Fi"
+      ],
+      "themes": [
+        "Gag Humor",
+        "Historical",
+        "Parody",
+        "Samurai"
+      ],
+      "year": 2006,
+      "popularityRank": 148,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-934",
+      "name": "Higurashi no Naku Koro ni",
+      "characters": 39,
+      "genres": [
+        "Horror",
+        "Mystery",
+        "Suspense"
+      ],
+      "themes": [
+        "Gore",
+        "Psychological"
+      ],
+      "year": 2006,
+      "popularityRank": 255,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-1210",
+      "name": "NHK ni Youkoso!",
+      "characters": 17,
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Romance"
+      ],
+      "themes": [
+        "Psychological"
+      ],
+      "year": 2006,
+      "popularityRank": 261,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-1535",
+      "name": "Death Note",
+      "characters": 76,
+      "genres": [
+        "Supernatural",
+        "Suspense"
+      ],
+      "themes": [
+        "Psychological"
+      ],
+      "year": 2006,
+      "popularityRank": 2,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-1575",
+      "name": "Code Geass: Hangyaku no Lelouch",
+      "characters": 58,
+      "genres": [
+        "Award Winning",
+        "Drama",
+        "Sci-Fi"
+      ],
+      "themes": [
+        "Mecha",
+        "Military",
+        "School",
+        "Super Power"
+      ],
+      "year": 2006,
+      "popularityRank": 23,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-1698",
+      "name": "Nodame Cantabile",
+      "characters": 67,
+      "genres": [
+        "Comedy",
+        "Romance"
+      ],
+      "themes": [
+        "Adult Cast",
+        "Music",
+        "Performing Arts"
+      ],
+      "year": 2007,
+      "popularityRank": 865,
+      "popularityGroup": "rank_501_2000"
+    },
+    {
+      "id": "mal-anime-2001",
+      "name": "Tengen Toppa Gurren Lagann",
+      "characters": 41,
+      "genres": [
+        "Adventure",
+        "Award Winning",
+        "Sci-Fi"
+      ],
+      "themes": [
+        "Mecha"
+      ],
+      "year": 2007,
+      "popularityRank": 66,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-2167",
+      "name": "Clannad",
+      "characters": 35,
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "themes": [
+        "School"
+      ],
+      "year": 2007,
+      "popularityRank": 96,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-2251",
+      "name": "Baccano!",
+      "characters": 65,
+      "genres": [
+        "Action",
+        "Mystery",
+        "Supernatural"
+      ],
+      "themes": [
+        "Adult Cast",
+        "Historical",
+        "Organized Crime"
+      ],
+      "year": 2007,
+      "popularityRank": 210,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-2966",
+      "name": "Ookami to Koushinryou",
+      "characters": 10,
+      "genres": [
+        "Adventure",
+        "Drama",
+        "Romance",
+        "Supernatural"
+      ],
+      "themes": [
+        "Adult Cast"
+      ],
+      "year": 2008,
+      "popularityRank": 250,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-3588",
+      "name": "Soul Eater",
+      "characters": 64,
+      "genres": [
+        "Action",
+        "Comedy",
+        "Fantasy"
+      ],
+      "themes": [
+        "School"
+      ],
+      "year": 2008,
+      "popularityRank": 65,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-3652",
+      "name": "Higurashi no Naku Koro ni Rei",
+      "characters": 24,
+      "genres": [
+        "Horror",
+        "Mystery",
+        "Suspense"
+      ],
+      "themes": [
+        "Gore",
+        "Psychological"
+      ],
+      "year": 2009,
+      "popularityRank": 1375,
+      "popularityGroup": "rank_501_2000"
+    },
+    {
+      "id": "mal-anime-4224",
+      "name": "Toradora!",
+      "characters": 25,
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "themes": [
+        "Love Polygon",
+        "School"
+      ],
+      "year": 2008,
+      "popularityRank": 26,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-5081",
+      "name": "Bakemonogatari",
+      "characters": 14,
+      "genres": [
+        "Mystery",
+        "Romance",
+        "Supernatural"
+      ],
+      "themes": [
+        "Vampire"
+      ],
+      "year": 2009,
+      "popularityRank": 99,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-6213",
+      "name": "Toaru Kagaku no Railgun",
+      "characters": 33,
+      "genres": [
+        "Action",
+        "Fantasy",
+        "Sci-Fi"
+      ],
+      "themes": [
+        "Super Power",
+        "Urban Fantasy"
+      ],
+      "year": 2009,
+      "popularityRank": 383,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-6547",
+      "name": "Angel Beats!",
+      "characters": 28,
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ],
+      "themes": [
+        "School"
+      ],
+      "year": 2010,
+      "popularityRank": 35,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-6746",
+      "name": "Durarara!!",
+      "characters": 49,
+      "genres": [
+        "Action",
+        "Mystery",
+        "Supernatural"
+      ],
+      "themes": [],
+      "year": 2010,
+      "popularityRank": 100,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-7785",
+      "name": "Yojouhan Shinwa Taikei",
+      "characters": 17,
+      "genres": [
+        "Award Winning",
+        "Comedy",
+        "Mystery",
+        "Romance",
+        "Suspense"
+      ],
+      "themes": [
+        "Adult Cast",
+        "Psychological",
+        "Time Travel"
+      ],
+      "year": 2010,
+      "popularityRank": 531,
+      "popularityGroup": "rank_501_2000"
+    },
+    {
+      "id": "mal-anime-9756",
+      "name": "Mahou Shoujo Madoka☆Magica",
+      "characters": 19,
+      "genres": [
+        "Award Winning",
+        "Drama",
+        "Suspense"
+      ],
+      "themes": [
+        "Mahou Shoujo",
+        "Psychological"
+      ],
+      "year": 2011,
+      "popularityRank": 106,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-9919",
+      "name": "Ao no Exorcist",
+      "characters": 50,
+      "genres": [
+        "Action",
+        "Supernatural"
+      ],
+      "themes": [
+        "Mythology",
+        "School"
+      ],
+      "year": 2011,
+      "popularityRank": 43,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-10165",
+      "name": "Nichijou",
+      "characters": 92,
+      "genres": [
+        "Comedy"
+      ],
+      "themes": [
+        "Gag Humor",
+        "School"
+      ],
+      "year": 2011,
+      "popularityRank": 200,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-11061",
+      "name": "Hunter x Hunter (2011)",
+      "characters": 100,
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "themes": [],
+      "year": 2011,
+      "popularityRank": 8,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-2747",
+      "name": "Tetsuwan Atom",
+      "characters": 50,
+      "genres": [
+        "Action",
+        "Adventure",
+        "Drama",
+        "Sci-Fi"
+      ],
+      "themes": [],
+      "year": 1963,
+      "popularityRank": 6309,
+      "popularityGroup": "rank_above_2000"
+    },
+    {
+      "id": "mal-anime-1572",
+      "name": "Jungle Taitei",
+      "characters": 8,
+      "genres": [
+        "Adventure"
+      ],
+      "themes": [],
+      "year": 1965,
+      "popularityRank": 7713,
+      "popularityGroup": "rank_above_2000"
+    },
+    {
+      "id": "mal-anime-283",
+      "name": "Akage no Anne",
+      "characters": 43,
+      "genres": [
+        "Drama"
+      ],
+      "themes": [
+        "Historical"
+      ],
+      "year": 1979,
+      "popularityRank": 3584,
+      "popularityGroup": "rank_above_2000"
+    },
+    {
+      "id": "mal-anime-338",
+      "name": "Versailles no Bara",
+      "characters": 49,
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "themes": [
+        "Crossdressing",
+        "Historical",
+        "Military"
+      ],
+      "year": 1979,
+      "popularityRank": 2194,
+      "popularityGroup": "rank_above_2000"
+    },
+    {
+      "id": "mal-anime-975",
+      "name": "Yokohama Kaidashi Kikou",
+      "characters": 5,
+      "genres": [
+        "Sci-Fi",
+        "Slice of Life"
+      ],
+      "themes": [
+        "Iyashikei"
+      ],
+      "year": 1998,
+      "popularityRank": 3742,
+      "popularityGroup": "rank_above_2000"
+    },
+    {
+      "id": "mal-anime-1441",
+      "name": "Ginga Tetsudou no Yoru",
+      "characters": 16,
+      "genres": [
+        "Award Winning",
+        "Drama",
+        "Fantasy",
+        "Mystery"
+      ],
+      "themes": [
+        "Anthropomorphic",
+        "Psychological"
+      ],
+      "year": 1985,
+      "popularityRank": 4713,
+      "popularityGroup": "rank_above_2000"
+    },
+    {
+      "id": "mal-anime-885",
+      "name": "Tenshi no Tamago",
+      "characters": 2,
+      "genres": [
+        "Avant Garde",
+        "Drama",
+        "Fantasy"
+      ],
+      "themes": [],
+      "year": 1985,
+      "popularityRank": 1479,
+      "popularityGroup": "rank_501_2000"
+    },
+    {
+      "id": "mal-anime-1524",
+      "name": "Fuujin Monogatari",
+      "characters": 10,
+      "genres": [
+        "Slice of Life",
+        "Supernatural"
+      ],
+      "themes": [
+        "Iyashikei",
+        "School"
+      ],
+      "year": 2004,
+      "popularityRank": 5401,
+      "popularityGroup": "rank_above_2000"
+    },
+    {
+      "id": "mal-anime-3701",
+      "name": "Kaiba",
+      "characters": 17,
+      "genres": [
+        "Adventure",
+        "Avant Garde",
+        "Award Winning",
+        "Mystery",
+        "Romance",
+        "Sci-Fi"
+      ],
+      "themes": [
+        "Psychological"
+      ],
+      "year": 2008,
+      "popularityRank": 1530,
+      "popularityGroup": "rank_501_2000"
+    },
+    {
+      "id": "mal-anime-2164",
+      "name": "Dennou Coil",
+      "characters": 24,
+      "genres": [
+        "Adventure",
+        "Award Winning",
+        "Drama",
+        "Mystery",
+        "Sci-Fi"
+      ],
+      "themes": [],
+      "year": 2007,
+      "popularityRank": 1710,
+      "popularityGroup": "rank_501_2000"
+    },
+    {
+      "id": "mal-anime-329",
+      "name": "Planetes",
+      "characters": 43,
+      "genres": [
+        "Award Winning",
+        "Drama",
+        "Romance",
+        "Sci-Fi"
+      ],
+      "themes": [
+        "Adult Cast",
+        "Space",
+        "Workplace"
+      ],
+      "year": 2003,
+      "popularityRank": 1006,
+      "popularityGroup": "rank_501_2000"
+    },
+    {
+      "id": "mal-anime-486",
+      "name": "Kino no Tabi: The Beautiful World",
+      "characters": 13,
+      "genres": [
+        "Adventure",
+        "Drama",
+        "Fantasy"
+      ],
+      "themes": [],
+      "year": 2003,
+      "popularityRank": 777,
+      "popularityGroup": "rank_501_2000"
+    },
+    {
+      "id": "mal-anime-477",
+      "name": "Aria the Animation",
+      "characters": 22,
+      "genres": [
+        "Sci-Fi",
+        "Slice of Life"
+      ],
+      "themes": [
+        "Iyashikei"
+      ],
+      "year": 2005,
+      "popularityRank": 1568,
+      "popularityGroup": "rank_501_2000"
+    },
+    {
+      "id": "mal-anime-489",
+      "name": "Kamichu!",
+      "characters": 13,
+      "genres": [
+        "Award Winning",
+        "Slice of Life",
+        "Supernatural"
+      ],
+      "themes": [
+        "Iyashikei",
+        "Mythology",
+        "School"
+      ],
+      "year": 2005,
+      "popularityRank": 3086,
+      "popularityGroup": "rank_above_2000"
+    },
+    {
+      "id": "mal-anime-1454",
+      "name": "Kemonozume",
+      "characters": 11,
+      "genres": [
+        "Action",
+        "Avant Garde",
+        "Horror",
+        "Romance",
+        "Supernatural"
+      ],
+      "themes": [
+        "Adult Cast",
+        "Gore",
+        "Mythology"
+      ],
+      "year": 2006,
+      "popularityRank": 2756,
+      "popularityGroup": "rank_above_2000"
+    },
+    {
+      "id": "mal-anime-22135",
+      "name": "Ping Pong the Animation",
+      "characters": 29,
+      "genres": [
+        "Award Winning",
+        "Drama",
+        "Sports"
+      ],
+      "themes": [],
+      "year": 2014,
+      "popularityRank": 607,
+      "popularityGroup": "rank_501_2000"
+    },
+    {
+      "id": "mal-anime-20057",
+      "name": "Space☆Dandy",
+      "characters": 38,
+      "genres": [
+        "Comedy",
+        "Sci-Fi"
+      ],
+      "themes": [
+        "Adult Cast",
+        "Space"
+      ],
+      "year": 2014,
+      "popularityRank": 709,
+      "popularityGroup": "rank_501_2000"
+    },
+    {
+      "id": "mal-anime-39533",
+      "name": "Given",
+      "characters": 17,
+      "genres": [
+        "Boys Love",
+        "Drama"
+      ],
+      "themes": [
+        "Music",
+        "School"
+      ],
+      "year": 2019,
+      "popularityRank": 389,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-30276",
+      "name": "One Punch Man",
+      "characters": 50,
+      "genres": [
+        "Action",
+        "Comedy"
+      ],
+      "themes": [
+        "Adult Cast",
+        "Parody",
+        "Super Power"
+      ],
+      "year": 2015,
+      "popularityRank": 4,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-31240",
+      "name": "Re:Zero kara Hajimeru Isekai Seikatsu",
+      "characters": 50,
+      "genres": [
+        "Drama",
+        "Fantasy",
+        "Suspense"
+      ],
+      "themes": [
+        "Isekai",
+        "Psychological",
+        "Time Travel"
+      ],
+      "year": 2016,
+      "popularityRank": 22,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-52991",
+      "name": "Sousou no Frieren",
+      "characters": 50,
+      "genres": [
+        "Adventure",
+        "Award Winning",
+        "Drama",
+        "Fantasy"
+      ],
+      "themes": [],
+      "year": 2023,
+      "popularityRank": 95,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-40028",
+      "name": "Shingeki no Kyojin: The Final Season",
+      "characters": 50,
+      "genres": [
+        "Action",
+        "Drama",
+        "Suspense"
+      ],
+      "themes": [
+        "Gore",
+        "Military",
+        "Survival"
+      ],
+      "year": 2021,
+      "popularityRank": 28,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-16498",
+      "name": "Shingeki no Kyojin",
+      "characters": 50,
+      "genres": [
+        "Action",
+        "Award Winning",
+        "Drama",
+        "Suspense"
+      ],
+      "themes": [
+        "Gore",
+        "Military",
+        "Survival"
+      ],
+      "year": 2013,
+      "popularityRank": 1,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-20583",
+      "name": "Haikyuu!!",
+      "characters": 50,
+      "genres": [
+        "Sports"
+      ],
+      "themes": [
+        "School",
+        "Team Sports"
+      ],
+      "year": 2014,
+      "popularityRank": 36,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-31964",
+      "name": "Boku no Hero Academia",
+      "characters": 50,
+      "genres": [
+        "Action"
+      ],
+      "themes": [
+        "School",
+        "Super Power"
+      ],
+      "year": 2016,
+      "popularityRank": 6,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-37521",
+      "name": "Vinland Saga",
+      "characters": 40,
+      "genres": [
+        "Action",
+        "Adventure",
+        "Drama"
+      ],
+      "themes": [
+        "Gore",
+        "Historical"
+      ],
+      "year": 2019,
+      "popularityRank": 59,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-37779",
+      "name": "Yakusoku no Neverland",
+      "characters": 30,
+      "genres": [
+        "Mystery",
+        "Suspense"
+      ],
+      "themes": [
+        "Psychological",
+        "Survival"
+      ],
+      "year": 2019,
+      "popularityRank": 38,
+      "popularityGroup": "rank_1_500"
+    },
+    {
+      "id": "mal-anime-40839",
+      "name": "Kanojo, Okarishimasu",
+      "characters": 20,
+      "genres": [
+        "Comedy",
+        "Romance"
+      ],
+      "themes": [
+        "Adult Cast",
+        "Harem"
+      ],
+      "year": 2020,
+      "popularityRank": 170,
+      "popularityGroup": "rank_1_500"
+    }
+  ],
+  "byGenre": {
+    "Action": 3574,
+    "Award Winning": 808,
+    "Sci-Fi": 1053,
+    "Adventure": 2938,
+    "Fantasy": 2406,
+    "Drama": 1302,
+    "Mystery": 824,
+    "Suspense": 643,
+    "Romance": 712,
+    "Slice of Life": 171,
+    "Supernatural": 700,
+    "Comedy": 1034,
+    "Sports": 222,
+    "Horror": 116,
+    "Avant Garde": 151,
+    "Boys Love": 17
+  },
+  "byTheme": {
+    "Adult Cast": 1062,
+    "Space": 286,
+    "Martial Arts": 370,
+    "Psychological": 692,
+    "Historical": 664,
+    "Samurai": 306,
+    "Iyashikei": 148,
+    "Crossdressing": 100,
+    "Reverse Harem": 51,
+    "School": 828,
+    "Childcare": 23,
+    "Mahou Shoujo": 88,
+    "CGDCT": 38,
+    "Music": 172,
+    "Combat Sports": 98,
+    "Team Sports": 95,
+    "Detective": 198,
+    "Mythology": 318,
+    "Love Polygon": 157,
+    "Gore": 333,
+    "Organized Crime": 209,
+    "Super Power": 310,
+    "Video Game": 24,
+    "Mecha": 234,
+    "Military": 321,
+    "Gag Humor": 216,
+    "Parody": 166,
+    "Delinquents": 100,
+    "Workplace": 143,
+    "Time Travel": 167,
+    "Anthropomorphic": 20,
+    "Performing Arts": 67,
+    "Vampire": 14,
+    "Urban Fantasy": 33,
+    "Isekai": 50,
+    "Survival": 115,
+    "Harem": 20
+  },
+  "byDecade": {
+    "1990s": 2408,
+    "2000s": 2250,
+    "2010s": 827,
+    "1980s": 105,
+    "1970s": 142,
+    "1960s": 56,
+    "2020s": 120
+  },
+  "byPopularity": {
+    "rank_1_500": 4745,
+    "rank_501_2000": 826,
+    "rank_above_2000": 303
+  }
+}

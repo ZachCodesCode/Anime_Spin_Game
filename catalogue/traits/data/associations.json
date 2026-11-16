@@ -82,6 +82,132 @@
           }
         }
       ]
+    },
+    {
+      "id": "phase5a-67329-appearance-eyewear",
+      "history": [
+        {
+          "operationId": "import:phase5a-67329-appearance-eyewear",
+          "at": "2026-11-16T03:13:30.454Z",
+          "actor": "import:Phase 5A individual source review",
+          "note": "Imported suggestion; no human review performed.",
+          "before": null,
+          "after": {
+            "revision": 0,
+            "status": "needs_review",
+            "claim": {
+              "characterId": "mal-character-67329",
+              "traitId": "appearance.eyewear",
+              "value": "glasses",
+              "context": {
+                "animeId": "mal-anime-32935",
+                "scope": "Source-backed candidate; adaptation and recurrence require human review.",
+                "persistence": "unknown",
+                "form": null
+              },
+              "evidence": [
+                {
+                  "url": "https://www.goodsmile.com/en/product/3307/Nendoroid%20Kei%20Tsukishima",
+                  "sourceName": "Good Smile Company — Kei Tsukishima",
+                  "explanation": "Licensed product description explicitly lists sports glasses.",
+                  "kind": "official",
+                  "accessedAt": "2026-11-16T03:13:30.215Z"
+                }
+              ],
+              "provenance": {
+                "provider": "Phase 5A individual source review",
+                "externalCharacterId": "mal:67329",
+                "basis": "source_fact",
+                "uncertainty": "Sports eyewear may differ from ordinary spectacles. Merchandise does not establish recurrence in this season; check anime frames before approval."
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "phase5a-1742-occupation-detective",
+      "history": [
+        {
+          "operationId": "import:phase5a-1742-occupation-detective",
+          "at": "2026-11-16T03:13:30.455Z",
+          "actor": "import:Phase 5A individual source review",
+          "note": "Imported suggestion; no human review performed.",
+          "before": null,
+          "after": {
+            "revision": 0,
+            "status": "needs_review",
+            "claim": {
+              "characterId": "mal-character-1742",
+              "traitId": "occupation.detective",
+              "value": "amateur",
+              "context": {
+                "animeId": "mal-anime-235",
+                "scope": "Source-backed candidate; adaptation and recurrence require human review.",
+                "persistence": "unknown",
+                "form": null
+              },
+              "evidence": [
+                {
+                  "url": "https://tmsanime.com/detective-conan",
+                  "sourceName": "TMS Entertainment — Detective Conan",
+                  "explanation": "Official synopsis identifies Shinichi as a high-school detective and Conan as his new identity.",
+                  "kind": "official",
+                  "accessedAt": "2026-11-16T03:13:30.215Z"
+                }
+              ],
+              "provenance": {
+                "provider": "Phase 5A individual source review",
+                "externalCharacterId": "mal:1742",
+                "basis": "source_fact",
+                "uncertainty": "High-school description supports amateur activity, not licensed professional employment; verify recurring investigations in the adaptation."
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "phase5a-3133-identity-species",
+      "history": [
+        {
+          "operationId": "import:phase5a-3133-identity-species",
+          "at": "2026-11-16T03:13:30.455Z",
+          "actor": "import:Phase 5A individual source review",
+          "note": "Imported suggestion; no human review performed.",
+          "before": null,
+          "after": {
+            "revision": 0,
+            "status": "needs_review",
+            "claim": {
+              "characterId": "mal-character-3133",
+              "traitId": "identity.species",
+              "value": "cat",
+              "context": {
+                "animeId": "mal-anime-512",
+                "scope": "Source-backed candidate; adaptation and recurrence require human review.",
+                "persistence": "unknown",
+                "form": null
+              },
+              "evidence": [
+                {
+                  "url": "https://gkids.com/films/kikis-delivery-service/",
+                  "sourceName": "GKIDS — Kiki’s Delivery Service",
+                  "explanation": "Distributor synopsis identifies Jiji as Kiki’s black cat.",
+                  "kind": "official",
+                  "accessedAt": "2026-11-16T03:13:30.215Z"
+                }
+              ],
+              "provenance": {
+                "provider": "Phase 5A individual source review",
+                "externalCharacterId": "mal:3133",
+                "basis": "source_fact",
+                "uncertainty": "Named identity and film match require maintainer confirmation; no claims about other adaptations or speech ability."
+              }
+            }
+          }
+        }
+      ]
     }
   ]
 }

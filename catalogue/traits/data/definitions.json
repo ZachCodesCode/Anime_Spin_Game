@@ -40,5 +40,177 @@
       "other"
     ],
     "guidance": "Cat means an actual feline identity or explicitly documented cat form. Ears, costumes, nicknames and catlike humanoids are not evidence of feline species. Transformation-only forms require explicit context. Unknown species is absence of a claim, never false."
+  },
+  {
+    "id": "appearance.hair_color",
+    "label": "Hair colour",
+    "category": "appearance",
+    "valueType": "string",
+    "allowedValues": [
+      "red",
+      "white",
+      "silver",
+      "blonde",
+      "pink",
+      "green"
+    ],
+    "guidance": "Record explicit anime evidence, adaptation, period and form. Distinguish recurring traits from temporary appearances or transformations. Open values require a source-backed canonical name. This fact alone does not establish question eligibility; exclusions and combined conditions require editorial review."
+  },
+  {
+    "id": "appearance.accessory",
+    "label": "Worn accessory",
+    "category": "appearance",
+    "valueType": "string",
+    "allowedValues": [
+      "mask",
+      "eyepatch",
+      "hat"
+    ],
+    "guidance": "Record explicit anime evidence, adaptation, period and form. Distinguish recurring traits from temporary appearances or transformations. Open values require a source-backed canonical name. This fact alone does not establish question eligibility; exclusions and combined conditions require editorial review."
+  },
+  {
+    "id": "occupation.role",
+    "label": "Occupation or recurring role",
+    "category": "occupation",
+    "valueType": "string",
+    "allowedValues": [
+      "doctor",
+      "medic",
+      "healer",
+      "teacher",
+      "mentor",
+      "ninja",
+      "shinigami",
+      "pirate_captain",
+      "investigator",
+      "hero"
+    ],
+    "guidance": "Record explicit anime evidence, adaptation, period and form. Distinguish recurring traits from temporary appearances or transformations. Open values require a source-backed canonical name. This fact alone does not establish question eligibility; exclusions and combined conditions require editorial review."
+  },
+  {
+    "id": "ability.element",
+    "label": "Combat element",
+    "category": "ability",
+    "valueType": "string",
+    "allowedValues": [
+      "fire",
+      "lava",
+      "lightning",
+      "electricity"
+    ],
+    "guidance": "Record explicit anime evidence, adaptation, period and form. Distinguish recurring traits from temporary appearances or transformations. Open values require a source-backed canonical name. This fact alone does not establish question eligibility; exclusions and combined conditions require editorial review."
+  },
+  {
+    "id": "affiliation.membership",
+    "label": "Named group membership",
+    "category": "affiliation",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Record explicit anime evidence, adaptation, period and form. Distinguish recurring traits from temporary appearances or transformations. Open values require a source-backed canonical name. This fact alone does not establish question eligibility; exclusions and combined conditions require editorial review."
+  },
+  {
+    "id": "identity.royalty",
+    "label": "Royal status",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [
+      "king",
+      "queen",
+      "prince",
+      "princess",
+      "other_royal"
+    ],
+    "guidance": "Record explicit anime evidence, adaptation, period and form. Distinguish recurring traits from temporary appearances or transformations. Open values require a source-backed canonical name. This fact alone does not establish question eligibility; exclusions and combined conditions require editorial review."
+  },
+  {
+    "id": "identity.multiple_birth",
+    "label": "Multiple birth",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [
+      "twin",
+      "triplet",
+      "quadruplet",
+      "quintuplet"
+    ],
+    "guidance": "Record explicit anime evidence, adaptation, period and form. Distinguish recurring traits from temporary appearances or transformations. Open values require a source-backed canonical name. This fact alone does not establish question eligibility; exclusions and combined conditions require editorial review."
+  },
+  {
+    "id": "identity.synthetic",
+    "label": "Synthetic body",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [
+      "robot",
+      "android",
+      "cyborg"
+    ],
+    "guidance": "Record explicit anime evidence, adaptation, period and form. Distinguish recurring traits from temporary appearances or transformations. Open values require a source-backed canonical name. This fact alone does not establish question eligibility; exclusions and combined conditions require editorial review."
+  },
+  {
+    "id": "identity.creature",
+    "label": "Creature identity",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [
+      "vampire",
+      "dragon",
+      "shinigami",
+      "ghoul",
+      "chimera_ant"
+    ],
+    "guidance": "Record explicit anime evidence, adaptation, period and form. Distinguish recurring traits from temporary appearances or transformations. Open values require a source-backed canonical name. This fact alone does not establish question eligibility; exclusions and combined conditions require editorial review."
+  },
+  {
+    "id": "ability.transformation",
+    "label": "Named transformation",
+    "category": "ability",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Record explicit anime evidence, adaptation, period and form. Distinguish recurring traits from temporary appearances or transformations. Open values require a source-backed canonical name. This fact alone does not establish question eligibility; exclusions and combined conditions require editorial review."
+  },
+  {
+    "id": "ability.named_power",
+    "label": "Named power or technique used",
+    "category": "ability",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Record explicit anime evidence, adaptation, period and form. Distinguish recurring traits from temporary appearances or transformations. Open values require a source-backed canonical name. This fact alone does not establish question eligibility; exclusions and combined conditions require editorial review."
+  },
+  {
+    "id": "affiliation.companion",
+    "label": "Companion relationship",
+    "category": "affiliation",
+    "valueType": "string",
+    "allowedValues": [
+      "pet",
+      "animal_companion",
+      "summon"
+    ],
+    "guidance": "Record explicit anime evidence, adaptation, period and form. Distinguish recurring traits from temporary appearances or transformations. Open values require a source-backed canonical name. This fact alone does not establish question eligibility; exclusions and combined conditions require editorial review."
+  },
+  {
+    "id": "identity.pokemon_starter",
+    "label": "Starter Pokémon status",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Record explicit anime evidence, adaptation, period and form. Distinguish recurring traits from temporary appearances or transformations. Open values require a source-backed canonical name. This fact alone does not establish question eligibility; exclusions and combined conditions require editorial review."
+  },
+  {
+    "id": "identity.origin",
+    "label": "Named geographic origin",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Record explicit anime evidence, adaptation, period and form. Distinguish recurring traits from temporary appearances or transformations. Open values require a source-backed canonical name. This fact alone does not establish question eligibility; exclusions and combined conditions require editorial review."
+  },
+  {
+    "id": "identity.codename",
+    "label": "Documented codename",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Record explicit anime evidence, adaptation, period and form. Distinguish recurring traits from temporary appearances or transformations. Open values require a source-backed canonical name. This fact alone does not establish question eligibility; exclusions and combined conditions require editorial review."
   }
 ]
