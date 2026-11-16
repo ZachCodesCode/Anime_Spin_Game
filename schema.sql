@@ -23,8 +23,22 @@ CREATE TABLE IF NOT EXISTS ascent_scores (
   day        TEXT    NOT NULL,                    -- Toronto date, YYYY-MM-DD
   guest      TEXT    NOT NULL,                    -- hashed anonymous cookie id
   score      INTEGER NOT NULL,
-  answers    TEXT    NOT NULL,                    -- JSON array of 5 answer names (null = skipped/timed out)
+  answers    TEXT    NOT NULL,                    -- Ordered JSON array of answer names (null = skipped/timed out)
   created_at INTEGER NOT NULL,
   PRIMARY KEY (day, guest)
 );
 CREATE INDEX IF NOT EXISTS idx_ascent_day_score ON ascent_scores (day, score);
+
+-- Phase 4B additive metadata. Existing scores are not rewritten or backfilled.
+CREATE TABLE IF NOT EXISTS ascent_challenges (
+  day TEXT PRIMARY KEY,
+  bank_version TEXT NOT NULL,
+  question_ids TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS ascent_score_versions (
+  day TEXT NOT NULL,
+  guest TEXT NOT NULL,
+  bank_version TEXT NOT NULL,
+  question_ids TEXT NOT NULL,
+  PRIMARY KEY (day, guest)
+);

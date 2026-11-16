@@ -1,5 +1,8 @@
 # Phase 4 — versioned challenge infrastructure
 
+This document records the original Phase 4 boundary. Phase 4B now connects the
+browser and API; see [integration and rollout](INTEGRATION.md) for current behavior.
+
 ## Activation and compatibility boundary
 
 The production game, API and database do not import this directory. This is the
