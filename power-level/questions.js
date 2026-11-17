@@ -847,6 +847,52 @@ for(const [id,extra] of Object.entries(MORE_NOV16)){const x=bank.find(q=>q.id===
 for(const [id,map] of Object.entries(ALIASES_NOV16)){const x=bank.find(q=>q.id==='timed-v4-'+id);const seen=new Set(x.answers.flatMap(y=>[y.name,...(y.aliases||[])]).map(key));
  for(const [name,aliases] of Object.entries(map)){const hit=x.answers.find(y=>y.name===name);if(!hit)throw Error('Unknown answer for alias: '+name);
   for(const al of aliases){if(seen.has(key(al)))continue;seen.add(key(al));hit.aliases=[...(hit.aliases||[]),al];}}}
+// Gaps filled for Ascent #7 (Nov 17 2026).
+const MORE_NOV17={
+ 'wide-hats':[a('Shunsui Kyoraku',20,'Kyoraku'),a('Hiruzen Sarutobi',25,'Hiruzen','Third Hokage'),a('Kite',25),a('Kenny Ackerman',25,'Kenny'),a('Monkey D. Garp',25,'Garp'),
+  a('Buggy',30,'Buggy the Clown'),a('Guido Mista',30,'Mista'),a('Red',30),a('Sengoku',35),a('Rob Lucci',35,'Lucci'),a('Mr. Compress',35,'Compress'),a('Nico Robin',40,'Robin'),
+  a('Itachi Uchiha',40,'Itachi'),a('Joseph Joestar',40,'Joseph'),a('Muzan Kibutsuji',40,'Muzan'),a('Solf J. Kimblee',40,'Kimblee'),a('Serena',40),a('Arale Norimaki',40,'Arale'),
+  a('Captain Pikachu',40),a('Dawn',40),a('Kaku',40),a('Gaara',45),a('Kisame Hoshigaki',45,'Kisame'),a('Hol Horse',45),a('Blair',45),a('Mami Tomoe',45,'Mami'),a('Coby',45,'Koby'),
+  a('Goh',45),a('Takeru Takaishi',45,'TK','T.K.'),a('Onoki',50,'Tsuchikage'),a('Gyro Zeppeli',50,'Gyro'),a('Bege',50,'Capone Bege'),a('Penguin',50),a('Witch Queen',50),
+  a('Loid Forger',50,'Loid'),a('Sora Takenouchi',50,'Sora'),a('Cavendish',55),a('Hotaru Haganezuka',55,'Haganezuka'),a('Johnny Joestar',55,'Johnny'),a('Ging Freecss',55,'Ging'),
+  a('Kino',55),a('Professor Kukui',55,'Kukui'),a('Shachi',60)],
+ 'mix-green-hair':[a('Envy',30),a('Hatsune Miku',30,'Miku'),a('Mitsuri Kanroji',40,'Mitsuri'),a('Inko Midoriya',45,'Inko'),a('Muichiro Tokito',45,'Muichiro'),a('Sylphiette',45,'Sylphie'),
+  a('Sailor Pluto',45,'Setsuna Meioh'),a('Sailor Neptune',45,'Michiru Kaioh'),a('Cheadle Yorkshire',50,'Cheadle'),a('Mion Sonozaki',50,'Mion'),a('Shion Sonozaki',55,'Shion'),
+  a('Lettuce Midorikawa',60,'Lettuce'),a('Minami Iwasaki',70,'Minami')],
+ 'wide-food':[a('Is the Order a Rabbit?',45,'Gochiusa','Is the Order a Rabbit'),a('Dagashi Kashi',45),a('Laid-Back Camp',55,'Yuru Camp'),a('Ms. Koizumi Loves Ramen Noodles',55,'Koizumi-san'),
+  a('Kantaro: The Sweet Tooth Salaryman',60,'Kantaro'),a('Yumeiro Patissiere',60),a('The Café Terrace and Its Goddesses',60,'Cafe Terrace and Its Goddesses'),a('Tamako Market',60),
+  a('Delicious Party Precure',70,'Delicious Party Pretty Cure'),a('Takunomi',70),a('Sweet Reincarnation',70,'Okashi na Tensei'),a('Ramen Fighter Miki',75)],
+ 'mix-royalty':[a('Saber',15,'Artoria','King Arthur','Artoria Pendragon'),a('Gilgamesh',15,'King of Heroes'),a('Big Mom',25,'Charlotte Linlin'),a('Iskandar',25,'Rider'),a('Yona',25,'Princess Yona'),
+  a('King Vegeta',30),a('Emilia',30),a('Ainz Ooal Gown',30,'Ainz','Momonga'),a('Frieza',35,'Lord Frieza'),a('Charlotte Pudding',35,'Pudding'),a('Rimuru Tempest',35,'Rimuru'),
+  a('Zeref Dragneel',35,'Zeref'),a('Kozuki Hiyori',40,'Hiyori'),a('Viola',40,'Violet'),a('Otohime',40,'Queen Otohime'),a('Trunks',40),a('King Cold',40),a('Queen Serenity',40),
+  a('Prince Endymion',40,'Endymion'),a('Cornelia li Britannia',40,'Cornelia'),a('Princess Iris',40,'Iris'),a('Zen Wistalia',40,'Prince Zen'),a('Ying Zheng',40,'Ei Sei'),a('King Fritz',40),
+  a('Vinsmoke Ichiji',40,'Ichiji'),a('Vinsmoke Niji',40,'Niji'),a('Vinsmoke Yonji',40,'Yonji'),a('Nausicaä',40,'Nausicaa'),a('Lumiere Silvamillion Clover',45,'Lumiere'),
+  a('Nebra Silva',45,'Nebra'),a('Solid Silva',45,'Solid'),a('Lolopechka',45),a('Queen Beryl',45,'Beryl'),a('Dina Fritz',45,'Dina'),a('Mirellia Q Melromarc',45,'Queen Mirellia'),
+  a('Renner',45,'Princess Renner'),a('Soo-won',45),a('Daida',45),a('Imu',50),a('Vinsmoke Sora',50),a('Clovis la Britannia',50,'Clovis'),a('Hisui E. Fiore',50,'Hisui'),
+  a('Priscilla Barielle',50,'Priscilla'),a('Crusch Karsten',50,'Crusch'),a('Aultcray Melromarc',50,'Aultcray'),a('Acier Silva',50,'Acier'),a('Ozymandias',50),a('Zeke Yeager',50,'Zeke'),
+  a('Nasubi Hui Guo Rou',55,'Nasubi'),a('Halkenburg Hui Guo Rou',55,'Halkenburg'),a('Camilla Hui Guo Rou',55,'Camilla'),a('Fugetsu Hui Guo Rou',55,'Fugetsu'),a('Ryuboshi',55),
+  a('Manboshi',55),a('Tarble',55),a('Marianne vi Britannia',55,'Marianne'),a('Anastasia Hoshin',55,'Anastasia'),a('Gazel Dwargo',55,'Gazel'),a('Ariel Anemoi Asura',55,'Ariel'),
+  a('Bosse',55),a('Izana Wistalia',55,'Izana'),a('Nefertari Lili',60,'Lili'),a('Elizabello II',60,'Elizabello'),a('Tianzi',60),a('Medb',60),a('Hiling',60),a('King Il',60)],
+ 'mix-twins':[a('Ruby Hoshino',10,'Ruby'),a('Aqua Hoshino',15,'Aqua'),a('Android 17',20,'Lapis'),a('Android 18',20,'Lazuli'),a('Charlotte Katakuri',40,'Katakuri'),
+  a('Johan Liebert',40,'Johan'),a('Mion Sonozaki',40,'Mion'),a('Shion Sonozaki',45,'Shion'),a('Kagami Hiiragi',45,'Kagami'),a('Tsukasa Hiiragi',50,'Tsukasa'),
+  a('Charlotte Daifuku',50,'Daifuku'),a('Charlotte Oven',50,'Oven'),a('Anna Liebert',50,'Nina Fortner'),a('Tate',50),a('Liza',55),a('Nahoya Kawata',50,'Smiley'),
+  a('Souya Kawata',50,'Angry'),a('Kururi Orihara',55,'Kururi'),a('Mairu Orihara',55,'Mairu'),a('Gemini',55,'Gemi and Mini'),a('Saga',55,'Gemini Saga'),a('Kanon',60)],
+ 'wide-long-running':[a('Yo-kai Watch',40,'Yokai Watch'),a('Ninja Hattori-kun',60,'Hattori-kun'),a('Perman',75),a('Ojarumaru',80),a('Shimajiro',80,'Shimajiro: A World of Wonder')],
+ 'mix-red-hair':[a('Stark',25),a('Hyoma Chigiri',25,'Chigiri'),a('Ikuyo Kita',30,'Kita'),a('Iskandar',35,'Rider'),a('Satori Tendo',40,'Tendo'),a('Reinhard van Astrea',45,'Reinhard'),
+  a('Petra Ral',45,'Petra'),a('Ryuko Matoi',50,'Ryuko'),a('Toya Todoroki',50,'Toya'),a('Mito Freecss',55,'Aunt Mito'),a('Shinjuro Rengoku',55,'Shinjuro'),a('Tanjuro Kamado',60,'Tanjuro'),
+  a('Lupusregina Beta',75,'Lupusregina')],
+};
+const ALIASES_NOV17={
+ 'wide-food':{'Food Wars!':['Food Wars: Shokugeki no Soma']},
+ 'wide-long-running':{'Crayon Shin-chan':['Shin Chan'],'Hamtaro':['Tottoko Hamutaro'],'Detective Conan':['Meitantei Conan'],'Kochikame':['Kochira Katsushika-ku Kameari Koen-mae Hashutsujo']},
+ 'wide-hats':{'Monkey D. Luffy':['Straw Hat Luffy','Straw Hat'],'Koichi Zenigata':['Pops']},
+};
+for(const [id,extra] of Object.entries(MORE_NOV17)){const x=bank.find(q=>q.id==='timed-v4-'+id);if(!x)throw Error('Unknown question: '+id);
+ const seen=new Set(x.answers.flatMap(y=>[y.name,...(y.aliases||[])]).map(key));
+ for(const e of extra){const forms=[e.name,...(e.aliases||[])];if(forms.some(f=>seen.has(key(f))))throw Error('Duplicate answer in '+id+': '+e.name);forms.forEach(f=>seen.add(key(f)));x.answers.push(e);}}
+for(const [id,map] of Object.entries(ALIASES_NOV17)){const x=bank.find(q=>q.id==='timed-v4-'+id);const seen=new Set(x.answers.flatMap(y=>[y.name,...(y.aliases||[])]).map(key));
+ for(const [name,aliases] of Object.entries(map)){const hit=x.answers.find(y=>y.name===name);if(!hit)throw Error('Unknown answer for alias: '+name);
+  for(const al of aliases){if(seen.has(key(al)))continue;seen.add(key(al));hit.aliases=[...(hit.aliases||[]),al];}}}
 // First-cycle order, so each day mixes topics (hair colours spread out); append new ids at the end.
 ['mix-red-hair','wide-detectives','mix-masks','wide-cats','wide-starters','mix-glasses','wide-vampires','mix-blonde','wide-robots','mix-healers','wide-ninjas','mix-fire','wide-dragons','mix-white-hair','wide-eyepatch','mix-mentors','wide-shinigami','mix-pink-hair','mix-companions','mix-lightning','wide-hats','mix-green-hair','mix-royalty','mix-twins','wide-ghibli','wide-sports','wide-isekai','wide-magical-girl','wide-time-travel','wide-mecha','wide-studios','wide-shinkai-hosoda','wide-food','wide-long-running'].forEach((id,i)=>{const x=bank.find(x=>x.id==='timed-v4-'+id);if(!x||!x.wide)throw Error('Unknown ordered question: '+id);x.order=i;});
 return bank;})();
