@@ -1143,5 +1143,9 @@ for(const [id,map] of Object.entries(ALIASES_ASCENT8)){const x=bank.find(q=>q.id
   for(const al of aliases){if(seen.has(key(al)))continue;seen.add(key(al));hit.aliases=[...(hit.aliases||[]),al];}}}
 // First-cycle order, so each day mixes topics (hair colours spread out); append new ids at the end.
 ['mix-red-hair','wide-detectives','mix-masks','wide-cats','wide-starters','mix-glasses','wide-vampires','mix-blonde','wide-robots','mix-healers','wide-ninjas','mix-fire','wide-dragons','mix-white-hair','wide-eyepatch','mix-mentors','wide-shinigami','mix-pink-hair','mix-companions','mix-lightning','wide-hats','mix-green-hair','mix-royalty','mix-twins','wide-ghibli','wide-sports','wide-isekai','wide-magical-girl','wide-time-travel','wide-mecha','wide-studios','wide-shinkai-hosoda','wide-food','wide-long-running'].forEach((id,i)=>{const x=bank.find(x=>x.id==='timed-v4-'+id);if(!x||!x.wide)throw Error('Unknown ordered question: '+id);x.order=i;});
+// Rarity curve (Nov 17 2026): the scores above are written on a flatter scale; this lifts them so more answers land in Rare and Deep Cut.
+// Tier cut-offs are unchanged: under 10 stays Fodder, 10-29 becomes Side Character, 30-54 Rare, 55-99 Deep Cut, 100 Limit Break.
+const lift=r=>r>=100?100:r>=55?Math.round(75+(r-55)*24/44):r>=30?Math.round(45+(r-30)*30/25):r>=10?Math.round(20+(r-10)*25/20):Math.round(r*2);
+for(const x of bank)if(x.wide)for(const y of x.answers)y.rarity=lift(y.rarity);
 return bank;})();
 if(typeof module!=="undefined")module.exports=POWER_LEVEL_QUESTIONS;
