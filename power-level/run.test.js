@@ -7,7 +7,7 @@ test('daily schedule: Ascents #1-2 frozen, then seven any-anime questions a day'
  const byId=Object.fromEntries(bank.map(q=>[q.id,q])),day=d=>new Date(Date.parse(R.EPOCH)+d*864e5).toISOString().slice(0,10),t=x=>'timed-v4-'+x;
  assert.deepEqual(R.select(bank,day(0)),['naruto-leaf','onepiece-fruit','bleach-gotei','hxh-troupe','tokyoghoul-ghouls'].map(t));
  assert.deepEqual(R.select(bank,day(1)),['mha-classes','blackclover-knights','demonslayer-ranks','aot-scouts','mix-jutsu-quirks'].map(t));
- const general=bank.filter(q=>q.wide),seen=new Set();let prev=[];
+ const general=bank.filter(q=>q.wide&&!q.since),seen=new Set();let prev=[];
  for(let d=2;d<200;d++){const ids=R.select(bank,day(d)),qs=ids.map(id=>byId[id]);
   assert.equal(ids.length,7);assert.equal(new Set(ids).size,7);assert.deepEqual(ids,R.select(bank,day(d)));
   assert.ok(qs.every(q=>q.wide),'only any-anime questions');assert.equal(qs.filter(q=>q.wide==='title').length,2);
@@ -15,6 +15,10 @@ test('daily schedule: Ascents #1-2 frozen, then seven any-anime questions a day'
   for(const id of ids)assert.ok(!prev.includes(id),'repeated from yesterday: '+id);prev=ids;
   if(d<7)ids.forEach(id=>seen.add(id));}
  assert.equal(seen.size,general.length,'every any-anime question shows up within five days');});
+test('the second batch fills Ascents #8 and #9 with brand-new questions',()=>{
+ const byId=Object.fromEntries(bank.map(q=>[q.id,q]));
+ for(const date of ['2026-11-18','2026-11-19']){const qs=R.select(bank,date).map(id=>byId[id]);assert.equal(qs.length,7);assert.ok(qs.every(q=>q.since==='2026-11-18'),date+' should be all new');}
+ for(let d=0;d<7;d++){const date=new Date(Date.parse(R.EPOCH)+d*864e5).toISOString().slice(0,10);assert.ok(R.select(bank,date).every(id=>!byId[id].since),date+' must not use the new batch');}});
 test('appending a dated question keeps earlier days the same',()=>{
  const day=d=>new Date(Date.parse(R.EPOCH)+d*864e5).toISOString().slice(0,10);
  const more=[...bank,{...bank.find(q=>q.id==='timed-v4-wide-cats'),id:'timed-v4-wide-extra',order:undefined,since:day(40)}];
