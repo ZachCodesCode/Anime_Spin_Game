@@ -1132,7 +1132,7 @@ const MORE_ASCENT8={
   a('Hoshin Engi',50,'Soul Hunter'),a('Yuuna and the Haunted Hot Springs',50,'Yuragi-sou no Yuuna-san'),a('Letter Bee',55,'Tegami Bachi'),a('Space Adventure Cobra',60,'Cobra'),a('Video Girl Ai',65),
   a('I"s',65,'Is'),a('Sakigake!! Otokojuku',70,'Otokojuku'),a('Stop!! Hibari-kun!',70,'Stop Hibari-kun'),a('Tottemo! Luckyman',70,'Luckyman'),a('Jungle King Tar-chan',75,'Tar-chan'),
   a('Magical Taruruto-kun',75,'Taruruto'),a('High School! Kimengumi',75,'Kimengumi'),a('Ring ni Kakero',75),a('Mr. Fullswing',75),a('Rokudenashi Blues',80)],
- 'wide-purple-hair':[a('Mash Kyrielight',40,'Mash'),a('Elma',50),a('Minamoto no Raikou',55,'Raikou'),a('Lancelot',60),a('Shuten-douji',65,'Shuten Douji')],
+ 'wide-purple-hair':[a('Mash Kyrielight',40,'Mash'),a('Elma',50),a('Minamoto no Raikou',55,'Raikou'),a('Lancelot',60),a('Shuten-douji',65,'Shuten Douji'),a('Loki',20)],
 };
 const ALIASES_ASCENT8={'wide-shonen-jump':{'Dragon Ball':['Dragon Ball Super']}};
 for(const [id,extra] of Object.entries(MORE_ASCENT8)){const x=bank.find(q=>q.id==='timed-v4-'+id);if(!x)throw Error('Unknown question: '+id);
