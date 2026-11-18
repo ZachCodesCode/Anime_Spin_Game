@@ -56,7 +56,7 @@ test('seven-question cat fixture keeps questions 5–7 aligned through reveals a
   const answer=i===4?'Luna':q.answers[0].name;
   const result=R.resolve(s,bank,'answer',answer,now+1000);
   assert.equal(result.status,'resolved');assert.equal(result.outcome.id,q.id);
-  if(i===4)assert.equal(result.outcome.boost,10);
+  if(i===4)assert.equal(result.outcome.boost,C.points(q.answers.find(a=>a.name==='Luna')));
   assert.equal(R.questionIndex(s),i);
   s=R.restore(JSON.stringify(s),bank,date,s.ids);
   assert.ok(s);assert.equal(R.questionIndex(s),i);
