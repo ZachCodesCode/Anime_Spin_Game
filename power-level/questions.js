@@ -1162,5 +1162,36 @@ for(const [id,extra] of Object.entries(MORE_ASCENT9)){const x=bank.find(q=>q.id=
 for(const [id,map] of Object.entries(ALIASES_ASCENT9)){const x=bank.find(q=>q.id==='timed-v4-'+id);const seen=new Set(x.answers.flatMap(y=>[y.name,...(y.aliases||[])]).map(key));
  for(const [name,aliases] of Object.entries(map)){const hit=x.answers.find(y=>y.name===name);if(!hit)throw Error('Unknown answer for alias: '+name);
   for(const al of aliases){if(seen.has(key(al)))continue;seen.add(key(al));hit.aliases=[...(hit.aliases||[]),al];}}}
+// Own review of Ascent #9 (Nov 19 2026). Final-scale rarities: <20 Fodder, 20+ Side Character, 45+ Rare, 75+ Deep Cut.
+const MORE_REVIEW19={
+ 'wide-tattoos':[a("Mikasa Ackerman",40,"Mikasa"),a("Kiba Inuzuka",40,"Kiba"),a("Tsume Inuzuka",72,"Tsume"),a("Hana Inuzuka",78),a("Yugao Uzuki",80,"Yugao"),
+  a("Jolyne Cujoh",45,"Jolyne"),a("Tatsu",55,"Immortal Dragon"),a("Yoshitake Shiraishi",55,"Shiraishi"),a("Toshizo Hijikata",60,"Hijikata Toshizo"),
+  a("Tatsuuma Ushiyama",68,"Ushiyama"),a("Kuroobi",76),a("Chew",76),a("Lyon Vastia",58,"Lyon"),a("Jura Neekis",70,"Jura"),a("Ichiya",68,"Ichiya Vandalay Kotobuki"),
+  a("Hibiki Lates",75,"Hibiki"),a("Minerva Orland",70,"Minerva"),a("Kagura Mikazuchi",70),a("Millianna",76),a("Acnologia",60),a("Mavis Vermillion",62,"Mavis"),
+  a("Maine",72),a("Esdeath",55)],
+ 'wide-ice':[a("Ghiaccio",45,"White Album"),a("Rei Todoroki",68),a("Anastasia",75,"Anastasia Nikolaevna Romanova"),a("Tala",76,"Yuriy Ivanov"),
+  a("Sneasel",70),a("Cloyster",70),a("Dewgong",70),a("Snorunt",72)],
+ 'wide-horror':[a("Jujutsu Kaisen",35,"JJK"),a("Hell's Paradise",48,"Jigokuraku","Hells Paradise"),a("Kabaneri of the Iron Fortress",55,"Koutetsujou no Kabaneri","Kabaneri"),
+  a("GeGeGe no Kitaro",55,"Kitaro","Hakaba Kitaro"),a("Gyo",75,"Gyo: Tokyo Fish Attack"),a("Shadow Star Narutaru",80,"Narutaru"),a("Higanjima",75),a("Ga-Rei: Zero",70,"Ga-Rei Zero"),
+  a("Pupa",76),a("Mars Red",72),a("The Empire of Corpses",78,"Shisha no Teikoku"),a("Blood: The Last Vampire",70,"Blood the Last Vampire"),a("Kowabon",85)],
+ 'wide-archers':[a("Yhwach",55),a("Jugram Haschwalth",70,"Haschwalth"),a("Lille Barro",80),a("Robert Accutrone",85),a("Sara",70,"Sara (Mushoku Tensei)"),
+  a("Sagittarius",75,"Sagittarius (Fairy Tail)"),a("Minato Narumiya",55,"Narumiya")],
+ 'wide-blue-hair':[a("Tetsuya Kuroko",25,"Kuroko"),a("Cu Chulainn",40,"Lancer","Cú Chulainn"),a("Konata Izumi",45,"Konata"),a("Simon",40,"Simon the Digger"),
+  a("Dawn",40,"Hikari"),a("Lana",58),a("Steven Stone",58,"Steven"),a("Joe Kido",58,"Jou Kido","Joe"),a("Ken Ichijouji",60,"Ken Ichijoji"),a("Asuna",45,"Asuna Yuuki"),
+  a("Tyson Granger",55,"Takao Kinomiya","Tyson"),a("Yoshino",62,"Yoshino Himekawa"),a("Eureka",62),a("Ciel Phantomhive",55,"Ciel"),a("Hayate Ayasaki",62),
+  a("Launch",60,"Lunch"),a("Kaito",55),a("Makoto Yuki",66),a("Naoto Shirogane",66,"Naoto")],
+ 'wide-light-novel':[a("Gate",55,"Gate: Jieitai","GATE"),a("My Next Life as a Villainess",55,"Hamefura"),a("In Another World with My Smartphone",55,"Isekai wa Smartphone"),
+  a("Restaurant to Another World",65,"Isekai Shokudou"),a("The Asterisk War",65,"Gakusen Toshi Asterisk"),a("Kokoro Connect",65),a("The Detective Is Already Dead",65,"Tantei wa Mou Shindeiru"),
+  a("Higehiro",65,"Higehiro: After Being Rejected"),a("Fate/Apocrypha",60,"Fate Apocrypha"),a("Fate/strange Fake",65,"Fate Strange Fake"),a("Lord El-Melloi II's Case Files",70,"Lord El-Melloi II"),
+  a("Gosick",70),a("Aria the Scarlet Ammo",70,"Hidan no Aria"),a("Black Bullet",70),a("Akashic Records of Bastard Magic Instructor",70,"Rokudenashi Majutsu Koushi"),
+  a("The Ryuo's Work Is Never Done!",72,"Ryuuou no Oshigoto"),a("Shimoneta",72),a("Trapped in a Dating Sim",70,"Otome Game Sekai wa Mob ni Kibishii Sekai desu"),
+  a("The Wrong Way to Use Healing Magic",72),a("Tearmoon Empire",72),a("Oreshura",76),a("Sakurada Reset",76),a("Myriad Colors Phantom World",76),
+  a("The Hentai Prince and the Stony Cat",76,"Henneko"),a("Tokyo Ravens",72),a("Ishura",76),a("Unnamed Memory",76),a("Rail Wars!",78,"Rail Wars")],
+ 'wide-wind':[a("Ais Wallenstein",35,"Aiz Wallenstein","Ais","Aiz"),a("Saber",38,"Artoria Pendragon","Artoria"),a("Leafa",50,"Suguha Kirigaya"),a("Accelerator",55),
+  a("Ryu Lion",66,"Ryuu Lion","Lyu Lion"),a("Sakura Kinomoto",55),a("Tyson Granger",55,"Takao Kinomiya")],
+};
+for(const [id,extra] of Object.entries(MORE_REVIEW19)){const x=bank.find(q=>q.id==='timed-v4-'+id);if(!x)throw Error('Unknown question: '+id);
+ const seen=new Set(x.answers.flatMap(y=>[y.name,...(y.aliases||[])]).map(key));
+ for(const e of extra){const forms=[e.name,...(e.aliases||[])];if(forms.some(f=>seen.has(key(f))))throw Error('Duplicate answer in '+id+': '+e.name);if(e.rarity>=100)throw Error('Second Limit Break in '+id);forms.forEach(f=>seen.add(key(f)));x.answers.push(e);}}
 return bank;})();
 if(typeof module!=="undefined")module.exports=POWER_LEVEL_QUESTIONS;
