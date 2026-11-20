@@ -6,6 +6,7 @@ const { db, ensureSuggestions, cors } = require("./_db.js");
 const { guest, sameOrigin } = require("./_guest.js");
 const C = require("../power-level/core.js");
 const R = require("../power-level/run.js");
+const D = require("../power-level/descent.js");
 const bank = require("../power-level/questions.js");
 
 const isDay = d => /^\d{4}-\d{2}-\d{2}$/.test(d);
@@ -40,7 +41,7 @@ module.exports = async function handler(req, res) {
     let questionId = null;
     if (kind === "answer") {
       questionId = String(body.questionId || "");
-      if (!R.select(bank, date).includes(questionId)) return res.status(400).json({ error: "Bad question" });
+      if (![...R.select(bank, date), ...D.select(bank, date)].includes(questionId)) return res.status(400).json({ error: "Bad question" });
     }
 
     const who = guest(req, res, true);

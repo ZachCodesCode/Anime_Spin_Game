@@ -324,3 +324,16 @@ body.power-level-active #powerLevel #plTop .pl-all-tier li.mine small{color:#ffe
  body.power-level-active #powerLevel .pl-back.pl-spin{font-size:10px;padding:10px 11px}
  body.power-level-active #powerLevel #plStage #plPips{top:78px;gap:5px}
 }
+
+/* ==== Ascent / Descent mode switch (start and results screens only) ==== */
+.pl-modes{position:relative;z-index:3;display:flex;gap:8px;justify-content:center;width:min(420px,100%);margin:0 auto 14px}
+.pl-modes button{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:9px 10px;border:2px solid var(--edge-d);border-radius:10px;background:var(--paper);color:var(--ink);font:inherit;cursor:pointer}
+.pl-modes button b{font:600 15px 'Fredoka'}.pl-modes button small{font-size:10px;letter-spacing:.04em;opacity:.8}
+.pl-modes button[aria-selected=true]{background:var(--gold);border-color:var(--gold-d)}
+#powerLevel[data-phase=active] .pl-modes,#powerLevel[data-phase=reveal] .pl-modes{display:none}
+body.power-level-active #powerLevel .pl-modes button{background:rgba(11,17,38,.88);border-color:var(--kr-line);border-radius:0;color:#c9d1f2}
+body.power-level-active #powerLevel .pl-modes button b{font:400 12px 'Silkscreen',monospace;letter-spacing:.12em;text-transform:uppercase;color:#fff}
+body.power-level-active #powerLevel .pl-modes button small{font:400 9px 'Silkscreen',monospace;letter-spacing:.08em}
+body.power-level-active #powerLevel .pl-modes button[aria-selected=true]{border-color:var(--kr-pink);box-shadow:0 0 0 1px var(--kr-pink),0 0 18px #ff4f9a55}
+body.power-level-active #powerLevel .pl-modes button[data-mode=descent][aria-selected=true]{border-color:var(--kr-cyan);box-shadow:0 0 0 1px var(--kr-cyan),0 0 18px #5fe6ff55}
+body.power-level-active #powerLevel .pl-modes button:focus-visible{outline:2px solid #fff;outline-offset:2px}

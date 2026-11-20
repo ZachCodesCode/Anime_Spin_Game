@@ -13,6 +13,14 @@
   ],
   "rewrites": [
     {
+      "source": "/descent",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/descent/",
+      "destination": "/index.html"
+    },
+    {
 "source": "/spin",
       "destination": "/index.html"
     },
