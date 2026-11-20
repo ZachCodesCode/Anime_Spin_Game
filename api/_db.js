@@ -50,6 +50,26 @@ function ensureAscent() {
   return ascentReady;
 }
 
+// Anime Ascent player suggestions (missing answers and question ideas), read by the owner via GET /api/suggest.
+let suggestReady = null;
+function ensureSuggestions() {
+  if (!suggestReady) {
+    suggestReady = db.batch([
+      `CREATE TABLE IF NOT EXISTS ascent_suggestions (
+         id INTEGER PRIMARY KEY AUTOINCREMENT,
+         day TEXT NOT NULL,
+         guest TEXT NOT NULL,
+         kind TEXT NOT NULL,
+         question_id TEXT,
+         text TEXT NOT NULL,
+         created_at INTEGER NOT NULL
+       )`,
+      `CREATE INDEX IF NOT EXISTS idx_ascent_suggest_day ON ascent_suggestions (day, guest)`,
+    ], "write").catch(e => { suggestReady = null; throw e; });
+  }
+  return suggestReady;
+}
+
 // Permissive CORS so the game works same-origin (production) or from a local preview.
 function cors(res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -57,4 +77,4 @@ function cors(res) {
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 }
 
-module.exports = { db, ensureTable, ensureAscent, cors };
+module.exports = { db, ensureTable, ensureAscent, ensureSuggestions, cors };
