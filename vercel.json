@@ -14,11 +14,11 @@
   "rewrites": [
     {
       "source": "/descent",
-      "destination": "/index.html"
+      "destination": "/descent.html"
     },
     {
       "source": "/descent/",
-      "destination": "/index.html"
+      "destination": "/descent.html"
     },
     {
 "source": "/spin",
