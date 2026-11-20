@@ -325,15 +325,21 @@ body.power-level-active #powerLevel #plTop .pl-all-tier li.mine small{color:#ffe
  body.power-level-active #powerLevel #plStage #plPips{top:78px;gap:5px}
 }
 
-/* ==== Ascent / Descent mode switch (start and results screens only) ==== */
-.pl-modes{position:relative;z-index:3;display:flex;gap:8px;justify-content:center;width:min(420px,100%);margin:0 auto 14px}
-.pl-modes button{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:9px 10px;border:2px solid var(--edge-d);border-radius:10px;background:var(--paper);color:var(--ink);font:inherit;cursor:pointer}
-.pl-modes button b{font:600 15px 'Fredoka'}.pl-modes button small{font-size:10px;letter-spacing:.04em;opacity:.8}
-.pl-modes button[aria-selected=true]{background:var(--gold);border-color:var(--gold-d)}
-#powerLevel[data-phase=active] .pl-modes,#powerLevel[data-phase=reveal] .pl-modes{display:none}
-body.power-level-active #powerLevel .pl-modes button{background:rgba(11,17,38,.88);border-color:var(--kr-line);border-radius:0;color:#c9d1f2}
-body.power-level-active #powerLevel .pl-modes button b{font:400 12px 'Silkscreen',monospace;letter-spacing:.12em;text-transform:uppercase;color:#fff}
-body.power-level-active #powerLevel .pl-modes button small{font:400 9px 'Silkscreen',monospace;letter-spacing:.08em}
-body.power-level-active #powerLevel .pl-modes button[aria-selected=true]{border-color:var(--kr-pink);box-shadow:0 0 0 1px var(--kr-pink),0 0 18px #ff4f9a55}
-body.power-level-active #powerLevel .pl-modes button[data-mode=descent][aria-selected=true]{border-color:var(--kr-cyan);box-shadow:0 0 0 1px var(--kr-cyan),0 0 18px #5fe6ff55}
-body.power-level-active #powerLevel .pl-modes button:focus-visible{outline:2px solid #fff;outline-offset:2px}
+/* ==== Other daily mode: start-screen button under "Play Shonen Spin", and a box under the % after a round ==== */
+.pl-alt{top:58px}
+body.power-level-active #powerLevel .pl-back.pl-alt{top:62px;border-color:var(--kr-cyan);color:var(--kr-cyan);font-size:11px;padding:11px 14px}
+body.power-level-active #powerLevel .pl-back.pl-alt:hover{background:var(--kr-cyan);color:#0b1126}
+body.power-level-active #powerLevel:not([data-phase=ready]) .pl-back.pl-alt{display:none}
+.pl-next-mode{display:none;position:relative;z-index:2;width:min(720px,100%);margin:18px auto 0;padding:20px 24px;text-align:center;background:var(--paper);border:1px solid var(--edge-d);border-radius:12px}
+#powerLevel[data-phase=done] .pl-next-mode{display:block}
+.pl-next-kicker{margin:0;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2)}
+.pl-next-mode h3{margin:6px 0 4px;font:500 21px 'Fredoka';color:var(--night)}
+.pl-next-text{margin:0 0 14px;font-size:14px;line-height:1.5;color:var(--ink)}
+.pl-next-mode .btn{padding:12px 22px}
+body.power-level-active #powerLevel .pl-next-mode{background:#0d1430;border:2px solid var(--kr-cyan);border-radius:0;box-shadow:0 0 22px #5fe6ff33}
+body.power-level-active #powerLevel .pl-next-mode[data-other=ascent]{border-color:var(--kr-pink);box-shadow:0 0 22px #ff4f9a33}
+body.power-level-active #powerLevel .pl-next-kicker{font:400 10px 'Silkscreen',monospace;letter-spacing:.24em;color:var(--kr-cyan)}
+body.power-level-active #powerLevel .pl-next-mode[data-other=ascent] .pl-next-kicker{color:var(--kr-pink)}
+body.power-level-active #powerLevel .pl-next-mode h3{font:400 17px 'Silkscreen',monospace;letter-spacing:.1em;text-transform:uppercase;color:#fff}
+body.power-level-active #powerLevel .pl-next-text{color:#c9d1f2}
+@media(max-width:650px){body.power-level-active #powerLevel .pl-back.pl-alt{top:56px;font-size:10px;padding:10px 11px}body.power-level-active #powerLevel[data-phase=ready] .pl-heading{margin-top:104px}}
