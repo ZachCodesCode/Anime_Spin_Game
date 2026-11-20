@@ -1193,5 +1193,48 @@ const MORE_REVIEW19={
 for(const [id,extra] of Object.entries(MORE_REVIEW19)){const x=bank.find(q=>q.id==='timed-v4-'+id);if(!x)throw Error('Unknown question: '+id);
  const seen=new Set(x.answers.flatMap(y=>[y.name,...(y.aliases||[])]).map(key));
  for(const e of extra){const forms=[e.name,...(e.aliases||[])];if(forms.some(f=>seen.has(key(f))))throw Error('Duplicate answer in '+id+': '+e.name);if(e.rarity>=100)throw Error('Second Limit Break in '+id);forms.forEach(f=>seen.add(key(f)));x.answers.push(e);}}
+// Own review of Ascent #10 (Nov 20 2026). Final-scale rarities: <20 Fodder, 20+ Side Character, 45+ Rare, 75+ Deep Cut.
+const MORE_REVIEW20={
+ 'wide-detectives':[a("Yusuke Urameshi",45,"Yusuke","Spirit Detective"),a("Naoto Shirogane",70,"Naoto"),a("Goro Akechi",65,"Akechi"),a("Phoenix Wright",62,"Ryuichi Naruhodo"),
+  a("Dick Gumshoe",80,"Gumshoe"),a("Siesta",55),a("Kimihiko Kimizuka",72,"Kimizuka"),a("Kazuya Shibuya",75,"Naru"),a("Kyu",82,"Kyutaro Renjo"),a("Hercule Poirot",80,"Poirot"),
+  a("Miss Marple",82,"Jane Marple"),a("Akiko Yosano",75,"Yosano"),a("Junichiro Tanizaki",75,"Tanizaki"),a("Kenji Miyazawa",78),a("Kyoka Izumi",75,"Kyoka"),a("Yukichi Fukuzawa",72,"Fukuzawa"),
+  a("Miwako Sato",75,"Detective Sato"),a("Yusaku Kudo",72,"Yusaku"),a("Nobuchika Ginoza",72,"Ginoza"),a("Batou",72),a("Motoko Kusanagi",62,"Major","The Major"),
+  a("Shuichi Aizawa",76),a("Kanzo Mogi",80,"Mogi"),a("Satoshi Fukube",80,"Fukube"),a("Alice",85,"Alice (Kamisama no Memochou)"),a("Shinjuro Yuki",85,"Shinjurou Yuuki")],
+ 'mix-masks':[a("Killer",35,"Massacre Soldier"),a("Sai",60),a("Lisa Yadomaru",72,"Lisa"),a("Love Aikawa",75,"Love"),a("Rojuro Otoribashi",78,"Rose"),a("Mashiro Kuna",76,"Mashiro"),
+  a("Hachigen Ushoda",80,"Hachi"),a("Kaname Tosen",72,"Tosen"),a("Ectoplasm",70),a("Thirteen",70),a("Snipe",72),a("Moonfish",82),a("Rappa",80,"Kendo Rappa"),a("Mimic",82,"Joi Irinaka"),
+  a("Renji Yomo",72,"Yomo"),a("Noro",80),a("Loid Forger",45,"Twilight","Loid"),a("Lupin III",50,"Lupin","Arsene Lupin III"),a("Kaito Kid",50,"Kaitou Kid","Kaito Kuroba","Phantom Thief Kid"),
+  a("Zechs Merquise",60,"Zechs","Milliardo Peacecraft"),a("Rau Le Creuset",65,"Rau"),a("Full Frontal",75),a("Mr. Bushido",80),a("Lan Fan",70),a("Fu",78),
+  a("Genkai",70,"Masked Fighter"),a("Hassan-i-Sabbah",60,"Assassin","Hassan"),a("Vanir",65),a("Evileye",72),a("Al",72,"Aldebaran"),a("Shizu",50,"Shizue Izawa"),a("Rimuru Tempest",45,"Rimuru"),
+  a("Death Gun",65,"Sterben"),a("Joker",62,"Ren Amamiya"),a("Shin",70),a("Noi",70),a("Ainz Ooal Gown",60,"Ainz")],
+ 'wide-space':[a("Mobile Suit Gundam: The Witch from Mercury",50,"Witch from Mercury","G-Witch"),a("Mobile Suit Gundam Unicorn",55,"Gundam Unicorn"),a("Zeta Gundam",55,"Mobile Suit Zeta Gundam"),
+  a("Star Wars: Visions",55,"Star Wars Visions"),a("Terra Formars",55,"Terraformars"),a("Space Adventure Cobra",60,"Cobra"),a("Dirty Pair",70),a("Voices of a Distant Star",70,"Hoshi no Koe"),
+  a("Expelled from Paradise",70,"Rakuen Tsuiho"),a("The Irresponsible Captain Tylor",75,"Captain Tylor"),a("Rocket Girls",75),a("Crusher Joe",80),a("Diebuster",80,"Top wo Nerae 2"),
+  a("Majestic Prince",80,"Ginga Kikoutai Majestic Prince"),a("Planet With",80),a("Battle Fairy Yukikaze",80,"Yukikaze"),a("Ulysses 31",80),a("Welcome to the Space Show",80,"Uchuu Show e Youkoso"),
+  a("Gall Force",85),a("Mars Daybreak",85)],
+ 'wide-cats':[a("Beerus",25,"Lord Beerus"),a("Korin",35,"Karin (Dragon Ball)"),a("Jibanyan",35),a("Hello Kitty",30,"Kitty White"),a("Shampoo",50),a("Nekomusume",55,"Neko Musume"),
+  a("Tsubasa Hanekawa",55,"Hanekawa","Black Hanekawa"),a("Nyanta",75),a("Dorami",60),a("Catherine",65),a("Tiger",78),a("Nichiya",85),a("Yuki",80,"Yuki (The Cat Returns)"),
+  a("Prince Lune",80,"Lune"),a("Pero",80,"Puss in Boots"),a("Chiyo's Father",85,"Chiyo-chan's Father"),a("Chocola",60),a("Vanilla",65),
+  a("Sprigatito",45),a("Meowscarada",60),a("Incineroar",55),a("Torracat",72),a("Skitty",65),a("Delcatty",75),a("Espurr",70),a("Meowstic",72),a("Glameow",70),a("Purugly",75),
+  a("Purrloin",72),a("Liepard",75)],
+ 'wide-mappa':[a("Chainsaw Man – The Movie: Reze Arc",35,"Reze Arc","Chainsaw Man Reze Arc"),a("Altair: A Record of Battles",70,"Altair")],
+ 'mix-glasses':[a("Maki Zenin",30,"Maki"),a("Ken Takakura",25,"Okarun"),a("Taro Sakamoto",35,"Sakamoto"),a("Shizuo Heiwajima",40,"Shizuo"),a("Naruto Uzumaki",35,"Naruto"),
+  a("Hawks",45,"Keigo Takami"),a("Kaname Tosen",55,"Tosen"),a("Chojuro",60),a("Udon",72),a("Sabo",50),a("Vinsmoke Ichiji",65,"Ichiji"),a("Vinsmoke Niji",65,"Niji"),a("Vinsmoke Yonji",65,"Yonji"),
+  a("Knov",72),a("Senbei Norimaki",65,"Senbei"),a("Dr. Brief",75),a("Makoto Hyuga",78),a("Tatsuma Sakamoto",60),a("Taizo Hasegawa",60,"Madao"),a("Mumen Rider",50,"Licenseless Rider"),
+  a("Sinon",55,"Shino Asada"),a("Yukio Okumura",50,"Yukio"),a("Nicholas D. Wolfwood",55,"Wolfwood"),a("Benny",75),a("Dutch",70),a("Noriaki Kakyoin",55,"Kakyoin"),a("Ghiaccio",60),
+  a("Professor Kukui",60,"Kukui"),a("Joe Kido",55,"Jou Kido"),a("Tai Kamiya",40,"Taichi Yagami","Tai"),a("Davis Motomiya",55,"Daisuke Motomiya","Davis"),a("Takato Matsuki",65,"Takato"),
+  a("Ken Ichijouji",65,"Digimon Emperor","Digimon Kaiser"),a("Demiurge",50),a("Airi Sakura",75),a("Asfi Al Andromeda",72,"Asfi"),a("Yuki Nagato",55),a("Miyuki Takara",65),
+  a("Nodoka Manabe",70,"Nodoka"),a("Sawako Yamanaka",70,"Sawako"),a("Tsubasa Hanekawa",55,"Hanekawa"),a("Nobuchika Ginoza",60,"Ginoza"),a("Franky Franklin",50),a("Ichigo Saitou",60),
+  a("Tetta Kisaki",45,"Kisaki"),a("Evergreen",65),a("Hinawa",70,"Takehisa Hinawa"),a("Viktor Licht",75),a("Franken Stein",55,"Stein","Dr. Stein"),a("Ox Ford",80),
+  a("Lloyd Asplund",70,"Lloyd"),a("Nina Einstein",75),a("Shou Tucker",60,"Tucker"),a("Kain Fuery",70,"Fuery"),a("Ranpo Edogawa",50,"Ranpo"),a("Yomi Mizuhara",65,"Yomi"),
+  a("Sadaharu Inui",60,"Inui"),a("Kunimitsu Tezuka",50,"Tezuka"),a("Sakamichi Onoda",55,"Onoda"),a("Kiminobu Kogure",60,"Kogure","Megane-kun"),a("Kazuya Miyuki",60)],
+};
+const ALIASES_REVIEW20={'wide-detectives':{'L':['Ryuzaki'],'Sherlock Holmes':['Sherlock Hound']},
+ 'wide-mappa':{'Attack on Titan: The Final Season':['AOT'],'Chainsaw Man':['CSM']}};
+for(const [id,extra] of Object.entries(MORE_REVIEW20)){const x=bank.find(q=>q.id==='timed-v4-'+id);if(!x)throw Error('Unknown question: '+id);
+ const seen=new Set(x.answers.flatMap(y=>[y.name,...(y.aliases||[])]).map(key));
+ for(const e of extra){const forms=[e.name,...(e.aliases||[])];if(forms.some(f=>seen.has(key(f))))throw Error('Duplicate answer in '+id+': '+e.name);if(e.rarity>=100)throw Error('Second Limit Break in '+id);forms.forEach(f=>seen.add(key(f)));x.answers.push(e);}}
+for(const [id,map] of Object.entries(ALIASES_REVIEW20)){const x=bank.find(q=>q.id==='timed-v4-'+id);const seen=new Set(x.answers.flatMap(y=>[y.name,...(y.aliases||[])]).map(key));
+ for(const [name,aliases] of Object.entries(map)){const hit=x.answers.find(y=>y.name===name);if(!hit)throw Error('Unknown answer for alias: '+name);
+  for(const al of aliases){if(seen.has(key(al)))continue;seen.add(key(al));hit.aliases=[...(hit.aliases||[]),al];}}}
 return bank;})();
 if(typeof module!=="undefined")module.exports=POWER_LEVEL_QUESTIONS;
