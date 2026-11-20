@@ -198,12 +198,14 @@ body.power-level-active #powerLevel .pl-question{margin:120px auto 0;padding:24p
 body.power-level-active #powerLevel #plCategory{font:400 11px/1.6 'Silkscreen',monospace;letter-spacing:.2em;color:var(--kr-pink)}
 body.power-level-active #powerLevel .pl-question h3{margin:10px auto 0;max-width:none;font:400 clamp(28px,4.2vw,40px)/1.15 'VT323',monospace;letter-spacing:.02em;color:#fff}
 body.power-level-active #powerLevel[data-phase=active] .pl-question h3::after{content:'▲  rarer answers climb higher  ▲';display:block;margin-top:12px;font:400 17px 'VT323',monospace;letter-spacing:.12em;color:var(--ink-2)}
+body.power-level-active #powerLevel[data-mode=descent][data-phase=active] .pl-question h3::after{content:'▼  the most common answer wins  ▼';color:var(--kr-cyan)}
 /* ready: no panel, the call to action sits low over the dark foreground like Krillion's "BEGIN DESCENT" */
 body.power-level-active #powerLevel[data-phase=ready] :is(.pl-question,#plResults){background:none;border:0;box-shadow:none;margin-top:auto;margin-bottom:6vh}
 body.power-level-active #powerLevel[data-phase=ready] .pl-question h3{font-size:22px;color:var(--night)}
 body.power-level-active #powerLevel #plBegin{display:block;width:min(520px,100%);margin:22px auto 4px;padding:22px 20px;background:rgba(11,17,38,.78);border:2px solid var(--kr-cyan);border-radius:0;color:#e9f1ff;
  font:400 clamp(15px,2.4vw,20px)/1 'Silkscreen',monospace;letter-spacing:.2em;text-transform:uppercase;text-shadow:none;box-shadow:0 0 0 2px rgba(95,230,255,.14),0 0 28px rgba(95,230,255,.22);animation:none}
 body.power-level-active #powerLevel #plBegin::before{content:'▲ '}body.power-level-active #powerLevel #plBegin::after{content:' ▲'}
+body.power-level-active #powerLevel[data-mode=descent] #plBegin::before{content:'▼ '}body.power-level-active #powerLevel[data-mode=descent] #plBegin::after{content:' ▼'}
 body.power-level-active #powerLevel #plBegin:not(:disabled):hover{background:rgba(95,230,255,.12);filter:none;transform:none}
 
 /* HUD: altitude box, progress squares, score box */
