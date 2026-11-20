@@ -1827,5 +1827,32 @@ bank.push(...[
   a("Body Flicker",40,"Shunshin no Jutsu"),a("Puppet Technique",40,"Puppet Jutsu"),a("Big Ball Rasengan",45,"Odama Rasengan"),a("Planetary Rasengan",45),a("Chidori Nagashi",45,"Chidori Current"),
   a("Phoenix Flower Jutsu",45,"Fire Style: Phoenix Sage Fire"),a("Earth Grudge Fear",50,"Jiongu")]),
 ].map(x=>Object.assign(x,{since:'2026-11-20'})));
+// Descent: rule out the obvious pick so the most common answer is a real read of the crowd, not a free 100 (Nov 20 2026).
+// [prompt, note, new Top Answer, answers removed from the list]
+const STRAW_HATS=["Monkey D. Luffy","Roronoa Zoro","Nami","Sanji","Usopp","Tony Tony Chopper","Nico Robin","Franky","Brook","Jinbe"];
+const NARROW={
+ 'one-piece':["Name a One Piece character who isn't a Straw Hat.","Anyone except Luffy's crew",'Shanks',STRAW_HATS],
+ 'demon-slayer':["Name a Demon Slayer character other than Tanjiro or Nezuko.","Slayers, demons and everyone else",'Kyojuro Rengoku',["Tanjiro Kamado","Nezuko Kamado"]],
+ 'gen1-pokemon':["Name an original 151 Pokémon other than Pikachu.","Generation I, Bulbasaur to Mew",'Charizard',["Pikachu"]],
+ 'jjk':["Name a Jujutsu Kaisen character other than Gojo or Yuji.","Sorcerers, curses and everyone in between",'Ryomen Sukuna',["Satoru Gojo","Yuji Itadori"]],
+ 'spy-family':["Name a Spy x Family character who isn't a Forger.","Anyone except Loid, Yor, Anya and Bond",'Damian Desmond',["Anya Forger","Loid Forger","Yor Forger","Bond Forger"]],
+ 'naruto':["Name a Naruto character other than Naruto or Sasuke.","Anyone from Naruto, Shippuden or Boruto",'Kakashi Hatake',["Naruto Uzumaki","Sasuke Uchiha"]],
+ 'my-hero-academia':["Name a My Hero Academia character other than Deku or Bakugo.","Students, pros and villains",'All Might',["Izuku Midoriya","Katsuki Bakugo"]],
+ 'aot':["Name an Attack on Titan character other than Eren.","Anyone from Attack on Titan",'Levi Ackerman',["Eren Yeager"]],
+ 'magical-girls':["Name a magical girl other than Sailor Moon.","Precure, Puella Magi, Cardcaptors and more",'Madoka Kaname',["Sailor Moon"]],
+ 'protagonists':["Name an anime main character who isn't from Naruto, One Piece, Bleach or Dragon Ball.","The lead of any other anime",'Tanjiro Kamado',["Naruto Uzumaki","Goku","Monkey D. Luffy","Ichigo Kurosaki"]],
+ 'dragon-ball':["Name a Dragon Ball character other than Goku.","Anyone from any Dragon Ball series or film",'Vegeta',["Goku"]],
+ 'chainsaw-man':["Name a Chainsaw Man character other than Denji.","Devils, hunters and everyone else",'Power',["Denji"]],
+ 'hxh':["Name a Hunter x Hunter character other than Gon.","Anyone from Hunter x Hunter",'Killua Zoldyck',["Gon Freecss"]],
+ 'bleach':["Name a Bleach character other than Ichigo.","Anyone from Bleach",'Rukia Kuchiki',["Ichigo Kurosaki"]],
+ 'demon-slayer-demons':["Name a Demon Slayer demon other than Muzan.","Twelve Kizuki, Muzan's demons and more",'Akaza',["Muzan Kibutsuji"]],
+ 'pokemon-anime':["Name a human character from the Pokémon anime other than Ash.","Trainers, rivals, Gym Leaders, villains and friends",'Misty',["Ash Ketchum"]],
+ 'dragon-ball-titles':["Name a Dragon Ball series or film other than Dragon Ball Z.","Any other Dragon Ball TV series or movie",'Dragon Ball Super',["Dragon Ball Z"]],
+ 'devil-fruits':["Name a Devil Fruit other than the Gum-Gum Fruit.","English or Japanese names",'Flame-Flame Fruit',["Gum-Gum Fruit"]],
+};
+for(const [id,[text,note,top,drop]] of Object.entries(NARROW)){const x=bank.find(q=>q.id==='timed-v4-descent-'+id);if(!x)throw Error('Unknown Descent question: '+id);
+ for(const n of drop)if(!x.answers.some(a=>a.name===n))throw Error('Not an answer in '+id+': '+n);
+ x.text=text;x.note=note;x.top=top;x.answers=x.answers.filter(a=>!drop.includes(a.name));
+ if(!x.answers.some(a=>a.name===top))throw Error('Top Answer missing in '+id+': '+top);}
 return bank;})();
 if(typeof module!=="undefined")module.exports=POWER_LEVEL_QUESTIONS;

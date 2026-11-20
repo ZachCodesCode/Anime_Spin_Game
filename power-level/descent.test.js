@@ -10,9 +10,11 @@ test('Descent questions are its own: flipped scoring, one Top Answer each, never
   assert.equal(q.answers.find(a=>a.rarity===100).name,q.top,'Top Answer matches q.top in '+q.id);
   for(const a of q.answers)for(const f of [a.name,...(a.aliases||[])])assert.equal(C.validate(q,f).answer?.name,a.name,q.id+': '+f);}
  assert.equal(JSON.stringify(bank),before);
- const hats=flipped.find(q=>q.id==='timed-v4-descent-one-piece');
- assert.equal(C.points(hats.answers.find(a=>a.name==='Monkey D. Luffy')),100);
- assert.equal(C.points(hats.answers.find(a=>a.name==='Jinbe')),60);
+ // "Who isn't a Straw Hat": the obvious pick is ruled out, so Luffy is not accepted and Shanks is the Top Answer.
+ const op=flipped.find(q=>q.id==='timed-v4-descent-one-piece');
+ assert.equal(C.points(op.answers.find(a=>a.name==='Shanks')),100);
+ assert.equal(C.validate(op,'Luffy').status,'invalid');
+ assert.equal(C.points(op.answers.find(a=>a.name==='Buggy')),60);
  for(let d=0;d<120;d++)assert.ok(R.select(bank,new Date(Date.parse('2026-11-13T00:00:00Z')+d*864e5).toISOString().slice(0,10)).every(id=>!id.includes('-descent-')));
 });
 
