@@ -50,6 +50,25 @@ function ensureAscent() {
   return ascentReady;
 }
 
+// Anime Descent: same shape as ascent_scores, one row per player per day.
+let descentReady = null;
+function ensureDescent() {
+  if (!descentReady) {
+    descentReady = db.batch([
+      `CREATE TABLE IF NOT EXISTS descent_scores (
+         day TEXT NOT NULL,
+         guest TEXT NOT NULL,
+         score INTEGER NOT NULL,
+         answers TEXT NOT NULL,
+         created_at INTEGER NOT NULL,
+         PRIMARY KEY (day, guest)
+       )`,
+      `CREATE INDEX IF NOT EXISTS idx_descent_day_score ON descent_scores (day, score)`,
+    ], "write").catch(e => { descentReady = null; throw e; });
+  }
+  return descentReady;
+}
+
 // Anime Ascent player suggestions (missing answers and question ideas), read by the owner via GET /api/suggest.
 let suggestReady = null;
 function ensureSuggestions() {
@@ -77,4 +96,4 @@ function cors(res) {
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 }
 
-module.exports = { db, ensureTable, ensureAscent, ensureSuggestions, cors };
+module.exports = { db, ensureTable, ensureAscent, ensureDescent, ensureSuggestions, cors };
