@@ -11,7 +11,7 @@ const bank = require("../power-level/questions.js");
 const isDay = d => /^\d{4}-\d{2}-\d{2}$/.test(d);
 const recordable = d => { const now = Date.now(); return [C.dateKey(new Date(now)), C.dateKey(new Date(now - 864e5))].includes(d); };
 const clean = s => String(s || "").replace(/[\u0000-\u001f\u007f]/g, " ").replace(/\s+/g, " ").trim();
-const PER_DAY = 15;
+const PER_DAY = 1;
 
 module.exports = async function handler(req, res) {
   cors(res);
@@ -46,7 +46,7 @@ module.exports = async function handler(req, res) {
     const who = guest(req, res, true);
     await ensureSuggestions();
     const n = await db.execute({ sql: "SELECT COUNT(*) AS n FROM ascent_suggestions WHERE day = ? AND guest = ?", args: [date, who] });
-    if (Number(n.rows[0].n) >= PER_DAY) return res.status(429).json({ error: "That's plenty for today — thank you!" });
+    if (Number(n.rows[0].n) >= PER_DAY) return res.status(429).json({ error: "You've already sent today's suggestion. Thanks! Come back tomorrow.", done: true });
     await db.execute({
       sql: "INSERT INTO ascent_suggestions (day, guest, kind, question_id, text, created_at) VALUES (?, ?, ?, ?, ?, ?)",
       args: [date, who, kind, questionId, text, Date.now()],
