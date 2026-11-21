@@ -29,7 +29,7 @@ function audit(candidate,question,idx){
  if(uncertain.length||matches.length>1)return {classification:'ambiguous_identity',reason:'Accepted name maps to multiple identities or answers',matches,uncertain};
  if(matches.length){const m=matches[0],accepted=new Set([m.acceptedName,...m.aliases].map(key)),missing=forms(c).map(n=>n.includes(', ')?n.split(', ').reverse().join(' '):n).filter(n=>!accepted.has(key(n)));return {classification:missing.length?'alias_only_improvement':'already_accepted_other_spelling',reason:'Accepted answer resolves to same stable catalogue identity within adaptation',matches,missingAliases:missing,identityEvidence:'Catalogue identity resolution; romanization proposals still need human review'};}
  // Detect similar accepted forms without a secure identity mapping; never call them new.
- const unresolved=question.answers.filter(a=>forms(a).some(n=>tokens(n).length>=2&&forms(c).some(f=>roman(n)===roman(f))));
+ const unresolved=question.answers.filter(a=>forms(a).some(n=>(tokens(n).length>=2||key(n).length>=4)&&forms(c).some(f=>roman(n)===roman(f))));
  if(unresolved.length)return {classification:'needs_additional_investigation',reason:'Name resemblance without secure franchise/identity resolution',matches:unresolved.map(a=>({acceptedName:a.name}))};
  return {classification:'genuinely_new_answer_candidate',reason:'No accepted answer resolves to this stable identity in this question; factual eligibility and rights remain unverified',matches:[]};
 }

@@ -15,3 +15,4 @@ test('romanization does not silently merge same-franchise collisions',()=>{
  // Exact spelling has priority; the other spelling remains investigation rather than a merge.
  const r=N.audit({characterId:'a',animeId:'x'},{answers:[{name:'Ko Ono'}]},idx);assert.equal(r.classification,'needs_additional_investigation');
 });
+test('single-name long-vowel resemblance is held for investigation, never counted new or auto-merged',()=>{const idx=N.index({characters:[{id:'k',name:'Kaidou',aliases:[]}],appearances:[{characterId:'k',animeId:'op'}]});assert.equal(N.audit({characterId:'k',animeId:'op'},{answers:[{name:'Kaido'}]},idx).classification,'needs_additional_investigation');assert.deepEqual(N.resolve({name:'Kaido'},idx,'op').ids,[]);});
