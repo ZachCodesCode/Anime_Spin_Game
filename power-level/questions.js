@@ -1854,5 +1854,45 @@ for(const [id,[text,note,top,drop]] of Object.entries(NARROW)){const x=bank.find
  for(const n of drop)if(!x.answers.some(a=>a.name===n))throw Error('Not an answer in '+id+': '+n);
  x.text=text;x.note=note;x.top=top;x.answers=x.answers.filter(a=>!drop.includes(a.name));
  if(!x.answers.some(a=>a.name===top))throw Error('Top Answer missing in '+id+': '+top);}
+// Own review of Ascent #11 and Descent #2 (Nov 21 2026). Additions only. Final-scale rarity: <20 common, 20+ Side Character, 45+ Rare, 75+ Deep Cut.
+const MORE_REVIEW21={
+ 'wide-guns':[a("Mai Zenin",30,"Mai"),a("Benn Beckman",40,"Beckman"),a("Shuichi Akai",45,"Akai"),a("Ash Lynx",35,"Ash"),a("Rebecca",30),a("David Martinez",45,"David"),a("Gin",45),
+  a("Vermouth",55),a("Rei Furuya",55,"Amuro"),a("Kirito",55,"Kazuto Kirigaya"),a("Death Gun",50,"Sterben"),a("Integra Hellsing",50,"Integra"),a("Meryl Stryfe",50,"Meryl"),a("Milly Thompson",55,"Milly"),
+  a("Eda",50),a("Saichi Sugimoto",40,"Sugimoto"),a("Genjiro Tanigaki",55,"Tanigaki"),a("Misato Katsuragi",50,"Misato"),a("Funny Valentine",55,"Valentine"),a("Ringo Roadagain",60,"Ringo"),
+  a("Toji Fushiguro",45,"Toji"),a("Capone Bege",55,"Bege"),a("Lucky Roux",55),a("Franky",40),a("Maria Ross",60),a("Koko Hekmatyar",55,"Koko"),a("Jonah",55),a("Avilio Bruno",60,"Avilio"),
+  a("Worick Arcangelo",60,"Worick"),a("Brandon Heat",55,"Beyond the Grave"),a("Joker",55,"Ren Amamiya"),a("Nobunaga Oda",55,"Nobunaga (Fate)"),a("Maine",55),a("Queen Emeraldas",60,"Emeraldas"),a("M",70)],
+ 'wide-pirates':[a("Benn Beckman",45,"Beckman"),a("Fisher Tiger",50),a("Yasopp",50),a("Lucky Roux",50),a("Jozu",50),a("Izo",55),a("Vista",55),a("Thatch",55),a("Penguin",55),a("Shachi",55),
+  a("Absalom",55),a("Crocus",55),a("Charlotte Perospero",55,"Perospero"),a("Kuroobi",60),a("Chew",60),a("Aladine",60),a("Scopper Gaban",60,"Gaban"),a("Douglas Bullet",60),a("Hajrudin",60),
+  a("Charlotte Oven",60,"Oven"),a("Charlotte Daifuku",60,"Daifuku"),a("Black Maria",60),a("Bjorn",60),a("Heat",65),a("Vito",65),a("Who's-Who",65,"Whos Who"),a("Sasaki",65),a("Orlumbus",65),
+  a("Inuarashi",65),a("Nekomamushi",65),a("Wire",70),a("Gotti",70),a("Sarquiss",70),a("Demaro Black",70),a("Ideo",70),a("Chiaki Kurihara",70,"Chiaki")],
+ 'wide-m-titles':[a("My Neighbor Totoro",15,"Totoro","Tonari no Totoro"),a("Mahou Shoujo Madoka Magica",30,"Madoka Magica","Puella Magi Madoka Magica"),a("Mononoke Hime",30,"Princess Mononoke"),
+  a("My Happy Marriage",35),a("My Teen Romantic Comedy SNAFU",40,"Oregairu"),a("Mobile Suit Gundam SEED",40,"Gundam SEED"),a("Mobile Suit Gundam Wing",40,"Gundam Wing"),a("Mobile Suit Gundam 00",40,"Gundam 00"),
+  a("Mobile Suit Gundam: The Witch from Mercury",40,"Witch from Mercury"),a("Mobile Suit Gundam: Iron-Blooded Orphans",45,"Iron-Blooded Orphans"),a("Mobile Suit Gundam Unicorn",50,"Gundam Unicorn"),
+  a("Mobile Suit Zeta Gundam",55,"Zeta Gundam"),a("Mobile Fighter G Gundam",55,"G Gundam"),a("Mahoutsukai no Yome",45,"The Ancient Magus' Bride"),a("Medalist",45),a("My Next Life as a Villainess",50,"Hamefura"),
+  a("Mahou Sensei Negima!",50,"Negima"),a("Monster Musume",50),a("Mirai",50),a("My Deer Friend Nokotan",50),a("My Love Story!!",55,"Ore Monogatari"),a("Macross Frontier",55),a("Macross Plus",55),
+  a("Mission: Yozakura Family",55,"Yozakura Family"),a("Monster Rancher",55),a("Magical DoReMi",60,"Ojamajo Doremi"),a("Mega Man NT Warrior",60,"MegaMan NT Warrior"),a("Maquia",65,"Maquia: When the Promised Flower Blooms"),
+  a("Macross Delta",65),a("My Little Monster",65),a("My Senpai Is Annoying",65),a("Magic Kaito",65),a("Martian Successor Nadesico",65,"Nadesico"),a("Myriad Colors Phantom World",70),a("Magical Girl Raising Project",70),
+  a("Miss Hokusai",70),a("Maria Watches Over Us",70,"Maria-sama ga Miteru"),a("Mysterious Girlfriend X",75),a("Magical Girl Site",75),a("Mushibugyo",75),a("Mars Red",80)],
+ 'wide-idols':[a("Uta",25),a("Suzu Naito",40,"Belle","Suzu"),a("Kagamine Rin",55),a("Kagamine Len",55),a("Megurine Luka",60,"Luka"),a("Nana Osaki",40,"Nana"),a("Yui Hirasawa",45,"Yui"),a("Ikuyo Kita",45,"Kita"),
+  a("Mio Akiyama",55),a("Basara Nekki",55,"Basara"),a("Carole Stanley",50,"Carole"),a("Tuesday Simmons",50,"Tuesday"),a("Angela Carpenter",60,"Angela"),a("Reira Serizawa",65,"Reira"),a("Koyuki Tanaka",60,"Koyuki"),
+  a("Mikumo Guynemer",70,"Mikumo"),a("Utau Hoshina",70,"Utau"),a("Keke Tang",70,"Keke"),a("Shizuku Osaka",70),a("Kasumi Nakasu",65,"Kasumin"),a("Rina Tennoji",70),a("Ai Miyashita",70),a("Emma Verde",70),
+  a("Kanata Konoe",70),a("Karin Asaka",70)],
+ 'wide-teachers':[a("Gran Torino",50),a("Sasuke Uchiha",45,"Sasuke"),a("Tanabe-sensei",75),a("Wahlberg Baigan",60,"Wahlberg"),a("Kalego Naberius",55,"Kalego"),a("Croix Meridies",70,"Croix"),
+  a("Olruggio",65),a("Flamme",50),a("Professor Sada",70,"Professor Turo","Sada","Turo"),a("Chie Hoshinomiya",70,"Hoshinomiya"),a("Komoe Tsukuyomi",60,"Komoe"),a("Aiho Yomikawa",70,"Yomikawa")],
+ 'wide-usa':[a("Major",50),a("Ninja Kamui",55),a("Baby Steps",60),a("Digimon Adventure 02",50,"Digimon 02"),a("Golgo 13",55)],
+ 'wide-smokers':[a("Eda",55),a("Prosciutto",60),a("Sebastian Moran",60,"Moran")],
+ 'descent-ghibli-characters':[a("Chibi Totoro",45,"Chu Totoro","Chu-Totoro"),a("Forest Spirit",45,"Shishigami","Deer God"),a("Yakul",50),a("Madame Suliman",50,"Suliman"),a("Warawara",50),
+  a("Earwig",55),a("Ohmu",55),a("Sho",55),a("Himi",55),a("Kanta",60),a("Asbel",60),a("Curtis",60),a("Heen",60),a("Radish Spirit",60),a("Lune",60,"Prince Lune"),a("Kiriko",60),a("Naoko Satomi",60,"Naoko"),
+  a("Lisa",60),a("Pod",65),a("Homily",65),a("Yuki",65),a("Caproni",65),a("Bella Yaga",70),a("Mandrake",70),a("Sutemaru",70),a("Gonta",75)],
+ 'descent-magical-girls':[a("Cutie Honey",50,"Honey Kisaragi"),a("Iroha Tamaki",50,"Iroha"),a("Nagisa Momoe",55,"Nagisa"),a("Princess Tutu",50,"Ahiru"),a("Amu Hinamori",50,"Amu"),
+  a("Wedding Peach",60,"Momoko Hanasaki"),a("Pretty Sammy",60,"Sasami"),a("Corrector Yui",70),a("Cure Dream",55,"Nozomi Yumehara"),a("Cure Bloom",55,"Saki Hyuuga"),a("Cure Marine",55,"Erika Kurumi"),
+  a("Cure Moonlight",55,"Yuri Tsukikage"),a("Cure Heart",55,"Mana Aida"),a("Cure Sunshine",60,"Itsuki Myoudouin"),a("Cure Rhythm",60,"Kanade Minamino"),a("Cure Beat",60,"Ellen"),a("Cure Rouge",60),
+  a("Cure Lemonade",60),a("Cure Aqua",60),a("Cure Mint",60),a("Cure Diamond",60),a("Cure Lovely",60),a("Cure Princess",60),a("Cure Scarlet",60),a("Cure Miracle",60),a("Cure Magical",60),
+  a("Cure Whip",60),a("Cure Chocolat",60),a("Cure Macaron",60),a("Cure Ange",60),a("Cure Etoile",60),a("Cure Star",60),a("Cure Summer",60),a("Cure Sky",60),a("Cure Muse",65),a("Cure Fontaine",65),
+  a("Cure Sparkle",65),a("Cure Precious",65),a("Cure Prism",65),a("Cure Wonderful",65),a("Cure Butterfly",65),a("Cure Majesty",65)],
+};
+for(const [id,extra] of Object.entries(MORE_REVIEW21)){const x=bank.find(q=>q.id==='timed-v4-'+id);if(!x)throw Error('Unknown question: '+id);
+ const seen=new Set(x.answers.flatMap(y=>[y.name,...(y.aliases||[])]).map(key));
+ for(const e of extra){const forms=[e.name,...(e.aliases||[])];if(forms.some(f=>seen.has(key(f))))throw Error('Duplicate answer in '+id+': '+e.name);if(e.rarity>=100)throw Error('Second Limit Break in '+id);forms.forEach(f=>seen.add(key(f)));x.answers.push(e);}}
 return bank;})();
 if(typeof module!=="undefined")module.exports=POWER_LEVEL_QUESTIONS;
