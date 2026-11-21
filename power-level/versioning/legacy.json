@@ -1,5 +1,6 @@
 {
-  "bankVersion": "3a278e937a473fff8be024855ba87fe094f9fc45668e189144e059ab04e7dae3",
-  "sourceCommit": "b58f2ce8c3a0b075099ddbcd3ec87adfeb612562",
-  "historicalDeploymentVerified": false
+  "bankVersion": "3d5946dfeb97f4de20203ad221b765e9d4aa9105f1947e5054cdf17ebf20c450",
+  "sourceCommit": "9411978a2e37fc6b1b0344ec81160085de0da494",
+  "historicalDeploymentVerified": false,
+  "previousBankVersion": "3a278e937a473fff8be024855ba87fe094f9fc45668e189144e059ab04e7dae3"
 }

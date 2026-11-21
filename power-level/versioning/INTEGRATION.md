@@ -64,3 +64,42 @@ metadata, duplicates, historical picks and the original late-submission window.
 Phase 4 tests continue covering aliases, Too Clever scoring, save restoration,
 immutable hashes and five/seven-question schedules. Run `npm run build`,
 `npm run catalogue:validate`, and the versioning CLI check before rollout.
+
+## Reconciliation with current production (21 November 2026)
+
+The feature branch now retains current production Ascent, Descent, archives,
+suggestions, analytics, routing and team builder. The new baseline in `legacy.json`
+freezes the 174-question production bank and current core/run scripts. The original
+109-question release is retained unchanged via `previousBankVersion`; it must never
+be silently substituted for current production. No expanded draft is in the public
+baseline. All registry assignments remain empty and activation is unset locally.
+
+Descent's raw definitions store a Top Answer and are scored through its existing
+adapter, so release validation checks their separate contract without changing
+Ascent's one-Limit-Break rule. Versioned Ascent payloads reject Descent IDs and enforce
+the five-character/two-title order for seven-question assignments.
+
+Only Ascent resolves versioned challenges, including archive replay. Descent keeps
+its original static pool, scoring and save keys. Frozen browser scripts are loaded
+serially and their global core/run bindings restored after success or failure.
+Versioned archive and live saves have separate namespaces; legacy saves keep their
+existing keys and absolute deadlines. Archive runs are never posted as daily scores.
+Suggestions validate Ascent IDs against the same pinned assignment as scoring.
+
+`npm run dev` serves the current production routes plus an explicit offline legacy
+challenge response without credentials or a production DB. All catalogue paths,
+including encoded paths and symlink targets, are blocked by the preview server.
+Actual score/suggestion APIs still require Vercel dev/staging with a test database.
+
+Production startup now requires reachable challenge API/Turso even while activation
+is unset. Deployment will create additive tables on resolution, so deployment and
+production setup still require explicit approval. Do not activate an already-started
+day, delete existing pins or roll pinned dates back to pre-versioning code. Retain
+all referenced releases and a compatible rollback deployment. Production environment
+configuration/credentials and schema have not been accessed or changed.
+
+The offline catalogue generator produces private immutable previews with an
+explicit root; the production API cannot resolve them from its retained public
+release root. Approving content, clearing rights, publishing a public artifact and
+assigning a future date are distinct later decisions. No draft or hypothetical
+November 29 gate constitutes an authorized Daily Challenge assignment.

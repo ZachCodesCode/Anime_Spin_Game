@@ -40,7 +40,8 @@ function validateBank(bank,core) {
         forms.set(key,a);
       }
     }
-    if(limits!==1) throw Error('Expected one Limit Break');
+    if(q.descent){if(q.wide||!['char','title'].includes(q.descent)||q.top!==undefined&&!q.answers.some(a=>a.name===q.top))throw Error('Invalid Descent definition');}
+    else if(limits!==1) throw Error('Expected one Limit Break');
   }
 }
 function publish(bank,root=ROOT) {
@@ -62,6 +63,8 @@ function payload(day,version,ids,release) {
   if(![5,7].includes(ids.length) || new Set(ids).size!==ids.length)throw Error('Invalid question order');
   const questions=ids.map(id=>release.bank.find(q=>q.id===id));
   if(questions.some(q=>!q))throw Error('Unknown question ID');
+  if(questions.some(q=>q.descent))throw Error('Descent question in Ascent assignment');
+  if(ids.length===7&&questions.some((q,i)=>q.wide!==['char','char','title','char','char','title','char'][i]))throw Error('Ascent assignment requires five character and two title slots');
   return freeze({date:day,bankVersion:version,questionIds:[...ids],questions:structuredClone(questions)});
 }
 function resolve(day,{enabled=false,assignments=require('./assignments.json'),root=ROOT}={}) {

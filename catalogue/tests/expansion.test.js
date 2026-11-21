@@ -46,9 +46,9 @@ test('empty casts remain retryable and malformed cast identities are reported',a
  await I.run({animeIds:[1],characterDetails:false},d,async p=>p.endsWith('/characters')?{data:[{character:{mal_id:3,name:null}}]}:{data:{mal_id:1,title:'Missing cast'}});
  assert.equal(d.characters.length,0);assert.ok(d.review.some(x=>/Missing name/.test(x)));
 });
-test('coverage inventory contains all 109 prompts and prioritizes exactly 34 daily questions',()=>{
+test('coverage inventory contains all 174 prompts and prioritizes exactly 71 daily questions',()=>{
  const {coverage,distribution}=require('../coverage'),rows=coverage(catalogue,{version:1,associations:[]});
- assert.equal(rows.length,109);assert.equal(rows.filter(x=>x.dailyPriority).length,34);
+ assert.equal(rows.length,174);assert.equal(rows.filter(x=>x.dailyPriority).length,71);
  assert.equal(rows.find(x=>x.questionId.endsWith('wide-studios')).entityType,'anime_or_studio');
  assert.equal(rows.find(x=>x.questionId.endsWith('wide-cats')).requiredAttribute.traitId,'identity.species');
  assert.equal(distribution(catalogue,{}).byPopularity.unknown,catalogue.characters.length);

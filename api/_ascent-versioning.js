@@ -9,7 +9,7 @@ const TABLES = [
  `CREATE TABLE IF NOT EXISTS ascent_challenges (day TEXT PRIMARY KEY, bank_version TEXT NOT NULL, question_ids TEXT NOT NULL)`,
  `CREATE TABLE IF NOT EXISTS ascent_score_versions (day TEXT NOT NULL, guest TEXT NOT NULL, bank_version TEXT NOT NULL, question_ids TEXT NOT NULL, PRIMARY KEY(day, guest))`
 ];
-function service({ db, ensureAscent, activation = process.env.ASCENT_VERSIONING_FROM }) {
+function service({ db, ensureAscent, activation = process.env.ASCENT_VERSIONING_FROM, releaseRoot=path.join(__dirname,'../power-level/versioning/releases'), baselineVersion=baseline, registry=assignments }) {
   let ready;
   async function ensure() {
     await ensureAscent();
@@ -21,24 +21,24 @@ function service({ db, ensureAscent, activation = process.env.ASCENT_VERSIONING_
     await ensure();
     let row = (await db.execute({sql:'SELECT bank_version, question_ids FROM ascent_challenges WHERE day = ?',args:[day]})).rows[0];
     if (!row && activation && day >= V.date(activation)) {
-      const explicit = assignments.filter(a => a.date === day);
+      const explicit = registry.filter(a => a.date === day);
       if (explicit.length > 1) throw Error('Duplicate assignment');
-      const release = V.load(baseline);
-      const planned = explicit[0] || {bankVersion:baseline,questionIds:release.run.select(release.bank,day)};
+      const release = V.load(baselineVersion,releaseRoot);
+      const planned = explicit[0] || {bankVersion:baselineVersion,questionIds:release.run.select(release.bank,day)};
       // Validate before publication. Every server then reads the winning immutable row.
-      V.resolve(day,{enabled:true,assignments:[{date:day,...planned}]});
+      V.resolve(day,{enabled:true,root:releaseRoot,assignments:[{date:day,...planned}]});
       await db.execute({sql:'INSERT OR IGNORE INTO ascent_challenges (day, bank_version, question_ids) VALUES (?, ?, ?)',args:[day,planned.bankVersion,JSON.stringify(planned.questionIds)]});
       row = (await db.execute({sql:'SELECT bank_version, question_ids FROM ascent_challenges WHERE day = ?',args:[day]})).rows[0];
     }
     if (!row) return {mode:'legacy',...V.resolve(day)};
     const assignment = {date:day,bankVersion:row.bank_version,questionIds:JSON.parse(row.question_ids)};
-    return {mode:'versioned',...V.resolve(day,{enabled:true,assignments:[assignment]})};
+    return {mode:'versioned',...V.resolve(day,{enabled:true,root:releaseRoot,assignments:[assignment]})};
   }
   async function challenge(day) {
     const selected = await resolve(day);
     if (selected.mode === 'legacy') return {mode:'legacy',date:day};
     const version=selected.payload.bankVersion;
-    const manifest=JSON.parse(fs.readFileSync(path.join(__dirname,'../power-level/versioning/releases',version,'manifest.json')));
+    const manifest=JSON.parse(fs.readFileSync(path.join(releaseRoot,version,'manifest.json')));
     return {mode:'versioned',...selected.payload,rules:['core.js','run.js'].map(name=>({url:`/power-level/versioning/releases/${version}/${name}`,integrity:'sha256-'+Buffer.from(manifest.files[name],'hex').toString('base64')}))};
   }
   async function stats(day,selected) {

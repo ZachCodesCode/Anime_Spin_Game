@@ -38,7 +38,7 @@ test('aliases preserve separate IDs and flag collisions; rejected suggestions su
 });
 test('eligibility inventory covers all active questions and never treats verification as approval',()=>{
  const questions=require('../../power-level/questions'),policy=E.validate(require('../enrichment/eligibility.json'),questions);
- assert.equal(policy.questions.length,34);assert.equal(policy.questions.filter(q=>q.type==='character').length,24);assert.equal(policy.questions.filter(q=>q.type==='non_character').length,10);
+ assert.equal(policy.questions.length,71);assert.equal(policy.questions.filter(q=>q.type==='character').length,49);assert.equal(policy.questions.filter(q=>q.type==='non_character').length,22);
  const s={history:[{after:{status:'verified',claim:{traitId:'appearance.hair_color',value:'red',context:{animeId:'mal-anime-1',persistence:'recurring'}}}}]};
  const r=policy.questions.find(x=>x.questionId.endsWith('mix-red-hair'));assert.equal(E.assess(r,s).relevant,true);assert.equal(E.assess(r,s).eligible,false);
  const invalid=structuredClone(policy);invalid.questions.pop();assert.throws(()=>E.validate(invalid,questions));

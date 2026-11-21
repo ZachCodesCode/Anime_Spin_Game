@@ -13,6 +13,7 @@
     "predev": "npm run build",
     "catalogue:import": "node catalogue/import.js",
     "catalogue:validate": "node -e \"require('./catalogue/validate').validate(require('./catalogue/data/catalogue.json'))\"",
-    "traits": "node catalogue/traits/cli.js"
+    "traits": "node catalogue/traits/cli.js",
+    "ascent:generate": "node catalogue/generator/cli.js"
   }
 }
