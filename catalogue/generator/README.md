@@ -85,3 +85,15 @@ preview or the most recent explicit assignment. Do not assume one assigned day
 automatically promotes its bank for every later day. Rolling date approval or a
 separately authorized future baseline change must cover the intended release window.
 The frozen scheduler, not live catalogue evaluation, computes those proposals.
+
+## Fresh-concept inventory
+
+`npm run ascent:plan` additionally runs `fresh.js` / `fresh-definitions.json` to build
+new character and anime-title drafts from documented genres, eras, sources, studios,
+formats, episode counts and adaptation-specific credits. It uses the same catalogue,
+metadata schema, collision checks and game validator. It does not demand 150 answers
+from a 100-anime corpus or invent personal traits. Existing covered source subsets
+are excluded instead of padding freshness counts. Novel concepts and Too Clever /
+Limit Break proposals remain subject to editorial review, never automatic approval.
+See `power-level/scheduling/README.md` for the frozen inventory, performance and
+shortage-validation workflow.

@@ -4,12 +4,14 @@ const C=require('../../power-level/core'),N=require('../novelty'),M=require('../
 const hash=x=>crypto.createHash('sha256').update(JSON.stringify(x)).digest('hex');
 const generic=/^(?:unnamed|unknown|unidentified|background|extra|villager|villagers|soldier|soldiers|policeman|police officer|waiter|waitress|woman|man|boy|girl|child|mother|father|grandmother|grandfather|old man|old woman|narrator|shopkeeper|customer|announcer|reporter|teacher|doctor|student|students)(?:\s|$)/i;
 const display=c=>c.name.includes(', ')?c.name.split(', ').reverse().join(' '):c.name;
-function matches(rule,metadata,appearance){
+function matches(rule,metadata,appearance={}){
  if(!rule||!rule.metadata||!Object.keys(rule.metadata).length)throw Error('Explicit metadata predicate required');
+ const fields=['genres','themes','source','demographics','type','studios','yearRange','episodesRange'];
+ for(const [field,values] of Object.entries(rule.metadata))if(!fields.includes(field)||!Array.isArray(values)||!values.length||(['yearRange','episodesRange'].includes(field)&&(!(values.length===2)||values.some(v=>!Number.isSafeInteger(v))||values[0]>values[1])))throw Error('Unsupported predicate');
  if(rule.role&&appearance.role!==rule.role)return false;
  return Object.entries(rule.metadata).every(([field,values])=>{
-  if(!['genres','themes','source','demographics'].includes(field)||!Array.isArray(values)||!values.length)throw Error('Unsupported predicate');
-  const value=metadata?.[field];return field==='source'?values.includes(value):Array.isArray(value)&&value.some(t=>values.includes(t.name));
+  if(field==='yearRange'||field==='episodesRange'){const n=metadata?.[field==='yearRange'?'year':'episodes'];return Number.isSafeInteger(n)&&n>=values[0]&&n<=values[1];}
+  const value=metadata?.[field];return ['source','type'].includes(field)?values.includes(value):Array.isArray(value)&&value.some(t=>values.includes(t.name));
  });
 }
 function names(c,idx){
@@ -49,6 +51,7 @@ function generate({catalogue,metadata,definitions,existingBank=[],traits,traitDe
   // Remove alias collisions across the actual complete bank; never silently merge identities.
   const forms=new Map();for(const a of answers)for(const f of [a.name,...a.aliases]){const k=C.normalize(f);if(!forms.has(k))forms.set(k,new Set());forms.get(k).add(a.characterId);}
   for(const a of answers)a.aliases=a.aliases.filter(f=>{if(forms.get(C.normalize(f)).size===1)return true;a.withheldAliases.push(f);return false;});
+  if(!def.limitBreakCharacterId&&answers.length){const proposed=[...answers].sort((a,b)=>b.rarity-a.rarity||(metadata[b.animeId.replace('mal-anime-','')]?.popularity||0)-(metadata[a.animeId.replace('mal-anime-','')]?.popularity||0)||a.characterId.localeCompare(b.characterId))[0];proposed.rarity=100;proposed.proposedTier=C.grade(proposed).name;proposed.limitBreakProposal='Deterministic editorial starting point based on role/reach; unapproved';}
   const q={id:def.id,anime:'mixed',wide:'char',category:def.category,text:def.text,note:def.note,eligibilityRules:def.eligibilityRules,answers:answers.sort((a,b)=>a.characterId.localeCompare(b.characterId)),historyStatus:def.historyStatus||'UNKNOWN',publicationAuthorized:false,scheduledDate:null};
   require('../../power-level/versioning').validateBank([q],C);
   for(const a of q.answers)for(const form of [a.name,...a.aliases]){const result=C.validate(q,form);if(result.status!=='valid'||result.answer.characterId!==a.characterId)throw Error('Matcher identity collision');}

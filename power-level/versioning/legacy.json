@@ -1,6 +1,7 @@
 {
-  "bankVersion": "3d5946dfeb97f4de20203ad221b765e9d4aa9105f1947e5054cdf17ebf20c450",
-  "sourceCommit": "9411978a2e37fc6b1b0344ec81160085de0da494",
+  "bankVersion": "376d5445e977bf62a42057b4571efa6763a3ae86fb0ce20f76fe06311f5852be",
+  "sourceCommit": "1a1f5008cb7d2abda391920722688e0451162173",
   "historicalDeploymentVerified": false,
-  "previousBankVersion": "3a278e937a473fff8be024855ba87fe094f9fc45668e189144e059ab04e7dae3"
+  "previousBankVersion": "3a278e937a473fff8be024855ba87fe094f9fc45668e189144e059ab04e7dae3",
+  "supersedesBankVersion": "3d5946dfeb97f4de20203ad221b765e9d4aa9105f1947e5054cdf17ebf20c450"
 }
