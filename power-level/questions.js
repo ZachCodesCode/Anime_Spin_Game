@@ -1923,5 +1923,178 @@ for(const y of bank.find(q=>q.id==='timed-v4-wide-ponytails').answers)if(y.rarit
 // Deep Cut boost (Nov 21 2026): too few answers reached Deep Cut, so the upper Rare band (60-74) now counts as Deep Cut.
 // Tier cut-offs are unchanged; final rarity 60-99 is spread over 75-99. Applies to every Ascent question (not Descent).
 for(const x of bank)if(x.wide)for(const y of x.answers)if(y.rarity>=60&&y.rarity<100)y.rarity=Math.round(75+(y.rarity-60)*24/39);
+// Source-reviewed additions for Ascents #12–13 (Nov 22–23, 2026). Answers only.
+// These are FINAL-scale rarities, deliberately applied after the legacy boosts above.
+// Keep prior canonical names, scores, flags and order for active saves/server results.
+const ASCENT12_13_ADDITIONS={
+ 'timed-v4-wide-maids':[
+  a("Chihiro Komiya",78,"Komiya Chihiro"),
+  a("Honoka",78),
+  a("Subaru",80),
+  a("Erika",78),
+  a("Kogarashi",85,"Maid Guy Kogarashi","Maid Guy"),
+  a("Fubuki",85),
+  a("Maika Sakuranomiya",50,"Sakuranomiya Maika"),
+  a("Kaho Hinata",60,"Hinata Kaho"),
+  a("Mafuyu Hoshikawa",75,"Hoshikawa Mafuyu"),
+  a("Miu Amano",80,"Amano Miu"),
+  a("Hideri Kanzaki",78,"Kanzaki Hideri")],
+ 'timed-v4-wide-ponytails':[
+  a("Subaru",84),
+  a("Crusch Karsten",70,"Crusch"),
+  a("Ichika Fukumoto",90,"Fukumoto Ichika"),
+  a("Haruta Shigemo",78,"Shigemo")],
+ 'timed-v4-wide-ghosts':[
+  a("Shedinja",55),
+  a("Drifblim",60),
+  a("Sandygast",83),
+  a("Cursola",84),
+  a("Skeledirge",60),
+  a("Bramblin",87),
+  a("Brambleghast",88),
+  a("Gimmighoul",80),
+  a("Pecharunt",90)],
+ 'timed-v4-wide-giants':[
+  a("Morley",78),
+  a("John Giant",82),
+  a("Sanjuan Wolf",75),
+  a("Wadatsumi",82)],
+ 'timed-v4-wide-witches':[
+  a("Minerva",78),
+  a("Daphne",82),
+  a("Typhon",82),
+  a("Sekhmet",85),
+  a("Carmilla",84),
+  a("Magna Swing",55),
+  a("Luck Voltia",55),
+  a("Gauche Adlai",65),
+  a("Gordon Agrippa",78),
+  a("Zora Ideale",70),
+  a("Henry Legolant",82,"Henry Legorant"),
+  a("Nacht Faust",65),
+  a("William Vangeance",65),
+  a("Langris Vaude",80),
+  a("Klaus Lunettes",78),
+  a("Nozel Silva",65),
+  a("Licht",65),
+  a("Marcille Donato",35,"Marcille"),
+  a("Falin Touden",50,"Falin"),
+  a("Zagan",78),
+  a("Rhya",80,"Raia")],
+ 'timed-v4-wide-elves':[
+  a("Licht",60),
+  a("Haira",87,"Hyla"),
+  a("Yord",85,"Yolde"),
+  a("Nephilia",78,"Nephelia","Nephy","Nefi"),
+  a("Ariane Glenys Maple",78,"Ariane"),
+  a("Danka",90)],
+ 'timed-v4-wide-assassins':[
+  a("Elsa Granhiert",55,"Elsa"),
+  a("Meili Portroute",80,"Meili"),
+  a("Yuma Isogai",65,"Yuuma Isogai"),
+  a("Taiga Okajima",85),
+  a("Hinata Okano",80),
+  a("Manami Okuda",65),
+  a("Meg Kataoka",80,"Megu Kataoka"),
+  a("Yukiko Kanzaki",65),
+  a("Masayoshi Kimura",86,"Justice Kimura"),
+  a("Hinano Kurahashi",82),
+  a("Sosuke Sugaya",85,"Sousuke Sugaya"),
+  a("Tomohito Sugino",78),
+  a("Kotaro Takebayashi",83,"Koutarou Takebayashi"),
+  a("Ryunosuke Chiba",70,"Ryuunosuke Chiba"),
+  a("Ryoma Terasaka",70,"Ryouma Terasaka"),
+  a("Rio Nakamura",60),
+  a("Kirara Hazama",78),
+  a("Rinka Hayami",65),
+  a("Sumire Hara",83),
+  a("Yuzuki Fuwa",83),
+  a("Hiroto Maehara",75),
+  a("Koki Mimura",86,"Kouki Mimura"),
+  a("Takuya Muramatsu",87),
+  a("Toka Yada",82,"Touka Yada"),
+  a("Taisei Yoshida",87),
+  a("Ritsu",65,"Autonomously Intelligent Fixed Artillery"),
+  a("Irina Jelavic",55,"Irina"),
+  a("Akatsuki",65)],
+ 'timed-v4-wide-police':[
+  a("Kazunobu Chiba",78),
+  a("Ninzaburo Shiratori",75,"Ninzaburou Shiratori"),
+  a("Takaaki Morofushi",80),
+  a("Kansuke Yamato",80),
+  a("Yui Uehara",82),
+  a("Misao Yamamura",83),
+  a("Naeko Miike",86),
+  a("Hyoue Kuroda",83,"Hyoe Kuroda"),
+  a("Yumi Miyamoto",82)],
+ 'timed-v4-wide-thieves':[
+  a("Dororo",55),
+  a("Haruhiro",78),
+  a("Ban",30,"Undead Ban"),
+  a("Gauche Adlai",80)],
+ 'timed-v4-wide-game-adaptations':[
+  a("Gungrave",65),
+  a("God Eater",45),
+  a("Caligula",82,"The Caligula Effect"),
+  a("Katsugeki/Touken Ranbu",78),
+  a("18if",85),
+  a("Kantai Collection",65,"KanColle"),
+  a("Girls' Frontline",80,"Dolls' Frontline"),
+  a("Amagami SS",78,"Amagami"),
+  a("Photo Kano",85),
+  a("ToHeart",82),
+  a("White Album 2",78)],
+ 'timed-v4-wide-films':[
+  a("Children of the Sea",65,"Kaijuu no Kodomo"),
+  a("Miss Hokusai",78,"Sarusuberi"),
+  a("Patema Inverted",75,"Sakasama no Patema"),
+  a("The Deer King",80,"Shika no Ou"),
+  a("The Colors Within",60,"Kimi no Iro"),
+  a("My Neighbors the Yamadas",78,"Tonari no Yamada-kun"),
+  a("Adolescence of Utena",80,"Revolutionary Girl Utena: The Movie","Shoujo Kakumei Utena: Adolescence Mokushiroku"),
+  a("A Letter to Momo",75,"Momo e no Tegami"),
+  a("Blue Giant",60),
+  a("Night on the Galactic Railroad",85,"Ginga Tetsudou no Yoru","Ginga Tetsudo no Yoru"),
+  a("Cowboy Bebop: The Movie",45,"Cowboy Bebop: Knockin' on Heaven's Door","Cowboy Bebop: Tengoku no Tobira")],
+ 'timed-v4-wide-orange-hair':[
+  a("Emma",25),
+  a("Petra Leyte",70),
+  a("Chuuya Nakahara",45,"Chuya Nakahara","Nakahara Chuuya","Nakahara Chuya"),
+  a("Junichiro Tanizaki",75,"Junichirou Tanizaki","Tanizaki Junichiro","Tanizaki Junichirou"),
+  a("Chiyo Sakura",55,"Sakura Chiyo")],
+ 'timed-v4-wide-90s':[
+  a("One Piece",15),
+  a("Rurouni Kenshin: Trust & Betrayal",65,"Samurai X: Trust and Betrayal","Rurouni Kenshin: Tsuioku-hen","Trust and Betrayal"),
+  a("Only Yesterday",55,"Omohide Poro Poro","Omoide Poro Poro"),
+  a("Ocean Waves",78,"Umi ga Kikoeru"),
+  a("My Neighbors the Yamadas",78,"Tonari no Yamada-kun"),
+  a("Adolescence of Utena",80,"Revolutionary Girl Utena: The Movie","Shoujo Kakumei Utena: Adolescence Mokushiroku")],
+ 'timed-v4-wide-number-titles':[
+  a("18if",85),
+  a("07-Ghost",78),
+  a("A Dark Rabbit Has Seven Lives",85,"Itsuka Tenma no Kuro Usagi"),
+  a("Battle Game in 5 Seconds",70,"Deatte 5-byou de Battle"),
+  a("Occultic;Nine",78),
+  a("Samurai 7",65,"Samurai Seven"),
+  a("Eureka Seven",55,"Koukyoushihen Eureka Seven"),
+  a("Trinity Seven",60,"Trinity 7"),
+  a("No. 6",75),
+  a("One Week Friends",70,"Isshuukan Friends","Isshukan Friends"),
+  a("16bit Sensation: Another Layer",82,"16bit Sensation"),
+  a("White Album 2",80)]
+};
+for(const [id,extra] of Object.entries(ASCENT12_13_ADDITIONS)){
+ const q=bank.find(q=>q.id===id);if(!q)throw Error('Unknown question: '+id);
+ const seen=new Set(q.answers.flatMap(y=>[y.name,...(y.aliases||[])]).map(key));
+ for(const e of extra){
+  const forms=[e.name,...(e.aliases||[])];
+  if(forms.some(f=>seen.has(key(f))))throw Error('Duplicate answer in '+id+': '+e.name);
+  if(e.rarity>=100||e.clever)throw Error('New special score in '+id);
+  forms.forEach(f=>seen.add(key(f)));q.answers.push(e);
+ }
+}
+// Correct spelling without renaming/regrading the canonical answer already in saves.
+const oldPolteageist=bank.find(q=>q.id==='timed-v4-wide-ghosts').answers.find(a=>a.name==='Polteregeist');
+oldPolteageist.aliases=[...(oldPolteageist.aliases||[]),'Polteageist'];
 return bank;})();
 if(typeof module!=="undefined")module.exports=POWER_LEVEL_QUESTIONS;
