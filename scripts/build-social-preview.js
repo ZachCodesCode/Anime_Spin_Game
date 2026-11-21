@@ -25,14 +25,14 @@ function routePage(file, { title, description, url, keywords, imageAlt, ld }) {
 
 // /AnimeAscent permanently redirects to /, but keep its file in case of older links.
 routePage('AnimeAscent.html', {
-  title: 'ShonenSpin | Anime Ascent — Daily Anime Quiz',
-  description: 'Think you know anime? Test your knowledge in Anime Ascent, the anime version of Krillion! Climb the ranks, challenge other fans, and see how high you can go.',
+  title: 'Anime Krillion — The Daily Anime Krillion Quiz | Shonen Spin',
+  description: 'Anime Krillion: the daily anime quiz in the style of Krillion. Seven questions a day; name the rarest answer and climb to the summit.',
   url: 'https://www.shonenspin.com/AnimeAscent',
 });
 
 // /descent: the reverse mode, served from its own file so it is indexed and previewed as its own page.
-const descentTitle = 'Anime Descent — Reverse Anime Krillion: Name the Most Common Answer | Shonen Spin';
-const descentDescription = 'Anime Descent is the reverse Krillion: seven anime questions a day where the MOST common answer wins. Read the crowd, say what everyone else would say, and descend to the valley.';
+const descentTitle = 'Reverse Anime Krillion — Anime Descent: Name the Most Common Answer | Shonen Spin';
+const descentDescription = 'Reverse Anime Krillion (Anime Descent): seven anime questions a day where the MOST common answer wins. Read the crowd, say what everyone else would say, and descend to the valley.';
 routePage('descent.html', {
   title: descentTitle,
   description: descentDescription,
@@ -50,6 +50,6 @@ routePage('descent.html', {
     isAccessibleForFree: true,
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
     description: descentDescription,
-    isPartOf: { '@type': 'WebSite', '@id': 'https://www.shonenspin.com/#website', url: 'https://www.shonenspin.com/', name: 'Anime Ascent' },
+    isPartOf: { '@type': 'WebSite', '@id': 'https://www.shonenspin.com/#website', url: 'https://www.shonenspin.com/', name: 'Anime Krillion' },
   },
 });
