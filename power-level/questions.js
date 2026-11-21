@@ -1859,9 +1859,9 @@ const MORE_REVIEW21={
  'wide-guns':[a("Mai Zenin",30,"Mai"),a("Benn Beckman",40,"Beckman"),a("Shuichi Akai",45,"Akai"),a("Ash Lynx",35,"Ash"),a("Rebecca",30),a("David Martinez",45,"David"),a("Gin",45),
   a("Vermouth",55),a("Rei Furuya",55,"Amuro"),a("Kirito",55,"Kazuto Kirigaya"),a("Death Gun",50,"Sterben"),a("Integra Hellsing",50,"Integra"),a("Meryl Stryfe",50,"Meryl"),a("Milly Thompson",55,"Milly"),
   a("Eda",50),a("Saichi Sugimoto",40,"Sugimoto"),a("Genjiro Tanigaki",55,"Tanigaki"),a("Misato Katsuragi",50,"Misato"),a("Funny Valentine",55,"Valentine"),a("Ringo Roadagain",60,"Ringo"),
-  a("Toji Fushiguro",45,"Toji"),a("Capone Bege",55,"Bege"),a("Lucky Roux",55),a("Franky",40),a("Maria Ross",60),a("Koko Hekmatyar",55,"Koko"),a("Jonah",55),a("Avilio Bruno",60,"Avilio"),
+  a("Toji Fushiguro",45,"Toji"),a("Capone Bege",55,"Bege"),a("Lucky Roux",55,"Lucky Roo","Lucky Ru"),a("Franky",40),a("Maria Ross",60),a("Koko Hekmatyar",55,"Koko"),a("Jonah",55),a("Avilio Bruno",60,"Avilio"),
   a("Worick Arcangelo",60,"Worick"),a("Brandon Heat",55,"Beyond the Grave"),a("Joker",55,"Ren Amamiya"),a("Nobunaga Oda",55,"Nobunaga (Fate)"),a("Maine",55),a("Queen Emeraldas",60,"Emeraldas"),a("M",70)],
- 'wide-pirates':[a("Benn Beckman",45,"Beckman"),a("Fisher Tiger",50),a("Yasopp",50),a("Lucky Roux",50),a("Jozu",50),a("Izo",55),a("Vista",55),a("Thatch",55),a("Penguin",55),a("Shachi",55),
+ 'wide-pirates':[a("Benn Beckman",45,"Beckman"),a("Fisher Tiger",50),a("Yasopp",50),a("Lucky Roux",50,"Lucky Roo","Lucky Ru"),a("Jozu",50,"Diamond Jozu"),a("Izo",55),a("Vista",55),a("Thatch",55),a("Penguin",55),a("Shachi",55),
   a("Absalom",55),a("Crocus",55),a("Charlotte Perospero",55,"Perospero"),a("Kuroobi",60),a("Chew",60),a("Aladine",60),a("Scopper Gaban",60,"Gaban"),a("Douglas Bullet",60),a("Hajrudin",60),
   a("Charlotte Oven",60,"Oven"),a("Charlotte Daifuku",60,"Daifuku"),a("Black Maria",60),a("Bjorn",60),a("Heat",65),a("Vito",65),a("Who's-Who",65,"Whos Who"),a("Sasaki",65),a("Orlumbus",65),
   a("Inuarashi",65),a("Nekomamushi",65),a("Wire",70),a("Gotti",70),a("Sarquiss",70),a("Demaro Black",70),a("Ideo",70),a("Chiaki Kurihara",70,"Chiaki")],
@@ -1873,7 +1873,7 @@ const MORE_REVIEW21={
   a("Mission: Yozakura Family",55,"Yozakura Family"),a("Monster Rancher",55),a("Magical DoReMi",60,"Ojamajo Doremi"),a("Mega Man NT Warrior",60,"MegaMan NT Warrior"),a("Maquia",65,"Maquia: When the Promised Flower Blooms"),
   a("Macross Delta",65),a("My Little Monster",65),a("My Senpai Is Annoying",65),a("Magic Kaito",65),a("Martian Successor Nadesico",65,"Nadesico"),a("Myriad Colors Phantom World",70),a("Magical Girl Raising Project",70),
   a("Miss Hokusai",70),a("Maria Watches Over Us",70,"Maria-sama ga Miteru"),a("Mysterious Girlfriend X",75),a("Magical Girl Site",75),a("Mushibugyo",75),a("Mars Red",80)],
- 'wide-idols':[a("Uta",25),a("Suzu Naito",40,"Belle","Suzu"),a("Kagamine Rin",55),a("Kagamine Len",55),a("Megurine Luka",60,"Luka"),a("Nana Osaki",40,"Nana"),a("Yui Hirasawa",45,"Yui"),a("Ikuyo Kita",45,"Kita"),
+ 'wide-idols':[a("Uta",25),a("Misa Amane",40,"Misa","Misa-Misa","Misa Misa"),a("Suzu Naito",40,"Belle","Suzu"),a("Kagamine Rin",55),a("Kagamine Len",55),a("Megurine Luka",60,"Luka"),a("Nana Osaki",40,"Nana"),a("Yui Hirasawa",45,"Yui"),a("Ikuyo Kita",45,"Kita"),
   a("Mio Akiyama",55),a("Basara Nekki",55,"Basara"),a("Carole Stanley",50,"Carole"),a("Tuesday Simmons",50,"Tuesday"),a("Angela Carpenter",60,"Angela"),a("Reira Serizawa",65,"Reira"),a("Koyuki Tanaka",60,"Koyuki"),
   a("Mikumo Guynemer",70,"Mikumo"),a("Utau Hoshina",70,"Utau"),a("Keke Tang",70,"Keke"),a("Shizuku Osaka",70),a("Kasumi Nakasu",65,"Kasumin"),a("Rina Tennoji",70),a("Ai Miyashita",70),a("Emma Verde",70),
   a("Kanata Konoe",70),a("Karin Asaka",70)],
@@ -1894,5 +1894,34 @@ const MORE_REVIEW21={
 for(const [id,extra] of Object.entries(MORE_REVIEW21)){const x=bank.find(q=>q.id==='timed-v4-'+id);if(!x)throw Error('Unknown question: '+id);
  const seen=new Set(x.answers.flatMap(y=>[y.name,...(y.aliases||[])]).map(key));
  for(const e of extra){const forms=[e.name,...(e.aliases||[])];if(forms.some(f=>seen.has(key(f))))throw Error('Duplicate answer in '+id+': '+e.name);if(e.rarity>=100)throw Error('Second Limit Break in '+id);forms.forEach(f=>seen.add(key(f)));x.answers.push(e);}}
+// Own review of Ascent #12 (Nov 22 2026). Additions only. Final-scale rarity before the Deep Cut boost below.
+const MORE_REVIEW22={
+ 'wide-maids':[a("Kotori Minami",55,"Minalinsky"),a("Nagomi Wahira",60,"Nagomi"),a("Ranko Mannen",60,"Ranko"),a("Lilith",65)],
+ 'wide-ponytails':[a("Yukina",55),a("Seryu Ubiquitous",60,"Seryu"),a("Ruka Sarashina",60,"Ruka")],
+ 'wide-ghosts':[a("Mayoi Hachikuji",45,"Mayoi"),a("Yuzuru Otonashi",45,"Otonashi"),a("Yui",50),a("Hideki Hinata",55,"Hinata"),a("Ai Enma",55,"Hell Girl"),a("Masami Iwasawa",60,"Iwasawa"),
+  a("Sableye",60),a("Froslass",65),a("Lunala",65),a("Mismagius",70),a("Dusknoir",70),a("Dusclops",70),a("Aegislash",70),a("Pumpkaboo",70),a("Trevenant",70),a("Hoopa",70),a("Drakloak",70),
+  a("Gholdengo",70),a("Ceruledge",70),a("Annihilape",70),a("Decidueye",70),a("Sayo Aisaka",70),a("Golurk",75),a("Golett",75),a("Honedge",75),a("Doublade",75),a("Gourgeist",75),a("Jellicent",75),
+  a("Frillish",75),a("Lampent",75),a("Dhelmise",75),a("Palossand",75),a("Greavard",75),a("Houndstone",75),a("Flutter Mane",75),a("Polteregeist",80),a("Blacephalon",80),a("Runerigus",80),
+  a("Spectrier",80),a("Basculegion",80),a("Sinistcha",80),a("Poltchageist",80)],
+ 'wide-giants':[a("Founding Titan",45),a("Falco Grice",50,"Falco"),a("Menos Grande",50,"Gillian"),a("Brandish",60,"Brandish μ"),a("Ugo",60),a("Lilith",65),a("Adam",65),a("Bean",70),a("Sawney",70)],
+ 'wide-number-titles':[a("Jujutsu Kaisen 0",15,"JJK 0"),a("Bleach: Thousand-Year Blood War",25,"Thousand-Year Blood War","TYBW"),a("Ranma ½",30,"Ranma 1/2","Ranma"),a("Evangelion: 3.0+1.0",40,"Evangelion 3.0","Evangelion 1.0","Evangelion 2.0"),
+  a("March Comes in Like a Lion",45,"3-gatsu no Lion"),a("Code Geass: Lelouch of the Rebellion R2",50,"Code Geass R2","R2"),a("My Hero Academia: Two Heroes",50,"Two Heroes"),a("Psycho-Pass 3",45),
+  a("Mobile Suit Gundam 0079",55,"Gundam 0079"),a("The 08th MS Team",55,"08th MS Team"),a("Macross 7",55),a("100 Meters",55,"Hyakuemu"),a("Ghost in the Shell 2: Innocence",55,"Innocence"),a("Patlabor 2",55,"Patlabor 2: The Movie"),
+  a("Mobile Suit Gundam 0083",60,"Gundam 0083","Stardust Memory"),a("The 8th Son? Are You Kidding Me?",60,"8th Son"),a("Space Battleship Yamato 2199",60,"Yamato 2199"),a("Dragon Ball Z: Super Android 13!",65,"Super Android 13"),
+  a("Macross Zero",65),a("Hundred",70),a("Five Star Stories",70,"The Five Star Stories"),a("009 Re:Cyborg",70),a("Pokémon 2000",70,"Pokemon 2000"),a("Detective Conan: Zero's Tea Time",70,"Zero's Tea Time"),
+  a("Yamato 2202",70,"Space Battleship Yamato 2202"),a("Megazone 23",75),a("Hidamari Sketch x 365",75),a("Seven Knights Revolution",75),a("The Seven Heavenly Virtues",75),a("Seven Senses of the Re'Union",80)],
+ 'wide-witches':[a("Dark Magician",40),a("Dark Magician Girl",40),a("Emilia",40),a("Gildarts Clive",45,"Gildarts"),a("Levy McGarden",45,"Levy"),a("Illyasviel von Einzbern",50,"Illya"),
+  a("Tatsuya Shiba",50,"Tatsuya"),a("Miyuki Shiba",50,"Miyuki"),a("Cana Alberona",50,"Cana"),a("Lyon Vastia",50,"Lyon"),a("Mare Bello Fiore",55,"Mare"),a("Sakura Matou",55),a("Index",55,"Index Librorum Prohibitorum"),
+  a("Ultear Milkovich",55,"Ultear"),a("Evergreen",55),a("Freed Justine",55,"Freed"),a("Jura Neekis",55,"Jura"),a("Hades",55),a("Lefiya Viridis",60,"Lefiya"),a("Shihoru",60),a("Amanda O'Neill",60,"Amanda"),
+  a("Brandish",60),a("Irene Belserion",60,"Irene"),a("August",60),a("Olruggio",65),a("Akane Kowata",65),a("Stiyl Magnus",65,"Stiyl"),a("Kaori Kanzaki",65,"Kanzaki"),a("Touko Aozaki",70,"Touko")],
+};
+for(const [id,extra] of Object.entries(MORE_REVIEW22)){const x=bank.find(q=>q.id==='timed-v4-'+id);if(!x)throw Error('Unknown question: '+id);
+ const seen=new Set(x.answers.flatMap(y=>[y.name,...(y.aliases||[])]).map(key));
+ for(const e of extra){const forms=[e.name,...(e.aliases||[])];if(forms.some(f=>seen.has(key(f))))throw Error('Duplicate answer in '+id+': '+e.name);if(e.rarity>=100)throw Error('Second Limit Break in '+id);forms.forEach(f=>seen.add(key(f)));x.answers.push(e);}}
+// Ponytails were rated too commonly: everything past the obvious few moves up one band (Nov 21 2026).
+for(const y of bank.find(q=>q.id==='timed-v4-wide-ponytails').answers)if(y.rarity>=33&&y.rarity<100)y.rarity=Math.min(99,y.rarity+15);
+// Deep Cut boost (Nov 21 2026): too few answers reached Deep Cut, so the upper Rare band (60-74) now counts as Deep Cut.
+// Tier cut-offs are unchanged; final rarity 60-99 is spread over 75-99. Applies to every Ascent question (not Descent).
+for(const x of bank)if(x.wide)for(const y of x.answers)if(y.rarity>=60&&y.rarity<100)y.rarity=Math.round(75+(y.rarity-60)*24/39);
 return bank;})();
 if(typeof module!=="undefined")module.exports=POWER_LEVEL_QUESTIONS;
