@@ -45,6 +45,7 @@ function validate(state,deps){
   }
  }
  let prev='genesis';const operations=new Set();for(const d of state.decisions){const body={...d};delete body.hash;if(d.previousHash!==prev||d.hash!==hash(body)||operations.has(d.operationId))throw Error('Broken decision history');operations.add(d.operationId);prev=d.hash;}
+ if(state.sourceReviews)require('./source-review').history(state);
  return state;
 }
 function view(state,deps){

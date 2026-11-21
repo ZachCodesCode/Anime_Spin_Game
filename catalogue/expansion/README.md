@@ -1,5 +1,8 @@
 # Generalized offline character expansion — Phase 5I
 
+For the bounded private admission transaction and explicit maintainer source-reading
+workflow added in Phase 5K, see [REVIEW-READINESS.md](REVIEW-READINESS.md).
+
 These modules compose the existing catalogue, traits, eligibility, novelty and Phase 5B-3
 review contracts. They do not import into gameplay or publish banks. No new dependency,
 importer or UI. Private datasets stay in catalogue/private and catalogue/** is Vercel-excluded.
@@ -45,7 +48,9 @@ recorded; revisions/reopening need an explicit separate plan and historical pres
 
 `admission.preview` accepts a decided plan and returns a validated **in-memory catalogue
 preview**, publicationHold and notPublishable=true. It never writes canonical files.
-No apply CLI exists. A separately authorized canonical write/review must retain the
+The original Phase 5I contract has no apply CLI. Phase 5K's separate private-only
+transaction can apply authorized decisions to an isolated working copy; it cannot write
+this tracked catalogue. A separately authorized canonical write/review must retain the
 admission record and compare hashes/revisions immediately before writing. This boundary
 avoids accidentally treating a pending identity or rights state as admitted public data.
 Do not mistake a programmatically constructed local audit hash for a signed external log.
