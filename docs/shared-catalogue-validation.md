@@ -96,3 +96,66 @@ Break selection and factual/eligibility/rights review. The same optional authori
 review-state bundle preserves profiles, typed links and checkpoints. No new admin
 interface, live provider access, canonical alias mutation, gameplay/API change,
 public answer publication or production database operation was introduced.
+
+
+## Full ACDB source-trusted knowledge extension — 2026-11-22
+
+This continuation preserves 28e859d and introduces an indexed SQLite storage
+adapter for the existing private importer, not a production database migration.
+All three current official gzip SQL files downloaded successfully. The complete
+archive contains 148,843 characters; 62,050 have an explicit source anime assignment.
+Both full processing passes completed. A controlled interruption at 1,000 rows
+resumed through the full export. The final extended-source replay adds zero
+observations. The supplied Usopp profile remains a separate bounded input.
+
+230 automated tests passed before the final documentation checkpoint, including
+21 new indexed-workflow regressions. Build, immutable bank integrity, original
+catalogue and trait/history validation pass. Full indexed invariants and SQLite
+integrity pass: no dangling bindings/versions/current fields, invalid checkpoints,
+trust-status mismatches or unsafe trusted assertions. Legacy JSON data is unchanged
+(5,831 identities, 5,950 appearances, 5,360 historical pending claims). Definitions
+now total48; source.tag is an extensible explicit-label namespace and profile.goal
+stores source-reported goals. No fabricated MAL IDs or maintainer approvals.
+
+Project-owner ACDB source trust is explicit and applies only to internal candidate
+generation. It does not imply independent factual verification or rights clearance.
+Unknown source meanings, contradictory same-context values, uncertain forms and
+rejected claims remain held. AI/editorial interpretations are not upgraded to source
+trust. Profile biographies are hashed unless a separate configured grant explicitly
+allows retention; licensed retention preserves the actual permission audit fields.
+
+Actual offline drafts produce 1,515 orange-haired candidates, 1,476 blue-haired
+female candidates and134 source-reported horn candidates after collision exclusions.
+Three separate private drafts have explicit editorial Limit Break proposals and
+pass actual bank-format validation. Ponytail/goggles/sniper/pirate searches currently
+find only the supplied character: these traits are absent from the official bulk
+schema, not false for every other character. Rich tag/profile access remains an
+export/API permission and availability gap. These are internal candidates, not
+published answers or independently measured rarity statistics.
+
+The complete private database, prepared sources and reproducible full-source JSON
+are stored under the existing persistent development data directory. Source fields,
+provenance, rights holds and historical observations remain private. The existing
+owner-authorized transfer workflow now supports a compressed consistent SQLite
+attachment with trusted checksums, schema validation and no-overwrite bootstrap.
+No real transfer grant was fabricated. No canonical roster reset, public admin
+endpoint, game/API/score change, question-bank publication, main merge, production
+migration or deployment occurred. Ascents #12–13 and the separate #14–16 release
+are unchanged. Full metrics and source-linked examples are in the private report.
+
+
+Final saved full-coverage totals: 148,843 unique source records, three completed
+imports (two full SQL passes plus the supplied profile), zero unfinished imports;
+2,146 matched existing identities and53,946 new source identities. 56,091 characters
+have searchable traits. There are 297,837 current source-trusted observations,
+deduplicating to297,821 character/trait/value/context claims; 22 definitions and111
+distinct trait/value combinations are represented. Structured trusted profile facts
+number297,820; the17 tag assignments remain exclusively the supplied example.
+Three relationship observations are retained, one with an unresolved target.
+One admitted record has no useful traits and is skipped. Historical intake-hold
+counts include excluded non-anime records; they are not counts of factual disputes.
+
+The full report, receipts, source hashes and draft banks are private and durable.
+The sequential full-store coverage audit took approximately357 seconds on this
+machine; full history audits are offline operations, not live-game requests.
+Interactive trait drafts were generated successfully without provider calls.

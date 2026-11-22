@@ -204,3 +204,31 @@ Generated rarity and Limit Break selections are editorial proposals only. The
 same existing maintainer workflow handles review. Missing bulk ACDB tags are an
 access limitation, not inferred absence. See traits/importer/README.md for the
 packet schema, all fields, batch resume and permission requirements.
+
+
+## Full ACDB source-trusted knowledge (indexed local extension)
+
+See [traits/importer/KNOWLEDGE.md](traits/importer/KNOWLEDGE.md) for bulk import,
+resumable checkpoints, compound queries, description rights, provider identities
+and the authorized compressed knowledge attachment. This reuses the existing
+adapters and catalogue; it does not migrate production data. The project owner
+explicitly trusts ACDB for internal generation. Source trust is separate from
+independent verification, rights clearance and immutable question publication.
+
+After the authorized catalogue and knowledge bundle bootstrap:
+
+```sh
+export ASCENT_KNOWLEDGE_DATABASE="$ASCENT_CATALOGUE_DATA_DIR/knowledge.sqlite"
+npm run catalogue:knowledge -- metrics
+npm run catalogue:knowledge -- profile --character mal-character-724
+npm run catalogue:knowledge -- search --query catalogue/private/YOUR-QUERY.json --output catalogue/private/NEW-results.json
+npm run ascent:generate -- knowledge --query catalogue/private/YOUR-QUERY.json --output catalogue/private/NEW-draft.json
+```
+
+The knowledge attachment requires explicit includeKnowledgeState:true and
+includeReviewState:true from the actual owner, plus a separately supplied trusted
+SHA-256. It is not in Git or deployed assets. The code is reusable without implying
+that either developer already has a licensed export or access-controlled storage.
+Existing JSON review histories stay intact; do not try to import ACDB IDs into the
+strict MAL-only JSON catalogue. The indexed extension preserves provider IDs and
+crosswalks without inventing MAL identifiers.

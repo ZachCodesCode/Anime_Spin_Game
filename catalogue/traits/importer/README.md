@@ -298,3 +298,15 @@ Acquisition/provider groups separate user examples, official SQL and Wikidata.
 The complete store is available through the existing authorized private bundle
 when includeReviewState is explicitly allowed. Use matching code/definitions on
 both developers' machines; do not merge concurrent review ledgers by concatenation.
+
+
+## Full source-trusted bulk mode
+
+For complete datasets beyond the original MAL catalogue, use the indexed adapter
+and commands in [KNOWLEDGE.md](KNOWLEDGE.md). This is the scalable storage extension
+of this importer, reusing its adapters and preserving legacy review histories.
+ACDB internal trust now follows the explicit owner policy in trust-policy.json;
+it is not a fictional approval or independent verification. The historical
+approved-only expansion workflow above remains available for independently reviewed
+claims. Full-mode drafts can immediately use clear ACDB assertions without waiting
+for fact-by-fact approval; rights and final release gates remain separate.

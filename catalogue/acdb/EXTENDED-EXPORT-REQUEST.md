@@ -37,3 +37,13 @@ Official references:
 - https://www.animecharactersdatabase.com/databasedumps.php
 - https://www.animecharactersdatabase.com/sp/api.php
 - https://www.animecharactersdatabase.com/tos.php
+
+
+2026-11-22 access inventory: all three official archives downloaded successfully.
+A documented character_id API response was inspected and had basic identity/media,
+gender, image references and a generic desc, with no tags, extra-details dictionary
+or typed relationships. Please identify the actual supported export tables or API
+methods for character-tag vocabulary and assignments, extra profile fields, typed
+relationship edges, licensed description text, contexts and revision/deletion feeds.
+We have not inferred private endpoint or table names. An API key or dedicated bulk
+licence may be appropriate; no credentials or permission have been assumed.

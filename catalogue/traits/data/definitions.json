@@ -538,5 +538,21 @@
       "horns"
     ],
     "guidance": "Appearance only. Elf-like or animal-like ears do not establish species. Preserve source context and unknown values."
+  },
+  {
+    "id": "source.tag",
+    "label": "Unmapped explicit source tag",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Preserve the exact explicit source label in a source namespace; searchable with source trust only. No inferred semantic category, independent verification or publication rights."
+  },
+  {
+    "id": "profile.goal",
+    "label": "Explicit character goal",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Retain explicit source wording as a short factual claim with context and provenance; interpretation remains a proposal."
   }
 ]

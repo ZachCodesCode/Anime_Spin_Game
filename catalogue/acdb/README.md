@@ -57,3 +57,14 @@ fields absent from these SQL tables. It does not imply official bulk access to
 those fields. See [EXTENDED-EXPORT-REQUEST.md](EXTENDED-EXPORT-REQUEST.md) for an
 unsent access request and the importer README for the bounded JSON contract.
 Use a new parser-version staging output when upgrading; retain historical snapshots.
+
+
+The complete 2026-11-22 official downloads succeeded (HTTP200). Their fresh, complete
+character archive contains 148,843 rows; this supersedes reliance on the older
+44,489-row partial cache for bulk work. Parser format3 also retains secondary
+publisher and six r_* codes as explicit source fields. Their meanings are held
+where undocumented. The documented character API returned id/anime_id/origin/
+gender/name, image references and a generic one-line desc; it supplied no tag list
+or rich biography. No per-character API enumeration or webpage crawling was done.
+Use the indexed full-mode adapter in ../traits/importer/KNOWLEDGE.md for all rows,
+source-specific identities and automatic internal ACDB source trust.
