@@ -1,0 +1,7 @@
+'use strict';
+// Fictional test data, never the real 5,831-character catalogue or evidence.
+const at='2026-11-21T00:00:00Z';
+const identity=(id,kind,name)=>({id:'mal-'+kind+'-'+id,malId:id,name,aliases:[],japaneseName:null,provider:'Tenrai',sourceUrl:'https://myanimelist.net/'+kind+'/'+id,importedAt:at});
+const catalogue={version:1,anime:[identity(2,'anime','Synthetic test adaptation'),identity(235,'anime','Synthetic scope A'),identity(9756,'anime','Synthetic scope B'),identity(269,'anime','Synthetic scope C')],characters:[identity(1,'character','Fixture, One'),identity(2,'character','Fixture, Two'),identity(1746,'character','Mouri, Kogorou'),identity(40006,'character','Sakura, Kyouko'),identity(245,'character','Hitsugaya, Toushirou')],appearances:[[2,1],[2,2],[235,1746],[9756,40006],[269,245]].map(([a,c])=>({animeId:'mal-anime-'+a,characterId:'mal-character-'+c,role:'Supporting',provider:'Tenrai',sourceUrl:'https://api.tenrai.org/v1/anime/'+a+'/characters',importedAt:at})),completedAnime:[],review:[],apiFailures:0};
+const pilot=[1,2].map(id=>({id:'synthetic-'+id,status:'needs_review',claim:{characterId:'mal-character-'+id,traitId:'appearance.eyewear',value:'glasses',context:{animeId:'mal-anime-2',scope:'Synthetic test only',persistence:'recurring',form:null},evidence:[{url:'https://example.org/synthetic-'+id,sourceName:'Synthetic fixture',explanation:'No real-world factual assertion',kind:'official',accessedAt:at}],provenance:{provider:'Synthetic fixture',externalCharacterId:'mal:'+id,uncertainty:'Test only'}}}));
+module.exports={catalogue,pilot};

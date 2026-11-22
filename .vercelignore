@@ -1,0 +1,4 @@
+# Offline tooling and all source-restricted catalogue data stay out of deployment.
+catalogue/**
+power-level/scheduling/**
+*.private-bundle.json

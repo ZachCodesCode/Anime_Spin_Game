@@ -1,0 +1,81 @@
+{
+  "basis": "Deterministic eligibility mappings from current exact prompts; semantic/content approval is still required before a new-policy release.",
+  "metadataByQuestionId": {
+    "timed-v4-wide-films": {
+      "metadata": {
+        "type": [
+          "Movie"
+        ]
+      }
+    },
+    "timed-v4-wide-90s": {
+      "metadata": {
+        "yearRange": [
+          1990,
+          1999
+        ]
+      }
+    },
+    "timed-v4-wide-light-novel": {
+      "metadata": {
+        "source": [
+          "Light novel",
+          "Web novel"
+        ]
+      }
+    },
+    "timed-v4-wide-game-adaptations": {
+      "metadata": {
+        "source": [
+          "Game",
+          "Visual novel"
+        ]
+      }
+    },
+    "timed-v4-wide-mappa": {
+      "metadata": {
+        "studios": [
+          "MAPPA"
+        ]
+      }
+    },
+    "timed-v4-wide-sports": {
+      "metadata": {
+        "genres": [
+          "Sports"
+        ]
+      }
+    },
+    "timed-v4-wide-isekai": {
+      "metadata": {
+        "themes": [
+          "Isekai"
+        ]
+      }
+    },
+    "timed-v4-wide-mecha": {
+      "metadata": {
+        "themes": [
+          "Mecha"
+        ]
+      }
+    },
+    "timed-v4-wide-horror": {
+      "metadata": {
+        "genres": [
+          "Horror"
+        ]
+      }
+    },
+    "timed-v4-wide-ghibli": {
+      "metadata": {
+        "type": [
+          "Movie"
+        ],
+        "studios": [
+          "Studio Ghibli"
+        ]
+      }
+    }
+  }
+}

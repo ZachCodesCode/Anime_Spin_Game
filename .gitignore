@@ -21,3 +21,11 @@ npm-debug.log*
 # Generated page with route-specific social metadata
 /AnimeAscent.html
 /descent.html
+
+# Private catalogue bundles, raw data and review records
+/catalogue/private/
+/catalogue/data/
+/catalogue/reports/
+/catalogue/traits/data/*
+!/catalogue/traits/data/definitions.json
+*.private-bundle.json

@@ -1,0 +1,181 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "operationId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "claimId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "expectedRevision": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "status": {
+      "enum": [
+        "proposed",
+        "needs_review",
+        "verified",
+        "rejected"
+      ]
+    },
+    "reviewer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "note": {
+      "type": "string",
+      "minLength": 1
+    },
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "characterId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "traitId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "value": {
+          "type": [
+            "string",
+            "boolean",
+            "number"
+          ]
+        },
+        "context": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "animeId": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "scope": {
+              "type": "string",
+              "minLength": 1
+            },
+            "persistence": {
+              "enum": [
+                "permanent",
+                "recurring",
+                "temporary",
+                "transformation_specific",
+                "unknown"
+              ]
+            },
+            "form": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "animeId",
+            "scope",
+            "persistence",
+            "form"
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "sourceName": {
+                "type": "string",
+                "minLength": 1
+              },
+              "explanation": {
+                "type": "string",
+                "minLength": 1
+              },
+              "kind": {
+                "enum": [
+                  "official",
+                  "secondary",
+                  "community",
+                  "dataset"
+                ]
+              },
+              "accessedAt": {
+                "type": "string",
+                "format": "date-time"
+              }
+            },
+            "required": [
+              "url",
+              "sourceName",
+              "explanation",
+              "kind",
+              "accessedAt"
+            ]
+          }
+        },
+        "provenance": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "provider": {
+              "type": "string",
+              "minLength": 1
+            },
+            "externalCharacterId": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "uncertainty": {
+              "type": "string",
+              "minLength": 1
+            },
+            "basis": {
+              "enum": [
+                "source_fact",
+                "ai_inferred_suggestion"
+              ]
+            }
+          },
+          "required": [
+            "provider",
+            "externalCharacterId",
+            "uncertainty"
+          ]
+        }
+      },
+      "required": [
+        "characterId",
+        "traitId",
+        "value",
+        "context",
+        "evidence",
+        "provenance"
+      ]
+    }
+  },
+  "required": [
+    "operationId",
+    "claimId",
+    "expectedRevision",
+    "status",
+    "reviewer",
+    "note",
+    "claim"
+  ]
+}

@@ -1,0 +1,351 @@
+[
+  {
+    "key": "drama-cast",
+    "text": "Name a character from a drama anime.",
+    "kind": "char",
+    "predicate": {
+      "metadata": {
+        "genres": [
+          "Drama"
+        ]
+      }
+    }
+  },
+  {
+    "key": "mystery-cast",
+    "text": "Name a character from a mystery anime.",
+    "kind": "char",
+    "predicate": {
+      "metadata": {
+        "genres": [
+          "Mystery"
+        ]
+      }
+    }
+  },
+  {
+    "key": "supernatural-cast",
+    "text": "Name a character from a supernatural anime.",
+    "kind": "char",
+    "predicate": {
+      "metadata": {
+        "genres": [
+          "Supernatural"
+        ]
+      }
+    }
+  },
+  {
+    "key": "eighties-cast",
+    "text": "Name a character who appears in an anime that began in the 1980s.",
+    "kind": "char",
+    "predicate": {
+      "metadata": {
+        "yearRange": [
+          1980,
+          1989
+        ]
+      }
+    }
+  },
+  {
+    "key": "pre-eighties-cast",
+    "text": "Name a character who appears in an anime released before 1980.",
+    "kind": "char",
+    "predicate": {
+      "metadata": {
+        "yearRange": [
+          1900,
+          1979
+        ]
+      }
+    }
+  },
+  {
+    "key": "film-supporting",
+    "text": "Name a supporting character from an anime film.",
+    "kind": "char",
+    "predicate": {
+      "metadata": {
+        "type": [
+          "Movie"
+        ]
+      },
+      "role": "Supporting"
+    }
+  },
+  {
+    "key": "visual-novel-cast",
+    "text": "Name a character from an anime adapted from a visual novel.",
+    "kind": "char",
+    "predicate": {
+      "metadata": {
+        "source": [
+          "Visual novel"
+        ]
+      }
+    }
+  },
+  {
+    "key": "novel-cast",
+    "text": "Name a character from an anime adapted from a novel, excluding light novels.",
+    "kind": "char",
+    "predicate": {
+      "metadata": {
+        "source": [
+          "Novel"
+        ]
+      }
+    }
+  },
+  {
+    "key": "short-tv-cast",
+    "text": "Name a character from an anime TV series or season with 13 or fewer episodes.",
+    "kind": "char",
+    "predicate": {
+      "metadata": {
+        "type": [
+          "TV"
+        ],
+        "episodesRange": [
+          1,
+          13
+        ]
+      }
+    }
+  },
+  {
+    "key": "ova-cast",
+    "text": "Name a character from an original video animation (OVA) anime.",
+    "kind": "char",
+    "predicate": {
+      "metadata": {
+        "type": [
+          "OVA"
+        ]
+      }
+    }
+  },
+  {
+    "key": "romance-titles",
+    "text": "Name a romance anime.",
+    "kind": "title",
+    "predicate": {
+      "metadata": {
+        "genres": [
+          "Romance"
+        ]
+      }
+    }
+  },
+  {
+    "key": "drama-titles",
+    "text": "Name a drama anime.",
+    "kind": "title",
+    "predicate": {
+      "metadata": {
+        "genres": [
+          "Drama"
+        ]
+      }
+    }
+  },
+  {
+    "key": "mystery-titles",
+    "text": "Name a mystery anime.",
+    "kind": "title",
+    "predicate": {
+      "metadata": {
+        "genres": [
+          "Mystery"
+        ]
+      }
+    }
+  },
+  {
+    "key": "adventure-titles",
+    "text": "Name an adventure anime.",
+    "kind": "title",
+    "predicate": {
+      "metadata": {
+        "genres": [
+          "Adventure"
+        ]
+      }
+    }
+  },
+  {
+    "key": "supernatural-titles",
+    "text": "Name a supernatural anime.",
+    "kind": "title",
+    "predicate": {
+      "metadata": {
+        "genres": [
+          "Supernatural"
+        ]
+      }
+    }
+  },
+  {
+    "key": "psychological-titles",
+    "text": "Name a psychological anime.",
+    "kind": "title",
+    "predicate": {
+      "metadata": {
+        "themes": [
+          "Psychological"
+        ]
+      }
+    }
+  },
+  {
+    "key": "historical-titles",
+    "text": "Name an anime with a historical setting.",
+    "kind": "title",
+    "predicate": {
+      "metadata": {
+        "themes": [
+          "Historical"
+        ]
+      }
+    }
+  },
+  {
+    "key": "adult-cast-titles",
+    "text": "Name an anime with an adult main cast.",
+    "kind": "title",
+    "predicate": {
+      "metadata": {
+        "themes": [
+          "Adult Cast"
+        ]
+      }
+    }
+  },
+  {
+    "key": "original-titles",
+    "text": "Name an anime whose story was originally created for animation.",
+    "kind": "title",
+    "predicate": {
+      "metadata": {
+        "source": [
+          "Original"
+        ]
+      }
+    }
+  },
+  {
+    "key": "manga-titles",
+    "text": "Name an anime adapted from a manga.",
+    "kind": "title",
+    "predicate": {
+      "metadata": {
+        "source": [
+          "Manga"
+        ]
+      }
+    }
+  },
+  {
+    "key": "visual-novel-titles",
+    "text": "Name an anime adapted from a visual novel.",
+    "kind": "title",
+    "predicate": {
+      "metadata": {
+        "source": [
+          "Visual novel"
+        ]
+      }
+    }
+  },
+  {
+    "key": "novel-titles",
+    "text": "Name an anime adapted from a novel, excluding light novels.",
+    "kind": "title",
+    "predicate": {
+      "metadata": {
+        "source": [
+          "Novel"
+        ]
+      }
+    }
+  },
+  {
+    "key": "eighties-titles",
+    "text": "Name an anime that first aired in the 1980s.",
+    "kind": "title",
+    "predicate": {
+      "metadata": {
+        "yearRange": [
+          1980,
+          1989
+        ]
+      }
+    }
+  },
+  {
+    "key": "two-thousands-titles",
+    "text": "Name an anime that first aired in the 2000s.",
+    "kind": "title",
+    "predicate": {
+      "metadata": {
+        "yearRange": [
+          2000,
+          2009
+        ]
+      }
+    }
+  },
+  {
+    "key": "ova-titles",
+    "text": "Name an original video animation (OVA) anime.",
+    "kind": "title",
+    "predicate": {
+      "metadata": {
+        "type": [
+          "OVA"
+        ]
+      }
+    }
+  },
+  {
+    "key": "short-tv-titles",
+    "text": "Name an anime TV series or season with 13 or fewer episodes.",
+    "kind": "title",
+    "predicate": {
+      "metadata": {
+        "type": [
+          "TV"
+        ],
+        "episodesRange": [
+          1,
+          13
+        ]
+      }
+    }
+  },
+  {
+    "key": "madhouse-titles",
+    "text": "Name an anime animated by Madhouse.",
+    "kind": "title",
+    "predicate": {
+      "metadata": {
+        "studios": [
+          "Madhouse"
+        ]
+      }
+    }
+  },
+  {
+    "key": "bones-titles",
+    "text": "Name an anime animated by Bones.",
+    "kind": "title",
+    "predicate": {
+      "metadata": {
+        "studios": [
+          "Bones"
+        ]
+      }
+    }
+  }
+]

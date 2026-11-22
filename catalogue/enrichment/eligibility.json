@@ -1,0 +1,1207 @@
+{
+  "version": 1,
+  "policy": "Planning guidance only. A verified trait never automatically approves an answer. No rarity values or live exports.",
+  "questions": [
+    {
+      "questionId": "timed-v4-mix-red-hair",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any character with red hair.",
+      "traitChecks": [
+        {
+          "traitId": "appearance.hair_color",
+          "values": [
+            "red"
+          ]
+        }
+      ],
+      "include": "Recurring red hair in the named anime adaptation.",
+      "exclude": "Do not infer adjacent colours, monochrome manga colours or alternate-art colours. Temporary dyes and transformed forms require a distinct decision.",
+      "requiredContext": [
+        "named anime adaptation",
+        "period/episode or recurring depiction",
+        "temporary/transformed form when relevant",
+        "independent evidence review",
+        "separate authorized eligibility decision"
+      ]
+    },
+    {
+      "questionId": "timed-v4-mix-masks",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any character who wears a mask.",
+      "traitChecks": [
+        {
+          "traitId": "appearance.accessory",
+          "values": [
+            "mask"
+          ]
+        }
+      ],
+      "include": "A recurring worn mask clearly covers part of the face.",
+      "exclude": "A single disguise, face paint or non-worn equipment does not establish eligibility.",
+      "requiredContext": [
+        "named anime adaptation",
+        "period/episode or recurring depiction",
+        "temporary/transformed form when relevant",
+        "independent evidence review",
+        "separate authorized eligibility decision"
+      ]
+    },
+    {
+      "questionId": "timed-v4-mix-glasses",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any character who wears glasses or sunglasses.",
+      "traitChecks": [
+        {
+          "traitId": "appearance.eyewear",
+          "values": [
+            "glasses",
+            "sunglasses"
+          ]
+        }
+      ],
+      "include": "Recurring ordinary spectacles or sunglasses in the named anime adaptation.",
+      "exclude": "Temporary disguises need an explicit decision. Goggles, monocles and sports goggles are excluded by default; sports spectacles need visual/editorial review.",
+      "requiredContext": [
+        "named anime adaptation",
+        "period/episode or recurring depiction",
+        "temporary/transformed form when relevant",
+        "independent evidence review",
+        "separate authorized eligibility decision"
+      ]
+    },
+    {
+      "questionId": "timed-v4-mix-healers",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any doctor, medic or healer.",
+      "traitChecks": [
+        {
+          "traitId": "occupation.role",
+          "values": [
+            "doctor",
+            "medic",
+            "healer"
+          ]
+        }
+      ],
+      "include": "Practises medicine or demonstrates a recurring healing role/ability.",
+      "exclude": "A medical-looking costume, self-regeneration alone or one first-aid scene is insufficient.",
+      "requiredContext": [
+        "named anime adaptation",
+        "period/episode or recurring depiction",
+        "temporary/transformed form when relevant",
+        "independent evidence review",
+        "separate authorized eligibility decision"
+      ]
+    },
+    {
+      "questionId": "timed-v4-mix-companions",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any animal companion, pet or summon.",
+      "traitChecks": [
+        {
+          "traitId": "affiliation.companion",
+          "values": []
+        }
+      ],
+      "include": "An actual animal companion, pet or summon with a documented relationship.",
+      "exclude": "Species alone does not establish companion status; mascots and humanoid partners require review.",
+      "requiredContext": [
+        "named anime adaptation",
+        "period/episode or recurring depiction",
+        "temporary/transformed form when relevant",
+        "independent evidence review",
+        "separate authorized eligibility decision"
+      ]
+    },
+    {
+      "questionId": "timed-v4-mix-white-hair",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any character with white or silver hair.",
+      "traitChecks": [
+        {
+          "traitId": "appearance.hair_color",
+          "values": [
+            "white",
+            "silver"
+          ]
+        }
+      ],
+      "include": "Recurring white, silver hair in the named anime adaptation.",
+      "exclude": "Do not infer adjacent colours, monochrome manga colours or alternate-art colours. Temporary dyes and transformed forms require a distinct decision.",
+      "requiredContext": [
+        "named anime adaptation",
+        "period/episode or recurring depiction",
+        "temporary/transformed form when relevant",
+        "independent evidence review",
+        "separate authorized eligibility decision"
+      ]
+    },
+    {
+      "questionId": "timed-v4-mix-blonde",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any character with blonde hair.",
+      "traitChecks": [
+        {
+          "traitId": "appearance.hair_color",
+          "values": [
+            "blonde"
+          ]
+        }
+      ],
+      "include": "Recurring blonde hair in the named anime adaptation.",
+      "exclude": "Do not infer adjacent colours, monochrome manga colours or alternate-art colours. Temporary dyes and transformed forms require a distinct decision.",
+      "requiredContext": [
+        "named anime adaptation",
+        "period/episode or recurring depiction",
+        "temporary/transformed form when relevant",
+        "independent evidence review",
+        "separate authorized eligibility decision"
+      ]
+    },
+    {
+      "questionId": "timed-v4-mix-fire",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any character who fights with fire.",
+      "traitChecks": [
+        {
+          "traitId": "ability.element",
+          "values": [
+            "fire",
+            "lava"
+          ]
+        }
+      ],
+      "include": "Explicitly fights using fire, flames or lava; preserve the current prompt’s inclusion of flame/sun breathing.",
+      "exclude": "Do not infer powers from red hair, names or aura colour. Training-only or unadapted manga feats require exclusion/review.",
+      "requiredContext": [
+        "named anime adaptation",
+        "period/episode or recurring depiction",
+        "temporary/transformed form when relevant",
+        "independent evidence review",
+        "separate authorized eligibility decision"
+      ]
+    },
+    {
+      "questionId": "timed-v4-mix-lightning",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any character who fights with lightning or electricity.",
+      "traitChecks": [
+        {
+          "traitId": "ability.element",
+          "values": [
+            "lightning",
+            "electricity"
+          ]
+        }
+      ],
+      "include": "Explicit combat use of lightning or electricity.",
+      "exclude": "Speed metaphors, names and electrical-looking effects without a supported ability are insufficient.",
+      "requiredContext": [
+        "named anime adaptation",
+        "period/episode or recurring depiction",
+        "temporary/transformed form when relevant",
+        "independent evidence review",
+        "separate authorized eligibility decision"
+      ]
+    },
+    {
+      "questionId": "timed-v4-mix-mentors",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any teacher, sensei or mentor.",
+      "traitChecks": [
+        {
+          "traitId": "occupation.role",
+          "values": [
+            "teacher",
+            "mentor"
+          ]
+        }
+      ],
+      "include": "Recurring teaching or an explicit sustained mentor relationship.",
+      "exclude": "Age, seniority or giving one piece of advice is insufficient.",
+      "requiredContext": [
+        "named anime adaptation",
+        "period/episode or recurring depiction",
+        "temporary/transformed form when relevant",
+        "independent evidence review",
+        "separate authorized eligibility decision"
+      ]
+    },
+    {
+      "questionId": "timed-v4-mix-pink-hair",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any character with pink hair.",
+      "traitChecks": [
+        {
+          "traitId": "appearance.hair_color",
+          "values": [
+            "pink"
+          ]
+        }
+      ],
+      "include": "Recurring pink hair in the named anime adaptation.",
+      "exclude": "Do not infer adjacent colours, monochrome manga colours or alternate-art colours. Temporary dyes and transformed forms require a distinct decision.",
+      "requiredContext": [
+        "named anime adaptation",
+        "period/episode or recurring depiction",
+        "temporary/transformed form when relevant",
+        "independent evidence review",
+        "separate authorized eligibility decision"
+      ]
+    },
+    {
+      "questionId": "timed-v4-mix-green-hair",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any character with green hair.",
+      "traitChecks": [
+        {
+          "traitId": "appearance.hair_color",
+          "values": [
+            "green"
+          ]
+        }
+      ],
+      "include": "Recurring green hair in the named anime adaptation.",
+      "exclude": "Do not infer adjacent colours, monochrome manga colours or alternate-art colours. Temporary dyes and transformed forms require a distinct decision.",
+      "requiredContext": [
+        "named anime adaptation",
+        "period/episode or recurring depiction",
+        "temporary/transformed form when relevant",
+        "independent evidence review",
+        "separate authorized eligibility decision"
+      ]
+    },
+    {
+      "questionId": "timed-v4-mix-royalty",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any king, queen, prince, princess or royal.",
+      "traitChecks": [
+        {
+          "traitId": "identity.royalty",
+          "values": []
+        }
+      ],
+      "include": "Named hereditary or formally recognized royal position in context.",
+      "exclude": "Honorific nicknames and self-appointed titles are not enough.",
+      "requiredContext": [
+        "named anime adaptation",
+        "period/episode or recurring depiction",
+        "temporary/transformed form when relevant",
+        "independent evidence review",
+        "separate authorized eligibility decision"
+      ]
+    },
+    {
+      "questionId": "timed-v4-mix-twins",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any twin, triplet, quadruplet or quintuplet.",
+      "traitChecks": [
+        {
+          "traitId": "identity.multiple_birth",
+          "values": []
+        }
+      ],
+      "include": "Explicit multiple-birth sibling relationship.",
+      "exclude": "Lookalikes, clones, alternate identities and unrelated similar characters are excluded.",
+      "requiredContext": [
+        "named anime adaptation",
+        "period/episode or recurring depiction",
+        "temporary/transformed form when relevant",
+        "independent evidence review",
+        "separate authorized eligibility decision"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-ghibli",
+      "type": "non_character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any Studio Ghibli film.",
+      "traitChecks": [],
+      "include": "Separate title/studio/genre/episode-count source and eligibility project.",
+      "exclude": "Character traits cannot establish this answer.",
+      "requiredContext": [
+        "source-backed media identity",
+        "precise prompt scope"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-sports",
+      "type": "non_character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any sports anime.",
+      "traitChecks": [],
+      "include": "Separate title/studio/genre/episode-count source and eligibility project.",
+      "exclude": "Character traits cannot establish this answer.",
+      "requiredContext": [
+        "source-backed media identity",
+        "precise prompt scope"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-isekai",
+      "type": "non_character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any isekai anime.",
+      "traitChecks": [],
+      "include": "Separate title/studio/genre/episode-count source and eligibility project.",
+      "exclude": "Character traits cannot establish this answer.",
+      "requiredContext": [
+        "source-backed media identity",
+        "precise prompt scope"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-mecha",
+      "type": "non_character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any mecha anime.",
+      "traitChecks": [],
+      "include": "Separate title/studio/genre/episode-count source and eligibility project.",
+      "exclude": "Character traits cannot establish this answer.",
+      "requiredContext": [
+        "source-backed media identity",
+        "precise prompt scope"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-magical-girl",
+      "type": "non_character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any magical girl anime.",
+      "traitChecks": [],
+      "include": "Separate title/studio/genre/episode-count source and eligibility project.",
+      "exclude": "Character traits cannot establish this answer.",
+      "requiredContext": [
+        "source-backed media identity",
+        "precise prompt scope"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-starters",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any starter Pokémon.",
+      "traitChecks": [
+        {
+          "traitId": "identity.pokemon_starter",
+          "values": []
+        }
+      ],
+      "include": "A starter species recognized in the relevant Pokémon scope.",
+      "exclude": "Determine species versus individual identity and generation/edition policy before adding candidates.",
+      "requiredContext": [
+        "named anime adaptation",
+        "period/episode or recurring depiction",
+        "temporary/transformed form when relevant",
+        "independent evidence review",
+        "separate authorized eligibility decision"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-shinkai-hosoda",
+      "type": "non_character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any film by Makoto Shinkai or Mamoru Hosoda.",
+      "traitChecks": [],
+      "include": "Separate title/studio/genre/episode-count source and eligibility project.",
+      "exclude": "Character traits cannot establish this answer.",
+      "requiredContext": [
+        "source-backed media identity",
+        "precise prompt scope"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-time-travel",
+      "type": "non_character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any anime with time travel or a time loop.",
+      "traitChecks": [],
+      "include": "Separate title/studio/genre/episode-count source and eligibility project.",
+      "exclude": "Character traits cannot establish this answer.",
+      "requiredContext": [
+        "source-backed media identity",
+        "precise prompt scope"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-detectives",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any anime detective.",
+      "traitChecks": [
+        {
+          "traitId": "occupation.detective",
+          "values": []
+        },
+        {
+          "traitId": "occupation.role",
+          "values": [
+            "investigator"
+          ]
+        }
+      ],
+      "include": "Recurring professional or amateur investigation is supported by direct anime evidence.",
+      "exclude": "Solving one mystery, a police job alone, or detective in the title is insufficient. Record employment subtype separately.",
+      "requiredContext": [
+        "named anime adaptation",
+        "period/episode or recurring depiction",
+        "temporary/transformed form when relevant",
+        "independent evidence review",
+        "separate authorized eligibility decision"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-vampires",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any vampire.",
+      "traitChecks": [
+        {
+          "traitId": "identity.creature",
+          "values": [
+            "vampire"
+          ]
+        }
+      ],
+      "include": "Explicit vampire identity in the adaptation.",
+      "exclude": "Dhampirs, vampire hunters, cosplay and temporary forms require distinct review.",
+      "requiredContext": [
+        "named anime adaptation",
+        "period/episode or recurring depiction",
+        "temporary/transformed form when relevant",
+        "independent evidence review",
+        "separate authorized eligibility decision"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-robots",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any robot, android or cyborg.",
+      "traitChecks": [
+        {
+          "traitId": "identity.synthetic",
+          "values": []
+        }
+      ],
+      "include": "Documented robot, android or cyborg identity.",
+      "exclude": "Mecha pilots, armour and prosthetics alone do not prove the classification; settle partial-body cyborg boundaries.",
+      "requiredContext": [
+        "named anime adaptation",
+        "period/episode or recurring depiction",
+        "temporary/transformed form when relevant",
+        "independent evidence review",
+        "separate authorized eligibility decision"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-ninjas",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any ninja who isn’t from Naruto.",
+      "traitChecks": [
+        {
+          "traitId": "occupation.role",
+          "values": [
+            "ninja"
+          ]
+        }
+      ],
+      "include": "Explicit ninja role in an anime other than Naruto.",
+      "exclude": "Exclude Naruto roles even if another appearance exists; establish the qualifying non-Naruto adaptation.",
+      "requiredContext": [
+        "named anime adaptation",
+        "period/episode or recurring depiction",
+        "temporary/transformed form when relevant",
+        "independent evidence review",
+        "separate authorized eligibility decision"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-eyepatch",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any character who wears an eyepatch.",
+      "traitChecks": [
+        {
+          "traitId": "appearance.accessory",
+          "values": [
+            "eyepatch"
+          ]
+        }
+      ],
+      "include": "Recognizable recurring eyepatch in the specified anime period.",
+      "exclude": "Temporary medical bandages need a separate decision; record injuries and time period.",
+      "requiredContext": [
+        "named anime adaptation",
+        "period/episode or recurring depiction",
+        "temporary/transformed form when relevant",
+        "independent evidence review",
+        "separate authorized eligibility decision"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-cats",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any cat character.",
+      "traitChecks": [
+        {
+          "traitId": "identity.species",
+          "values": [
+            "cat"
+          ]
+        }
+      ],
+      "include": "Actual feline identity in the adaptation. A documented cat transformation is separately reviewed with episode/form context.",
+      "exclude": "Cat ears, costumes, nicknames, catlike humanoids, lions, cat statues and transformed humans are not automatically eligible.",
+      "requiredContext": [
+        "named anime adaptation",
+        "period/episode or recurring depiction",
+        "temporary/transformed form when relevant",
+        "independent evidence review",
+        "separate authorized eligibility decision"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-dragons",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any dragon.",
+      "traitChecks": [
+        {
+          "traitId": "identity.creature",
+          "values": [
+            "dragon"
+          ]
+        }
+      ],
+      "include": "Explicit dragon identity or a documented dragon form.",
+      "exclude": "Dragon names, dragon slayers and draconic features alone are insufficient; forms require context.",
+      "requiredContext": [
+        "named anime adaptation",
+        "period/episode or recurring depiction",
+        "temporary/transformed form when relevant",
+        "independent evidence review",
+        "separate authorized eligibility decision"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-studios",
+      "type": "non_character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any anime studio.",
+      "traitChecks": [],
+      "include": "Separate title/studio/genre/episode-count source and eligibility project.",
+      "exclude": "Character traits cannot establish this answer.",
+      "requiredContext": [
+        "source-backed media identity",
+        "precise prompt scope"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-food",
+      "type": "non_character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any anime about food or cooking.",
+      "traitChecks": [],
+      "include": "Separate title/studio/genre/episode-count source and eligibility project.",
+      "exclude": "Character traits cannot establish this answer.",
+      "requiredContext": [
+        "source-backed media identity",
+        "precise prompt scope"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-long-running",
+      "type": "non_character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any anime series with 200 or more episodes.",
+      "traitChecks": [],
+      "include": "Separate title/studio/genre/episode-count source and eligibility project.",
+      "exclude": "Character traits cannot establish this answer.",
+      "requiredContext": [
+        "source-backed media identity",
+        "precise prompt scope"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-shinigami",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any Shinigami, reaper or death god.",
+      "traitChecks": [
+        {
+          "traitId": "occupation.role",
+          "values": [
+            "shinigami"
+          ]
+        }
+      ],
+      "include": "Documented shinigami, reaper or death-god role/identity.",
+      "exclude": "Death-themed powers, skull motifs and grim nicknames alone are insufficient.",
+      "requiredContext": [
+        "named anime adaptation",
+        "period/episode or recurring depiction",
+        "temporary/transformed form when relevant",
+        "independent evidence review",
+        "separate authorized eligibility decision"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-hats",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any character known for wearing a hat.",
+      "traitChecks": [
+        {
+          "traitId": "appearance.accessory",
+          "values": [
+            "hat"
+          ]
+        }
+      ],
+      "include": "Known for a recurring worn hat in the anime.",
+      "exclude": "One-off costume headgear and hair ornaments are not automatically hats.",
+      "requiredContext": [
+        "named anime adaptation",
+        "period/episode or recurring depiction",
+        "temporary/transformed form when relevant",
+        "independent evidence review",
+        "separate authorized eligibility decision"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-scars",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any character with a scar on their face.",
+      "traitChecks": [],
+      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
+      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "requiredContext": [
+        "curated question-specific rule required",
+        "named adaptation",
+        "authorized eligibility review"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-chefs",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any chef or cook.",
+      "traitChecks": [],
+      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
+      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "requiredContext": [
+        "curated question-specific rule required",
+        "named adaptation",
+        "authorized eligibility review"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-samurai",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any samurai or ronin.",
+      "traitChecks": [],
+      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
+      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "requiredContext": [
+        "curated question-specific rule required",
+        "named adaptation",
+        "authorized eligibility review"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-purple-hair",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any character with purple hair.",
+      "traitChecks": [],
+      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
+      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "requiredContext": [
+        "curated question-specific rule required",
+        "named adaptation",
+        "authorized eligibility review"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-scientists",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any scientist or inventor.",
+      "traitChecks": [],
+      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
+      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "requiredContext": [
+        "curated question-specific rule required",
+        "named adaptation",
+        "authorized eligibility review"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-tattoos",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any character with a tattoo.",
+      "traitChecks": [],
+      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
+      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "requiredContext": [
+        "curated question-specific rule required",
+        "named adaptation",
+        "authorized eligibility review"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-ice",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any character who fights with ice or snow.",
+      "traitChecks": [],
+      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
+      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "requiredContext": [
+        "curated question-specific rule required",
+        "named adaptation",
+        "authorized eligibility review"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-archers",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any character who fights with a bow.",
+      "traitChecks": [],
+      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
+      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "requiredContext": [
+        "curated question-specific rule required",
+        "named adaptation",
+        "authorized eligibility review"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-blue-hair",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any character with blue hair.",
+      "traitChecks": [],
+      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
+      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "requiredContext": [
+        "curated question-specific rule required",
+        "named adaptation",
+        "authorized eligibility review"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-wind",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any character who fights with wind.",
+      "traitChecks": [],
+      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
+      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "requiredContext": [
+        "curated question-specific rule required",
+        "named adaptation",
+        "authorized eligibility review"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-music",
+      "type": "non_character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any anime about music or idols.",
+      "traitChecks": [],
+      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
+      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "requiredContext": [
+        "curated question-specific rule required",
+        "named adaptation",
+        "authorized eligibility review"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-shonen-jump",
+      "type": "non_character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any Shonen Jump manga that has an anime.",
+      "traitChecks": [],
+      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
+      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "requiredContext": [
+        "curated question-specific rule required",
+        "named adaptation",
+        "authorized eligibility review"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-horror",
+      "type": "non_character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any horror anime.",
+      "traitChecks": [],
+      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
+      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "requiredContext": [
+        "curated question-specific rule required",
+        "named adaptation",
+        "authorized eligibility review"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-light-novel",
+      "type": "non_character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any anime based on a light novel.",
+      "traitChecks": [],
+      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
+      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "requiredContext": [
+        "curated question-specific rule required",
+        "named adaptation",
+        "authorized eligibility review"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-space",
+      "type": "non_character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any anime set in space.",
+      "traitChecks": [],
+      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
+      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "requiredContext": [
+        "curated question-specific rule required",
+        "named adaptation",
+        "authorized eligibility review"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-mappa",
+      "type": "non_character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any anime animated by MAPPA.",
+      "traitChecks": [],
+      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
+      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "requiredContext": [
+        "curated question-specific rule required",
+        "named adaptation",
+        "authorized eligibility review"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-guns",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any character who fights with a gun.",
+      "traitChecks": [],
+      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
+      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "requiredContext": [
+        "curated question-specific rule required",
+        "named adaptation",
+        "authorized eligibility review"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-pirates",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any pirate.",
+      "traitChecks": [],
+      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
+      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "requiredContext": [
+        "curated question-specific rule required",
+        "named adaptation",
+        "authorized eligibility review"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-m-titles",
+      "type": "non_character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any anime whose title starts with M.",
+      "traitChecks": [],
+      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
+      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "requiredContext": [
+        "curated question-specific rule required",
+        "named adaptation",
+        "authorized eligibility review"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-idols",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any idol or pop-star character.",
+      "traitChecks": [],
+      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
+      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "requiredContext": [
+        "curated question-specific rule required",
+        "named adaptation",
+        "authorized eligibility review"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-teachers",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any teacher or professor.",
+      "traitChecks": [],
+      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
+      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "requiredContext": [
+        "curated question-specific rule required",
+        "named adaptation",
+        "authorized eligibility review"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-usa",
+      "type": "non_character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any anime that takes place in the USA at some point.",
+      "traitChecks": [],
+      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
+      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "requiredContext": [
+        "curated question-specific rule required",
+        "named adaptation",
+        "authorized eligibility review"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-smokers",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any character who smokes.",
+      "traitChecks": [],
+      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
+      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "requiredContext": [
+        "curated question-specific rule required",
+        "named adaptation",
+        "authorized eligibility review"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-maids",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any maid.",
+      "traitChecks": [],
+      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
+      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "requiredContext": [
+        "curated question-specific rule required",
+        "named adaptation",
+        "authorized eligibility review"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-game-adaptations",
+      "type": "non_character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any anime based on a video game.",
+      "traitChecks": [],
+      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
+      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "requiredContext": [
+        "curated question-specific rule required",
+        "named adaptation",
+        "authorized eligibility review"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-ponytails",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any character with a ponytail.",
+      "traitChecks": [],
+      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
+      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "requiredContext": [
+        "curated question-specific rule required",
+        "named adaptation",
+        "authorized eligibility review"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-ghosts",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any ghost.",
+      "traitChecks": [],
+      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
+      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "requiredContext": [
+        "curated question-specific rule required",
+        "named adaptation",
+        "authorized eligibility review"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-giants",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any giant or Titan.",
+      "traitChecks": [],
+      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
+      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "requiredContext": [
+        "curated question-specific rule required",
+        "named adaptation",
+        "authorized eligibility review"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-witches",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any witch, wizard or mage.",
+      "traitChecks": [],
+      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
+      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "requiredContext": [
+        "curated question-specific rule required",
+        "named adaptation",
+        "authorized eligibility review"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-number-titles",
+      "type": "non_character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any anime with a number in its title.",
+      "traitChecks": [],
+      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
+      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "requiredContext": [
+        "curated question-specific rule required",
+        "named adaptation",
+        "authorized eligibility review"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-orange-hair",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any character with orange hair.",
+      "traitChecks": [],
+      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
+      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "requiredContext": [
+        "curated question-specific rule required",
+        "named adaptation",
+        "authorized eligibility review"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-police",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any police officer.",
+      "traitChecks": [],
+      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
+      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "requiredContext": [
+        "curated question-specific rule required",
+        "named adaptation",
+        "authorized eligibility review"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-90s",
+      "type": "non_character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any anime that first aired in the 1990s.",
+      "traitChecks": [],
+      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
+      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "requiredContext": [
+        "curated question-specific rule required",
+        "named adaptation",
+        "authorized eligibility review"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-assassins",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any assassin.",
+      "traitChecks": [],
+      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
+      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "requiredContext": [
+        "curated question-specific rule required",
+        "named adaptation",
+        "authorized eligibility review"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-thieves",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any thief.",
+      "traitChecks": [],
+      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
+      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "requiredContext": [
+        "curated question-specific rule required",
+        "named adaptation",
+        "authorized eligibility review"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-films",
+      "type": "non_character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any anime film.",
+      "traitChecks": [],
+      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
+      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "requiredContext": [
+        "curated question-specific rule required",
+        "named adaptation",
+        "authorized eligibility review"
+      ]
+    },
+    {
+      "questionId": "timed-v4-wide-elves",
+      "type": "character",
+      "status": "draft_requires_maintainer_approval",
+      "requirement": "Name any elf.",
+      "traitChecks": [],
+      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
+      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "requiredContext": [
+        "curated question-specific rule required",
+        "named adaptation",
+        "authorized eligibility review"
+      ]
+    }
+  ]
+}
