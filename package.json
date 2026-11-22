@@ -10,6 +10,8 @@
     "dev": "node scripts/dev.js",
     "test": "node --test power-level/*.test.js",
     "build": "node scripts/build-social-preview.js",
-    "predev": "npm run build"
+    "predev": "npm run build",
+    "ascent:integrity": "node power-level/versioning/cli.js check",
+    "ascent:release-check": "node power-level/versioning/cli.js release-check"
   }
 }

@@ -31,7 +31,7 @@
       "destination": "/descent.html"
     },
     {
-"source": "/spin",
+      "source": "/spin",
       "destination": "/index.html"
     },
     {
@@ -48,5 +48,13 @@
     }
   ],
   "buildCommand": "npm run build",
-  "outputDirectory": "."
+  "outputDirectory": ".",
+  "functions": {
+    "api/ascent.js": {
+      "includeFiles": "power-level/versioning/releases/**"
+    },
+    "api/suggest.js": {
+      "includeFiles": "power-level/versioning/releases/**"
+    }
+  }
 }

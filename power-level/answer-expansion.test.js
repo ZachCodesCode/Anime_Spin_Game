@@ -103,17 +103,20 @@ test('in-progress and finished production saves restore with identical scores, a
 });
 
 // Exercise the REAL submission handler with isolated in-memory storage; no Turso or credentials.
-function api(date){
- const calls=[];let serial=0;
- class Clock extends Date{static now(){return Date.parse(date+'T17:00:00Z');}}
- const context={module:{exports:{}},Date:Clock,console,require(name){
-  if(name==='./_db.js')return {cors(){},ensureAscent:async()=>{},db:{execute:async request=>{
-   calls.push(request);return request.sql.startsWith('INSERT')?{rowsAffected:1}:{rows:[]};
-  }}};
-  if(name==='./_guest.js')return {guest:()=> 'test-player-'+(++serial)};
-  if(name==='../power-level/core.js')return C;
-  if(name==='../power-level/run.js')return R;
-  if(name==='../power-level/questions.js')return bank;
+async function api(date,t){
+ const calls=[],fs=require('node:fs'),os=require('node:os'),path=require('node:path');let serial=0;
+ const dir=fs.mkdtempSync(path.join(os.tmpdir(),'ascent-answer-api-'));
+ const actual=require('@libsql/client').createClient({url:'file:'+path.join(dir,'scores.db')});
+ t.after(()=>{actual.close();fs.rmSync(dir,{recursive:true,force:true});});
+ const db={execute:async r=>{calls.push(r);return actual.execute(r);},batch:async(rs,mode)=>{calls.push(...rs);return actual.batch(rs,mode);}};
+ const ensureAscent=()=>actual.execute('CREATE TABLE IF NOT EXISTS ascent_scores(day TEXT,guest TEXT,score INTEGER,answers TEXT,created_at INTEGER,PRIMARY KEY(day,guest))');
+ const realService=require('../api/_ascent-versioning').service;
+ const context={module:{exports:{}},console,require(name){
+  if(name==='./_db')return {cors(){},ensureAscent,db};
+  if(name==='./_guest')return {guest:()=> 'test-player-'+(++serial)};
+  if(name==='../power-level/core')return C;
+  if(name==='../power-level/versioning')return require('./versioning');
+  if(name==='./_ascent-versioning')return {service:opts=>{const service=realService(opts);return {...service,submit:(body,who)=>service.submit(body,who,new Date(date+'T17:00:00Z'))};}};
   throw Error('Unexpected dependency '+name);
  }};
  vm.runInNewContext(fs.readFileSync(require.resolve('../api/ascent.js'),'utf8'),context);
@@ -121,13 +124,13 @@ function api(date){
   await context.module.exports({method:'POST',body:{date,answers}},res);return res;
  }};
 }
-test('every new answer and client-canonicalized alias passes the actual API scoring handler',async()=>{
+test('every new answer and client-canonicalized alias passes the actual API scoring handler',async(t)=>{
  for(const date of Object.keys(days)){
-  const ids=R.select(bank,date),qs=ids.map(i=>bank.find(q=>q.id===i)),handler=api(date);
+  const ids=R.select(bank,date),qs=ids.map(i=>bank.find(q=>q.id===i)),handler=await api(date,t);
   for(let i=0;i<qs.length;i++)for(const a of newAnswers(qs[i]))for(const f of [a.name,...a.aliases||[]]){
    const answers=qs.map(()=>null);answers[i]=C.validate(qs[i],f).answer.name;
    const res=await handler.submit(answers);assert.equal(res.code,200,a.name);assert.equal(res.value.score,C.points(a));
-   const insert=handler.calls.findLast(c=>c.sql.startsWith('INSERT'));
+   const insert=handler.calls.findLast(c=>typeof c==='object'&&c.sql.startsWith('INSERT'));
    assert.equal(insert.args[2],C.points(a));assert.equal(JSON.parse(insert.args[3])[i],a.name);
   }
   const invalid=qs.map(()=>null);invalid[0]='not a canonical answer';assert.equal((await handler.submit(invalid)).code,400);
