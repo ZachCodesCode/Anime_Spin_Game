@@ -15,7 +15,7 @@ function directory(value=process.env.ASCENT_CATALOGUE_DATA_DIR||path.join(privat
  return dir;
 }
 function read(name){
- if(!names.includes(name))throw Error('Unknown catalogue data file');
+ if(![...names,'review-state.json'].includes(name))throw Error('Unknown catalogue data file');
  const dir=directory(),file=path.join(dir,name);
  if(!fs.existsSync(file))throw Error('Private catalogue data unavailable. Run npm run catalogue:bootstrap -- AUTHORIZED-BUNDLE.json; see catalogue/TEAM-SETUP.md.');
  if(fs.lstatSync(file).isSymbolicLink()||fs.realpathSync(file)!==path.join(fs.realpathSync(dir),name))throw Error('Catalogue file symlink refused');
@@ -26,18 +26,20 @@ function validate(files){
  require('./metadata').validateAll(files['anime-metadata.json']);
  require('./traits/model').validate(files['associations.json'],require('./traits/data/definitions.json'),files['catalogue.json']);
  for(const [key,m]of Object.entries(files['anime-metadata.json']))if(!files['catalogue.json'].anime.some(a=>a.malId===Number(key)))throw Error('Metadata has no catalogue adaptation');
- return {characters:files['catalogue.json'].characters.length,anime:files['catalogue.json'].anime.length,appearances:files['catalogue.json'].appearances.length,traits:files['associations.json'].associations.length};
+ if(files['review-state.json']){const V=require('./verification/model');V.validate(files['review-state.json'],V.index({catalogue:files['catalogue.json'],definitions:require('./traits/data/definitions.json'),questions:require('../power-level/questions'),policy:require('./enrichment/eligibility.json')}));}
+ return {characters:files['catalogue.json'].characters.length,anime:files['catalogue.json'].anime.length,appearances:files['catalogue.json'].appearances.length,traits:files['associations.json'].associations.length,...(files['review-state.json']?{reviewClaims:files['review-state.json'].traits.associations.length}:{})};
 }
 function bootstrap(bundle,destination){
  if(bundle.format!=='ascent-private-team-bundle-v1')throw Error('Invalid private bundle');
  const a=bundle.authorization;
  if(!a||a.purpose!=='private-team-use'||typeof a.authorizedBy!=='string'||!a.authorizedBy.trim()||typeof a.reference!=='string'||!a.reference.trim()||a.publicRedistribution!==false)throw Error('Actual data-owner authorization and private-use reference required');
- if(!bundle.files||Object.keys(bundle.files).sort().join()!==[...names].sort().join())throw Error('Only the three supported data files may be bootstrapped');
- const files={};for(const name of names){const record=bundle.files[name];if(!record||record.sha256!==hash(record.data))throw Error('Bundle checksum mismatch');files[name]=record.data;}
+ const included=bundle.files?Object.keys(bundle.files):[];if(names.some(n=>!included.includes(n))||included.some(n=>![...names,'review-state.json'].includes(n)))throw Error('Only supported catalogue/review data files may be bootstrapped');
+ if(included.includes('review-state.json')&&a.includeReviewState!==true)throw Error('Review/evidence transfer requires explicit owner authorization');
+ const files={};for(const name of included){const record=bundle.files[name];if(!record||record.sha256!==hash(record.data))throw Error('Bundle checksum mismatch');files[name]=record.data;}
  const counts=validate(files),dir=directory(destination);
  if(fs.existsSync(dir))throw Error('Use a new data directory; never overwrite histories');
  fs.mkdirSync(path.dirname(dir),{recursive:true,mode:0o700});const staging=fs.mkdtempSync(path.join(path.dirname(dir),'.catalogue-bootstrap-'));
- try{for(const [name,data]of Object.entries({...files,'bundle-manifest.json':{authorization:a,checksums:Object.fromEntries(names.map(n=>[n,bundle.files[n].sha256])),counts}}))fs.writeFileSync(path.join(staging,name),JSON.stringify(data,null,2)+'\n',{flag:'wx',mode:0o600});fs.renameSync(staging,dir);}finally{fs.rmSync(staging,{recursive:true,force:true});}
+ try{for(const [name,data]of Object.entries({...files,'bundle-manifest.json':{authorization:a,checksums:Object.fromEntries(included.map(n=>[n,bundle.files[n].sha256])),counts}}))fs.writeFileSync(path.join(staging,name),JSON.stringify(data,null,2)+'\n',{flag:'wx',mode:0o600});fs.renameSync(staging,dir);}finally{fs.rmSync(staging,{recursive:true,force:true});}
  return counts;
 }
 module.exports={directory,read,validate,bootstrap,hash,names};

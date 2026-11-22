@@ -4,7 +4,7 @@ Start with [TEAM-SETUP.md](TEAM-SETUP.md). The website continues to use its revi
 question bank. None of these tools run in gameplay, make live AI calls, approve
 answers automatically or update the production database.
 
-Public files contain the existing code, schemas, 18 authored trait definitions,
+Public files contain the existing code, schemas, 29 authored trait definitions (the original 18 plus 11 extensions),
 question predicates, and explicitly fictional test fixtures. The real catalogue
 and pending evidence are deliberately **not redistributed** in this public PR.
 The existing local catalogue has 5,831 identities, 5,950 appearances and 100 anime;

@@ -15,6 +15,7 @@ function report(store) {
 }
 try {
   if (['import','review'].includes(command)) {
+    if(fs.existsSync(require('../verification/store').file))throw Error('Active shared review state exists. Use catalogue:traits-import and the existing authenticated reviewer; do not fork the baseline claim ledger.');
     if (!input) throw Error('Provide a suggestion or review JSON file');
     const lock = file + '.lock';
     const descriptor = fs.openSync(lock, 'wx');
@@ -29,7 +30,9 @@ try {
       console.log(JSON.stringify(report(updated), null, 2));
     } finally { fs.closeSync(descriptor); fs.unlinkSync(lock); }
   } else {
-    const store = M.validate(require('../team-data').read('associations.json'), definitions, catalogue);
+    const review=require('../verification/store');
+    const active=fs.existsSync(review.file)?require('../verification/model').validate(review.read(),review.deps).traits:require('../team-data').read('associations.json');
+    const store = M.validate(active, definitions, catalogue);
     if (command === 'validate' || command === 'report') console.log(JSON.stringify(report(store), null, 2));
     else if (command === 'pending') console.log(JSON.stringify(store.associations.filter(a => ['proposed','needs_review'].includes(M.latest(a).status)), null, 2));
     else if (command === 'show') {

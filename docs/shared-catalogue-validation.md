@@ -36,3 +36,33 @@ provide actual storage access, and supply the independently confirmed bundle
 checksum. The implementation is usable with existing authorized local data;
 repository access alone does not make restricted data available to another user.
 See catalogue/TEAM-SETUP.md for exact commands and permission boundaries.
+
+## Persistent importer continuation
+
+The original integration checks above are retained as historical context. This
+continuation extends only the shared branch with source adapters and persistent
+trait ingestion. Current checks: 195 automated tests passed, build and immutable
+release integrity passed. SQL staging transaction/resume tests, source permissions,
+provider mappings, canonical identity/Japanese-name collisions, atomic failure,
+idempotent imports, derived conflict gates, private review-state transfer and the
+existing approved-eligibility-to-generator path are covered. Approval-path unit
+fixtures are explicitly fictional; they are not real maintainer decisions.
+
+Actual private demonstration: a fresh request retrieved 30 Wikidata CC0 entities,
+which yielded 36 candidate claims. Thirty-one ACDB source records yielded 90
+candidate claims; the reused current SQL parser independently processed 44,489
+records from a cached partial source before bounded import. Its incremental
+reimport created zero duplicate claims. There are 126 newly persisted claims across
+60 distinct matched characters (61 source character records), plus the five original
+pending claims: 131 pending, zero verified and zero question-eligible approved.
+The source adapter retained all ACDB publication holds. Current ACDB API/download
+checks returned 503; no challenge was bypassed and no page scraper was built.
+
+Private evidence, source files, staging SQLite, all 131 claim histories and the
+answer-review package remain excluded from this public PR. The package shows
+pending source-linked candidates; real approved output remains empty. This is
+intentional enforcement of the no-auto-approval requirement, not missing storage.
+The code's approval-to-generator path passes using actual configured-reviewer
+semantics in synthetic tests. Nothing in this continuation changes a public bank,
+rarity, Daily assignment, live scheduler, Ascent/Descent gameplay, API, score,
+archive, release branch or production database.

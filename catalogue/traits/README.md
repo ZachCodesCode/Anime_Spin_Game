@@ -1,6 +1,6 @@
 # Phase 3 trait catalogue
 
-This is an offline review system. Eighteen definitions cover appearance, identity, occupation and other explicit characteristics. Definitions support appearance, identity, occupation,
+This is an offline review system. Twenty-nine definitions cover appearance, identity, occupation and other explicit characteristics. Definitions support appearance, identity, occupation,
 ability and affiliation categories with string, boolean or number values. Empty
 allowedValues means an open vocabulary; otherwise values must be enumerated.
 Unknown attributes are absent claims, not false values.

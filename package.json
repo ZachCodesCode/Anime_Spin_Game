@@ -2,7 +2,7 @@
   "name": "shonen-spin",
   "version": "1.0.0",
   "private": true,
-  "description": "Shonen Spin \u2014 anime roster builder, with a Turso-backed leaderboard.",
+  "description": "Shonen Spin — anime roster builder, with a Turso-backed leaderboard.",
   "dependencies": {
     "@libsql/client": "^0.14.0"
   },
@@ -21,6 +21,8 @@
     "ascent:history-export": "node power-level/scheduling/cli.js export",
     "ascent:integrity": "node power-level/versioning/cli.js check",
     "catalogue:review": "node catalogue/verification/server.js",
-    "catalogue:bundle": "node catalogue/team-cli.js bundle"
+    "catalogue:bundle": "node catalogue/team-cli.js bundle",
+    "catalogue:traits-import": "node catalogue/traits/importer/cli.js",
+    "catalogue:acdb-stage": "python3 -B catalogue/acdb/stage.py"
   }
 }

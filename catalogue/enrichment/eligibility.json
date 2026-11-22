@@ -690,9 +690,16 @@
       "type": "character",
       "status": "draft_requires_maintainer_approval",
       "requirement": "Name any character with a scar on their face.",
-      "traitChecks": [],
-      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
-      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "traitChecks": [
+        {
+          "traitId": "appearance.scar",
+          "values": [
+            "face"
+          ]
+        }
+      ],
+      "include": "Explicit anime-specific characteristic matching the actual prompt: Name any character with a scar on their face. Scars, burns and stitches on the face",
+      "exclude": "Do not infer from genre, costume, names, species-like ears or a different adaptation. Temporary/form-specific appearances require individual assessment.",
       "requiredContext": [
         "curated question-specific rule required",
         "named adaptation",
@@ -704,9 +711,16 @@
       "type": "character",
       "status": "draft_requires_maintainer_approval",
       "requirement": "Name any chef or cook.",
-      "traitChecks": [],
-      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
-      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "traitChecks": [
+        {
+          "traitId": "occupation.role",
+          "values": [
+            "chef"
+          ]
+        }
+      ],
+      "include": "Explicit anime-specific characteristic matching the actual prompt: Name any chef or cook. Professional chefs, home cooks and ship’s cooks",
+      "exclude": "Do not infer from genre, costume, names, species-like ears or a different adaptation. Temporary/form-specific appearances require individual assessment.",
       "requiredContext": [
         "curated question-specific rule required",
         "named adaptation",
@@ -732,9 +746,16 @@
       "type": "character",
       "status": "draft_requires_maintainer_approval",
       "requirement": "Name any character with purple hair.",
-      "traitChecks": [],
-      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
-      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "traitChecks": [
+        {
+          "traitId": "appearance.hair_color",
+          "values": [
+            "purple"
+          ]
+        }
+      ],
+      "include": "Explicit anime-specific characteristic matching the actual prompt: Name any character with purple hair. Purple, violet or lavender",
+      "exclude": "Do not infer from genre, costume, names, species-like ears or a different adaptation. Temporary/form-specific appearances require individual assessment.",
       "requiredContext": [
         "curated question-specific rule required",
         "named adaptation",
@@ -746,9 +767,16 @@
       "type": "character",
       "status": "draft_requires_maintainer_approval",
       "requirement": "Name any scientist or inventor.",
-      "traitChecks": [],
-      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
-      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "traitChecks": [
+        {
+          "traitId": "occupation.role",
+          "values": [
+            "scientist"
+          ]
+        }
+      ],
+      "include": "Explicit anime-specific characteristic matching the actual prompt: Name any scientist or inventor. Mad scientists and researchers count",
+      "exclude": "Do not infer from genre, costume, names, species-like ears or a different adaptation. Temporary/form-specific appearances require individual assessment.",
       "requiredContext": [
         "curated question-specific rule required",
         "named adaptation",
@@ -774,9 +802,16 @@
       "type": "character",
       "status": "draft_requires_maintainer_approval",
       "requirement": "Name any character who fights with ice or snow.",
-      "traitChecks": [],
-      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
-      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "traitChecks": [
+        {
+          "traitId": "ability.element",
+          "values": [
+            "ice"
+          ]
+        }
+      ],
+      "include": "Explicit anime-specific characteristic matching the actual prompt: Name any character who fights with ice or snow. Ice magic, ice Quirks and ice-type Zanpakutō",
+      "exclude": "Do not infer from genre, costume, names, species-like ears or a different adaptation. Temporary/form-specific appearances require individual assessment.",
       "requiredContext": [
         "curated question-specific rule required",
         "named adaptation",
@@ -788,9 +823,16 @@
       "type": "character",
       "status": "draft_requires_maintainer_approval",
       "requirement": "Name any character who fights with a bow.",
-      "traitChecks": [],
-      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
-      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "traitChecks": [
+        {
+          "traitId": "ability.discipline",
+          "values": [
+            "archery"
+          ]
+        }
+      ],
+      "include": "Explicit anime-specific characteristic matching the actual prompt: Name any character who fights with a bow. Bows and spirit bows; Quincy count",
+      "exclude": "Do not infer from genre, costume, names, species-like ears or a different adaptation. Temporary/form-specific appearances require individual assessment.",
       "requiredContext": [
         "curated question-specific rule required",
         "named adaptation",
@@ -802,9 +844,16 @@
       "type": "character",
       "status": "draft_requires_maintainer_approval",
       "requirement": "Name any character with blue hair.",
-      "traitChecks": [],
-      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
-      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "traitChecks": [
+        {
+          "traitId": "appearance.hair_color",
+          "values": [
+            "blue"
+          ]
+        }
+      ],
+      "include": "Explicit anime-specific characteristic matching the actual prompt: Name any character with blue hair. Any shade of blue, from navy to sky blue",
+      "exclude": "Do not infer from genre, costume, names, species-like ears or a different adaptation. Temporary/form-specific appearances require individual assessment.",
       "requiredContext": [
         "curated question-specific rule required",
         "named adaptation",
@@ -816,9 +865,16 @@
       "type": "character",
       "status": "draft_requires_maintainer_approval",
       "requirement": "Name any character who fights with wind.",
-      "traitChecks": [],
-      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
-      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "traitChecks": [
+        {
+          "traitId": "ability.element",
+          "values": [
+            "wind"
+          ]
+        }
+      ],
+      "include": "Explicit anime-specific characteristic matching the actual prompt: Name any character who fights with wind. Wind Style, wind magic and Wind Breathing count",
+      "exclude": "Do not infer from genre, costume, names, species-like ears or a different adaptation. Temporary/form-specific appearances require individual assessment.",
       "requiredContext": [
         "curated question-specific rule required",
         "named adaptation",
@@ -1012,9 +1068,16 @@
       "type": "character",
       "status": "draft_requires_maintainer_approval",
       "requirement": "Name any maid.",
-      "traitChecks": [],
-      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
-      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "traitChecks": [
+        {
+          "traitId": "occupation.role",
+          "values": [
+            "maid"
+          ]
+        }
+      ],
+      "include": "Explicit anime-specific characteristic matching the actual prompt: Name any maid. Housemaids, combat maids and maid-café workers",
+      "exclude": "Do not infer from genre, costume, names, species-like ears or a different adaptation. Temporary/form-specific appearances require individual assessment.",
       "requiredContext": [
         "curated question-specific rule required",
         "named adaptation",
@@ -1040,9 +1103,16 @@
       "type": "character",
       "status": "draft_requires_maintainer_approval",
       "requirement": "Name any character with a ponytail.",
-      "traitChecks": [],
-      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
-      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "traitChecks": [
+        {
+          "traitId": "appearance.hairstyle",
+          "values": [
+            "ponytail"
+          ]
+        }
+      ],
+      "include": "Explicit anime-specific characteristic matching the actual prompt: Name any character with a ponytail. High, low and side ponytails",
+      "exclude": "Do not infer from genre, costume, names, species-like ears or a different adaptation. Temporary/form-specific appearances require individual assessment.",
       "requiredContext": [
         "curated question-specific rule required",
         "named adaptation",
@@ -1054,9 +1124,16 @@
       "type": "character",
       "status": "draft_requires_maintainer_approval",
       "requirement": "Name any ghost.",
-      "traitChecks": [],
-      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
-      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "traitChecks": [
+        {
+          "traitId": "identity.species",
+          "values": [
+            "ghost"
+          ]
+        }
+      ],
+      "include": "Explicit anime-specific characteristic matching the actual prompt: Name any ghost. Ghosts and lingering spirits of the dead; Ghost-type Pokémon count",
+      "exclude": "Do not infer from genre, costume, names, species-like ears or a different adaptation. Temporary/form-specific appearances require individual assessment.",
       "requiredContext": [
         "curated question-specific rule required",
         "named adaptation",
@@ -1082,9 +1159,18 @@
       "type": "character",
       "status": "draft_requires_maintainer_approval",
       "requirement": "Name any witch, wizard or mage.",
-      "traitChecks": [],
-      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
-      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "traitChecks": [
+        {
+          "traitId": "occupation.role",
+          "values": [
+            "witch",
+            "wizard",
+            "mage"
+          ]
+        }
+      ],
+      "include": "Explicit anime-specific characteristic matching the actual prompt: Name any witch, wizard or mage. Magic users called witches, wizards, sorcerers or mages (jujutsu sorcerers don't count)",
+      "exclude": "Do not infer from genre, costume, names, species-like ears or a different adaptation. Temporary/form-specific appearances require individual assessment.",
       "requiredContext": [
         "curated question-specific rule required",
         "named adaptation",
@@ -1110,9 +1196,16 @@
       "type": "character",
       "status": "draft_requires_maintainer_approval",
       "requirement": "Name any character with orange hair.",
-      "traitChecks": [],
-      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
-      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "traitChecks": [
+        {
+          "traitId": "appearance.hair_color",
+          "values": [
+            "orange"
+          ]
+        }
+      ],
+      "include": "Explicit anime-specific characteristic matching the actual prompt: Name any character with orange hair. Ginger, copper and bright orange",
+      "exclude": "Do not infer from genre, costume, names, species-like ears or a different adaptation. Temporary/form-specific appearances require individual assessment.",
       "requiredContext": [
         "curated question-specific rule required",
         "named adaptation",
@@ -1124,9 +1217,16 @@
       "type": "character",
       "status": "draft_requires_maintainer_approval",
       "requirement": "Name any police officer.",
-      "traitChecks": [],
-      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
-      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "traitChecks": [
+        {
+          "traitId": "occupation.role",
+          "values": [
+            "police_officer"
+          ]
+        }
+      ],
+      "include": "Explicit anime-specific characteristic matching the actual prompt: Name any police officer. Police, detectives on the force and Public Safety officers",
+      "exclude": "Do not infer from genre, costume, names, species-like ears or a different adaptation. Temporary/form-specific appearances require individual assessment.",
       "requiredContext": [
         "curated question-specific rule required",
         "named adaptation",
@@ -1152,9 +1252,16 @@
       "type": "character",
       "status": "draft_requires_maintainer_approval",
       "requirement": "Name any assassin.",
-      "traitChecks": [],
-      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
-      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "traitChecks": [
+        {
+          "traitId": "occupation.role",
+          "values": [
+            "assassin"
+          ]
+        }
+      ],
+      "include": "Explicit anime-specific characteristic matching the actual prompt: Name any assassin. Hired killers, ninja assassins and assassination squads",
+      "exclude": "Do not infer from genre, costume, names, species-like ears or a different adaptation. Temporary/form-specific appearances require individual assessment.",
       "requiredContext": [
         "curated question-specific rule required",
         "named adaptation",
@@ -1166,9 +1273,16 @@
       "type": "character",
       "status": "draft_requires_maintainer_approval",
       "requirement": "Name any thief.",
-      "traitChecks": [],
-      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
-      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "traitChecks": [
+        {
+          "traitId": "occupation.role",
+          "values": [
+            "thief"
+          ]
+        }
+      ],
+      "include": "Explicit anime-specific characteristic matching the actual prompt: Name any thief. Thieves, phantom thieves and bandits",
+      "exclude": "Do not infer from genre, costume, names, species-like ears or a different adaptation. Temporary/form-specific appearances require individual assessment.",
       "requiredContext": [
         "curated question-specific rule required",
         "named adaptation",
@@ -1194,9 +1308,18 @@
       "type": "character",
       "status": "draft_requires_maintainer_approval",
       "requirement": "Name any elf.",
-      "traitChecks": [],
-      "include": "Exact question wording and adaptation must be independently documented; no executable trait mapping approved.",
-      "exclude": "Identity membership, genre or missing evidence cannot establish personal characteristics. No automatic expansion.",
+      "traitChecks": [
+        {
+          "traitId": "identity.species",
+          "values": [
+            "elf",
+            "half_elf",
+            "dark_elf"
+          ]
+        }
+      ],
+      "include": "Explicit anime-specific characteristic matching the actual prompt: Name any elf. Elves, half-elves and dark elves",
+      "exclude": "Do not infer from genre, costume, names, species-like ears or a different adaptation. Temporary/form-specific appearances require individual assessment.",
       "requiredContext": [
         "curated question-specific rule required",
         "named adaptation",

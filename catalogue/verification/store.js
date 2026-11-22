@@ -1,7 +1,10 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),V=require('./model');
-const directory=path.resolve(__dirname,'../private/phase5b3');
+const legacy=path.resolve(__dirname,'../private/phase5b3/state.json');
+const file=process.env.ASCENT_TRAIT_REVIEW_STATE?path.resolve(process.env.ASCENT_TRAIT_REVIEW_STATE):fs.existsSync(legacy)?legacy:path.join(require('../team-data').directory(),'review-state.json');
+require('../traits/importer/store').privateFile(file);
+const directory=path.dirname(file);
 const getDeps=()=>V.index({catalogue:require('../team-data').read('catalogue.json'),definitions:require('../traits/data/definitions.json'),policy:require('../enrichment/eligibility.json'),questions:require('../../power-level/questions')});
-const read=()=>JSON.parse(fs.readFileSync(path.join(directory,'state.json'),'utf8'));
-function update(fn){const file=path.join(directory,'state.json'),lock=file+'.lock';let fd;try{fd=fs.openSync(lock,'wx',0o600);const next=fn(read());V.validate(next,getDeps());fs.writeFileSync(file+'.tmp',JSON.stringify(next,null,2)+'\n',{mode:0o600});fs.renameSync(file+'.tmp',file);return next;}finally{if(fd!==undefined){fs.closeSync(fd);fs.unlinkSync(lock);}}}
-module.exports={directory,get deps(){return getDeps();},read,update};
+const read=()=>JSON.parse(fs.readFileSync(file,'utf8'));
+function update(fn){return require('../traits/importer/store').update(file,state=>{const next=fn(state);V.validate(next,getDeps());return next;});}
+module.exports={file,directory,get deps(){return getDeps();},read,update};

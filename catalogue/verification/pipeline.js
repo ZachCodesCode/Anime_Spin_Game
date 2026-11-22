@@ -4,7 +4,7 @@
 const V=require('./model'),M=require('../traits/model'),E=require('../enrichment/eligibility');
 function eligibility(claim,rule){
  const ordinary=['permanent','recurring'].includes(claim.context.persistence)&&!claim.context.form;
- const simple=['appearance.hair_color','appearance.eyewear','appearance.accessory','identity.species','occupation.detective','occupation.role'];
+ const simple=['appearance.hair_color','appearance.eyewear','appearance.accessory','identity.species','occupation.detective','occupation.role','appearance.hairstyle','appearance.scar','ability.element','ability.discipline','identity.creature'];
  if(!ordinary||!simple.includes(claim.traitId))return 'needs_context';
  if(rule.questionId.endsWith('wide-ninjas')&&['mal-anime-20','mal-anime-1735'].includes(claim.context.animeId))return 'recommend_exclude';
  if(claim.traitId==='occupation.role'&&claim.value==='investigator')return 'needs_context';
@@ -70,4 +70,4 @@ function wikidata(snapshot,deps){
  }
  return {candidates,bindings,snapshotHash,sourceId:'wikidata',skipped:adapted.skipped,available:adapted.available};
 }
-module.exports={extract,ingest,wikidata};
+module.exports={extract,ingest,wikidata,eligibility};

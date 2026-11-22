@@ -50,8 +50,11 @@ function validate(state,deps){
 }
 function view(state,deps){
  validate(state,deps);const associations=new Map(state.traits.associations.map(a=>[a.id,a]));
+ const importedConflicts=state.importObservations?new Set(require('../traits/importer').conflictPairs(state).flatMap(c=>c.claimIds)):new Set();
  const records=state.records.map(r=>{const a=associations.get(r.claimId),status=latest(a).status,history=state.decisions.filter(d=>d.changes.some(c=>c.recordId===r.id));const change=history.at(-1)?.changes.find(c=>c.recordId===r.id);const assessment=assess(r,deps);
  const eligibility=change?.eligibility||'unresolved';
+ const importedConflict=importedConflicts.has(r.claimId);
+ if(importedConflict){assessment.queue='conflicting';assessment.canIndividuallyApprove=false;assessment.reasons.push('Imported conflicting characteristics require review');}
  const bucket=status==='rejected'?'conflicting_or_rejected':assessment.queue==='conflicting'?'conflicting_or_rejected':r.aliasOnly?'alias_only':status==='verified'&&eligibility==='eligible'?'approved_eligible':status==='verified'?'verified_unresolved':'pending';
  return {...r,character:deps.characters.get(r.claim.characterId).name,anime:deps.catalogue.anime.find(a=>a.id===r.claim.context.animeId)?.title||deps.catalogue.anime.find(a=>a.id===r.claim.context.animeId)?.name||null,question:deps.questionsById.get(r.questionId).text,status,revision:latest(a).revision,assessment,eligibility,bucket,history};});
  const priority=r=>(/mix-glasses|wide-detectives|wide-cats/.test(r.questionId)?0:10)+(r.alreadyAccepted?5:0);
@@ -67,6 +70,7 @@ function plan(state,request,deps,reviewers){
  const changes=request.ids.map(id=>{
   const r=state.records.find(r=>r.id===id);if(!r)throw Error('Unknown record');if(seen.has(r.claimId))throw Error('Same claim selected more than once');seen.add(r.claimId);
   const before=latest(associations.get(r.claimId)),assessment=assess(r,deps);
+  if(request.status==='verified'&&state.importObservations&&require('../traits/importer').conflictPairs(state).some(c=>c.claimIds.includes(r.claimId)))throw Error('Conflicting imported traits require review before approval');
   if(before.status==='rejected'&&!(request.status==='needs_review'&&request.reopen===true&&request.ids.length===1))throw Error('Rejected claim requires explicit individual reopening');
   if(request.status==='verified'&&(!assessment.canIndividuallyApprove||request.ids.length>1&&assessment.queue!=='high-evidence'))throw Error('Evidence gate: investigate individually or provide stronger sources');
   if(request.status==='verified'&&request.eligibility==='eligible'&&(r.eligibility!=='recommend_include'||assessment.reasons.includes('Form-specific eligibility needs individual review')))throw Error('Eligibility unresolved');

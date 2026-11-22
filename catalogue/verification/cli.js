@@ -4,7 +4,7 @@ const read=file=>JSON.parse(fs.readFileSync(file,'utf8'));
 async function main(){const [command,file,sourceId]=process.argv.slice(2);
  if(command==='initialize'){
   const state=V.validate(read(file),S.deps);fs.mkdirSync(S.directory,{recursive:true});
-  fs.writeFileSync(path.join(S.directory,'state.json'),JSON.stringify(state,null,2)+'\n',{flag:'wx',mode:0o600});
+  fs.writeFileSync(S.file,JSON.stringify(state,null,2)+'\n',{flag:'wx',mode:0o600});
   for(const [name,value] of [['maintainers.json',{reviewers:[]}],['sources.json',[]]])if(!fs.existsSync(path.join(S.directory,name)))fs.writeFileSync(path.join(S.directory,name),JSON.stringify(value,null,2)+'\n',{flag:'wx',mode:0o600});
   console.log('Initialized private review state. No identities authorized.');
  }else if(command==='collect-wikidata'){

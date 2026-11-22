@@ -139,3 +139,41 @@ helpers. PR1 introduces the corresponding runtime integration. Review PR1 first;
 rebase this branch onto reviewed main after PR1 merges, retaining the common
 versioning files and all newer production content. No catalogue activation or
 production environment change is needed for this offline-tooling PR.
+
+## Persistent multi-source trait importer (PR #28 continuation)
+
+See [traits/importer/README.md](traits/importer/README.md) for complete working
+commands, formats, conflict handling, recovery, source policies and team transfer.
+The source adapters are ACDB SQL staging exports, Wikidata CC0 snapshots, and
+explicitly authorized structured sources. No API key is needed for local imports.
+29 definitions now extend the original 18 without changing their identities or
+removing old values; new source traits remain pending by default.
+
+```sh
+npm run catalogue:traits-import -- import --provider wikidata --input catalogue/private/BATCH/wikidata.json --state catalogue/private/BATCH/state.json --dry-run
+npm run catalogue:traits-import -- import --provider wikidata --input catalogue/private/BATCH/wikidata.json --state catalogue/private/BATCH/state.json --write
+export ASCENT_TRAIT_REVIEW_STATE='/absolute/private/BATCH/state.json'
+npm run catalogue:validate
+npm run traits -- validate
+npm run catalogue:traits-import -- conflicts --state "$ASCENT_TRAIT_REVIEW_STATE"
+npm run catalogue:traits-import -- identity-review --state "$ASCENT_TRAIT_REVIEW_STATE"
+npm run catalogue:traits-import -- generate --state "$ASCENT_TRAIT_REVIEW_STATE" --output catalogue/private/BATCH/NEW-answer-review.json
+npm run catalogue:review
+```
+
+Use actual permitted input files. These paths are templates, not bundled research.
+The private bundle can now include review-state.json when the actual owner explicitly
+sets includeReviewState:true in the transfer authorization. This preserves imported
+claims, evidence and decisions. Copy raw source snapshots separately through authorized
+storage, retaining licence notices. Never include maintainers.json, session tokens or
+credentials. Obtain a trusted checksum before bootstrap and use a new destination;
+no shared hosted admin service, automatic synchronization or production migration is
+introduced. Concurrent private review histories need explicit reconciliation.
+
+For a shared imported store, validate/inspect always with the same configured
+ASCENT_TRAIT_REVIEW_STATE. Without it, an older existing Phase 5B-3 state takes
+precedence over a new team-data/review-state.json. This preserves historical work
+rather than silently switching it. Set the explicit path after bootstrap when
+necessary. If a command reports a stale state, competing lock, invalid mapping or
+changed snapshot, stop and inspect the source and owner configuration; do not reset
+the catalogue or discard the old review ledger to make an import succeed.

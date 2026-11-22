@@ -12,14 +12,15 @@ async function main(){const [command,arg,output]=process.argv.slice(2);
   if(!arg||!output)throw Error('bundle ACTUAL-OWNER-AUTHORIZATION.json PRIVATE-OUTPUT.private-bundle.json');
   const authorization=JSON.parse(fs.readFileSync(arg)),files=Object.fromEntries(D.names.map(n=>[n,{data:D.read(n)}]));D.validate(Object.fromEntries(D.names.map(n=>[n,files[n].data])));
   if(authorization.purpose!=='private-team-use'||!authorization.authorizedBy?.trim()||!authorization.reference?.trim()||authorization.publicRedistribution!==false)throw Error('Actual owner authorization required; this tool cannot grant source rights');
+  if(authorization.includeReviewState===true){const state=require('./verification/store').file;if(!fs.existsSync(state))throw Error('No review state to export');files['review-state.json']={data:JSON.parse(fs.readFileSync(state))};D.validate(Object.fromEntries(Object.entries(files).map(([n,r])=>[n,r.data])));}
   for(const record of Object.values(files))record.sha256=D.hash(record.data);
   const target=path.resolve(output),dir=D.directory(path.dirname(target));fs.mkdirSync(dir,{recursive:true,mode:0o700});
   if(fs.existsSync(target))throw Error('Existing bundle will not be overwritten');
   const bytes=JSON.stringify({format:'ascent-private-team-bundle-v1',authorization,files})+'\n';fs.writeFileSync(target,bytes,{flag:'wx',mode:0o600});
   console.log('Private bundle created. Transfer only through authorized team storage. SHA-256: '+require('node:crypto').createHash('sha256').update(bytes).digest('hex'));
- }else if(command==='validate')console.log(JSON.stringify(D.validate(Object.fromEntries(D.names.map(n=>[n,D.read(n)]))),null,2));
+ }else if(command==='validate'){const files=Object.fromEntries(D.names.map(n=>[n,D.read(n)])),review=require('./verification/store');if(fs.existsSync(review.file))files['review-state.json']=require('./verification/model').validate(review.read(),review.deps);console.log(JSON.stringify(D.validate(files),null,2));}
  else if(command==='inspect'){
-  if(!arg)throw Error('Supply a stable character ID or name fragment');const c=D.read('catalogue.json'),s=D.read('associations.json'),needle=arg.toLowerCase();
+  if(!arg)throw Error('Supply a stable character ID or name fragment');const c=D.read('catalogue.json'),review=require('./verification/store'),s=fs.existsSync(review.file)?review.read().traits:D.read('associations.json'),needle=arg.toLowerCase();
   console.log(JSON.stringify(c.characters.filter(x=>x.id===arg||[x.name,...x.aliases].some(n=>n.toLowerCase().includes(needle))).slice(0,30).map(x=>({...x,appearances:c.appearances.filter(a=>a.characterId===x.id).map(a=>({...a,anime:c.anime.find(n=>n.id===a.animeId)?.name})),traits:s.associations.filter(a=>require('./traits/model').latest(a).claim.characterId===x.id)})),null,2));
  }else throw Error('Commands: bootstrap AUTHORIZED-BUNDLE.json | validate | inspect ID-OR-NAME');
 }
