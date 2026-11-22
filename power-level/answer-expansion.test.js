@@ -7,20 +7,20 @@ const digest=value=>createHash('sha256').update(JSON.stringify(value)).digest('h
 // Frozen exported values from production main 1a1f5008, after both rarity boosts.
 // Each tuple is [old answer count, appended count, digest of the complete old answers].
 const baseline={
- 'maids':[40,11,'b40408c608bc506c70dabcfdb7f2e367728ce229b7e998a62101109d8af107a2'],
- 'ponytails':[81,4,'88071150322a3bf0fbdfd79444a18265cafa1d7f023b0c252c0e7a3c789381b7'],
- 'game-adaptations':[64,11,'fe1f5939f91e3e01e52045cfabbd58bf87ac6c1e6b679553ed0b972d4b9e7c15'],
- 'ghosts':[94,9,'e10324f48f9bd3b0cc74371370f2037b875f184508d872b975cd6b393773ed80'],
- 'giants':[52,4,'4f79aea4c924987ffe3d037bc00a1995a8431ab7bf3be87b671992f3fea7b2bb'],
- 'number-titles':[76,12,'839daf512c4b67b68b328b17ec0f8154b96fd34c8f16afdf4371c4b16894b0d9'],
- 'witches':[151,21,'dc5450ef43becca7d2a54cb677b7af0fc0b3ac8386819df8af57f9739978b1a8'],
+ 'maids':[40,16,'b40408c608bc506c70dabcfdb7f2e367728ce229b7e998a62101109d8af107a2'],
+ 'ponytails':[81,5,'88071150322a3bf0fbdfd79444a18265cafa1d7f023b0c252c0e7a3c789381b7'],
+ 'game-adaptations':[64,38,'fe1f5939f91e3e01e52045cfabbd58bf87ac6c1e6b679553ed0b972d4b9e7c15'],
+ 'ghosts':[94,10,'e10324f48f9bd3b0cc74371370f2037b875f184508d872b975cd6b393773ed80'],
+ 'giants':[52,7,'4f79aea4c924987ffe3d037bc00a1995a8431ab7bf3be87b671992f3fea7b2bb'],
+ 'number-titles':[76,27,'839daf512c4b67b68b328b17ec0f8154b96fd34c8f16afdf4371c4b16894b0d9'],
+ 'witches':[151,47,'dc5450ef43becca7d2a54cb677b7af0fc0b3ac8386819df8af57f9739978b1a8'],
  'orange-hair':[46,5,'71ffc10411024d52ffb61ef8fa337821a4acff98284626ba6a29b81694f88e61'],
- 'police':[33,9,'8827ba2960958b5a18af670693c1773950eab289083fd6fbc8c769c64403c8a8'],
- '90s':[61,6,'ed0e87c09b94f4739b290d940e17ec3323246a4e6a890f43cf98ff304d8b03dd'],
- 'assassins':[63,28,'0fa043f49a10024b39547ee74f2db18d248e0d5567d50ee80ff4aae61f914882'],
- 'thieves':[43,4,'aaeaa50bf1962b8051d68e0ebf0d8de268901a5b056d45c0937b7fd88b318bce'],
- 'films':[73,11,'648260e0debeb1794ce0c70d4f357b28da8877e4ee5d128953769b277fbdcc3e'],
- 'elves':[24,6,'2e1d1669ba65ba6f6074944251adbc0207e12b25123f20c0b5e9018c9e71eaeb'],
+ 'police':[33,35,'8827ba2960958b5a18af670693c1773950eab289083fd6fbc8c769c64403c8a8'],
+ '90s':[61,27,'ed0e87c09b94f4739b290d940e17ec3323246a4e6a890f43cf98ff304d8b03dd'],
+ 'assassins':[63,51,'0fa043f49a10024b39547ee74f2db18d248e0d5567d50ee80ff4aae61f914882'],
+ 'thieves':[43,5,'aaeaa50bf1962b8051d68e0ebf0d8de268901a5b056d45c0937b7fd88b318bce'],
+ 'films':[73,38,'648260e0debeb1794ce0c70d4f357b28da8877e4ee5d128953769b277fbdcc3e'],
+ 'elves':[24,12,'2e1d1669ba65ba6f6074944251adbc0207e12b25123f20c0b5e9018c9e71eaeb'],
 };
 const id=slug=>'timed-v4-wide-'+slug;
 const targets=new Map(Object.entries(baseline).map(([slug,values])=>[id(slug),values]));
@@ -134,3 +134,68 @@ test('every new answer and client-canonicalized alias passes the actual API scor
   const skipped=await handler.submit(qs.map(()=>null));assert.equal(skipped.code,200);assert.equal(skipped.value.score,0);
  }
 });
+
+// Preserve the previous researched additions, except its two documented class-only holds.
+const priorReleasePrefixes={
+  "timed-v4-wide-maids": {
+    "count": 11,
+    "hash": "a32c923aab57c63c1f99096043f7696f1771ec21bfb0fa4176ce71dc5f5c70d3"
+  },
+  "timed-v4-wide-ponytails": {
+    "count": 4,
+    "hash": "3e7c12df0a4607d7474479a295099adaa4af8b7752208077d8e0aba00e5f7214"
+  },
+  "timed-v4-wide-ghosts": {
+    "count": 9,
+    "hash": "07ac95067bd6ebb310b8a4297bbc90513111884feec24012a3fdf12f7c9647fc"
+  },
+  "timed-v4-wide-giants": {
+    "count": 4,
+    "hash": "bd026ac6ad611344f95dcc8e8663f6a43027060f8d3733d11ee1eb8d3342631f"
+  },
+  "timed-v4-wide-witches": {
+    "count": 21,
+    "hash": "36ba00a31ed3b0c4323aa11ad938e486d3b22ed029b058ed3bb78a9cbe58a03a"
+  },
+  "timed-v4-wide-elves": {
+    "count": 6,
+    "hash": "5c8efe16b9bdb88e7d9433deefcb4e61f81c681e824d60ddaae3c6cae35abd5f"
+  },
+  "timed-v4-wide-assassins": {
+    "count": 27,
+    "hash": "979038f0aa143e338a5d84e33c731ad002f33d46c6f390867a7ec0b0ba100351"
+  },
+  "timed-v4-wide-police": {
+    "count": 9,
+    "hash": "9dee197acecef7e803e1d09d5ca562d525858a579f3d5c779b4d83aa886ecaec"
+  },
+  "timed-v4-wide-thieves": {
+    "count": 3,
+    "hash": "7cf284f39a300c450838ab70c7036a8f8494cc88f29fa6c78761f95e363fc959"
+  },
+  "timed-v4-wide-game-adaptations": {
+    "count": 11,
+    "hash": "4fcf356df36e79e34507dd5c5a47f19de9b99493ceb32678e5e67dab0b9043b6"
+  },
+  "timed-v4-wide-films": {
+    "count": 11,
+    "hash": "0a0403932c412573be3c0fad10f90bb34fa82a668007e4a49a53a3397678ea8c"
+  },
+  "timed-v4-wide-orange-hair": {
+    "count": 5,
+    "hash": "8036fe9f19b849cf5e249667af29f0e61041840f4cad0fc34d3753a0cc3ebe81"
+  },
+  "timed-v4-wide-90s": {
+    "count": 6,
+    "hash": "ee55e7f4a51bb91db8265c0060fad9d43f8bef34d8b5b360343ecaf53da15c5c"
+  },
+  "timed-v4-wide-number-titles": {
+    "count": 12,
+    "hash": "bdf7d2c990774742988ef48358b0e21cfd3ce144fd9a8d2861ebdf1d4d7ad747"
+  }
+};
+test('prior 139 retained answers and aliases keep the same scores and order',()=>{for(const [id,{count,hash}]of Object.entries(priorReleasePrefixes)){const q=bank.find(q=>q.id===id);const retained=q.answers.slice(targets.get(id)[0],targets.get(id)[0]+count).map(a=>[a.name,a.rarity,a.aliases||[]]);assert.equal(digest(retained),hash,id);}});
+
+test('disputed and collision-prone proposed answers stay outside the release',()=>{for(const [slug,name]of [['thieves','Kir'],['thieves','Haruhiro'],['assassins','Akatsuki'],['orange-hair','Momotaro Mikoshiba'],['orange-hair','Seijuro Mikoshiba'],['witches','Faust']]){assert.ok(!bank.find(q=>q.id===id(slug)).answers.some(a=>a.name===name),name);}assert.equal(C.validate(bank.find(q=>q.id===id('witches')),'Faust').answer.name,'Nacht Faust');});
+
+test('browser global and server CommonJS export expose the identical expanded bank',()=>{const sandbox={};vm.runInNewContext(fs.readFileSync(require.resolve('./questions'),'utf8')+'\nglobalThis.browserBank=POWER_LEVEL_QUESTIONS;',sandbox);assert.equal(JSON.stringify(sandbox.browserBank),JSON.stringify(bank));});
