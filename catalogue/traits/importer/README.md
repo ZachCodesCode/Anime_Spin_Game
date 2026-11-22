@@ -67,8 +67,9 @@ or an authorized previously collected snapshot. No new scraping service is added
 **ACDB:** validated output from ../../acdb/stage.py, plus its separately inspected
 code-mapping JSON. The adapter verifies the mapping digest and exact code/label
 correspondence. It does not trust precomputed character matches: it joins names and
-explicit anime titles against the current catalogue again. Only documented hair
-colour, eye colour and determinate hair lengths are normalized. Hair-up is not a
+explicit anime titles against the current catalogue again. The inspected coded fields now include hair
+colour, eye colour, determinate hair length, apparent age, gender, ear/horn
+appearance, clothing and narrative role. Light/dark semantics remain held. Hair-up is not a
 ponytail; elf-like ears are not species; age/sex/appearance codes are not occupations.
 Unrecognized codes remain unknown. All ACDB records retain an ODbL/DbCL publication
 hold. There is deliberately no HTML crawler or automatic API challenge bypass.
@@ -200,3 +201,100 @@ claims. Its metadata-based question drafts remain private proposals. Traits with
 any current question rule remain stored and inspectable; question eligibility needs
 an explicit curated rule and the existing question-linked review before they can
 enter an answer expansion. No generic approval bypass was added for unmapped traits.
+
+
+## Rich local profiles and resumable batches
+
+There are now 46 trait definitions. Existing IDs and values remain intact. The
+`acdb-profile` adapter accepts bounded, explicitly supplied records or authorized
+extended exports; it never fetches a character page. The SQL adapter cannot supply
+website-only tags or relationship facts absent from the three official dumps.
+See [the concrete access request](../../acdb/EXTENDED-EXPORT-REQUEST.md).
+
+Local packet format (replace placeholders with actual permitted source facts):
+
+```json
+{
+  "format": "anime-ascent-character-profiles-v1",
+  "sourceProvider": "ACDB",
+  "acquisition": "user-supplied",
+  "revision": "ACTUAL_SOURCE_REVISION",
+  "retrievedAt": "ACTUAL_ISO_DATE",
+  "profiles": [{
+    "externalId": "ACTUAL_ACDB_ID",
+    "name": "ACTUAL_CHARACTER_NAME",
+    "sourceUrl": "https://www.animecharactersdatabase.com/characters.php?id=ACTUAL_ACDB_ID",
+    "primaryAnime": {"title":"ACTUAL_ANIME_TITLE","media":"anime"},
+    "tags": ["goggles", {"label":"ponytail","context":{"outfit":"ACTUAL_OUTFIT","persistence":"unknown"}}],
+    "fields": {
+      "aliases": ["DOCUMENTED_ALIAS"],
+      "ages": [{"value":17,"period":"DOCUMENTED_PERIOD"},19],
+      "height": {"value":174,"unit":"cm"},
+      "birthday": {"month":4,"day":1},
+      "relationships": [{"type":"crew_mate","target":{"name":"DOCUMENTED_TARGET_NAME"}}]
+    }
+  }]
+}
+```
+
+This is a format illustration, not new character evidence. `authorized-export`
+acquisition requires a trusted local `--manifest` with enabled, reviewedBy,
+reviewedAt, permissionUrl and allowed hosts. Other providers additionally require
+an explicit supported permission classification. Custom tag mappings also require
+an actual configured reviewer. User-supplied ACDB records still retain ODbL/DbCL
+publication holds: intake is not proof of redistribution permission.
+
+Supported profile fields include Japanese name and aliases, anime/media assignments,
+role, gender, hair/eye/length, apparent/numeric/stated ages, height, birthday, zodiac,
+personality, favourite food, occupations/positions, species/race, abilities,
+transformations, Devil Fruit (including explicit none), affiliations/crew,
+weapons/clothing/accessories, facial features and typed relationships. Missing
+values stay unknown. Numeric age is not a permanent timeless fact; outfit, form,
+period, anime context and unresolved recurrence are retained. Non-anime appearances
+are retained as media metadata, never reclassified as anime evidence.
+
+`sourceProfiles` stores provenance-linked identifiers and coverage metadata beside
+the existing claim ledger. `profileRelations` stores typed links to existing IDs;
+unresolved targets remain pending. Neither changes canonical aliases or invents
+identities. All original tags survive as observations, including unmapped tags.
+Unknown codes are held. Goggles do not become ordinary glasses, ear shape does not
+become species, and clothing does not become occupation.
+
+Biographies/long descriptions are retained by hash only. Locally supplied
+`fields.extractions` may contain short factual summaries (at most 400 characters),
+explicit trait/value, locator and context. They remain editorial_summary or
+ai_proposal, not deterministic verified evidence. No AI/NLP service is called.
+
+```sh
+npm run catalogue:traits-import -- import --provider acdb-profile --input catalogue/private/BATCH/profiles.json --state "$ASCENT_TRAIT_REVIEW_STATE" --write
+npm run catalogue:traits-import -- import --provider acdb --input catalogue/private/BATCH/acdb-export.json --mappings catalogue/private/BATCH/reviewed-code-mappings.json --state "$ASCENT_TRAIT_REVIEW_STATE" --batch-size 100 --write
+npm run catalogue:traits-import -- metrics --state "$ASCENT_TRAIT_REVIEW_STATE"
+npm run catalogue:traits-import -- profile --state "$ASCENT_TRAIT_REVIEW_STATE" --character mal-character-724
+npm run catalogue:traits-import -- search --state "$ASCENT_TRAIT_REVIEW_STATE" --trait appearance.eyewear --value goggles
+npm run catalogue:traits-import -- search --state "$ASCENT_TRAIT_REVIEW_STATE" --trait occupation.role --value sniper
+npm run catalogue:traits-import -- generate-trait --state "$ASCENT_TRAIT_REVIEW_STATE" --trait occupation.role --value sniper --text 'Name any anime sniper.' --question-id draft-anime-snipers --output catalogue/private/BATCH/NEW-snipers.json
+```
+
+The last command creates a private research draft, not playable answers. Existing
+rarity logic supplies 0–100 proposals. Without an explicit editorial
+`--limit-break-character EXISTING_CANDIDATE_ID`, its status is
+MISSING_EDITORIAL_LIMIT_BREAK. Supplying that flag proposes exactly one 100-point
+Limit Break and validates the game-format draft, but grants no factual, eligibility,
+rights, rarity or release approval. Never choose an arbitrary character merely to
+remove the hold. Trait search also supports numeric values, affiliations, weapons,
+abilities and relationship values; exact question rules still need editorial review.
+
+Batch size is 1–1000. Each checkpoint is committed atomically with claims in the
+same private state. `--stop-after-batches N` permits a controlled interruption;
+repeat the identical command to resume. Global source-ID collision checks precede
+chunking. Changed catalogue/definitions/policy invalidate an unfinished checkpoint.
+Finished replays avoid both claim duplication and audit churn. Keep one writer;
+a lock error means another operation owns the store, not permission to delete it.
+
+Metrics distinguish unique tag observations, context-sensitive claim records and
+unique character/trait/value pairs. Source revisions can repeat facts with distinct
+contexts; do not describe all imported records as newly discovered answers.
+Acquisition/provider groups separate user examples, official SQL and Wikidata.
+The complete store is available through the existing authorized private bundle
+when includeReviewState is explicitly allowed. Use matching code/definitions on
+both developers' machines; do not merge concurrent review ledgers by concatenation.

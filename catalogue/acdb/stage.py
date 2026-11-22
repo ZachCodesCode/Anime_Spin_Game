@@ -2,7 +2,7 @@
 import argparse, contextlib, gzip, hashlib, json, pathlib, re, sqlite3, time, unicodedata
 ROOT=pathlib.Path(__file__).resolve().parents[2]
 PRIVATE=ROOT/'catalogue/private'
-FIELDS={'characters':{'id','romji','japanese','chinese','furigana','publisher','hair_color','eye_color','hair_length','age','sex','mimikko','clone','clonetype','otherchar','date_modified'},'publishers':{'id','english','japanese','date','mt'},'assignments':{'cid','pid'}}
+FIELDS={'characters':{'id','romji','japanese','chinese','furigana','publisher','hair_color','eye_color','hair_length','age','sex','mimikko','clone','clonetype','otherchar','date_modified','clothing','role','lightdark'},'publishers':{'id','english','japanese','date','mt'},'assignments':{'cid','pid'}}
 def digest(file):
  h=hashlib.sha256()
  with open(file,'rb') as f:
@@ -71,7 +71,7 @@ def connect(file):
 
 def ingest(db,files,partial=False,batch=500,stop_after=None):
  if batch<1:raise ValueError('Positive batch size required')
- manifest={'files':{k:digest(v) for k,v in sorted(files.items())},'partial':partial,'parser':1,'source':'https://www.animecharactersdatabase.com/databasedumps.php','license':'ODbL-1.0 + DbCL-1.0'}
+ manifest={'files':{k:digest(v) for k,v in sorted(files.items())},'partial':partial,'parser':2,'source':'https://www.animecharactersdatabase.com/databasedumps.php','license':'ODbL-1.0 + DbCL-1.0'}
  version=hashlib.sha256(json.dumps(manifest,sort_keys=True).encode()).hexdigest();manifest['importedAt']=time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime());db.execute('INSERT OR IGNORE INTO versions VALUES (?,?)',(version,json.dumps(manifest)));db.commit();commits=0
  for table,file in files.items():
   checkpoint=db.execute('SELECT ordinal,complete FROM checkpoints WHERE version=? AND table_name=?',(version,table)).fetchone()
@@ -117,8 +117,8 @@ def export(db,version,catalogue,mappings):
   if len(matches)>1:warnings.append('ambiguous character identity')
   if any(len(a)>1 for a in matches.values()):warnings.append('multiple anime adaptations')
   if ('characters',row['id']) in conflicts or any(('publishers',t['id']) in conflicts for t in ts):warnings.append('conflicting source ID');matches={}
-  decoded={f:{'code':row[f],'label':mappings.get(f,{}).get(row[f]),'known':row[f] in mappings.get(f,{})} for f in ['hair_color','eye_color','hair_length','age','sex','mimikko']}
-  out.append({'acdbId':row['id'],'name':row['romji'],'matches':matches,'warnings':warnings,'attributes':decoded,'titles':ts,'sourceUrl':'https://www.animecharactersdatabase.com/characters.php?id='+row['id'],'nameOnlyCandidates':sorted(idx.get(norm(row['romji']),{})),'sourceModified':row['date_modified']})
+  decoded={f:{'code':row[f],'label':mappings.get(f,{}).get(row[f]),'known':row[f] in mappings.get(f,{})} for f in ['hair_color','eye_color','hair_length','age','sex','mimikko','clothing','role','lightdark']}
+  out.append({'acdbId':row['id'],'name':row['romji'],'names':{'japanese':row['japanese'],'chinese':row['chinese'],'reading':row['furigana']},'formLinks':{k:row[k] for k in ['clone','clonetype','otherchar']},'matches':matches,'warnings':warnings,'attributes':decoded,'titles':ts,'sourceUrl':'https://www.animecharactersdatabase.com/characters.php?id='+row['id'],'nameOnlyCandidates':sorted(idx.get(norm(row['romji']),{})),'sourceModified':row['date_modified'],'primaryPublisherId':row['publisher']})
  return {'version':version,'sourceManifest':json.loads(db.execute('SELECT manifest FROM versions WHERE id=?',(version,)).fetchone()[0]),'mappingHash':hashlib.sha256(json.dumps(mappings,sort_keys=True).encode()).hexdigest(),'catalogueHash':hashlib.sha256(json.dumps(catalogue,sort_keys=True).encode()).hexdigest(),'records':out,'notPublishable':True}
 
 def main():

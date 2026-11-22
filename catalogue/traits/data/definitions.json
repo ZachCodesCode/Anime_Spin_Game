@@ -79,7 +79,12 @@
       "mask",
       "eyepatch",
       "hat",
-      "headband"
+      "headband",
+      "wristband",
+      "bandages",
+      "bandana",
+      "belt",
+      "jewellery"
     ],
     "guidance": "Record explicit anime evidence, adaptation, period and form. Distinguish recurring traits from temporary appearances or transformations. Open values require a source-backed canonical name. This fact alone does not establish question eligibility; exclusions and combined conditions require editorial review."
   },
@@ -112,7 +117,8 @@
       "scientist",
       "chef",
       "athlete",
-      "musician"
+      "musician",
+      "military_personnel"
     ],
     "guidance": "Record explicit anime evidence, adaptation, period and form. Distinguish recurring traits from temporary appearances or transformations. Open values require a source-backed canonical name. This fact alone does not establish question eligibility; exclusions and combined conditions require editorial review."
   },
@@ -271,7 +277,12 @@
     "allowedValues": [
       "ponytail",
       "twin_tails",
-      "braids"
+      "braids",
+      "curly",
+      "straight",
+      "wavy",
+      "bald",
+      "spiky"
     ],
     "guidance": "Explicit source assertion only. Preserve adaptation, period, form and source terminology. Missing facts stay unknown. Family values use relation|canonical character ID; organization roles need the named organization in context. No inference from anime genres, ears, clothing, fighting tools or popularity. Factual verification, question eligibility, rights and release decisions remain separate."
   },
@@ -376,5 +387,156 @@
     "valueType": "string",
     "allowedValues": [],
     "guidance": "Retain explicit source terminology and appearance context. A costume or carried weapon does not establish occupation, combat proficiency, species or recurring use. Unknown values remain absent claims. Separate factual, eligibility and publication review required."
+  },
+  {
+    "id": "appearance.carried_accessory",
+    "label": "Carried accessory",
+    "category": "appearance",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Source-reported candidate only. Preserve original field, units, period, outfit and anime context. Multiple values coexist; missing is unknown. Aliases do not modify canonical identities. Relationship claims reference typed links and existing target IDs. Explicit none is distinct from a missing field. No automatic verification, question eligibility or publication."
+  },
+  {
+    "id": "appearance.physical_feature",
+    "label": "Explicit physical feature",
+    "category": "appearance",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Source-reported candidate only. Preserve original field, units, period, outfit and anime context. Multiple values coexist; missing is unknown. Aliases do not modify canonical identities. Relationship claims reference typed links and existing target IDs. Explicit none is distinct from a missing field. No automatic verification, question eligibility or publication."
+  },
+  {
+    "id": "identity.alias",
+    "label": "Source-reported alias",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Source-reported candidate only. Preserve original field, units, period, outfit and anime context. Multiple values coexist; missing is unknown. Aliases do not modify canonical identities. Relationship claims reference typed links and existing target IDs. Explicit none is distinct from a missing field. No automatic verification, question eligibility or publication."
+  },
+  {
+    "id": "identity.gender",
+    "label": "Source-reported gender/sex label",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [
+      "male",
+      "female",
+      "androgynous",
+      "genderless"
+    ],
+    "guidance": "Source-reported candidate only. Preserve original field, units, period, outfit and anime context. Multiple values coexist; missing is unknown. Aliases do not modify canonical identities. Relationship claims reference typed links and existing target IDs. Explicit none is distinct from a missing field. No automatic verification, question eligibility or publication."
+  },
+  {
+    "id": "identity.story_role",
+    "label": "Source-reported narrative role",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Source-reported candidate only. Preserve original field, units, period, outfit and anime context. Multiple values coexist; missing is unknown. Aliases do not modify canonical identities. Relationship claims reference typed links and existing target IDs. Explicit none is distinct from a missing field. No automatic verification, question eligibility or publication."
+  },
+  {
+    "id": "identity.race",
+    "label": "Named fictional race classification",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Source-reported candidate only. Preserve original field, units, period, outfit and anime context. Multiple values coexist; missing is unknown. Aliases do not modify canonical identities. Relationship claims reference typed links and existing target IDs. Explicit none is distinct from a missing field. No automatic verification, question eligibility or publication."
+  },
+  {
+    "id": "profile.age",
+    "label": "Stated numeric age",
+    "category": "identity",
+    "valueType": "number",
+    "allowedValues": [],
+    "guidance": "Source-reported candidate only. Preserve original field, units, period, outfit and anime context. Multiple values coexist; missing is unknown. Aliases do not modify canonical identities. Relationship claims reference typed links and existing target IDs. Explicit none is distinct from a missing field. No automatic verification, question eligibility or publication."
+  },
+  {
+    "id": "profile.stated_age",
+    "label": "Non-numeric age statement",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Source-reported candidate only. Preserve original field, units, period, outfit and anime context. Multiple values coexist; missing is unknown. Aliases do not modify canonical identities. Relationship claims reference typed links and existing target IDs. Explicit none is distinct from a missing field. No automatic verification, question eligibility or publication."
+  },
+  {
+    "id": "profile.apparent_age",
+    "label": "Source apparent age group",
+    "category": "appearance",
+    "valueType": "string",
+    "allowedValues": [
+      "child",
+      "teenager",
+      "adult",
+      "senior",
+      "ageless"
+    ],
+    "guidance": "Source-reported candidate only. Preserve original field, units, period, outfit and anime context. Multiple values coexist; missing is unknown. Aliases do not modify canonical identities. Relationship claims reference typed links and existing target IDs. Explicit none is distinct from a missing field. No automatic verification, question eligibility or publication."
+  },
+  {
+    "id": "profile.height_cm",
+    "label": "Explicit height in centimetres",
+    "category": "appearance",
+    "valueType": "number",
+    "allowedValues": [],
+    "guidance": "Source-reported candidate only. Preserve original field, units, period, outfit and anime context. Multiple values coexist; missing is unknown. Aliases do not modify canonical identities. Relationship claims reference typed links and existing target IDs. Explicit none is distinct from a missing field. No automatic verification, question eligibility or publication."
+  },
+  {
+    "id": "profile.birthday",
+    "label": "Birthday with optional year",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Source-reported candidate only. Preserve original field, units, period, outfit and anime context. Multiple values coexist; missing is unknown. Aliases do not modify canonical identities. Relationship claims reference typed links and existing target IDs. Explicit none is distinct from a missing field. No automatic verification, question eligibility or publication."
+  },
+  {
+    "id": "profile.zodiac",
+    "label": "Explicitly stated zodiac sign",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Source-reported candidate only. Preserve original field, units, period, outfit and anime context. Multiple values coexist; missing is unknown. Aliases do not modify canonical identities. Relationship claims reference typed links and existing target IDs. Explicit none is distinct from a missing field. No automatic verification, question eligibility or publication."
+  },
+  {
+    "id": "profile.personality",
+    "label": "Source-reported personality label",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Source-reported candidate only. Preserve original field, units, period, outfit and anime context. Multiple values coexist; missing is unknown. Aliases do not modify canonical identities. Relationship claims reference typed links and existing target IDs. Explicit none is distinct from a missing field. No automatic verification, question eligibility or publication."
+  },
+  {
+    "id": "profile.favourite_food",
+    "label": "Stated favourite food",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Source-reported candidate only. Preserve original field, units, period, outfit and anime context. Multiple values coexist; missing is unknown. Aliases do not modify canonical identities. Relationship claims reference typed links and existing target IDs. Explicit none is distinct from a missing field. No automatic verification, question eligibility or publication."
+  },
+  {
+    "id": "ability.devil_fruit",
+    "label": "Explicit Devil Fruit status or name",
+    "category": "ability",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Source-reported candidate only. Preserve original field, units, period, outfit and anime context. Multiple values coexist; missing is unknown. Aliases do not modify canonical identities. Relationship claims reference typed links and existing target IDs. Explicit none is distinct from a missing field. No automatic verification, question eligibility or publication."
+  },
+  {
+    "id": "relationship.character",
+    "label": "Typed character relationship",
+    "category": "affiliation",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Source-reported candidate only. Preserve original field, units, period, outfit and anime context. Multiple values coexist; missing is unknown. Aliases do not modify canonical identities. Relationship claims reference typed links and existing target IDs. Explicit none is distinct from a missing field. No automatic verification, question eligibility or publication."
+  },
+  {
+    "id": "appearance.ear_or_horn_feature",
+    "label": "Source-reported ear or horn appearance",
+    "category": "appearance",
+    "valueType": "string",
+    "allowedValues": [
+      "elf_like_ears",
+      "animal_like_ears",
+      "horns"
+    ],
+    "guidance": "Appearance only. Elf-like or animal-like ears do not establish species. Preserve source context and unknown values."
   }
 ]

@@ -66,3 +66,33 @@ The code's approval-to-generator path passes using actual configured-reviewer
 semantics in synthetic tests. Nothing in this continuation changes a public bank,
 rarity, Daily assignment, live scheduler, Ascent/Descent gameplay, API, score,
 archive, release branch or production database.
+
+
+## Extended local profiles and batch ingestion — 2026-11-22
+
+209 automated tests pass, along with build, immutable release integrity, catalogue
+validation and trait/history validation. Definitions now total 46. Fourteen new
+profile tests cover the complete 17-label vocabulary, multiple ages/contexts,
+relationships, uncertain targets, non-anime media, unknown fields, biography
+redaction, AI classification, private persistence/replay, source-ID collisions,
+checkpoint resume and trait-generated drafts with explicit editorial Limit Break.
+
+Actual private acceptance: the bounded user-supplied Usopp example retains all17
+labels (17 normalized, zero held tags), 27 distinct claims and three typed links
+(two canonical family links, one unresolved crew target). It is not an official
+bulk tag export. The extended SQL run processes the same cached 44,489 partial rows;
+1,003 selected rows yield 952 distinct matched characters, with 50 held identity/form
+rows. It adds 5,202 context-sensitive claim records. Together with the 27 supplied
+claims and original 131, the store has 5,360 pending claims, zero verified and zero
+question-approved. There are 5,261 unique character/trait/value pairs: context
+variants must not be counted as distinct discovered answers. All 131 prior claim
+histories and 45 prior review records compare unchanged. Replays add zero claims
+and preserve the same state hash. Source files, actual metrics and field-by-field
+acceptance evidence remain private; no real research fixture is committed here.
+
+Private sniper/pirate/ponytail/goggles drafts discover the supplied candidate with
+source context and existing rarity proposals. They remain held for editorial Limit
+Break selection and factual/eligibility/rights review. The same optional authorized
+review-state bundle preserves profiles, typed links and checkpoints. No new admin
+interface, live provider access, canonical alias mutation, gameplay/API change,
+public answer publication or production database operation was introduced.

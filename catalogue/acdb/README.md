@@ -33,7 +33,10 @@ hair/eye colours and hair length, apparent age, sex, ear/horn appearance, form/c
 links and modification fields. Publishers supply titles/media categories; assignments
 link source characters to titles. General tags, occupations, accessories, species,
 weapons, powers and organizations are not established by these three schemas.
-The parser intentionally discards image URLs/biographies and uninterpreted fields.
+Parser format 2 also retains clothing, narrative role and light/dark codes,
+Japanese/Chinese/reading names, primary publisher and form links. The adapter holds
+unknown codes and uninterpreted light/dark semantics. It discards image URLs and
+biographies rather than copying copyrighted prose.
 An ear-shape code labelled Elf does not establish elf species.
 
 Official API documentation lists character/title query tools, but this task's
@@ -47,3 +50,10 @@ from scraping character pages.
 
 See NOTICE.md for ODbL/DbCL obligations and the source review matrix. Data stays on a
 publication hold; changing its factual confidence does not clear database rights.
+
+
+The local `acdb-profile` adapter covers explicitly supplied tags and rich structured
+fields absent from these SQL tables. It does not imply official bulk access to
+those fields. See [EXTENDED-EXPORT-REQUEST.md](EXTENDED-EXPORT-REQUEST.md) for an
+unsent access request and the importer README for the bounded JSON contract.
+Use a new parser-version staging output when upgrading; retain historical snapshots.

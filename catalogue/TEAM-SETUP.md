@@ -8,7 +8,7 @@ research, credentials or provider calls. The real dataset is not substituted by
 those fixtures. This PR does not change gameplay files, live answers, rarity,
 Daily Challenge assignments, Descent, saves or score APIs.
 
-Code/schemas and the 18 authored trait definitions are public. The Tenrai/MAL
+Code/schemas and the authored trait definitions are public. The Tenrai/MAL
 catalogue, anime metadata, pending claims and research are private while relevant
 rights remain unresolved. No raw catalogue is needed on the production server.
 Both Git exclusions and Vercel exclusions protect the private storage; the local
@@ -146,7 +146,7 @@ See [traits/importer/README.md](traits/importer/README.md) for complete working
 commands, formats, conflict handling, recovery, source policies and team transfer.
 The source adapters are ACDB SQL staging exports, Wikidata CC0 snapshots, and
 explicitly authorized structured sources. No API key is needed for local imports.
-29 definitions now extend the original 18 without changing their identities or
+46 definitions now extend the original 18 without changing their identities or
 removing old values; new source traits remain pending by default.
 
 ```sh
@@ -177,3 +177,30 @@ rather than silently switching it. Set the explicit path after bootstrap when
 necessary. If a command reports a stale state, competing lock, invalid mapping or
 changed snapshot, stop and inspect the source and owner configuration; do not reset
 the catalogue or discard the old review ledger to make an import succeed.
+
+
+## Rich trait profiles (same private state)
+
+After the authorized bootstrap above, use one explicit state path for all tools:
+
+```sh
+export ASCENT_TRAIT_REVIEW_STATE="$ASCENT_CATALOGUE_DATA_DIR/review-state.json"
+npm run catalogue:traits-import -- import --provider acdb-profile --input catalogue/private/BATCH/profiles.json --write
+npm run catalogue:traits-import -- profile --character mal-character-724
+npm run catalogue:traits-import -- search --trait appearance.hairstyle --value ponytail
+npm run catalogue:traits-import -- search --trait appearance.eyewear --value goggles
+npm run catalogue:traits-import -- search --trait occupation.role --value pirate
+npm run catalogue:traits-import -- metrics
+npm run catalogue:traits-import -- generate-trait --trait occupation.role --value sniper --text 'Name any anime sniper.' --question-id draft-anime-snipers --output catalogue/private/BATCH/NEW-snipers.json
+npm run catalogue:validate
+npm run traits -- validate
+npm run catalogue:review
+```
+
+These commands require actual authorized input files, not public placeholder data.
+Profiles, evidence, typed relationships and checkpoints travel in the existing
+optional review-state bundle; raw snapshots need separate authorized transfer.
+Generated rarity and Limit Break selections are editorial proposals only. The
+same existing maintainer workflow handles review. Missing bulk ACDB tags are an
+access limitation, not inferred absence. See traits/importer/README.md for the
+packet schema, all fields, batch resume and permission requirements.
