@@ -159,3 +159,33 @@ The full report, receipts, source hashes and draft banks are private and durable
 The sequential full-store coverage audit took approximately357 seconds on this
 machine; full history audits are offline operations, not live-game requests.
 Interactive trait drafts were generated successfully without provider calls.
+
+## Character-tag-only access checkpoint — 2026-11-22
+
+No new real character-tag assignments were obtained or imported in this checkpoint.
+The fresh api_dumps.php response requires an API key and returns HTML, not a dataset.
+The public tag list supplies vocabulary/counts, not an authorized assignment export.
+No ACDB credential or licensed tag dataset was available. No SQL attributes were
+reimported, no HTML listing was harvested and no protected endpoint was bypassed.
+The focused request and exact preferred transfer contract are in catalogue/acdb/
+CHARACTER-TAG-ACCESS-REQUEST.md and CHARACTER-TAGS.md. Protected feed contents remain
+unverified; a key alone is not proof that it contains character-tag edges.
+
+The existing adapter now retains original provider tag/assignment IDs and holds
+explicit series-level tags and conflicting IDs. Explicit swordsman/cyborg/mask
+labels normalize without inferring a profession from a weapon or glasses from
+goggles. The documented maid tag describes clothing, so it does not establish an
+occupation. Unknown labels remain searchable source tags. This is a bounded
+compatibility correction, not another importer or database.
+
+233 tests pass, including three new tag-contract regressions with explicitly
+fictional data. Five fictional identities prove metadata preservation, source trust,
+read-back and duplicate-free repeat import; they are never counted as real ACDB
+records. Build, release integrity, original catalogue and trait/history validation
+pass. Real generator readback remains pirate1, sniper1, swordsman0; positive tag
+queries also remain ponytail1/goggles1 and assassin/demon/lightning/mask0. All four
+positive categories derive from the previously supplied character, not a new feed.
+The original JSON ledger SHA256 is unchanged, and the existing knowledge store
+still contains3 source versions,3 completed jobs,56,092 admitted identities,
+297,687 historical source records and2,237,168 observations. No gameplay, score,
+leaderboard, archive, Anime Descent or separate release changes were made.

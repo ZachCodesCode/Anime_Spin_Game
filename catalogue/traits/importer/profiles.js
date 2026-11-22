@@ -8,7 +8,7 @@ const tags={
  'boots':['appearance.clothing','boots'],'t-shirt':['appearance.clothing','t_shirt'],'suspenders':['appearance.clothing','suspenders'],'overalls':['appearance.clothing','overalls'],'armour':['appearance.clothing','armour'],'armor':['appearance.clothing','armour'],'uniform':['appearance.clothing','uniform'],'dress':['appearance.clothing','dress'],
  'hat':['appearance.accessory','hat'],'wristband':['appearance.accessory','wristband'],'bandages':['appearance.accessory','bandages'],'bandana':['appearance.accessory','bandana'],'headband':['appearance.accessory','headband'],'belt':['appearance.accessory','belt'],'jewellery':['appearance.accessory','jewellery'],
  'goggles':['appearance.eyewear','goggles'],'glasses':['appearance.eyewear','glasses'],'sunglasses':['appearance.eyewear','sunglasses'],
- 'sniper':['occupation.role','sniper'],'pirate':['occupation.role','pirate'],'detective':['occupation.detective','professional'],'assassin':['occupation.role','assassin'],'thief':['occupation.role','thief'],'police officer':['occupation.role','police_officer'],'maid':['occupation.role','maid'],'teacher':['occupation.role','teacher'],'doctor':['occupation.role','doctor'],'mage':['occupation.role','mage'],'athlete':['occupation.role','athlete'],'military personnel':['occupation.role','military_personnel'],
+ 'sniper':['occupation.role','sniper'],'pirate':['occupation.role','pirate'],'detective':['occupation.detective','professional'],'assassin':['occupation.role','assassin'],'thief':['occupation.role','thief'],'police officer':['occupation.role','police_officer'],'maid':['appearance.clothing','maid'],'teacher':['occupation.role','teacher'],'doctor':['occupation.role','doctor'],'mage':['occupation.role','mage'],'athlete':['occupation.role','athlete'],'military personnel':['occupation.role','military_personnel'],
  'long nose':['appearance.physical_feature','long_nose'],'big lips':['appearance.physical_feature','big_lips']
 };
 const key=s=>String(s).normalize('NFKC').trim().toLowerCase().replace(/_/g,' ').replace(/\s+/g,' ');
@@ -35,9 +35,13 @@ function birthday(value){
 }
 function height(value){const n=typeof value==='object'?value.value:Number((/^(\d+(?:\.\d+)?)\s*(?:cm|m)$/.exec(String(value))||[])[1]),unit=typeof value==='object'?value.unit:(/\b(cm|m)$/.exec(String(value))||[])[1];if(!Number.isFinite(Number(n))||Number(n)<0||!['cm','m'].includes(unit))throw Error('Height requires explicit cm or m units');return Number(n)*(unit==='m'?100:1);}
 Object.assign(tags, Object.fromEntries([
- ...['ninja','samurai','musician','scientist','chef','healer','wizard','witch'].map(v=>[v,['occupation.role',v]]),
- ...['human','elf','demon','vampire','ghost','robot','giant','spirit'].map(v=>[v,['identity.species',v]]),
+ ...['swordsman','ninja','samurai','musician','scientist','chef','healer','wizard','witch'].map(v=>[v,['occupation.role',v]]),
+ ...['cyborg','human','elf','demon','vampire','ghost','robot','giant','spirit'].map(v=>[v,['identity.species',v]]),
  ...['sword','gun','bow','staff','slingshot','shield'].map(v=>[v,['equipment.weapon',v]]),
+ ...['mask','eyepatch'].map(v=>[v,['appearance.accessory',v]]),
+ ...['freckles','tattoos','scars'].map(v=>[v,['appearance.physical_feature',v]]),
+ ...['fire manipulation'].map(v=>[v,['ability.named_power','fire_manipulation']]),
+ ...['brave'].map(v=>[v,['profile.personality',v]]),
  ...['coat','cape','gloves','shirt'].map(v=>[v,['appearance.clothing',v]]),
  ...['tsundere','shy','courageous','cowardly','mischievous'].map(v=>[v,['profile.personality',v]]),
  ...['lightning','healing','telepathy','magic'].map(v=>[v,['ability.named_power',v]])
@@ -64,7 +68,16 @@ function profileSource(snapshot,manifest){
   const matchAssignments=chosen.length===1?chosen:anime;
   const facts=[],coverage=[],base=context('Source-reported profile; recurrence and outfit/period unspecified',p.context);
   function emit(traitId,value,field,original,extra={}){const long=typeof value==='string'&&value.length>500;facts.push({traitId:long?'source.unmapped_profile_field':traitId,value:long?'Long text retained by hash only':value,url:p.sourceUrl,locator:`profile ${p.externalId}: ${field}`,fact:`Source-reported ${field}: ${typeof value==='string'&&value.length<=300?value:JSON.stringify(redact(value)).slice(0,300)}. Not independently verified.`,context:base,rawField:field,rawValue:redact(original),sourceType:'profile',...extra});}
-  for(const [i,t]of list(p.tags).entries()){const label=typeof t==='string'?t:t.label;if(typeof label!=='string'||!label.trim()||label.length>200)throw Error('Tags need bounded nonempty labels');const mapped=manifest?.tagMappings?.[key(label)]||tags[key(label)];emit(mapped?.[0]||'source.unmapped_tag',mapped?.[1]||label,'tags['+i+']',label,{sourceType:'tag',rawLabel:label,context:context('Source-reported profile; chronology, outfit and recurrence unspecified',typeof t==='object'?{...p.context,...t.context}:p.context)});coverage.push({field:'tag',original:label,mappingAvailable:!!mapped,traitId:mapped?.[0]||null,reason:mapped?null:'No exact reviewed tag mapping'});}
+  for(const [i,t]of list(p.tags).entries()){
+   const label=typeof t==='string'?t:t?.label;if(typeof label!=='string'||!label.trim()||label.length>200)throw Error('Tags need bounded nonempty labels');
+   const originalId=typeof t==='object'?t.tagId??t.id:null,entity=typeof t==='object'?t.entityType||'character':'character';
+   let assignmentHold=entity!=='character'?'Series/title tags are not character assignments':null;
+   if(originalId!=null&&(!['string','number'].includes(typeof originalId)||typeof originalId==='number'&&!Number.isSafeInteger(originalId)||!String(originalId).trim()||String(originalId).length>128))assignmentHold||='Malformed original tag identifier';
+   if(t&&typeof t==='object'&&t.id!=null&&t.tagId!=null&&String(t.id)!==String(t.tagId))assignmentHold||='Conflicting original tag identifiers';
+   const mapped=manifest?.tagMappings?.[key(label)]||tags[key(label)];
+   emit(assignmentHold?'source.invalid_tag_assignment':mapped?.[0]||'source.unmapped_tag',mapped?.[1]||label,'tags['+i+']',label,{sourceType:'tag',rawLabel:label,originalTagId:originalId==null?null:String(originalId),assignmentEntity:entity,assignmentId:typeof t==='object'&&t.assignmentId!=null?String(t.assignmentId):null,normalizationHold:assignmentHold,context:context('Source-reported profile; chronology, outfit and recurrence unspecified',typeof t==='object'?{...p.context,...t.context}:p.context)});
+   coverage.push({field:'tag',original:label,originalTagId:originalId==null?null:String(originalId),mappingAvailable:!!mapped&&!assignmentHold,traitId:assignmentHold?null:mapped?.[0]||null,reason:assignmentHold||(mapped?null:'No exact reviewed tag mapping')});
+  }
   const identifiers=redact({name:p.name,aliases:list(f.aliases),japaneseName:f.japaneseName??null});
   for(const [field,raw]of Object.entries(f)){
    if(/biography|description|longText/i.test(field)){coverage.push({field,retained:'hash-only',reason:'Long descriptions are not copied'});continue;}

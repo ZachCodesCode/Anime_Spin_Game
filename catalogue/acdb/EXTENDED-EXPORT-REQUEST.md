@@ -47,3 +47,8 @@ methods for character-tag vocabulary and assignments, extra profile fields, type
 relationship edges, licensed description text, contexts and revision/deletion feeds.
 We have not inferred private endpoint or table names. An API key or dedicated bulk
 licence may be appropriate; no credentials or permission have been assumed.
+
+Character-tag priority: see CHARACTER-TAG-ACCESS-REQUEST.md for the focused,
+ready-to-send request. api_dumps.php is confirmed API-key gated; its protected
+contents have not been inspected and are not assumed to contain assignment edges.
+CHARACTER-TAGS.md defines the existing compatible import contract and access evidence.

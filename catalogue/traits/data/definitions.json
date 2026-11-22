@@ -43,7 +43,8 @@
       "dark_elf",
       "giant",
       "ghost",
-      "spirit"
+      "spirit",
+      "cyborg"
     ],
     "guidance": "Cat means an actual feline identity or explicitly documented cat form. Ears, costumes, nicknames and catlike humanoids are not evidence of feline species. Transformation-only forms require explicit context. Unknown species is absence of a claim, never false."
   },
@@ -118,7 +119,8 @@
       "chef",
       "athlete",
       "musician",
-      "military_personnel"
+      "military_personnel",
+      "swordsman"
     ],
     "guidance": "Record explicit anime evidence, adaptation, period and form. Distinguish recurring traits from temporary appearances or transformations. Open values require a source-backed canonical name. This fact alone does not establish question eligibility; exclusions and combined conditions require editorial review."
   },

@@ -232,3 +232,9 @@ that either developer already has a licensed export or access-controlled storage
 Existing JSON review histories stay intact; do not try to import ACDB IDs into the
 strict MAL-only JSON catalogue. The indexed extension preserves provider IDs and
 crosswalks without inventing MAL identifiers.
+
+For the character-specific tag gap, see [acdb/CHARACTER-TAGS.md](acdb/CHARACTER-TAGS.md).
+No new bulk tag feed is currently accessible. The existing profile importer retains
+original provider tag/assignment IDs and holds explicit series-level tags; use an
+actual authorized export and new private prepared path. The ready-to-send ACDB
+request is linked there. No new database or SQL appearance reimport is required.
