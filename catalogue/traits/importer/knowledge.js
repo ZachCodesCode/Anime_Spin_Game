@@ -2,7 +2,8 @@
 // Indexed storage adapter for the existing private catalogue/importer. Never used by gameplay.
 const fs=require('node:fs'),path=require('node:path'),cp=require('node:child_process'),crypto=require('node:crypto'),A=require('./adapters'),I=require('./index'),P=require('./profiles'),V=require('../../verification/model'),N=require('../../novelty'),C=require('../../../power-level/core'),G=require('../../generator'),S=require('./store');
 const policy=require('./trust-policy.json'),defs=require('../data/definitions.json');
-function store(command,file,args=[],input){file=S.privateFile(file);const r=cp.spawnSync(process.env.ASCENT_PYTHON||(process.platform==='win32'?'python':'python3'),['-B',path.join(__dirname,'knowledge-store.py'),command,file,...args.map(String)],{input:input===undefined?undefined:JSON.stringify(input),encoding:'utf8',maxBuffer:512*1024*1024});if(r.error)throw r.error;if(r.status)throw Error(r.stderr.trim()||'Knowledge storage failed');return JSON.parse(r.stdout);}
+// Both ends of the JSON pipes use strict UTF-8, independent of the Windows locale.
+function store(command,file,args=[],input){file=S.privateFile(file);const r=cp.spawnSync(process.env.ASCENT_PYTHON||(process.platform==='win32'?'python':'python3'),['-B',path.join(__dirname,'knowledge-store.py'),command,file,...args.map(String)],{input:input===undefined?undefined:JSON.stringify(input),encoding:'utf8',env:{...process.env,PYTHONIOENCODING:'utf-8:strict'},maxBuffer:512*1024*1024});if(r.error)throw r.error;if(r.status)throw Error(r.stderr.trim()||'Knowledge storage failed');return JSON.parse(r.stdout);}
 const hashFile=file=>crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');
 function descriptionFacts(text,name,url){
  // Narrow labelled fields and exact-subject templates only; no free-form NLP or negation guessing.

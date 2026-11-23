@@ -28,7 +28,7 @@ def connect(file,readonly=False):
 
 def ingest(db,file,batch=500,stop=None):
  if batch<1 or batch>5000 or stop is not None and stop<1:raise ValueError('Invalid batch or stop count')
- with open(file) as f:
+ with open(file,encoding='utf-8') as f:
   header=json.loads(next(f));job=header['hash'];prepared_hash=filehash(file);old_hash=db.execute('SELECT value FROM meta WHERE key=?',('prepared:'+job,)).fetchone()
   if old_hash and old_hash[0]!=prepared_hash:raise ValueError('Immutable prepared input changed')
   with db:db.execute('INSERT OR IGNORE INTO meta VALUES(?,?)',('prepared:'+job,prepared_hash))
