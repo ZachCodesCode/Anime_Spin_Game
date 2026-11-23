@@ -1,111 +1,101 @@
-# Ascent #14–16 integration — HOLD, not a production content release
+# Browser-first correction and content handoff
 
-This branch is based on production main 203e433. It implements the existing
-versioned browser/API path without replacing newer production question content.
-It retains all older release assets and freezes the current 174-question baseline,
-including the #12–13 additions, as
-`32fb7940214ef6a3e3615e039fa5b5da1e07ed058af118ceafc268be5c65671d`.
-No live answers, rarities, selection dates, Descent code or assignment rows change.
+Both correction branches incorporate main c8c68da (including the latest ads.txt).
+The deployed game.js retrieved on November 23 was byte-identical to origin/main's
+browser-first script. No production credentials or assignment history were
+available. That observation proves the current browser path, not the absence of
+all historical production pins. Existing frozen releases and experimental helpers
+are preserved; no database table, release asset or historical record is deleted.
 
-## Essential content gate failed
+## Actual runtime
 
-The corrected draft inventory has 34 questions and 8,485 proposed entries. These
-are source-linked provider metadata candidates, not verified public answer banks.
-`release-plan.json` and `ascent-14-16-candidate-selection.md` identify 21 proposed
-slots (15 character, six title) and exact draft counts; **none is assigned**.
-Examples of material unresolved checks include collective labels such as “NHK
-Agents” in a character question, genre-based eligibility/fairness, role/adaptation
-scope, editorial rarity and raw provider reuse rights. A model confidence or a
-`supported_candidate` label is not approval. Lack of trait-database approval alone
-is not the reason for the hold. No substitute raw data is published to bypass it.
+The browser loads questions.js, core.js and run.js directly, deterministically
+chooses the daily seven IDs, validates answers and saves/results locally. It no
+longer loads challenge-client.js or the versioned runtime, or requires a challenge
+API request. api/ascent.js and api/suggest.js match current main; normal traffic
+never enters the experimental assignment service. Existing leaderboard identity,
+server-side score validation, retries and suggestion behavior remain intact.
+No activation setting or assignment migration is required for gameplay.
+A leaderboard outage leaves local play and completed results available.
 
-`npm run ascent:release-check` deliberately exits nonzero until the actual immutable
-assignments and reviewed plan exist. Do not approve this branch as a completed
-fresh-content release or set ASCENT_VERSIONING_FROM merely because tests pass.
-The 21 banks still need bounded evidence/eligibility review and rights clearance,
-followed by actual maintainer content/rarity decisions. Those decisions must name
-the reviewed immutable bank/revision; changing JSON booleans is not an approval.
+Local stored outcomes now retain the accepted answer's score inputs. A reload
+with an added answer/alias, changed rarity or removed invalid answer preserves
+completed outcomes and an active deadline; unanswered questions use the newly
+loaded bank. Legacy v4 outcomes without snapshots retain valid recorded tier/point
+pairs. Existing submitted leaderboard rows remain untouched. The server still
+recomputes **first submissions** using its current bank, as production does; an
+in-flight client from before a scoring correction can therefore show a different
+local total, or a removed answer can fail submission. Local completed results are
+retained. Do not promise retroactive rescoring or immutable scoring for an
+unsubmitted old client. No new API fallback/synchronization layer was added.
 
-## Runtime behavior and prerequisites
+## Existing content — prepared, not published
 
-* Browser resolves `/api/ascent?challenge=1&date=YYYY-MM-DD`, loads hash-verified
-  frozen scoring/run scripts, and stores version/date/order with saved progress.
-  Legacy saves keep their existing keys. Versioned saves use a separate namespace.
-* API reads immutable database pins before considering activation/configuration;
-  an existing pin always wins and is never overwritten. It recomputes scores from
-  canonical answers and rejects mismatched bank versions/orders. Score and version
-  metadata writes are atomic/idempotent. Existing score rows stay unchanged.
-* ASCENT_VERSIONING_FROM must be a future Toronto date **after 2026-11-23**.
-  Production policy requires explicit assignments on/after November 24, including
-  subsequent dates. Missing reviewed dates fail closed with 503; no unrestricted
-  fallback silently fills November 27 onward. Ongoing approved inventory must be
-  prepared before those dates; this PR does not schedule unrelated future dates.
-* The challenge API is required even when activation is unset. A working Turso
-  connection and deployed API are mandatory before merging this runtime change.
-  Static-only hosting is insufficient. Local `npm run dev` intentionally serves
-  legacy preview responses and is not a versioned staging environment.
-* `_ascent-versioning.js` prepares two additive tables on first API use:
-  `ascent_challenges(day, bank_version, question_ids)` and
-  `ascent_score_versions(day, guest, bank_version, question_ids)`.
-  Existing `ascent_scores` remains authoritative. No production table setup or
-  migration was run in this task. Confirm write permissions/transaction support
-  in an isolated staging database before deployment.
-* Existing environment names are TURSO_DATABASE_URL and TURSO_AUTH_TOKEN (see
-  api/_db.js). Supply only staging credentials in a non-production deployment;
-  do not point test harnesses at production. Add ASCENT_VERSIONING_FROM there only
-  with reviewed staging assignments. Never put credentials in Git/PR descriptions.
-* Vercel must include retained releases in the scoring **and suggestion** function
-  bundles and serve the corresponding frozen JS assets publicly. Private catalogue
-  data/tools remain excluded. Missing release assets fail closed.
+All original 34 drafts / 8,485 proposed entries are preserved privately. All 21
+selected slots for November 24/25/26 (Ascents 14/15/16) are accounted for in
+ascent-14-16-candidate-selection.md. Private full review packets retain source
+URLs, IDs, adaptation/role predicates, aliases, proposed rarity and held records.
+Production-shaped per-date JSON/JS candidates have been created from those exact
+answers, not regenerated. They are not copied to the public game repository while
+provider reuse rights and editorial decisions remain unresolved.
 
-## Verification and activation sequence
+Every retained proposal is checked against its existing stable catalogue identity,
+explicit adaptation/role metadata, matching aliases, score bands and exactly one
+Limit Break proposal. This is structural/source-consistency checking, not a claim
+of independent factual verification or approval. Collective "NHK Agents" entries
+are excluded from the candidate; "Ninamori Family Secretary" is held for individual
+identity/eligibility review. Original research records are unchanged.
+Narrow title banks are not comprehensive franchise inventories. Generic names,
+provider genre judgments and deterministic Limit Break proposals still require
+editorial attention. Do not pad lists or approve them by changing a boolean.
 
-1. Check actual deployment and immutable Turso pins using authorized access. Source
-   reconstruction cannot prove past deployments or unseen pins. The supplied JSON
-   audit lists exact source selections for November 11–26; November 23 or earlier
-   is unchanged. No production database credentials were available for pin checks.
-2. Finish the 21 content reviews and permissions. Publish the reviewed combined
-   bank with the existing publishing CLI. Keep every original question/answer/score
-   unchanged, retain old assets, then use `assign` for only November 24–26. Respect
-   any existing pin; stop on conflict. Run release-check, integrity and full tests.
-3. Set up a separate Turso staging database, deploy matching browser/API/assets,
-   test the actual hosted path on desktop/mobile, saves, submissions, retries,
-   suggestion validation, archives and Descent. Local file-backed libSQL tests do
-   not establish hosted Turso configuration, network availability or permissions.
-4. Have the actual maintainers review/approve the content and PR. Do not merge this
-   incomplete release solely to meet a date. Before November 24 begins in Toronto,
-   deploy all matching API/browser/assets/config as one reviewed release. Verify
-   legacy dates and scores, then explicitly set the approved future activation
-   boundary. No automatic activation is performed by this branch.
-5. Verify the GET challenge response, bank hash/order, browser prompts, one saved
-   score per player, restored countdown and expected upcoming assignments. Repeat
-   November 25/26 verification. Plan later approved dates before November 27.
+The current-bank reconstruction for November 11–23 contains no equivalent normalized
+concept for the proposed 21. Actual historical deployment completeness is UNKNOWN.
+No historical question, answer, rarity, score or date has been rewritten.
 
-## Rollback
+## Browser-first content integration after clearance
 
-Unsetting activation stops *new* pins but existing versioned pins continue to
-resolve. Preserve the version-aware API, release assets and tables for old saves,
-archives and late submissions. Never roll back to a pre-versioning server after
-pins exist. Do not delete/rewrite pins, releases or historical scores to force a
-fallback. Existing immutable dates require a forward compatibility fix.
+1. Review the private full answer packets and rights/rarity/eligibility holds. Obtain
+   actual maintainer decisions tied to their digests; preserve rejections/history.
+2. Transfer only cleared answer objects into questions.js, using the existing q/a
+   schema and `since` convention. Do not change old records or order. The offline
+   planner in PR #28 is a review tool, not a replacement runtime scheduler.
+3. Simulate run.select against the complete proposed bank for every date from the
+   epoch through the target dates. Appending questions alone does **not** guarantee
+   the exact intended order: current production uses deterministic least-recent-use
+   selection. Verify the actual output equals the reviewed seven-slot plans and all
+   old dates remain identical. If not, stop for a bounded reviewed future-only
+   scheduling adjustment; do not enable server assignments to work around it.
+   Also compare Descent selections: it derives exclusions from Ascent history.
+4. Run the full tests, build, integrity and browser outage check. `ascent:release-check`
+   currently correctly blocks because the new content is unapproved/unintegrated;
+   it no longer requires immutable assignments. Keep that blocker distinct from a
+   broken technical test. Check frontend/backend use the identical deployed bank.
+5. Review the existing PR; maintainers merge/deploy only after those gates pass.
+   If the dates have passed, seek a reviewed future date; never rewrite played days.
 
-## Checks performed
+## Real browser verification
 
-Full production unit/API suite, immutable integrity and build; actual headless
-Chrome desktop/mobile seven-question playthrough using the current production
-bank as a **technical fixture**, a local HTTP API and file-backed libSQL database.
-Verified question 6 refresh with identical deadline, completed refresh, idempotent
-score save, no page errors, and Descent start. This is not hosted Turso validation
-and does not approve any new question. Screenshots/logs are local verification
-artifacts, not source-restricted datasets.
+Install playwright-core in an isolated tool directory (not as a production
+ dependency). Provide it through NODE_PATH, and set ASCENT_BROWSER_EXECUTABLE to
+an installed Chrome. Run `node scripts/verify-ascent-browser.cjs`.
+ASCENT_BROWSER_OUTPUT chooses a private screenshot/log output directory.
+The script serves only the local checkout, aborts **every** API request and external
+request, plays seven actual questions on desktop/mobile, checks prompts/IDs/aliases,
+reveals/results, question 6 deadline restoration, completed refresh and Descent start.
+It uses no database or production credentials. It does not test hosted leaderboard
+availability or approve new answers. Unit/API tests separately exercise submissions.
 
-## Reproduce the local browser verification
+## Cross-platform and rollback
 
-Install Playwright in a temporary tool directory (or as a local uncommitted test
-dependency), then run `scripts/verify-ascent-browser.cjs` with its module available
-through NODE_PATH. Set ASCENT_BROWSER_EXECUTABLE to an installed compatible Chrome
-executable, or install Playwright's Chromium. The script creates and removes its
-own temporary local database, blocks external analytics requests, and cannot
-connect to production. Desktop/mobile screenshots go to the OS temporary folder.
-It requires local process/loopback permissions and uses existing bank questions
-solely to exercise the protocol. It is not the hosted Turso release gate.
+.gitattributes forces LF checkout for hashed text without changing frozen bytes.
+SQLite test clients close before bounded deletion retries. The CI matrix runs
+Ubuntu, Windows and macOS; a configured matrix is not evidence of a completed run.
+Local verification so far is macOS only. Never claim Windows passes until CI does.
+
+For code rollback, preserve local v4 saves and existing database rows. The accepted
+snapshot field is additive. Frozen assets remain unchanged. If real historical
+versioned clients/pins are found, inspect those deployments before removing their
+compatibility endpoint; this task has not removed tables, pins or frozen assets.
+Do not restore a whole old question bank in a way that erases subsequent same-day
+corrections. No merge, deployment or production database operation is performed.

@@ -1,3 +1,5 @@
+> Historical experimental infrastructure documentation. PR #27 now uses the production browser-first path; these versioned helpers and assets are retained offline for compatibility and integrity checks. No activation is required or enabled. See docs/ascent-14-16-deployment.md for the current release workflow.
+
 # Phase 4B integration and rollout
 
 The browser now resolves `/api/ascent?challenge=1&date=YYYY-MM-DD` before starting

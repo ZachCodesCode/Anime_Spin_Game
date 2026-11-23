@@ -8,7 +8,7 @@ async function fixture(fn){
  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'ascent-integration-'));
  const db=createClient({url:'file:'+path.join(dir,'test.db')});
  const ensureAscent=async()=>{await db.execute('CREATE TABLE IF NOT EXISTS ascent_scores (day TEXT,guest TEXT,score INTEGER,answers TEXT,created_at INTEGER,PRIMARY KEY(day,guest))');};
- try{await fn(db,ensureAscent);}finally{db.close();fs.rmSync(dir,{recursive:true,force:true});}
+ try{await fn(db,ensureAscent);}finally{await db.close();fs.rmSync(dir,{recursive:true,force:true,maxRetries:8,retryDelay:100});}
 }
 test('legacy API contract and existing rows survive additive setup',()=>fixture(async(db,ensureAscent)=>{
  const api=service({db,ensureAscent}),day='2026-11-15',now=new Date(day+'T12:00:00Z');

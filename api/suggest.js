@@ -2,13 +2,12 @@
 // POST /api/suggest  { date, kind: "answer"|"question", questionId?, text }  -> { ok: true }
 // GET  /api/suggest?key=SUGGEST_ADMIN_KEY[&day=YYYY-MM-DD]                 -> latest 500 suggestions (owner only)
 // Rows live in the ascent_suggestions table in the same Turso database as the scores.
-const { db, ensureSuggestions, ensureAscent, cors } = require("./_db.js");
+const { db, ensureSuggestions, cors } = require("./_db.js");
 const { guest, sameOrigin } = require("./_guest.js");
 const C = require("../power-level/core.js");
 const R = require("../power-level/run.js");
 const D = require("../power-level/descent.js");
 const bank = require("../power-level/questions.js");
-const ascent = require("./_ascent-versioning").service({db,ensureAscent});
 
 const isDay = d => /^\d{4}-\d{2}-\d{2}$/.test(d);
 const recordable = d => { const now = Date.now(); return [C.dateKey(new Date(now)), C.dateKey(new Date(now - 864e5))].includes(d); };
@@ -28,10 +27,8 @@ module.exports = async function handler(req, res) {
       const r = isDay(day)
         ? await db.execute({ sql: "SELECT day, kind, question_id, text, created_at FROM ascent_suggestions WHERE day = ? ORDER BY created_at DESC LIMIT 500", args: [day] })
         : await db.execute("SELECT day, kind, question_id, text, created_at FROM ascent_suggestions ORDER BY created_at DESC LIMIT 500");
-      const resolved=new Map();
-      for(const row of r.rows)if(row.question_id&&!bank.some(q=>q.id===row.question_id)&&!resolved.has(row.day))resolved.set(row.day,(await ascent.resolve(row.day)).payload.questions);
-      const prompt = (id,day) => (bank.find(q => q.id === id) || resolved.get(day)?.find(q=>q.id===id) || {}).text || null;
-      return res.status(200).json(r.rows.map(x => ({ day: x.day, kind: x.kind, question: prompt(x.question_id,x.day), questionId: x.question_id, text: x.text, at: new Date(Number(x.created_at)).toISOString() })));
+      const prompt = id => (bank.find(q => q.id === id) || {}).text || null;
+      return res.status(200).json(r.rows.map(x => ({ day: x.day, kind: x.kind, question: prompt(x.question_id), questionId: x.question_id, text: x.text, at: new Date(Number(x.created_at)).toISOString() })));
     }
     if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
     if (!sameOrigin(req)) return res.status(403).json({ error: "Forbidden" });
@@ -44,7 +41,7 @@ module.exports = async function handler(req, res) {
     let questionId = null;
     if (kind === "answer") {
       questionId = String(body.questionId || "");
-      if (![...(await ascent.resolve(date)).payload.questionIds, ...D.select(bank, date)].includes(questionId)) return res.status(400).json({ error: "Bad question" });
+      if (![...R.select(bank, date), ...D.select(bank, date)].includes(questionId)) return res.status(400).json({ error: "Bad question" });
     }
 
     const who = guest(req, res, true);

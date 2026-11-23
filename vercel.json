@@ -48,13 +48,5 @@
     }
   ],
   "buildCommand": "npm run build",
-  "outputDirectory": ".",
-  "functions": {
-    "api/ascent.js": {
-      "includeFiles": "power-level/versioning/releases/**"
-    },
-    "api/suggest.js": {
-      "includeFiles": "power-level/versioning/releases/**"
-    }
-  }
+  "outputDirectory": "."
 }

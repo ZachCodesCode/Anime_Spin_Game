@@ -107,11 +107,14 @@ async function api(date,t){
  const calls=[],fs=require('node:fs'),os=require('node:os'),path=require('node:path');let serial=0;
  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'ascent-answer-api-'));
  const actual=require('@libsql/client').createClient({url:'file:'+path.join(dir,'scores.db')});
- t.after(()=>{actual.close();fs.rmSync(dir,{recursive:true,force:true});});
+ t.after(()=>{actual.close();fs.rmSync(dir,{recursive:true,force:true,maxRetries:8,retryDelay:100});});
  const db={execute:async r=>{calls.push(r);return actual.execute(r);},batch:async(rs,mode)=>{calls.push(...rs);return actual.batch(rs,mode);}};
  const ensureAscent=()=>actual.execute('CREATE TABLE IF NOT EXISTS ascent_scores(day TEXT,guest TEXT,score INTEGER,answers TEXT,created_at INTEGER,PRIMARY KEY(day,guest))');
  const realService=require('../api/_ascent-versioning').service;
- const context={module:{exports:{}},console,require(name){
+ const context={module:{exports:{}},console,Date:class extends Date {static now(){return +new Date(date+'T17:00:00Z');}},require(name){
+  name=name.replace(/\.js$/,'');
+  if(name==='../power-level/run')return R;
+  if(name==='../power-level/questions')return bank;
   if(name==='./_db')return {cors(){},ensureAscent,db};
   if(name==='./_guest')return {guest:()=> 'test-player-'+(++serial)};
   if(name==='../power-level/core')return C;
