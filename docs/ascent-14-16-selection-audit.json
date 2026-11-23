@@ -1,0 +1,350 @@
+{
+  "productionReference": "203e4335b16bc9e97cf787b32a53f048869bd865",
+  "meaning": "Exact source-level before/after orders; not a claim of historical deployment or database pin inspection",
+  "rows": [
+    {
+      "date": "2026-11-11",
+      "before": [
+        "timed-v4-naruto-leaf",
+        "timed-v4-onepiece-fruit",
+        "timed-v4-bleach-gotei",
+        "timed-v4-hxh-troupe",
+        "timed-v4-tokyoghoul-ghouls"
+      ],
+      "after": [
+        "timed-v4-naruto-leaf",
+        "timed-v4-onepiece-fruit",
+        "timed-v4-bleach-gotei",
+        "timed-v4-hxh-troupe",
+        "timed-v4-tokyoghoul-ghouls"
+      ],
+      "note": "Protected and unchanged"
+    },
+    {
+      "date": "2026-11-12",
+      "before": [
+        "timed-v4-mha-classes",
+        "timed-v4-blackclover-knights",
+        "timed-v4-demonslayer-ranks",
+        "timed-v4-aot-scouts",
+        "timed-v4-mix-jutsu-quirks"
+      ],
+      "after": [
+        "timed-v4-mha-classes",
+        "timed-v4-blackclover-knights",
+        "timed-v4-demonslayer-ranks",
+        "timed-v4-aot-scouts",
+        "timed-v4-mix-jutsu-quirks"
+      ],
+      "note": "Protected and unchanged"
+    },
+    {
+      "date": "2026-11-13",
+      "before": [
+        "timed-v4-mix-red-hair",
+        "timed-v4-wide-detectives",
+        "timed-v4-wide-ghibli",
+        "timed-v4-mix-masks",
+        "timed-v4-wide-cats",
+        "timed-v4-wide-sports",
+        "timed-v4-wide-starters"
+      ],
+      "after": [
+        "timed-v4-mix-red-hair",
+        "timed-v4-wide-detectives",
+        "timed-v4-wide-ghibli",
+        "timed-v4-mix-masks",
+        "timed-v4-wide-cats",
+        "timed-v4-wide-sports",
+        "timed-v4-wide-starters"
+      ],
+      "note": "Protected and unchanged"
+    },
+    {
+      "date": "2026-11-14",
+      "before": [
+        "timed-v4-mix-glasses",
+        "timed-v4-wide-vampires",
+        "timed-v4-wide-isekai",
+        "timed-v4-mix-blonde",
+        "timed-v4-wide-robots",
+        "timed-v4-wide-magical-girl",
+        "timed-v4-mix-healers"
+      ],
+      "after": [
+        "timed-v4-mix-glasses",
+        "timed-v4-wide-vampires",
+        "timed-v4-wide-isekai",
+        "timed-v4-mix-blonde",
+        "timed-v4-wide-robots",
+        "timed-v4-wide-magical-girl",
+        "timed-v4-mix-healers"
+      ],
+      "note": "Protected and unchanged"
+    },
+    {
+      "date": "2026-11-15",
+      "before": [
+        "timed-v4-wide-ninjas",
+        "timed-v4-mix-fire",
+        "timed-v4-wide-time-travel",
+        "timed-v4-wide-dragons",
+        "timed-v4-mix-white-hair",
+        "timed-v4-wide-mecha",
+        "timed-v4-wide-eyepatch"
+      ],
+      "after": [
+        "timed-v4-wide-ninjas",
+        "timed-v4-mix-fire",
+        "timed-v4-wide-time-travel",
+        "timed-v4-wide-dragons",
+        "timed-v4-mix-white-hair",
+        "timed-v4-wide-mecha",
+        "timed-v4-wide-eyepatch"
+      ],
+      "note": "Protected and unchanged"
+    },
+    {
+      "date": "2026-11-16",
+      "before": [
+        "timed-v4-mix-mentors",
+        "timed-v4-wide-shinigami",
+        "timed-v4-wide-studios",
+        "timed-v4-mix-pink-hair",
+        "timed-v4-mix-companions",
+        "timed-v4-wide-shinkai-hosoda",
+        "timed-v4-mix-lightning"
+      ],
+      "after": [
+        "timed-v4-mix-mentors",
+        "timed-v4-wide-shinigami",
+        "timed-v4-wide-studios",
+        "timed-v4-mix-pink-hair",
+        "timed-v4-mix-companions",
+        "timed-v4-wide-shinkai-hosoda",
+        "timed-v4-mix-lightning"
+      ],
+      "note": "Protected and unchanged"
+    },
+    {
+      "date": "2026-11-17",
+      "before": [
+        "timed-v4-wide-hats",
+        "timed-v4-mix-green-hair",
+        "timed-v4-wide-food",
+        "timed-v4-mix-royalty",
+        "timed-v4-mix-twins",
+        "timed-v4-wide-long-running",
+        "timed-v4-mix-red-hair"
+      ],
+      "after": [
+        "timed-v4-wide-hats",
+        "timed-v4-mix-green-hair",
+        "timed-v4-wide-food",
+        "timed-v4-mix-royalty",
+        "timed-v4-mix-twins",
+        "timed-v4-wide-long-running",
+        "timed-v4-mix-red-hair"
+      ],
+      "note": "Protected and unchanged"
+    },
+    {
+      "date": "2026-11-18",
+      "before": [
+        "timed-v4-wide-scars",
+        "timed-v4-wide-chefs",
+        "timed-v4-wide-music",
+        "timed-v4-wide-samurai",
+        "timed-v4-wide-purple-hair",
+        "timed-v4-wide-shonen-jump",
+        "timed-v4-wide-scientists"
+      ],
+      "after": [
+        "timed-v4-wide-scars",
+        "timed-v4-wide-chefs",
+        "timed-v4-wide-music",
+        "timed-v4-wide-samurai",
+        "timed-v4-wide-purple-hair",
+        "timed-v4-wide-shonen-jump",
+        "timed-v4-wide-scientists"
+      ],
+      "note": "Protected and unchanged"
+    },
+    {
+      "date": "2026-11-19",
+      "before": [
+        "timed-v4-wide-tattoos",
+        "timed-v4-wide-ice",
+        "timed-v4-wide-horror",
+        "timed-v4-wide-archers",
+        "timed-v4-wide-blue-hair",
+        "timed-v4-wide-light-novel",
+        "timed-v4-wide-wind"
+      ],
+      "after": [
+        "timed-v4-wide-tattoos",
+        "timed-v4-wide-ice",
+        "timed-v4-wide-horror",
+        "timed-v4-wide-archers",
+        "timed-v4-wide-blue-hair",
+        "timed-v4-wide-light-novel",
+        "timed-v4-wide-wind"
+      ],
+      "note": "Protected and unchanged"
+    },
+    {
+      "date": "2026-11-20",
+      "before": [
+        "timed-v4-wide-detectives",
+        "timed-v4-mix-masks",
+        "timed-v4-wide-space",
+        "timed-v4-wide-cats",
+        "timed-v4-wide-starters",
+        "timed-v4-wide-mappa",
+        "timed-v4-mix-glasses"
+      ],
+      "after": [
+        "timed-v4-wide-detectives",
+        "timed-v4-mix-masks",
+        "timed-v4-wide-space",
+        "timed-v4-wide-cats",
+        "timed-v4-wide-starters",
+        "timed-v4-wide-mappa",
+        "timed-v4-mix-glasses"
+      ],
+      "note": "Protected and unchanged"
+    },
+    {
+      "date": "2026-11-21",
+      "before": [
+        "timed-v4-wide-guns",
+        "timed-v4-wide-pirates",
+        "timed-v4-wide-m-titles",
+        "timed-v4-wide-idols",
+        "timed-v4-wide-teachers",
+        "timed-v4-wide-usa",
+        "timed-v4-wide-smokers"
+      ],
+      "after": [
+        "timed-v4-wide-guns",
+        "timed-v4-wide-pirates",
+        "timed-v4-wide-m-titles",
+        "timed-v4-wide-idols",
+        "timed-v4-wide-teachers",
+        "timed-v4-wide-usa",
+        "timed-v4-wide-smokers"
+      ],
+      "note": "Protected and unchanged"
+    },
+    {
+      "date": "2026-11-22",
+      "before": [
+        "timed-v4-wide-maids",
+        "timed-v4-wide-ponytails",
+        "timed-v4-wide-game-adaptations",
+        "timed-v4-wide-ghosts",
+        "timed-v4-wide-giants",
+        "timed-v4-wide-number-titles",
+        "timed-v4-wide-witches"
+      ],
+      "after": [
+        "timed-v4-wide-maids",
+        "timed-v4-wide-ponytails",
+        "timed-v4-wide-game-adaptations",
+        "timed-v4-wide-ghosts",
+        "timed-v4-wide-giants",
+        "timed-v4-wide-number-titles",
+        "timed-v4-wide-witches"
+      ],
+      "note": "Protected and unchanged"
+    },
+    {
+      "date": "2026-11-23",
+      "before": [
+        "timed-v4-wide-orange-hair",
+        "timed-v4-wide-police",
+        "timed-v4-wide-90s",
+        "timed-v4-wide-assassins",
+        "timed-v4-wide-thieves",
+        "timed-v4-wide-films",
+        "timed-v4-wide-elves"
+      ],
+      "after": [
+        "timed-v4-wide-orange-hair",
+        "timed-v4-wide-police",
+        "timed-v4-wide-90s",
+        "timed-v4-wide-assassins",
+        "timed-v4-wide-thieves",
+        "timed-v4-wide-films",
+        "timed-v4-wide-elves"
+      ],
+      "note": "Protected and unchanged"
+    },
+    {
+      "date": "2026-11-24",
+      "before": [
+        "timed-v4-wide-vampires",
+        "timed-v4-mix-blonde",
+        "timed-v4-wide-ghibli",
+        "timed-v4-wide-robots",
+        "timed-v4-mix-healers",
+        "timed-v4-wide-sports",
+        "timed-v4-wide-ninjas"
+      ],
+      "after": [
+        "timed-v4-wide-vampires",
+        "timed-v4-mix-blonde",
+        "timed-v4-wide-ghibli",
+        "timed-v4-wide-robots",
+        "timed-v4-mix-healers",
+        "timed-v4-wide-sports",
+        "timed-v4-wide-ninjas"
+      ],
+      "note": "Unchanged: fresh assignments blocked, activation must remain unset"
+    },
+    {
+      "date": "2026-11-25",
+      "before": [
+        "timed-v4-mix-fire",
+        "timed-v4-wide-dragons",
+        "timed-v4-wide-isekai",
+        "timed-v4-mix-white-hair",
+        "timed-v4-wide-eyepatch",
+        "timed-v4-wide-magical-girl",
+        "timed-v4-mix-mentors"
+      ],
+      "after": [
+        "timed-v4-mix-fire",
+        "timed-v4-wide-dragons",
+        "timed-v4-wide-isekai",
+        "timed-v4-mix-white-hair",
+        "timed-v4-wide-eyepatch",
+        "timed-v4-wide-magical-girl",
+        "timed-v4-mix-mentors"
+      ],
+      "note": "Unchanged: fresh assignments blocked, activation must remain unset"
+    },
+    {
+      "date": "2026-11-26",
+      "before": [
+        "timed-v4-wide-shinigami",
+        "timed-v4-mix-pink-hair",
+        "timed-v4-wide-time-travel",
+        "timed-v4-mix-companions",
+        "timed-v4-mix-lightning",
+        "timed-v4-wide-mecha",
+        "timed-v4-mix-red-hair"
+      ],
+      "after": [
+        "timed-v4-wide-shinigami",
+        "timed-v4-mix-pink-hair",
+        "timed-v4-wide-time-travel",
+        "timed-v4-mix-companions",
+        "timed-v4-mix-lightning",
+        "timed-v4-wide-mecha",
+        "timed-v4-mix-red-hair"
+      ],
+      "note": "Unchanged: fresh assignments blocked, activation must remain unset"
+    }
+  ]
+}

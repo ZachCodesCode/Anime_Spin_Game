@@ -1,0 +1,5 @@
+# Offline catalogues, evidence caches and review exports are not runtime assets.
+# Publication rights for imported catalogue data have not been established.
+catalogue/**
+# Offline freshness planning and SELECT-only export tools are not runtime assets.
+power-level/scheduling/**

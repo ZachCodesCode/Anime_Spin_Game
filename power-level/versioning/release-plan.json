@@ -1,0 +1,254 @@
+{
+  "status": "BLOCKED_CONTENT_AND_STAGING_REVIEW",
+  "assignmentsPublished": 0,
+  "protectedThrough": "2026-11-23",
+  "historyDeploymentProof": "UNKNOWN; source reconstruction is not deployment proof",
+  "dates": [
+    {
+      "date": "2026-11-24",
+      "questions": [
+        {
+          "id": "draft-catalogue-romance-cast",
+          "text": "Name a character from a romance anime.",
+          "kind": "char",
+          "proposedAnswerCount": 657,
+          "acceptedAnswerCount": 0,
+          "contentReviewed": false,
+          "rarityApproved": false,
+          "rightsCleared": false,
+          "noveltyReviewed": false
+        },
+        {
+          "id": "draft-catalogue-psychological-cast",
+          "text": "Name a character from a psychological anime.",
+          "kind": "char",
+          "proposedAnswerCount": 609,
+          "acceptedAnswerCount": 0,
+          "contentReviewed": false,
+          "rarityApproved": false,
+          "rightsCleared": false,
+          "noveltyReviewed": false
+        },
+        {
+          "id": "draft-fresh-madhouse-titles",
+          "text": "Name an anime animated by Madhouse.",
+          "kind": "title",
+          "proposedAnswerCount": 16,
+          "acceptedAnswerCount": 0,
+          "contentReviewed": false,
+          "rarityApproved": false,
+          "rightsCleared": false,
+          "noveltyReviewed": false
+        },
+        {
+          "id": "draft-catalogue-historical-cast",
+          "text": "Name a character from a historical anime.",
+          "kind": "char",
+          "proposedAnswerCount": 581,
+          "acceptedAnswerCount": 0,
+          "contentReviewed": false,
+          "rarityApproved": false,
+          "rightsCleared": false,
+          "noveltyReviewed": false
+        },
+        {
+          "id": "draft-catalogue-anime-original",
+          "text": "Name a character from an anime-original story.",
+          "kind": "char",
+          "proposedAnswerCount": 718,
+          "acceptedAnswerCount": 0,
+          "contentReviewed": false,
+          "rarityApproved": false,
+          "rightsCleared": false,
+          "noveltyReviewed": false
+        },
+        {
+          "id": "draft-fresh-manga-titles",
+          "text": "Name an anime adapted from a manga.",
+          "kind": "title",
+          "proposedAnswerCount": 50,
+          "acceptedAnswerCount": 0,
+          "contentReviewed": false,
+          "rarityApproved": false,
+          "rightsCleared": false,
+          "noveltyReviewed": false
+        },
+        {
+          "id": "draft-catalogue-shoujo-josei",
+          "text": "Name a character from a shoujo or josei manga’s anime adaptation.",
+          "kind": "char",
+          "proposedAnswerCount": 266,
+          "acceptedAnswerCount": 0,
+          "contentReviewed": false,
+          "rarityApproved": false,
+          "rightsCleared": false,
+          "noveltyReviewed": false
+        }
+      ]
+    },
+    {
+      "date": "2026-11-25",
+      "questions": [
+        {
+          "id": "draft-fresh-drama-cast",
+          "text": "Name a character from a drama anime.",
+          "kind": "char",
+          "proposedAnswerCount": 1174,
+          "acceptedAnswerCount": 0,
+          "contentReviewed": false,
+          "rarityApproved": false,
+          "rightsCleared": false,
+          "noveltyReviewed": false
+        },
+        {
+          "id": "draft-fresh-mystery-cast",
+          "text": "Name a character from a mystery anime.",
+          "kind": "char",
+          "proposedAnswerCount": 717,
+          "acceptedAnswerCount": 0,
+          "contentReviewed": false,
+          "rarityApproved": false,
+          "rightsCleared": false,
+          "noveltyReviewed": false
+        },
+        {
+          "id": "draft-fresh-eighties-titles",
+          "text": "Name an anime that first aired in the 1980s.",
+          "kind": "title",
+          "proposedAnswerCount": 6,
+          "acceptedAnswerCount": 0,
+          "contentReviewed": false,
+          "rarityApproved": false,
+          "rightsCleared": false,
+          "noveltyReviewed": false
+        },
+        {
+          "id": "draft-fresh-supernatural-cast",
+          "text": "Name a character from a supernatural anime.",
+          "kind": "char",
+          "proposedAnswerCount": 606,
+          "acceptedAnswerCount": 0,
+          "contentReviewed": false,
+          "rarityApproved": false,
+          "rightsCleared": false,
+          "noveltyReviewed": false
+        },
+        {
+          "id": "draft-fresh-eighties-cast",
+          "text": "Name a character who appears in an anime that began in the 1980s.",
+          "kind": "char",
+          "proposedAnswerCount": 81,
+          "acceptedAnswerCount": 0,
+          "contentReviewed": false,
+          "rarityApproved": false,
+          "rightsCleared": false,
+          "noveltyReviewed": false
+        },
+        {
+          "id": "draft-fresh-two-thousands-titles",
+          "text": "Name an anime that first aired in the 2000s.",
+          "kind": "title",
+          "proposedAnswerCount": 50,
+          "acceptedAnswerCount": 0,
+          "contentReviewed": false,
+          "rarityApproved": false,
+          "rightsCleared": false,
+          "noveltyReviewed": false
+        },
+        {
+          "id": "draft-fresh-pre-eighties-cast",
+          "text": "Name a character who appears in an anime released before 1980.",
+          "kind": "char",
+          "proposedAnswerCount": 185,
+          "acceptedAnswerCount": 0,
+          "contentReviewed": false,
+          "rarityApproved": false,
+          "rightsCleared": false,
+          "noveltyReviewed": false
+        }
+      ]
+    },
+    {
+      "date": "2026-11-26",
+      "questions": [
+        {
+          "id": "draft-fresh-film-supporting",
+          "text": "Name a supporting character from an anime film.",
+          "kind": "char",
+          "proposedAnswerCount": 154,
+          "acceptedAnswerCount": 0,
+          "contentReviewed": false,
+          "rarityApproved": false,
+          "rightsCleared": false,
+          "noveltyReviewed": false
+        },
+        {
+          "id": "draft-fresh-visual-novel-cast",
+          "text": "Name a character from an anime adapted from a visual novel.",
+          "kind": "char",
+          "proposedAnswerCount": 70,
+          "acceptedAnswerCount": 0,
+          "contentReviewed": false,
+          "rarityApproved": false,
+          "rightsCleared": false,
+          "noveltyReviewed": false
+        },
+        {
+          "id": "draft-fresh-bones-titles",
+          "text": "Name an anime animated by Bones.",
+          "kind": "title",
+          "proposedAnswerCount": 5,
+          "acceptedAnswerCount": 0,
+          "contentReviewed": false,
+          "rarityApproved": false,
+          "rightsCleared": false,
+          "noveltyReviewed": false
+        },
+        {
+          "id": "draft-fresh-novel-cast",
+          "text": "Name a character from an anime adapted from a novel, excluding light novels.",
+          "kind": "char",
+          "proposedAnswerCount": 123,
+          "acceptedAnswerCount": 0,
+          "contentReviewed": false,
+          "rarityApproved": false,
+          "rightsCleared": false,
+          "noveltyReviewed": false
+        },
+        {
+          "id": "draft-fresh-short-tv-cast",
+          "text": "Name a character from an anime TV series or season with 13 or fewer episodes.",
+          "kind": "char",
+          "proposedAnswerCount": 552,
+          "acceptedAnswerCount": 0,
+          "contentReviewed": false,
+          "rarityApproved": false,
+          "rightsCleared": false,
+          "noveltyReviewed": false
+        },
+        {
+          "id": "draft-fresh-original-titles",
+          "text": "Name an anime whose story was originally created for animation.",
+          "kind": "title",
+          "proposedAnswerCount": 26,
+          "acceptedAnswerCount": 0,
+          "contentReviewed": false,
+          "rarityApproved": false,
+          "rightsCleared": false,
+          "noveltyReviewed": false
+        },
+        {
+          "id": "draft-fresh-ova-cast",
+          "text": "Name a character from an original video animation (OVA) anime.",
+          "kind": "char",
+          "proposedAnswerCount": 62,
+          "acceptedAnswerCount": 0,
+          "contentReviewed": false,
+          "rarityApproved": false,
+          "rightsCleared": false,
+          "noveltyReviewed": false
+        }
+      ]
+    }
+  ]
+}
