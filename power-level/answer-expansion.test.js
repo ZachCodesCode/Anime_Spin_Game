@@ -102,12 +102,11 @@ test('in-progress and finished production saves restore with identical scores, a
  }
 });
 
-// Exercise the REAL submission handler with isolated in-memory storage; no Turso or credentials.
+// Exercise the REAL submission handler with owned file-backed libSQL; no Turso or credentials.
 async function api(date,t){
- const calls=[],fs=require('node:fs'),os=require('node:os'),path=require('node:path');let serial=0;
- const dir=fs.mkdtempSync(path.join(os.tmpdir(),'ascent-answer-api-'));
- const actual=require('@libsql/client').createClient({url:'file:'+path.join(dir,'scores.db')});
- t.after(()=>{actual.close();fs.rmSync(dir,{recursive:true,force:true,maxRetries:8,retryDelay:100});});
+ const calls=[],fs=require('node:fs');let serial=0;
+ const owned=await require('./test-helpers/sqlite').fileDatabase('ascent-answer-api-'),actual=owned.db;
+ t.after(async()=>{await owned.dispose();});
  const db={execute:async r=>{calls.push(r);return actual.execute(r);},batch:async(rs,mode)=>{calls.push(...rs);return actual.batch(rs,mode);}};
  const ensureAscent=()=>actual.execute('CREATE TABLE IF NOT EXISTS ascent_scores(day TEXT,guest TEXT,score INTEGER,answers TEXT,created_at INTEGER,PRIMARY KEY(day,guest))');
  const realService=require('../api/_ascent-versioning').service;

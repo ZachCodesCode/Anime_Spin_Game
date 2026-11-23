@@ -1,9 +1,10 @@
 'use strict';
 const {test}=require('node:test'),assert=require('node:assert/strict');
-const fs=require('node:fs'),path=require('node:path'),os=require('node:os');
+const fs=require('node:fs'),path=require('node:path');
+const {fileDatabase}=require('./test-helpers/sqlite');
 const V=require('./versioning'),R=require('./run'),C=require('./core'),bank=require('./questions');
 const {service}=require('../api/_ascent-versioning');
-async function fixture(run){const root=fs.mkdtempSync(path.join(os.tmpdir(),'ascent-release-policy-')),db=require('@libsql/client').createClient({url:'file:'+path.join(root,'db')});const ensureAscent=()=>db.execute('CREATE TABLE IF NOT EXISTS ascent_scores(day TEXT,guest TEXT,score INTEGER,answers TEXT,created_at INTEGER,PRIMARY KEY(day,guest))');try{await run(db,ensureAscent);}finally{await db.close();fs.rmSync(root,{recursive:true,force:true,maxRetries:8,retryDelay:100});}}
+async function fixture(run){const owned=await fileDatabase('ascent-release-policy-'),{db}=owned;const ensureAscent=()=>db.execute('CREATE TABLE IF NOT EXISTS ascent_scores(day TEXT,guest TEXT,score INTEGER,answers TEXT,created_at INTEGER,PRIMARY KEY(day,guest))');try{await run(db,ensureAscent);}finally{await owned.dispose();}}
 test('production baseline includes all current answers and immutable releases remain loadable',()=>{
  const frozen=V.load(require('./versioning/legacy.json').bankVersion);assert.deepEqual(frozen.bank,JSON.parse(JSON.stringify(bank)));
  for(const dir of fs.readdirSync(path.join(__dirname,'versioning/releases')))V.load(dir);

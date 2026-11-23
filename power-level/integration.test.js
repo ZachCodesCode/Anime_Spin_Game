@@ -1,14 +1,13 @@
 const {test}=require('node:test');
 const assert=require('node:assert/strict');
-const {createClient}=require('@libsql/client');
+const {fileDatabase}=require('./test-helpers/sqlite');
 const {service}=require('../api/_ascent-versioning');
-const fs=require('node:fs'),os=require('node:os'),path=require('node:path');
+const fs=require('node:fs'),path=require('node:path');
 const C=require('./core'),R=require('./run'),bank=require('./questions');
 async function fixture(fn){
- const dir=fs.mkdtempSync(path.join(os.tmpdir(),'ascent-integration-'));
- const db=createClient({url:'file:'+path.join(dir,'test.db')});
+ const owned=await fileDatabase('ascent-integration-'),{db}=owned;
  const ensureAscent=async()=>{await db.execute('CREATE TABLE IF NOT EXISTS ascent_scores (day TEXT,guest TEXT,score INTEGER,answers TEXT,created_at INTEGER,PRIMARY KEY(day,guest))');};
- try{await fn(db,ensureAscent);}finally{await db.close();fs.rmSync(dir,{recursive:true,force:true,maxRetries:8,retryDelay:100});}
+ try{await fn(db,ensureAscent);}finally{await owned.dispose();}
 }
 test('legacy API contract and existing rows survive additive setup',()=>fixture(async(db,ensureAscent)=>{
  const api=service({db,ensureAscent}),day='2026-11-15',now=new Date(day+'T12:00:00Z');
