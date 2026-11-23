@@ -278,3 +278,84 @@ The same authorized private bundle/bootstrap workflow supports the enriched stor
 see `catalogue/TEAM-SETUP.md` and `traits/importer/KNOWLEDGE.md`. Actual transfer
 permission and access-controlled storage are still required. No daily updater,
 live provider/AI call, fabricated maintainer decision or production sync was added.
+
+## Saved ACDB character-page extraction — PR #28 continuation
+
+The offline saved-page adapter reuses the existing prepared ledger, persistent
+SQLite store, ACDB policy, search, generator and private team-transfer workflow.
+Input modes are one HTML file, a directory, a URL/ID manifest, bounded supplied
+text, or existing structured profiles. No SQL bulk import was repeated. Optional
+network acquisition fails closed without a real documented grant; no character
+page was requested from the website in this task. Raw HTML/data stay private.
+
+Final corrected real-data results:
+
+| Metric | Actual count |
+| --- | ---: |
+| Existing saved HTML pages processed | 30 |
+| Source characters including supplied Usopp | 31 |
+| Canonical identities matched | 31 |
+| Remaining identity/parse failures | 0 |
+| HTML character-tag assignments extracted | 118 |
+| New tag assignments beyond Usopp | 118 |
+| Total active ACDB tags including original Usopp 17 | 135 |
+| Distinct labels in these inputs | 95 |
+| New distinct positive character/trait/value triples | 197 |
+| Existing characters gaining new information | 30 |
+| Original positive triples missing afterward | 0 |
+
+The 30-page import prepared 105 source-trusted profile observations in addition to
+118 trusted tag observations; 90 profile observations remain held/pending. New
+triples include 87 literal `source.tag` values and source aliases, not 197 newly
+verified biological attributes or accepted game answers. Unknown tags are retained
+rather than guessed. Existing equivalent basic SQL attributes were skipped (130
+observations in the corrected import); source duplicates retain their provenance.
+
+The parser scopes tags to the character's own section, rejects conflicting IDs,
+excludes navigation/advertisements/comments and retains partial-input uncertainty.
+It preserves original tag IDs when supplied, raw labels, source URLs, page hashes,
+source-record import timestamps, anime context and licensing holds. Ages remain
+multi-valued with unknown chronology; absent information is not false. Relations
+preserve direction (subject's `Mother of X` means target X is a child), and source
+character identity is frozen before related characters are parsed. Only narrow
+exact-subject description templates yield facts; other prose is hashed and pending.
+Full biography reuse still requires an actual configured grant.
+
+Real validation found and corrected an early parser variable collision between
+source and relationship-target names. It caused apparent identity disagreements
+and two incorrect temporary provider links. These were parser artifacts, not
+preexisting crosswalk failures. Prototype projections were quarantined; original
+metadata/source facets were restored from the verified backup and all 30 pages
+were reprocessed correctly. Histories remain append-only, with no original
+observation deleted or rewritten. New regression tests assert source names, tag
+ownership and canonical bindings when relationships are present. Earlier private
+prototype receipts are explicitly superseded by the final corrected report.
+
+The independent preservation audit hashes all original 2,279,002 observations
+identically before/after. Original bindings, canonical names/aliases/appearances,
+Wikidata observations and legacy review state are preserved. Only two legitimate
+new ACDB provider links were attached to existing canonical identities. Unassigned
+UI markers (`Unsorted`) are held; stable deep hashing prevents relationship
+observation duplication from JSON key ordering. Indexed current-profile reads
+avoid repeatedly scanning multi-gigabyte historical source records during batches.
+
+All 17 supplied Usopp tags persist; fresh-process readback confirms ages 17/19,
+height 174 cm and April 1 birthday. No complete saved Usopp HTML page was available
+or fabricated: acceptance used his supplied tag text and structured profile plus
+30 other real HTML pages. Actual data counts are separate from synthetic fixtures.
+
+Existing-generator candidate counts: ninjas **86 → 87**, sword equipment/users
+**0 → 3**. Pirates 271, snipers 2, swordsmen 116, assassins 16, demons 83, goggles 1,
+ponytail 1, masks 1 and lightning 11 remain unchanged. Alias/short-name collisions
+still hold candidates; sword equipment does not imply a swordsman occupation.
+No measured popularity/response frequency, rarity approval or Limit Break choice
+was fabricated. Nothing was approved or published automatically.
+
+**264 tests pass**, including 19 saved-page/parser regression tests. Build,
+catalogue/trait validation, release integrity, real-data replay/readback, full local
+SQLite integrity and preservation checks pass. Live game/API/answer banks,
+scoring, dates, Descent, production Turso and the separate #14–16 release remain
+unchanged. No merge, deployment or versioning activation occurred. See
+`catalogue/acdb/PAGES.md` and `catalogue/TEAM-SETUP.md` for actual commands and
+permission/private-transfer requirements. Raw pages and the SQLite database are
+excluded from Git and Vercel; ACDB ODbL/DbCL publication holds remain intact.

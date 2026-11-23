@@ -256,3 +256,17 @@ permitted and needed. No automatic daily updater is enabled. Facts remain intern
 candidates until question eligibility, aliases, editorial rarity, source rights and
 final release approval have been checked. A Wikidata CC0 claim does not remove
 ACDB's database-derived publication obligations from a combined result.
+
+## Saved ACDB character pages
+
+The local [ACDB page workflow](acdb/PAGES.md) extracts the exact character Tags
+section and profile facts into the same indexed knowledge store. It accepts one
+saved HTML file, a directory, a URL/ID manifest, bounded supplied text, or existing
+structured profile exports. Run `npm run catalogue:acdb-pages -- import --input
+/absolute/path/to/your-private-manifest.json` with the same private database and
+review-state environment variables above. Then use `inspect --character
+acdb-character-12445`, `search --tag goggles`, or `generate --tag pirate --output
+/absolute/private/NEW-draft.json` through that command. No webpage request occurs
+during import or gameplay. The optional network mode requires an actual documented
+ACDB authorization; no grant was supplied or fabricated. Raw HTML remains excluded
+from Git/hosting, and stored source-trusted traits still require release review.

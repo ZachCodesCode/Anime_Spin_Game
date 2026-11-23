@@ -251,7 +251,7 @@ def restore_bundle(db,archive):
  return metrics(db)
 
 def main():
- command,file=sys.argv[1:3];db=connect(file,command in ['metrics','validate','search','profile','prominence','bindings','identities','values','current-facets','snapshot'] and pathlib.Path(file).exists())
+ command,file=sys.argv[1:3];db=connect(file,command in ['metrics','validate','search','profile','prominence','bindings','identities','values','current-facets','snapshot','active-profiles'] and pathlib.Path(file).exists())
  try:
   if command=='ingest':result=ingest(db,sys.argv[3],int(sys.argv[4]),int(sys.argv[5]) if len(sys.argv)>5 else None)
   elif command=='metrics':result=metrics(db)
@@ -292,7 +292,23 @@ def main():
    for start in range(0,len(spec['ids']),400):
     chunk=spec['ids'][start:start+400];sql='SELECT o.character_id,o.trait,o.value,json_extract(o.body,\"$.context\")'+active(db)+' AND o.character_id IN ('+','.join('?' for _ in chunk)+') AND o.trait IN ('+','.join('?' for _ in spec['traits'])+')'
     result.extend([{'characterId':r[0],'traitId':r[1],'value':json.loads(r[2]),'context':json.loads(r[3])} for r in db.execute(sql,chunk+spec['traits'])])
-  elif command=='identities':result=[json.loads(r[0]) for r in db.execute('SELECT body FROM identities')]
+  elif command=='active-profiles':
+   spec=json.load(sys.stdin);result={}
+   if len(spec['providerIds'])>5000:raise ValueError('At most 5000 active profiles')
+   for provider in spec['providerIds']:
+    identity=db.execute('SELECT i.body FROM bindings b JOIN identities i ON i.id=b.character_id WHERE b.provider_id=?',(provider,)).fetchone()
+    current=db.execute('SELECT r.body FROM current_records c JOIN records r ON r.version=c.version AND r.provider_id=c.provider_id WHERE c.provider_id=?',(provider,)).fetchone()
+    if not identity and not current:continue
+    facts=[{**json.loads(r[0]),'active':True} for r in db.execute("SELECT o.body FROM observations o JOIN current_fields c ON c.provider_id=o.provider_id AND c.version=o.version AND c.facet=json_extract(o.body,'$.facet') WHERE o.provider_id=?",(provider,))]
+    result[provider]={'identity':[json.loads(identity[0])] if identity else [],'observations':facts,'currentSourceRecord':json.loads(current[0]) if current else None}
+  elif command=='identities':
+   raw=sys.stdin.read();result=[]
+   if raw:
+    ids=json.loads(raw)['ids']
+    if len(ids)>5000:raise ValueError('At most 5000 requested identities')
+    for start in range(0,len(ids),400):
+     chunk=ids[start:start+400];result.extend(json.loads(r[0]) for r in db.execute('SELECT body FROM identities WHERE id IN ('+','.join('?' for _ in chunk)+')',chunk))
+   else:result=[json.loads(r[0]) for r in db.execute('SELECT body FROM identities')]
   elif command=='profile':
    key=sys.argv[3];result={'identity':[json.loads(r[0]) for r in db.execute('SELECT body FROM identities WHERE id=?',(key,))],'observations':[{**json.loads(r[0]),'active':bool(r[1])} for r in db.execute("SELECT o.body,EXISTS(SELECT 1 FROM current_fields c WHERE c.provider_id=o.provider_id AND c.version=o.version AND c.facet=json_extract(o.body,'$.facet')) FROM observations o WHERE o.character_id=? OR o.provider_id=?",(key,key))],'sourceRecords':[json.loads(r[0]) for r in db.execute('SELECT body FROM records WHERE character_id=? OR provider_id=?',(key,key))]}
   else:raise ValueError('Unknown store command')

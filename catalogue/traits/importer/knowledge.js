@@ -18,6 +18,7 @@ function descriptionFacts(text,name,url){
  const escaped=name.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
  const emit=(traitId,value,label)=>facts.push({traitId,value,rawField:'description.'+label,rawValue:value,sourceType:'profile',descriptionDerived:true,extraction:'structured_field',url,locator:'Exact-subject '+label+' sentence',fact:name+' explicitly has '+label+': '+value+'.',context:{animeId:null,scope:'Explicit description sentence; period unknown',persistence:'unknown',form:null}});
  for(const sentence of text.trim().split(/\n|(?<=\.)\s+/)){
+  const crewRole=new RegExp('^'+escaped+' is the (sniper|doctor|musician|chef) of (?:the )?([^.;]{2,100})\\.$','i').exec(sentence.trim());if(crewRole){emit('occupation.role',crewRole[1].toLowerCase(),'occupation');emit('affiliation.membership',crewRole[2],'affiliation');}
   const role=new RegExp('^'+escaped+' is (?:a|an) (sniper|pirate|doctor|teacher|ninja|samurai|musician)\\.$','i').exec(sentence.trim());if(role)emit('occupation.role',role[1].toLowerCase(),'occupation');
   const service=new RegExp('^'+escaped+' serves as (?:a|an) (sniper|doctor|musician|chef) for (?:the )?([^.;]{2,100})\\.$','i').exec(sentence.trim());if(service){emit('occupation.role',service[1].toLowerCase(),'occupation');emit('affiliation.membership',service[2],'affiliation');}
   const equipment=new RegExp('^'+escaped+' uses (?:a|an) (slingshot|sword|bow|gun|staff|shield)\\.$','i').exec(sentence.trim());if(equipment)emit('equipment.weapon',equipment[1].toLowerCase(),'equipment');
@@ -65,7 +66,7 @@ function prepare({input,provider,mappings,manifest,catalogue,legacy,output,file}
    let traitId=f.traitId,value=f.value,reason=f.normalizationHold||null;
    if(f.sourceType==='tag'&&traitId==='source.unmapped_tag'){traitId='source.tag';value=f.rawLabel;reason=null;}
    const def=definition.get(traitId);if(!def||typeof value!==def.valueType||def.allowedValues.length&&!def.allowedValues.includes(value))reason||='Unknown or incompatible source value';
-   if(value==null||typeof value==='string'&&/^(unknown|not visible|n\/a)$/i.test(value))reason||='Missing source value';
+   if(value==null||typeof value==='string'&&/^(unknown|not visible|n\/a|unsorted|unassigned)$/i.test(value))reason||='Missing source value';
    let url;try{url=new URL(f.url);}catch{reason||='Missing source URL';}
    if(url&&(!['animecharactersdatabase.com','www.animecharactersdatabase.com'].includes(url.hostname)||url.protocol!=='https:'||url.searchParams.get('id')!==externalId))reason||='Source URL/provider ID mismatch';
    if(!f.locator||!f.fact)reason||='Missing provenance locator';
