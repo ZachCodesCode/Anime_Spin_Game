@@ -43,3 +43,10 @@ historical deployment uncertainty, and verification of actual browser-first futu
 selection after approved content is appended. Private data remains excluded from
 Git and Vercel. The complete candidate packet stays in the owner's private research
 store; no restricted answer bank is publicly committed to meet a deadline.
+
+Source-history follow-up: 36 readable main-branch question/run snapshots across
+Toronto dates November 11–23 were reconstructed (the preceding source revision
+plus each same-day question/run revision). No equivalent normalized concept was
+found for the 21 selections. See ascent-14-16-history-check.json for every source
+revision, date, question ID and prompt. Commit timestamps do not establish actual
+deployment times; that limitation is preserved, not converted into confirmation.
