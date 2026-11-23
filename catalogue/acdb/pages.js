@@ -20,7 +20,7 @@ function textProfile(text,entry){
 function parse(content,entry={}){
  if(Buffer.byteLength(content)>10*1024*1024)throw Error('Page exceeds 10 MiB limit');
  if(entry.type==='text')return textProfile(content,entry);
- const r=cp.spawnSync('python3',['-B',path.join(__dirname,'page-parser.py')],{input:JSON.stringify({html:content,entry}),encoding:'utf8',maxBuffer:32*1024*1024,timeout:60000});if(r.status||r.error)throw Error(r.stderr?.trim()||r.error?.message||'HTML parser failed');return JSON.parse(r.stdout);
+ const r=cp.spawnSync(process.env.ASCENT_PYTHON||(process.platform==='win32'?'python':'python3'),['-B',path.join(__dirname,'page-parser.py')],{input:JSON.stringify({html:content,entry}),encoding:'utf8',maxBuffer:32*1024*1024,timeout:60000});if(r.status||r.error)throw Error(r.stderr?.trim()||r.error?.message||'HTML parser failed');return JSON.parse(r.stdout);
 }
 function collect(input){
  input=path.resolve(input);if(fs.lstatSync(input).isSymbolicLink())throw Error('Input symlinks refused');const stat=fs.statSync(input);let entries,base=path.dirname(input),manifest;

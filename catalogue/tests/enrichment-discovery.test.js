@@ -16,8 +16,8 @@ for provider in ['a','b']:
   fact={'sourceProvider':'ACDB','trustStatus':'source_trusted','facet':'facet'}
   s.execute('INSERT INTO observations VALUES(?,?,?,?,?,?,?)',('fixture',trait,json.dumps(value),json.dumps(fact),provider,version,'source_trusted'))
 s.commit()`;
-  let r=cp.spawnSync('python3',['-c',python,file],{encoding:'utf8'});assert.equal(r.status,0,r.stderr);
-  r=cp.spawnSync('python3',['-B',path.resolve(__dirname,'../enrichment/coverage.py'),file,dir,'before'],{encoding:'utf8'});assert.equal(r.status,0,r.stderr);
+  let r=cp.spawnSync(process.env.ASCENT_PYTHON||(process.platform==='win32'?'python':'python3'),['-c',python,file],{encoding:'utf8'});assert.equal(r.status,0,r.stderr);
+  r=cp.spawnSync(process.env.ASCENT_PYTHON||(process.platform==='win32'?'python':'python3'),['-B',path.resolve(__dirname,'../enrichment/coverage.py'),file,dir,'before'],{encoding:'utf8'});assert.equal(r.status,0,r.stderr);
   const m=JSON.parse(fs.readFileSync(path.join(dir,'before-metrics.json')));assert.equal(m.uniquePositiveTriples,3);assert.equal(m.genericGenderClassificationTriples,1);assert.equal(m.aliasTriples,1);assert.equal(m.profile,0);assert.equal(m.occupations,0);
   const row=JSON.parse(fs.readFileSync(path.join(dir,'before-coverage.ndjson'),'utf8').trim());assert.deepEqual(row.sourceTrustClasses,['source_trusted']);assert.deepEqual(row.sourceProviders,['ACDB']);assert.equal(row.absenceMeans,'UNKNOWN');
  }finally{fs.rmSync(dir,{recursive:true,force:true});}

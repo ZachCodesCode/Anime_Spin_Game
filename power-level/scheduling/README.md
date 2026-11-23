@@ -46,14 +46,21 @@ runs conservatively seed prior use. Possible historical alternatives are never u
 as player-performance denominators. Already-pinned future days are preserved; if a
 pin conflicts with this policy, offline validation fails rather than rewriting it.
 
-Repeats require at least **50** attributable completed runs, a **95% Wilson upper
-success bound ≤50%**, and approved clear wording/adequate answer coverage for *every
-historical scoring version represented*. Recorded anomalies block ranking. Low
-success with incomplete answers or unclear wording goes to editorial/expansion
-review. Questions with insufficient data are UNKNOWN; popularity cannot substitute.
-Eligible candidates are ordered by Wilson difficulty bands, prior repeat frequency,
-recency and stable ID, so similarly difficult alternatives are not ignored in favor
-of a single question cycling every 14 days. Published banks/scoring are unchanged.
+Repeats require an approved current playable answer bank with clear wording and
+adequate, verified coverage. The primary ranking is ascending count of distinct
+canonical accepted answer names in that bank; aliases and unreviewed database
+candidates do not count. There is no arbitrary answer-count cutoff. Empty banks
+and duplicate canonical names are excluded. Fresh sets still win, and returning
+concepts still require 14 Toronto calendar days and at most one slot.
+
+Performance is optional: fewer than 50 attributable runs or missing statistics
+never blocks an otherwise qualified return. When both candidates have reliable
+comparable statistics, their Wilson bounds break equal answer-count ties.
+Known stored-name anomalies and unreviewed changes to historical content remain
+independent quality holds. No statistics or player outcomes are invented.
+
+Equal answer-count and performance ranks use prior repeat frequency, recency and
+stable ID, avoiding an automatic fixed 14-day cycle. Published banks/scoring are unchanged.
 
 ## Read-only performance input
 

@@ -33,15 +33,13 @@ function analyze({rows=[],assignments=[],legacyOrders=[],loadRelease,questions=[
  }
  return {source,counts,attributedAssignments:[...attributedAssignments.values()],denominator:'completed submitted runs with reliably attributed original bank/order; not challenge opens',nullLimitation:'Null combines skips, timeouts and other unsuccessful outcomes; they cannot be separated in stored arrays.',unattributed,questions:[...stats.values()].map(s=>({...s,status:s.exposures?'OBSERVED_COMPLETED_RUNS':'UNKNOWN',successPercentage:s.exposures?100*s.valid/s.exposures:null,wilson95:wilson(s.valid,s.exposures),smoothedSuccess:s.exposures?(s.valid+1)/(s.exposures+2):null,sampleAdequate:s.exposures>=50,confidence:s.exposures?'Original frozen bank/order established; completed-run-only selection bias':'No safely attributable results'}))};
 }
-function repeatAssessment(performance,quality,{minSamples=50,maxUpper=.5}={}){
- if(!performance||performance.exposures<minSamples||!performance.wilson95)return {eligible:false,reason:'UNKNOWN or insufficient completed-run sample'};
- if(new Set(Object.values(performance.versionDetails||{}).map(v=>v.contentHash)).size>1&&quality?.versionsComparable!==true)return {eligible:false,reason:'Changed historical wording/answer lists require explicit comparability review'};
- if(performance.bankVersions?.some(v=>!quality?.reviewedBankVersions?.includes(v)))return {eligible:false,reason:'Historical answer-bank coverage/wording review required for each scored version'};
- if(performance.invalidStoredNames)return {eligible:false,reason:'Stored-name or attribution anomalies require investigation'};
+function repeatAssessment(performance,quality,{minSamples=50}={}){
+ if(performance?.invalidStoredNames)return {eligible:false,reason:'Stored-name anomalies require investigation'};
+ if(performance&&new Set(Object.values(performance.versionDetails||{}).map(v=>v.contentHash)).size>1&&quality?.versionsComparable!==true)return {eligible:false,reason:'Changed historical content requires comparability review'};
+ if(performance?.bankVersions?.some(v=>!quality?.reviewedBankVersions?.includes(v)))return {eligible:false,reason:'Historical answer-bank review required'};
  if(quality?.coverage==='incomplete')return {eligible:false,reason:'Answer-bank expansion required',queue:'coverage'};
  if(quality?.wording==='ambiguous')return {eligible:false,reason:'Wording review required',queue:'wording'};
  if(quality?.status!=='approved'||quality.wording!=='clear'||quality.coverage!=='adequate')return {eligible:false,reason:'Editorial fairness/coverage review required'};
- if(performance.wilson95.upper>maxUpper)return {eligible:false,reason:'Not reliably low success; do not recycle automatically'};
- return {eligible:true,reason:'Adequate completed-run sample; low 95% Wilson upper bound and approved fair coverage'};
+ return {eligible:true,reason:'Approved fair answer bank; rank primarily by accepted canonical-answer count',performanceReliable:Boolean(performance&&performance.exposures>=minSamples&&performance.wilson95&&!performance.invalidStoredNames&&(!performance.bankVersions?.length||performance.bankVersions.every(v=>quality.reviewedBankVersions?.includes(v)))&&new Set(Object.values(performance.versionDetails||{}).map(v=>v.contentHash)).size<=1)};
 }
 module.exports={wilson,analyze,repeatAssessment};
