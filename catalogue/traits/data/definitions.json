@@ -620,5 +620,37 @@
     "valueType": "string",
     "allowedValues": [],
     "guidance": "Literal structured source relation with provenance and context. Do not infer a species, ability, occupation or membership subtype from a broad characteristic or affiliation. Source trust and release approval remain separate."
+  },
+  {
+    "id": "profile.citizenship",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "label": "Citizenship",
+    "guidance": "Explicit source-reported country of citizenship; not ethnicity or inferred birthplace."
+  },
+  {
+    "id": "profile.languages",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "label": "Languages",
+    "guidance": "Languages explicitly reported for the character; adaptation context may be unknown."
+  },
+  {
+    "id": "profile.residence",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "label": "Residence",
+    "guidance": "Explicit source-reported place of residence; period must remain unknown unless supplied."
+  },
+  {
+    "id": "profile.blood_type",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "label": "Blood type",
+    "guidance": "Explicit fictional character blood group; not inferred from personality or appearance."
   }
 ]
