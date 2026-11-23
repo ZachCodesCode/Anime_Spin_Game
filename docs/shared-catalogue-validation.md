@@ -189,3 +189,92 @@ The original JSON ledger SHA256 is unchanged, and the existing knowledge store
 still contains3 source versions,3 completed jobs,56,092 admitted identities,
 297,687 historical source records and2,237,168 observations. No gameplay, score,
 leaderboard, archive, Anime Descent or separate release changes were made.
+
+## Real Wikidata enrichment — 2026-11-22 (PR #28 continuation)
+
+Continues `90d2eb4` on `feature/shared-anime-character-database`. No new branch,
+PR, production migration or answer publication. A verified consistent pre-write
+SQLite backup was retained privately. All source retrieval uses official scoped
+Wikidata APIs, with identifying User-Agent, bounded paginated/batched requests,
+Retry-After/maxlag backoff and cached checkpoints. ACDB's official tag endpoint
+still requires a key: **zero new ACDB tag assignments**; no unchanged SQL rerun,
+character-page scrape or authentication bypass.
+
+Actual imported cohort: **9,016 QIDs**, including 8,179 returned P4085 IDs and
+2,368 returned P7013 IDs. Preliminary separate COUNT queries returned slightly
+larger counts; the difference is unresolved. This is completed ingestion of the
+enumerated identifier-backed cohort, not exhaustive worldwide anime coverage.
+The representative real 40-character pilot preceded the full cohort import.
+Final active projection, after identity quarantine:
+
+| Metric | Actual result |
+| --- | ---: |
+| Existing identities confidently matched | 5,111 |
+| New independent Wikidata source identities | 1,722 |
+| Held identities | 2,183 |
+| Active Wikidata source-trusted statements | 39,714 |
+| Distinct Wikidata character/trait/value triples | 39,710 |
+| New distinct triples beyond ACDB | 32,803 |
+| Duplicate triples already present in ACDB | 6,907 |
+| Characters gaining new information | 6,831 |
+| Newly searchable characters | 2,184 |
+| Total searchable characters | 58,275 |
+
+The new information includes normalized occupations (794 statements), literal
+other occupations (2,684), abilities/transformations (753), affiliations (1,139),
+species (237), hair (1,802), eyes (1,528), personality (316), family (1,326),
+other relationships (229), clothing (528), eyewear (44), accessories (31),
+birthdays (133), other characteristics (44), used items (20), and classifications
+(21,491) and gender (6,615). These totals include source duplicates retained as
+evidence; see the private report for distinct-new-fact counts by trait. Generic
+classifications are not inflated into new powers or independently verified traits. Excluding classification and gender, there are 9,214 new distinct facts across 4,016 characters.
+
+Existing generator, identical pre/post query conditions and catalogue metadata:
+
+| Draft category | Before | After |
+| --- | ---: | ---: |
+| Pirates | 1 | 271 |
+| Swordsmen | 0 | 116 |
+| Assassins | 0 | 16 |
+| Demons | 0 | 83 |
+| Lightning | 0 | 11 |
+| Doctors | 0 | 21 |
+| Ninjas | 0 | 86 |
+| Straw Hat membership | 1 | 4 |
+| Horns | 134 | 133 |
+| Green hair | 1,577 | 1,579 |
+
+Additional queries generated eight blue-haired swordsmen, two snipers, one mask
+candidate, one ponytail and one goggles candidate. There were no retained magic,
+sword-use or horned-magic draft candidates; missing evidence/context/identity
+remains unknown. New identities may increase alias collisions, explaining why a
+category can shrink without deleting its evidence. All lists remain internal
+editorial proposals, not exact-question-eligible or published answers. Existing
+rarity heuristics are retained; no invented popularity or automatic Limit Break.
+
+Identity auditing caught Q126540248 (Ann): its MAL ID conflicted with an existing
+ACDB/name-franchise crosswalk. Five provisional Wikidata observations were retired
+from search and its current binding removed; historical observations and original
+ACDB evidence were preserved. Regression tests cover this differing-MAL fallback,
+quarantine, deleted statements, deprecated/nonvalue claims, qualifiers, temporal
+compatibility, duplicate replay, source provenance and generator trust separation.
+The original 2,237,168 observation rows hash identically in backup and current
+store. All 297,821 baseline ACDB distinct triples, the 17 Usopp tags and the legacy
+5,360-claim review state remain intact. Full-job replay adds zero observations.
+
+**245 automated tests pass**, including existing gameplay, Descent, scoring,
+saved-result/versioning and private-review tests. Build, catalogue (5,831 identities,
+5,950 appearances), trait (56 definitions / 5,360 unchanged pending claims), and
+published release/assignment integrity checks pass. The full production-size local SQLite integrity check passed (`ok`), with zero dangling records, invalid checkpoints, trust mismatches or unsafe trusted assertions; the receipt remains private.
+No runtime game/API/answer-bank files changed in this continuation. Raw source
+snapshots, all statement-level examples (14 real characters), source-linked private
+drafts and transfer-ready local store remain excluded from Git and Vercel.
+
+`wikidata_source_trusted` is explicit source trust for offline generation, not
+independent verification or final approval. References may be absent. Unknown
+adaptation, form or recurrence must still be reviewed for a particular question.
+CC0 on Wikidata does not clear ACDB ODbL/DbCL obligations in combined results.
+The same authorized private bundle/bootstrap workflow supports the enriched store;
+see `catalogue/TEAM-SETUP.md` and `traits/importer/KNOWLEDGE.md`. Actual transfer
+permission and access-controlled storage are still required. No daily updater,
+live provider/AI call, fabricated maintainer decision or production sync was added.

@@ -19,8 +19,11 @@ CREATE INDEX IF NOT EXISTS character_lookup ON observations(character_id,version
 CREATE INDEX IF NOT EXISTS observation_provider ON observations(provider_id,version,status);
 CREATE TABLE IF NOT EXISTS conflicts(id TEXT PRIMARY KEY,body TEXT NOT NULL);
 '''
-def connect(file):
- p=pathlib.Path(file);p.parent.mkdir(parents=True,exist_ok=True,mode=0o700)
+def connect(file,readonly=False):
+ p=pathlib.Path(file)
+ if readonly:
+  db=sqlite3.connect('file:'+str(p)+'?mode=ro',uri=True,timeout=30);db.row_factory=sqlite3.Row;db.execute('PRAGMA cache_size=-65536');db.execute('PRAGMA trusted_schema=OFF');return db
+ p.parent.mkdir(parents=True,exist_ok=True,mode=0o700)
  db=sqlite3.connect(p,timeout=30);db.row_factory=sqlite3.Row;db.execute('PRAGMA journal_mode=WAL');db.execute('PRAGMA synchronous=FULL');db.execute('PRAGMA cache_size=-65536');db.executescript(SCHEMA);db.execute("INSERT OR IGNORE INTO meta VALUES('format','anime-ascent-knowledge-v1')");db.commit();return db
 
 def ingest(db,file,batch=500,stop=None):
@@ -45,6 +48,14 @@ def ingest(db,file,batch=500,stop=None):
      old=db.execute('SELECT character_id FROM bindings WHERE provider_id=?',(provider_id,)).fetchone()
      if old and identity and old[0]!=identity['id']:hold='Persistent provider identity collision';identity=None
      if hold:
+      if provider_id.startswith('wikidata-character-'):
+       db.execute('UPDATE current_fields SET version=max(version,?) WHERE provider_id=?',(version,provider_id))
+       if old:
+        prior_identity=db.execute('SELECT body FROM identities WHERE id=?',(old[0],)).fetchone()
+        if prior_identity:
+         current=json.loads(prior_identity[0]);current['providerIds']=[p for p in current.get('providerIds',[]) if p!=provider_id];db.execute('UPDATE identities SET body=? WHERE id=?',(dump(current),old[0]))
+        # Prior source-record versions preserve the rejected crosswalk; never leave it active.
+        db.execute('DELETE FROM bindings WHERE provider_id=?',(provider_id,))
       conflict={'providerId':provider_id,'hold':hold,'version':job};db.execute('INSERT OR IGNORE INTO conflicts VALUES(?,?)',(digest(conflict),dump(conflict)))
      if identity:
       old_identity=db.execute('SELECT body FROM identities WHERE id=?',(identity['id'],)).fetchone()
@@ -80,7 +91,7 @@ def ingest(db,file,batch=500,stop=None):
   if offset!=header['total']:raise ValueError('Prepared source record count mismatch')
   return {'complete':True,'processed':offset,'total':header['total'],'addedObservations':added}
 
-def active(db):return ''' FROM observations o JOIN current_fields c ON c.provider_id=o.provider_id AND c.version=o.version AND c.facet=json_extract(o.body,'$.facet') JOIN identities i ON i.id=o.character_id WHERE o.status='source_trusted' '''
+def active(db):return ''' FROM observations o JOIN current_fields c ON c.provider_id=o.provider_id AND c.version=o.version AND c.facet=json_extract(o.body,'$.facet') JOIN identities i ON i.id=o.character_id WHERE o.status IN ('source_trusted','wikidata_source_trusted') '''
 def metrics(db):
  # One sequential current-observation pass avoids repeated multi-gigabyte scans and
  # GROUP BY plans that walk a non-covering trait index in random table order.
@@ -92,7 +103,7 @@ def metrics(db):
   f=json.loads(row[1])
   if f.get('sourceType')=='tag':tag_assignments+=1;tags.add(f.get('sourceTagId') or f.get('rawLabel'));unsupported_tags+=int(f['traitId']=='source.tag')
   description_claims+=int(bool(f.get('descriptionDerived')));relationships+=int(bool(f.get('relationship')))
-  if row[0]!='source_trusted':continue
+  if row[0] not in ['source_trusted','wikidata_source_trusted']:continue
   observations+=1;characters.add(f['characterId']);providers.add(f['providerId']);by_trait[f['traitId']]=by_trait.get(f['traitId'],0)+1
   values.add((f['traitId'],dump(f['value'])));claims.add((f['characterId'],f['traitId'],dump(f['value']),digest(f.get('context'))));profile_facts+=int(f.get('sourceType')=='profile')
  skipped=0;hold_reasons={}
@@ -110,6 +121,52 @@ def metrics(db):
  'descriptionDerivedClaims':description_claims,'relationshipLinks':relationships,'legacySnapshots':count('SELECT count(*) FROM legacy'),
  'conflicts':count('SELECT count(*) FROM conflicts'),'byTrait':by_trait}
 
+def time_bounds(raw):
+ # Wikidata uses signed, potentially extended years; 00 month/day means unknown.
+ import re
+ m=re.fullmatch(r'([+-]?)([0-9]+)-([0-9]{2})-([0-9]{2})T.*',str(raw))
+ if not m:return None
+ year=int(m[2])*(-1 if m[1]=='-' else 1);month=int(m[3]);day=int(m[4])
+ return ((year,month or 1,day or 1),(year,month or 12,day or 31))
+def period(context):
+ t=context.get('temporal',{});start=time_bounds(t.get('start'));end=time_bounds(t.get('end'));at=time_bounds(t.get('at'))
+ lower=start[0] if start else None;upper=end[1] if end else None
+ if at:lower=max(lower,at[0]) if lower else at[0];upper=min(upper,at[1]) if upper else at[1]
+ return lower,upper
+def compatible(a,b):
+ if a.get('animeId') and b.get('animeId') and a['animeId']!=b['animeId']:return False
+ if a.get('form') and b.get('form') and a['form']!=b['form']:return False
+ sa,ea=period(a);sb,eb=period(b)
+ if sa and ea and sa>ea or sb and eb and sb>eb:return False
+ if ea and sb and ea<sb or eb and sa and eb<sa:return False
+ return True
+def condition(f,c):
+ if f['traitId']!=c['trait'] or 'value' in c and f['value']!=c['value']:return False
+ if 'month' in c and str(f['value'])[-5:-3]!=str(c['month']).zfill(2):return False
+ return True
+def reconcile_rows(rows,clauses):
+ out=[]
+ for row in rows:
+  chosen=[]
+  def choose(i):
+   if i==len(clauses):return True
+   for f in row['matches']:
+    if condition(f,clauses[i]) and all(compatible(f.get('context',{}),g.get('context',{})) for g in chosen):
+     chosen.append(f)
+     if choose(i+1):return True
+     chosen.pop()
+   return False
+  if not choose(0):continue
+  merged={}
+  for fact in row['matches']:
+   if not any(condition(fact,c) for c in clauses):continue
+   if not all(compatible(fact.get('context',{}),g.get('context',{})) for g in chosen):continue
+   c=fact.get('context',{});key=digest([fact['traitId'],fact['value'],c.get('animeId'),c.get('form'),c.get('temporal')])
+   if key not in merged:merged[key]={**fact,'sourceEvidence':[fact]}
+   else:merged[key]['sourceEvidence'].append(fact)
+  row['matches']=list(merged.values());row['contextUnresolved']=any(f.get('context',{}).get('animeId') is None for f in chosen);out.append(row)
+ return out
+
 def search(db,spec):
  clauses=spec.get('all',[])
  if not clauses:raise ValueError('At least one trait condition required')
@@ -117,7 +174,7 @@ def search(db,spec):
  sql='SELECT i.body AS identity,o.body AS observation'+active(db);args=[]
  for n,c in enumerate(clauses):
   if not isinstance(c.get('trait'),str):raise ValueError('Trait required')
-  alias='x'+str(n);k='k'+str(n);sql+=f" AND EXISTS(SELECT 1 FROM observations {alias} JOIN current_fields {k} ON {k}.provider_id={alias}.provider_id AND {k}.version={alias}.version AND {k}.facet=json_extract({alias}.body,'$.facet') WHERE {alias}.character_id=o.character_id AND {alias}.status='source_trusted' AND {alias}.trait=?";args.append(c['trait'])
+  alias='x'+str(n);k='k'+str(n);sql+=f" AND EXISTS(SELECT 1 FROM observations {alias} JOIN current_fields {k} ON {k}.provider_id={alias}.provider_id AND {k}.version={alias}.version AND {k}.facet=json_extract({alias}.body,'$.facet') WHERE {alias}.character_id=o.character_id AND {alias}.status IN ('source_trusted','wikidata_source_trusted') AND {alias}.trait=?";args.append(c['trait'])
   if 'value' in c:sql+=' AND '+alias+'.value=?';args.append(dump(c['value']))
   if 'month' in c:
    month=c['month']
@@ -129,7 +186,7 @@ def search(db,spec):
  rows=db.execute(sql+' ORDER BY o.character_id,o.trait,o.id',args).fetchall();group={}
  for row in rows:
   identity=json.loads(row['identity']);key=identity['id'];fact=json.loads(row['observation']);group.setdefault(key,{'character':identity,'matches':[],'eligibleForInternalGeneration':True,'independentlyVerified':False,'publicationAuthorized':False})['matches'].append(fact)
- return list(group.values())
+ return reconcile_rows(list(group.values()),clauses)
 
 def validate(db):
  checks={
@@ -138,7 +195,7 @@ def validate(db):
  'danglingCurrentFields':"SELECT count(*) FROM current_fields c LEFT JOIN records r ON r.provider_id=c.provider_id AND r.version=c.version WHERE r.provider_id IS NULL",
  'invalidCheckpoints':"SELECT count(*) FROM jobs WHERE processed<0 OR processed>total",
  'trustStatusMismatch':"SELECT count(*) FROM observations WHERE status!=json_extract(body,'$.trustStatus')",
- 'unsafeTrustedAssertions':"SELECT count(*) FROM observations WHERE status='source_trusted' AND (character_id IS NULL OR json_extract(body,'$.sourceProvider')!='ACDB' OR json_extract(body,'$.publicationAuthorized')!=0 OR json_extract(body,'$.independentlyVerified')!=0 OR json_extract(body,'$.hold') IS NOT NULL)"
+ 'unsafeTrustedAssertions':"SELECT count(*) FROM observations WHERE status IN ('source_trusted','wikidata_source_trusted') AND (character_id IS NULL OR (status='source_trusted' AND json_extract(body,'$.sourceProvider')!='ACDB') OR (status='wikidata_source_trusted' AND (json_extract(body,'$.sourceProvider')!='Wikidata' OR json_extract(body,'$.license')!='CC0-1.0')) OR json_extract(body,'$.publicationAuthorized')!=0 OR json_extract(body,'$.independentlyVerified')!=0 OR json_extract(body,'$.hold') IS NOT NULL)"
  }
  result={key:db.execute(sql).fetchone()[0] for key,sql in checks.items()}
  if any(result.values()):raise ValueError('Knowledge validation failed: '+dump(result))
@@ -194,7 +251,7 @@ def restore_bundle(db,archive):
  return metrics(db)
 
 def main():
- command,file=sys.argv[1:3];db=connect(file)
+ command,file=sys.argv[1:3];db=connect(file,command in ['metrics','validate','search','profile','prominence','bindings','identities','values','current-facets','snapshot'] and pathlib.Path(file).exists())
  try:
   if command=='ingest':result=ingest(db,sys.argv[3],int(sys.argv[4]),int(sys.argv[5]) if len(sys.argv)>5 else None)
   elif command=='metrics':result=metrics(db)
@@ -226,9 +283,18 @@ def main():
    values={}
    for row in db.execute('SELECT o.character_id,o.value'+active(db)+" AND o.trait='identity.story_role'"):values.setdefault(row[0],set()).add(json.loads(row[1]))
    result={key:next(iter(v)) for key,v in values.items() if len(v)==1}
+  elif command=='current-facets':
+   result={}
+   for row in db.execute("SELECT provider_id,facet FROM current_fields WHERE provider_id LIKE 'wikidata-character-%'"):result.setdefault(row[0],[]).append(row[1])
+  elif command=='bindings':result={r[0]:r[1] for r in db.execute('SELECT provider_id,character_id FROM bindings')}
+  elif command=='values':
+   spec=json.load(sys.stdin);result=[]
+   for start in range(0,len(spec['ids']),400):
+    chunk=spec['ids'][start:start+400];sql='SELECT o.character_id,o.trait,o.value,json_extract(o.body,\"$.context\")'+active(db)+' AND o.character_id IN ('+','.join('?' for _ in chunk)+') AND o.trait IN ('+','.join('?' for _ in spec['traits'])+')'
+    result.extend([{'characterId':r[0],'traitId':r[1],'value':json.loads(r[2]),'context':json.loads(r[3])} for r in db.execute(sql,chunk+spec['traits'])])
   elif command=='identities':result=[json.loads(r[0]) for r in db.execute('SELECT body FROM identities')]
   elif command=='profile':
-   key=sys.argv[3];result={'identity':[json.loads(r[0]) for r in db.execute('SELECT body FROM identities WHERE id=?',(key,))],'observations':[json.loads(r[0]) for r in db.execute('SELECT body FROM observations WHERE character_id=? OR provider_id=?',(key,key))],'sourceRecords':[json.loads(r[0]) for r in db.execute('SELECT body FROM records WHERE character_id=? OR provider_id=?',(key,key))]}
+   key=sys.argv[3];result={'identity':[json.loads(r[0]) for r in db.execute('SELECT body FROM identities WHERE id=?',(key,))],'observations':[{**json.loads(r[0]),'active':bool(r[1])} for r in db.execute("SELECT o.body,EXISTS(SELECT 1 FROM current_fields c WHERE c.provider_id=o.provider_id AND c.version=o.version AND c.facet=json_extract(o.body,'$.facet')) FROM observations o WHERE o.character_id=? OR o.provider_id=?",(key,key))],'sourceRecords':[json.loads(r[0]) for r in db.execute('SELECT body FROM records WHERE character_id=? OR provider_id=?',(key,key))]}
   else:raise ValueError('Unknown store command')
   print(json.dumps(result,ensure_ascii=False))
  finally:db.close()

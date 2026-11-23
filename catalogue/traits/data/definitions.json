@@ -556,5 +556,69 @@
     "valueType": "string",
     "allowedValues": [],
     "guidance": "Retain explicit source wording as a short factual claim with context and provenance; interpretation remains a proposal."
+  },
+  {
+    "id": "occupation.named_role",
+    "label": "Explicit named occupation",
+    "category": "occupation",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Preserve explicit structured source statements, stable value identifiers and contextual qualifiers. No inference from descriptions, clothing or appearance. Source trust is not independent verification or publication approval."
+  },
+  {
+    "id": "identity.classification",
+    "label": "Explicit source classification",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Preserve explicit structured source statements, stable value identifiers and contextual qualifiers. No inference from descriptions, clothing or appearance. Source trust is not independent verification or publication approval."
+  },
+  {
+    "id": "affiliation.employer",
+    "label": "Explicit employer",
+    "category": "affiliation",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Preserve explicit structured source statements, stable value identifiers and contextual qualifiers. No inference from descriptions, clothing or appearance. Source trust is not independent verification or publication approval."
+  },
+  {
+    "id": "affiliation.school",
+    "label": "Explicit education affiliation",
+    "category": "affiliation",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Preserve explicit structured source statements, stable value identifiers and contextual qualifiers. No inference from descriptions, clothing or appearance. Source trust is not independent verification or publication approval."
+  },
+  {
+    "id": "equipment.used_item",
+    "label": "Explicitly used item",
+    "category": "appearance",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Preserve explicit structured source statements, stable value identifiers and contextual qualifiers. No inference from descriptions, clothing or appearance. Source trust is not independent verification or publication approval."
+  },
+  {
+    "id": "equipment.vessel",
+    "label": "Explicitly used vessel",
+    "category": "appearance",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Preserve explicit structured source statements, stable value identifiers and contextual qualifiers. No inference from descriptions, clothing or appearance. Source trust is not independent verification or publication approval."
+  },
+  {
+    "id": "identity.characteristic",
+    "label": "Explicit source characteristic",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Literal structured source relation with provenance and context. Do not infer a species, ability, occupation or membership subtype from a broad characteristic or affiliation. Source trust and release approval remain separate."
+  },
+  {
+    "id": "affiliation.association",
+    "label": "Explicit organizational affiliation",
+    "category": "affiliation",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Literal structured source relation with provenance and context. Do not infer a species, ability, occupation or membership subtype from a broad characteristic or affiliation. Source trust and release approval remain separate."
   }
 ]

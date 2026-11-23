@@ -176,3 +176,98 @@ invariants; this can take minutes on multi-gigabyte histories. Provider/version/
 status lookup has its own index, including the empty-coverage anti-join. Validation
 also checks that this query uses the expected index. Neither command changes source
 facts or approves records.
+
+## Wikidata source-trusted enrichment (same SQLite store)
+
+The owner's explicit internal-use instruction is recorded in `wikidata-policy.json`.
+`wikidata_source_trusted` means an explicit, deterministically mapped statement with
+an accepted identity. It does **not** mean independent verification, maintainer
+approval, rights clearance for mixed data, or question-release authorization.
+No provider request is made by gameplay. Raw snapshots, prepared rows and generated
+candidates must stay in the ignored private directory.
+
+First make and verify a consistent SQLite backup (use SQLite's backup API, not a
+live WAL database file copy). Keep the existing catalogue and review-state paths.
+No SQLite schema migration is needed for this adapter.
+
+```sh
+export ASCENT_KNOWLEDGE_DATABASE="$ASCENT_CATALOGUE_DATA_DIR/knowledge.sqlite"
+node catalogue/enrichment/wikidata-collect.js "$ASCENT_CATALOGUE_DATA_DIR/wikidata-NEW-DATE"
+npm run catalogue:knowledge -- import --provider wikidata --input "$ASCENT_CATALOGUE_DATA_DIR/wikidata-NEW-DATE/wikidata-snapshot.json" --prepared "$ASCENT_CATALOGUE_DATA_DIR/wikidata-NEW-DATE/import.ndjson" --batch-size 100
+npm run catalogue:knowledge -- validate
+```
+
+The collector queries official P4085 (MAL character) and P7013 (ACDB character)
+identifier cohorts, not every fictional entity worldwide. It paginates discovery,
+retrieves 40 entities at a time, identifies the client, throttles requests, honors
+Retry-After/maxlag and checkpoints immutable raw batches. Restart the same command
+to reuse caches; inspect a stale `collector.lock` and its process before removing it.
+Use a **new directory for a fresh source refresh**. Existing caches are intentionally
+not silently refetched. Pinned content-addressed snapshots retain earlier inputs.
+A finished discovery checkpoint is not proof of exhaustive global anime coverage.
+
+Reimport the same prepared job to resume or demonstrate zero duplicate writes.
+For genuinely revised sources use a new snapshot and prepared path: changing an
+existing immutable prepared file is rejected. Each import batch is transactional;
+a stopped full job retains its committed checkpoint. Complete entity snapshots
+retire removed/deprecated statements from active search while preserving history.
+Identity contradictions quarantine that provider's active projection and binding;
+old source records/observations remain inspectable (`profile` exposes `active`).
+
+Identity priority is P4085/P7013 followed by unambiguous documented name **and**
+anime/work match. A different MAL ID blocks a fallback merge even in the same
+franchise. Colliding IDs, real people and unresolved adaptations are held. New
+independent identities use `wikidata-character-Q…`, never invented MAL/ACDB IDs.
+Source labels, Japanese names and aliases are retained in source metadata;
+existing canonical names/aliases are preserved. New aliases still need collision
+and editorial review before becoming accepted game inputs.
+
+Mappings use actual statement properties and resolved values:
+
+| Properties | Stored facts |
+| --- | --- |
+| P106 | Explicit known roles; other roles retained literally as occupation.named_role |
+| P31, P21 | Species/classification and gender; fictional human classification does not override species |
+| P1884, P1340 | Hair and eye colours |
+| P2563, P4675 | Explicit abilities and transformations |
+| P463, P102 | Membership; P108 employer, P69 school, P1416 broader association |
+| P3828, P1552 | Explicit worn items and characteristics; no costume-to-occupation inference |
+| P2283, P1876 | Used equipment versus **vessel** (P1876 is not weapon) |
+| P9652, P569, P2048 | Personality, exact birthday and height with recognized unit |
+| P22/P25/P40/P3373/P26/P451/P1066 | Typed family/partner/student links with resolved targets |
+
+Age, rival/enemy/ally roles, unrecognized units and ambiguous relationship roles
+are not guessed. Unsupported properties remain identified in source metadata.
+Generic magician occupations do not imply magical powers. A sword does not imply
+swordsman. Deprecated/nonvalue statements cannot supply trusted facts. Unknown
+qualifiers, conflicting exclusive values and prior rejections hold the assertion.
+QID, property, statement ID, revision URL, raw value/QID, rank, qualifiers and
+references remain attached to each stored fact. References may be empty: direct
+Wikidata source trust is not corroboration by an independent anime reference.
+
+The existing search/generator now reads both trust statuses and deduplicates
+same-character/value/context hits, preserving separate `sourceEvidence` entries.
+Compound searches reject different known adaptations/forms and disjoint periods.
+Unknown adaptation/recurrence is explicitly flagged; an unspecified context is not
+proof that two traits occur in the same episode or costume. The generator retains
+existing media/alias checks, rarity heuristics and final editorial/Limit Break hold.
+Do not count candidate lists as verified accepted answers. Mixed ACDB/Wikidata
+results retain ACDB ODbL/DbCL holds; CC0 on one source clears no other source.
+
+Use a query such as `{"all":[{"trait":"occupation.role","value":"swordsman"},
+{"trait":"appearance.hair_color","value":"blue"}]}` with the existing search and
+`ascent:generate knowledge` commands above. Membership values are case-sensitive
+resolved source labels (for example `Straw Hat Pirates`). Zero results distinguish
+no mapped positive evidence from unsupported mapping or unavailable ACDB tags;
+unresolved identities are retained separately, not interpreted as negative facts.
+
+### Transfer the enriched store
+
+Use the existing authorized compressed knowledge attachment and trusted checksum
+workflow above, with this code revision on both machines. It carries the same
+SQLite store, both source policies/provenance in source versions, checkpoints and
+legacy reviews. There is no second character database or automatic sync. The
+owner still needs to supply a real private transfer authorization and storage
+location. Keep ACDB restrictions attached even though Wikidata structured data is
+CC0. Raw acquisition caches are excluded from the bundle and require a separately
+permitted private transfer if another maintainer needs to resume acquisition.

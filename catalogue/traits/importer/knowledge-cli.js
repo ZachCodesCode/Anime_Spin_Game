@@ -13,7 +13,7 @@ function main(args=process.argv.slice(2)){
   if(!o.input||!o.provider)throw Error('Import requires --provider and --input');const legacyFile=o.state||process.env.ASCENT_TRAIT_REVIEW_STATE,legacy=legacyFile?JSON.parse(fs.readFileSync(S.privateFile(legacyFile))):undefined;
   if(legacy){const cli=require('./cli');require('../../verification/model').validate(legacy,cli.deps());K.store('legacy',file,[],legacy);}
   const prepared=o.prepared||path.join(path.dirname(file),'prepared',K.hashFile(S.privateFile(o.input))+'.ndjson');fs.mkdirSync(path.dirname(S.privateFile(prepared)),{recursive:true,mode:0o700});
-  const h=K.prepare({input:o.input,provider:o.provider,mappings:o.mappings,manifest:o.manifest?JSON.parse(fs.readFileSync(S.privateFile(o.manifest))):undefined,catalogue:D.read('catalogue.json'),legacy,output:prepared});
+  const h=K.prepare({input:o.input,provider:o.provider,mappings:o.mappings,manifest:o.manifest?JSON.parse(fs.readFileSync(S.privateFile(o.manifest))):undefined,catalogue:D.read('catalogue.json'),legacy,output:prepared,file});
   const batch=Number(o['batch-size']||500),stop=o['stop-after-batches']?Number(o['stop-after-batches']):undefined;
   if(!Number.isInteger(batch)||batch<1||batch>5000||stop!==undefined&&(!Number.isInteger(stop)||stop<1))throw Error('Invalid batch/stop count');
   return {...K.store('ingest',file,[prepared,batch,...(stop?[stop]:[])]),prepared,sourceHash:h.hash,database:file};

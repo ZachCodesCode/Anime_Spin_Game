@@ -238,3 +238,21 @@ No new bulk tag feed is currently accessible. The existing profile importer reta
 original provider tag/assignment IDs and holds explicit series-level tags; use an
 actual authorized export and new private prepared path. The ready-to-send ACDB
 request is linked there. No new database or SQL appearance reimport is required.
+
+## Wikidata enrichment in the same knowledge attachment
+
+The same private SQLite attachment now includes explicit Wikidata statements under
+`wikidata_source_trusted`, separate from ACDB `source_trusted`. Use matching code
+revisions on both machines and run `catalogue:knowledge validate` after bootstrap.
+No additional hosted service, database or gameplay API is required. The original
+5,831-character JSON catalogue and historical review state remain separate and
+unchanged; provider enrichment is in their existing indexed extension.
+
+Follow [the Wikidata workflow](traits/importer/KNOWLEDGE.md#wikidata-source-trusted-enrichment-same-sqlite-store)
+for real official-API collection, cached resume, source refresh, import and compound
+searches. Prefer obtaining the owner's authorized current attachment rather than
+repeating multi-gigabyte ACDB imports. Obtain raw source caches separately only if
+permitted and needed. No automatic daily updater is enabled. Facts remain internal
+candidates until question eligibility, aliases, editorial rarity, source rights and
+final release approval have been checked. A Wikidata CC0 claim does not remove
+ACDB's database-derived publication obligations from a combined result.
