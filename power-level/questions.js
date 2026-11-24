@@ -2392,5 +2392,7 @@ for(const [id,extra] of Object.entries(ASCENT12_13_ADDITIONS)){
 // Preserve the old canonical name and score already stored in player results.
 const oldPolteageist=bank.find(q=>q.id==='timed-v4-wide-ghosts').answers.find(a=>a.name==='Polteregeist');
 oldPolteageist.aliases=[...(oldPolteageist.aliases||[]),'Polteageist'];
+// Today's best-friend answers use final rarity values after the wide-question curve.
+bank.find(q=>q.id==='timed-v4-wide-best-friend-fights').answers.push(a('Asta',10),a('Yuno',10,'Yuno Grinberryall'));
 return bank;})();
 if(typeof module!=="undefined")module.exports=POWER_LEVEL_QUESTIONS;
