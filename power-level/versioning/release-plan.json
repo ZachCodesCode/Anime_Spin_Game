@@ -90,10 +90,10 @@
       "date": "2026-11-25",
       "questions": [
         {
-          "id": "draft-fresh-drama-cast",
-          "text": "Name a character from a drama anime.",
+          "id": "timed-v4-wide-ascent-15-swords",
+          "text": "Name any anime character who uses a sword.",
           "kind": "char",
-          "proposedAnswerCount": 1174,
+          "proposedAnswerCount": 200,
           "acceptedAnswerCount": 0,
           "contentReviewed": false,
           "rarityApproved": false,
@@ -101,10 +101,10 @@
           "noveltyReviewed": false
         },
         {
-          "id": "draft-fresh-mystery-cast",
-          "text": "Name a character from a mystery anime.",
+          "id": "timed-v4-wide-ascent-15-black-hair",
+          "text": "Name any anime character with black hair.",
           "kind": "char",
-          "proposedAnswerCount": 717,
+          "proposedAnswerCount": 324,
           "acceptedAnswerCount": 0,
           "contentReviewed": false,
           "rarityApproved": false,
@@ -112,10 +112,10 @@
           "noveltyReviewed": false
         },
         {
-          "id": "draft-fresh-eighties-titles",
-          "text": "Name an anime that first aired in the 1980s.",
+          "id": "timed-v4-wide-ascent-15-madhouse",
+          "text": "Name any anime animated by Madhouse.",
           "kind": "title",
-          "proposedAnswerCount": 6,
+          "proposedAnswerCount": 258,
           "acceptedAnswerCount": 0,
           "contentReviewed": false,
           "rarityApproved": false,
@@ -123,10 +123,10 @@
           "noveltyReviewed": false
         },
         {
-          "id": "draft-fresh-supernatural-cast",
-          "text": "Name a character from a supernatural anime.",
+          "id": "timed-v4-wide-ascent-15-demons",
+          "text": "Name any demon character from an anime.",
           "kind": "char",
-          "proposedAnswerCount": 606,
+          "proposedAnswerCount": 160,
           "acceptedAnswerCount": 0,
           "contentReviewed": false,
           "rarityApproved": false,
@@ -134,10 +134,10 @@
           "noveltyReviewed": false
         },
         {
-          "id": "draft-fresh-eighties-cast",
-          "text": "Name a character who appears in an anime that began in the 1980s.",
+          "id": "timed-v4-wide-ascent-15-horns",
+          "text": "Name any anime character who has horns.",
           "kind": "char",
-          "proposedAnswerCount": 81,
+          "proposedAnswerCount": 169,
           "acceptedAnswerCount": 0,
           "contentReviewed": false,
           "rarityApproved": false,
@@ -145,10 +145,10 @@
           "noveltyReviewed": false
         },
         {
-          "id": "draft-fresh-two-thousands-titles",
-          "text": "Name an anime that first aired in the 2000s.",
+          "id": "timed-v4-wide-ascent-15-1980s",
+          "text": "Name any anime first released in the 1980s.",
           "kind": "title",
-          "proposedAnswerCount": 50,
+          "proposedAnswerCount": 557,
           "acceptedAnswerCount": 0,
           "contentReviewed": false,
           "rarityApproved": false,
@@ -156,10 +156,10 @@
           "noveltyReviewed": false
         },
         {
-          "id": "draft-fresh-pre-eighties-cast",
-          "text": "Name a character who appears in an anime released before 1980.",
+          "id": "timed-v4-wide-ascent-15-water-abilities",
+          "text": "Name any anime character who uses water-based abilities.",
           "kind": "char",
-          "proposedAnswerCount": 185,
+          "proposedAnswerCount": 150,
           "acceptedAnswerCount": 0,
           "contentReviewed": false,
           "rarityApproved": false,
