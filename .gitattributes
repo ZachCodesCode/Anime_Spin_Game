@@ -6,3 +6,5 @@
 *.woff2 -text
 *.sqlite -text
 *.gz -text
+# This published release's manifest hashes CRLF core.js bytes; keep its checkout faithful.
+power-level/versioning/releases/4eba50caf6778d99e80b9e350bba49d72ee1ad062b193ab703322451f0539522/core.js text eol=crlf
