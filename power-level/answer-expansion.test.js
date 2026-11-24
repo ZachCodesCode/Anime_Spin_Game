@@ -55,13 +55,14 @@ test('answer-only expansion preserves all production metadata, other banks and e
  assert.equal(C.validate(ghost,'Polteageist').answer.name,'Polteregeist');
 });
 
-test('both requested dates and ten years of schedule history retain the same ordered IDs',()=>{
+test('Ascent history and pinned Descent history retain ordered IDs',()=>{
  for(const [date,slugs]of Object.entries(days))assert.deepEqual(R.select(bank,date),slugs.map(id));
  // Answers are not selection inputs: metadata is frozen above and run.js is unchanged.
  assert.deepEqual(R.history(bank,3650),R.history(oldBank,3650));
  for(const date of ['2026-11-11','2026-11-12','2026-11-21','2036-11-21'])assert.deepEqual(R.select(bank,date),R.select(oldBank,date));
  assert.deepEqual(D.bank(bank).filter(q=>q.descent),D.bank(oldBank).filter(q=>q.descent));
- for(const date of ['2026-11-20','2026-11-22','2026-11-23','2027-01-01'])assert.deepEqual(D.select(bank,date),D.select(oldBank,date));
+ for(const date of ['2026-11-20','2026-11-22','2026-11-23'])assert.deepEqual(D.select(bank,date),D.select(oldBank,date));
+ assert.throws(()=>D.select(bank,'2027-01-01'),/Missing assignment/);
 });
 
 test('all appended names and aliases resolve uniquely at final-scale tiers without new special scores',()=>{
