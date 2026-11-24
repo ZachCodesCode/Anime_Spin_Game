@@ -25,6 +25,8 @@
     "catalogue:traits-import": "node catalogue/traits/importer/cli.js",
     "catalogue:acdb-stage": "python3 -B catalogue/acdb/stage.py",
     "catalogue:knowledge": "node catalogue/traits/importer/knowledge-cli.js",
-    "catalogue:acdb-pages": "node catalogue/acdb/pages-cli.js"
+    "catalogue:acdb-pages": "node catalogue/acdb/pages-cli.js",
+    "catalogue:public": "node catalogue/public-data.js",
+    "catalogue:public-export": "node catalogue/public-data.js export"
   }
 }

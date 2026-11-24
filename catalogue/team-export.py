@@ -84,7 +84,10 @@ def export(database,folder,archive,receipt):
  finally:db.close()
 
 if __name__=='__main__':
- if sys.argv[1]=='export':export(*sys.argv[2:])
+ if sys.argv[1]=='public':
+  from public_export import export_public
+  print(json.dumps(export_public(*sys.argv[2:],sha=sha,private=private),ensure_ascii=False))
+ elif sys.argv[1]=='export':export(*sys.argv[2:])
  elif sys.argv[1]=='verify':print(json.dumps(verify(*sys.argv[2:])['compactCounts']))
  elif sys.argv[1]=='restore':print(json.dumps(restore(*sys.argv[2:])))
  else:raise SystemExit('export PRIVATE_SQLITE NEW_PRIVATE_OUTPUT ARCHIVE_GZ RECEIPT_JSON | verify PRIVATE_OUTPUT TRUSTED_MANIFEST_SHA256 | restore PRIVATE_OUTPUT TRUSTED_MANIFEST_SHA256 NEW_PRIVATE_DIRECTORY')

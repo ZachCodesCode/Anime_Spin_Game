@@ -2,3 +2,6 @@
 catalogue/**
 power-level/scheduling/**
 *.private-bundle.json
+
+# Public Git research data is still offline-only; never ship it with the game.
+catalogue/public-data/**

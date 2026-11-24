@@ -1,0 +1,12 @@
+{
+  "id": "ascent-public-source-policy-v1",
+  "schemaVersion": 1,
+  "databaseLicense": "ODbL-1.0",
+  "sources": {
+    "ACDB": {"acquisition": "official-sql-export", "license": "ODbL-1.0 + DbCL-1.0", "permissionURL": "https://www.animecharactersdatabase.com/databasedumps.php", "scope": "Official SQL structured identities, title assignments and explicitly normalized attributes only; no webpage text, images or scraped tags"},
+    "Wikidata": {"acquisition": "official-wikidata-entity-api", "license": "CC0-1.0", "permissionURL": "https://www.wikidata.org/wiki/Wikidata:Licensing", "scope": "Structured source labels, aliases, identifiers, statements and source-native anime assignments only"}
+  },
+  "exclude": ["private reviews", "biographies", "images", "saved webpages", "user-supplied profiles", "Tenrai/MAL names and cast metadata", "held assertions", "AI/editorial extraction", "unresolved cross-source identity links"],
+  "independentVerification": false,
+  "gameplayApproval": false
+}
