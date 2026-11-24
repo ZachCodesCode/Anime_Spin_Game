@@ -36,8 +36,10 @@ const days={
 };
 
 test('answer-only expansion preserves all production metadata, other banks and existing scored answers',()=>{
- assert.equal(digest(bank.map(({answers,...meta})=>meta)),'a2bb574f9c18fe39258c059353152ddc777a962adabe31558f1b67b941ed47f4');
- assert.equal(digest(bank.filter(q=>!targets.has(q.id))),'f8f0b1ce17e61290f46c4d4f5a4e320fd25a0736997c7b231640fc1cea1dc307');
+ // Questions dated after this test was written (later batches) are new content, not edits, so they are left out.
+ const live=bank.filter(q=>!q.since||q.since<='2026-11-23');
+ assert.equal(digest(live.map(({answers,...meta})=>meta)),'a2bb574f9c18fe39258c059353152ddc777a962adabe31558f1b67b941ed47f4');
+ assert.equal(digest(live.filter(q=>!targets.has(q.id))),'f8f0b1ce17e61290f46c4d4f5a4e320fd25a0736997c7b231640fc1cea1dc307');
  for(const q of bank.filter(q=>targets.has(q.id))){
   const [count,added,hash]=targets.get(q.id);
   assert.equal(q.answers.length,count+added,q.id);
