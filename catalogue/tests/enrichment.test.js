@@ -36,8 +36,10 @@ test('aliases preserve separate IDs and flag collisions; rejected suggestions su
  assert.equal(A.merge(rows,rows).length,rows.length);assert.equal(catalogue.characters[0].aliases.length,0);
  const ambiguous=A.propose(catalogue,{Q1:entity(),Q2:{...entity(),id:'Q2'}});assert.ok(!ambiguous.some(x=>x.name==='Documented nickname'));
 });
-test('eligibility inventory covers all active questions and never treats verification as approval',()=>{
- const questions=require('../../power-level/questions'),policy=E.validate(require('../enrichment/eligibility.json'),questions);
+test('historical eligibility inventory retains its complete scope and never treats verification as approval',()=>{
+ const questions=require('../../power-level/versioning/releases/32fb7940214ef6a3e3615e039fa5b5da1e07ed058af118ceafc268be5c65671d/bank.json'),policy=E.validate(require('../enrichment/eligibility.json'),questions);
+ // Main has added prompts without reviewed rules. Full-bank use must still fail closed.
+ assert.throws(()=>E.validate(policy,require('../../power-level/questions')),/Eligibility inventory mismatch/);
  assert.equal(policy.questions.length,71);assert.equal(policy.questions.filter(q=>q.type==='character').length,49);assert.equal(policy.questions.filter(q=>q.type==='non_character').length,22);
  const s={history:[{after:{status:'verified',claim:{traitId:'appearance.hair_color',value:'red',context:{animeId:'mal-anime-1',persistence:'recurring'}}}}]};
  const r=policy.questions.find(x=>x.questionId.endsWith('mix-red-hair'));assert.equal(E.assess(r,s).relevant,true);assert.equal(E.assess(r,s).eligible,false);
@@ -55,8 +57,8 @@ test('bounded selection respects per-anime limits and rejects invalid options',(
  assert.throws(()=>W.candidates({},catalogue,{limit:0}));
 });
 test('invalid eligibility definitions do not silently widen question scope',()=>{
- const policy=structuredClone(require('../enrichment/eligibility.json')),questions=require('../../power-level/questions');
- policy.questions.find(r=>r.type==='character').traitChecks[0].traitId='made-up-trait';assert.throws(()=>E.validate(policy,questions));
+ const policy=structuredClone(require('../enrichment/eligibility.json')),questions=require('../../power-level/versioning/releases/32fb7940214ef6a3e3615e039fa5b5da1e07ed058af118ceafc268be5c65671d/bank.json');
+ policy.questions.find(r=>r.type==='character').traitChecks[0].traitId='made-up-trait';assert.throws(()=>E.validate(policy,questions),/Unknown trait rule/);
 });
 test('Wikidata lowercase statement entity prefixes are valid',()=>{
  const e=entity();e.claims.P1884[0].id='q1$hair';assert.equal(W.candidates({Q1:e},catalogue,{at}).candidates.length,1);

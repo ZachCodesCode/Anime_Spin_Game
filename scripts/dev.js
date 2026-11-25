@@ -5,7 +5,6 @@ const types={'.html':'text/html; charset=utf-8','.css':'text/css','.js':'applica
 function createServer(){return http.createServer(async(req,res)=>{
  const url=new URL(req.url,'http://localhost');
  const json=(status,data)=>{res.writeHead(status,{'Content-Type':'application/json'});res.end(JSON.stringify(data));};
- if(url.pathname==='/api/ascent'&&url.searchParams.get('challenge')==='1')return json(200,{mode:'legacy',date:url.searchParams.get('date')||require('../power-level/core').dateKey()});
  if(url.pathname.startsWith('/api/'))return json(503,{error:'Use Vercel dev for score and suggestion APIs.'});
  let relative;try{relative=decodeURIComponent(url.pathname);}catch{return json(400,{error:'Bad path'});}
  const blocked=p=>p.split(/[\\/]/).some(s=>s.startsWith('.')||s==='node_modules'||s==='catalogue');

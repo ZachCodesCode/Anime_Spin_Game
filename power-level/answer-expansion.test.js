@@ -36,8 +36,10 @@ const days={
 };
 
 test('answer-only expansion preserves all production metadata, other banks and existing scored answers',()=>{
- assert.equal(digest(bank.map(({answers,...meta})=>meta)),'a2bb574f9c18fe39258c059353152ddc777a962adabe31558f1b67b941ed47f4');
- assert.equal(digest(bank.filter(q=>!targets.has(q.id))),'f8f0b1ce17e61290f46c4d4f5a4e320fd25a0736997c7b231640fc1cea1dc307');
+ // Questions dated after this test was written (later batches) are new content, not edits, so they are left out.
+ const live=bank.filter(q=>!q.since||q.since<='2026-11-23');
+ assert.equal(digest(live.map(({answers,...meta})=>meta)),'a2bb574f9c18fe39258c059353152ddc777a962adabe31558f1b67b941ed47f4');
+ assert.equal(digest(live.filter(q=>!targets.has(q.id))),'f8f0b1ce17e61290f46c4d4f5a4e320fd25a0736997c7b231640fc1cea1dc307');
  for(const q of bank.filter(q=>targets.has(q.id))){
   const [count,added,hash]=targets.get(q.id);
   assert.equal(q.answers.length,count+added,q.id);
@@ -53,13 +55,14 @@ test('answer-only expansion preserves all production metadata, other banks and e
  assert.equal(C.validate(ghost,'Polteageist').answer.name,'Polteregeist');
 });
 
-test('both requested dates and ten years of schedule history retain the same ordered IDs',()=>{
+test('Ascent history and pinned Descent history retain ordered IDs',()=>{
  for(const [date,slugs]of Object.entries(days))assert.deepEqual(R.select(bank,date),slugs.map(id));
  // Answers are not selection inputs: metadata is frozen above and run.js is unchanged.
  assert.deepEqual(R.history(bank,3650),R.history(oldBank,3650));
  for(const date of ['2026-11-11','2026-11-12','2026-11-21','2036-11-21'])assert.deepEqual(R.select(bank,date),R.select(oldBank,date));
  assert.deepEqual(D.bank(bank).filter(q=>q.descent),D.bank(oldBank).filter(q=>q.descent));
- for(const date of ['2026-11-20','2026-11-22','2026-11-23','2027-01-01'])assert.deepEqual(D.select(bank,date),D.select(oldBank,date));
+ for(const date of ['2026-11-20','2026-11-22','2026-11-23'])assert.deepEqual(D.select(bank,date),D.select(oldBank,date));
+ assert.throws(()=>D.select(bank,'2027-01-01'),/Missing assignment/);
 });
 
 test('all appended names and aliases resolve uniquely at final-scale tiers without new special scores',()=>{
@@ -102,18 +105,23 @@ test('in-progress and finished production saves restore with identical scores, a
  }
 });
 
-// Exercise the REAL submission handler with isolated in-memory storage; no Turso or credentials.
-function api(date){
- const calls=[];let serial=0;
- class Clock extends Date{static now(){return Date.parse(date+'T17:00:00Z');}}
- const context={module:{exports:{}},Date:Clock,console,require(name){
-  if(name==='./_db.js')return {cors(){},ensureAscent:async()=>{},db:{execute:async request=>{
-   calls.push(request);return request.sql.startsWith('INSERT')?{rowsAffected:1}:{rows:[]};
-  }}};
-  if(name==='./_guest.js')return {guest:()=> 'test-player-'+(++serial)};
-  if(name==='../power-level/core.js')return C;
-  if(name==='../power-level/run.js')return R;
-  if(name==='../power-level/questions.js')return bank;
+// Exercise the REAL submission handler with owned file-backed libSQL; no Turso or credentials.
+async function api(date,t){
+ const calls=[],fs=require('node:fs');let serial=0;
+ const owned=await require('./test-helpers/sqlite').fileDatabase('ascent-answer-api-'),actual=owned.db;
+ t.after(async()=>{await owned.dispose();});
+ const db={execute:async r=>{calls.push(r);return actual.execute(r);},batch:async(rs,mode)=>{calls.push(...rs);return actual.batch(rs,mode);}};
+ const ensureAscent=()=>actual.execute('CREATE TABLE IF NOT EXISTS ascent_scores(day TEXT,guest TEXT,score INTEGER,answers TEXT,created_at INTEGER,PRIMARY KEY(day,guest))');
+ const realService=require('../api/_ascent-versioning').service;
+ const context={module:{exports:{}},console,Date:class extends Date {static now(){return +new Date(date+'T17:00:00Z');}},require(name){
+  name=name.replace(/\.js$/,'');
+  if(name==='../power-level/run')return R;
+  if(name==='../power-level/questions')return bank;
+  if(name==='./_db')return {cors(){},ensureAscent,db};
+  if(name==='./_guest')return {guest:()=> 'test-player-'+(++serial)};
+  if(name==='../power-level/core')return C;
+  if(name==='../power-level/versioning')return require('./versioning');
+  if(name==='./_ascent-versioning')return {service:opts=>{const service=realService(opts);return {...service,submit:(body,who)=>service.submit(body,who,new Date(date+'T17:00:00Z'))};}};
   throw Error('Unexpected dependency '+name);
  }};
  vm.runInNewContext(fs.readFileSync(require.resolve('../api/ascent.js'),'utf8'),context);
@@ -121,13 +129,13 @@ function api(date){
   await context.module.exports({method:'POST',body:{date,answers}},res);return res;
  }};
 }
-test('every new answer and client-canonicalized alias passes the actual API scoring handler',async()=>{
+test('every new answer and client-canonicalized alias passes the actual API scoring handler',async(t)=>{
  for(const date of Object.keys(days)){
-  const ids=R.select(bank,date),qs=ids.map(i=>bank.find(q=>q.id===i)),handler=api(date);
+  const ids=R.select(bank,date),qs=ids.map(i=>bank.find(q=>q.id===i)),handler=await api(date,t);
   for(let i=0;i<qs.length;i++)for(const a of newAnswers(qs[i]))for(const f of [a.name,...a.aliases||[]]){
    const answers=qs.map(()=>null);answers[i]=C.validate(qs[i],f).answer.name;
    const res=await handler.submit(answers);assert.equal(res.code,200,a.name);assert.equal(res.value.score,C.points(a));
-   const insert=handler.calls.findLast(c=>c.sql.startsWith('INSERT'));
+   const insert=handler.calls.findLast(c=>typeof c==='object'&&c.sql.startsWith('INSERT'));
    assert.equal(insert.args[2],C.points(a));assert.equal(JSON.parse(insert.args[3])[i],a.name);
   }
   const invalid=qs.map(()=>null);invalid[0]='not a canonical answer';assert.equal((await handler.submit(invalid)).code,400);

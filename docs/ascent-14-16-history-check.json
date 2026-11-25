@@ -1,0 +1,1832 @@
+{
+  "main": "c8c68da1c8694afab72a1f023967d1c36f1c8427",
+  "method": "Main source snapshots preceding the Toronto date plus each same-day question/run commit; commit timestamps do not prove deployment times",
+  "dates": [
+    {
+      "date": "2026-11-11",
+      "ascent": 1,
+      "confidence": "SOURCE_HISTORY_RECONSTRUCTION_NOT_DEPLOYMENT_PROOF",
+      "snapshots": [
+        {
+          "sha": "70dd0a29558aa7bc4f933ec74c8b0e238752a5d9",
+          "time": "2026-11-07T18:02:20-05:00",
+          "questionIds": [
+            "timed-v4-aot-scouts",
+            "timed-v4-naruto-jutsu",
+            "timed-v4-onepiece-fruit",
+            "timed-v4-demonslayer-breathing",
+            "timed-v4-tokyoghoul-ghouls"
+          ],
+          "questions": [
+            {
+              "id": "timed-v4-aot-scouts",
+              "text": "Attack on Titan \u2014 Name any member of the Survey Corps."
+            },
+            {
+              "id": "timed-v4-naruto-jutsu",
+              "text": "Naruto \u2014 Name any jutsu."
+            },
+            {
+              "id": "timed-v4-onepiece-fruit",
+              "text": "One Piece \u2014 Name any Devil Fruit user."
+            },
+            {
+              "id": "timed-v4-demonslayer-breathing",
+              "text": "Demon Slayer \u2014 Name any Breathing Style or any Breathing form."
+            },
+            {
+              "id": "timed-v4-tokyoghoul-ghouls",
+              "text": "Tokyo Ghoul \u2014 Name any ghoul who worked at Anteiku or fought for Aogiri Tree."
+            }
+          ],
+          "conflicts": []
+        },
+        {
+          "sha": "9e926b32b1d903aeb0fd6dd34e313e45c39f0459",
+          "time": "2026-11-11T15:29:23-05:00",
+          "questionIds": [
+            "timed-v4-naruto-leaf",
+            "timed-v4-onepiece-fruit",
+            "timed-v4-bleach-gotei",
+            "timed-v4-hxh-troupe",
+            "timed-v4-tokyoghoul-ghouls"
+          ],
+          "questions": [
+            {
+              "id": "timed-v4-naruto-leaf",
+              "text": "Naruto \u2014 Name any shinobi from the Hidden Leaf Village."
+            },
+            {
+              "id": "timed-v4-onepiece-fruit",
+              "text": "One Piece \u2014 Name any Devil Fruit user."
+            },
+            {
+              "id": "timed-v4-bleach-gotei",
+              "text": "Bleach \u2014 Name any captain or lieutenant of the Gotei 13, past or present."
+            },
+            {
+              "id": "timed-v4-hxh-troupe",
+              "text": "Hunter \u00d7 Hunter \u2014 Name any member of the Phantom Troupe or the Zoldyck family."
+            },
+            {
+              "id": "timed-v4-tokyoghoul-ghouls",
+              "text": "Tokyo Ghoul \u2014 Name any ghoul who worked at Anteiku or fought for Aogiri Tree."
+            }
+          ],
+          "conflicts": []
+        },
+        {
+          "sha": "209c421256024e0b575ae19f3ea88edadc6ee683",
+          "time": "2026-11-11T11:46:32-05:00",
+          "questionIds": [
+            "timed-v4-naruto-leaf",
+            "timed-v4-onepiece-fruit",
+            "timed-v4-bleach-gotei",
+            "timed-v4-hxh-troupe",
+            "timed-v4-tokyoghoul-ghouls"
+          ],
+          "questions": [
+            {
+              "id": "timed-v4-naruto-leaf",
+              "text": "Naruto \u2014 Name any shinobi from the Hidden Leaf Village."
+            },
+            {
+              "id": "timed-v4-onepiece-fruit",
+              "text": "One Piece \u2014 Name any Devil Fruit user."
+            },
+            {
+              "id": "timed-v4-bleach-gotei",
+              "text": "Bleach \u2014 Name any captain or lieutenant of the Gotei 13, past or present."
+            },
+            {
+              "id": "timed-v4-hxh-troupe",
+              "text": "Hunter \u00d7 Hunter \u2014 Name any member of the Phantom Troupe or the Zoldyck family."
+            },
+            {
+              "id": "timed-v4-tokyoghoul-ghouls",
+              "text": "Tokyo Ghoul \u2014 Name any ghoul who worked at Anteiku or fought for Aogiri Tree."
+            }
+          ],
+          "conflicts": []
+        },
+        {
+          "sha": "ecb78722d6a70948610bd9773713259cd46ff7c2",
+          "time": "2026-11-11T11:28:45-05:00",
+          "questionIds": [
+            "timed-v4-naruto-leaf",
+            "timed-v4-onepiece-fruit",
+            "timed-v4-bleach-gotei",
+            "timed-v4-hxh-troupe",
+            "timed-v4-tokyoghoul-ghouls"
+          ],
+          "questions": [
+            {
+              "id": "timed-v4-naruto-leaf",
+              "text": "Naruto \u2014 Name any shinobi from the Hidden Leaf Village."
+            },
+            {
+              "id": "timed-v4-onepiece-fruit",
+              "text": "One Piece \u2014 Name any Devil Fruit user."
+            },
+            {
+              "id": "timed-v4-bleach-gotei",
+              "text": "Bleach \u2014 Name any captain or lieutenant of the Gotei 13, past or present."
+            },
+            {
+              "id": "timed-v4-hxh-troupe",
+              "text": "Hunter \u00d7 Hunter \u2014 Name any member of the Phantom Troupe or the Zoldyck family."
+            },
+            {
+              "id": "timed-v4-tokyoghoul-ghouls",
+              "text": "Tokyo Ghoul \u2014 Name any ghoul who worked at Anteiku or fought for Aogiri Tree."
+            }
+          ],
+          "conflicts": []
+        }
+      ]
+    },
+    {
+      "date": "2026-11-12",
+      "ascent": 2,
+      "confidence": "SOURCE_HISTORY_RECONSTRUCTION_NOT_DEPLOYMENT_PROOF",
+      "snapshots": [
+        {
+          "sha": "9e926b32b1d903aeb0fd6dd34e313e45c39f0459",
+          "time": "2026-11-11T15:29:23-05:00",
+          "questionIds": [
+            "timed-v4-mha-classes",
+            "timed-v4-blackclover-knights",
+            "timed-v4-demonslayer-ranks",
+            "timed-v4-aot-scouts",
+            "timed-v4-mix-jutsu-quirks"
+          ],
+          "questions": [
+            {
+              "id": "timed-v4-mha-classes",
+              "text": "My Hero Academia \u2014 Name any student in U.A. High\u2019s Class 1-A or Class 1-B."
+            },
+            {
+              "id": "timed-v4-blackclover-knights",
+              "text": "Black Clover \u2014 Name any Magic Knight squad captain or any member of the Black Bulls."
+            },
+            {
+              "id": "timed-v4-demonslayer-ranks",
+              "text": "Demon Slayer \u2014 Name any Hashira or any of the Twelve Kizuki (Upper and Lower Moons)."
+            },
+            {
+              "id": "timed-v4-aot-scouts",
+              "text": "Attack on Titan \u2014 Name any member of the Survey Corps."
+            },
+            {
+              "id": "timed-v4-mix-jutsu-quirks",
+              "text": "Name any jutsu (Naruto) or any Quirk (My Hero Academia)."
+            }
+          ],
+          "conflicts": []
+        },
+        {
+          "sha": "cd845d46b64f07b2e4c78d9692cdd2dd521b4bf0",
+          "time": "2026-11-12T22:50:46-05:00",
+          "questionIds": [
+            "timed-v4-mha-classes",
+            "timed-v4-blackclover-knights",
+            "timed-v4-demonslayer-ranks",
+            "timed-v4-aot-scouts",
+            "timed-v4-mix-jutsu-quirks"
+          ],
+          "questions": [
+            {
+              "id": "timed-v4-mha-classes",
+              "text": "My Hero Academia \u2014 Name any student in U.A. High\u2019s Class 1-A or Class 1-B."
+            },
+            {
+              "id": "timed-v4-blackclover-knights",
+              "text": "Black Clover \u2014 Name any Magic Knight squad captain or any member of the Black Bulls."
+            },
+            {
+              "id": "timed-v4-demonslayer-ranks",
+              "text": "Demon Slayer \u2014 Name any Hashira or any of the Twelve Kizuki (Upper and Lower Moons)."
+            },
+            {
+              "id": "timed-v4-aot-scouts",
+              "text": "Attack on Titan \u2014 Name any member of the Survey Corps."
+            },
+            {
+              "id": "timed-v4-mix-jutsu-quirks",
+              "text": "Name any jutsu (Naruto) or any Quirk (My Hero Academia)."
+            }
+          ],
+          "conflicts": []
+        }
+      ]
+    },
+    {
+      "date": "2026-11-13",
+      "ascent": 3,
+      "confidence": "SOURCE_HISTORY_RECONSTRUCTION_NOT_DEPLOYMENT_PROOF",
+      "snapshots": [
+        {
+          "sha": "cd845d46b64f07b2e4c78d9692cdd2dd521b4bf0",
+          "time": "2026-11-12T22:50:46-05:00",
+          "questionIds": [
+            "timed-v4-mix-red-hair",
+            "timed-v4-wide-detectives",
+            "timed-v4-wide-ghibli",
+            "timed-v4-mix-masks",
+            "timed-v4-wide-cats",
+            "timed-v4-wide-sports",
+            "timed-v4-wide-starters"
+          ],
+          "questions": [
+            {
+              "id": "timed-v4-mix-red-hair",
+              "text": "Name any character with red hair.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-detectives",
+              "text": "Name any anime detective.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-ghibli",
+              "text": "Name any Studio Ghibli film.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-mix-masks",
+              "text": "Name any character who wears a mask.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-cats",
+              "text": "Name any cat character.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-sports",
+              "text": "Name any sports anime.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-wide-starters",
+              "text": "Name any starter Pok\u00e9mon.",
+              "wide": "char"
+            }
+          ],
+          "conflicts": []
+        },
+        {
+          "sha": "0d86b1212893fbc65c96db490b9f0cdcafee864a",
+          "time": "2026-11-13T21:54:07-05:00",
+          "questionIds": [
+            "timed-v4-mix-red-hair",
+            "timed-v4-wide-detectives",
+            "timed-v4-wide-ghibli",
+            "timed-v4-mix-masks",
+            "timed-v4-wide-cats",
+            "timed-v4-wide-sports",
+            "timed-v4-wide-starters"
+          ],
+          "questions": [
+            {
+              "id": "timed-v4-mix-red-hair",
+              "text": "Name any character with red hair.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-detectives",
+              "text": "Name any anime detective.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-ghibli",
+              "text": "Name any Studio Ghibli film.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-mix-masks",
+              "text": "Name any character who wears a mask.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-cats",
+              "text": "Name any cat character.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-sports",
+              "text": "Name any sports anime.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-wide-starters",
+              "text": "Name any starter Pok\u00e9mon.",
+              "wide": "char"
+            }
+          ],
+          "conflicts": []
+        },
+        {
+          "sha": "3126554be62f0b9c3ac24b8179d86697b4ffbab1",
+          "time": "2026-11-13T10:30:31-05:00",
+          "questionIds": [
+            "timed-v4-mix-red-hair",
+            "timed-v4-wide-detectives",
+            "timed-v4-wide-ghibli",
+            "timed-v4-mix-masks",
+            "timed-v4-wide-cats",
+            "timed-v4-wide-sports",
+            "timed-v4-wide-starters"
+          ],
+          "questions": [
+            {
+              "id": "timed-v4-mix-red-hair",
+              "text": "Name any character with red hair.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-detectives",
+              "text": "Name any anime detective.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-ghibli",
+              "text": "Name any Studio Ghibli film.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-mix-masks",
+              "text": "Name any character who wears a mask.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-cats",
+              "text": "Name any cat character.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-sports",
+              "text": "Name any sports anime.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-wide-starters",
+              "text": "Name any starter Pok\u00e9mon.",
+              "wide": "char"
+            }
+          ],
+          "conflicts": []
+        },
+        {
+          "sha": "d60351258a4f9ddf57d392de9e6ccefdfd028383",
+          "time": "2026-11-13T00:19:14-05:00",
+          "questionIds": [
+            "timed-v4-mix-red-hair",
+            "timed-v4-wide-detectives",
+            "timed-v4-wide-ghibli",
+            "timed-v4-mix-masks",
+            "timed-v4-wide-cats",
+            "timed-v4-wide-sports",
+            "timed-v4-wide-starters"
+          ],
+          "questions": [
+            {
+              "id": "timed-v4-mix-red-hair",
+              "text": "Name any character with red hair.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-detectives",
+              "text": "Name any anime detective.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-ghibli",
+              "text": "Name any Studio Ghibli film.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-mix-masks",
+              "text": "Name any character who wears a mask.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-cats",
+              "text": "Name any cat character.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-sports",
+              "text": "Name any sports anime.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-wide-starters",
+              "text": "Name any starter Pok\u00e9mon.",
+              "wide": "char"
+            }
+          ],
+          "conflicts": []
+        }
+      ]
+    },
+    {
+      "date": "2026-11-14",
+      "ascent": 4,
+      "confidence": "SOURCE_HISTORY_RECONSTRUCTION_NOT_DEPLOYMENT_PROOF",
+      "snapshots": [
+        {
+          "sha": "0d86b1212893fbc65c96db490b9f0cdcafee864a",
+          "time": "2026-11-13T21:54:07-05:00",
+          "questionIds": [
+            "timed-v4-mix-glasses",
+            "timed-v4-wide-vampires",
+            "timed-v4-wide-isekai",
+            "timed-v4-mix-blonde",
+            "timed-v4-wide-robots",
+            "timed-v4-wide-magical-girl",
+            "timed-v4-mix-healers"
+          ],
+          "questions": [
+            {
+              "id": "timed-v4-mix-glasses",
+              "text": "Name any character who wears glasses or sunglasses.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-vampires",
+              "text": "Name any vampire.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-isekai",
+              "text": "Name any isekai anime.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-mix-blonde",
+              "text": "Name any character with blonde hair.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-robots",
+              "text": "Name any robot, android or cyborg.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-magical-girl",
+              "text": "Name any magical girl anime.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-mix-healers",
+              "text": "Name any doctor, medic or healer.",
+              "wide": "char"
+            }
+          ],
+          "conflicts": []
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "ascent": 5,
+      "confidence": "SOURCE_HISTORY_RECONSTRUCTION_NOT_DEPLOYMENT_PROOF",
+      "snapshots": [
+        {
+          "sha": "0d86b1212893fbc65c96db490b9f0cdcafee864a",
+          "time": "2026-11-13T21:54:07-05:00",
+          "questionIds": [
+            "timed-v4-wide-ninjas",
+            "timed-v4-mix-fire",
+            "timed-v4-wide-time-travel",
+            "timed-v4-wide-dragons",
+            "timed-v4-mix-white-hair",
+            "timed-v4-wide-mecha",
+            "timed-v4-wide-eyepatch"
+          ],
+          "questions": [
+            {
+              "id": "timed-v4-wide-ninjas",
+              "text": "Name any ninja who isn\u2019t from Naruto.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-mix-fire",
+              "text": "Name any character who fights with fire.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-time-travel",
+              "text": "Name any anime with time travel or a time loop.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-wide-dragons",
+              "text": "Name any dragon.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-mix-white-hair",
+              "text": "Name any character with white or silver hair.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-mecha",
+              "text": "Name any mecha anime.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-wide-eyepatch",
+              "text": "Name any character who wears an eyepatch.",
+              "wide": "char"
+            }
+          ],
+          "conflicts": []
+        }
+      ]
+    },
+    {
+      "date": "2026-11-16",
+      "ascent": 6,
+      "confidence": "SOURCE_HISTORY_RECONSTRUCTION_NOT_DEPLOYMENT_PROOF",
+      "snapshots": [
+        {
+          "sha": "0d86b1212893fbc65c96db490b9f0cdcafee864a",
+          "time": "2026-11-13T21:54:07-05:00",
+          "questionIds": [
+            "timed-v4-mix-mentors",
+            "timed-v4-wide-shinigami",
+            "timed-v4-wide-studios",
+            "timed-v4-mix-pink-hair",
+            "timed-v4-mix-companions",
+            "timed-v4-wide-shinkai-hosoda",
+            "timed-v4-mix-lightning"
+          ],
+          "questions": [
+            {
+              "id": "timed-v4-mix-mentors",
+              "text": "Name any teacher, sensei or mentor.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-shinigami",
+              "text": "Name any Shinigami, reaper or death god.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-studios",
+              "text": "Name any anime studio.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-mix-pink-hair",
+              "text": "Name any character with pink hair.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-mix-companions",
+              "text": "Name any animal companion, pet or summon.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-shinkai-hosoda",
+              "text": "Name any film by Makoto Shinkai or Mamoru Hosoda.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-mix-lightning",
+              "text": "Name any character who fights with lightning or electricity.",
+              "wide": "char"
+            }
+          ],
+          "conflicts": []
+        },
+        {
+          "sha": "30f9811bbac6c5fef2bdacc6704eb528ef408bef",
+          "time": "2026-11-16T10:35:46-05:00",
+          "questionIds": [
+            "timed-v4-mix-mentors",
+            "timed-v4-wide-shinigami",
+            "timed-v4-wide-studios",
+            "timed-v4-mix-pink-hair",
+            "timed-v4-mix-companions",
+            "timed-v4-wide-shinkai-hosoda",
+            "timed-v4-mix-lightning"
+          ],
+          "questions": [
+            {
+              "id": "timed-v4-mix-mentors",
+              "text": "Name any teacher, sensei or mentor.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-shinigami",
+              "text": "Name any Shinigami, reaper or death god.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-studios",
+              "text": "Name any anime studio.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-mix-pink-hair",
+              "text": "Name any character with pink hair.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-mix-companions",
+              "text": "Name any animal companion, pet or summon.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-shinkai-hosoda",
+              "text": "Name any film by Makoto Shinkai or Mamoru Hosoda.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-mix-lightning",
+              "text": "Name any character who fights with lightning or electricity.",
+              "wide": "char"
+            }
+          ],
+          "conflicts": []
+        }
+      ]
+    },
+    {
+      "date": "2026-11-17",
+      "ascent": 7,
+      "confidence": "SOURCE_HISTORY_RECONSTRUCTION_NOT_DEPLOYMENT_PROOF",
+      "snapshots": [
+        {
+          "sha": "30f9811bbac6c5fef2bdacc6704eb528ef408bef",
+          "time": "2026-11-16T10:35:46-05:00",
+          "questionIds": [
+            "timed-v4-wide-hats",
+            "timed-v4-mix-green-hair",
+            "timed-v4-wide-food",
+            "timed-v4-mix-royalty",
+            "timed-v4-mix-twins",
+            "timed-v4-wide-long-running",
+            "timed-v4-mix-red-hair"
+          ],
+          "questions": [
+            {
+              "id": "timed-v4-wide-hats",
+              "text": "Name any character known for wearing a hat.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-mix-green-hair",
+              "text": "Name any character with green hair.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-food",
+              "text": "Name any anime about food or cooking.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-mix-royalty",
+              "text": "Name any king, queen, prince, princess or royal.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-mix-twins",
+              "text": "Name any twin, triplet, quadruplet or quintuplet.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-long-running",
+              "text": "Name any anime series with 200 or more episodes.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-mix-red-hair",
+              "text": "Name any character with red hair.",
+              "wide": "char"
+            }
+          ],
+          "conflicts": []
+        },
+        {
+          "sha": "66918afc682e4933ec21555ff602a4f57f594ccb",
+          "time": "2026-11-17T22:27:23-05:00",
+          "questionIds": [
+            "timed-v4-wide-hats",
+            "timed-v4-mix-green-hair",
+            "timed-v4-wide-food",
+            "timed-v4-mix-royalty",
+            "timed-v4-mix-twins",
+            "timed-v4-wide-long-running",
+            "timed-v4-mix-red-hair"
+          ],
+          "questions": [
+            {
+              "id": "timed-v4-wide-hats",
+              "text": "Name any character known for wearing a hat.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-mix-green-hair",
+              "text": "Name any character with green hair.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-food",
+              "text": "Name any anime about food or cooking.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-mix-royalty",
+              "text": "Name any king, queen, prince, princess or royal.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-mix-twins",
+              "text": "Name any twin, triplet, quadruplet or quintuplet.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-long-running",
+              "text": "Name any anime series with 200 or more episodes.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-mix-red-hair",
+              "text": "Name any character with red hair.",
+              "wide": "char"
+            }
+          ],
+          "conflicts": []
+        },
+        {
+          "sha": "89b98c9e8dd0f5273506ebe949df8a078d3a4d0d",
+          "time": "2026-11-17T22:21:28-05:00",
+          "questionIds": [
+            "timed-v4-wide-hats",
+            "timed-v4-mix-green-hair",
+            "timed-v4-wide-food",
+            "timed-v4-mix-royalty",
+            "timed-v4-mix-twins",
+            "timed-v4-wide-long-running",
+            "timed-v4-mix-red-hair"
+          ],
+          "questions": [
+            {
+              "id": "timed-v4-wide-hats",
+              "text": "Name any character known for wearing a hat.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-mix-green-hair",
+              "text": "Name any character with green hair.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-food",
+              "text": "Name any anime about food or cooking.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-mix-royalty",
+              "text": "Name any king, queen, prince, princess or royal.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-mix-twins",
+              "text": "Name any twin, triplet, quadruplet or quintuplet.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-long-running",
+              "text": "Name any anime series with 200 or more episodes.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-mix-red-hair",
+              "text": "Name any character with red hair.",
+              "wide": "char"
+            }
+          ],
+          "conflicts": []
+        },
+        {
+          "sha": "eb860168713b9baa1d2b3866b6fdac6c2d4770f6",
+          "time": "2026-11-17T08:04:19-05:00",
+          "questionIds": [
+            "timed-v4-wide-hats",
+            "timed-v4-mix-green-hair",
+            "timed-v4-wide-food",
+            "timed-v4-mix-royalty",
+            "timed-v4-mix-twins",
+            "timed-v4-wide-long-running",
+            "timed-v4-mix-red-hair"
+          ],
+          "questions": [
+            {
+              "id": "timed-v4-wide-hats",
+              "text": "Name any character known for wearing a hat.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-mix-green-hair",
+              "text": "Name any character with green hair.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-food",
+              "text": "Name any anime about food or cooking.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-mix-royalty",
+              "text": "Name any king, queen, prince, princess or royal.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-mix-twins",
+              "text": "Name any twin, triplet, quadruplet or quintuplet.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-long-running",
+              "text": "Name any anime series with 200 or more episodes.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-mix-red-hair",
+              "text": "Name any character with red hair.",
+              "wide": "char"
+            }
+          ],
+          "conflicts": []
+        }
+      ]
+    },
+    {
+      "date": "2026-11-18",
+      "ascent": 8,
+      "confidence": "SOURCE_HISTORY_RECONSTRUCTION_NOT_DEPLOYMENT_PROOF",
+      "snapshots": [
+        {
+          "sha": "66918afc682e4933ec21555ff602a4f57f594ccb",
+          "time": "2026-11-17T22:27:23-05:00",
+          "questionIds": [
+            "timed-v4-wide-scars",
+            "timed-v4-wide-chefs",
+            "timed-v4-wide-music",
+            "timed-v4-wide-samurai",
+            "timed-v4-wide-purple-hair",
+            "timed-v4-wide-shonen-jump",
+            "timed-v4-wide-scientists"
+          ],
+          "questions": [
+            {
+              "id": "timed-v4-wide-scars",
+              "text": "Name any character with a scar on their face.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-chefs",
+              "text": "Name any chef or cook.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-music",
+              "text": "Name any anime about music or idols.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-wide-samurai",
+              "text": "Name any samurai or ronin.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-purple-hair",
+              "text": "Name any character with purple hair.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-shonen-jump",
+              "text": "Name any Shonen Jump manga that has an anime.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-wide-scientists",
+              "text": "Name any scientist or inventor.",
+              "wide": "char"
+            }
+          ],
+          "conflicts": []
+        },
+        {
+          "sha": "06a1ecbb3d146d77e1c2a4fac27c2824d6261b75",
+          "time": "2026-11-18T22:01:05-05:00",
+          "questionIds": [
+            "timed-v4-wide-scars",
+            "timed-v4-wide-chefs",
+            "timed-v4-wide-music",
+            "timed-v4-wide-samurai",
+            "timed-v4-wide-purple-hair",
+            "timed-v4-wide-shonen-jump",
+            "timed-v4-wide-scientists"
+          ],
+          "questions": [
+            {
+              "id": "timed-v4-wide-scars",
+              "text": "Name any character with a scar on their face.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-chefs",
+              "text": "Name any chef or cook.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-music",
+              "text": "Name any anime about music or idols.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-wide-samurai",
+              "text": "Name any samurai or ronin.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-purple-hair",
+              "text": "Name any character with purple hair.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-shonen-jump",
+              "text": "Name any Shonen Jump manga that has an anime.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-wide-scientists",
+              "text": "Name any scientist or inventor.",
+              "wide": "char"
+            }
+          ],
+          "conflicts": []
+        },
+        {
+          "sha": "ca76a6f7a383a98c3b0dec87203d4ae0a46cc5cb",
+          "time": "2026-11-18T21:56:42-05:00",
+          "questionIds": [
+            "timed-v4-wide-scars",
+            "timed-v4-wide-chefs",
+            "timed-v4-wide-music",
+            "timed-v4-wide-samurai",
+            "timed-v4-wide-purple-hair",
+            "timed-v4-wide-shonen-jump",
+            "timed-v4-wide-scientists"
+          ],
+          "questions": [
+            {
+              "id": "timed-v4-wide-scars",
+              "text": "Name any character with a scar on their face.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-chefs",
+              "text": "Name any chef or cook.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-music",
+              "text": "Name any anime about music or idols.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-wide-samurai",
+              "text": "Name any samurai or ronin.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-purple-hair",
+              "text": "Name any character with purple hair.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-shonen-jump",
+              "text": "Name any Shonen Jump manga that has an anime.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-wide-scientists",
+              "text": "Name any scientist or inventor.",
+              "wide": "char"
+            }
+          ],
+          "conflicts": []
+        },
+        {
+          "sha": "1eb3c8186f72156a108d043507831b26b00b51c6",
+          "time": "2026-11-18T12:54:13-05:00",
+          "questionIds": [
+            "timed-v4-wide-scars",
+            "timed-v4-wide-chefs",
+            "timed-v4-wide-music",
+            "timed-v4-wide-samurai",
+            "timed-v4-wide-purple-hair",
+            "timed-v4-wide-shonen-jump",
+            "timed-v4-wide-scientists"
+          ],
+          "questions": [
+            {
+              "id": "timed-v4-wide-scars",
+              "text": "Name any character with a scar on their face.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-chefs",
+              "text": "Name any chef or cook.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-music",
+              "text": "Name any anime about music or idols.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-wide-samurai",
+              "text": "Name any samurai or ronin.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-purple-hair",
+              "text": "Name any character with purple hair.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-shonen-jump",
+              "text": "Name any Shonen Jump manga that has an anime.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-wide-scientists",
+              "text": "Name any scientist or inventor.",
+              "wide": "char"
+            }
+          ],
+          "conflicts": []
+        }
+      ]
+    },
+    {
+      "date": "2026-11-19",
+      "ascent": 9,
+      "confidence": "SOURCE_HISTORY_RECONSTRUCTION_NOT_DEPLOYMENT_PROOF",
+      "snapshots": [
+        {
+          "sha": "06a1ecbb3d146d77e1c2a4fac27c2824d6261b75",
+          "time": "2026-11-18T22:01:05-05:00",
+          "questionIds": [
+            "timed-v4-wide-tattoos",
+            "timed-v4-wide-ice",
+            "timed-v4-wide-horror",
+            "timed-v4-wide-archers",
+            "timed-v4-wide-blue-hair",
+            "timed-v4-wide-light-novel",
+            "timed-v4-wide-wind"
+          ],
+          "questions": [
+            {
+              "id": "timed-v4-wide-tattoos",
+              "text": "Name any character with a tattoo.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-ice",
+              "text": "Name any character who fights with ice or snow.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-horror",
+              "text": "Name any horror anime.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-wide-archers",
+              "text": "Name any character who fights with a bow.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-blue-hair",
+              "text": "Name any character with blue hair.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-light-novel",
+              "text": "Name any anime based on a light novel.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-wide-wind",
+              "text": "Name any character who fights with wind.",
+              "wide": "char"
+            }
+          ],
+          "conflicts": []
+        }
+      ]
+    },
+    {
+      "date": "2026-11-20",
+      "ascent": 10,
+      "confidence": "SOURCE_HISTORY_RECONSTRUCTION_NOT_DEPLOYMENT_PROOF",
+      "snapshots": [
+        {
+          "sha": "06a1ecbb3d146d77e1c2a4fac27c2824d6261b75",
+          "time": "2026-11-18T22:01:05-05:00",
+          "questionIds": [
+            "timed-v4-wide-detectives",
+            "timed-v4-mix-masks",
+            "timed-v4-wide-space",
+            "timed-v4-wide-cats",
+            "timed-v4-wide-starters",
+            "timed-v4-wide-mappa",
+            "timed-v4-mix-glasses"
+          ],
+          "questions": [
+            {
+              "id": "timed-v4-wide-detectives",
+              "text": "Name any anime detective.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-mix-masks",
+              "text": "Name any character who wears a mask.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-space",
+              "text": "Name any anime set in space.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-wide-cats",
+              "text": "Name any cat character.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-starters",
+              "text": "Name any starter Pok\u00e9mon.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-mappa",
+              "text": "Name any anime animated by MAPPA.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-mix-glasses",
+              "text": "Name any character who wears glasses or sunglasses.",
+              "wide": "char"
+            }
+          ],
+          "conflicts": []
+        },
+        {
+          "sha": "9949c1c671d91a9a8fb5eb065a2093247ddd8e36",
+          "time": "2026-11-20T14:22:57-05:00",
+          "questionIds": [
+            "timed-v4-wide-detectives",
+            "timed-v4-mix-masks",
+            "timed-v4-wide-space",
+            "timed-v4-wide-cats",
+            "timed-v4-wide-starters",
+            "timed-v4-wide-mappa",
+            "timed-v4-mix-glasses"
+          ],
+          "questions": [
+            {
+              "id": "timed-v4-wide-detectives",
+              "text": "Name any anime detective.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-mix-masks",
+              "text": "Name any character who wears a mask.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-space",
+              "text": "Name any anime set in space.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-wide-cats",
+              "text": "Name any cat character.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-starters",
+              "text": "Name any starter Pok\u00e9mon.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-mappa",
+              "text": "Name any anime animated by MAPPA.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-mix-glasses",
+              "text": "Name any character who wears glasses or sunglasses.",
+              "wide": "char"
+            }
+          ],
+          "conflicts": []
+        },
+        {
+          "sha": "11c2516768ed29b3fbe6b59627c46201cbb186e9",
+          "time": "2026-11-20T14:13:16-05:00",
+          "questionIds": [
+            "timed-v4-wide-detectives",
+            "timed-v4-mix-masks",
+            "timed-v4-wide-space",
+            "timed-v4-wide-cats",
+            "timed-v4-wide-starters",
+            "timed-v4-wide-mappa",
+            "timed-v4-mix-glasses"
+          ],
+          "questions": [
+            {
+              "id": "timed-v4-wide-detectives",
+              "text": "Name any anime detective.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-mix-masks",
+              "text": "Name any character who wears a mask.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-space",
+              "text": "Name any anime set in space.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-wide-cats",
+              "text": "Name any cat character.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-starters",
+              "text": "Name any starter Pok\u00e9mon.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-mappa",
+              "text": "Name any anime animated by MAPPA.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-mix-glasses",
+              "text": "Name any character who wears glasses or sunglasses.",
+              "wide": "char"
+            }
+          ],
+          "conflicts": []
+        },
+        {
+          "sha": "c08c7aa3715cae6d55d5eb19c8bf83f181bc3aaa",
+          "time": "2026-11-20T10:53:33-05:00",
+          "questionIds": [
+            "timed-v4-wide-detectives",
+            "timed-v4-mix-masks",
+            "timed-v4-wide-space",
+            "timed-v4-wide-cats",
+            "timed-v4-wide-starters",
+            "timed-v4-wide-mappa",
+            "timed-v4-mix-glasses"
+          ],
+          "questions": [
+            {
+              "id": "timed-v4-wide-detectives",
+              "text": "Name any anime detective.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-mix-masks",
+              "text": "Name any character who wears a mask.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-space",
+              "text": "Name any anime set in space.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-wide-cats",
+              "text": "Name any cat character.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-starters",
+              "text": "Name any starter Pok\u00e9mon.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-mappa",
+              "text": "Name any anime animated by MAPPA.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-mix-glasses",
+              "text": "Name any character who wears glasses or sunglasses.",
+              "wide": "char"
+            }
+          ],
+          "conflicts": []
+        },
+        {
+          "sha": "349e27ded33e44a6155120983fa6f521cded1b75",
+          "time": "2026-11-20T10:03:19-05:00",
+          "questionIds": [
+            "timed-v4-wide-detectives",
+            "timed-v4-mix-masks",
+            "timed-v4-wide-space",
+            "timed-v4-wide-cats",
+            "timed-v4-wide-starters",
+            "timed-v4-wide-mappa",
+            "timed-v4-mix-glasses"
+          ],
+          "questions": [
+            {
+              "id": "timed-v4-wide-detectives",
+              "text": "Name any anime detective.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-mix-masks",
+              "text": "Name any character who wears a mask.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-space",
+              "text": "Name any anime set in space.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-wide-cats",
+              "text": "Name any cat character.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-starters",
+              "text": "Name any starter Pok\u00e9mon.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-mappa",
+              "text": "Name any anime animated by MAPPA.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-mix-glasses",
+              "text": "Name any character who wears glasses or sunglasses.",
+              "wide": "char"
+            }
+          ],
+          "conflicts": []
+        },
+        {
+          "sha": "09348b29c24ff640d2e109fa4f7fb94006c2fb58",
+          "time": "2026-11-20T08:41:35-05:00",
+          "questionIds": [
+            "timed-v4-wide-detectives",
+            "timed-v4-mix-masks",
+            "timed-v4-wide-space",
+            "timed-v4-wide-cats",
+            "timed-v4-wide-starters",
+            "timed-v4-wide-mappa",
+            "timed-v4-mix-glasses"
+          ],
+          "questions": [
+            {
+              "id": "timed-v4-wide-detectives",
+              "text": "Name any anime detective.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-mix-masks",
+              "text": "Name any character who wears a mask.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-space",
+              "text": "Name any anime set in space.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-wide-cats",
+              "text": "Name any cat character.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-starters",
+              "text": "Name any starter Pok\u00e9mon.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-mappa",
+              "text": "Name any anime animated by MAPPA.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-mix-glasses",
+              "text": "Name any character who wears glasses or sunglasses.",
+              "wide": "char"
+            }
+          ],
+          "conflicts": []
+        }
+      ]
+    },
+    {
+      "date": "2026-11-21",
+      "ascent": 11,
+      "confidence": "SOURCE_HISTORY_RECONSTRUCTION_NOT_DEPLOYMENT_PROOF",
+      "snapshots": [
+        {
+          "sha": "9949c1c671d91a9a8fb5eb065a2093247ddd8e36",
+          "time": "2026-11-20T14:22:57-05:00",
+          "questionIds": [
+            "timed-v4-wide-guns",
+            "timed-v4-wide-pirates",
+            "timed-v4-wide-m-titles",
+            "timed-v4-wide-idols",
+            "timed-v4-wide-teachers",
+            "timed-v4-wide-usa",
+            "timed-v4-wide-smokers"
+          ],
+          "questions": [
+            {
+              "id": "timed-v4-wide-guns",
+              "text": "Name any character who fights with a gun.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-pirates",
+              "text": "Name any pirate.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-m-titles",
+              "text": "Name any anime whose title starts with M.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-wide-idols",
+              "text": "Name any idol or pop-star character.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-teachers",
+              "text": "Name any teacher or professor.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-usa",
+              "text": "Name any anime that takes place in the USA at some point.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-wide-smokers",
+              "text": "Name any character who smokes.",
+              "wide": "char"
+            }
+          ],
+          "conflicts": []
+        },
+        {
+          "sha": "203e4335b16bc9e97cf787b32a53f048869bd865",
+          "time": "2026-11-21T22:02:11-05:00",
+          "questionIds": [
+            "timed-v4-wide-guns",
+            "timed-v4-wide-pirates",
+            "timed-v4-wide-m-titles",
+            "timed-v4-wide-idols",
+            "timed-v4-wide-teachers",
+            "timed-v4-wide-usa",
+            "timed-v4-wide-smokers"
+          ],
+          "questions": [
+            {
+              "id": "timed-v4-wide-guns",
+              "text": "Name any character who fights with a gun.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-pirates",
+              "text": "Name any pirate.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-m-titles",
+              "text": "Name any anime whose title starts with M.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-wide-idols",
+              "text": "Name any idol or pop-star character.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-teachers",
+              "text": "Name any teacher or professor.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-usa",
+              "text": "Name any anime that takes place in the USA at some point.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-wide-smokers",
+              "text": "Name any character who smokes.",
+              "wide": "char"
+            }
+          ],
+          "conflicts": []
+        },
+        {
+          "sha": "0ad81a0e55d782c29f774c9dd05aa105d346b000",
+          "time": "2026-11-21T18:46:11-05:00",
+          "questionIds": [
+            "timed-v4-wide-guns",
+            "timed-v4-wide-pirates",
+            "timed-v4-wide-m-titles",
+            "timed-v4-wide-idols",
+            "timed-v4-wide-teachers",
+            "timed-v4-wide-usa",
+            "timed-v4-wide-smokers"
+          ],
+          "questions": [
+            {
+              "id": "timed-v4-wide-guns",
+              "text": "Name any character who fights with a gun.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-pirates",
+              "text": "Name any pirate.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-m-titles",
+              "text": "Name any anime whose title starts with M.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-wide-idols",
+              "text": "Name any idol or pop-star character.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-teachers",
+              "text": "Name any teacher or professor.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-usa",
+              "text": "Name any anime that takes place in the USA at some point.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-wide-smokers",
+              "text": "Name any character who smokes.",
+              "wide": "char"
+            }
+          ],
+          "conflicts": []
+        },
+        {
+          "sha": "9b30fbc6bb2f6fd524e5678f24cb41f192b2e585",
+          "time": "2026-11-21T16:11:44-05:00",
+          "questionIds": [
+            "timed-v4-wide-guns",
+            "timed-v4-wide-pirates",
+            "timed-v4-wide-m-titles",
+            "timed-v4-wide-idols",
+            "timed-v4-wide-teachers",
+            "timed-v4-wide-usa",
+            "timed-v4-wide-smokers"
+          ],
+          "questions": [
+            {
+              "id": "timed-v4-wide-guns",
+              "text": "Name any character who fights with a gun.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-pirates",
+              "text": "Name any pirate.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-m-titles",
+              "text": "Name any anime whose title starts with M.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-wide-idols",
+              "text": "Name any idol or pop-star character.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-teachers",
+              "text": "Name any teacher or professor.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-usa",
+              "text": "Name any anime that takes place in the USA at some point.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-wide-smokers",
+              "text": "Name any character who smokes.",
+              "wide": "char"
+            }
+          ],
+          "conflicts": []
+        },
+        {
+          "sha": "8aa140985ec55398741cd2d4f8c5767f7610d790",
+          "time": "2026-11-21T10:23:10-05:00",
+          "questionIds": [
+            "timed-v4-wide-guns",
+            "timed-v4-wide-pirates",
+            "timed-v4-wide-m-titles",
+            "timed-v4-wide-idols",
+            "timed-v4-wide-teachers",
+            "timed-v4-wide-usa",
+            "timed-v4-wide-smokers"
+          ],
+          "questions": [
+            {
+              "id": "timed-v4-wide-guns",
+              "text": "Name any character who fights with a gun.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-pirates",
+              "text": "Name any pirate.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-m-titles",
+              "text": "Name any anime whose title starts with M.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-wide-idols",
+              "text": "Name any idol or pop-star character.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-teachers",
+              "text": "Name any teacher or professor.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-usa",
+              "text": "Name any anime that takes place in the USA at some point.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-wide-smokers",
+              "text": "Name any character who smokes.",
+              "wide": "char"
+            }
+          ],
+          "conflicts": []
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "ascent": 12,
+      "confidence": "SOURCE_HISTORY_RECONSTRUCTION_NOT_DEPLOYMENT_PROOF",
+      "snapshots": [
+        {
+          "sha": "203e4335b16bc9e97cf787b32a53f048869bd865",
+          "time": "2026-11-21T22:02:11-05:00",
+          "questionIds": [
+            "timed-v4-wide-maids",
+            "timed-v4-wide-ponytails",
+            "timed-v4-wide-game-adaptations",
+            "timed-v4-wide-ghosts",
+            "timed-v4-wide-giants",
+            "timed-v4-wide-number-titles",
+            "timed-v4-wide-witches"
+          ],
+          "questions": [
+            {
+              "id": "timed-v4-wide-maids",
+              "text": "Name any maid.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-ponytails",
+              "text": "Name any character with a ponytail.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-game-adaptations",
+              "text": "Name any anime based on a video game.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-wide-ghosts",
+              "text": "Name any ghost.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-giants",
+              "text": "Name any giant or Titan.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-number-titles",
+              "text": "Name any anime with a number in its title.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-wide-witches",
+              "text": "Name any witch, wizard or mage.",
+              "wide": "char"
+            }
+          ],
+          "conflicts": []
+        }
+      ]
+    },
+    {
+      "date": "2026-11-23",
+      "ascent": 13,
+      "confidence": "SOURCE_HISTORY_RECONSTRUCTION_NOT_DEPLOYMENT_PROOF",
+      "snapshots": [
+        {
+          "sha": "203e4335b16bc9e97cf787b32a53f048869bd865",
+          "time": "2026-11-21T22:02:11-05:00",
+          "questionIds": [
+            "timed-v4-wide-orange-hair",
+            "timed-v4-wide-police",
+            "timed-v4-wide-90s",
+            "timed-v4-wide-assassins",
+            "timed-v4-wide-thieves",
+            "timed-v4-wide-films",
+            "timed-v4-wide-elves"
+          ],
+          "questions": [
+            {
+              "id": "timed-v4-wide-orange-hair",
+              "text": "Name any character with orange hair.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-police",
+              "text": "Name any police officer.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-90s",
+              "text": "Name any anime that first aired in the 1990s.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-wide-assassins",
+              "text": "Name any assassin.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-thieves",
+              "text": "Name any thief.",
+              "wide": "char"
+            },
+            {
+              "id": "timed-v4-wide-films",
+              "text": "Name any anime film.",
+              "wide": "title"
+            },
+            {
+              "id": "timed-v4-wide-elves",
+              "text": "Name any elf.",
+              "wide": "char"
+            }
+          ],
+          "conflicts": []
+        }
+      ]
+    }
+  ],
+  "conflicts": []
+}

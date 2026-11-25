@@ -1,7 +1,8 @@
-# Offline tooling and all source-restricted catalogue data stay out of deployment.
+# Offline catalogue code, source-restricted datasets, evidence and private review state.
 catalogue/**
+# Offline history exports and scheduling research are not production runtime assets.
 power-level/scheduling/**
+# Private transfer/recovery bundles must never enter a deployment.
 *.private-bundle.json
-
-# Public Git research data is still offline-only; never ship it with the game.
+# Public Git catalogue exports are still offline-only, not a frontend asset.
 catalogue/public-data/**
