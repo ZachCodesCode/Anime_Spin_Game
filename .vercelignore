@@ -1,5 +1,8 @@
-# Offline catalogues, evidence caches and review exports are not runtime assets.
-# Publication rights for imported catalogue data have not been established.
+# Offline catalogue code, source-restricted datasets, evidence and private review state.
 catalogue/**
-# Offline freshness planning and SELECT-only export tools are not runtime assets.
+# Offline history exports and scheduling research are not production runtime assets.
 power-level/scheduling/**
+# Private transfer/recovery bundles must never enter a deployment.
+*.private-bundle.json
+# Public Git catalogue exports are still offline-only, not a frontend asset.
+catalogue/public-data/**

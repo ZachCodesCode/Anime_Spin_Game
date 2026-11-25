@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "id": "acdb-internal-source-trust-v1",
+  "provider": "acdb",
+  "basis": "Explicit project-owner instruction: trust ACDB assertions for internal offline candidate generation without individual factual approval.",
+  "sourceTrusted": true,
+  "independentVerification": false,
+  "publicationAuthorized": false,
+  "allowedAcquisitions": ["official-sql-export", "user-supplied", "authorized-export"],
+  "excludeExtractions": ["ai_proposal", "editorial_summary"],
+  "requireAnimeAssignment": true
+}

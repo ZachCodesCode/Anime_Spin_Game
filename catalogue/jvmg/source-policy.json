@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "scope": "Archive-declared metadata, not a commercial or redistribution permission grant",
+  "sources": {
+    "acdb": {
+      "declaredLicense": null,
+      "status": "hold-no-graph-license",
+      "originFamily": "acdb-community",
+      "note": "Direct ACDB SQL ODbL does not automatically license JVMG transformations or every tag."
+    },
+    "vndb": {
+      "declaredLicense": "CC-BY-NC-SA-4.0",
+      "status": "hold-intended-use-permission",
+      "originFamily": "vndb"
+    },
+    "aclick": {
+      "declaredLicense": "CC-BY-NC-SA-4.0",
+      "status": "hold-intended-use-permission",
+      "originFamily": "animeclick"
+    },
+    "madb": {
+      "declaredLicense": "CC-BY-NC-SA-4.0",
+      "status": "hold-intended-use-permission",
+      "originFamily": "madb"
+    },
+    "anidb": {
+      "declaredLicense": "CC-BY-NC-SA-4.0",
+      "status": "hold-intended-use-permission",
+      "originFamily": "anidb"
+    },
+    "jvmg": {
+      "declaredLicense": null,
+      "status": "hold-cluster-and-transformation-rights",
+      "originFamily": "jvmg-derived"
+    }
+  },
+  "automaticSourceTrust": false,
+  "automaticFactualApproval": false,
+  "automaticPublicExport": false,
+  "unsuitableLabelPattern": "\\b(nsfw|nude|naked|nudity|sexual\\w*|sex|breasts?|bust|panties|underwear|fetish\\w*|erotic\\w*|hentai|penis|vagina|orgasm\\w*|rape|incest|loli|shota)\\b"
+}

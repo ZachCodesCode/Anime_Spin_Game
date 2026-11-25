@@ -1,0 +1,656 @@
+[
+  {
+    "id": "appearance.eyewear",
+    "label": "Eyewear",
+    "category": "appearance",
+    "valueType": "string",
+    "allowedValues": [
+      "glasses",
+      "sunglasses",
+      "monocle",
+      "goggles"
+    ],
+    "guidance": "Record the actual eyewear and recurrence. Glasses candidates require ordinary spectacles; sunglasses, monocles and goggles remain distinct. Temporary use needs episode details. Verification alone does not establish eligibility for a future question."
+  },
+  {
+    "id": "occupation.detective",
+    "label": "Detective activity",
+    "category": "occupation",
+    "valueType": "string",
+    "allowedValues": [
+      "professional",
+      "amateur",
+      "former_professional"
+    ],
+    "guidance": "Distinguish employed/private investigators, recurring amateur investigation, and former employment. Solving one mystery or having Detective in a name is insufficient. Record the period and adaptation."
+  },
+  {
+    "id": "identity.species",
+    "label": "Species or form",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [
+      "human",
+      "cat",
+      "dog",
+      "demon",
+      "vampire",
+      "robot",
+      "catlike_humanoid",
+      "other",
+      "elf",
+      "half_elf",
+      "dark_elf",
+      "giant",
+      "ghost",
+      "spirit",
+      "cyborg"
+    ],
+    "guidance": "Cat means an actual feline identity or explicitly documented cat form. Ears, costumes, nicknames and catlike humanoids are not evidence of feline species. Transformation-only forms require explicit context. Unknown species is absence of a claim, never false."
+  },
+  {
+    "id": "appearance.hair_color",
+    "label": "Hair colour",
+    "category": "appearance",
+    "valueType": "string",
+    "allowedValues": [
+      "red",
+      "white",
+      "silver",
+      "blonde",
+      "pink",
+      "green",
+      "black",
+      "brown",
+      "orange",
+      "blue",
+      "purple",
+      "gray",
+      "maroon",
+      "blue_green"
+    ],
+    "guidance": "Record explicit anime evidence, adaptation, period and form. Distinguish recurring traits from temporary appearances or transformations. Open values require a source-backed canonical name. This fact alone does not establish question eligibility; exclusions and combined conditions require editorial review."
+  },
+  {
+    "id": "appearance.accessory",
+    "label": "Worn accessory",
+    "category": "appearance",
+    "valueType": "string",
+    "allowedValues": [
+      "mask",
+      "eyepatch",
+      "hat",
+      "headband",
+      "wristband",
+      "bandages",
+      "bandana",
+      "belt",
+      "jewellery"
+    ],
+    "guidance": "Record explicit anime evidence, adaptation, period and form. Distinguish recurring traits from temporary appearances or transformations. Open values require a source-backed canonical name. This fact alone does not establish question eligibility; exclusions and combined conditions require editorial review."
+  },
+  {
+    "id": "occupation.role",
+    "label": "Occupation or recurring role",
+    "category": "occupation",
+    "valueType": "string",
+    "allowedValues": [
+      "doctor",
+      "medic",
+      "healer",
+      "teacher",
+      "mentor",
+      "ninja",
+      "shinigami",
+      "pirate_captain",
+      "investigator",
+      "hero",
+      "police_officer",
+      "assassin",
+      "thief",
+      "maid",
+      "mage",
+      "wizard",
+      "witch",
+      "sniper",
+      "pirate",
+      "samurai",
+      "scientist",
+      "chef",
+      "athlete",
+      "musician",
+      "military_personnel",
+      "swordsman"
+    ],
+    "guidance": "Record explicit anime evidence, adaptation, period and form. Distinguish recurring traits from temporary appearances or transformations. Open values require a source-backed canonical name. This fact alone does not establish question eligibility; exclusions and combined conditions require editorial review."
+  },
+  {
+    "id": "ability.element",
+    "label": "Combat element",
+    "category": "ability",
+    "valueType": "string",
+    "allowedValues": [
+      "fire",
+      "lava",
+      "lightning",
+      "electricity",
+      "ice",
+      "wind",
+      "water"
+    ],
+    "guidance": "Record explicit anime evidence, adaptation, period and form. Distinguish recurring traits from temporary appearances or transformations. Open values require a source-backed canonical name. This fact alone does not establish question eligibility; exclusions and combined conditions require editorial review."
+  },
+  {
+    "id": "affiliation.membership",
+    "label": "Named group membership",
+    "category": "affiliation",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Record explicit anime evidence, adaptation, period and form. Distinguish recurring traits from temporary appearances or transformations. Open values require a source-backed canonical name. This fact alone does not establish question eligibility; exclusions and combined conditions require editorial review."
+  },
+  {
+    "id": "identity.royalty",
+    "label": "Royal status",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [
+      "king",
+      "queen",
+      "prince",
+      "princess",
+      "other_royal"
+    ],
+    "guidance": "Record explicit anime evidence, adaptation, period and form. Distinguish recurring traits from temporary appearances or transformations. Open values require a source-backed canonical name. This fact alone does not establish question eligibility; exclusions and combined conditions require editorial review."
+  },
+  {
+    "id": "identity.multiple_birth",
+    "label": "Multiple birth",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [
+      "twin",
+      "triplet",
+      "quadruplet",
+      "quintuplet"
+    ],
+    "guidance": "Record explicit anime evidence, adaptation, period and form. Distinguish recurring traits from temporary appearances or transformations. Open values require a source-backed canonical name. This fact alone does not establish question eligibility; exclusions and combined conditions require editorial review."
+  },
+  {
+    "id": "identity.synthetic",
+    "label": "Synthetic body",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [
+      "robot",
+      "android",
+      "cyborg"
+    ],
+    "guidance": "Record explicit anime evidence, adaptation, period and form. Distinguish recurring traits from temporary appearances or transformations. Open values require a source-backed canonical name. This fact alone does not establish question eligibility; exclusions and combined conditions require editorial review."
+  },
+  {
+    "id": "identity.creature",
+    "label": "Creature identity",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [
+      "vampire",
+      "dragon",
+      "shinigami",
+      "ghoul",
+      "chimera_ant"
+    ],
+    "guidance": "Record explicit anime evidence, adaptation, period and form. Distinguish recurring traits from temporary appearances or transformations. Open values require a source-backed canonical name. This fact alone does not establish question eligibility; exclusions and combined conditions require editorial review."
+  },
+  {
+    "id": "ability.transformation",
+    "label": "Named transformation",
+    "category": "ability",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Record explicit anime evidence, adaptation, period and form. Distinguish recurring traits from temporary appearances or transformations. Open values require a source-backed canonical name. This fact alone does not establish question eligibility; exclusions and combined conditions require editorial review."
+  },
+  {
+    "id": "ability.named_power",
+    "label": "Named power or technique used",
+    "category": "ability",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Record explicit anime evidence, adaptation, period and form. Distinguish recurring traits from temporary appearances or transformations. Open values require a source-backed canonical name. This fact alone does not establish question eligibility; exclusions and combined conditions require editorial review."
+  },
+  {
+    "id": "affiliation.companion",
+    "label": "Companion relationship",
+    "category": "affiliation",
+    "valueType": "string",
+    "allowedValues": [
+      "pet",
+      "animal_companion",
+      "summon"
+    ],
+    "guidance": "Record explicit anime evidence, adaptation, period and form. Distinguish recurring traits from temporary appearances or transformations. Open values require a source-backed canonical name. This fact alone does not establish question eligibility; exclusions and combined conditions require editorial review."
+  },
+  {
+    "id": "identity.pokemon_starter",
+    "label": "Starter Pok\u00e9mon status",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Record explicit anime evidence, adaptation, period and form. Distinguish recurring traits from temporary appearances or transformations. Open values require a source-backed canonical name. This fact alone does not establish question eligibility; exclusions and combined conditions require editorial review."
+  },
+  {
+    "id": "identity.origin",
+    "label": "Named geographic origin",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Record explicit anime evidence, adaptation, period and form. Distinguish recurring traits from temporary appearances or transformations. Open values require a source-backed canonical name. This fact alone does not establish question eligibility; exclusions and combined conditions require editorial review."
+  },
+  {
+    "id": "identity.codename",
+    "label": "Documented codename",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Record explicit anime evidence, adaptation, period and form. Distinguish recurring traits from temporary appearances or transformations. Open values require a source-backed canonical name. This fact alone does not establish question eligibility; exclusions and combined conditions require editorial review."
+  },
+  {
+    "id": "appearance.hair_length",
+    "label": "Hair length",
+    "category": "appearance",
+    "valueType": "string",
+    "allowedValues": [
+      "short",
+      "long",
+      "hairless",
+      "to_ears",
+      "to_neck",
+      "to_shoulders",
+      "to_chest",
+      "to_waist",
+      "past_hip"
+    ],
+    "guidance": "Explicit source assertion only. Preserve adaptation, period, form and source terminology. Missing facts stay unknown. Family values use relation|canonical character ID; organization roles need the named organization in context. No inference from anime genres, ears, clothing, fighting tools or popularity. Factual verification, question eligibility, rights and release decisions remain separate."
+  },
+  {
+    "id": "appearance.hairstyle",
+    "label": "Hairstyle",
+    "category": "appearance",
+    "valueType": "string",
+    "allowedValues": [
+      "ponytail",
+      "twin_tails",
+      "braids",
+      "curly",
+      "straight",
+      "wavy",
+      "bald",
+      "spiky"
+    ],
+    "guidance": "Explicit source assertion only. Preserve adaptation, period, form and source terminology. Missing facts stay unknown. Family values use relation|canonical character ID; organization roles need the named organization in context. No inference from anime genres, ears, clothing, fighting tools or popularity. Factual verification, question eligibility, rights and release decisions remain separate."
+  },
+  {
+    "id": "appearance.eye_color",
+    "label": "Eye colour",
+    "category": "appearance",
+    "valueType": "string",
+    "allowedValues": [
+      "black",
+      "brown",
+      "blue",
+      "green",
+      "red",
+      "orange",
+      "purple",
+      "pink",
+      "gray",
+      "yellow",
+      "white",
+      "blue_green",
+      "heterochromia"
+    ],
+    "guidance": "Explicit source assertion only. Preserve adaptation, period, form and source terminology. Missing facts stay unknown. Family values use relation|canonical character ID; organization roles need the named organization in context. No inference from anime genres, ears, clothing, fighting tools or popularity. Factual verification, question eligibility, rights and release decisions remain separate."
+  },
+  {
+    "id": "appearance.facial_hair",
+    "label": "Facial hair",
+    "category": "appearance",
+    "valueType": "string",
+    "allowedValues": [
+      "beard",
+      "mustache",
+      "goatee",
+      "sideburns"
+    ],
+    "guidance": "Explicit source assertion only. Preserve adaptation, period, form and source terminology. Missing facts stay unknown. Family values use relation|canonical character ID; organization roles need the named organization in context. No inference from anime genres, ears, clothing, fighting tools or popularity. Factual verification, question eligibility, rights and release decisions remain separate."
+  },
+  {
+    "id": "appearance.scar",
+    "label": "Scar location",
+    "category": "appearance",
+    "valueType": "string",
+    "allowedValues": [
+      "face",
+      "body"
+    ],
+    "guidance": "Explicit source assertion only. Preserve adaptation, period, form and source terminology. Missing facts stay unknown. Family values use relation|canonical character ID; organization roles need the named organization in context. No inference from anime genres, ears, clothing, fighting tools or popularity. Factual verification, question eligibility, rights and release decisions remain separate."
+  },
+  {
+    "id": "ability.effect",
+    "label": "Documented ability",
+    "category": "ability",
+    "valueType": "string",
+    "allowedValues": [
+      "healing",
+      "telepathy",
+      "teleportation",
+      "superhuman_strength"
+    ],
+    "guidance": "Explicit source assertion only. Preserve adaptation, period, form and source terminology. Missing facts stay unknown. Family values use relation|canonical character ID; organization roles need the named organization in context. No inference from anime genres, ears, clothing, fighting tools or popularity. Factual verification, question eligibility, rights and release decisions remain separate."
+  },
+  {
+    "id": "ability.discipline",
+    "label": "Combat discipline",
+    "category": "ability",
+    "valueType": "string",
+    "allowedValues": [
+      "swordsmanship",
+      "archery"
+    ],
+    "guidance": "Explicit source assertion only. Preserve adaptation, period, form and source terminology. Missing facts stay unknown. Family values use relation|canonical character ID; organization roles need the named organization in context. No inference from anime genres, ears, clothing, fighting tools or popularity. Factual verification, question eligibility, rights and release decisions remain separate."
+  },
+  {
+    "id": "relationship.family",
+    "label": "Documented family relationship",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Explicit source assertion only. Preserve adaptation, period, form and source terminology. Missing facts stay unknown. Family values use relation|canonical character ID; organization roles need the named organization in context. No inference from anime genres, ears, clothing, fighting tools or popularity. Factual verification, question eligibility, rights and release decisions remain separate."
+  },
+  {
+    "id": "affiliation.role",
+    "label": "Role within a named organization",
+    "category": "affiliation",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Explicit source assertion only. Preserve adaptation, period, form and source terminology. Missing facts stay unknown. Family values use relation|canonical character ID; organization roles need the named organization in context. No inference from anime genres, ears, clothing, fighting tools or popularity. Factual verification, question eligibility, rights and release decisions remain separate."
+  },
+  {
+    "id": "appearance.clothing",
+    "label": "Explicit clothing",
+    "category": "appearance",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Retain explicit source terminology and appearance context. A costume or carried weapon does not establish occupation, combat proficiency, species or recurring use. Unknown values remain absent claims. Separate factual, eligibility and publication review required."
+  },
+  {
+    "id": "equipment.weapon",
+    "label": "Carried or used weapon",
+    "category": "appearance",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Retain explicit source terminology and appearance context. A costume or carried weapon does not establish occupation, combat proficiency, species or recurring use. Unknown values remain absent claims. Separate factual, eligibility and publication review required."
+  },
+  {
+    "id": "appearance.carried_accessory",
+    "label": "Carried accessory",
+    "category": "appearance",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Source-reported candidate only. Preserve original field, units, period, outfit and anime context. Multiple values coexist; missing is unknown. Aliases do not modify canonical identities. Relationship claims reference typed links and existing target IDs. Explicit none is distinct from a missing field. No automatic verification, question eligibility or publication."
+  },
+  {
+    "id": "appearance.physical_feature",
+    "label": "Explicit physical feature",
+    "category": "appearance",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Source-reported candidate only. Preserve original field, units, period, outfit and anime context. Multiple values coexist; missing is unknown. Aliases do not modify canonical identities. Relationship claims reference typed links and existing target IDs. Explicit none is distinct from a missing field. No automatic verification, question eligibility or publication."
+  },
+  {
+    "id": "identity.alias",
+    "label": "Source-reported alias",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Source-reported candidate only. Preserve original field, units, period, outfit and anime context. Multiple values coexist; missing is unknown. Aliases do not modify canonical identities. Relationship claims reference typed links and existing target IDs. Explicit none is distinct from a missing field. No automatic verification, question eligibility or publication."
+  },
+  {
+    "id": "identity.gender",
+    "label": "Source-reported gender/sex label",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [
+      "male",
+      "female",
+      "androgynous",
+      "genderless"
+    ],
+    "guidance": "Source-reported candidate only. Preserve original field, units, period, outfit and anime context. Multiple values coexist; missing is unknown. Aliases do not modify canonical identities. Relationship claims reference typed links and existing target IDs. Explicit none is distinct from a missing field. No automatic verification, question eligibility or publication."
+  },
+  {
+    "id": "identity.story_role",
+    "label": "Source-reported narrative role",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Source-reported candidate only. Preserve original field, units, period, outfit and anime context. Multiple values coexist; missing is unknown. Aliases do not modify canonical identities. Relationship claims reference typed links and existing target IDs. Explicit none is distinct from a missing field. No automatic verification, question eligibility or publication."
+  },
+  {
+    "id": "identity.race",
+    "label": "Named fictional race classification",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Source-reported candidate only. Preserve original field, units, period, outfit and anime context. Multiple values coexist; missing is unknown. Aliases do not modify canonical identities. Relationship claims reference typed links and existing target IDs. Explicit none is distinct from a missing field. No automatic verification, question eligibility or publication."
+  },
+  {
+    "id": "profile.age",
+    "label": "Stated numeric age",
+    "category": "identity",
+    "valueType": "number",
+    "allowedValues": [],
+    "guidance": "Source-reported candidate only. Preserve original field, units, period, outfit and anime context. Multiple values coexist; missing is unknown. Aliases do not modify canonical identities. Relationship claims reference typed links and existing target IDs. Explicit none is distinct from a missing field. No automatic verification, question eligibility or publication."
+  },
+  {
+    "id": "profile.stated_age",
+    "label": "Non-numeric age statement",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Source-reported candidate only. Preserve original field, units, period, outfit and anime context. Multiple values coexist; missing is unknown. Aliases do not modify canonical identities. Relationship claims reference typed links and existing target IDs. Explicit none is distinct from a missing field. No automatic verification, question eligibility or publication."
+  },
+  {
+    "id": "profile.apparent_age",
+    "label": "Source apparent age group",
+    "category": "appearance",
+    "valueType": "string",
+    "allowedValues": [
+      "child",
+      "teenager",
+      "adult",
+      "senior",
+      "ageless"
+    ],
+    "guidance": "Source-reported candidate only. Preserve original field, units, period, outfit and anime context. Multiple values coexist; missing is unknown. Aliases do not modify canonical identities. Relationship claims reference typed links and existing target IDs. Explicit none is distinct from a missing field. No automatic verification, question eligibility or publication."
+  },
+  {
+    "id": "profile.height_cm",
+    "label": "Explicit height in centimetres",
+    "category": "appearance",
+    "valueType": "number",
+    "allowedValues": [],
+    "guidance": "Source-reported candidate only. Preserve original field, units, period, outfit and anime context. Multiple values coexist; missing is unknown. Aliases do not modify canonical identities. Relationship claims reference typed links and existing target IDs. Explicit none is distinct from a missing field. No automatic verification, question eligibility or publication."
+  },
+  {
+    "id": "profile.birthday",
+    "label": "Birthday with optional year",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Source-reported candidate only. Preserve original field, units, period, outfit and anime context. Multiple values coexist; missing is unknown. Aliases do not modify canonical identities. Relationship claims reference typed links and existing target IDs. Explicit none is distinct from a missing field. No automatic verification, question eligibility or publication."
+  },
+  {
+    "id": "profile.zodiac",
+    "label": "Explicitly stated zodiac sign",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Source-reported candidate only. Preserve original field, units, period, outfit and anime context. Multiple values coexist; missing is unknown. Aliases do not modify canonical identities. Relationship claims reference typed links and existing target IDs. Explicit none is distinct from a missing field. No automatic verification, question eligibility or publication."
+  },
+  {
+    "id": "profile.personality",
+    "label": "Source-reported personality label",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Source-reported candidate only. Preserve original field, units, period, outfit and anime context. Multiple values coexist; missing is unknown. Aliases do not modify canonical identities. Relationship claims reference typed links and existing target IDs. Explicit none is distinct from a missing field. No automatic verification, question eligibility or publication."
+  },
+  {
+    "id": "profile.favourite_food",
+    "label": "Stated favourite food",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Source-reported candidate only. Preserve original field, units, period, outfit and anime context. Multiple values coexist; missing is unknown. Aliases do not modify canonical identities. Relationship claims reference typed links and existing target IDs. Explicit none is distinct from a missing field. No automatic verification, question eligibility or publication."
+  },
+  {
+    "id": "ability.devil_fruit",
+    "label": "Explicit Devil Fruit status or name",
+    "category": "ability",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Source-reported candidate only. Preserve original field, units, period, outfit and anime context. Multiple values coexist; missing is unknown. Aliases do not modify canonical identities. Relationship claims reference typed links and existing target IDs. Explicit none is distinct from a missing field. No automatic verification, question eligibility or publication."
+  },
+  {
+    "id": "relationship.character",
+    "label": "Typed character relationship",
+    "category": "affiliation",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Source-reported candidate only. Preserve original field, units, period, outfit and anime context. Multiple values coexist; missing is unknown. Aliases do not modify canonical identities. Relationship claims reference typed links and existing target IDs. Explicit none is distinct from a missing field. No automatic verification, question eligibility or publication."
+  },
+  {
+    "id": "appearance.ear_or_horn_feature",
+    "label": "Source-reported ear or horn appearance",
+    "category": "appearance",
+    "valueType": "string",
+    "allowedValues": [
+      "elf_like_ears",
+      "animal_like_ears",
+      "horns"
+    ],
+    "guidance": "Appearance only. Elf-like or animal-like ears do not establish species. Preserve source context and unknown values."
+  },
+  {
+    "id": "source.tag",
+    "label": "Unmapped explicit source tag",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Preserve the exact explicit source label in a source namespace; searchable with source trust only. No inferred semantic category, independent verification or publication rights."
+  },
+  {
+    "id": "profile.goal",
+    "label": "Explicit character goal",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Retain explicit source wording as a short factual claim with context and provenance; interpretation remains a proposal."
+  },
+  {
+    "id": "occupation.named_role",
+    "label": "Explicit named occupation",
+    "category": "occupation",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Preserve explicit structured source statements, stable value identifiers and contextual qualifiers. No inference from descriptions, clothing or appearance. Source trust is not independent verification or publication approval."
+  },
+  {
+    "id": "identity.classification",
+    "label": "Explicit source classification",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Preserve explicit structured source statements, stable value identifiers and contextual qualifiers. No inference from descriptions, clothing or appearance. Source trust is not independent verification or publication approval."
+  },
+  {
+    "id": "affiliation.employer",
+    "label": "Explicit employer",
+    "category": "affiliation",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Preserve explicit structured source statements, stable value identifiers and contextual qualifiers. No inference from descriptions, clothing or appearance. Source trust is not independent verification or publication approval."
+  },
+  {
+    "id": "affiliation.school",
+    "label": "Explicit education affiliation",
+    "category": "affiliation",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Preserve explicit structured source statements, stable value identifiers and contextual qualifiers. No inference from descriptions, clothing or appearance. Source trust is not independent verification or publication approval."
+  },
+  {
+    "id": "equipment.used_item",
+    "label": "Explicitly used item",
+    "category": "appearance",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Preserve explicit structured source statements, stable value identifiers and contextual qualifiers. No inference from descriptions, clothing or appearance. Source trust is not independent verification or publication approval."
+  },
+  {
+    "id": "equipment.vessel",
+    "label": "Explicitly used vessel",
+    "category": "appearance",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Preserve explicit structured source statements, stable value identifiers and contextual qualifiers. No inference from descriptions, clothing or appearance. Source trust is not independent verification or publication approval."
+  },
+  {
+    "id": "identity.characteristic",
+    "label": "Explicit source characteristic",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Literal structured source relation with provenance and context. Do not infer a species, ability, occupation or membership subtype from a broad characteristic or affiliation. Source trust and release approval remain separate."
+  },
+  {
+    "id": "affiliation.association",
+    "label": "Explicit organizational affiliation",
+    "category": "affiliation",
+    "valueType": "string",
+    "allowedValues": [],
+    "guidance": "Literal structured source relation with provenance and context. Do not infer a species, ability, occupation or membership subtype from a broad characteristic or affiliation. Source trust and release approval remain separate."
+  },
+  {
+    "id": "profile.citizenship",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "label": "Citizenship",
+    "guidance": "Explicit source-reported country of citizenship; not ethnicity or inferred birthplace."
+  },
+  {
+    "id": "profile.languages",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "label": "Languages",
+    "guidance": "Languages explicitly reported for the character; adaptation context may be unknown."
+  },
+  {
+    "id": "profile.residence",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "label": "Residence",
+    "guidance": "Explicit source-reported place of residence; period must remain unknown unless supplied."
+  },
+  {
+    "id": "profile.blood_type",
+    "category": "identity",
+    "valueType": "string",
+    "allowedValues": [],
+    "label": "Blood type",
+    "guidance": "Explicit fictional character blood group; not inferred from personality or appearance."
+  }
+]

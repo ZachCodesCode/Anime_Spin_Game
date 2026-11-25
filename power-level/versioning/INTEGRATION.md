@@ -1,107 +1,71 @@
-> Historical experimental infrastructure documentation. PR #27 now uses the production browser-first path; these versioned helpers and assets are retained offline for compatibility and integrity checks. No activation is required or enabled. See docs/ascent-14-16-deployment.md for the current release workflow.
+# Production and offline integration boundaries
 
-# Phase 4B integration and rollout
+## Browser-first production
 
-The browser now resolves `/api/ascent?challenge=1&date=YYYY-MM-DD` before starting
-or restoring a daily run. With `ASCENT_VERSIONING_FROM` unset, it uses the existing
-bank, rules, schedule and local saves. No expanded answers or catalogue data are
-loaded. The local `npm run dev` preview supplies this legacy response without Turso.
+The current `game.js`, `run.js`, `questions.js`, normal Ascent API and Descent
+implementation follow main. Starting or restoring a game does not call the
+experimental challenge resolver. The shipped question banks and current date
+assignments remain authoritative for ordinary gameplay. Private catalogue access
+and Turso are not prerequisites for local static gameplay. Leaderboards continue
+to use the existing production APIs and identity flow.
 
-For a versioned day, the API returns the immutable bank version, ordered question
-IDs, selected questions and integrity-checked frozen rule scripts. The browser
-uses those rules for matching, aliases, suggestions, scoring and restoration.
-Submissions carry the date/version/ordered IDs and canonical answers. The API
-resolves the assignment independently and recalculates the score; client totals
-are never authoritative. Mismatched clients receive 409 and must reload.
+The static `npm run dev` server serves the normal website and routes, blocks
+private catalogue/hidden paths and returns 503 guidance for API routes requiring
+Vercel development. It does not pretend to supply an operational version resolver.
 
-## Database
+Same-day answer corrections, aliases and saved accepted outcomes retain main's
+behavior. Saved deadlines are not reset by refresh. Historical scores and existing
+leaderboard rows are not migrated by this work. Client save compatibility does
+not promise that an already-running stale deployment can submit every later edit;
+follow the production release workflow's compatibility checks.
 
-The API creates two additive tables on first use (also listed in `schema.sql`):
+## Retained experimental versioning
 
-- `ascent_challenges`: one pinned version and question order per Toronto date.
-- `ascent_score_versions`: version/order metadata per existing player/date key.
+The Phase 4/4B helpers, client and service remain available for offline tests,
+immutable bank integrity and a separately reviewed future integration. Normal
+`api/ascent.js` does not import the experimental versioning service. These helpers
+can resolve ordered question IDs against an immutable bank, validate submitted
+answers with frozen rules and preserve versioned saves and historical pick data.
+Their existence does not make that path active in production.
 
-The first resolver inserts an assignment only if absent, then reads the winning
-row. Score insertion and its metadata use one transaction. Duplicate submissions
-return the original stored score. Existing score rows remain untouched; no guessed
-versions are backfilled. On versioned days, unversioned rows contribute to score
-distributions but not question pick rates. Existing legacy pick behavior remains.
+When explicitly invoked, the experimental service can create the additive
+`ascent_challenges` and `ascent_score_versions` tables described in `schema.sql`.
+Tests use isolated fixtures. No production database or activation configuration is
+changed by this merge. Do not execute migrations, publish, assign, or set an
+activation date as an incidental setup step. `ASCENT_VERSIONING_FROM` alone is
+not a supported production activation: compatible browser, API, assets, database
+and rollout/rollback behavior would need a separate authorization and review.
 
-No production database was accessed or migrated during implementation. Existing
-Turso credentials and anonymous guest cookies are reused. The team-builder schema
-and API are untouched. Vercel's function packaging includes all retained releases.
+Keep all retained release assets and main's current/previous `legacy.json`
+references. Check exact manifest hashes with `npm run ascent:integrity`; never
+rewrite a frozen release. Existing assignments must not be replaced. Unknown
+historical deployment/version associations stay unknown rather than guessed.
 
-## Safe activation
+## Daily content and shared knowledge preparation
 
-1. Deploy this compatible browser/API code to every serving instance first. Do
-   not roll an activated deployment back to pre-4B code, which cannot read pins.
-2. Validate releases with `node power-level/versioning/cli.js check`.
-3. Set `ASCENT_VERSIONING_FROM` to a **future Toronto date** on all instances before
-   that day's midnight. Never switch an already-started legacy day: existing
-   date-only saves cannot prove their bank version and are deliberately not
-   migrated into the separate versioned save namespace.
-4. With no explicit assignment, the existing frozen baseline selects exactly the
-   current rotation (five questions for ascents 1–2, seven thereafter). Explicit
-   registry assignments are supported for future reviewed releases; none were
-   added in this phase. Do not publish expanded content as part of this rollout.
-5. Removing the variable disables new pins. Already-pinned dates continue using
-   their immutable rules, including late submissions and retries. Retain releases
-   and database assignment rows indefinitely; never edit published rows manually.
+Follow [daily integration](../../catalogue/content/README.md) and
+[shared developer setup](../../catalogue/TEAM-SETUP.md). `daily:integrate` performs
+offline database preparation, backup/recovery, reconciliation, evidence retention,
+deduplication, trust/rights filtering and authorized export validation. Its
+`ENRICHED_NOT_PUBLISHED` outcome is deliberately distinct from gameplay bank
+integration and publication. A failed required preparation must fail the command.
+Proposed scheduling and confirmed publication/actual usage are separate records.
 
-Challenge lookup or missing/corrupt rules fail closed with a reload message,
-rather than starting a potentially different challenge. Thus production startup
-now needs a reachable challenge API/database, even in legacy mode. Static local
-preview is explicitly supported by `scripts/dev.js`. Deploy frontend and API
-together; an old API does not understand the resolution endpoint.
+Both Ascent and Descent use this offline preparation workflow. It runs during
+content preparation, never individual player submissions or live gameplay.
+Unsupported facts remain pending review; successful ingestion does not constitute
+maintainer approval, rights clearance or canonical-schema activation. JVMG-derived
+research and proposed mappings remain private and held. No restricted records
+may be admitted to generation or public exports without the required permissions
+and factual decisions.
 
-Versioned saves retain the existing absolute timer deadline and reveal state in
-an envelope with the assignment header. Failed submissions retain completed local
-results and retry on reload. Historical score values are never recalculated.
+## Future release and rollback
 
-## Checks
-
-`npm test` includes real temporary SQLite integration tests for legacy contracts,
-additive schema, baseline parity, pinned rollback, mismatch rejection, transactional
-metadata, duplicates, historical picks and the original late-submission window.
-Phase 4 tests continue covering aliases, Too Clever scoring, save restoration,
-immutable hashes and five/seven-question schedules. Run `npm run build`,
-`npm run catalogue:validate`, and the versioning CLI check before rollout.
-
-## Reconciliation with current production (21 November 2026)
-
-The feature branch now retains current production Ascent, Descent, archives,
-suggestions, analytics, routing and team builder. The new baseline in `legacy.json`
-freezes the 174-question production bank and current core/run scripts. The original
-109-question release is retained unchanged via `previousBankVersion`; it must never
-be silently substituted for current production. No expanded draft is in the public
-baseline. All registry assignments remain empty and activation is unset locally.
-
-Descent's raw definitions store a Top Answer and are scored through its existing
-adapter, so release validation checks their separate contract without changing
-Ascent's one-Limit-Break rule. Versioned Ascent payloads reject Descent IDs and enforce
-the five-character/two-title order for seven-question assignments.
-
-Only Ascent resolves versioned challenges, including archive replay. Descent keeps
-its original static pool, scoring and save keys. Frozen browser scripts are loaded
-serially and their global core/run bindings restored after success or failure.
-Versioned archive and live saves have separate namespaces; legacy saves keep their
-existing keys and absolute deadlines. Archive runs are never posted as daily scores.
-Suggestions validate Ascent IDs against the same pinned assignment as scoring.
-
-`npm run dev` serves the current production routes plus an explicit offline legacy
-challenge response without credentials or a production DB. All catalogue paths,
-including encoded paths and symlink targets, are blocked by the preview server.
-Actual score/suggestion APIs still require Vercel dev/staging with a test database.
-
-Production startup now requires reachable challenge API/Turso even while activation
-is unset. Deployment will create additive tables on resolution, so deployment and
-production setup still require explicit approval. Do not activate an already-started
-day, delete existing pins or roll pinned dates back to pre-versioning code. Retain
-all referenced releases and a compatible rollback deployment. Production environment
-configuration/credentials and schema have not been accessed or changed.
-
-The offline catalogue generator produces private immutable previews with an
-explicit root; the production API cannot resolve them from its retained public
-release root. Approving content, clearing rights, publishing a public artifact and
-assigning a future date are distinct later decisions. No draft or hypothetical
-November 29 gate constitutes an authorized Daily Challenge assignment.
+Use the [production release instructions](../../docs/ascent-14-16-deployment.md)
+for current browser-first changes and `npm run ascent:release-check` for explicit
+content approval gates. A blocked draft plan remains blocked. A later versioned
+rollout must separately prove browser/server version agreement, ordered assignment
+validation, idempotency, save restoration, historical score/pick preservation,
+asset availability and rollback compatibility. Retain old pins and rule assets;
+never roll an activated versioned deployment back to a client/API incapable of
+reading those pins. This merge performs no activation or deployment.

@@ -1,0 +1,11 @@
+{
+  "id":"wikidata-internal-source-trust-v1",
+  "version":1,
+  "provider":"Wikidata",
+  "license":"CC0-1.0",
+  "trustStatus":"wikidata_source_trusted",
+  "basis":"Project-owner authorization for explicit, unambiguous structured Wikidata facts used in offline candidate generation.",
+  "independentVerification":false,
+  "publicationAuthorized":false,
+  "propertyDocumentation":"https://www.wikidata.org/wiki/Wikidata:Data_access"
+}

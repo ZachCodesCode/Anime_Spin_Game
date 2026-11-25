@@ -1,0 +1,205 @@
+[
+  {
+    "id": "draft-catalogue-romance-cast",
+    "text": "Name a character from a romance anime.",
+    "category": "genre",
+    "wide": "char",
+    "anime": "mixed",
+    "note": "An explicit catalogue appearance in an anime tagged Romance. Characters need not personally pursue romance.",
+    "eligibilityRules": {
+      "include": "An explicit catalogue appearance in an anime tagged Romance. Characters need not personally pursue romance.",
+      "exclude": "An individual romance subplot alone does not qualify an untagged anime. Manga-only associations and assumed relationships are excluded.",
+      "sourceFields": [
+        "genres.Romance"
+      ],
+      "characterTraitInference": false
+    },
+    "predicate": {
+      "metadata": {
+        "genres": [
+          "Romance"
+        ]
+      }
+    },
+    "limitBreakCharacterId": "mal-character-30607",
+    "limitBreakStatus": "prior private editorial proposal; not approved",
+    "tooCleverCharacterIds": [],
+    "rightsStatus": "unresolved",
+    "historyStatus": "UNKNOWN"
+  },
+  {
+    "id": "draft-catalogue-psychological-cast",
+    "text": "Name a character from a psychological anime.",
+    "category": "theme",
+    "wide": "char",
+    "anime": "mixed",
+    "note": "An explicit catalogue appearance in an anime tagged Psychological.",
+    "eligibilityRules": {
+      "include": "An explicit catalogue appearance in an anime tagged Psychological.",
+      "exclude": "Do not infer a mental condition, villainy, detective work or personal psychological ability. Mystery/Horror alone are insufficient.",
+      "sourceFields": [
+        "themes.Psychological"
+      ],
+      "characterTraitInference": false
+    },
+    "predicate": {
+      "metadata": {
+        "themes": [
+          "Psychological"
+        ]
+      }
+    },
+    "limitBreakCharacterId": "mal-character-239954",
+    "limitBreakStatus": "prior private editorial proposal; not approved",
+    "tooCleverCharacterIds": [],
+    "rightsStatus": "unresolved",
+    "historyStatus": "UNKNOWN"
+  },
+  {
+    "id": "draft-catalogue-historical-cast",
+    "text": "Name a character from a historical anime.",
+    "category": "setting classification",
+    "wide": "char",
+    "anime": "mixed",
+    "note": "An explicit catalogue appearance in an anime tagged Historical; fictionalized period settings count.",
+    "eligibilityRules": {
+      "include": "An explicit catalogue appearance in an anime tagged Historical; fictionalized period settings count.",
+      "exclude": "Not a release-decade question. Being a samurai or a real historical person alone does not qualify an untagged anime.",
+      "sourceFields": [
+        "themes.Historical"
+      ],
+      "characterTraitInference": false
+    },
+    "predicate": {
+      "metadata": {
+        "themes": [
+          "Historical"
+        ]
+      }
+    },
+    "limitBreakCharacterId": "mal-character-38092",
+    "limitBreakStatus": "prior private editorial proposal; not approved",
+    "tooCleverCharacterIds": [],
+    "rightsStatus": "unresolved",
+    "historyStatus": "UNKNOWN"
+  },
+  {
+    "id": "draft-catalogue-adult-ensemble",
+    "text": "Name a character from an anime with an adult main cast.",
+    "category": "ensemble classification",
+    "wide": "char",
+    "anime": "mixed",
+    "note": "An explicit appearance in an anime tagged Adult Cast. A younger supporting character in that qualifying anime can count.",
+    "eligibilityRules": {
+      "include": "An explicit appearance in an anime tagged Adult Cast. A younger supporting character in that qualifying anime can count.",
+      "exclude": "Do not infer any individual age. An adult-looking character or mature rating without Adult Cast metadata is insufficient.",
+      "sourceFields": [
+        "themes.Adult Cast"
+      ],
+      "characterTraitInference": false
+    },
+    "predicate": {
+      "metadata": {
+        "themes": [
+          "Adult Cast"
+        ]
+      }
+    },
+    "limitBreakCharacterId": "mal-character-30607",
+    "limitBreakStatus": "prior private editorial proposal; not approved",
+    "tooCleverCharacterIds": [],
+    "rightsStatus": "unresolved",
+    "historyStatus": "UNKNOWN"
+  },
+  {
+    "id": "draft-catalogue-anime-original",
+    "text": "Name a character from an anime-original story.",
+    "category": "production origin",
+    "wide": "char",
+    "anime": "mixed",
+    "note": "An explicit appearance in an anime whose source field is Original. A shared multimedia franchise can still have an original anime story.",
+    "eligibilityRules": {
+      "include": "An explicit appearance in an anime whose source field is Original. A shared multimedia franchise can still have an original anime story.",
+      "exclude": "Source Manga, Novel, Light novel, Visual novel, Game, Other or unknown does not qualify; do not infer Original from a title.",
+      "sourceFields": [
+        "source=Original"
+      ],
+      "characterTraitInference": false
+    },
+    "predicate": {
+      "metadata": {
+        "source": [
+          "Original"
+        ]
+      }
+    },
+    "limitBreakCharacterId": "mal-character-25229",
+    "limitBreakStatus": "prior private editorial proposal; not approved",
+    "tooCleverCharacterIds": [],
+    "rightsStatus": "unresolved",
+    "historyStatus": "UNKNOWN"
+  },
+  {
+    "id": "draft-catalogue-supporting-award",
+    "text": "Name a supporting character from an award-winning anime.",
+    "category": "cast credit and award classification",
+    "wide": "char",
+    "anime": "mixed",
+    "note": "A Supporting appearance credit in the specific anime AND that anime has the Award Winning genre tag.",
+    "eligibilityRules": {
+      "include": "A Supporting appearance credit in the specific anime AND that anime has the Award Winning genre tag.",
+      "exclude": "Main or unknown-role credits alone do not qualify. This does not claim the character won an award; a Main character elsewhere may qualify through a Supporting credit here.",
+      "sourceFields": [
+        "genres.Award Winning",
+        "appearance.role=Supporting"
+      ],
+      "characterTraitInference": false
+    },
+    "predicate": {
+      "metadata": {
+        "genres": [
+          "Award Winning"
+        ]
+      },
+      "role": "Supporting"
+    },
+    "limitBreakCharacterId": "mal-character-239954",
+    "limitBreakStatus": "prior private editorial proposal; not approved",
+    "tooCleverCharacterIds": [],
+    "rightsStatus": "unresolved",
+    "historyStatus": "UNKNOWN"
+  },
+  {
+    "id": "draft-catalogue-shoujo-josei",
+    "text": "Name a character from a shoujo or josei manga\u2019s anime adaptation.",
+    "category": "source medium and audience demographic",
+    "wide": "char",
+    "anime": "mixed",
+    "note": "An explicit appearance in an anime with source Manga AND a documented Shoujo or Josei demographic.",
+    "eligibilityRules": {
+      "include": "An explicit appearance in an anime with source Manga AND a documented Shoujo or Josei demographic.",
+      "exclude": "Romance, a female lead, Boys Love, guessed audience or an Original/Novel/Visual novel source are insufficient. No inference about individual gender.",
+      "sourceFields": [
+        "source=Manga",
+        "demographics.Shoujo OR Josei"
+      ],
+      "characterTraitInference": false
+    },
+    "predicate": {
+      "metadata": {
+        "source": [
+          "Manga"
+        ],
+        "demographics": [
+          "Shoujo",
+          "Josei"
+        ]
+      }
+    },
+    "limitBreakCharacterId": "mal-character-8144",
+    "limitBreakStatus": "prior private editorial proposal; not approved",
+    "tooCleverCharacterIds": [],
+    "rightsStatus": "unresolved",
+    "historyStatus": "UNKNOWN"
+  }
+]

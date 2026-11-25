@@ -1,0 +1,302 @@
+{
+  "ambiguousAliasesWithheld": 11506,
+  "animeCount": 4700,
+  "attribution": "Contains information from Anime Characters Database (ODbL/DbCL) and Wikidata (CC0). See ../NOTICE.md and ../licenses/.",
+  "bySource": {
+    "ACDB": 292733,
+    "Wikidata": 33028
+  },
+  "byTrait": {
+    "ability.named_power": 693,
+    "ability.transformation": 15,
+    "affiliation.association": 8,
+    "affiliation.employer": 37,
+    "affiliation.membership": 1109,
+    "affiliation.school": 88,
+    "appearance.accessory": 25,
+    "appearance.clothing": 4420,
+    "appearance.ear_or_horn_feature": 2394,
+    "appearance.eye_color": 53609,
+    "appearance.eyewear": 19,
+    "appearance.hair_color": 55312,
+    "appearance.hair_length": 53552,
+    "equipment.used_item": 102,
+    "equipment.weapon": 28,
+    "identity.alias": 1657,
+    "identity.characteristic": 30,
+    "identity.classification": 16067,
+    "identity.gender": 59618,
+    "identity.species": 205,
+    "identity.story_role": 15748,
+    "occupation.named_role": 1824,
+    "occupation.role": 662,
+    "profile.apparent_age": 55071,
+    "profile.birthday": 401,
+    "profile.blood_type": 124,
+    "profile.citizenship": 701,
+    "profile.height_cm": 290,
+    "profile.languages": 496,
+    "profile.personality": 273,
+    "profile.residence": 352,
+    "relationship.character": 210,
+    "relationship.family": 621
+  },
+  "characterCount": 59645,
+  "contentsLicenses": [
+    "DbCL-1.0",
+    "CC0-1.0"
+  ],
+  "damagedOrUnsafeAliasesWithheld": 74927,
+  "databaseLicense": "ODbL-1.0",
+  "datasetVersion": "8ea694cd907a450ae9bebc68d9c2cb8bd23b0fe6a92e46ea04de2a1042316f28",
+  "excluded": {
+    "currentPositiveObservations": 32528,
+    "observationReasons": {
+      "identity_not_publicly_linkable": 31873,
+      "not_original_source_provenance": 289,
+      "relationship_target_not_public": 366
+    },
+    "privateIdentitiesWithoutPublicRepresentation": 1034,
+    "privateReviewAndHistoryIncluded": false,
+    "sourceRecordReasons": {
+      "ambiguous_multiple_wikidata_identities": 8,
+      "cross_source_identity_link_not_cleared": 4352,
+      "held_identity": 96065,
+      "invalid_source_name": 123,
+      "no_source_backed_anime_assignment": 928
+    }
+  },
+  "files": {
+    "characters-00.jsonl.gz": {
+      "bytes": 424915,
+      "records": 1778,
+      "sha256": "69d70c271a88685864ac4982b3fbd2ed24c3497aaa257f5dc431af9943bf0200",
+      "uncompressedSHA256": "caa241bc73e9b4da2b572cff3cc4addaaaab81632603721ad10699ee1439554f"
+    },
+    "characters-01.jsonl.gz": {
+      "bytes": 430063,
+      "records": 1831,
+      "sha256": "4f9e10f7b701f9ed030f7f8d232f0db14919333c460ded23331d311be13f7b5e",
+      "uncompressedSHA256": "6c4f61a6f484be13b5d6905e870aa89d6218dcfbb83db001caff48b821ed945e"
+    },
+    "characters-02.jsonl.gz": {
+      "bytes": 432650,
+      "records": 1878,
+      "sha256": "9062350f9e544fe6c0584d2217848c65402b9951d5dc604c3dc45d321445ca13",
+      "uncompressedSHA256": "e02e4773cc56007fe3b5085d3c0f1013d356ffa6c9ee1a7d9141b42cbf5712f5"
+    },
+    "characters-03.jsonl.gz": {
+      "bytes": 458721,
+      "records": 1949,
+      "sha256": "c9ed319647c37019d053572b30dc09c7737d9108964e437488bc14fcb42c19ff",
+      "uncompressedSHA256": "ab1058ecbc3d0944f05e42267a6fbecff3ee9ccae137fa85725bd080b3ea7743"
+    },
+    "characters-04.jsonl.gz": {
+      "bytes": 443125,
+      "records": 1864,
+      "sha256": "23184ae443109ad100dc54946789855e616f2b9a9f483aeaaa864b9ce39a198b",
+      "uncompressedSHA256": "7229de60d07aaf8bb92411e27dca27b1b6a45948fb09952c7ae2f4c5672b6444"
+    },
+    "characters-05.jsonl.gz": {
+      "bytes": 432089,
+      "records": 1871,
+      "sha256": "a5b3be5df73181da147e637b4950bc75e277342588b87e2a7360717c195d331e",
+      "uncompressedSHA256": "c20050ac95d7a09e8a63c494f96c53f0cdd5fd0bfa5c4794c4c6e31bee043828"
+    },
+    "characters-06.jsonl.gz": {
+      "bytes": 437542,
+      "records": 1789,
+      "sha256": "ff5034621fc8377a7d5d248340d068ff55b2a5c4277cc5634c0afdf628aac482",
+      "uncompressedSHA256": "2ead0ab8813dbee38009559d433dee10e0089124502ba741a289576f593c6327"
+    },
+    "characters-07.jsonl.gz": {
+      "bytes": 428134,
+      "records": 1832,
+      "sha256": "5571ae5b53754010aac3a07b0cebab670044e6fe6301f62d93e5a6b2aaa6b68b",
+      "uncompressedSHA256": "ed1a2b0ddc91d4cb18537d404594058a4a78ebdf259e02509dc3e8d2b79d44cc"
+    },
+    "characters-08.jsonl.gz": {
+      "bytes": 447630,
+      "records": 1893,
+      "sha256": "f1f62adffe7c47b17d118b2e0b07496c0e611b267ba2877dc9a0236ded0c89e2",
+      "uncompressedSHA256": "caf4f0c6f2432e4727c8255356116b57f0578ddbff0b277185dc3fe463d7d059"
+    },
+    "characters-09.jsonl.gz": {
+      "bytes": 458548,
+      "records": 1926,
+      "sha256": "4f156552b14a53c136a7773195cfd1b0cc4bc1ffff7f62b28ebba25f86f9eb0a",
+      "uncompressedSHA256": "b3a84cee2e7a42badd31c96bd720fdcebfe8b35a490cf5469ae350c02a8cd47c"
+    },
+    "characters-0a.jsonl.gz": {
+      "bytes": 443382,
+      "records": 1871,
+      "sha256": "6450921fc210738ac9699cf1dbca8c1656d2df83b04d1b00697e74117277dc5e",
+      "uncompressedSHA256": "de8db5698ddf2db2f1f1f30b9826e7dd889a1694d0e105decd4e2f95267ac945"
+    },
+    "characters-0b.jsonl.gz": {
+      "bytes": 428859,
+      "records": 1838,
+      "sha256": "00943400d5971256e93a8105216874e2fa94bad33678827fc7a6807b43114c78",
+      "uncompressedSHA256": "ae5cb87284aca59c4177961c6f5294df0813722900ddbf810b1ec7e7f121042b"
+    },
+    "characters-0c.jsonl.gz": {
+      "bytes": 425361,
+      "records": 1836,
+      "sha256": "baefbde8169aab1b18428893db5f032b25368e756348ecbd9875f6cdc10e161e",
+      "uncompressedSHA256": "c2550465476a0813c5086b16e2ff29450659c60065269c0875c44bfae12be288"
+    },
+    "characters-0d.jsonl.gz": {
+      "bytes": 431097,
+      "records": 1865,
+      "sha256": "bda3c18ce9d3c083dfd547cbc99970bab506a12e5a92df270b6bc0aea076cd5b",
+      "uncompressedSHA256": "90417b8172588a9201b95240fa317d405906de529f7f40c8fc44245e6e2f1163"
+    },
+    "characters-0e.jsonl.gz": {
+      "bytes": 415319,
+      "records": 1790,
+      "sha256": "e4d58ccc310f26f8a2bbe06d6454dd84e166b8b70f362fb59fce89b9fd0d911e",
+      "uncompressedSHA256": "b3880a1ca6dca5ad6b4ef71c7d01d41e12e9514929f4ac14968a998488736016"
+    },
+    "characters-0f.jsonl.gz": {
+      "bytes": 417227,
+      "records": 1800,
+      "sha256": "7f07a4a9929be3d33f1f04d486d1a9c03f9de9672f63d74c13baa65725760fc0",
+      "uncompressedSHA256": "7c686aa355380cb77483c8ba5244ce005de8aa6f40a6146ca1b90f23ce381fee"
+    },
+    "characters-10.jsonl.gz": {
+      "bytes": 447221,
+      "records": 1828,
+      "sha256": "8535bfd842aa2b9855408189f16e294e628398d0ad37c6a6329597e7fcf6708f",
+      "uncompressedSHA256": "c6ec4ff3771b634e5b97ebfabdfdca783266b87c588dd75442c4082db9cb5a63"
+    },
+    "characters-11.jsonl.gz": {
+      "bytes": 459557,
+      "records": 1967,
+      "sha256": "2e39ae4c7813c49434ed823bf754f2f83542f81b2b31db803f8c4ce168ae0152",
+      "uncompressedSHA256": "7d21329fe4807810b6f40142d96ae6ad64897b0f1d4695c52e1375f6377cd333"
+    },
+    "characters-12.jsonl.gz": {
+      "bytes": 439134,
+      "records": 1841,
+      "sha256": "c596e85a20fbca19a40a9206a143c02ea8d888d41d72bfd3b4b2582642966020",
+      "uncompressedSHA256": "b7e22eb0d4707c5a0c167e77fd699ee49d821410b8dfe1d50c250e42afa73696"
+    },
+    "characters-13.jsonl.gz": {
+      "bytes": 447162,
+      "records": 1919,
+      "sha256": "91aa54cda15d6a6d0f01ee54d7dad0229a368239b6de22fc70466df6af471bf8",
+      "uncompressedSHA256": "ede65cd5b47fda05927766416d8236428fce40c0516e374dc3b7ebfa2f532e74"
+    },
+    "characters-14.jsonl.gz": {
+      "bytes": 432483,
+      "records": 1823,
+      "sha256": "13e3503d761780335fb184654f11ea86032fd0aaeb5644082ed04973ad7e8e97",
+      "uncompressedSHA256": "c221948ca2697f0986f9f9f714624c7a3bf1554c43f7089e49e16a80d61675e4"
+    },
+    "characters-15.jsonl.gz": {
+      "bytes": 437982,
+      "records": 1822,
+      "sha256": "087e3c7845d265ecf591a1bb608e137fc94d7d12ecf16cd9e5e1d7e9661b7cad",
+      "uncompressedSHA256": "3da531ce5d629c9f53ae136a2e87659d8f9b7844f2ffd176bec114e67c5705fa"
+    },
+    "characters-16.jsonl.gz": {
+      "bytes": 445630,
+      "records": 1874,
+      "sha256": "01cebec42767e20e7b96623f70d9d8f0eb097f9fdce87e72f8131d467d1d308a",
+      "uncompressedSHA256": "16819d5e14ab191ced90486a4d14720e3fad1b2bea088ee86919fb641e98c77a"
+    },
+    "characters-17.jsonl.gz": {
+      "bytes": 447482,
+      "records": 1901,
+      "sha256": "6728329ebbbca9a9564cc577c3cbe755f1564e5fd0d0adb934216e44f877e719",
+      "uncompressedSHA256": "2f09f538d64dc145267720bed70af6c9cd067b71b4b28126a08ed67d4b7d822e"
+    },
+    "characters-18.jsonl.gz": {
+      "bytes": 468921,
+      "records": 1964,
+      "sha256": "67396d4eaede055630e967cf4f540ace66963bc063380ff38f75281bd81ac2d2",
+      "uncompressedSHA256": "d2180a99c8a4d39fd53f60680597f087b67621a30b25d98e507a7ec9a525f694"
+    },
+    "characters-19.jsonl.gz": {
+      "bytes": 442021,
+      "records": 1929,
+      "sha256": "3ec13b352582f42e282f1ecf8c65d590a7d4ec1abcb96a53f0119df532bd9e43",
+      "uncompressedSHA256": "05120e337f2b9d7c37f22ff83e4ab5a1ae57d69f441599c910c8de3d0e864d42"
+    },
+    "characters-1a.jsonl.gz": {
+      "bytes": 428528,
+      "records": 1848,
+      "sha256": "4c70776ac9b8a7f92d72c317e7d5d6eb132455061ab69f0359bcf0fe1a418819",
+      "uncompressedSHA256": "af4a96a5416619cf0bfe6e666d947e7f52570124e59c9b8b56de92f6ff91db1a"
+    },
+    "characters-1b.jsonl.gz": {
+      "bytes": 438882,
+      "records": 1905,
+      "sha256": "fa9f2f67b889e450829b7ca294a3b90c286f192eeba517dae3b15f0189bcc825",
+      "uncompressedSHA256": "50d8aff05666b16af6a5b7cb4536b45751b8f3dbe2235bc2498e12c2d7a4895a"
+    },
+    "characters-1c.jsonl.gz": {
+      "bytes": 429568,
+      "records": 1858,
+      "sha256": "ccf830abdf28bcfaf40b192f24d43a6882815db2dc3c3d9d1454f2ed95f786e1",
+      "uncompressedSHA256": "821a6e627e6b9a25fd7758d1bd4533a57d80f10d6f7960f7d923e265792ec1ac"
+    },
+    "characters-1d.jsonl.gz": {
+      "bytes": 433433,
+      "records": 1811,
+      "sha256": "66be73d89d7c22edaea0fc85775cd9fd685945a6f58cd0cce488685ee34cb16b",
+      "uncompressedSHA256": "840c2c6daa9d6d81a485a95fd38c094ecc499699c416d7a2c56a28dd2f3dd74d"
+    },
+    "characters-1e.jsonl.gz": {
+      "bytes": 428081,
+      "records": 1877,
+      "sha256": "403e52aad05f6bb7865dcf04c95a8d716f901852e5b51fdd062f2a410d2620a3",
+      "uncompressedSHA256": "f22d835b40ce91665aef1248313b1c22e3f03016c11db485a508f41c73675132"
+    },
+    "characters-1f.jsonl.gz": {
+      "bytes": 437419,
+      "records": 1867,
+      "sha256": "84962c04609251f41dbd11c6a48ed685e15e14c980ccc12857609274a158f799",
+      "uncompressedSHA256": "3b6b4904cd6ca3ada7fc237f3f6c851f0ba29c9e545e7be7688f9b049bb48990"
+    }
+  },
+  "format": "anime-ascent-public-knowledge-v1",
+  "generation": {
+    "command": "python3 -B catalogue/team-export.py public PRIVATE_SQLITE catalogue/public-data/v1",
+    "gameplayApproval": false,
+    "independentVerification": false,
+    "sourceMode": "read-only SQLite transaction; official SQL and current structured Wikidata only"
+  },
+  "knownAnimeCharacters": 58908,
+  "policyId": "ascent-public-source-policy-v1",
+  "policySHA256": "e9939822a3dc4baa88d8ddb8e67bb04944e617f0acf1c38a312edc9ba1bbbb30",
+  "positiveAssertions": 325761,
+  "privateBaseline": {
+    "currentPositiveObservations": 358289,
+    "identities": 60673,
+    "searchableCharacters": 60671,
+    "uniquePositiveTriples": 350313
+  },
+  "schemaVersion": 1,
+  "searchableCharacters": 59644,
+  "sourceCategories": {
+    "ACDB": {
+      "acquisition": "official-sql-export",
+      "license": "ODbL-1.0 + DbCL-1.0",
+      "permissionURL": "https://www.animecharactersdatabase.com/databasedumps.php",
+      "scope": "Official SQL structured identities, title assignments and explicitly normalized attributes only; no webpage text, images or scraped tags"
+    },
+    "Wikidata": {
+      "acquisition": "official-wikidata-entity-api",
+      "license": "CC0-1.0",
+      "permissionURL": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "scope": "Structured source labels, aliases, identifiers, statements and source-native anime assignments only"
+    }
+  },
+  "totalBytes": 14018166,
+  "uniqueTraitTriples": 323573,
+  "uniqueTriplesBySource": {
+    "ACDB": 292733,
+    "Wikidata": 33024
+  }
+}

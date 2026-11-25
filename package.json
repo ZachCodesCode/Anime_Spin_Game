@@ -8,11 +8,35 @@
   },
   "scripts": {
     "dev": "node scripts/dev.js",
-    "test": "node --test power-level/*.test.js",
+    "test": "node --test power-level/*.test.js catalogue/tests/*.test.js",
     "build": "node scripts/build-social-preview.js",
     "predev": "npm run build",
+    "catalogue:bootstrap": "node catalogue/team-cli.js bootstrap",
+    "catalogue:validate": "node catalogue/team-cli.js validate",
+    "catalogue:inspect": "node catalogue/team-cli.js inspect",
+    "catalogue:import": "node catalogue/import.js",
+    "traits": "node catalogue/traits/cli.js",
+    "ascent:generate": "node catalogue/generator/cli.js",
+    "ascent:plan": "node power-level/scheduling/cli.js plan",
+    "ascent:history-export": "node power-level/scheduling/cli.js export",
     "ascent:integrity": "node power-level/versioning/cli.js check",
+    "catalogue:review": "node catalogue/verification/server.js",
+    "catalogue:bundle": "node catalogue/team-cli.js bundle",
+    "catalogue:traits-import": "node catalogue/traits/importer/cli.js",
+    "catalogue:acdb-stage": "python3 -B catalogue/acdb/stage.py",
+    "catalogue:knowledge": "node catalogue/traits/importer/knowledge-cli.js",
+    "catalogue:acdb-pages": "node catalogue/acdb/pages-cli.js",
+    "catalogue:public": "node catalogue/public-data.js",
+    "catalogue:public-export": "node catalogue/public-data.js export",
+    "daily:integrate": "node catalogue/content/cli.js integrate",
+    "daily:handoff": "node catalogue/content/cli.js handoff",
+    "daily:preview": "node catalogue/content/cli.js preview",
+    "daily:inventory": "node catalogue/content/cli.js inventory",
+    "daily:confirm-usage": "node catalogue/content/cli.js confirm-usage",
     "ascent:release-check": "node power-level/versioning/cli.js release-check",
     "descent:preview": "node power-level/descent-preview.js"
+  },
+  "devDependencies": {
+    "n3": "1.26.0"
   }
 }
