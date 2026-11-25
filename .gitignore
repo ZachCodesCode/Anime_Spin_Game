@@ -29,3 +29,6 @@ npm-debug.log*
 /catalogue/traits/data/*
 !/catalogue/traits/data/definitions.json
 *.private-bundle.json
+
+# Offline catalogue Python bytecode (never source data).
+/catalogue/**/__pycache__/

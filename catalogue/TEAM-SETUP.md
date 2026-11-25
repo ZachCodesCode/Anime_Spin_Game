@@ -270,3 +270,13 @@ acdb-character-12445`, `search --tag goggles`, or `generate --tag pirate --outpu
 during import or gameplay. The optional network mode requires an actual documented
 ACDB authorization; no grant was supplied or fabricated. Raw HTML remains excluded
 from Git/hosting, and stored source-trusted traits still require release review.
+
+## Required daily content enrichment (after PR #28 is merged)
+
+Use [content/README.md](content/README.md) for the single offline `daily:integrate`
+preparation command, deterministic cross-branch handoff, private backup/retry,
+pending review and separately confirmed usage. A handoff alone is not a completed
+integration. No player request or production API runs this workflow. Both developers
+need the same code revision and an authorized existing store; do not synchronize
+independently edited SQLite files. [JVMG staging](jvmg/README.md) remains research-only
+until graph-specific rights and admission policies are resolved.

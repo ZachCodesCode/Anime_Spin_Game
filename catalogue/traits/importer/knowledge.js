@@ -28,7 +28,8 @@ function descriptionFacts(text,name,url){
  return facts;
 }
 function safeName(name){const n=C.normalize(name);return n.length>=2&&!/^(unknown|unnamed|none|n a|boy|girl|man|woman|soldier|villager|extra|mother|father|student|teacher)( \d+)?$/.test(n);}
-function prepare({input,provider,mappings,manifest,catalogue,legacy,output,file}){
+function prepare({input,provider,mappings,manifest,catalogue,legacy,output,file,dailyIdentities}){
+ if(provider==='jvmg')return require('../../jvmg/adapter').prepare({input,output,file,manifest,dailyIdentities});
  if(provider==='wikidata')return require('./wikidata-knowledge').prepare({input,output,catalogue,file,legacy});
  if(!['acdb','acdb-profile'].includes(provider))throw Error('Source trust is configured only for ACDB');
  input=S.privateFile(input);output=S.privateFile(output);const raw=JSON.parse(fs.readFileSync(input)),d=V.index({catalogue,definitions:defs,questions:require('../../../power-level/questions'),policy:require('../../enrichment/eligibility.json')}),idx=I.identityIndex(d),novel=N.index(catalogue),definition=new Map(defs.map(x=>[x.id,x]));

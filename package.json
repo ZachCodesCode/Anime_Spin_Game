@@ -27,6 +27,14 @@
     "catalogue:knowledge": "node catalogue/traits/importer/knowledge-cli.js",
     "catalogue:acdb-pages": "node catalogue/acdb/pages-cli.js",
     "catalogue:public": "node catalogue/public-data.js",
-    "catalogue:public-export": "node catalogue/public-data.js export"
+    "catalogue:public-export": "node catalogue/public-data.js export",
+    "daily:integrate": "node catalogue/content/cli.js integrate",
+    "daily:handoff": "node catalogue/content/cli.js handoff",
+    "daily:preview": "node catalogue/content/cli.js preview",
+    "daily:inventory": "node catalogue/content/cli.js inventory",
+    "daily:confirm-usage": "node catalogue/content/cli.js confirm-usage"
+  },
+  "devDependencies": {
+    "n3": "1.26.0"
   }
 }

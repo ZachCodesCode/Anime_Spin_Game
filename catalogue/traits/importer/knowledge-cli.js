@@ -9,6 +9,7 @@ function main(args=process.argv.slice(2)){
   const spec=JSON.parse(fs.readFileSync(S.privateFile(o.query)));const result=command==='search'?K.store('search',file,[],spec):K.generate({file,spec,catalogue:D.read('catalogue.json'),metadata:D.read('anime-metadata.json'),limitBreakCharacterId:o['limit-break-character']});
   if(o.output){S.snapshot(o.output,result);return {output:o.output,candidates:result.candidates?.length??result.length,held:result.held?.length||0,status:result.status||'source_trusted',publicationAuthorized:false};}return result;
  }
+ if(command==='import'&&o.provider==='jvmg')throw Error('Use daily:integrate or the scoped JVMG admission CLI with a verified backup; generic source ingest cannot bypass those gates');
  if(command==='import'){
   if(!o.input||!o.provider)throw Error('Import requires --provider and --input');const legacyFile=o.state||process.env.ASCENT_TRAIT_REVIEW_STATE,legacy=legacyFile?JSON.parse(fs.readFileSync(S.privateFile(legacyFile))):undefined;
   if(legacy){const cli=require('./cli');require('../../verification/model').validate(legacy,cli.deps());K.store('legacy',file,[],legacy);}

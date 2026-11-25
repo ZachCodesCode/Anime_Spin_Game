@@ -1,0 +1,70 @@
+{
+  "sword": [
+    "equipment.weapon",
+    "sword"
+  ],
+  "horns": [
+    "appearance.ear_or_horn_feature",
+    "horns"
+  ],
+  "mask": [
+    "appearance.accessory",
+    "mask"
+  ],
+  "eyepatch": [
+    "appearance.accessory",
+    "eyepatch"
+  ],
+  "demon": [
+    "identity.species",
+    "demon"
+  ],
+  "chef": [
+    "occupation.role",
+    "chef"
+  ],
+  "fire control": [
+    "ability.element",
+    "fire"
+  ],
+  "water control": [
+    "ability.element",
+    "water"
+  ],
+  "white hair": [
+    "appearance.hair_color",
+    "white"
+  ],
+  "silver hair": [
+    "appearance.hair_color",
+    "silver"
+  ],
+  "black hair": [
+    "appearance.hair_color",
+    "black"
+  ],
+  "blonde hair": [
+    "appearance.hair_color",
+    "blonde"
+  ],
+  "gas mask": [
+    "appearance.accessory",
+    "mask"
+  ],
+  "half mask": [
+    "appearance.accessory",
+    "mask"
+  ],
+  "domino mask": [
+    "appearance.accessory",
+    "mask"
+  ],
+  "face mask": [
+    "appearance.accessory",
+    "mask"
+  ],
+  "waterbender": [
+    "ability.element",
+    "water"
+  ]
+}
