@@ -7,11 +7,11 @@ const { db, ensureDescent, cors } = require("./_db.js");
 const { guest } = require("./_guest.js");
 const C = require("../power-level/core.js");
 const D = require("../power-level/descent.js");
-const source = require("../power-level/questions.js");
+const source = [...require("../power-level/questions.js"), ...require("../power-level/descent-questions.js")];
 const bank = D.bank(source);
 
-const isDay = d => /^\d{4}-\d{2}-\d{2}$/.test(d);
-const recordable = d => { const now = Date.now(); return [C.dateKey(new Date(now)), C.dateKey(new Date(now - 864e5))].includes(d); };
+const isDay = d => /^\d{4}-\d{2}-\d{2}$/.test(d) && !Number.isNaN(Date.parse(d + "T00:00:00Z"));
+const recordable = d => { const today = C.dateKey(); const yesterday = new Date(Date.parse(today + "T00:00:00Z") - 864e5).toISOString().slice(0, 10); return d === today || d === yesterday; };
 
 async function stats(date, ids) {
   const r = await db.execute({ sql: "SELECT score, answers FROM descent_scores WHERE day = ?", args: [date] });
@@ -33,15 +33,19 @@ module.exports = async function handler(req, res) {
     if (req.method === "GET") {
       const date = String(req.query.date || "");
       if (!isDay(date) || date < D.EPOCH) return res.status(400).json({ error: "Bad date" });
+      const assignment = D.validate(source, date);
+      if (!assignment.ready) return res.status(404).json({ error: "Descent assignment unavailable" });
       await ensureDescent();
-      return res.status(200).json(await stats(date, D.select(source, date)));
+      return res.status(200).json(await stats(date, assignment.ids));
     }
     if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
 
     const body = typeof req.body === "string" ? JSON.parse(req.body || "{}") : (req.body || {});
     const date = String(body.date || "");
     if (!isDay(date) || date < D.EPOCH || !recordable(date)) return res.status(400).json({ error: "Not a current descent" });
-    const ids = D.select(source, date);
+    const assignment = D.validate(source, date);
+    if (!assignment.ready) return res.status(404).json({ error: "Descent assignment unavailable" });
+    const ids = assignment.ids;
     if (!Array.isArray(body.answers) || body.answers.length !== ids.length) return res.status(400).json({ error: "Invalid run" });
 
     const answers = [];
