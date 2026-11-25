@@ -30,7 +30,8 @@ test('Ascent #15 answer pools, rarity, Limit Breaks and input forms', () => {
     assert.equal(q.text, text);
     assert.equal(q.wide, kind);
     assert.equal(q.since, date);
-    assert.equal(q.answers.length, count);
+    // The submitted answers are all still here; same-day reviews may add more (never remove).
+    assert.ok(q.answers.length >= count, `${q.id} lost submitted answers`);
     assert.deepEqual(q.answers.filter(a => a.rarity === 100).map(a => a.name), [limit]);
     const seen = new Map();
     for (const answer of q.answers) {

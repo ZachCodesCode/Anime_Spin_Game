@@ -36,7 +36,8 @@ test('November 25 Descent source rarities, aliases and Top Answers are playable'
     assert.equal(raw.descent, kind);
     assert.equal(raw.since, date);
     assert.equal(raw.top, top);
-    assert.equal(raw.answers.length, answerCount);
+    // The submitted answers are all still here; same-day reviews may add more (never remove).
+    assert.ok(raw.answers.length >= answerCount, `${id} lost submitted answers`);
     assert.deepEqual(playable.answers.filter(a => a.rarity === 100).map(a => a.name), [top]);
     const forms = new Map();
     for (const answer of raw.answers) {
