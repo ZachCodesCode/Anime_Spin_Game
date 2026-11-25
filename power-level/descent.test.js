@@ -22,12 +22,14 @@ test('historical Descent dates remain pinned; missing future dates fail closed',
  for(let k=0;k<5;k++){const date=day(k),ids=D.select(bank,date);assert.equal(ids.length,7);assert.deepEqual(ids,D.select(bank,date));}
  assert.deepEqual(D.select(bank,'2026-11-20'),D.select(bank,'2026-11-24'));
  assert.equal(D.validate(bank,'2026-11-25').ready,true);
- assert.throws(()=>D.select(bank,'2026-11-26'),/Missing assignment/);
+ assert.throws(()=>D.select(bank,'2026-11-27'),/Missing assignment/);
 });
 
 test('strict cooldown, semantic conflicts, daily append and approved difficult reuse over 30 days',()=>{
  const A=require('./descent-assignments');const config={assignments:{...A.assignments},reuse:{},policy:A.policy};
- const pool=[...bank],base=Date.parse('2026-11-25T00:00:00Z');
+ // Simulate the 30 days after the last real assignment, so adding real days never breaks this test.
+ const last=Object.keys(A.assignments).sort().pop(),base=Date.parse(last+'T00:00:00Z')+864e5,dayOf=n=>new Date(base+n*864e5).toISOString().slice(0,10);
+ const pool=[...bank];
  for(let n=0;n<30;n++){
   const date=new Date(base+n*864e5).toISOString().slice(0,10);
   const ids=[];
@@ -39,7 +41,7 @@ test('strict cooldown, semantic conflicts, daily append and approved difficult r
   assert.equal(D.validate(pool,date,config).ready,true,date);
   if(n<29)assert.match(D.validate(pool,new Date(base+(n+1)*864e5).toISOString().slice(0,10),config).errors.join(),/Missing assignment/);
  }
- const first='2026-11-25',early='2026-12-09',eligible='2026-12-10',old=config.assignments[first][0];
+ const first=dayOf(0),early=dayOf(14),eligible=dayOf(15),old=config.assignments[first][0];
  config.assignments[early][0]=old;assert.match(D.validate(pool,early,config).errors.join(),/Cooldown/);
  config.assignments[early][0]='manual-14-0';
  config.assignments[eligible][0]=old;assert.match(D.validate(pool,eligible,config).errors.join(),/Reuse needs approved/);
@@ -71,8 +73,8 @@ test('browser and server share the same pinned schedule and new question bank',(
  assert.deepEqual([...browserIds],D.select([...bank,...require('./descent-questions')],'2026-11-23'));
  const november25=vm.runInContext("PowerLevelDescent.select([...POWER_LEVEL_QUESTIONS,...PowerLevelDescentQuestions],'2026-11-25')",context);
  assert.deepEqual([...november25],D.select([...bank,...require('./descent-questions')],'2026-11-25'));
- assert.throws(()=>D.select([...bank,...require('./descent-questions')],'2026-11-26'),/Missing assignment/);
- assert.throws(()=>vm.runInContext("PowerLevelDescent.select([...POWER_LEVEL_QUESTIONS,...PowerLevelDescentQuestions],'2026-11-26')",context),/Missing assignment/);
+ assert.throws(()=>D.select([...bank,...require('./descent-questions')],'2026-11-27'),/Missing assignment/);
+ assert.throws(()=>vm.runInContext("PowerLevelDescent.select([...POWER_LEVEL_QUESTIONS,...PowerLevelDescentQuestions],'2026-11-27')",context),/Missing assignment/);
 });
 
 test('Toronto midnight changes the day across daylight saving time',()=>{
