@@ -1,0 +1,18 @@
+﻿question_id,answer_name,review_status,reason,source_url,existing_answer
+timed-v4-wide-ascent-16-red-eyes,Priscilla Barielle,existing_limit_break_confirmed,ACDB export reports red eyes and anime appearance.,https://www.animecharactersdatabase.com/characters.php?id=77979,True
+timed-v4-wide-ascent-16-animal-ears,Kuon,existing_limit_break_confirmed,ACDB reports animal ears in Utawarerumono anime.,https://www.animecharactersdatabase.com/characters.php?id=75151,True
+timed-v4-wide-ascent-16-post-apocalyptic,Yokohama Shopping Log,existing_limit_break_confirmed,The OVA has a flooded post-collapse setting.,https://anilist.co/anime/975/,True
+timed-v4-wide-ascent-16-psychics,Kyosuke Hyobu,existing_limit_break_confirmed,The official NBC Universal anime lineup identifies the psychic spin-off.,https://www.nbcuni.co.jp/anime/lineup/past/index02540000.html,True
+timed-v4-wide-ascent-16-delinquents,Hokuto Mitsuya,held_ambiguous,Exact-name research did not establish this as one anime delinquent; possible merged identities. Do not change live score until editorial decision.,,True
+timed-v4-wide-ascent-16-death-games,The Ones Within,existing_limit_break_confirmed,Crunchyroll describes life-or-death challenges and confirms TV anime.,https://www.crunchyroll.com/pl/news/latest/2019/6/17/deadly-games-turn-downright-weird-in-the-ones-within-tv-anime-trailer,True
+timed-v4-wide-ascent-16-amnesia,Kyoko Okitegami,held_ambiguous,"Memory reset is documented, but the animation found is a promotional video for a novel; anime-character eligibility needs an editorial rule.",https://www.crunchyroll.com/news/latest/2014/10/15/video-monogatari-anime-promotes-nisioisins-new-okitegami-kyoko-no-bobiroku,True
+timed-v4-wide-ascent-16-animal-ears,Mai Sakurajima,held_ambiguous,Existing answer uses a decorative bunny outfit; task policy excludes accessories. Preserve live answer pending separate correction.,https://anilist.co/anime/101291/,True
+timed-v4-wide-ascent-16-psychics,Arataka Reigen,rejected,Description calls him a self-proclaimed psychic; he does not demonstrate innate psychic power.,https://anilist.co/character/63031/,False
+timed-v4-wide-ascent-16-psychics,Tome Kurata,rejected,"Telepathy Club membership is interest in telepathy, not evidence of an ability.",https://anilist.co/character/88307/,False
+timed-v4-wide-ascent-16-psychics,Loid Forger,rejected,The description attributes telepathy to another family member.,https://anilist.co/anime/140960/,False
+timed-v4-wide-ascent-16-psychics,Roxy Migurdia,rejected,Description explicitly says she cannot use telepathy.,https://anilist.co/anime/108465/,False
+timed-v4-wide-ascent-16-delinquents,Ryuuji Takasu,rejected,Description says he merely looks like a delinquent and is misunderstood.,https://anilist.co/anime/4224/,False
+timed-v4-wide-ascent-16-delinquents,Saki Kawasaki,rejected,"Description says she seems like a delinquent, not that she is one.",https://anilist.co/anime/14813/,False
+timed-v4-wide-ascent-16-delinquents,Bruno Bucciarati,rejected,"Passione is organized crime/mafia, excluded by question wording.",https://anilist.co/anime/102883/,False
+timed-v4-wide-ascent-16-amnesia,Pakunoda,rejected,Description says she erases another person’s memory; it does not establish her own memory loss.,https://anilist.co/anime/11061/,False
+timed-v4-wide-ascent-16-amnesia,Tae Shimura,rejected,"Description attributes amnesia to Kondo after eating her cooking, not to Tae.",https://anilist.co/anime/918/,False
