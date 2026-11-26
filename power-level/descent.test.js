@@ -22,7 +22,7 @@ test('historical Descent dates remain pinned; missing future dates fail closed',
  for(let k=0;k<5;k++){const date=day(k),ids=D.select(bank,date);assert.equal(ids.length,7);assert.deepEqual(ids,D.select(bank,date));}
  assert.deepEqual(D.select(bank,'2026-11-20'),D.select(bank,'2026-11-24'));
  assert.equal(D.validate(bank,'2026-11-25').ready,true);
- assert.throws(()=>D.select(bank,'2026-11-27'),/Missing assignment/);
+ assert.throws(()=>D.select(bank,'2026-11-27'),/Unknown Descent question/);
 });
 
 test('strict cooldown, semantic conflicts, daily append and approved difficult reuse over 30 days',()=>{
@@ -73,8 +73,9 @@ test('browser and server share the same pinned schedule and new question bank',(
  assert.deepEqual([...browserIds],D.select([...bank,...require('./descent-questions')],'2026-11-23'));
  const november25=vm.runInContext("PowerLevelDescent.select([...POWER_LEVEL_QUESTIONS,...PowerLevelDescentQuestions],'2026-11-25')",context);
  assert.deepEqual([...november25],D.select([...bank,...require('./descent-questions')],'2026-11-25'));
- assert.throws(()=>D.select([...bank,...require('./descent-questions')],'2026-11-27'),/Missing assignment/);
- assert.throws(()=>vm.runInContext("PowerLevelDescent.select([...POWER_LEVEL_QUESTIONS,...PowerLevelDescentQuestions],'2026-11-27')",context),/Missing assignment/);
+ const november27=vm.runInContext("PowerLevelDescent.select([...POWER_LEVEL_QUESTIONS,...PowerLevelDescentQuestions],'2026-11-27')",context);
+ assert.deepEqual([...november27],D.select([...bank,...require('./descent-questions')],'2026-11-27'));
+ assert.throws(()=>D.select([...bank,...require('./descent-questions')],'2026-11-28'),/Missing assignment/);
 });
 
 test('Toronto midnight changes the day across daylight saving time',()=>{

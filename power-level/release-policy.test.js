@@ -6,9 +6,9 @@ const V=require('./versioning'),R=require('./run'),C=require('./core'),bank=requ
 const {service}=require('../api/_ascent-versioning');
 async function fixture(run){const owned=await fileDatabase('ascent-release-policy-'),{db}=owned;const ensureAscent=()=>db.execute('CREATE TABLE IF NOT EXISTS ascent_scores(day TEXT,guest TEXT,score INTEGER,answers TEXT,created_at INTEGER,PRIMARY KEY(day,guest))');try{await run(db,ensureAscent);}finally{await owned.dispose();}}
 test('production baseline includes all current answers and immutable releases remain loadable',()=>{
- const frozen=V.load(require('./versioning/legacy.json').bankVersion);
- assert.equal(frozen.bank.length,bank.length);
- for(let i=0;i<bank.length;i++)assert.deepEqual(frozen.bank[i],{...JSON.parse(JSON.stringify(bank[i])),answers:JSON.parse(JSON.stringify(bank[i].answers.slice(0,frozen.bank[i].answers.length)))});
+ const frozen=V.load(require('./versioning/legacy.json').bankVersion),historical=bank.filter(q=>!q.since||q.since<'2026-11-27');
+ assert.equal(frozen.bank.length,historical.length);
+ for(let i=0;i<historical.length;i++)assert.deepEqual(frozen.bank[i],{...JSON.parse(JSON.stringify(historical[i])),answers:JSON.parse(JSON.stringify(historical[i].answers.slice(0,frozen.bank[i].answers.length)))});
  for(const dir of fs.readdirSync(path.join(__dirname,'versioning/releases')))V.load(dir);
 });
 test('November 11–26 legacy selections and November 23 protection remain unchanged',()=>fixture(async(db,ensureAscent)=>{

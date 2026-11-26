@@ -10,7 +10,8 @@ const assignments={
  '2026-11-23':['timed-v4-descent-swordsmen','timed-v4-descent-demon-slayer-demons','timed-v4-descent-mha-quirks','timed-v4-descent-bleach','timed-v4-descent-rivals','timed-v4-descent-naruto-jutsu','timed-v4-descent-pokemon-anime'],
  '2026-11-24':['timed-v4-descent-one-piece','timed-v4-descent-demon-slayer','timed-v4-descent-gundam','timed-v4-descent-gen1-pokemon','timed-v4-descent-jjk','timed-v4-descent-jojo-stands','timed-v4-descent-spy-family'],
  '2026-11-25':['timed-v4-descent-masked-characters','timed-v4-descent-white-hair','timed-v4-descent-sports-anime','timed-v4-descent-fire-users','timed-v4-descent-assassins','timed-v4-descent-anime-films','timed-v4-descent-chefs'],
- '2026-11-26':['timed-v4-descent-fma-characters','timed-v4-descent-death-note-characters','timed-v4-descent-manhwa-anime','timed-v4-descent-one-punch-man-characters','timed-v4-descent-fairy-tail-characters','timed-v4-descent-shojo-anime','timed-v4-descent-tokyo-ghoul-characters']
+ '2026-11-26':['timed-v4-descent-fma-characters','timed-v4-descent-death-note-characters','timed-v4-descent-manhwa-anime','timed-v4-descent-one-punch-man-characters','timed-v4-descent-fairy-tail-characters','timed-v4-descent-shojo-anime','timed-v4-descent-tokyo-ghoul-characters'],
+ "2026-11-27":["timed-v4-descent-8-headband","timed-v4-descent-8-sibling","timed-v4-descent-8-school","timed-v4-descent-8-wings","timed-v4-descent-8-fly","timed-v4-descent-8-games","timed-v4-descent-8-parent"]
 };
 const reuse={}; // Future date -> question ID -> {approvedBy, reviewedAt, runs, acceptedRate, topRate, evidence}
 const policy={minRuns:30,maxAcceptedRate:0.60,maxTopRate:0.30};
