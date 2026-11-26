@@ -14,7 +14,7 @@ function daily(bank,date=dateKey()){let hash=2166136261;for(const c of date) has
 function distance(a,b){let row=Array.from({length:b.length+1},(_,i)=>i);for(let i=1;i<=a.length;i++){const next=[i];for(let j=1;j<=b.length;j++)next[j]=Math.min(next[j-1]+1,row[j]+1,row[j-1]+(a[i-1]!==b[j-1]));row=next;}return row[b.length];}
 function validate(question,value,guesses=[]){
 const n=normalize(value),forms=a=>[a.name,...(a.aliases||[])];
-const typed=words(value),partial=typed.length&&typed.every(w=>w.length>=3)?question.answers.filter(a=>forms(a).some(v=>{const parts=words(v);return typed.every(w=>parts.includes(w));})):[];
+const typed=words(value),partial=typed.length&&typed.every(w=>w.length>=3)?question.answers.filter(a=>!a.formRequired&&forms(a).some(v=>{const parts=words(v);return typed.every(w=>parts.includes(w));})):[];
 const answer=question.answers.find(a=>forms(a).some(v=>normalize(v)===n))||(partial.length===1?partial[0]:null);
 if(answer)return {status:guesses.includes(answer.name)?'repeat':'valid',answer};
 // A shared family name fits several answers, and listing them would give away the rare ones.

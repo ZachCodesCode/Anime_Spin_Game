@@ -7,9 +7,9 @@ const version=require('./versioning/legacy.json').bankVersion;
 function assignment(day='2026-11-20'){return {date:day,bankVersion:version,questionIds:R.select(bank,day)};}
 function enabled(day){return {enabled:true,assignments:[assignment(day)]};}
 test('legacy snapshot exactly preserves questions, names, aliases and every score',()=>{
- const frozen=V.load(version);assert.equal(frozen.bank.length,bank.length);
- for(let i=0;i<bank.length;i++){
-  const q=bank[i],old=frozen.bank[i];assert.deepEqual(old,{...JSON.parse(JSON.stringify(q)),answers:JSON.parse(JSON.stringify(q.answers.slice(0,old.answers.length)))});
+ const frozen=V.load(version),historical=bank.filter(q=>!q.since||q.since<'2026-11-27');assert.equal(frozen.bank.length,historical.length);
+ for(let i=0;i<historical.length;i++){
+  const q=historical[i],old=frozen.bank[i];assert.deepEqual(old,{...JSON.parse(JSON.stringify(q)),answers:JSON.parse(JSON.stringify(q.answers.slice(0,old.answers.length)))});
   for(const a of old.answers){assert.equal(frozen.core.points(a),C.points(a));for(const name of [a.name,...a.aliases||[]])assert.equal(frozen.core.validate(old,name).answer.name,a.name);}
  }
  assert.equal(Object.isFrozen(frozen.bank[0].answers),true);
