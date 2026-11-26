@@ -1,0 +1,5818 @@
+{
+  "timed-v4-wide-ascent-16-red-eyes": [
+    {
+      "name": "Hanako Kamado",
+      "rarity": 45,
+      "aliases": [
+        "ç«ˆé–€ èŠ±å­"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=96113"
+    },
+    {
+      "name": "Shigeru Kamado",
+      "rarity": 45,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=96114"
+    },
+    {
+      "name": "Swamp Demon",
+      "rarity": 45,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=107033"
+    },
+    {
+      "name": "Vaccine Man",
+      "rarity": 45,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=75313"
+    },
+    {
+      "name": "Zombieman",
+      "rarity": 45,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=75038"
+    },
+    {
+      "name": "Mosquito Girl",
+      "rarity": 45,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=75314"
+    },
+    {
+      "name": "Lin Lin",
+      "rarity": 45,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=129474"
+    },
+    {
+      "name": "Tatara",
+      "rarity": 45,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=73055"
+    },
+    {
+      "name": "Kimi Nishino",
+      "rarity": 45,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=69972"
+    },
+    {
+      "name": "Itori",
+      "rarity": 45,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=69038"
+    },
+    {
+      "name": "Koutarou Amon",
+      "rarity": 45,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=91835"
+    },
+    {
+      "name": "Kazuo Yoshida",
+      "rarity": 75,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=73062"
+    },
+    {
+      "name": "Sumaru",
+      "rarity": 45,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=79896"
+    },
+    {
+      "name": "Tayuya",
+      "rarity": 45,
+      "aliases": [
+        "å¤šç”±ä¹Ÿ"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=13866"
+    },
+    {
+      "name": "Ranmaru",
+      "rarity": 45,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=24870"
+    },
+    {
+      "name": "Giran",
+      "rarity": 45,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=85307"
+    },
+    {
+      "name": "Akane Sawatari",
+      "rarity": 45,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=87390"
+    },
+    {
+      "name": "Denji",
+      "rarity": 25,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=109956"
+    },
+    {
+      "name": "Temae",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=91075"
+    },
+    {
+      "name": "Tekka Uchiha",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=80339"
+    },
+    {
+      "name": "Juugo",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=22275"
+    },
+    {
+      "name": "Shino Sousaki",
+      "rarity": 55,
+      "aliases": [
+        "é€å´Žä¿¡ä¹ƒ"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=84226"
+    },
+    {
+      "name": "Seiji Shishikura",
+      "rarity": 55,
+      "aliases": [
+        "è‚‰å€‰ç²¾å…"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=85046"
+    },
+    {
+      "name": "Ladros",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=104675"
+    },
+    {
+      "name": "Gordon Agrippa",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=87617"
+    },
+    {
+      "name": "Sally",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=128333"
+    },
+    {
+      "name": "Connie Lee",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=99248"
+    },
+    {
+      "name": "Remi Ayasaki",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=105982"
+    },
+    {
+      "name": "Shin Yasuda",
+      "rarity": 55,
+      "aliases": [
+        "Yasuda-sensei"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=109056"
+    },
+    {
+      "name": "Kakeru Sengoku",
+      "rarity": 55,
+      "aliases": [
+        "ä»™çŸ³ ç¿”"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=105981"
+    },
+    {
+      "name": "Daikoku",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=64903"
+    },
+    {
+      "name": "Joui Irinaka",
+      "rarity": 55,
+      "aliases": [
+        "Mimic"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=100709"
+    },
+    {
+      "name": "Yuuyu Haya",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=108336"
+    },
+    {
+      "name": "Riruka Dokugamine",
+      "rarity": 55,
+      "aliases": [
+        "Dokugamine Riruka"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=33630"
+    },
+    {
+      "name": "Jin Kariya",
+      "rarity": 55,
+      "aliases": [
+        "ç‹©çŸ¢ ç¥ž"
+      ],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/5985 | https://www.animecharactersdatabase.com/characters.php?id=10734"
+    },
+    {
+      "name": "Ruka Rengoku",
+      "rarity": 80,
+      "aliases": [
+        "ç…‰ç„ ç‘ ç«"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=105686"
+    },
+    {
+      "name": "Stark",
+      "rarity": 45,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=132851"
+    },
+    {
+      "name": "Shou Kusakabe",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=115188"
+    },
+    {
+      "name": "Benimaru Shinmon",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=95940"
+    },
+    {
+      "name": "Alice Rondo",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=93558"
+    },
+    {
+      "name": "Clayman",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=92873"
+    },
+    {
+      "name": "Eris Boreas Greyrat",
+      "rarity": 45,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=76072"
+    },
+    {
+      "name": "Spear Hero",
+      "rarity": 65,
+      "aliases": [
+        "Motoyasu Kitamura"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=93116"
+    },
+    {
+      "name": "Shirou Fujimoto",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=25679"
+    },
+    {
+      "name": "Izumo Kamiki",
+      "rarity": 65,
+      "aliases": [
+        "Eyebrows",
+        "ç¥žæœ¨ å‡ºé›²"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=31059"
+    },
+    {
+      "name": "Jong-In Choi",
+      "rarity": 65,
+      "aliases": [
+        "Shin Mogami (ç™½å· å¤§è™Ž),Choi Jong-in"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=132803"
+    },
+    {
+      "name": "Baek Yoonho",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=6728"
+    },
+    {
+      "name": "Kikyou Kushida",
+      "rarity": 45,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=82418"
+    },
+    {
+      "name": "Eri Shiina",
+      "rarity": 65,
+      "aliases": [
+        "æ¤Žå æžé‡Œ"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=26728"
+    },
+    {
+      "name": "Hatsune Otonashi",
+      "rarity": 65,
+      "aliases": [
+        "éŸ³ç„¡ åˆéŸ³"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=37429"
+    },
+    {
+      "name": "Misa Kurobane",
+      "rarity": 65,
+      "aliases": [
+        "é»’ç¾½ ç¾Žç ‚"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=73653"
+    },
+    {
+      "name": "Akiko Yosano",
+      "rarity": 65,
+      "aliases": [
+        "ä¸Žè¬é‡Ž æ™¶å­"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=76217"
+    },
+    {
+      "name": "Ichiyou Higuchi",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=76221"
+    },
+    {
+      "name": "Roma Hoito",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=73051"
+    },
+    {
+      "name": "Shiggy",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/122749 | https://www.animecharactersdatabase.com/characters.php?id=84125"
+    },
+    {
+      "name": "Senzaemon Nakiri",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=73904"
+    },
+    {
+      "name": "Ryouko Sakaki",
+      "rarity": 65,
+      "aliases": [
+        "æ¦Š æ¶¼å­"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=73233"
+    },
+    {
+      "name": "Fuyumi Mizuhara",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=79220"
+    },
+    {
+      "name": "Nao Sadatsuka",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=79233"
+    },
+    {
+      "name": "Natsume Sendawara",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=79234"
+    },
+    {
+      "name": "Orie Sendawara",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=79235"
+    },
+    {
+      "name": "Mosquito",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=24533"
+    },
+    {
+      "name": "Sadao Maou",
+      "rarity": 45,
+      "aliases": [
+        "Satan Jacob"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=58660"
+    },
+    {
+      "name": "Mei Misaki",
+      "rarity": 45,
+      "aliases": [
+        "Misaki Mei",
+        "è¦‹å´Ž é³´"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=36068"
+    },
+    {
+      "name": "Misaki Fujioka",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=44194"
+    },
+    {
+      "name": "Flare Corona",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=58589"
+    },
+    {
+      "name": "Zancrow",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=32866"
+    },
+    {
+      "name": "Midnight",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=23490"
+    },
+    {
+      "name": "Coco (Earth Land)",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=50312"
+    },
+    {
+      "name": "Porlyusica",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=39387"
+    },
+    {
+      "name": "Celestial Spirit King",
+      "rarity": 65,
+      "aliases": [
+        "æ˜ŸéœŠçŽ‹"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=7855"
+    },
+    {
+      "name": "Rokurouta",
+      "rarity": 78,
+      "aliases": [
+        "é™¸éƒŽå¤ª"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=134134"
+    },
+    {
+      "name": "Yuzuriha",
+      "rarity": 78,
+      "aliases": [
+        "Keishu no Yuzuriha",
+        "Yuzuriha of Keishu"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=129906"
+    },
+    {
+      "name": "Anya Alstreim",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=9942"
+    },
+    {
+      "name": "Touka Takanashi",
+      "rarity": 78,
+      "aliases": [
+        "Takanashi Touka"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=56526"
+    },
+    {
+      "name": "Iskandar",
+      "rarity": 60,
+      "aliases": [
+        "Alexander the Great"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=34164"
+    },
+    {
+      "name": "Steely Dan",
+      "rarity": 78,
+      "aliases": [
+        "Dan of Steel"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=73737"
+    },
+    {
+      "name": "Emperor",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=137001"
+    },
+    {
+      "name": "Aleksai Amigochaz",
+      "rarity": 78,
+      "aliases": [
+        "(Korean) ì•Œë ‰ì„¸ì´ ì•„ë¯¸ê³ ì± ì¦ˆ"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=50694"
+    },
+    {
+      "name": "Hwa Ryun",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=50700"
+    },
+    {
+      "name": "Quant Blitz",
+      "rarity": 78,
+      "aliases": [
+        "(Korean) í€€íŠ¸ ë¸”ë¦¿ì¸"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=50703"
+    },
+    {
+      "name": "Ha Yuri Zahard",
+      "rarity": 78,
+      "aliases": [
+        "(Korean) í•˜ ìœ ë¦¬ ìží•˜ë“œ"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=50684"
+    },
+    {
+      "name": "Frederica Rosenfort",
+      "rarity": 90,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=115054"
+    },
+    {
+      "name": "Haruto Keats",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=109275"
+    },
+    {
+      "name": "Anri Teieri",
+      "rarity": 78,
+      "aliases": [
+        "ANRI/I"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=124714"
+    },
+    {
+      "name": "Tenri Hiiragi",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=73313"
+    },
+    {
+      "name": "Crowley Eusford",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=73135"
+    },
+    {
+      "name": "Chess Belle",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/135257 | https://www.animecharactersdatabase.com/characters.php?id=43476"
+    },
+    {
+      "name": "Ferid Bathory",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=71088"
+    },
+    {
+      "name": "Rene Simm",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=73308"
+    },
+    {
+      "name": "Horn Skuld",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=43477"
+    },
+    {
+      "name": "Damocles",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=123861"
+    },
+    {
+      "name": "Esil Radiru",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=144058"
+    },
+    {
+      "name": "Borgon Radiru",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=144057"
+    },
+    {
+      "name": "Goto Ryuji",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=144060"
+    },
+    {
+      "name": "Akira Otoishi",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=77405"
+    },
+    {
+      "name": "Katase",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=66354"
+    },
+    {
+      "name": "Yuuma Amano",
+      "rarity": 78,
+      "aliases": [
+        "å¤©é‡Ž å¤•éº»"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=82676"
+    },
+    {
+      "name": "Freed Sellzen",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=59638"
+    },
+    {
+      "name": "Marion",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=85390"
+    },
+    {
+      "name": "Kanae von Rosewald",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=90375"
+    },
+    {
+      "name": "Apprentice Cleric",
+      "rarity": 78,
+      "aliases": [
+        "Minarai Seijo",
+        "è¦‹ç¿’è–å¥³"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=97409"
+    },
+    {
+      "name": "Risotto Nero",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=107629"
+    },
+    {
+      "name": "Illuso",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=92889"
+    },
+    {
+      "name": "Inca Kasugatani",
+      "rarity": 78,
+      "aliases": [
+        "Kasugatani Inka"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=104288"
+    },
+    {
+      "name": "Kaoru Waki",
+      "rarity": 78,
+      "aliases": [
+        "Wakikaoru"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=18798"
+    },
+    {
+      "name": "Daraku",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=18735"
+    },
+    {
+      "name": "Sui Minamito",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=21195"
+    },
+    {
+      "name": "Hedoro",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=21185"
+    },
+    {
+      "name": "Tae Shimura",
+      "rarity": 78,
+      "aliases": [
+        "Otae"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=15631"
+    },
+    {
+      "name": "Dot Barrett",
+      "rarity": 60,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=128473"
+    },
+    {
+      "name": "Alessi",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=73942"
+    },
+    {
+      "name": "Erika",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=24264"
+    },
+    {
+      "name": "Kuuga Sakurai",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=24147"
+    },
+    {
+      "name": "Taiga Kagami",
+      "rarity": 60,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=43427"
+    },
+    {
+      "name": "Satsuki Momoi",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=58988"
+    },
+    {
+      "name": "Riko Aida",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=43428"
+    },
+    {
+      "name": "Rika Minami",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=23989"
+    },
+    {
+      "name": "Jun Suzuki",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=24305"
+    },
+    {
+      "name": "Nodoka Manabe",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=17060"
+    },
+    {
+      "name": "Mitsuki Nase",
+      "rarity": 60,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=63770"
+    },
+    {
+      "name": "Sakura Inami",
+      "rarity": 78,
+      "aliases": [
+        "ä¼Šæ³¢æ¡œ"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=64184"
+    },
+    {
+      "name": "Maid-chan",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=109629"
+    },
+    {
+      "name": "Chihiro Sengoku",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=53531"
+    },
+    {
+      "name": "Beretta",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=114784"
+    },
+    {
+      "name": "Seika Ijichi",
+      "rarity": 78,
+      "aliases": [
+        "ä¼Šåœ°çŸ¥â€‰æ˜Ÿæ­Œ"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=127296"
+    },
+    {
+      "name": "Zeshia Bianca",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=128874"
+    },
+    {
+      "name": "Sana Sunomiya",
+      "rarity": 78,
+      "aliases": [
+        "Art Club President"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=109460"
+    },
+    {
+      "name": "Crusch Lulu",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/127434 | https://www.wikidata.org/w/index.php?title=Q129170440&oldid=2548913692"
+    },
+    {
+      "name": "Captain of the Black Scripture",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=99009"
+    },
+    {
+      "name": "Heracles",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=34147"
+    },
+    {
+      "name": "Sella",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=35000"
+    },
+    {
+      "name": "Leysritt",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=34161"
+    },
+    {
+      "name": "Pluto",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=20361"
+    },
+    {
+      "name": "Angelina Durless",
+      "rarity": 78,
+      "aliases": [
+        "Madame Red"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=19129"
+    },
+    {
+      "name": "Shinkurou Kichijouji",
+      "rarity": 78,
+      "aliases": [
+        "å‰ç¥¥å¯º çœŸç´…éƒŽ"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=66795"
+    },
+    {
+      "name": "Mayumi Saegusa",
+      "rarity": 78,
+      "aliases": [
+        "Elven Sniper",
+        "Saegusa Mayumi",
+        "ä¸ƒè‰ çœŸç”±ç¾Ž"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=66458"
+    },
+    {
+      "name": "Hagane Tomitsuka",
+      "rarity": 78,
+      "aliases": [
+        "åä¸‰æŸ é‹¼"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=146472"
+    },
+    {
+      "name": "Izumi Shimomura",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=75715"
+    },
+    {
+      "name": "Sakuya Watanuki",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=77271"
+    },
+    {
+      "name": "Nayu Hayama",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=21447"
+    },
+    {
+      "name": "Piyo-tan",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=70676"
+    },
+    {
+      "name": "Ilya Ilyukhin",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=121417"
+    },
+    {
+      "name": "Solo / Rogue - Burai",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=36113"
+    },
+    {
+      "name": "Shintarou Mashuu",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=103082"
+    },
+    {
+      "name": "Jose Lopez",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=56049"
+    },
+    {
+      "name": "Eikichi Machiyama",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=80807"
+    },
+    {
+      "name": "Shelley Maycraft",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=15611"
+    },
+    {
+      "name": "Hacka Doll No. 2",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=74879"
+    },
+    {
+      "name": "Kaori's Mother",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=148992"
+    },
+    {
+      "name": "Harry Tribeca",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=37890"
+    },
+    {
+      "name": "Goemon Hachisuka",
+      "rarity": 85,
+      "aliases": [
+        "èœ‚é ˆè³€äº”å³è¡›é–€"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=45454"
+    },
+    {
+      "name": "Tasuku Ryuuenji",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=65756"
+    },
+    {
+      "name": "Aberdeen Roland",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=44208"
+    },
+    {
+      "name": "Mikiemon Tamura",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=79770"
+    },
+    {
+      "name": "Zeverin",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=71938"
+    },
+    {
+      "name": "Mysterious Lady",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=103707"
+    },
+    {
+      "name": "Reoko Banryuu",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=106208"
+    },
+    {
+      "name": "Miharu Sena Kanaka",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=13339"
+    },
+    {
+      "name": "Taki Kamate",
+      "rarity": 85,
+      "aliases": [
+        "éŽŒæ‰‹å…ˆç”Ÿï¼ˆéŽŒæ‰‹ å¤šå­£ï¼‰"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=25821"
+    },
+    {
+      "name": "Kureno Sohma",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=24157"
+    },
+    {
+      "name": "Kongou",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=63607"
+    },
+    {
+      "name": "Pyupyu",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=42480"
+    },
+    {
+      "name": "Dantalion",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=62791"
+    },
+    {
+      "name": "Yukimura Sanada",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=26581"
+    },
+    {
+      "name": "Sai Saici",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=64609"
+    },
+    {
+      "name": "Shu Terafune",
+      "rarity": 85,
+      "aliases": [
+        "å¯ºèˆ¹ å‘¨"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=126038"
+    },
+    {
+      "name": "Kenshirou Yozakura",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=78701"
+    },
+    {
+      "name": "Berry",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=122466"
+    },
+    {
+      "name": "Teppei Arashi",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=66532"
+    },
+    {
+      "name": "Venetim Leopool",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=146952"
+    },
+    {
+      "name": "Shuza",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=78427"
+    },
+    {
+      "name": "Hades: Izanami",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=83589"
+    },
+    {
+      "name": "Mukuro Rokudo",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=16423"
+    },
+    {
+      "name": "Kuron",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=56916"
+    },
+    {
+      "name": "Dehdai Uchiki",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=69429"
+    },
+    {
+      "name": "Ageha",
+      "rarity": 85,
+      "aliases": [
+        "é³³"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=75539"
+    },
+    {
+      "name": "Jade Ariel",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=84204"
+    },
+    {
+      "name": "Kiseki Ou",
+      "rarity": 85,
+      "aliases": [
+        "é¬¼ç®±çŽ‹ (Kiseki-o)"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=75384"
+    },
+    {
+      "name": "Terence T. D'Arby",
+      "rarity": 85,
+      "aliases": [
+        "Telence T. D'Arby"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=74322"
+    },
+    {
+      "name": "Seigen Kazamaki",
+      "rarity": 85,
+      "aliases": [
+        "é¢¨å·»â€‰æ¸…å¼¦"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=133158"
+    },
+    {
+      "name": "Robbie Benex",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=73982"
+    },
+    {
+      "name": "Momo Kisaragi",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=47584"
+    },
+    {
+      "name": "Lord of Terror",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=7014"
+    },
+    {
+      "name": "Oda Nobukatsu",
+      "rarity": 85,
+      "aliases": [
+        "Yoshiya"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=19716"
+    },
+    {
+      "name": "Kirio Karasuma",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=33775"
+    },
+    {
+      "name": "Alice Kurobane",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=101766"
+    },
+    {
+      "name": "Howlingstar",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=5345"
+    },
+    {
+      "name": "Sanmoto Gorozaemon",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=42902"
+    },
+    {
+      "name": "Mammon",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=60614"
+    },
+    {
+      "name": "Susanoo",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=63381"
+    },
+    {
+      "name": "Ryoko Takamachi",
+      "rarity": 85,
+      "aliases": [
+        "é«˜ç”ºäº®å­"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=8760"
+    },
+    {
+      "name": "Ernest Johnson",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=76343"
+    },
+    {
+      "name": "Reina",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=98727"
+    },
+    {
+      "name": "Ancient Ogre",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=80244"
+    },
+    {
+      "name": "Takuma Shippou",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=146466"
+    },
+    {
+      "name": "Shin Ichijou",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=127863"
+    },
+    {
+      "name": "Nagisa Aoi",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=2672"
+    },
+    {
+      "name": "Issa Kizuku",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=126407"
+    },
+    {
+      "name": "Cheshire Cat",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=29757"
+    },
+    {
+      "name": "Gyuuki",
+      "rarity": 85,
+      "aliases": [
+        "Umewakamaru (æ¢…è‹¥ä¸¸)"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=22238"
+    },
+    {
+      "name": "Brazilian Porcupine",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=100631"
+    },
+    {
+      "name": "Jean du Vix",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=149179"
+    },
+    {
+      "name": "Natsume Tsuchimikado",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=65089"
+    },
+    {
+      "name": "Masamune Date",
+      "rarity": 85,
+      "aliases": [
+        "Ms. Date"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=25026"
+    },
+    {
+      "name": "Oni Okuaki",
+      "rarity": 85,
+      "aliases": [
+        "å¥¥ç§‹é›„å¼"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=148283"
+    },
+    {
+      "name": "Elsa Archfield",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=148671"
+    },
+    {
+      "name": "Tsuyuri",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=4938"
+    },
+    {
+      "name": "Daisuke Niwa",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=12426"
+    },
+    {
+      "name": "Kapis Tamal",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=66894"
+    },
+    {
+      "name": "Kohina Hiruko",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=66422"
+    },
+    {
+      "name": "Satoshi Houjou",
+      "rarity": 85,
+      "aliases": [
+        "Nii-Nii"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=24409"
+    },
+    {
+      "name": "Takeo",
+      "rarity": 85,
+      "aliases": [
+        "ç«ˆé–€ ç«¹é›„"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=96115"
+    },
+    {
+      "name": "Rosehip",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=99411"
+    },
+    {
+      "name": "Gyousei",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=120571"
+    },
+    {
+      "name": "Naosuke Ooyama",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=126409"
+    },
+    {
+      "name": "Lieselotte W. Dorssia",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=66838"
+    },
+    {
+      "name": "Yoshio Iwayama",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=63839"
+    },
+    {
+      "name": "Pinoko",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=20267"
+    },
+    {
+      "name": "Yui Tabata",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=8545"
+    },
+    {
+      "name": "Aka Onda",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=13259"
+    },
+    {
+      "name": "Ikoma Kitsuno",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=93690"
+    },
+    {
+      "name": "Q-Vier",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=60947"
+    },
+    {
+      "name": "Jim Hillfort",
+      "rarity": 85,
+      "aliases": [
+        "Kousaka Jin (é«˜å‚ ä»)"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=56175"
+    },
+    {
+      "name": "Mirin",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=109663"
+    },
+    {
+      "name": "Ernst Rosenberg",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=80405"
+    },
+    {
+      "name": "Kenya Onizuka",
+      "rarity": 85,
+      "aliases": [
+        "é¬¼å¡šå‰£å“‰"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=80558"
+    },
+    {
+      "name": "Takaomi Hiyama",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=99746"
+    },
+    {
+      "name": "Li Meifon",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=14815"
+    },
+    {
+      "name": "Els Tasmin",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=37875"
+    },
+    {
+      "name": "Young man X",
+      "rarity": 85,
+      "aliases": [
+        "é’å¹´X (Seinen Etsukusu)"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=34028"
+    },
+    {
+      "name": "Yurie Ooshima",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=72566"
+    },
+    {
+      "name": "Allen Sugasano",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=130613"
+    },
+    {
+      "name": "Akemi Handa",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=118606"
+    },
+    {
+      "name": "Black Rabbit",
+      "rarity": 85,
+      "aliases": [
+        "Kuro Usagi"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=56813"
+    },
+    {
+      "name": "Yui Mikoze",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=68098"
+    },
+    {
+      "name": "Rock Volcan",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=114631"
+    },
+    {
+      "name": "Izuna Hazuki",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=39164"
+    },
+    {
+      "name": "Yuho Mochizuki",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=67141"
+    },
+    {
+      "name": "Umi Asanagi",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=147469"
+    },
+    {
+      "name": "Lisa Alpacas",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=103385"
+    },
+    {
+      "name": "Myron Alexius",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=68227"
+    },
+    {
+      "name": "Shunsuke Azuma",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=109261"
+    },
+    {
+      "name": "Teru Miyanaga",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=25507"
+    },
+    {
+      "name": "Shiika Anmoto",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=7914"
+    },
+    {
+      "name": "Sophia Black",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=143515"
+    },
+    {
+      "name": "Riku Nanase",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=91151"
+    },
+    {
+      "name": "Yukiyo Misaki",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=40000"
+    },
+    {
+      "name": "Ayame",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=121385"
+    },
+    {
+      "name": "Yuuzuki Kiryuu",
+      "rarity": 85,
+      "aliases": [
+        "Yūzuki Kiryū"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=20996"
+    },
+    {
+      "name": "Iori Minase",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=70891"
+    },
+    {
+      "name": "Shuro Naoe",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=14951"
+    },
+    {
+      "name": "Alisa Himegami",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=107922"
+    },
+    {
+      "name": "Ikoma",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=76396"
+    },
+    {
+      "name": "Hemo Midori",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=103209"
+    },
+    {
+      "name": "Orie Kano",
+      "rarity": 85,
+      "aliases": [
+        "Worie Kanou"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=9605"
+    },
+    {
+      "name": "Eimer",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=12970"
+    },
+    {
+      "name": "Hanon",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=39706"
+    },
+    {
+      "name": "Antares",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=38438"
+    },
+    {
+      "name": "Lynne Daves",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=84932"
+    },
+    {
+      "name": "Nick Lajuck",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=14701"
+    },
+    {
+      "name": "Polyester",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=144293"
+    },
+    {
+      "name": "Gilbert Durandal",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=9800"
+    },
+    {
+      "name": "Kodoh Kuraki",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=14899"
+    },
+    {
+      "name": "Tomono Kojou",
+      "rarity": 85,
+      "aliases": [
+        "å¤åŸŽæ™ºä¹ƒ"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=116162"
+    },
+    {
+      "name": "Kei Arito",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=126967"
+    },
+    {
+      "name": "Hozuki Ferrari",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=64055"
+    },
+    {
+      "name": "Kisara",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=122197"
+    },
+    {
+      "name": "Butch",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=20520"
+    },
+    {
+      "name": "Nanami Sakuragaoka",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=78502"
+    },
+    {
+      "name": "Prushka",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=121553"
+    },
+    {
+      "name": "Clara",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=57968"
+    },
+    {
+      "name": "Misao Kusakabe",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=26588"
+    },
+    {
+      "name": "Akane Hanasaki",
+      "rarity": 85,
+      "aliases": [
+        "èŠ±å’² èŒœ"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=279"
+    },
+    {
+      "name": "Kujaku Hime Kada",
+      "rarity": 85,
+      "aliases": [
+        "Peacock Princess Kada",
+        "å­”é›€å§«è¯é™€"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=57334"
+    },
+    {
+      "name": "Shiki Kagurazaka",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=72563"
+    },
+    {
+      "name": "Momoka Sonokawa",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=42526"
+    },
+    {
+      "name": "Aliza",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=79905"
+    },
+    {
+      "name": "Amane Ootori",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=2654"
+    },
+    {
+      "name": "Tsuyuno Yatsumura",
+      "rarity": 85,
+      "aliases": [
+        "å¥´æ‘ éœ²ä¹ƒ"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=90153"
+    },
+    {
+      "name": "Blackbuck",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=96150"
+    },
+    {
+      "name": "Sakyou Kurayami",
+      "rarity": 85,
+      "aliases": [
+        "Sakyo",
+        "æš—é—‡å·¦äº¬"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=63837"
+    },
+    {
+      "name": "Akira Toooka",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=40326"
+    },
+    {
+      "name": "Reika Houjou",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=5302"
+    },
+    {
+      "name": "Blanc Neige",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=10697"
+    },
+    {
+      "name": "Ayeka Masaki Jurai",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=45759"
+    },
+    {
+      "name": "Hibiki Amami",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=71209"
+    },
+    {
+      "name": "Toshio Shinozaki",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=60115"
+    },
+    {
+      "name": "Amata Sora",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=36841"
+    },
+    {
+      "name": "Gigliola Ghirardi",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=67365"
+    },
+    {
+      "name": "Satou Matsuzaka",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=91316"
+    },
+    {
+      "name": "Iyoten",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=24476"
+    },
+    {
+      "name": "Rena Kunisaki",
+      "rarity": 85,
+      "aliases": [
+        "å›½å´ŽçŽ²å¥ˆ"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=17258"
+    },
+    {
+      "name": "Gumi Tomosaka",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=147406"
+    },
+    {
+      "name": "Hibiki Manabe",
+      "rarity": 85,
+      "aliases": [
+        "çœŸåéƒ¨ éŸ¿ç”Ÿ"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=147519"
+    },
+    {
+      "name": "Banda Koloogyu Jr",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=66976"
+    },
+    {
+      "name": "Arashi Spring",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=111373"
+    },
+    {
+      "name": "Jubei Mitsuyoshi Yagyu",
+      "rarity": 85,
+      "aliases": [
+        "æŸ³ç”Ÿåå…µè¡žä¸‰åŽ³"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=147796"
+    },
+    {
+      "name": "Keisei Tagami",
+      "rarity": 85,
+      "aliases": [
+        "ç”°ç¥ž æ™¯ä¸–"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=39753"
+    },
+    {
+      "name": "Pucchin",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=130656"
+    },
+    {
+      "name": "Yunju",
+      "rarity": 45,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/86009"
+    },
+    {
+      "name": "Nozomi Kujo",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/42385"
+    },
+    {
+      "name": "Gina",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/210098"
+    },
+    {
+      "name": "Fafnir",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/120971"
+    }
+  ],
+  "timed-v4-wide-ascent-16-animal-ears": [
+    {
+      "name": "Deep Sea King",
+      "rarity": 45,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=75672"
+    },
+    {
+      "name": "Mohji",
+      "rarity": 45,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=12438"
+    },
+    {
+      "name": "Absalom",
+      "rarity": 45,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=47636"
+    },
+    {
+      "name": "Pandaman",
+      "rarity": 45,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=95547"
+    },
+    {
+      "name": "Speed",
+      "rarity": 45,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=122788"
+    },
+    {
+      "name": "Sirius",
+      "rarity": 45,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=82784"
+    },
+    {
+      "name": "Leone",
+      "rarity": 35,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=68087"
+    },
+    {
+      "name": "Jibril",
+      "rarity": 35,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=66432"
+    },
+    {
+      "name": "Shrine Priestess",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=68507"
+    },
+    {
+      "name": "Ino Hatsuse",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=68224"
+    },
+    {
+      "name": "Haineko",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=39483"
+    },
+    {
+      "name": "Canoe Belway",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=82343"
+    },
+    {
+      "name": "Millianna",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=50266"
+    },
+    {
+      "name": "Celestial Spirit King",
+      "rarity": 65,
+      "aliases": [
+        "æ˜ŸéœŠçŽ‹"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=7855"
+    },
+    {
+      "name": "Toby Horhorta",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=45965"
+    },
+    {
+      "name": "Michello",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=50550"
+    },
+    {
+      "name": "Suphia",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=114797"
+    },
+    {
+      "name": "Delta",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=120356"
+    },
+    {
+      "name": "Kurikan",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=70180"
+    },
+    {
+      "name": "Catherine",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=15629"
+    },
+    {
+      "name": "Eromes",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=18732"
+    },
+    {
+      "name": "Yayoi Kanbara",
+      "rarity": 78,
+      "aliases": [
+        "ç¥žåŽŸå¼¥ç”Ÿ"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=66395"
+    },
+    {
+      "name": "Collot",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=100326"
+    },
+    {
+      "name": "Shoebill",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=83754"
+    },
+    {
+      "name": "Haiji",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=61874"
+    },
+    {
+      "name": "Voyniy",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=123890"
+    },
+    {
+      "name": "Eclair Martinozzi",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=23818"
+    },
+    {
+      "name": "Chiyome",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=119173"
+    },
+    {
+      "name": "Origa Carmelia",
+      "rarity": 85,
+      "aliases": [
+        "Olga Calmeria"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=114652"
+    },
+    {
+      "name": "Krall",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=134609"
+    },
+    {
+      "name": "Motoyasu Matsudaira",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=46919"
+    },
+    {
+      "name": "Kizna Towryk",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=64739"
+    },
+    {
+      "name": "Banda Koloogyu",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=66983"
+    },
+    {
+      "name": "Josette",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=143308"
+    },
+    {
+      "name": "Hypnos",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=143529"
+    },
+    {
+      "name": "Alpine Ibex",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=100486"
+    },
+    {
+      "name": "Tyuule",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=80662"
+    },
+    {
+      "name": "Cape Lion",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=95440"
+    },
+    {
+      "name": "Chiho Mitama",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=81886"
+    },
+    {
+      "name": "Chukar Partridge",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=100639"
+    },
+    {
+      "name": "Misaki Sagisawa",
+      "rarity": 85,
+      "aliases": [
+        "é·ºæ¾¤ç¾Žå’² / é ¼å­ (Yoriko Sagisawa)"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=39712"
+    },
+    {
+      "name": "Millhiore F Biscotti",
+      "rarity": 85,
+      "aliases": [
+        "Millhi"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=23823"
+    },
+    {
+      "name": "Anubis Ma'at",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=66623"
+    },
+    {
+      "name": "Chiaki",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=91191"
+    },
+    {
+      "name": "Jaguar",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=83624"
+    },
+    {
+      "name": "Rosmontis",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=105842"
+    },
+    {
+      "name": "Roger",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=58225"
+    },
+    {
+      "name": "Princess Iso",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=91192"
+    },
+    {
+      "name": "Ruru Ru Rie",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=149154"
+    },
+    {
+      "name": "Delmin",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=100421"
+    },
+    {
+      "name": "Meiling",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=23757"
+    },
+    {
+      "name": "Junzou",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=106358"
+    },
+    {
+      "name": "Gaspard",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=24332"
+    },
+    {
+      "name": "Sanada",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=32997"
+    },
+    {
+      "name": "Nashetania Loei Piena Augustra",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=73295"
+    },
+    {
+      "name": "Freddy Claw",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=57011"
+    },
+    {
+      "name": "Chips",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=59920"
+    },
+    {
+      "name": "Pure Inui",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=85407"
+    },
+    {
+      "name": "Eleonore Giovanna Gassion",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=122458"
+    },
+    {
+      "name": "Shahryar",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=91730"
+    },
+    {
+      "name": "Mofurun",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=75940"
+    },
+    {
+      "name": "Inu-tan",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=71149"
+    },
+    {
+      "name": "Tatsumi",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=46500"
+    },
+    {
+      "name": "Adonis Kuestion",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=138656"
+    },
+    {
+      "name": "Koriente",
+      "rarity": 85,
+      "aliases": [
+        "Corriente"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=76825"
+    },
+    {
+      "name": "Gekka",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=119487"
+    },
+    {
+      "name": "Mashima Himeko",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=100423"
+    },
+    {
+      "name": "Son Pisces (Eclipse)",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=79625"
+    },
+    {
+      "name": "Genome",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=142704"
+    },
+    {
+      "name": "Sailor Iron Mouse",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=12366"
+    },
+    {
+      "name": "Elsam",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=121682"
+    },
+    {
+      "name": "Jabberwock",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=58748"
+    },
+    {
+      "name": "Saiko Numakage",
+      "rarity": 85,
+      "aliases": [
+        "æ²¼å½±å½©æ¹–"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=71868"
+    },
+    {
+      "name": "Belnar",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=103282"
+    },
+    {
+      "name": "Sylvie Cariello",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=122461"
+    },
+    {
+      "name": "Tusukuru",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=31"
+    },
+    {
+      "name": "Harmony (Shiro)",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=71449"
+    },
+    {
+      "name": "Sojun",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=100428"
+    },
+    {
+      "name": "Valerio Calvados",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=51399"
+    },
+    {
+      "name": "Azazel Ameri",
+      "rarity": 85,
+      "aliases": [
+        "Amelie Azazel",
+        "Ameri Azazel",
+        "Azazel Amelie"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=98997"
+    },
+    {
+      "name": "Nazuna",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=67251"
+    },
+    {
+      "name": "Watch Rabbit",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=94953"
+    },
+    {
+      "name": "Chiester 00",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=29395"
+    },
+    {
+      "name": "Miriam",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=132904"
+    },
+    {
+      "name": "Konyako Persia",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=49394"
+    },
+    {
+      "name": "Kotoko Watatsumugi",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=85230"
+    },
+    {
+      "name": "Derihourai",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=42193"
+    },
+    {
+      "name": "Varda",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=5653"
+    },
+    {
+      "name": "Little Red Riding Hood",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=58202"
+    },
+    {
+      "name": "Kirin",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=74236"
+    },
+    {
+      "name": "Chika",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=47297"
+    },
+    {
+      "name": "Karurauatsuurei",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=25"
+    },
+    {
+      "name": "Laura",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=107134"
+    },
+    {
+      "name": "Galva",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=130952"
+    },
+    {
+      "name": "Miyabi",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=126262"
+    },
+    {
+      "name": "Dragon Doumoto",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=102328"
+    },
+    {
+      "name": "Shelly",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=138660"
+    },
+    {
+      "name": "T.M. Opera O",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=117554"
+    },
+    {
+      "name": "Meigen",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=71380"
+    },
+    {
+      "name": "Kenshin Uesugi",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=83507"
+    },
+    {
+      "name": "Ragoumaru",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=106357"
+    },
+    {
+      "name": "Pochi Yamada",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=102315"
+    },
+    {
+      "name": "Yayoi Shioiri",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=21568"
+    },
+    {
+      "name": "Atsunaga",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=145379"
+    },
+    {
+      "name": "Kogitsune",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=24375"
+    },
+    {
+      "name": "Nyamena",
+      "rarity": 85,
+      "aliases": [
+        "Nyanyas"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=143061"
+    },
+    {
+      "name": "Cyclo",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=143117"
+    },
+    {
+      "name": "Masanobu Kousaka",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=83525"
+    },
+    {
+      "name": "Harshut",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=103254"
+    },
+    {
+      "name": "Shiori Kashiwazaki",
+      "rarity": 85,
+      "aliases": [
+        "æŸå´Žæ ž"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=94694"
+    },
+    {
+      "name": "Sia Wolcott",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=148381"
+    },
+    {
+      "name": "Sister Mimi",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=15196"
+    },
+    {
+      "name": "Mint Blancmanche",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=206"
+    },
+    {
+      "name": "Saizou Kirigakure",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=83515"
+    },
+    {
+      "name": "Komachi",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=134618"
+    },
+    {
+      "name": "Hecadoth",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=58752"
+    },
+    {
+      "name": "Kuronue",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=91510"
+    },
+    {
+      "name": "Leo (Eclipse)",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=79621"
+    },
+    {
+      "name": "Hiroko",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=66310"
+    },
+    {
+      "name": "Willow",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=142787"
+    },
+    {
+      "name": "Chocolat",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=75345"
+    },
+    {
+      "name": "Ichirou Irabu",
+      "rarity": 85,
+      "aliases": [
+        "ä¼Šè‰¯éƒ¨ ä¸€éƒŽ"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=31753"
+    },
+    {
+      "name": "Sabao",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=75031"
+    },
+    {
+      "name": "Usagi",
+      "rarity": 85,
+      "aliases": [
+        "Warrior of the Rabbit"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=83159"
+    },
+    {
+      "name": "Kryslain",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=148997"
+    },
+    {
+      "name": "Shima-tan",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=71146"
+    },
+    {
+      "name": "Fairy Queen",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=131292"
+    },
+    {
+      "name": "Jewel",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=147531"
+    },
+    {
+      "name": "Shizegane Date",
+      "rarity": 85,
+      "aliases": [
+        "ä¼Šé” æˆå®Ÿ"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=83511"
+    },
+    {
+      "name": "Magino",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=137190"
+    },
+    {
+      "name": "Taruto",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=53395"
+    },
+    {
+      "name": "Ranka Okami",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=100726"
+    },
+    {
+      "name": "Mei-tan",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=71148"
+    },
+    {
+      "name": "Kuro Mikawa",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=102317"
+    },
+    {
+      "name": "Natsuki",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=56872"
+    },
+    {
+      "name": "Stefan",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=73747"
+    },
+    {
+      "name": "Undine",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=34214"
+    },
+    {
+      "name": "Sister Sheshe",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=15182"
+    },
+    {
+      "name": "Janes",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=30422"
+    },
+    {
+      "name": "Kiwru",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=122172"
+    },
+    {
+      "name": "Princess Reina",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=58226"
+    },
+    {
+      "name": "Maria Magdalene Dietrich",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=122459"
+    },
+    {
+      "name": "Black Rabbit",
+      "rarity": 85,
+      "aliases": [
+        "Kuro Usagi"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=56813"
+    },
+    {
+      "name": "Couverte Eschenbach Pastillage",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=50742"
+    },
+    {
+      "name": "Mumuu",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=76807"
+    },
+    {
+      "name": "Life Cool",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=70404"
+    },
+    {
+      "name": "Ithea Myse Valgulious",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=80245"
+    },
+    {
+      "name": "Eneus",
+      "rarity": 85,
+      "aliases": [
+        "Eineus the Vergest"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=15307"
+    },
+    {
+      "name": "Emilio Alcide",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=50731"
+    },
+    {
+      "name": "Chroniko",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=78848"
+    },
+    {
+      "name": "Natsuki Sasahara",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=15263"
+    },
+    {
+      "name": "El Condor Pasa",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=90085"
+    },
+    {
+      "name": "Olver Blomdahl",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=82301"
+    },
+    {
+      "name": "Clarion",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=71244"
+    },
+    {
+      "name": "Rurutie",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=75156"
+    },
+    {
+      "name": "Wydine Uptown",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=78002"
+    },
+    {
+      "name": "Harpy",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=104937"
+    },
+    {
+      "name": "Piglette Pancetta",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=103388"
+    },
+    {
+      "name": "Jackal",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=79362"
+    },
+    {
+      "name": "Joanna Elizabeth Stafford",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=122463"
+    },
+    {
+      "name": "Ao Nanami",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=15421"
+    },
+    {
+      "name": "Teoro",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=29"
+    },
+    {
+      "name": "Kasuga",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=86754"
+    },
+    {
+      "name": "Melwin",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=22252"
+    },
+    {
+      "name": "Souffle",
+      "rarity": 85,
+      "aliases": [
+        "Cesley"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=75339"
+    },
+    {
+      "name": "Nya-tan",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=70579"
+    },
+    {
+      "name": "Kuroka",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=72024"
+    },
+    {
+      "name": "Charlotte",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=53398"
+    },
+    {
+      "name": "Kamehime",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=66713"
+    },
+    {
+      "name": "Chacha",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=103872"
+    },
+    {
+      "name": "Swire",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=101044"
+    },
+    {
+      "name": "Koboshi Uematsu",
+      "rarity": 85,
+      "aliases": [
+        "æ¤æ¾ å°æ˜Ÿ"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=32361"
+    },
+    {
+      "name": "O-chan",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=43698"
+    },
+    {
+      "name": "Yakuko Etsushimaru",
+      "rarity": 85,
+      "aliases": [
+        "è¶Šå¸ä¸¸ ç›Šå­"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=148728"
+    },
+    {
+      "name": "Bae Yo",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=58228"
+    },
+    {
+      "name": "Sailor Tin Nyanko",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=12377"
+    },
+    {
+      "name": "Hundreko",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=78547"
+    },
+    {
+      "name": "Yuugen",
+      "rarity": 85,
+      "aliases": [
+        "å¹½å¹»"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=71379"
+    },
+    {
+      "name": "Roxine",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=122664"
+    },
+    {
+      "name": "Nuwangi",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=32439"
+    },
+    {
+      "name": "Charle ( Human Form )",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=91591"
+    },
+    {
+      "name": "Ortho Sister",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=86399"
+    },
+    {
+      "name": "Fujimasa March",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=115532"
+    },
+    {
+      "name": "Kaoruko Nishi",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=148730"
+    },
+    {
+      "name": "Kayo-chan",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=58205"
+    },
+    {
+      "name": "Yasaka",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=87303"
+    },
+    {
+      "name": "Dobermann",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=100969"
+    },
+    {
+      "name": "Fox Maiden",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=44182"
+    },
+    {
+      "name": "Yukimura Sanada",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=83505"
+    },
+    {
+      "name": "Caren",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=144698"
+    },
+    {
+      "name": "Byakuroku",
+      "rarity": 85,
+      "aliases": [
+        "ç™¾éŒ²"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=76860"
+    },
+    {
+      "name": "Aruko Sakai",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=148731"
+    },
+    {
+      "name": "Guppy Medika",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=69558"
+    },
+    {
+      "name": "Corona",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=126287"
+    },
+    {
+      "name": "Pakaracchi",
+      "rarity": 85,
+      "aliases": [
+        "Yaboo"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=75338"
+    },
+    {
+      "name": "Mayudama",
+      "rarity": 85,
+      "aliases": [
+        "ç¹­çŽ‰"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=134614"
+    },
+    {
+      "name": "Fubuki Shirakami",
+      "rarity": 85,
+      "aliases": [
+        "Buki, FBK, Fubuking, Fubuki Kurokami",
+        "FBK",
+        "Shirakami Fubuki"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=100386"
+    },
+    {
+      "name": "Rouna Murasame",
+      "rarity": 85,
+      "aliases": [
+        "Lorna Murasame"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=36238"
+    },
+    {
+      "name": "Sharisharuu",
+      "rarity": 85,
+      "aliases": [
+        "Sharisharei"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=76810"
+    },
+    {
+      "name": "Rem Galleu",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=90924"
+    },
+    {
+      "name": "Lynga",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=143890"
+    },
+    {
+      "name": "Kanchal",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=100762"
+    },
+    {
+      "name": "Jachdwalt",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=122173"
+    },
+    {
+      "name": "Shinonon",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=122174"
+    },
+    {
+      "name": "Taiga Nakanishi",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=85412"
+    },
+    {
+      "name": "Peganosuke",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=59147"
+    },
+    {
+      "name": "Shironeko",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=129669"
+    },
+    {
+      "name": "Roxilius",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=122661"
+    },
+    {
+      "name": "Pochi",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=85383"
+    },
+    {
+      "name": "Karudeno",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=146320"
+    },
+    {
+      "name": "Anakity Autumn",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=92795"
+    },
+    {
+      "name": "Alia Liese",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=30475"
+    },
+    {
+      "name": "Mizelia",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=104961"
+    },
+    {
+      "name": "Kuron",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=59148"
+    },
+    {
+      "name": "Selen",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=78543"
+    },
+    {
+      "name": "Drang",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=92070"
+    },
+    {
+      "name": "Prill",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=73793"
+    },
+    {
+      "name": "Miria",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=123807"
+    },
+    {
+      "name": "Shizuka Nekonome",
+      "rarity": 85,
+      "aliases": [
+        "Nekonome Shizuka",
+        "Shizuka Nokonome"
+      ],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=25598"
+    },
+    {
+      "name": "Werner",
+      "rarity": 85,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.animecharactersdatabase.com/characters.php?id=144817"
+    },
+    {
+      "name": "Tamaki Kotatsu",
+      "rarity": 45,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/130751"
+    }
+  ],
+  "timed-v4-wide-ascent-16-post-apocalyptic": [
+    {
+      "name": "Land of the Lustrous",
+      "rarity": 35,
+      "aliases": [
+        "Houseki no Kuni"
+      ],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/anime/98707"
+    },
+    {
+      "name": "NIPPON SANGOKU: The Three Nations of the Crimson Sun",
+      "rarity": 35,
+      "aliases": [
+        "Nippon Sangoku"
+      ],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/anime/206914"
+    },
+    {
+      "name": "GIBIATE",
+      "rarity": 35,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/anime/110446"
+    },
+    {
+      "name": "Girls’ Frontline",
+      "rarity": 35,
+      "aliases": [
+        "Dolls' Frontline"
+      ],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/anime/128828"
+    },
+    {
+      "name": "Pale Cocoon",
+      "rarity": 35,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/anime/770"
+    },
+    {
+      "name": "Planetarian: Storyteller of the Stars",
+      "rarity": 35,
+      "aliases": [
+        "planetarian: Hoshi no Hito"
+      ],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/anime/21771"
+    },
+    {
+      "name": "Magical Girl Lyrical Nanoha EXCEEDS Gun Blaze Vengeance",
+      "rarity": 35,
+      "aliases": [
+        "Mahou Shoujo Lyrical Nanoha EXCEEDS Gun Blaze Vengeance"
+      ],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/anime/185875"
+    },
+    {
+      "name": "Sand Land: The Series",
+      "rarity": 35,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/anime/175642"
+    },
+    {
+      "name": "BULLET/BULLET",
+      "rarity": 35,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/anime/157960"
+    },
+    {
+      "name": "Sky Blue",
+      "rarity": 35,
+      "aliases": [
+        "Wonderful Days"
+      ],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/anime/548"
+    },
+    {
+      "name": "MEGATON MUSASHI",
+      "rarity": 35,
+      "aliases": [
+        "Megaton-kyuu Musashi"
+      ],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/anime/87502"
+    },
+    {
+      "name": "The Thousand Musketeers",
+      "rarity": 35,
+      "aliases": [
+        "Senjuushi"
+      ],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/anime/101380"
+    },
+    {
+      "name": "Doomsday with My Dog",
+      "rarity": 35,
+      "aliases": [
+        "Sekai no Owari ni Shiba Inu to"
+      ],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/anime/150575"
+    },
+    {
+      "name": "Je t'aime",
+      "rarity": 35,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/anime/20569"
+    },
+    {
+      "name": "Genesis Survivor Gaiarth",
+      "rarity": 35,
+      "aliases": [
+        "Sousei Kishi Gaiarth"
+      ],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/anime/2068"
+    },
+    {
+      "name": "Straight Title Robot Anime",
+      "rarity": 55,
+      "aliases": [
+        "Chokkyuu Hyoudai Robot Anime: STRAIGHT TITLE"
+      ],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/anime/17127"
+    },
+    {
+      "name": "OZ",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/anime/2785"
+    },
+    {
+      "name": "Memory (ONA)",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/anime/8743"
+    },
+    {
+      "name": "LOCA!",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/anime/208055"
+    },
+    {
+      "name": "Watt Poe",
+      "rarity": 55,
+      "aliases": [
+        "Watt Poe to Bokura no Ohanashi"
+      ],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/anime/4521"
+    },
+    {
+      "name": "WorldEnd: What are you doing at the end of the world? Are you busy? Will you save us?",
+      "rarity": 65,
+      "aliases": [
+        "Shuumatsu Nani Shitemasu ka? Isogashii desu ka? Sukutte Moratte Ii desu ka?"
+      ],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/21860"
+    },
+    {
+      "name": "God Eater",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/20849"
+    },
+    {
+      "name": "Patema Inverted",
+      "rarity": 65,
+      "aliases": [
+        "Sakasama no Patema"
+      ],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/12477"
+    },
+    {
+      "name": "Gintama: The Final Chapter - Be Forever Yorozuya",
+      "rarity": 65,
+      "aliases": [
+        "Gintama: Kanketsu-hen - Yorozuya yo Eien Nare"
+      ],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/15335"
+    },
+    {
+      "name": "Sound of the Sky",
+      "rarity": 65,
+      "aliases": [
+        "So Ra No Wo To"
+      ],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/6802"
+    },
+    {
+      "name": "7SEEDS",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/105807"
+    },
+    {
+      "name": "Dusk Beyond the End of the World",
+      "rarity": 65,
+      "aliases": [
+        "Towa no Yuugure"
+      ],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/195153"
+    },
+    {
+      "name": "Apocalypse Hotel",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/180675"
+    },
+    {
+      "name": "Chrome Shelled Regios",
+      "rarity": 65,
+      "aliases": [
+        "Koukaku no Regios"
+      ],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/4186"
+    },
+    {
+      "name": "ATRI -My Dear Moments-",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/154963"
+    },
+    {
+      "name": "Needless",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/6030"
+    },
+    {
+      "name": "Listeners",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/109856"
+    },
+    {
+      "name": "Synduality Noir",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/154643"
+    },
+    {
+      "name": "Kaina of the Great Snow Sea",
+      "rarity": 65,
+      "aliases": [
+        "Ooyukiumi no Kaina"
+      ],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/144144"
+    },
+    {
+      "name": "King of Thorn",
+      "rarity": 65,
+      "aliases": [
+        "Ibara no Ou: King of Thorn"
+      ],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/6610"
+    },
+    {
+      "name": "Blue Gender",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/58"
+    },
+    {
+      "name": "Blue Submarine No. 6",
+      "rarity": 65,
+      "aliases": [
+        "Ao no 6-gou"
+      ],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/1051"
+    },
+    {
+      "name": "SNOWBALL EARTH",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/196144"
+    },
+    {
+      "name": "BLACK ROCK SHOOTER DAWN FALL",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/139303"
+    },
+    {
+      "name": "Togainu no Chi",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/8449"
+    },
+    {
+      "name": "Cagaster of an Insect Cage",
+      "rarity": 65,
+      "aliases": [
+        "Mushikago no Cagaster"
+      ],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/109586"
+    },
+    {
+      "name": "Momentary Lily",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/177159"
+    },
+    {
+      "name": "Nyaight of the Living Cat",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/175124"
+    },
+    {
+      "name": "#I'm Looking For a Zombie",
+      "rarity": 65,
+      "aliases": [
+        "#Zombie Sagashitemasu"
+      ],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/199007"
+    },
+    {
+      "name": "Touring After the Apocalypse",
+      "rarity": 65,
+      "aliases": [
+        "Shuumatsu Touring"
+      ],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/186920"
+    },
+    {
+      "name": "Agent Aika",
+      "rarity": 65,
+      "aliases": [
+        "AIKa"
+      ],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/366"
+    },
+    {
+      "name": "TERMINATOR ZERO",
+      "rarity": 65,
+      "aliases": [
+        "Terminator 0"
+      ],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/177814"
+    },
+    {
+      "name": "Final Fantasy: The Spirits Within",
+      "rarity": 65,
+      "aliases": [
+        "Final Fantasy"
+      ],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/1361"
+    },
+    {
+      "name": "A Wind Named Amnesia",
+      "rarity": 65,
+      "aliases": [
+        "Kaze no Na wa Amnesia"
+      ],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/1793"
+    },
+    {
+      "name": "Malice@doll",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/2261"
+    },
+    {
+      "name": "Freedom",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/1747"
+    },
+    {
+      "name": "KAMITSUBAKI CITY UNDER CONSTRUCTION",
+      "rarity": 65,
+      "aliases": [
+        "Kamitsubaki-shi Kensetsuchuu."
+      ],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/173335"
+    },
+    {
+      "name": "MD Geist - The Most Dangerous Ever",
+      "rarity": 65,
+      "aliases": [
+        "Soukihei MD Geist"
+      ],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/1285"
+    },
+    {
+      "name": "Sky Girls",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/2604"
+    },
+    {
+      "name": "The Third: The Girl with the Blue Eye",
+      "rarity": 65,
+      "aliases": [
+        "The Third: Aoi Hitomi no Shoujo"
+      ],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/944"
+    },
+    {
+      "name": "Phoenix: Eden17",
+      "rarity": 65,
+      "aliases": [
+        "Hi no Tori: Eden no Sora"
+      ],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/157957"
+    },
+    {
+      "name": "COCOLORS",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/104867"
+    },
+    {
+      "name": "ICE",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/2169"
+    },
+    {
+      "name": "Karen Senki",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/98745"
+    },
+    {
+      "name": "Kurogane Communication",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/1660"
+    },
+    {
+      "name": "The Missing 8",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/143145"
+    },
+    {
+      "name": "Tide-Line Blue",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/473"
+    },
+    {
+      "name": "Kishin Taisen Gigantic Formula",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/2215"
+    },
+    {
+      "name": "Ladius",
+      "rarity": 65,
+      "aliases": [
+        "Makyou Gaiden Le Deus"
+      ],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/4058"
+    },
+    {
+      "name": "Gall Force: Earth Chapter",
+      "rarity": 65,
+      "aliases": [
+        "Gall Force: Chikyuu Shou"
+      ],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/2064"
+    },
+    {
+      "name": "UTOPA",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/21396"
+    },
+    {
+      "name": "Blue Remains",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/4733"
+    },
+    {
+      "name": "Gordian Warrior",
+      "rarity": 65,
+      "aliases": [
+        "Toushi Gordian"
+      ],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/5022"
+    }
+  ],
+  "timed-v4-wide-ascent-16-psychics": [
+    {
+      "name": "Alucard",
+      "rarity": 75,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.wikidata.org/w/index.php?title=Q282514&oldid=2536081991"
+    },
+    {
+      "name": "Zofis",
+      "rarity": 75,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.wikidata.org/w/index.php?title=Q45378628&oldid=2533063763"
+    },
+    {
+      "name": "Ageha Kurono",
+      "rarity": 75,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.wikidata.org/w/index.php?title=Q100891244&oldid=2540149250"
+    },
+    {
+      "name": "Sailor Neptune",
+      "rarity": 75,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.wikidata.org/w/index.php?title=Q1051519&oldid=2569363671"
+    },
+    {
+      "name": "Kaname Kuran",
+      "rarity": 75,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.wikidata.org/w/index.php?title=Q1962134&oldid=2533055991"
+    },
+    {
+      "name": "Erza Scarlet",
+      "rarity": 75,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.wikidata.org/w/index.php?title=Q4405800&oldid=2573223582"
+    },
+    {
+      "name": "Jellal Fernandes",
+      "rarity": 75,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.wikidata.org/w/index.php?title=Q16558838&oldid=2572053307"
+    },
+    {
+      "name": "Experiment 627",
+      "rarity": 75,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.wikidata.org/w/index.php?title=Q122352834&oldid=2530955666"
+    },
+    {
+      "name": "Best Jeanist",
+      "rarity": 75,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.wikidata.org/w/index.php?title=Q135940209&oldid=2570322223"
+    },
+    {
+      "name": "Jean Grey",
+      "rarity": 75,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.wikidata.org/w/index.php?title=Q5350072&oldid=2572584083"
+    },
+    {
+      "name": "Emma Frost",
+      "rarity": 75,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.wikidata.org/w/index.php?title=Q1995969&oldid=2562979153"
+    },
+    {
+      "name": "Nodoka Miyazaki",
+      "rarity": 75,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.wikidata.org/w/index.php?title=Q2526779&oldid=2569909964"
+    },
+    {
+      "name": "Piccolo",
+      "rarity": 75,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.wikidata.org/w/index.php?title=Q151659&oldid=2562274113"
+    },
+    {
+      "name": "Sayaka Miki",
+      "rarity": 75,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.wikidata.org/w/index.php?title=Q11609133&oldid=2571458258"
+    },
+    {
+      "name": "Ultear Milkovich",
+      "rarity": 75,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.wikidata.org/w/index.php?title=Q18202659&oldid=2572052376"
+    },
+    {
+      "name": "Suu",
+      "rarity": 75,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.wikidata.org/w/index.php?title=Q62035746&oldid=2540372864"
+    },
+    {
+      "name": "Akira Fudo",
+      "rarity": 75,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.wikidata.org/w/index.php?title=Q3607341&oldid=2570018797"
+    },
+    {
+      "name": "Mard Geer Tartaros",
+      "rarity": 75,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.wikidata.org/w/index.php?title=Q21193721&oldid=2571686134"
+    },
+    {
+      "name": "Nausicaä",
+      "rarity": 75,
+      "aliases": [],
+      "verification_status": "database_supported_needs_review",
+      "source_url": "https://www.wikidata.org/w/index.php?title=Q3337177&oldid=2530964780"
+    },
+    {
+      "name": "Namekujarasu",
+      "rarity": 45,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/326809"
+    },
+    {
+      "name": "Teruki Hanazawa",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/89621"
+    },
+    {
+      "name": "Momozou Takenaka",
+      "rarity": 80,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/133388"
+    },
+    {
+      "name": "Shino Sousaki",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/143537"
+    },
+    {
+      "name": "Hekiji Tengai",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/144559"
+    },
+    {
+      "name": "Kyouryuu no Hime",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/126290"
+    },
+    {
+      "name": "Kana Kimishima",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/19215"
+    },
+    {
+      "name": "Arifumi Fukuyama",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/125378"
+    },
+    {
+      "name": "Warren Rocko",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/31194"
+    },
+    {
+      "name": "Saki Hanajima",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/376"
+    },
+    {
+      "name": "Baba Uranai",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/2110"
+    },
+    {
+      "name": "Tenshinhan",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/5499"
+    },
+    {
+      "name": "Bardock",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/6122"
+    },
+    {
+      "name": "Gou Asahi",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/133190"
+    },
+    {
+      "name": "Rei Kurosaki",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/133191"
+    },
+    {
+      "name": "Takeshi Hoshino",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/133192"
+    },
+    {
+      "name": "Matsuo",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/133194"
+    },
+    {
+      "name": "Miyagawa",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/133197"
+    },
+    {
+      "name": "Takeuchi",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/133198"
+    },
+    {
+      "name": "Muto",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/133199"
+    },
+    {
+      "name": "Muraki",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/133200"
+    },
+    {
+      "name": "Megumu Koyama",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/133201"
+    },
+    {
+      "name": "Tsuchiya",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/133202"
+    },
+    {
+      "name": "Mukai",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/133203"
+    },
+    {
+      "name": "Toichirou Suzuki",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/133204"
+    },
+    {
+      "name": "Kaito Shiratori",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/133205"
+    },
+    {
+      "name": "Daichi Shiratori",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/133206"
+    },
+    {
+      "name": "Terada",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/133208"
+    },
+    {
+      "name": "Katsuya Serizawa",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/133399"
+    },
+    {
+      "name": "Nozomu Hatori",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/137012"
+    },
+    {
+      "name": "Toshiki Minegishi",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/137013"
+    },
+    {
+      "name": "Ryou Shimazaki",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/137015"
+    },
+    {
+      "name": "Sakakibara",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/137016"
+    },
+    {
+      "name": "Furutachi",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/137019"
+    },
+    {
+      "name": "Igarashi",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/137021"
+    },
+    {
+      "name": "Udo",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/137023"
+    },
+    {
+      "name": "Tamaki",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/137025"
+    },
+    {
+      "name": "Ebiwara",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/137027"
+    },
+    {
+      "name": "Fukuda",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/137028"
+    },
+    {
+      "name": "Miguel",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/137030"
+    },
+    {
+      "name": "Higashio",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/137032"
+    },
+    {
+      "name": "Otsuki",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/137035"
+    },
+    {
+      "name": "Yanagawa",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/137036"
+    },
+    {
+      "name": "Joseph",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/137037"
+    },
+    {
+      "name": "Ishihara",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/137041"
+    },
+    {
+      "name": "Aisa Himegami",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/17179 | https://anilist.co/anime/6213"
+    },
+    {
+      "name": "Kazari Uiharu",
+      "rarity": 60,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/20622 | https://anilist.co/anime/6213"
+    },
+    {
+      "name": "Mii Konori",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/26941 | https://anilist.co/anime/6213"
+    },
+    {
+      "name": "Mitsuko Kongou",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/28986 | https://anilist.co/anime/6213"
+    },
+    {
+      "name": "Kinuho Wannai",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/29087 | https://anilist.co/anime/6213"
+    },
+    {
+      "name": "Maaya Awatsuki",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/29090 | https://anilist.co/anime/6213"
+    },
+    {
+      "name": "Naomi Umegae",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/12164 | https://anilist.co/anime/4038"
+    },
+    {
+      "name": "Natsuko Tokiwa",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/12854 | https://anilist.co/anime/4038"
+    },
+    {
+      "name": "Hotaru Nowaki",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/12855 | https://anilist.co/anime/4038"
+    },
+    {
+      "name": "Shuuji Sakaki",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/12856 | https://anilist.co/anime/4038"
+    },
+    {
+      "name": "Momotarou",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/13161 | https://anilist.co/anime/4038"
+    },
+    {
+      "name": "Mary Ford",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/13658 | https://anilist.co/anime/4038"
+    },
+    {
+      "name": "Ken McGwire",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/13659 | https://anilist.co/anime/4038"
+    },
+    {
+      "name": "Chisato Hanai",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/14430 | https://anilist.co/anime/4038"
+    },
+    {
+      "name": "Hanto Uchida",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/15390 | https://anilist.co/anime/4038"
+    },
+    {
+      "name": "J.D. Grisham",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/15675 | https://anilist.co/anime/4038"
+    },
+    {
+      "name": "Takashi Kugutsu",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/15676 | https://anilist.co/anime/4038"
+    },
+    {
+      "name": "Akira Yadorigi",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/15677 | https://anilist.co/anime/4038"
+    },
+    {
+      "name": "Koremitsu Yamada",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/15985 | https://anilist.co/anime/4038"
+    },
+    {
+      "name": "Ikyuugo",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/16179 | https://anilist.co/anime/4038"
+    },
+    {
+      "name": "Clyde Barrow",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/17101 | https://anilist.co/anime/4038"
+    },
+    {
+      "name": "Naoya Kikuchi",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/17838 | https://anilist.co/anime/4038"
+    },
+    {
+      "name": "Bullet Silver",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/18017 | https://anilist.co/anime/4038"
+    },
+    {
+      "name": "Setsuko Kuromaki",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/18553 | https://anilist.co/anime/4038"
+    },
+    {
+      "name": "His Highness Badjura XVII",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/19220 | https://anilist.co/anime/4038"
+    },
+    {
+      "name": "Tim Toy",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/19396 | https://anilist.co/anime/4038"
+    },
+    {
+      "name": "Caroline McGee",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/19575 | https://anilist.co/anime/4038"
+    },
+    {
+      "name": "Kazura Tamaki",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/20479 | https://anilist.co/anime/4038"
+    },
+    {
+      "name": "Kagari Hino",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/20480 | https://anilist.co/anime/4038"
+    },
+    {
+      "name": "Anzu",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/125362 | https://anilist.co/anime/100077"
+    },
+    {
+      "name": "Roushi Youdani",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/141867 | https://anilist.co/anime/19199"
+    },
+    {
+      "name": "Murasaki Edoyama",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/141869 | https://anilist.co/anime/19199"
+    },
+    {
+      "name": "Sukezaburou",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/233138 | https://anilist.co/anime/19199"
+    },
+    {
+      "name": "Lin Lianjie",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/233143 | https://anilist.co/anime/19199"
+    },
+    {
+      "name": "Amie Namuro",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/233144 | https://anilist.co/anime/19199"
+    },
+    {
+      "name": "Kakunoshin",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/233146 | https://anilist.co/anime/19199"
+    },
+    {
+      "name": "Midori Naha",
+      "rarity": 60,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/13423 | https://anilist.co/anime/3668"
+    },
+    {
+      "name": "Naoya Kirihara",
+      "rarity": 60,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/710 | https://anilist.co/anime/1243"
+    },
+    {
+      "name": "Naoto Kirihara",
+      "rarity": 60,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/711 | https://anilist.co/anime/1243"
+    },
+    {
+      "name": "Misaki",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/8484 | https://anilist.co/anime/1243"
+    }
+  ],
+  "timed-v4-wide-ascent-16-delinquents": [
+    {
+      "name": "Souchou",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/133207"
+    },
+    {
+      "name": "Yamazaki",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/133872"
+    },
+    {
+      "name": "Reiji Shiratori",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/42208"
+    },
+    {
+      "name": "Kakeru Ryuuen",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/159627"
+    },
+    {
+      "name": "Aren Kuboyasu",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/127134"
+    },
+    {
+      "name": "Takahashi",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/224083"
+    },
+    {
+      "name": "Babo",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/124942"
+    },
+    {
+      "name": "Wamu",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/124949"
+    },
+    {
+      "name": "Yuuya Fungami",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/130132"
+    },
+    {
+      "name": "Arisa Uotani",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/375"
+    },
+    {
+      "name": "Skip",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/127040"
+    },
+    {
+      "name": "Frederick Arthur",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/132720"
+    },
+    {
+      "name": "Tomoya Okazaki",
+      "rarity": 60,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/4606"
+    },
+    {
+      "name": "Youhei Sunohara",
+      "rarity": 60,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/4610"
+    },
+    {
+      "name": "Naoya Shirokawa",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/28197"
+    },
+    {
+      "name": "Ryuunosuke Kurosaki",
+      "rarity": 78,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/29387"
+    },
+    {
+      "name": "Haru Yoshida",
+      "rarity": 60,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/37687"
+    },
+    {
+      "name": "Kyouko Honda",
+      "rarity": 80,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/character/9754"
+    },
+    {
+      "name": "Nagisa Nagase",
+      "rarity": 80,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/character/6236"
+    },
+    {
+      "name": "Ryuuichi Kurosaki",
+      "rarity": 80,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/character/121882"
+    },
+    {
+      "name": "Odawara",
+      "rarity": 80,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/character/159235"
+    },
+    {
+      "name": "Musashi",
+      "rarity": 80,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/character/3935"
+    },
+    {
+      "name": "Kojirou",
+      "rarity": 80,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/character/3936"
+    },
+    {
+      "name": "Joe Yabuki",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/character/11804"
+    },
+    {
+      "name": "Sayuri Osanada",
+      "rarity": 80,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/character/163491"
+    },
+    {
+      "name": "Erika Otohime",
+      "rarity": 80,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/character/163496"
+    },
+    {
+      "name": "Hinako Nakayama",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/character/145005"
+    },
+    {
+      "name": "Yuji Takehisa",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/character/12015"
+    },
+    {
+      "name": "Junya Akutsu",
+      "rarity": 80,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/character/31792"
+    },
+    {
+      "name": "Manjiro",
+      "rarity": 80,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/character/163463"
+    },
+    {
+      "name": "Dosu-Roku",
+      "rarity": 80,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/character/163464"
+    },
+    {
+      "name": "Masa Bokutou",
+      "rarity": 80,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/character/163465"
+    },
+    {
+      "name": "Kyouko Hayakawa",
+      "rarity": 80,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/character/34552"
+    },
+    {
+      "name": "Katsutoshi Imai",
+      "rarity": 80,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/character/42495"
+    },
+    {
+      "name": "Anego",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/character/6028"
+    },
+    {
+      "name": "Akane Daidouji",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/character/368542"
+    },
+    {
+      "name": "Aya Akabane",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/character/50929"
+    },
+    {
+      "name": "Ken Shinozuka",
+      "rarity": 80,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/character/329316"
+    },
+    {
+      "name": "Yousuke Eguchi",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/character/31319"
+    },
+    {
+      "name": "Kakuji Marukawa",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/character/222350"
+    },
+    {
+      "name": "Kai Deguchi",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/character/22607"
+    },
+    {
+      "name": "Mera",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/character/27056"
+    },
+    {
+      "name": "Eiji Akagi",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/character/150400"
+    },
+    {
+      "name": "Ryosuke Ishigami",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/character/10047"
+    },
+    {
+      "name": "Hibino Hareluya",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/character/12763"
+    },
+    {
+      "name": "Reiko Ibu",
+      "rarity": 80,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/character/41925"
+    },
+    {
+      "name": "Reinau Kanko",
+      "rarity": 80,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/character/58037"
+    },
+    {
+      "name": "Eisaku Yazawa",
+      "rarity": 65,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/character/31245"
+    },
+    {
+      "name": "Maria Amabuki",
+      "rarity": 80,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/character/150563"
+    },
+    {
+      "name": "Misa Azumatsuru",
+      "rarity": 80,
+      "aliases": [],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/character/221709"
+    }
+  ],
+  "timed-v4-wide-ascent-16-death-games": [
+    {
+      "name": "Danganronpa 3: The End of Hope’s Peak High School - Future Arc",
+      "rarity": 35,
+      "aliases": [
+        "Danganronpa 3: The End of Kibougamine Gakuen - Mirai-hen"
+      ],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/21509"
+    },
+    {
+      "name": "SHIBOYUGI: Playing Death Games to Put Food on the Table",
+      "rarity": 35,
+      "aliases": [
+        "Shibou Yuugi de Meshi wo Kuu."
+      ],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/180746"
+    },
+    {
+      "name": "PSYREN",
+      "rarity": 35,
+      "aliases": [
+        "PSYЯEN"
+      ],
+      "verification_status": "external_research_needs_review",
+      "source_url": "https://anilist.co/anime/204011"
+    },
+    {
+      "name": "Tasuketsu -Fate of the Majority-",
+      "rarity": 35,
+      "aliases": [
+        "Tasuuketsu"
+      ],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/174070"
+    },
+    {
+      "name": "Angels of Death",
+      "rarity": 70,
+      "aliases": [
+        "Satsuriku no Tenshi"
+      ],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/99629"
+    },
+    {
+      "name": "I'm Standing on a Million Lives",
+      "rarity": 70,
+      "aliases": [
+        "100-man no Inochi no Ue ni Ore wa Tatteiru"
+      ],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/116242"
+    },
+    {
+      "name": "Killing Bites",
+      "rarity": 70,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/98389"
+    },
+    {
+      "name": "GNOSIA",
+      "rarity": 70,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/185116"
+    },
+    {
+      "name": "The World Ends with You The Animation",
+      "rarity": 70,
+      "aliases": [
+        "Subarashiki Kono Sekai The Animation"
+      ],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/120376"
+    },
+    {
+      "name": "Phi-Brain: Puzzle of God",
+      "rarity": 70,
+      "aliases": [
+        "Phi Brain: Kami no Puzzle"
+      ],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/9981"
+    },
+    {
+      "name": "Usogui",
+      "rarity": 70,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/13303"
+    },
+    {
+      "name": "Exper Zenon",
+      "rarity": 70,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/anime/10463"
+    }
+  ],
+  "timed-v4-wide-ascent-16-amnesia": [
+    {
+      "name": "Menma",
+      "rarity": 45,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/8810"
+    },
+    {
+      "name": "Nelliel Tu Oderschvank",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/4730"
+    },
+    {
+      "name": "Akira Takizawa",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/19930 | https://anilist.co/anime/5630"
+    },
+    {
+      "name": "Yuuta Hibiki",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/127588 | https://anilist.co/anime/99424"
+    },
+    {
+      "name": "Yuuki",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/160249 | https://anilist.co/anime/107871"
+    },
+    {
+      "name": "Yami Yuugi",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/1375 | https://anilist.co/anime/481"
+    },
+    {
+      "name": "Saya Otonashi",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/836 | https://anilist.co/anime/150"
+    },
+    {
+      "name": "Shiki Ryougi",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/3105 | https://anilist.co/anime/4280"
+    },
+    {
+      "name": "Setsuna",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/169509 | https://anilist.co/anime/118399"
+    },
+    {
+      "name": "Tsukasa",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/39 | https://anilist.co/anime/48"
+    },
+    {
+      "name": "Dorothy",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/190121 | https://anilist.co/anime/170935"
+    },
+    {
+      "name": "Astral",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/39184 | https://anilist.co/anime/10015"
+    },
+    {
+      "name": "Souya Kuroi",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/126957 | https://anilist.co/anime/101368"
+    },
+    {
+      "name": "Gally",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/2308 | https://anilist.co/anime/1016"
+    },
+    {
+      "name": "Ran Mouri",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/1748 | https://anilist.co/anime/1363"
+    },
+    {
+      "name": "Senya",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/146191 | https://anilist.co/anime/176660"
+    },
+    {
+      "name": "Rick Elwood",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/53813 | https://anilist.co/anime/12367"
+    },
+    {
+      "name": "Wataru",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/8320 | https://anilist.co/anime/1793"
+    },
+    {
+      "name": "Sora Hashiba",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/526 | https://anilist.co/anime/1532"
+    },
+    {
+      "name": "Solty Revant",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/7204 | https://anilist.co/anime/152"
+    },
+    {
+      "name": "Yumeko Kouda",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/371496 | https://anilist.co/anime/170936"
+    },
+    {
+      "name": "Shinobu Ijuuin",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/16924 | https://anilist.co/anime/100652"
+    },
+    {
+      "name": "Fujiko Mine",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/1047 | https://anilist.co/anime/20914"
+    },
+    {
+      "name": "Kei Kaname",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/224398 | https://anilist.co/anime/124703"
+    },
+    {
+      "name": "Arsène Lupin III",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/1044 | https://anilist.co/anime/5019"
+    },
+    {
+      "name": "Atsuko Higuchi",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/7123 | https://anilist.co/anime/374"
+    },
+    {
+      "name": "Myuu",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/36869 | https://anilist.co/anime/3968"
+    },
+    {
+      "name": "Rouge",
+      "rarity": 55,
+      "aliases": [],
+      "verification_status": "source_verified_candidate",
+      "source_url": "https://anilist.co/character/760 | https://anilist.co/anime/1644"
+    }
+  ]
+}

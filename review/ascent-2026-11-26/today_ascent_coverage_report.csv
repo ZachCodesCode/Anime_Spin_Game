@@ -1,0 +1,8 @@
+﻿question_id,question,existing,new,final_candidate_pool,target,target_gap,individually_checked,held,new_source_verified,new_database_supported,new_external_needs_review,approved_playable_new,branch_integrated_new,deployed_new
+timed-v4-wide-ascent-16-red-eyes,Name any anime character with red eyes.,136,304,440,250,0,8,0,8,296,0,0,304,0
+timed-v4-wide-ascent-16-animal-ears,Name any anime character with animal ears.,82,221,303,200,0,1,1,1,220,0,0,221,0
+timed-v4-wide-ascent-16-post-apocalyptic,Name any post-apocalyptic anime.,54,68,122,120,0,48,0,48,0,20,0,68,0
+timed-v4-wide-ascent-16-psychics,Name any anime character with psychic powers.,62,104,166,150,0,85,0,85,19,0,0,104,0
+timed-v4-wide-ascent-16-delinquents,Name any anime delinquent or street gang member.,78,50,128,150,22,17,1,17,0,33,0,50,0
+timed-v4-wide-ascent-16-death-games,Name any death game or survival game anime.,36,12,48,100,52,11,0,11,0,1,0,12,0
+timed-v4-wide-ascent-16-amnesia,Name any anime character who lost their memory.,45,28,73,150,77,28,1,28,0,0,0,28,0
