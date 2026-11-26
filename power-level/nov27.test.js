@@ -6,6 +6,10 @@ const vm=require('node:vm');
 const C=require('./core'),R=require('./run'),D=require('./descent');
 const ascent=require('./questions'),descent=require('./descent-questions');
 const day='2026-11-27';
+const approvedChoices={
+ ascent:['Mira Dianus Artemina','Hyakkimaru','She and Her Cat: Their Standing Points','Goku','Naraku','Renkin San-kyuu Magical? Pokaan','Menthuthuyoupi'],
+ descent:['Akatsuchi','Yor Forger','The Girl I Like Forgot Her Glasses','Zubat','Charizard','Yowamushi Pedal: New Generation','Vegeta']
+};
 const aIds=['spear','prosthetic','nonhuman-main','teleport','poison','female-main','shapeshift'].map(x=>'timed-v4-wide-ascent-17-'+x);
 const dIds=['headband','sibling','school','wings','fly','games','parent'].map(x=>'timed-v4-descent-8-'+x);
 
@@ -71,7 +75,8 @@ test('Ascent and Descent server handlers accept November 27 canonical answers an
   require.cache[dbPath]={id:dbPath,filename:dbPath,loaded:true,exports:{db,ensureAscent:async()=>{},ensureDescent:async()=>{},cors:()=>{}}};
   require.cache[guestPath]={id:guestPath,filename:guestPath,loaded:true,exports:{guest:()=> 'nov27-fixture'}};
   for(const [mode,ids,bank] of [['ascent',aIds,ascent],['descent',dIds,D.bank([...ascent,...descent])]]){
-   const handler=require('../api/'+mode+'.js'),answers=ids.map(id=>{const q=bank.find(q=>q.id===id);return mode==='descent'?q.top:q.answers[0].name});
+   const handler=require('../api/'+mode+'.js'),answers=ids.map((id,i)=>{const q=bank.find(q=>q.id===id);return C.validate(q,approvedChoices[mode][i]).answer?.name});
+   assert(answers.every(Boolean));
    const res=response();await handler({method:'POST',body:{date:day,answers}},res);
    assert.equal(res.code,200,mode+': '+JSON.stringify(res.body));
    assert.equal(res.body.score,ids.reduce((sum,id,i)=>sum+C.points(bank.find(q=>q.id===id).answers.find(a=>a.name===answers[i])),0));

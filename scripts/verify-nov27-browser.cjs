@@ -8,6 +8,11 @@ const C=require(root+'/power-level/core'),R=require(root+'/power-level/run'),D=r
 const ascent=require(root+'/power-level/questions'),descent=require(root+'/power-level/descent-questions');
 const all=[...ascent,...descent],day='2026-11-27',server=require('./dev').createServer();
 const output=process.env.ASCENT_BROWSER_OUTPUT||'/private/tmp';
+const newChoices=process.env.NOV27_NEW_ANSWERS==='1';
+const choice={
+ ascent:['Mira Dianus Artemina','Hyakkimaru','She and Her Cat: Their Standing Points','Goku','Naraku','Renkin San-kyuu Magical? Pokaan','Menthuthuyoupi'],
+ descent:['Akatsuchi','Yor Forger','The Girl I Like Forgot Her Glasses','Zubat','Charizard','Yowamushi Pedal: New Generation','Vegeta']
+};
 const saved=(ids)=>Object.values(localStorage).map(v=>{try{return JSON.parse(v);}catch{return null;}}).find(v=>Array.isArray(v?.ids)&&v.ids.length===7&&v.ids[0]===ids[0]&&v.date==='2026-11-27');
 (async()=>{let browser;try{
  await new Promise(r=>server.listen(0,'127.0.0.1',r));
@@ -25,9 +30,11 @@ const saved=(ids)=>Object.values(localStorage).map(v=>{try{return JSON.parse(v);
   await page.locator('#plBegin').click();let expected=0;
   for(let i=0;i<7;i++){
    const q=bank.find(q=>q.id===ids[i]);assert.equal(await page.locator('#plQuestion').innerText(),q.text);
-   const answer=mode==='descent'?q.answers.find(a=>a.name===q.top):q.answers[0];
-   const input=answer.aliases?.[0]||answer.name;
-   await page.locator('#plInput').fill(input);await page.locator('#plSubmit').click();
+   const input=newChoices?choice[mode][i]:null;
+   const answer=newChoices?C.validate(q,input).answer:mode==='descent'?q.answers.find(a=>a.name===q.top):q.answers[0];
+   assert(answer,mode+': '+input);
+   const typed=input||answer.aliases?.[0]||answer.name;
+   await page.locator('#plInput').fill(typed);await page.locator('#plSubmit').click();
    const state=await page.evaluate(saved,ids);assert.equal(state.outcomes.at(-1).id,q.id);assert.equal(state.outcomes.at(-1).answer,answer.name);
    expected+=C.points(answer);await page.clock.fastForward(2500);
    if(i<6)await page.locator('#plBegin').click();
@@ -36,7 +43,7 @@ const saved=(ids)=>Object.values(localStorage).map(v=>{try{return JSON.parse(v);
   const state=await page.evaluate(saved,ids);assert.equal(R.total(state),expected);assert.match(await page.locator('#plSummary').innerText(),/7\/7 answered/);
   await page.reload({waitUntil:'networkidle'});await page.locator('#plResults').waitFor({state:'visible'});
   assert.equal((await page.evaluate(saved,ids)).phase,'done');assert.deepEqual(errors,[]);
-  const screenshot=path.join(output,`nov27-${mode}-${mobile?'mobile':'desktop'}.png`);
+  const screenshot=path.join(output,`nov27-${mode}-${mobile?'mobile':'desktop'}${newChoices?'-new':''}.png`);
   await page.screenshot({path:screenshot,fullPage:true});
   results.push({mode,viewport:mobile?'mobile':'desktop',questions:ids.length,score:expected,screenshot});
   await context.close();

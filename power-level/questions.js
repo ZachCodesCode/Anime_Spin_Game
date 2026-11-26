@@ -7926,5 +7926,114 @@ bank.push(...[
     {"name":"The Cloud","rarity":85},
   ]},
 ]);
+// BEGIN NOV27 APPROVED CSV EXPANSION
+// Source: user-approved November 27 CSVs. Existing rarity inputs and Top Answers remain unchanged.
+{
+ const q=bank.find(x=>x.id==="timed-v4-wide-ascent-17-poison");if(!q)throw Error("Missing November 27 question timed-v4-wide-ascent-17-poison");
+ q.answers.push({"name":"Shinobu Kocho","rarity":25});
+ q.answers.push({"name":"Gyutaro","rarity":25});
+ q.answers.push({"name":"Hinatsuru","rarity":55});
+ q.answers.push({"name":"Tamayo","rarity":55});
+ q.answers.push({"name":"Queen","rarity":55});
+ q.answers.push({"name":"Don Krieg","rarity":55});
+ q.answers.push({"name":"Musshuru","rarity":55});
+ q.answers.push({"name":"Crocodile","rarity":55});
+ q.answers.push({"name":"Sasori","rarity":25});
+ q.answers.push({"name":"Orochimaru","rarity":55});
+ q.answers.push({"name":"Hanzo","rarity":55});
+ q.answers.push({"name":"Kankuro","rarity":55});
+ q.answers.push({"name":"Mayuri Kurotsuchi","rarity":55});
+ q.answers.push({"name":"Askin Nakk Le Vaar","rarity":55});
+ q.answers.push({"name":"Mustard","rarity":55});
+ q.answers.push({"name":"Erik (Cobra)","rarity":55});
+ q.answers.push({"name":"Sesshomaru","rarity":55});
+ q.answers.push({"name":"Sucy Manbavaran","rarity":55});
+ q.answers.push({"name":"Coco","rarity":55});
+ q.answers.push({"name":"Lavender","rarity":55});
+ q.answers.push({"name":"Cinnabar","rarity":55});
+ q.answers.push({"name":"Eso","rarity":55});
+ q.answers.push({"name":"Kechizu","rarity":55});
+ q.answers.push({"name":"Junpei Yoshino","rarity":55});
+ q.answers.push({"name":"Semiramis","rarity":55});
+ q.answers.push({"name":"Naraku","rarity":55});
+}
+{
+ const q=bank.find(x=>x.id==="timed-v4-wide-ascent-17-prosthetic");if(!q)throw Error("Missing November 27 question timed-v4-wide-ascent-17-prosthetic");
+ {const a=q.answers.find(x=>x.name==="Kuukaku Shiba");if(!a)throw Error("Missing canonical answer Kuukaku Shiba");a.aliases=a.aliases||[];
+  a.aliases.push("Kūkaku Shiba");
+ }
+ {const a=q.answers.find(x=>x.name==="Shiki");if(!a)throw Error("Missing canonical answer Shiki");a.aliases=a.aliases||[];
+  a.aliases.push("Shiki (Golden Lion)");
+ }
+ q.answers.push({"name":"Buccaneer","rarity":55});
+ q.answers.push({"name":"Den Rockbell","rarity":55});
+ q.answers.push({"name":"Julia Crichton","rarity":55});
+ q.answers.push({"name":"Hyakkimaru","rarity":55});
+ q.answers.push({"name":"Vash the Stampede","rarity":20});
+ q.answers.push({"name":"Eustass Kid","rarity":55});
+ q.answers.push({"name":"Zeff","rarity":55});
+ q.answers.push({"name":"Nekomamushi","rarity":55});
+ q.answers.push({"name":"Inuarashi","rarity":55});
+ q.answers.push({"name":"Naruto Uzumaki","rarity":20});
+ q.answers.push({"name":"Ao","rarity":55});
+ q.answers.push({"name":"Kawaki","rarity":55});
+ q.answers.push({"name":"Mr. Compress","rarity":55});
+ q.answers.push({"name":"Ectoplasm","rarity":55});
+ q.answers.push({"name":"Shota Aizawa","rarity":55});
+ q.answers.push({"name":"Mirko (Rumi Usagiyama)","rarity":55});
+ q.answers.push({"name":"Gildarts Clive","rarity":55});
+ q.answers.push({"name":"Joseph Joestar","rarity":55});
+ q.answers.push({"name":"Najenda","rarity":55});
+ q.answers.push({"name":"Hajime Nagumo","rarity":55});
+ q.answers.push({"name":"Tomomi Masaoka","rarity":55});
+ q.answers.push({"name":"Prospera Mercury","rarity":55});
+ q.answers.push({"name":"Daryl Lorenz","rarity":55});
+ q.answers.push({"name":"Kotoko Iwanaga","rarity":50,"aliases":["Kotoko"]});
+ q.answers.push({"name":"Shiki Ryougi","rarity":65,"aliases":["Shiki Ryogi"]});
+}
+{
+ const q=bank.find(x=>x.id==="timed-v4-wide-ascent-17-teleport");if(!q)throw Error("Missing November 27 question timed-v4-wide-ascent-17-teleport");
+ q.answers.push({"name":"Abra","rarity":55});
+ q.answers.push({"name":"Kadabra","rarity":55});
+ q.answers.push({"name":"Mew","rarity":55});
+ q.answers.push({"name":"Alakazam","rarity":55});
+ q.answers.push({"name":"Drowzee","rarity":55});
+ q.answers.push({"name":"Natu","rarity":55});
+ q.answers.push({"name":"Xatu","rarity":55});
+ q.answers.push({"name":"Jirachi","rarity":55});
+ q.answers.push({"name":"Kirlia","rarity":55});
+ q.answers.push({"name":"Gardevoir","rarity":55});
+ q.answers.push({"name":"Ralts","rarity":55});
+ q.answers.push({"name":"Claydol","rarity":55});
+ q.answers.push({"name":"Mesprit","rarity":55});
+ q.answers.push({"name":"Uxie","rarity":55});
+ q.answers.push({"name":"Elgyem","rarity":55});
+ q.answers.push({"name":"Cosmog","rarity":55,"aliases":["Nebby"]});
+ q.answers.push({"name":"Beheeyem","rarity":55});
+ q.answers.push({"name":"Goku","rarity":20});
+ q.answers.push({"name":"Cell","rarity":55});
+ q.answers.push({"name":"Majin Buu","rarity":55,"aliases":["Kid Buu"]});
+ q.answers.push({"name":"Jimeze","rarity":55});
+ q.answers.push({"name":"Kibito","rarity":55});
+ q.answers.push({"name":"Tobirama Senju","rarity":55});
+ q.answers.push({"name":"Sasuke Uchiha","rarity":20});
+ q.answers.push({"name":"Obito Uchiha","rarity":55});
+ q.answers.push({"name":"Finral Roulacase","rarity":55});
+ q.answers.push({"name":"Valtos","rarity":55});
+ q.answers.push({"name":"Cob Portaport","rarity":55});
+ q.answers.push({"name":"Van Augur","rarity":55});
+ q.answers.push({"name":"Trafalgar Law","rarity":55});
+ q.answers.push({"name":"Aoi Todo","rarity":20});
+ q.answers.push({"name":"Saiki Kusuo","rarity":55});
+ q.answers.push({"name":"Minerva Orland","rarity":55});
+ q.answers.push({"name":"Marin Hollow","rarity":55});
+ q.answers.push({"name":"Ainz Ooal Gown","rarity":55});
+ q.answers.push({"name":"Shalltear Bloodfallen","rarity":55});
+ q.answers.push({"name":"Ryo Shimazaki","rarity":55});
+ q.answers.push({"name":"Goreinu","rarity":55});
+ q.answers.push({"name":"Merlin","rarity":55});
+ q.answers.push({"name":"Rimuru Tempest","rarity":55});
+}
+// END NOV27 APPROVED CSV EXPANSION
 return bank;})();
 if(typeof module!=="undefined")module.exports=POWER_LEVEL_QUESTIONS;
