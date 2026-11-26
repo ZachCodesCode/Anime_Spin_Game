@@ -7930,6 +7930,86 @@ bank.push(...[
 // Source: user-approved November 27 CSVs. Existing rarity inputs and Top Answers remain unchanged.
 {
  const q=bank.find(x=>x.id==="timed-v4-wide-ascent-17-poison");if(!q)throw Error("Missing November 27 question timed-v4-wide-ascent-17-poison");
+ q.answers.push({"name":"Bulbasaur","rarity":25});
+ q.answers.push({"name":"Ivysaur","rarity":25});
+ q.answers.push({"name":"Venusaur","rarity":25});
+ q.answers.push({"name":"Weedle","rarity":25});
+ q.answers.push({"name":"Kakuna","rarity":25});
+ q.answers.push({"name":"Beedrill","rarity":25});
+ q.answers.push({"name":"Ekans","rarity":25});
+ q.answers.push({"name":"Nidoran Female","rarity":25,"aliases":["Female Nidoran","Nidoran F"]});
+ q.answers.push({"name":"Nidorina","rarity":25});
+ q.answers.push({"name":"Nidoqueen","rarity":25});
+ q.answers.push({"name":"Nidoran Male","rarity":25,"aliases":["Male Nidoran","Nidoran M"]});
+ q.answers.push({"name":"Nidorino","rarity":25});
+ q.answers.push({"name":"Nidoking","rarity":25});
+ q.answers.push({"name":"Zubat","rarity":25});
+ q.answers.push({"name":"Golbat","rarity":25});
+ q.answers.push({"name":"Oddish","rarity":25});
+ q.answers.push({"name":"Gloom","rarity":25});
+ q.answers.push({"name":"Vileplume","rarity":25});
+ q.answers.push({"name":"Venonat","rarity":25});
+ q.answers.push({"name":"Venomoth","rarity":25});
+ q.answers.push({"name":"Bellsprout","rarity":25});
+ q.answers.push({"name":"Weepinbell","rarity":25});
+ q.answers.push({"name":"Victreebel","rarity":25});
+ q.answers.push({"name":"Tentacool","rarity":25});
+ q.answers.push({"name":"Tentacruel","rarity":25});
+ q.answers.push({"name":"Grimer","rarity":25});
+ q.answers.push({"name":"Muk","rarity":25});
+ q.answers.push({"name":"Gastly","rarity":25});
+ q.answers.push({"name":"Haunter","rarity":25});
+ q.answers.push({"name":"Gengar","rarity":25});
+ q.answers.push({"name":"Koffing","rarity":25});
+ q.answers.push({"name":"Spinarak","rarity":45});
+ q.answers.push({"name":"Ariados","rarity":45});
+ q.answers.push({"name":"Crobat","rarity":45});
+ q.answers.push({"name":"Qwilfish","rarity":45});
+ q.answers.push({"name":"Dustox","rarity":45});
+ q.answers.push({"name":"Roselia","rarity":45});
+ q.answers.push({"name":"Gulpin","rarity":45});
+ q.answers.push({"name":"Swalot","rarity":45});
+ q.answers.push({"name":"Seviper","rarity":45});
+ q.answers.push({"name":"Budew","rarity":45});
+ q.answers.push({"name":"Roserade","rarity":45});
+ q.answers.push({"name":"Stunky","rarity":45});
+ q.answers.push({"name":"Skuntank","rarity":45});
+ q.answers.push({"name":"Skorupi","rarity":45});
+ q.answers.push({"name":"Drapion","rarity":45});
+ q.answers.push({"name":"Croagunk","rarity":45});
+ q.answers.push({"name":"Toxicroak","rarity":45});
+ q.answers.push({"name":"Venipede","rarity":45});
+ q.answers.push({"name":"Whirlipede","rarity":45});
+ q.answers.push({"name":"Scolipede","rarity":45});
+ q.answers.push({"name":"Trubbish","rarity":45});
+ q.answers.push({"name":"Garbodor","rarity":45});
+ q.answers.push({"name":"Foongus","rarity":45});
+ q.answers.push({"name":"Amoonguss","rarity":45});
+ q.answers.push({"name":"Skrelp","rarity":45});
+ q.answers.push({"name":"Dragalge","rarity":45});
+ q.answers.push({"name":"Mareanie","rarity":45});
+ q.answers.push({"name":"Toxapex","rarity":45});
+ q.answers.push({"name":"Salandit","rarity":45});
+ q.answers.push({"name":"Salazzle","rarity":45});
+ q.answers.push({"name":"Nihilego","rarity":45});
+ q.answers.push({"name":"Poipole","rarity":45});
+ q.answers.push({"name":"Naganadel","rarity":45});
+ q.answers.push({"name":"Toxel","rarity":45});
+ q.answers.push({"name":"Toxtricity","rarity":45});
+ q.answers.push({"name":"Eternatus","rarity":45});
+ q.answers.push({"name":"Sneasler","rarity":45});
+ q.answers.push({"name":"Overqwil","rarity":45});
+ q.answers.push({"name":"Shroodle","rarity":45});
+ q.answers.push({"name":"Grafaiai","rarity":45});
+ q.answers.push({"name":"Varoom","rarity":45});
+ q.answers.push({"name":"Revavroom","rarity":45});
+ q.answers.push({"name":"Glimmet","rarity":45});
+ q.answers.push({"name":"Glimmora","rarity":45});
+ q.answers.push({"name":"Clodsire","rarity":45});
+ q.answers.push({"name":"Okidogi","rarity":45});
+ q.answers.push({"name":"Munkidori","rarity":45});
+ q.answers.push({"name":"Fezandipiti","rarity":45});
+ q.answers.push({"name":"Pecharunt","rarity":45});
  q.answers.push({"name":"Shinobu Kocho","rarity":25});
  q.answers.push({"name":"Gyutaro","rarity":25});
  q.answers.push({"name":"Hinatsuru","rarity":55});
@@ -7956,6 +8036,14 @@ bank.push(...[
  q.answers.push({"name":"Junpei Yoshino","rarity":55});
  q.answers.push({"name":"Semiramis","rarity":55});
  q.answers.push({"name":"Naraku","rarity":55});
+ q.answers.push({"name":"Galarian Slowbro","rarity":65,"formRequired":true});
+ q.answers.push({"name":"Galarian Slowking","rarity":65,"formRequired":true});
+ q.answers.push({"name":"Paldean Wooper","rarity":45,"formRequired":true});
+ // Four additional species or qualifying forms complete the 89 Poison-type species.
+ q.answers.push({"name":"Arceus (Poison Form)","rarity":65,"formRequired":true,"aliases":["Poison-type Arceus","Arceus (Poison)"]});
+ q.answers.push({"name":"Silvally (Poison Form)","rarity":65,"formRequired":true,"aliases":["Poison-type Silvally","Silvally (Poison)"]});
+ q.answers.push({"name":"Hisuian Sneasel","rarity":65,"formRequired":true,"aliases":["Sneasel (Hisuian Form)"]});
+ q.answers.push({"name":"Iron Moth","rarity":65});
 }
 {
  const q=bank.find(x=>x.id==="timed-v4-wide-ascent-17-prosthetic");if(!q)throw Error("Missing November 27 question timed-v4-wide-ascent-17-prosthetic");
@@ -8033,6 +8121,10 @@ bank.push(...[
  q.answers.push({"name":"Goreinu","rarity":55});
  q.answers.push({"name":"Merlin","rarity":55});
  q.answers.push({"name":"Rimuru Tempest","rarity":55});
+}
+{const q=bank.find(x=>x.id==='timed-v4-wide-ascent-17-poison');
+ q.text='Name any anime character who uses poison as a weapon or ability, or any Poison-type Pokémon.';
+ q.note='Poison users qualify; Poison-type Pokémon qualify without a Poison move. Name regional forms specifically.';
 }
 // END NOV27 APPROVED CSV EXPANSION
 return bank;})();

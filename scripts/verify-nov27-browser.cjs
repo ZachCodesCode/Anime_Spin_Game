@@ -10,7 +10,7 @@ const all=[...ascent,...descent],day='2026-11-27',server=require('./dev').create
 const output=process.env.ASCENT_BROWSER_OUTPUT||'/private/tmp';
 const newChoices=process.env.NOV27_NEW_ANSWERS==='1';
 const choice={
- ascent:['Mira Dianus Artemina','Hyakkimaru','She and Her Cat: Their Standing Points','Goku','Naraku','Renkin San-kyuu Magical? Pokaan','Menthuthuyoupi'],
+ ascent:['Mira Dianus Artemina','Hyakkimaru','She and Her Cat: Their Standing Points','Goku','Bulbasaur','Renkin San-kyuu Magical? Pokaan','Menthuthuyoupi'],
  descent:['Akatsuchi','Yor Forger','The Girl I Like Forgot Her Glasses','Zubat','Charizard','Yowamushi Pedal: New Generation','Vegeta']
 };
 const saved=(ids)=>Object.values(localStorage).map(v=>{try{return JSON.parse(v);}catch{return null;}}).find(v=>Array.isArray(v?.ids)&&v.ids.length===7&&v.ids[0]===ids[0]&&v.date==='2026-11-27');

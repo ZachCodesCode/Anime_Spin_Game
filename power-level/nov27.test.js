@@ -7,7 +7,7 @@ const C=require('./core'),R=require('./run'),D=require('./descent');
 const ascent=require('./questions'),descent=require('./descent-questions');
 const day='2026-11-27';
 const approvedChoices={
- ascent:['Mira Dianus Artemina','Hyakkimaru','She and Her Cat: Their Standing Points','Goku','Naraku','Renkin San-kyuu Magical? Pokaan','Menthuthuyoupi'],
+ ascent:['Mira Dianus Artemina','Hyakkimaru','She and Her Cat: Their Standing Points','Goku','Bulbasaur','Renkin San-kyuu Magical? Pokaan','Menthuthuyoupi'],
  descent:['Akatsuchi','Yor Forger','The Girl I Like Forgot Her Glasses','Zubat','Charizard','Yowamushi Pedal: New Generation','Vegeta']
 };
 const aIds=['spear','prosthetic','nonhuman-main','teleport','poison','female-main','shapeshift'].map(x=>'timed-v4-wide-ascent-17-'+x);
@@ -46,6 +46,18 @@ test('November 27 banks have unique forms, one Ascent Limit Break, and one Desce
   }
  }
  assert.equal(ids.size,14);
+});
+
+test('November 27 poison question accepts the complete Poison-type species roster with form-specific names',()=>{
+ const q=ascent.find(q=>q.id==='timed-v4-wide-ascent-17-poison');
+ assert.equal(q.text,'Name any anime character who uses poison as a weapon or ability, or any Poison-type Pokémon.');
+ assert.equal(q.answers.length,156);
+ for(const name of ['Bulbasaur','Sneasler','Iron Moth','Galarian Slowbro','Galarian Slowking','Paldean Wooper','Hisuian Sneasel','Arceus (Poison Form)','Silvally (Poison Form)'])
+  assert.equal(C.validate(q,name).answer?.name,name);
+ for(const name of ['Slowbro','Slowking','Wooper','Sneasel','Arceus','Silvally'])
+  assert.equal(C.validate(q,name).answer,undefined,name+' requires its Poison-type form');
+ assert.equal(C.validate(q,'Weezing').answer?.name,'Matadogas');
+ assert.equal(C.validate(q,'Arbok').answer?.name,'Arbok');
 });
 
 test('browser scripts accept the same November 27 answers and compute the same scores as Node',()=>{
