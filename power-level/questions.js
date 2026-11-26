@@ -5859,7 +5859,7 @@ bank.push(...[
   a("South Terano",50,"South"),a("Tatsuya Himekawa",50,"Himekawa"),a("Kunio",50,"Kunio-kun"),a("Toma Hiragi",50,"Hiragi"),
   a("Hideyoshi Toujou",60,"Toujou"),a("Hayashida",60,"Shinjiro Hayashida"),a("Mechazawa",60),a("Daichi Shinagawa",60,"Shinagawa"),a("Choji Tomiyama",60,"Choji"),a("Kai",60),
   a("Taison Maeda",60,"Maeda"),a("Okubo",75),a("Freddie",75),a("Kirishima",75),a("Sawamura",75),
-  a("Hokuto Mitsuya",100,"Hokuto")]),
+  a("Hokuto Mitsuya",85,"Hokuto"),a("Yoshiki Tsurumaki",100,"Tsurumaki","Tsurumaki Yoshiki")]),
  W('ascent-16-death-games','title',ANY,"Name any death game or survival game anime.","Characters are forced into a game they can die in",[
   a("Sword Art Online",5,"SAO"),a("Future Diary",10,"Mirai Nikki"),a("Danganronpa",10,"Danganronpa: The Animation","Danganronpa 3"),a("Gantz",15,"Gantz:O"),a("Darwin's Game",15,"Darwins Game"),
   a("Btooom!",20,"Btooom"),a("Tomodachi Game",20),a("Hell's Paradise",20,"Jigokuraku","Hells Paradise"),a("Kaiji",25,"Gyakkyou Burai Kaiji"),a("Deadman Wonderland",25),
@@ -5980,7 +5980,8 @@ const MORE26={
   a("Takt Op. Destiny",50,"Takt Op Destiny"),a("Sabikui Bisco",50,"Rust-Eater Bisco"),a("Zegapain",60),a("Kemurikusa",60)],
  'wide-ascent-16-psychics':[a("Ekubo",40,"Dimple"),a("King Kai",45,"Kaio"),a("Seiko Ayase",45,"Seiko"),a("Rolo Lamperouge",45,"Rolo"),a("Rei Hino",45,"Sailor Mars"),
   a("Reita Toritsuka",50,"Toritsuka"),a("Charles zi Britannia",50,"Charles"),a("Sir Nighteye",50,"Nighteye","Mirai Sasaki"),a("Mandalay",50),a("Misa Kurobane",60,"Misa"),a("Ragdoll",60)],
- 'wide-ascent-16-delinquents':[a("Ryota Miyagi",45,"Miyagi"),a("Atsushi Sendo",45,"Akkun"),a("Senju Kawaragi",45,"Senju"),a("Takeomi Akashi",50,"Takeomi"),a("Tokugawa Onigawara",60,"Onigawara")],
+ 'wide-ascent-16-delinquents':[a("Ryota Miyagi",45,"Miyagi"),a("Atsushi Sendo",45,"Akkun"),a("Senju Kawaragi",45,"Senju"),a("Takeomi Akashi",50,"Takeomi"),a("Tokugawa Onigawara",60,"Onigawara"),
+  a("Tatsuya Iguchi",75,"Iguchi","Mad Dog of Komae"),a("Atsushi Tanzawa",75,"Tanzawa","Acchan"),a("Kaname Abe",75,"Kaname","Abe Kaname")],
  'wide-ascent-16-death-games':[a("Riddle Story of Devil",45,"Akuma no Riddle"),a("Yu-Gi-Oh!",45,"Yu-Gi-Oh","Yugioh","Shadow Games"),a("Fate/Apocrypha",45,"Fate Apocrypha"),
   a("Fate/strange Fake",45,"Fate Strange Fake"),a("Death Billiards",50),a("Akagi",60)],
  'wide-ascent-16-amnesia':[a("Emilia",30),a("Usagi Tsukino",40,"Usagi","Sailor Moon"),a("Rei Ayanami",45,"Rei"),a("Yukine",45),a("Kaede Azusagawa",45,"Kaede")],
