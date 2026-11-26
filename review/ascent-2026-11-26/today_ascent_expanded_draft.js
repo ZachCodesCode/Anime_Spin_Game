@@ -874,10 +874,7 @@ module.exports = {
         },
         {
           "name": "Hanako Kamado",
-          "rarity": 45,
-          "aliases": [
-            "ç«ˆé–€ èŠ±å­"
-          ]
+          "rarity": 45
         },
         {
           "name": "Shigeru Kamado",
@@ -929,10 +926,7 @@ module.exports = {
         },
         {
           "name": "Tayuya",
-          "rarity": 45,
-          "aliases": [
-            "å¤šç”±ä¹Ÿ"
-          ]
+          "rarity": 45
         },
         {
           "name": "Ranmaru",
@@ -964,17 +958,11 @@ module.exports = {
         },
         {
           "name": "Shino Sousaki",
-          "rarity": 55,
-          "aliases": [
-            "é€å´Žä¿¡ä¹ƒ"
-          ]
+          "rarity": 55
         },
         {
           "name": "Seiji Shishikura",
-          "rarity": 55,
-          "aliases": [
-            "è‚‰å€‰ç²¾å…"
-          ]
+          "rarity": 55
         },
         {
           "name": "Ladros",
@@ -1005,10 +993,7 @@ module.exports = {
         },
         {
           "name": "Kakeru Sengoku",
-          "rarity": 55,
-          "aliases": [
-            "ä»™çŸ³ ç¿”"
-          ]
+          "rarity": 55
         },
         {
           "name": "Daikoku",
@@ -1034,17 +1019,11 @@ module.exports = {
         },
         {
           "name": "Jin Kariya",
-          "rarity": 55,
-          "aliases": [
-            "ç‹©çŸ¢ ç¥ž"
-          ]
+          "rarity": 55
         },
         {
           "name": "Ruka Rengoku",
-          "rarity": 80,
-          "aliases": [
-            "ç…‰ç„ ç‘ ç«"
-          ]
+          "rarity": 80
         },
         {
           "name": "Stark",
@@ -1085,16 +1064,12 @@ module.exports = {
           "name": "Izumo Kamiki",
           "rarity": 65,
           "aliases": [
-            "Eyebrows",
-            "ç¥žæœ¨ å‡ºé›²"
+            "Eyebrows"
           ]
         },
         {
           "name": "Jong-In Choi",
-          "rarity": 65,
-          "aliases": [
-            "Shin Mogami (ç™½å· å¤§è™Ž),Choi Jong-in"
-          ]
+          "rarity": 65
         },
         {
           "name": "Baek Yoonho",
@@ -1106,31 +1081,19 @@ module.exports = {
         },
         {
           "name": "Eri Shiina",
-          "rarity": 65,
-          "aliases": [
-            "æ¤Žå æžé‡Œ"
-          ]
+          "rarity": 65
         },
         {
           "name": "Hatsune Otonashi",
-          "rarity": 65,
-          "aliases": [
-            "éŸ³ç„¡ åˆéŸ³"
-          ]
+          "rarity": 65
         },
         {
           "name": "Misa Kurobane",
-          "rarity": 65,
-          "aliases": [
-            "é»’ç¾½ ç¾Žç ‚"
-          ]
+          "rarity": 65
         },
         {
           "name": "Akiko Yosano",
-          "rarity": 65,
-          "aliases": [
-            "ä¸Žè¬é‡Ž æ™¶å­"
-          ]
+          "rarity": 65
         },
         {
           "name": "Ichiyou Higuchi",
@@ -1150,10 +1113,7 @@ module.exports = {
         },
         {
           "name": "Ryouko Sakaki",
-          "rarity": 65,
-          "aliases": [
-            "æ¦Š æ¶¼å­"
-          ]
+          "rarity": 65
         },
         {
           "name": "Fuyumi Mizuhara",
@@ -1186,8 +1146,7 @@ module.exports = {
           "name": "Mei Misaki",
           "rarity": 45,
           "aliases": [
-            "Misaki Mei",
-            "è¦‹å´Ž é³´"
+            "Misaki Mei"
           ]
         },
         {
@@ -1216,17 +1175,11 @@ module.exports = {
         },
         {
           "name": "Celestial Spirit King",
-          "rarity": 65,
-          "aliases": [
-            "æ˜ŸéœŠçŽ‹"
-          ]
+          "rarity": 65
         },
         {
           "name": "Rokurouta",
-          "rarity": 78,
-          "aliases": [
-            "é™¸éƒŽå¤ª"
-          ]
+          "rarity": 78
         },
         {
           "name": "Yuzuriha",
@@ -1355,10 +1308,7 @@ module.exports = {
         },
         {
           "name": "Yuuma Amano",
-          "rarity": 78,
-          "aliases": [
-            "å¤©é‡Ž å¤•éº»"
-          ]
+          "rarity": 78
         },
         {
           "name": "Freed Sellzen",
@@ -1376,8 +1326,7 @@ module.exports = {
           "name": "Apprentice Cleric",
           "rarity": 78,
           "aliases": [
-            "Minarai Seijo",
-            "è¦‹ç¿’è–å¥³"
+            "Minarai Seijo"
           ]
         },
         {
@@ -1467,10 +1416,7 @@ module.exports = {
         },
         {
           "name": "Sakura Inami",
-          "rarity": 78,
-          "aliases": [
-            "ä¼Šæ³¢æ¡œ"
-          ]
+          "rarity": 78
         },
         {
           "name": "Maid-chan",
@@ -1486,10 +1432,7 @@ module.exports = {
         },
         {
           "name": "Seika Ijichi",
-          "rarity": 78,
-          "aliases": [
-            "ä¼Šåœ°çŸ¥â€‰æ˜Ÿæ­Œ"
-          ]
+          "rarity": 78
         },
         {
           "name": "Zeshia Bianca",
@@ -1535,26 +1478,19 @@ module.exports = {
         },
         {
           "name": "Shinkurou Kichijouji",
-          "rarity": 78,
-          "aliases": [
-            "å‰ç¥¥å¯º çœŸç´…éƒŽ"
-          ]
+          "rarity": 78
         },
         {
           "name": "Mayumi Saegusa",
           "rarity": 78,
           "aliases": [
             "Elven Sniper",
-            "Saegusa Mayumi",
-            "ä¸ƒè‰ çœŸç”±ç¾Ž"
+            "Saegusa Mayumi"
           ]
         },
         {
           "name": "Hagane Tomitsuka",
-          "rarity": 78,
-          "aliases": [
-            "åä¸‰æŸ é‹¼"
-          ]
+          "rarity": 78
         },
         {
           "name": "Izumi Shimomura",
@@ -1610,10 +1546,7 @@ module.exports = {
         },
         {
           "name": "Goemon Hachisuka",
-          "rarity": 85,
-          "aliases": [
-            "èœ‚é ˆè³€äº”å³è¡›é–€"
-          ]
+          "rarity": 85
         },
         {
           "name": "Tasuku Ryuuenji",
@@ -1645,10 +1578,7 @@ module.exports = {
         },
         {
           "name": "Taki Kamate",
-          "rarity": 85,
-          "aliases": [
-            "éŽŒæ‰‹å…ˆç”Ÿï¼ˆéŽŒæ‰‹ å¤šå­£ï¼‰"
-          ]
+          "rarity": 85
         },
         {
           "name": "Kureno Sohma",
@@ -1676,10 +1606,7 @@ module.exports = {
         },
         {
           "name": "Shu Terafune",
-          "rarity": 85,
-          "aliases": [
-            "å¯ºèˆ¹ å‘¨"
-          ]
+          "rarity": 85
         },
         {
           "name": "Kenshirou Yozakura",
@@ -1719,10 +1646,7 @@ module.exports = {
         },
         {
           "name": "Ageha",
-          "rarity": 85,
-          "aliases": [
-            "é³³"
-          ]
+          "rarity": 85
         },
         {
           "name": "Jade Ariel",
@@ -1730,10 +1654,7 @@ module.exports = {
         },
         {
           "name": "Kiseki Ou",
-          "rarity": 85,
-          "aliases": [
-            "é¬¼ç®±çŽ‹ (Kiseki-o)"
-          ]
+          "rarity": 85
         },
         {
           "name": "Terence T. D'Arby",
@@ -1744,10 +1665,7 @@ module.exports = {
         },
         {
           "name": "Seigen Kazamaki",
-          "rarity": 85,
-          "aliases": [
-            "é¢¨å·»â€‰æ¸…å¼¦"
-          ]
+          "rarity": 85
         },
         {
           "name": "Robbie Benex",
@@ -1794,10 +1712,7 @@ module.exports = {
         },
         {
           "name": "Ryoko Takamachi",
-          "rarity": 85,
-          "aliases": [
-            "é«˜ç”ºäº®å­"
-          ]
+          "rarity": 85
         },
         {
           "name": "Ernest Johnson",
@@ -1833,10 +1748,7 @@ module.exports = {
         },
         {
           "name": "Gyuuki",
-          "rarity": 85,
-          "aliases": [
-            "Umewakamaru (æ¢…è‹¥ä¸¸)"
-          ]
+          "rarity": 85
         },
         {
           "name": "Brazilian Porcupine",
@@ -1859,10 +1771,7 @@ module.exports = {
         },
         {
           "name": "Oni Okuaki",
-          "rarity": 85,
-          "aliases": [
-            "å¥¥ç§‹é›„å¼"
-          ]
+          "rarity": 85
         },
         {
           "name": "Elsa Archfield",
@@ -1893,10 +1802,7 @@ module.exports = {
         },
         {
           "name": "Takeo",
-          "rarity": 85,
-          "aliases": [
-            "ç«ˆé–€ ç«¹é›„"
-          ]
+          "rarity": 85
         },
         {
           "name": "Rosehip",
@@ -1940,10 +1846,7 @@ module.exports = {
         },
         {
           "name": "Jim Hillfort",
-          "rarity": 85,
-          "aliases": [
-            "Kousaka Jin (é«˜å‚ ä»)"
-          ]
+          "rarity": 85
         },
         {
           "name": "Mirin",
@@ -1955,10 +1858,7 @@ module.exports = {
         },
         {
           "name": "Kenya Onizuka",
-          "rarity": 85,
-          "aliases": [
-            "é¬¼å¡šå‰£å“‰"
-          ]
+          "rarity": 85
         },
         {
           "name": "Takaomi Hiyama",
@@ -1974,10 +1874,7 @@ module.exports = {
         },
         {
           "name": "Young man X",
-          "rarity": 85,
-          "aliases": [
-            "é’å¹´X (Seinen Etsukusu)"
-          ]
+          "rarity": 85
         },
         {
           "name": "Yurie Ooshima",
@@ -2122,10 +2019,7 @@ module.exports = {
         },
         {
           "name": "Tomono Kojou",
-          "rarity": 85,
-          "aliases": [
-            "å¤åŸŽæ™ºä¹ƒ"
-          ]
+          "rarity": 85
         },
         {
           "name": "Kei Arito",
@@ -2161,17 +2055,13 @@ module.exports = {
         },
         {
           "name": "Akane Hanasaki",
-          "rarity": 85,
-          "aliases": [
-            "èŠ±å’² èŒœ"
-          ]
+          "rarity": 85
         },
         {
           "name": "Kujaku Hime Kada",
           "rarity": 85,
           "aliases": [
-            "Peacock Princess Kada",
-            "å­”é›€å§«è¯é™€"
+            "Peacock Princess Kada"
           ]
         },
         {
@@ -2192,10 +2082,7 @@ module.exports = {
         },
         {
           "name": "Tsuyuno Yatsumura",
-          "rarity": 85,
-          "aliases": [
-            "å¥´æ‘ éœ²ä¹ƒ"
-          ]
+          "rarity": 85
         },
         {
           "name": "Blackbuck",
@@ -2205,8 +2092,7 @@ module.exports = {
           "name": "Sakyou Kurayami",
           "rarity": 85,
           "aliases": [
-            "Sakyo",
-            "æš—é—‡å·¦äº¬"
+            "Sakyo"
           ]
         },
         {
@@ -2251,10 +2137,7 @@ module.exports = {
         },
         {
           "name": "Rena Kunisaki",
-          "rarity": 85,
-          "aliases": [
-            "å›½å´ŽçŽ²å¥ˆ"
-          ]
+          "rarity": 85
         },
         {
           "name": "Gumi Tomosaka",
@@ -2262,10 +2145,7 @@ module.exports = {
         },
         {
           "name": "Hibiki Manabe",
-          "rarity": 85,
-          "aliases": [
-            "çœŸåéƒ¨ éŸ¿ç”Ÿ"
-          ]
+          "rarity": 85
         },
         {
           "name": "Banda Koloogyu Jr",
@@ -2277,17 +2157,11 @@ module.exports = {
         },
         {
           "name": "Jubei Mitsuyoshi Yagyu",
-          "rarity": 85,
-          "aliases": [
-            "æŸ³ç”Ÿåå…µè¡žä¸‰åŽ³"
-          ]
+          "rarity": 85
         },
         {
           "name": "Keisei Tagami",
-          "rarity": 85,
-          "aliases": [
-            "ç”°ç¥ž æ™¯ä¸–"
-          ]
+          "rarity": 85
         },
         {
           "name": "Pucchin",
@@ -2829,10 +2703,7 @@ module.exports = {
         },
         {
           "name": "Celestial Spirit King",
-          "rarity": 65,
-          "aliases": [
-            "æ˜ŸéœŠçŽ‹"
-          ]
+          "rarity": 65
         },
         {
           "name": "Toby Horhorta",
@@ -2864,10 +2735,7 @@ module.exports = {
         },
         {
           "name": "Yayoi Kanbara",
-          "rarity": 78,
-          "aliases": [
-            "ç¥žåŽŸå¼¥ç”Ÿ"
-          ]
+          "rarity": 78
         },
         {
           "name": "Collot",
@@ -2946,10 +2814,7 @@ module.exports = {
         },
         {
           "name": "Misaki Sagisawa",
-          "rarity": 85,
-          "aliases": [
-            "é·ºæ¾¤ç¾Žå’² / é ¼å­ (Yoriko Sagisawa)"
-          ]
+          "rarity": 85
         },
         {
           "name": "Millhiore F Biscotti",
@@ -3083,10 +2948,7 @@ module.exports = {
         },
         {
           "name": "Saiko Numakage",
-          "rarity": 85,
-          "aliases": [
-            "æ²¼å½±å½©æ¹–"
-          ]
+          "rarity": 85
         },
         {
           "name": "Belnar",
@@ -3242,10 +3104,7 @@ module.exports = {
         },
         {
           "name": "Shiori Kashiwazaki",
-          "rarity": 85,
-          "aliases": [
-            "æŸå´Žæ ž"
-          ]
+          "rarity": 85
         },
         {
           "name": "Sia Wolcott",
@@ -3293,10 +3152,7 @@ module.exports = {
         },
         {
           "name": "Ichirou Irabu",
-          "rarity": 85,
-          "aliases": [
-            "ä¼Šè‰¯éƒ¨ ä¸€éƒŽ"
-          ]
+          "rarity": 85
         },
         {
           "name": "Sabao",
@@ -3327,10 +3183,7 @@ module.exports = {
         },
         {
           "name": "Shizegane Date",
-          "rarity": 85,
-          "aliases": [
-            "ä¼Šé” æˆå®Ÿ"
-          ]
+          "rarity": 85
         },
         {
           "name": "Magino",
@@ -3511,10 +3364,7 @@ module.exports = {
         },
         {
           "name": "Koboshi Uematsu",
-          "rarity": 85,
-          "aliases": [
-            "æ¤æ¾ å°æ˜Ÿ"
-          ]
+          "rarity": 85
         },
         {
           "name": "O-chan",
@@ -3522,10 +3372,7 @@ module.exports = {
         },
         {
           "name": "Yakuko Etsushimaru",
-          "rarity": 85,
-          "aliases": [
-            "è¶Šå¸ä¸¸ ç›Šå­"
-          ]
+          "rarity": 85
         },
         {
           "name": "Bae Yo",
@@ -3541,10 +3388,7 @@ module.exports = {
         },
         {
           "name": "Yuugen",
-          "rarity": 85,
-          "aliases": [
-            "å¹½å¹»"
-          ]
+          "rarity": 85
         },
         {
           "name": "Roxine",
@@ -3596,10 +3440,7 @@ module.exports = {
         },
         {
           "name": "Byakuroku",
-          "rarity": 85,
-          "aliases": [
-            "ç™¾éŒ²"
-          ]
+          "rarity": 85
         },
         {
           "name": "Aruko Sakai",
@@ -3622,10 +3463,7 @@ module.exports = {
         },
         {
           "name": "Mayudama",
-          "rarity": 85,
-          "aliases": [
-            "ç¹­çŽ‰"
-          ]
+          "rarity": 85
         },
         {
           "name": "Fubuki Shirakami",

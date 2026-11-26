@@ -44,3 +44,5 @@ Priscilla Barielle, Kuon, Yokohama Shopping Log, Kyosuke Hyobu, and The Ones Wit
 ## Remaining review
 
 The seven per-question targets are editorial aspirations. Rows marked needs-review should be checked against anime scenes or official character profiles before publishing. The draft deliberately has no new rarity-100 answer. Source licences and character/title identity matching need review before converting this local draft into a production release. No external assignment or production version pointer was changed. The PR branch includes database-only and other needs-review rows at the user’s direction. A merge will make them playable, so the outstanding factual and source-rights risks are listed in the CSVs and PR description.
+
+Malformed alias text from the export was removed from proposed answers; canonical names and counts are unchanged.

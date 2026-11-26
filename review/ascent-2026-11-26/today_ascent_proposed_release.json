@@ -3,9 +3,7 @@
     {
       "name": "Hanako Kamado",
       "rarity": 45,
-      "aliases": [
-        "ç«ˆé–€ èŠ±å­"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=96113"
     },
@@ -96,9 +94,7 @@
     {
       "name": "Tayuya",
       "rarity": 45,
-      "aliases": [
-        "å¤šç”±ä¹Ÿ"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=13866"
     },
@@ -154,18 +150,14 @@
     {
       "name": "Shino Sousaki",
       "rarity": 55,
-      "aliases": [
-        "é€å´Žä¿¡ä¹ƒ"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=84226"
     },
     {
       "name": "Seiji Shishikura",
       "rarity": 55,
-      "aliases": [
-        "è‚‰å€‰ç²¾å…"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=85046"
     },
@@ -216,9 +208,7 @@
     {
       "name": "Kakeru Sengoku",
       "rarity": 55,
-      "aliases": [
-        "ä»™çŸ³ ç¿”"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=105981"
     },
@@ -257,18 +247,14 @@
     {
       "name": "Jin Kariya",
       "rarity": 55,
-      "aliases": [
-        "ç‹©çŸ¢ ç¥ž"
-      ],
+      "aliases": [],
       "verification_status": "source_verified_candidate",
       "source_url": "https://anilist.co/character/5985 | https://www.animecharactersdatabase.com/characters.php?id=10734"
     },
     {
       "name": "Ruka Rengoku",
       "rarity": 80,
-      "aliases": [
-        "ç…‰ç„ ç‘ ç«"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=105686"
     },
@@ -334,8 +320,7 @@
       "name": "Izumo Kamiki",
       "rarity": 65,
       "aliases": [
-        "Eyebrows",
-        "ç¥žæœ¨ å‡ºé›²"
+        "Eyebrows"
       ],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=31059"
@@ -343,9 +328,7 @@
     {
       "name": "Jong-In Choi",
       "rarity": 65,
-      "aliases": [
-        "Shin Mogami (ç™½å· å¤§è™Ž),Choi Jong-in"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=132803"
     },
@@ -366,36 +349,28 @@
     {
       "name": "Eri Shiina",
       "rarity": 65,
-      "aliases": [
-        "æ¤Žå æžé‡Œ"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=26728"
     },
     {
       "name": "Hatsune Otonashi",
       "rarity": 65,
-      "aliases": [
-        "éŸ³ç„¡ åˆéŸ³"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=37429"
     },
     {
       "name": "Misa Kurobane",
       "rarity": 65,
-      "aliases": [
-        "é»’ç¾½ ç¾Žç ‚"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=73653"
     },
     {
       "name": "Akiko Yosano",
       "rarity": 65,
-      "aliases": [
-        "ä¸Žè¬é‡Ž æ™¶å­"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=76217"
     },
@@ -430,9 +405,7 @@
     {
       "name": "Ryouko Sakaki",
       "rarity": 65,
-      "aliases": [
-        "æ¦Š æ¶¼å­"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=73233"
     },
@@ -484,8 +457,7 @@
       "name": "Mei Misaki",
       "rarity": 45,
       "aliases": [
-        "Misaki Mei",
-        "è¦‹å´Ž é³´"
+        "Misaki Mei"
       ],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=36068"
@@ -535,18 +507,14 @@
     {
       "name": "Celestial Spirit King",
       "rarity": 65,
-      "aliases": [
-        "æ˜ŸéœŠçŽ‹"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=7855"
     },
     {
       "name": "Rokurouta",
       "rarity": 78,
-      "aliases": [
-        "é™¸éƒŽå¤ª"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=134134"
     },
@@ -745,9 +713,7 @@
     {
       "name": "Yuuma Amano",
       "rarity": 78,
-      "aliases": [
-        "å¤©é‡Ž å¤•éº»"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=82676"
     },
@@ -776,8 +742,7 @@
       "name": "Apprentice Cleric",
       "rarity": 78,
       "aliases": [
-        "Minarai Seijo",
-        "è¦‹ç¿’è–å¥³"
+        "Minarai Seijo"
       ],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=97409"
@@ -924,9 +889,7 @@
     {
       "name": "Sakura Inami",
       "rarity": 78,
-      "aliases": [
-        "ä¼Šæ³¢æ¡œ"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=64184"
     },
@@ -954,9 +917,7 @@
     {
       "name": "Seika Ijichi",
       "rarity": 78,
-      "aliases": [
-        "ä¼Šåœ°çŸ¥â€‰æ˜Ÿæ­Œ"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=127296"
     },
@@ -1030,9 +991,7 @@
     {
       "name": "Shinkurou Kichijouji",
       "rarity": 78,
-      "aliases": [
-        "å‰ç¥¥å¯º çœŸç´…éƒŽ"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=66795"
     },
@@ -1041,8 +1000,7 @@
       "rarity": 78,
       "aliases": [
         "Elven Sniper",
-        "Saegusa Mayumi",
-        "ä¸ƒè‰ çœŸç”±ç¾Ž"
+        "Saegusa Mayumi"
       ],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=66458"
@@ -1050,9 +1008,7 @@
     {
       "name": "Hagane Tomitsuka",
       "rarity": 78,
-      "aliases": [
-        "åä¸‰æŸ é‹¼"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=146472"
     },
@@ -1150,9 +1106,7 @@
     {
       "name": "Goemon Hachisuka",
       "rarity": 85,
-      "aliases": [
-        "èœ‚é ˆè³€äº”å³è¡›é–€"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=45454"
     },
@@ -1208,9 +1162,7 @@
     {
       "name": "Taki Kamate",
       "rarity": 85,
-      "aliases": [
-        "éŽŒæ‰‹å…ˆç”Ÿï¼ˆéŽŒæ‰‹ å¤šå­£ï¼‰"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=25821"
     },
@@ -1259,9 +1211,7 @@
     {
       "name": "Shu Terafune",
       "rarity": 85,
-      "aliases": [
-        "å¯ºèˆ¹ å‘¨"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=126038"
     },
@@ -1331,9 +1281,7 @@
     {
       "name": "Ageha",
       "rarity": 85,
-      "aliases": [
-        "é³³"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=75539"
     },
@@ -1347,9 +1295,7 @@
     {
       "name": "Kiseki Ou",
       "rarity": 85,
-      "aliases": [
-        "é¬¼ç®±çŽ‹ (Kiseki-o)"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=75384"
     },
@@ -1365,9 +1311,7 @@
     {
       "name": "Seigen Kazamaki",
       "rarity": 85,
-      "aliases": [
-        "é¢¨å·»â€‰æ¸…å¼¦"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=133158"
     },
@@ -1446,9 +1390,7 @@
     {
       "name": "Ryoko Takamachi",
       "rarity": 85,
-      "aliases": [
-        "é«˜ç”ºäº®å­"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=8760"
     },
@@ -1511,9 +1453,7 @@
     {
       "name": "Gyuuki",
       "rarity": 85,
-      "aliases": [
-        "Umewakamaru (æ¢…è‹¥ä¸¸)"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=22238"
     },
@@ -1550,9 +1490,7 @@
     {
       "name": "Oni Okuaki",
       "rarity": 85,
-      "aliases": [
-        "å¥¥ç§‹é›„å¼"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=148283"
     },
@@ -1603,9 +1541,7 @@
     {
       "name": "Takeo",
       "rarity": 85,
-      "aliases": [
-        "ç«ˆé–€ ç«¹é›„"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=96115"
     },
@@ -1682,9 +1618,7 @@
     {
       "name": "Jim Hillfort",
       "rarity": 85,
-      "aliases": [
-        "Kousaka Jin (é«˜å‚ ä»)"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=56175"
     },
@@ -1705,9 +1639,7 @@
     {
       "name": "Kenya Onizuka",
       "rarity": 85,
-      "aliases": [
-        "é¬¼å¡šå‰£å“‰"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=80558"
     },
@@ -1735,9 +1667,7 @@
     {
       "name": "Young man X",
       "rarity": 85,
-      "aliases": [
-        "é’å¹´X (Seinen Etsukusu)"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=34028"
     },
@@ -1981,9 +1911,7 @@
     {
       "name": "Tomono Kojou",
       "rarity": 85,
-      "aliases": [
-        "å¤åŸŽæ™ºä¹ƒ"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=116162"
     },
@@ -2046,9 +1974,7 @@
     {
       "name": "Akane Hanasaki",
       "rarity": 85,
-      "aliases": [
-        "èŠ±å’² èŒœ"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=279"
     },
@@ -2056,8 +1982,7 @@
       "name": "Kujaku Hime Kada",
       "rarity": 85,
       "aliases": [
-        "Peacock Princess Kada",
-        "å­”é›€å§«è¯é™€"
+        "Peacock Princess Kada"
       ],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=57334"
@@ -2093,9 +2018,7 @@
     {
       "name": "Tsuyuno Yatsumura",
       "rarity": 85,
-      "aliases": [
-        "å¥´æ‘ éœ²ä¹ƒ"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=90153"
     },
@@ -2110,8 +2033,7 @@
       "name": "Sakyou Kurayami",
       "rarity": 85,
       "aliases": [
-        "Sakyo",
-        "æš—é—‡å·¦äº¬"
+        "Sakyo"
       ],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=63837"
@@ -2189,9 +2111,7 @@
     {
       "name": "Rena Kunisaki",
       "rarity": 85,
-      "aliases": [
-        "å›½å´ŽçŽ²å¥ˆ"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=17258"
     },
@@ -2205,9 +2125,7 @@
     {
       "name": "Hibiki Manabe",
       "rarity": 85,
-      "aliases": [
-        "çœŸåéƒ¨ éŸ¿ç”Ÿ"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=147519"
     },
@@ -2228,18 +2146,14 @@
     {
       "name": "Jubei Mitsuyoshi Yagyu",
       "rarity": 85,
-      "aliases": [
-        "æŸ³ç”Ÿåå…µè¡žä¸‰åŽ³"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=147796"
     },
     {
       "name": "Keisei Tagami",
       "rarity": 85,
-      "aliases": [
-        "ç”°ç¥ž æ™¯ä¸–"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=39753"
     },
@@ -2374,9 +2288,7 @@
     {
       "name": "Celestial Spirit King",
       "rarity": 65,
-      "aliases": [
-        "æ˜ŸéœŠçŽ‹"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=7855"
     },
@@ -2432,9 +2344,7 @@
     {
       "name": "Yayoi Kanbara",
       "rarity": 78,
-      "aliases": [
-        "ç¥žåŽŸå¼¥ç”Ÿ"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=66395"
     },
@@ -2569,9 +2479,7 @@
     {
       "name": "Misaki Sagisawa",
       "rarity": 85,
-      "aliases": [
-        "é·ºæ¾¤ç¾Žå’² / é ¼å­ (Yoriko Sagisawa)"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=39712"
     },
@@ -2799,9 +2707,7 @@
     {
       "name": "Saiko Numakage",
       "rarity": 85,
-      "aliases": [
-        "æ²¼å½±å½©æ¹–"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=71868"
     },
@@ -3066,9 +2972,7 @@
     {
       "name": "Shiori Kashiwazaki",
       "rarity": 85,
-      "aliases": [
-        "æŸå´Žæ ž"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=94694"
     },
@@ -3152,9 +3056,7 @@
     {
       "name": "Ichirou Irabu",
       "rarity": 85,
-      "aliases": [
-        "ä¼Šè‰¯éƒ¨ ä¸€éƒŽ"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=31753"
     },
@@ -3205,9 +3107,7 @@
     {
       "name": "Shizegane Date",
       "rarity": 85,
-      "aliases": [
-        "ä¼Šé” æˆå®Ÿ"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=83511"
     },
@@ -3514,9 +3414,7 @@
     {
       "name": "Koboshi Uematsu",
       "rarity": 85,
-      "aliases": [
-        "æ¤æ¾ å°æ˜Ÿ"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=32361"
     },
@@ -3530,9 +3428,7 @@
     {
       "name": "Yakuko Etsushimaru",
       "rarity": 85,
-      "aliases": [
-        "è¶Šå¸ä¸¸ ç›Šå­"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=148728"
     },
@@ -3560,9 +3456,7 @@
     {
       "name": "Yuugen",
       "rarity": 85,
-      "aliases": [
-        "å¹½å¹»"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=71379"
     },
@@ -3653,9 +3547,7 @@
     {
       "name": "Byakuroku",
       "rarity": 85,
-      "aliases": [
-        "ç™¾éŒ²"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=76860"
     },
@@ -3692,9 +3584,7 @@
     {
       "name": "Mayudama",
       "rarity": 85,
-      "aliases": [
-        "ç¹­çŽ‰"
-      ],
+      "aliases": [],
       "verification_status": "database_supported_needs_review",
       "source_url": "https://www.animecharactersdatabase.com/characters.php?id=134614"
     },
