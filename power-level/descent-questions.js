@@ -2820,5 +2820,54 @@ const questions=[
  q.answers.push({"name":"Zubat","rarity":55,"aliases":[]});
 }
 // END NOV27 APPROVED CSV EXPANSION
+// Own review of Descent #8 (Nov 27 2026), done the day before release: clearer hints, obvious answers players will reach for,
+// and short franchise names for title answers that were only listed season by season. Source scores (low = common);
+// D.bank flips them. Top Answers are unchanged.
+{
+ const key27=v=>String(v).normalize('NFKD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
+ const d27=(name,rarity,...aliases)=>({name,rarity,aliases});
+ const Q27=id=>{const q=questions.find(x=>x.id==='timed-v4-descent-8-'+id);if(!q)throw Error('Unknown Nov 27 Descent question: '+id);return q;};
+ const NOTES27={headband:'Headbands, hairbands and ninja forehead protectors',sibling:'A brother or sister, including half- and step-siblings',school:'Most of the story takes place at a school',
+  wings:'Natural wings, or wings from a power or transformation',fly:'Flying by their own power, magic or technique',games:'Games, sports or other competitions drive the story',parent:'Has a child, by birth or adoption'};
+ for(const [id,note] of Object.entries(NOTES27))Q27(id).note=note;
+ Q27('games').text='Name any anime built around games or competitions.';
+ const ALIAS27={
+  sibling:{"Maki Zenin":["Maki"],"Ayato Kirishima":["Ayato"],"Yotsuba Nakano":["Yotsuba"]},
+  school:{"Kaguya-sama: Love is War":["Kaguya-sama","Kaguya sama"],"The Melancholy of Haruhi Suzumiya":["Haruhi","Haruhi Suzumiya"],"Love Live! School Idol Project":["Love Live"],
+   "DON'T TOY WITH ME, MISS NAGATORO":["Nagatoro","Miss Nagatoro"]},
+  parent:{"Minato Namikaze":["Minato"],"Sasuke Uchiha":["Sasuke"],"Sakura Haruno":["Sakura"]}};
+ const MORE27={
+  headband:[d27("Haruhi Suzumiya",30,"Haruhi"),d27("Usopp",30,"Sogeking"),d27("Ryu",50)],
+  sibling:[d27("Killua Zoldyck",10,"Killua"),d27("Ichigo Kurosaki",10,"Ichigo"),d27("Son Goku",10,"Goku","Kakarot"),d27("Son Gohan",15,"Gohan"),d27("Rukia Kuchiki",15,"Rukia"),
+   d27("Kirito",15,"Kazuto Kirigaya"),d27("Rin Okumura",15,"Rin"),d27("Shinobu Kocho",15,"Shinobu","Shinobu Kochou"),d27("Shigeo Kageyama",15,"Mob"),
+   d27("Megumi Fushiguro",20,"Megumi"),d27("Trunks",20),d27("Yukio Okumura",20,"Yukio"),d27("Zeref Dragneel",20,"Zeref"),d27("Dabi",20,"Toya Todoroki"),
+   d27("Yuji Itadori",25,"Yuji","Itadori"),d27("Choso",25),d27("Light Yagami",25,"Light"),d27("Vegeta",25),d27("Byakuya Kuchiki",25,"Byakuya"),d27("Boa Hancock",25,"Hancock"),
+   d27("Historia Reiss",40,"Historia","Krista Lenz")],
+  school:[d27("The Disastrous Life of Saiki K.",15,"Saiki K","Saiki Kusuo no Psi Nan"),d27("Jujutsu Kaisen",20,"JJK"),d27("Teasing Master Takagi-san",20,"Takagi-san","Karakai Jouzu no Takagi-san"),
+   d27("Blue Exorcist",25,"Ao no Exorcist"),d27("Your Lie in April",30,"Shigatsu wa Kimi no Uso"),d27("My Teen Romantic Comedy SNAFU",30,"Oregairu","SNAFU"),
+   d27("Rascal Does Not Dream of Bunny Girl Senpai",30,"Bunny Girl Senpai"),d27("Angel Beats!",30,"Angel Beats"),d27("High School DxD",30,"Highschool DxD"),
+   d27("Beelzebub",50),d27("Shikimori's Not Just a Cutie",50,"Shikimori")],
+  wings:[d27("Tohru",25),d27("Madoka Kaname",30,"Madoka"),d27("Cell",30),d27("Homura Akemi",35,"Homura"),d27("Sosuke Aizen",35,"Aizen"),d27("Kirito",35,"Kazuto Kirigaya"),
+   d27("Leafa",40,"Suguha Kirigaya"),d27("Asuna",40,"Asuna Yuuki"),d27("Sebastian Michaelis",40,"Sebastian"),d27("Nico Robin",45,"Robin"),d27("Ikaros",45),
+   d27("Belldandy",50),d27("Nymph",55)],
+  fly:[d27("Shigeo Kageyama",25,"Mob"),d27("Deidara",30),d27("Gaara",30),d27("Howl",30,"Howl Pendragon"),d27("Tohru",30),d27("Izuku Midoriya",30,"Deku","Izuku"),
+   d27("Ochaco Uraraka",35,"Uraraka","Ochaco"),d27("Sesshomaru",35),d27("Haku",35,"Kohaku River"),d27("Kirito",40,"Kazuto Kirigaya"),d27("Leafa",40,"Suguha Kirigaya"),
+   d27("Nausicaä",40,"Nausicaa"),d27("Kagura",45),d27("Shiki",45,"Golden Lion"),d27("Sosuke Aizen",45,"Aizen"),d27("Ulquiorra Cifer",45,"Ulquiorra"),d27("Angel Devil",50)],
+  games:[d27("Pokémon",10,"Pokemon"),d27("Kaiji",20,"Gyakkyou Burai Kaiji"),d27("Food Wars!",25,"Food Wars","Shokugeki no Soma"),d27("Slam Dunk",25),d27("Hajime no Ippo",25,"Fighting Spirit"),
+   d27("Initial D",30),d27("March Comes in Like a Lion",30,"3-gatsu no Lion"),d27("Death Parade",30),d27("The Prince of Tennis",30,"Prince of Tennis"),d27("Chihayafuru",30),
+   d27("Captain Tsubasa",30),d27("Bakugan Battle Brawlers",35,"Bakugan"),d27("Baki",35,"Baki the Grappler","Grappler Baki"),d27("Yowamushi Pedal",35),
+   d27("Uma Musume: Pretty Derby",35,"Uma Musume","Umamusume"),d27("Overlord",40),d27("Hunter x Hunter",40,"HxH","Greed Island"),d27("Gantz",40),d27("Kengan Ashura",40),
+   d27("The Gamers!",50,"Gamers!"),d27("Love Live! School Idol Project",40,"Love Live"),d27("Saki",50)],
+  parent:[d27("Gol D. Roger",15,"Roger","Gold Roger"),d27("Charlotte Linlin",20,"Big Mom"),d27("Gendo Ikari",20,"Gendo"),d27("Monkey D. Dragon",25,"Dragon"),
+   d27("Inko Midoriya",25,"Inko"),d27("Whitebeard",30,"Edward Newgate"),d27("Bell-mère",30,"Bellemere","Bellmere"),d27("Soichiro Yagami",30,"Soichiro"),d27("Krillin",30),
+   d27("Android 18",30,"Lazuli"),d27("Mr. Satan",30,"Hercule"),d27("Mitsuki Bakugo",35,"Mitsuki"),d27("Silva Zoldyck",35,"Silva"),d27("King Vegeta",40),d27("Ox-King",40,"Gyumao"),
+   d27("Yui Ikari",40),d27("Rudeus Greyrat",40,"Rudeus"),d27("Shanks",40),d27("Kikyo Zoldyck",45),d27("Gine",45),d27("Ryuken Ishida",45,"Ryuken"),
+   d27("Ken Kaneki",45,"Kaneki"),d27("Touka Kirishima",45,"Touka")],
+ };
+ for(const [id,map] of Object.entries(ALIAS27)){const q=Q27(id);const seen=new Set(q.answers.flatMap(y=>[y.name,...(y.aliases||[])]).map(key27));
+  for(const [n,als] of Object.entries(map)){const x=q.answers.find(y=>y.name===n);if(!x)throw Error('Missing '+n+' in '+id);for(const al of als){if(seen.has(key27(al)))continue;seen.add(key27(al));x.aliases=[...(x.aliases||[]),al];}}}
+ for(const [id,extra] of Object.entries(MORE27)){const q=Q27(id);const seen=new Set(q.answers.flatMap(y=>[y.name,...(y.aliases||[])]).map(key27));
+  for(const e of extra){const same=q.answers.find(y=>key27(y.name)===key27(e.name));if(same){for(const al of e.aliases)if(!seen.has(key27(al))){seen.add(key27(al));same.aliases=[...(same.aliases||[]),al];}continue;}const keep=[];for(const f of [e.name,...e.aliases])if(!seen.has(key27(f))){seen.add(key27(f));keep.push(f);}q.answers.push({name:e.name,rarity:e.rarity,aliases:keep.slice(1)});}}
+}
 if(typeof module!=='undefined')module.exports=questions;else root.PowerLevelDescentQuestions=questions;
 })(globalThis);
