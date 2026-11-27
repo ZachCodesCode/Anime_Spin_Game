@@ -8127,5 +8127,62 @@ bank.push(...[
  q.note='Poison users qualify; Poison-type Pokémon qualify without a Poison move. Name regional forms specifically.';
 }
 // END NOV27 APPROVED CSV EXPANSION
+// Own review of Ascent #17 (Nov 27 2026), done the day before release: clearer hints, obvious answers players will reach for,
+// duplicate entries merged, and scores for very well-known answers brought down to match. Final-scale scores
+// (under 20 Fodder, 20+ Side Character, 45+ Rare, 75+ Deep Cut). Limit Breaks are unchanged.
+{
+ const R27=id=>{const q=bank.find(x=>x.id==='timed-v4-wide-ascent-17-'+id);if(!q)throw Error('Unknown Nov 27 question: '+id);return q;};
+ const NOTES27={spear:'Spears, lances, tridents, halberds, naginata and other polearms',prosthetic:'An artificial arm, leg or hand: automail, cyborg limbs, peg legs and hooks',
+  'nonhuman-main':'The lead is an animal, monster, demon, vampire, robot, spirit or other non-human',teleport:'Vanishing from one place and instantly appearing in another',
+  poison:'Poison weapons, venom, toxic gas or poison powers; Poison-type Pokémon count (name regional forms in full)',
+  'female-main':'A girl or woman is the lead or a co-lead',shapeshift:'Turning into another person, animal or creature'};
+ for(const [id,note] of Object.entries(NOTES27))R27(id).note=note;
+ R27('spear').text='Name any anime character who fights with a spear, lance or polearm.';
+ // Duplicate entries (same character twice) and one wrong answer (Ed transmutes things; he doesn't change shape).
+ const DROP27={teleport:['Saiki Kusuo'],poison:['Shinobu Kocho','Erik (Cobra)'],shapeshift:['Edward Elric']};
+ for(const [id,names] of Object.entries(DROP27)){const q=R27(id);for(const n of names){const i=q.answers.findIndex(x=>x.name===n);if(i<0)throw Error('Missing '+n);q.answers.splice(i,1);}}
+ const SET27={spear:{"Cú Chulainn":15,"Kyouko Sakura":30},prosthetic:{"Guts":15,"Violet Evergarden":15,"Hyakkimaru":25},teleport:{"Kusuo Saiki":25,"Kuroko Shirai":25},poison:{"Shinobu Kochou":10}};
+ for(const [id,map] of Object.entries(SET27))for(const [n,r] of Object.entries(map)){const x=R27(id).answers.find(y=>y.name===n);if(!x)throw Error('Missing '+n);x.rarity=r;}
+ const ALIAS27={spear:{"Cú Chulainn":["Cu Chulainn","Lancer"],"Kyouko Sakura":["Kyoko Sakura","Kyoko"],"Ginrou":["Ginro"]},prosthetic:{"Edward Elric":["Ed","Edward"]},
+  teleport:{"Kusuo Saiki":["Saiki","Saiki Kusuo","Saiki K"],"Goku":["Son Goku","Kakarot"]},poison:{"Shinobu Kochou":["Shinobu","Shinobu Kocho"]},
+  'female-main':{"Puella Magi Madoka Magica":["Madoka Magica","Madoka"],"Frieren: Beyond Journey’s End":["Frieren","Sousou no Frieren"],"The Melancholy of Haruhi Suzumiya":["Haruhi","Haruhi Suzumiya"],
+   "Kaguya-sama: Love is War":["Kaguya-sama","Kaguya sama"],"Love Live! School Idol Project":["Love Live"],"Mobile Suit Gundam: The Witch from Mercury":["The Witch from Mercury","Witch from Mercury"]}};
+ const MORE27={
+  spear:[a("Ikkaku Madarame",15,"Ikkaku"),a("Whitebeard",15,"Edward Newgate"),a("Toji Fushiguro",30,"Toji"),a("Maki Zenin",30,"Maki"),a("King",30,"Harlequin"),a("Charlotte Katakuri",35,"Katakuri"),
+   a("Hidan",35),a("Kishou Arima",40,"Arima"),a("Erza Scarlet",40,"Erza"),a("Shalltear Bloodfallen",45,"Shalltear"),a("Diarmuid Ua Duibhne",45,"Diarmuid"),a("Tenten",45),a("Son Hak",45,"Hak"),
+   a("Cocytus",50),a("Gabiru",50),a("Hyoga",50),a("Kinro",50),a("Bulat",50),a("Tatsumi",50),a("Yukimura Sanada",50,"Sanada Yukimura"),a("Ouki",50),
+   a("Karna",55),a("Hakuryuu Ren",55,"Hakuryuu"),a("Scathach",60),a("Vlad III",60,"Vlad Tepes"),a("Dabura",60),a("King Neptune",60,"Neptune"),a("Ou Hon",60),
+   a("Hyunckel",75),a("Honda Tadakatsu",75,"Tadakatsu"),a("Esil Radiru",75,"Esil")],
+  prosthetic:[a("Genos",15),a("Motoko Kusanagi",20,"Major Kusanagi","Motoko"),a("Crocodile",25,"Sir Crocodile"),a("Franky",25,"Cutty Flam"),a("Batou",35),a("David Martinez",35,"David"),
+   a("Nobuchika Ginoza",35,"Ginoza"),a("Alita",40,"Gally"),a("Frieza",40,"Mecha Frieza","Freeza"),a("Obito Uchiha",45,"Obito"),a("Rebecca",45),a("Axe-Hand Morgan",50,"Morgan"),
+   a("Maine",50),a("Juuzou Suzuya",50,"Juuzou","Juzo Suzuya"),a("Mercenary Tao",60,"Cyborg Tao","Tao Pai Pai")],
+  'nonhuman-main':[a("That Time I Got Reincarnated as a Slime",5,"Slime","Tensura","Tensei Shitara Slime Datta Ken"),a("Overlord",10),a("Frieren: Beyond Journey's End",10,"Frieren","Sousou no Frieren"),a("Blood+",40,"Blood Plus"),a("Dragon Ball",15,"Dragon Ball Z","DBZ","Dragon Ball Super"),
+   a("Inuyasha",20),a("Tokyo Ghoul",20),a("Doraemon",20),a("The Devil Is a Part-Timer!",25,"The Devil Is a Part-Timer","Hataraku Maou-sama"),a("Astro Boy",30,"Tetsuwan Atom"),
+   a("Porco Rosso",30),a("Kaiju No. 8",30,"Kaiju No 8"),a("Ponyo",35,"Ponyo on the Cliff by the Sea"),a("Devilman Crybaby",35,"Devilman"),a("Aggretsuko",40),a("Hamtaro",40),
+   a("Elfen Lied",40),a("Reincarnated as a Sword",40),a("Miss Kobayashi's Dragon Maid",40,"Dragon Maid","Kobayashi-san Chi no Maid Dragon"),a("Odd Taxi",45),a("Pom Poko",45),
+   a("Gegege no Kitaro",45,"Kitaro"),a("Reborn as a Vending Machine, I Now Wander the Dungeon",45,"Reborn as a Vending Machine"),a("Kirby: Right Back at Ya!",45,"Kirby"),
+   a("Vampire Hunter D",45),a("Parasyte -the maxim-",50,"Parasyte","Kiseijuu"),a("Vivy -Fluorite Eye's Song-",50,"Vivy"),a("NieR:Automata Ver1.1a",50,"Nier Automata"),
+   a("Chi's Sweet Home",50),a("Gabriel DropOut",50,"Gabriel Dropout"),a("Ajin: Demi-Human",50,"Ajin"),a("Skeleton Knight in Another World",50),a("Sonic X",50),
+   a("Strike the Blood",55),a("Re:Monster",55,"Re Monster"),a("Hozuki's Coolheadedness",60,"Hoozuki no Reitetsu"),a("The Demon Girl Next Door",60,"Machikado Mazoku")],
+  teleport:[a("Kurogiri",15),a("Satoru Gojo",30,"Gojo"),a("Kakashi Hatake",35,"Kakashi"),a("Okuyasu Nijimura",35,"Okuyasu"),a("Beatrice",45),a("Supreme Kai",45,"Shin"),
+   a("All For One",45),a("Wiz",50),a("Alluka Zoldyck",50,"Alluka","Nanika"),a("Kaguya Otsutsuki",50),a("Mirio Togata",50,"Lemillion","Mirio"),
+   a("Funny Valentine",55,"Valentine"),a("Yunyun",55),a("Souei",55),a("Ranga",55),a("Knov",55)],
+  poison:[a("Choso",30),a("Isaac Netero",45,"Netero"),a("Rimuru Tempest",45,"Rimuru"),a("Entoma Vasilissa Zeta",60,"Entoma")],
+  'female-main':[a("Futari wa Pretty Cure",20,"Pretty Cure","Precure"),a("Your Name",25,"Kimi no Na wa"),a("The Girl Who Leapt Through Time",30),a("Kino's Journey",40,"Kino no Tabi"),a("86 Eighty-Six",45,"86","Eighty-Six")],
+  shapeshift:[a("Eren Yeager",5,"Eren","Eren Jaeger"),a("Tony Tony Chopper",10,"Chopper"),a("Ranma Saotome",10,"Ranma"),a("Reiner Braun",15,"Reiner"),a("Annie Leonhart",15,"Annie"),
+   a("Naruto Uzumaki",15,"Naruto"),a("Rimuru Tempest",15,"Rimuru"),a("Kaido",20),a("Mahito",20),a("Kyo Sohma",20,"Kyo"),a("Bertholdt Hoover",25,"Bertholdt","Bertolt Hoover"),
+   a("Zeke Yeager",25,"Zeke"),a("Armin Arlert",25,"Armin"),a("Rob Lucci",25,"Lucci"),a("Howl",25,"Howl Pendragon"),a("Haku",25,"Kohaku River"),a("Yuki Sohma",25,"Yuki"),
+   a("Muzan Kibutsuji",25,"Muzan"),a("Kafka Hibino",25,"Kafka","Kaiju No. 8"),a("Ymir",30),a("Holo",30,"Horo"),a("Kaku",35),a("Yamato",35),a("Ryoga Hibiki",35,"Ryoga","P-chan"),
+   a("Ponyo",35),a("Momiji Sohma",35,"Momiji"),a("Mirajane Strauss",35,"Mirajane"),a("Nyanko-sensei",35,"Madara"),a("Pieck Finger",40,"Pieck"),a("Kozuki Momonosuke",40,"Momonosuke"),
+   a("Genma Saotome",40,"Genma"),a("Shampoo",40),a("Kanna Kamui",40,"Kanna"),a("Kirara",40),a("Denji",40,"Chainsaw Man"),a("Porco Galliard",45,"Porco"),a("X Drake",45,"Drake"),
+   a("Konohamaru Sarutobi",45,"Konohamaru"),a("Sesshomaru",45),a("Pandora's Actor",45),a("Elfman Strauss",45,"Elfman"),a("Cerberus",45,"Kero","Kero-chan","Keroberos"),
+   a("Mousse",50),a("Quetzalcoatl",50,"Lucoa"),a("Lisanna Strauss",50,"Lisanna")],
+ };
+ for(const [id,map] of Object.entries(ALIAS27)){const q=R27(id);const seen=new Set(q.answers.flatMap(y=>[y.name,...(y.aliases||[])]).map(key));
+  for(const [n,als] of Object.entries(map)){const x=q.answers.find(y=>y.name===n);if(!x)throw Error('Missing '+n+' in '+id);for(const al of als){if(seen.has(key(al)))continue;seen.add(key(al));x.aliases=[...(x.aliases||[]),al];}}}
+ for(const [id,extra] of Object.entries(MORE27)){const q=R27(id);const seen=new Set(q.answers.flatMap(y=>[y.name,...(y.aliases||[])]).map(key));
+  for(const e of extra){if(e.rarity>=100)throw Error('Second Limit Break in '+id);const forms=[e.name,...(e.aliases||[])];const same=q.answers.find(y=>key(y.name)===key(e.name));if(same){for(const al of e.aliases||[])if(!seen.has(key(al))){seen.add(key(al));same.aliases=[...(same.aliases||[]),al];}continue;}
+   const keep=[];for(const f of forms)if(!seen.has(key(f))){seen.add(key(f));keep.push(f);}q.answers.push(keep.length===forms.length?e:{...e,aliases:keep.slice(1)});}}
+}
 return bank;})();
 if(typeof module!=="undefined")module.exports=POWER_LEVEL_QUESTIONS;

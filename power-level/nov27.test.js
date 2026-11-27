@@ -51,7 +51,7 @@ test('November 27 banks have unique forms, one Ascent Limit Break, and one Desce
 test('November 27 poison question accepts the complete Poison-type species roster with form-specific names',()=>{
  const q=ascent.find(q=>q.id==='timed-v4-wide-ascent-17-poison');
  assert.equal(q.text,'Name any anime character who uses poison as a weapon or ability, or any Poison-type Pokémon.');
- assert.equal(q.answers.length,156);
+ assert.equal(q.answers.length,158); // 156 approved, two duplicate entries merged, four obvious answers added (Nov 26 review)
  for(const name of ['Bulbasaur','Sneasler','Iron Moth','Galarian Slowbro','Galarian Slowking','Paldean Wooper','Hisuian Sneasel','Arceus (Poison Form)','Silvally (Poison Form)'])
   assert.equal(C.validate(q,name).answer?.name,name);
  for(const name of ['Slowbro','Slowking','Wooper','Sneasel','Arceus','Silvally'])
