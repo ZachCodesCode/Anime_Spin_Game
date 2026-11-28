@@ -75,7 +75,7 @@ test('browser and server share the same pinned schedule and new question bank',(
  assert.deepEqual([...november25],D.select([...bank,...require('./descent-questions')],'2026-11-25'));
  const november27=vm.runInContext("PowerLevelDescent.select([...POWER_LEVEL_QUESTIONS,...PowerLevelDescentQuestions],'2026-11-27')",context);
  assert.deepEqual([...november27],D.select([...bank,...require('./descent-questions')],'2026-11-27'));
- assert.throws(()=>D.select([...bank,...require('./descent-questions')],'2026-11-28'),/Missing assignment/);
+ assert.throws(()=>D.select([...bank,...require('./descent-questions')],'2026-11-29'),/Missing assignment/);
 });
 
 test('Toronto midnight changes the day across daylight saving time',()=>{
