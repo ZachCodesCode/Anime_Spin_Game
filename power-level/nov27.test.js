@@ -25,7 +25,7 @@ test('November 27 selects the seven new questions in both required orders withou
 
 test('November 27 banks have unique forms, one Ascent Limit Break, and one Descent Top Answer',()=>{
  const ids=new Set();
- for(const q of [...ascent.filter(q=>aIds.includes(q.id)),...descent]){
+ for(const q of [...ascent.filter(q=>aIds.includes(q.id)),...descent.filter(q=>dIds.includes(q.id))]){
   assert(!ids.has(q.id));ids.add(q.id);
   assert(q.answers.length>0,q.id);
   const forms=new Map();
